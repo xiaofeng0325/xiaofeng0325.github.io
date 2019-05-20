@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="面试,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="广播注册方式： 1、静态注册 ，在Manifest文件的application节点中配置广播接收者  &amp;lt;receiver android:name=&quot;.MyBroadCastReceiver&quot;&amp;gt;  	&amp;lt;!-- android:priority属性是设置此接收者的优先级（从-1000到1000） --&amp;gt;	&amp;lt;intent-filter android:priority=&quot;">
+<meta name="keywords" content="面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android面试笔记">
+<meta property="og:url" content="http://yoursite.com/posts/e9998381.html">
+<meta property="og:site_name" content="zm.blog">
+<meta property="og:description" content="广播注册方式： 1、静态注册 ，在Manifest文件的application节点中配置广播接收者  &amp;lt;receiver android:name=&quot;.MyBroadCastReceiver&quot;&amp;gt;  	&amp;lt;!-- android:priority属性是设置此接收者的优先级（从-1000到1000） --&amp;gt;	&amp;lt;intent-filter android:priority=&quot;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-16T07:44:23.999Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android面试笔记">
+<meta name="twitter:description" content="广播注册方式： 1、静态注册 ，在Manifest文件的application节点中配置广播接收者  &amp;lt;receiver android:name=&quot;.MyBroadCastReceiver&quot;&amp;gt;  	&amp;lt;!-- android:priority属性是设置此接收者的优先级（从-1000到1000） --&amp;gt;	&amp;lt;intent-filter android:priority=&quot;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/posts/e9998381.html">
+
+
+
+
+
+  <title>Android面试笔记 | zm.blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?64a1d6b8fd3f610a210ef1ef8372bd3d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">zm.blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Knowledge is power.</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/e9998381.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhangMiao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zm.blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android面试笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-23T15:02:25+08:00">
+                2019-04-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/e9998381.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/e9998381.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/e9998381.html" class="leancloud_visitors" data-flag-title="Android面试笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="广播"><a href="#广播" class="headerlink" title="广播"></a>广播</h2><p><strong>注册方式：</strong></p>
+<p>1、静态注册 ，在Manifest文件的<code>application</code>节点中配置广播接收者</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">receiver</span> <span class="attr">android:name</span>=<span class="string">".MyBroadCastReceiver"</span>&gt;</span>  </span><br><span class="line">	<span class="comment">&lt;!-- android:priority属性是设置此接收者的优先级（从-1000到1000） --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">intent-filter</span> <span class="attr">android:priority</span>=<span class="string">"20"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">actionandroid:name="android.provider.Telephony.SMS_RECEIVED"</span>/&gt;</span>  </span><br><span class="line">	<span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">receiver</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>2、动态注册，通过<code>Context</code>对象的<code>registerReceiver</code>方法注册广播</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//new出上边定义好的BroadcastReceiver</span></span><br><span class="line">MyBroadCastReceiver yBroadCastReceiver = <span class="keyword">new</span> MyBroadCastReceiver();</span><br><span class="line"><span class="comment">//实例化过滤器并设置要过滤的广播  </span></span><br><span class="line">IntentFilter intentFilter = <span class="keyword">new</span> IntentFilter(<span class="string">"android.provider.Telephony.SMS_RECEIVED"</span>);</span><br><span class="line"><span class="comment">//注册广播   </span></span><br><span class="line">myContext.registerReceiver(smsBroadCastReceiver,intentFilter, </span><br><span class="line">             <span class="string">"android.permission.RECEIVE_SMS"</span>, <span class="keyword">null</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>区别：静态注册的为常驻型广播，即使应用程序关闭了，如果又信息广播来，程序也会被系统调用执行。而动态注册的广播不是常驻型，广播被取消注册或者应用程序关闭后都不能接收</p>
+</blockquote>
+<p><strong> 广播的两种类型：</strong></p>
+<p>1、有序广播：按照优先级，一级一级向下传递，接收者可以修改广播数据，也可以终止广播事件。</p>
+<p>2、无序广播：所有接收者都会接收事件，不能被拦截跟修改。</p>
+<a id="more"></a>
+<h2 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h2><p><strong>启动</strong></p>
+<p>1、使用<code>Context</code>的<code>startService</code>方法启动</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; onCreate()`---&gt;`onStartCommand()`---&gt;`onDestroy()</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>2、使用<code>Context</code>的<code>bindService</code>方法启动</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; onCreate()`---&gt;`onBind()`---&gt;`onUnBind()`---&gt;`onDestroy()</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><strong>停止</strong></p>
+<p>1、在外部使用<code>stopService</code>方法，如果使用<code>bindService</code>的方式启动，则使用<code>unbindService</code>方法停止</p>
+<p>2、在<code>Service</code>内部（<code>onStartCommand</code>方法内）使用<code>stopSelf</code></p>
+<p><strong><code>onStartCommand</code></strong>方法的返回值</p>
+<p>1、<code>START_NOT_STICKY</code>：“非粘性的”。使用这个返回值时，如果在执行完<code>onStartCommand</code>方法后，服务被异常kill掉，系统不会自动重启该服务</p>
+<p>2、<code>START_STICKY</code>：如果Service进程被kill掉，保留Service的状态为开始状态，但不保留递送的intent对象。随后系统会尝试重新创建Service，由于服务状态为开始状态，所以创建服务后一定会调用onStartCommand(Intent,int,int)方法。如果在此期间没有任何启动命令被传递到Service，那么参数Intent将为null。</p>
+<p>3、<code>START_REDELIVER_INTENT</code>：重传Intent。使用这个返回值时，系统会自动重启该服务，并将Intent的值传入。</p>
+<h2 id="IntentService"><a href="#IntentService" class="headerlink" title="IntentService"></a>IntentService</h2><p>继承于<code>Service</code>，启动方式与<code>Service</code>的传统启动方式一样，不同点在于内部有一个线程来处理耗时操作，当任务执行完成时服务会自动停止。</p>
+<h2 id="Activity的启动模式"><a href="#Activity的启动模式" class="headerlink" title="Activity的启动模式"></a>Activity的启动模式</h2><ul>
+<li><code>standard</code>：标准模式，默认的启动模式，不管是否已经存在实例都会生成新的实例</li>
+<li><code>singleTop</code>：栈顶复用模式，如果发现有对应Activity的实例正位于栈顶，则直接打开此页面，不再生成新的实例，同时<code>onNewIntent</code>方法会被执行，<code>onCreate</code>跟<code>onStart</code>方法都不会执行。否则跟<code>standard</code>模式一样继续生成新的实例。</li>
+<li><code>singleTask</code>：站内复用模式，如果栈内存在对应Activity的实例就会复用这个Activity，复用时会将它上面的Activity全部出栈，同时<code>onNewIntent</code>方法也会被执行。</li>
+<li><code>singleInstance</code>：单例模式，该模式具备singleTask模式的所有特性外，与它的区别就是，这种模式下的Activity会单独占用一个Task栈，具有全局唯一性。以singleInstance模式启动的Activity在整个系统中是单例的，如果在启动这样的Activiyt时，已经存在了一个实例，那么会把它所在的任务调度到前台，重用这个实例。</li>
+</ul>
+<h2 id="Activity的启动过程"><a href="#Activity的启动过程" class="headerlink" title="Activity的启动过程"></a>Activity的启动过程</h2><p>app启动的过程有两种情况，第一种是从桌面launcher上点击相应的应用图标，第二种是在activity中通过调用startActivity来启动一个新的activity。</p>
+<blockquote>
+<ol>
+<li><code>Luncher.startActivitySafely()</code></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&gt; <span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Launcher</span> <span class="keyword">extends</span> <span class="title">Activity</span></span></span><br><span class="line"><span class="class">&gt; 		<span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnClickListener</span>, </span></span><br><span class="line"><span class="class">&gt;                     <span class="title">OnLongClickListener</span>, </span></span><br><span class="line"><span class="class">&gt;                     <span class="title">LauncherModel</span>.<span class="title">Callbacks</span>, </span></span><br><span class="line"><span class="class">&gt;                     <span class="title">AllAppsView</span>.<span class="title">Watcher</span> </span>&#123;</span><br><span class="line">&gt;                         </span><br><span class="line">&gt; 	......</span><br><span class="line">&gt;         </span><br><span class="line">&gt; 	<span class="function"><span class="keyword">void</span> <span class="title">startActivitySafely</span><span class="params">(Intent intent, Object tag)</span> </span>&#123;</span><br><span class="line">&gt; 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);</span><br><span class="line">&gt; 		<span class="keyword">try</span> &#123;</span><br><span class="line">&gt; 			startActivity(intent);</span><br><span class="line">&gt; 		&#125; <span class="keyword">catch</span> (ActivityNotFoundException e) &#123;</span><br><span class="line">&gt; 			......</span><br><span class="line">&gt; 		&#125; <span class="keyword">catch</span> (SecurityException e) &#123;</span><br><span class="line">&gt; 			......</span><br><span class="line">&gt; 		&#125;</span><br><span class="line">&gt; 	&#125;</span><br><span class="line">&gt;                         </span><br><span class="line">&gt;     ......</span><br><span class="line">&gt;         </span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li><code>Activity.startActivity</code></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&gt; <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Activity</span> <span class="keyword">extends</span> <span class="title">ContextThemeWrapper</span></span></span><br><span class="line"><span class="class">&gt; 		<span class="keyword">implements</span> <span class="title">LayoutInflater</span>.<span class="title">Factory</span>,</span></span><br><span class="line"><span class="class">&gt; 		<span class="title">Window</span>.<span class="title">Callback</span>, <span class="title">KeyEvent</span>.<span class="title">Callback</span>,</span></span><br><span class="line"><span class="class">&gt; 		<span class="title">OnCreateContextMenuListener</span>, <span class="title">ComponentCallbacks</span> </span>&#123;</span><br><span class="line">&gt;  </span><br><span class="line">&gt; 	......</span><br><span class="line">&gt;  </span><br><span class="line">&gt; 	<span class="meta">@Override</span></span><br><span class="line">&gt; 	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startActivity</span><span class="params">(Intent intent)</span> </span>&#123;</span><br><span class="line">&gt; 		startActivityForResult(intent, -<span class="number">1</span>);</span><br><span class="line">&gt; 	&#125;</span><br><span class="line">&gt;  </span><br><span class="line">&gt; 	......</span><br><span class="line">&gt;  </span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li><code>Activity.startActivityForResult</code></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&gt; <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Activity</span> <span class="keyword">extends</span> <span class="title">ContextThemeWrapper</span></span></span><br><span class="line"><span class="class">&gt; 		<span class="keyword">implements</span> <span class="title">LayoutInflater</span>.<span class="title">Factory</span>,</span></span><br><span class="line"><span class="class">&gt; 		<span class="title">Window</span>.<span class="title">Callback</span>, <span class="title">KeyEvent</span>.<span class="title">Callback</span>,</span></span><br><span class="line"><span class="class">&gt; 		<span class="title">OnCreateContextMenuListener</span>, <span class="title">ComponentCallbacks</span> </span>&#123;</span><br><span class="line">&gt;  </span><br><span class="line">&gt; 	......</span><br><span class="line">&gt;  </span><br><span class="line">&gt; 	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startActivityForResult</span><span class="params">(Intent intent, <span class="keyword">int</span> requestCode)</span> </span>&#123;</span><br><span class="line">&gt; 		<span class="keyword">if</span> (mParent == <span class="keyword">null</span>) &#123;</span><br><span class="line">&gt; 			Instrumentation.ActivityResult ar =</span><br><span class="line">&gt; 				mInstrumentation.execStartActivity(</span><br><span class="line">&gt; 				<span class="keyword">this</span>, mMainThread.getApplicationThread(), mToken, <span class="keyword">this</span>,</span><br><span class="line">&gt; 				intent, requestCode);</span><br><span class="line">&gt; 			......</span><br><span class="line">&gt; 		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">&gt; 			......</span><br><span class="line">&gt; 		&#125;</span><br><span class="line">&gt;  </span><br><span class="line">&gt;  </span><br><span class="line">&gt; 	......</span><br><span class="line">&gt;  </span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<ol start="4">
+<li><code>Instrumentation.execStartActivity</code></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&gt; <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Instrumentation</span> </span>&#123;</span><br><span class="line">&gt;  </span><br><span class="line">&gt; 	......</span><br><span class="line">&gt;  </span><br><span class="line">&gt; 	<span class="function"><span class="keyword">public</span> ActivityResult <span class="title">execStartActivity</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">&gt; 	Context who, IBinder contextThread, IBinder token, Activity target,</span></span></span><br><span class="line"><span class="function"><span class="params">&gt; 	Intent intent, <span class="keyword">int</span> requestCode)</span> </span>&#123;</span><br><span class="line">&gt; 		IApplicationThread whoThread = (IApplicationThread) contextThread;</span><br><span class="line">&gt; 		<span class="keyword">if</span> (mActivityMonitors != <span class="keyword">null</span>) &#123;</span><br><span class="line">&gt; 			......</span><br><span class="line">&gt; 		&#125;</span><br><span class="line">&gt; 		<span class="keyword">try</span> &#123;</span><br><span class="line">&gt; 			<span class="keyword">int</span> result = ActivityManagerNative.getDefault()</span><br><span class="line">&gt; 				.startActivity(whoThread, intent,</span><br><span class="line">&gt; 				intent.resolveTypeIfNeeded(who.getContentResolver()),</span><br><span class="line">&gt; 				<span class="keyword">null</span>, <span class="number">0</span>, token, target != <span class="keyword">null</span> ? target.mEmbeddedID : <span class="keyword">null</span>,</span><br><span class="line">&gt; 				requestCode, <span class="keyword">false</span>, <span class="keyword">false</span>);</span><br><span class="line">&gt; 			......</span><br><span class="line">&gt; 		&#125; <span class="keyword">catch</span> (RemoteException e) &#123;</span><br><span class="line">&gt; 		&#125;</span><br><span class="line">&gt; 		<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&gt; 	&#125;</span><br><span class="line">&gt;  </span><br><span class="line">&gt; 	......</span><br><span class="line">&gt;  </span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>这里的<code>ActivityManagerNative.getDefault</code>返回<code>ActivityManagerService</code>的远程接口，即<code>ActivityManagerProxy</code>接口</p>
+<ol start="5">
+<li><code>ActivityManagerProxy.startActivity</code></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&gt; <span class="class"><span class="keyword">class</span> <span class="title">ActivityManagerProxy</span> <span class="keyword">implements</span> <span class="title">IActivityManager</span></span></span><br><span class="line"><span class="class">&gt; </span>&#123;</span><br><span class="line">&gt;  </span><br><span class="line">&gt; 	......</span><br><span class="line">&gt;  </span><br><span class="line">&gt; 	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">startActivity</span><span class="params">(IApplicationThread caller, Intent intent,</span></span></span><br><span class="line"><span class="function"><span class="params">&gt; 			String resolvedType, Uri[] grantedUriPermissions, <span class="keyword">int</span> grantedMode,</span></span></span><br><span class="line"><span class="function"><span class="params">&gt; 			IBinder resultTo, String resultWho,</span></span></span><br><span class="line"><span class="function"><span class="params">&gt; 			<span class="keyword">int</span> requestCode, <span class="keyword">boolean</span> onlyIfNeeded,</span></span></span><br><span class="line"><span class="function"><span class="params">&gt; 			<span class="keyword">boolean</span> debug)</span> <span class="keyword">throws</span> RemoteException </span>&#123;</span><br><span class="line">&gt; 		Parcel data = Parcel.obtain();</span><br><span class="line">&gt; 		Parcel reply = Parcel.obtain();</span><br><span class="line">&gt; 		data.writeInterfaceToken(IActivityManager.descriptor);</span><br><span class="line">&gt; 		data.writeStrongBinder(caller != <span class="keyword">null</span> ? caller.asBinder() : <span class="keyword">null</span>);</span><br><span class="line">&gt; 		intent.writeToParcel(data, <span class="number">0</span>);</span><br><span class="line">&gt; 		data.writeString(resolvedType);</span><br><span class="line">&gt; 		data.writeTypedArray(grantedUriPermissions, <span class="number">0</span>);</span><br><span class="line">&gt; 		data.writeInt(grantedMode);</span><br><span class="line">&gt; 		data.writeStrongBinder(resultTo);</span><br><span class="line">&gt; 		data.writeString(resultWho);</span><br><span class="line">&gt; 		data.writeInt(requestCode);</span><br><span class="line">&gt; 		data.writeInt(onlyIfNeeded ? <span class="number">1</span> : <span class="number">0</span>);</span><br><span class="line">&gt; 		data.writeInt(debug ? <span class="number">1</span> : <span class="number">0</span>);</span><br><span class="line">&gt; 		mRemote.transact(START_ACTIVITY_TRANSACTION, data, reply, <span class="number">0</span>);</span><br><span class="line">&gt; 		reply.readException();</span><br><span class="line">&gt; 		<span class="keyword">int</span> result = reply.readInt();</span><br><span class="line">&gt; 		reply.recycle();</span><br><span class="line">&gt; 		data.recycle();</span><br><span class="line">&gt; 		<span class="keyword">return</span> result;</span><br><span class="line">&gt; 	&#125;</span><br><span class="line">&gt;  </span><br><span class="line">&gt; 	......</span><br><span class="line">&gt;  </span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<ol start="6">
+<li><code>ActivityManagerService.startActivity</code></li>
+</ol>
+</blockquote>
+<h2 id="Context"><a href="#Context" class="headerlink" title="Context"></a>Context</h2><p>Context是一个抽象基类，翻译为上下文，也可以理解为环境，提供一些程序运行基础信息。</p>
+<p>Context有两个子类，<code>ContextWrapper</code>是上下文功能的封装类，而 <code>ContextImpl</code> 则是上下文功能的实现类。而 <code>ContextWrapper</code> 又有三个直接的子类， <code>ContextThemeWrapper</code>、<code>Service</code>和<code>Application</code>。其中，<code>ContextThemeWrapper</code>是一个带主题的封装类，而它有一个直接子类就是Activity，所以Activity和Service以及Application的Context是不一样的，只有Activity需要主题，Service不需要主题。Context一共有三种类型，分别是Application、Activity和Service。这三个类虽然分别各种承担着不同的作用，但它们都属于Context的一种，而它们具体Context的功能则是由<code>ContextImpl</code>类去实现的，因此在绝大多数场景下，Activity、Service和Application这三种类型的Context都是可以通用的。不过有几种场景比较特殊，比如启动Activity，还有弹出Dialog。出于安全原因的考虑，Android是不允许Activity或Dialog凭空出现的，一个Activity的启动必须要建立在另一个Activity的基础之上，也就是以此形成的返回栈。而Dialog则必须在一个Activity上面弹出（除非是System Alert类型的Dialog），因此在这种场景下，我们只能使用Activity类型的Context，否则将会出错。</p>
+<h2 id="Activity、Window、View三者之间的关系"><a href="#Activity、Window、View三者之间的关系" class="headerlink" title="Activity、Window、View三者之间的关系"></a>Activity、Window、View三者之间的关系</h2><ol>
+<li><code>Activity</code> 构造的时候会初始化一个Window( <code>PhoneWindw</code> )</li>
+<li><code>PhoneWindow</code> 有一个 <code>RootView</code> ，这个<code>RootView</code> 是一个ViewGroup，是最初始的根视图</li>
+<li><code>RootView</code> 通过 <code>addView</code> 方法来一个个添加 <code>View</code></li>
+</ol>
+<h2 id="View的绘制流程"><a href="#View的绘制流程" class="headerlink" title="View的绘制流程"></a>View的绘制流程</h2><p>View的绘制流程：<code>onMeasure</code> -&gt; <code>onLayout</code> -&gt; <code>onDraw</code></p>
+<p>第一步：<code>onMeasure</code> 测量视图大小，从顶层父View到子View递归调用 <code>measure</code> 方法，<code>measure</code> 方法又回调 <code>onMeasure</code>方法。</p>
+<p>第二步：<code>onLayout</code> 确定View位置，进行页面布局。从顶层父View向子View递归调用 <code>layout</code> 方法的过程，即父View根据上一步 <code>measure</code> 得到的布局大小和布局参数，将子View放在合适的位置上。</p>
+<p>第三步：<code>onDraw</code> 绘制视图。主要步骤为①：绘制背景，②：绘制自己，③：绘制子View，④：绘制滚动条</p>
+<h2 id="View、ViewGroup事件分发"><a href="#View、ViewGroup事件分发" class="headerlink" title="View、ViewGroup事件分发"></a>View、ViewGroup事件分发</h2><p>ViewGroup 包含 <code>dispatchTouchEvent</code> 、<code>onInterceptTouchEvent</code> 、<code>onTouchEvent</code>三个相关方法，View包含 <code>dispatchTouchEvent</code>、<code>onTouchEvent</code>两个相关方法。</p>
+<ol>
+<li>当 <code>Activity</code> 接收到Touch事件时，将遍历子View进行Down事件分发，分发的目的是为了找到真正处理本次完整触摸事件的View，这个View会在 <code>onTouchEvent</code> 返回true。</li>
+<li>当某个子View返回true时，就终止事件分发，并同时在ViewGroup中记录该View，接下来的move事件跟up事件都由该子View直接进行处理。</li>
+<li>当ViewGroup所有子View都不捕获Down事件时，将触发ViewGroup自身的 <code>onTouchEvent</code> 事件。触发的方式是调用 <code>super.dispatchTouchEvent</code>函数，即调用父View的<code>dispatchTouchEvent</code>方法。</li>
+</ol>
+<h2 id="Handler实现原理"><a href="#Handler实现原理" class="headerlink" title="Handler实现原理"></a>Handler实现原理</h2><p>Android的主线程不能进行耗时操作，子线程不能进行更新UI，所以就有了Handler，它的作用就是实现线程之间的通信。</p>
+<p>Handler整个流程中主要有四个对象：<code>Handler</code>、<code>Message</code>、<code>MessageQueue</code>、<code>Looper</code>。通过将要传递的消息放在<code>Message</code>中，<code>Handler</code>通过 <code>sendMessage</code> 方法将消息放入 <code>MessageQueue</code> 中，<code>Looper</code> 对象会不断的调用<code>loop()</code> 方法不断从 <code>MessageQueue</code> 中取出 <code>Message</code> 交给 <code>Handler</code>进行处理。</p>
+<h2 id="Android内存泄露"><a href="#Android内存泄露" class="headerlink" title="Android内存泄露"></a>Android内存泄露</h2><ol>
+<li><p>内存泄漏跟内存溢出的区别：</p>
+<ul>
+<li>内存泄漏：指程序在申请内存后，无法释放已经申请的内存空间</li>
+<li>内存溢出：指程序在申请内存时，没有足够的内存空间供其使用</li>
+</ul>
+</li>
+<li><p>内存泄漏的原因：</p>
+<ul>
+<li><p>Handler引起的内存泄漏：</p>
+<p>将Handler声明为静态内部类，就不会持有外部类的引用，其生命周期就跟外部类无关。如果Handler内部要使用Context，则可以使用弱引用的方式。</p>
+</li>
+<li><p>单例模式引起的内存泄漏：</p>
+<p>Context是ApplicationCotnext，ApplicationCotnext的生命周期与app一致，不会导致内存泄漏.</p>
+</li>
+<li><p>非静态内部类创建实例引起的：</p>
+<p>创建为静态实例</p>
+</li>
+<li><p>非静态匿名内部类引起的：</p>
+<p>将匿名内部类修改为静态的</p>
+</li>
+<li><p>注册/反注册未成对使用引起的内存泄漏</p>
+<p>注册广播接受器、EventBus等，记得解绑</p>
+</li>
+<li><p>资源对象没有关闭引起的内存泄漏</p>
+<p>在这些资源不使用的时候，记得调用相应的类似close()、destroy()、recycler()、release()等方法释放</p>
+</li>
+<li><p>集合对象没有及时清理引起的内存泄漏</p>
+<p>通常会把一些对象装入到集合中，当不使用的时候一定要记得及时清理集合，让相关对象不再被引用</p>
+</li>
+</ul>
+</li>
+<li><p>内存泄漏检测：LeakCanary</p>
+</li>
+</ol>
+<h2 id="ANR"><a href="#ANR" class="headerlink" title="ANR"></a>ANR</h2><p>ANR全名”Application not responding”，即应用无响应。产生的原因：</p>
+<ul>
+<li>5s内无法响应用户输入事件</li>
+<li>广播在10s内无法结束</li>
+<li>Service在20s内无法结束</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="ZhangMiao 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="ZhangMiao 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/c4ef6275.html" rel="next" title="android和java泛型扫盲">
+                <i class="fa fa-chevron-left"></i> android和java泛型扫盲
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/6114f592.html" rel="prev" title="Flutter入门指南(一)Dart">
+                Flutter入门指南(一)Dart <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4" alt="ZhangMiao">
+            
+              <p class="site-author-name" itemprop="name">ZhangMiao</p>
+              <p class="site-description motion-element" itemprop="description">Learn and live.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">187</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zm@zhangmiao.cc" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://wpa.qq.com/msgrd?v=3&uin=153942241&site=qq&menu=yes" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhangmiaocc" target="_blank" title="Github">
+                      
+                        <i class="fa fa-fw fa-github"></i>Github</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://zhangmiao.cc" title="Zhangmiao" target="_blank">Zhangmiao</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://xuebin.me" title="Leo" target="_blank">Leo</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://jspang.com/" title="Jspang" target="_blank">Jspang</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blankj.com/" title="Blankj" target="_blank">Blankj</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://wuxiaolong.me/" title="WuXiaoLong" target="_blank">WuXiaoLong</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://molunerfinn.com" title="Molunerfinn" target="_blank">Molunerfinn</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://zhanghongyang.com" title="Hongyang" target="_blank">Hongyang</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://liuwangshu.cn/" title="Liuwangshu" target="_blank">Liuwangshu</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://liuxsen.github.io" title="Liuxen" target="_blank">Liuxen</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.ofind.cn/" title="Ofind" target="_blank">Ofind</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.gcssloop.com/" title="Gcssloop" target="_blank">Gcssloop</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#广播"><span class="nav-number">1.</span> <span class="nav-text">广播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务"><span class="nav-number">2.</span> <span class="nav-text">服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IntentService"><span class="nav-number">3.</span> <span class="nav-text">IntentService</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Activity的启动模式"><span class="nav-number">4.</span> <span class="nav-text">Activity的启动模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Activity的启动过程"><span class="nav-number">5.</span> <span class="nav-text">Activity的启动过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Context"><span class="nav-number">6.</span> <span class="nav-text">Context</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Activity、Window、View三者之间的关系"><span class="nav-number">7.</span> <span class="nav-text">Activity、Window、View三者之间的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View的绘制流程"><span class="nav-number">8.</span> <span class="nav-text">View的绘制流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View、ViewGroup事件分发"><span class="nav-number">9.</span> <span class="nav-text">View、ViewGroup事件分发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Handler实现原理"><span class="nav-number">10.</span> <span class="nav-text">Handler实现原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android内存泄露"><span class="nav-number">11.</span> <span class="nav-text">Android内存泄露</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ANR"><span class="nav-number">12.</span> <span class="nav-text">ANR</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZhangMiao</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://zhangmiao.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/posts/e9998381.html';
+          this.page.identifier = 'posts/e9998381.html';
+          this.page.title = 'Android面试笔记';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://zhangmiao.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("8iIYW0IGofqyvJiiuU5R9buW-gzGzoHsz", "ssmxRx0kELJir6mA02ziW3Ql");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/lib/zclip/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/custom.js"></script>
+
+</body>
+</html>
