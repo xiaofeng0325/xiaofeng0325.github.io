@@ -430,9 +430,9 @@
 
       
         
-          
-          
-          
+          <p>前面的小节把常用的一些部件都介绍了，这节介绍下 <code>Flutter</code> 中的一些操作提示。<code>Flutter</code> 中的操作提示主要有这么几种 <code>SnackBar</code>、<code>BottomSheet</code>、<code>Dialog</code>，因为 <code>Dialog</code> 样式比较多，放最后讲好了</p>
+<h4 id="SnackBar"><a href="#SnackBar" class="headerlink" title="SnackBar"></a>SnackBar</h4><p><code>SnackBar</code> 的源码相对简单</p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> SnackBar(&#123;</span><br><span class="line">    Key key,</span><br><span class="line">    <span class="meta">@required</span> <span class="keyword">this</span>.content, <span class="comment">// 提示信息</span></span><br><span class="line">    <span class="keyword">this</span>.backgroundColor, <span class="comment">// 背景色</span></span><br><span class="line">    <span class="keyword">this</span>.action, <span class="comment">// SnackBar 尾部的按钮，用于一些回退操作等</span></span><br><span class="line">    <span class="keyword">this</span>.duration = _kSnackBarDisplayDuration, <span class="comment">// 停留的时长，默认 4000ms</span></span><br><span class="line">    <span class="keyword">this</span>.animation, <span class="comment">// 进出动画</span></span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/posts/5da6faeb.html#more" rel="contents">
@@ -610,11 +610,11 @@
 
       
         
-          
-          上节最后留了个坑到这节来解决，因为涉及部件比较多，所以留到这边来继续讲，不然写太多了怕小伙伴看不下去
-在上节最后，给小伙伴们展示了 SliveGrid 和 SliverFixedExtentList 的用法，基本上和 GridView 和 ListView 的用法差不多，所以这边就不多讲这两个部件了。
-SliverAppBar相信很多 Android 开发的小伙伴会用到 MaterialDesign 的 CollapsingToolbarLayout 来实现折叠头部，既然 Android 有的，那么 Flutter 也不会少，毕竟 Flutter 主打的也是 MaterialDesign 啊。
-          ...
+          <p>上节最后留了个坑到这节来解决，因为涉及部件比较多，所以留到这边来继续讲，不然写太多了怕小伙伴看不下去</p>
+<p>在上节最后，给小伙伴们展示了 SliveGrid 和 SliverFixedExtentList 的用法，基本上和 GridView 和 ListView 的用法差不多，所以这边就不多讲这两个部件了。</p>
+<h3 id="SliverAppBar"><a href="#SliverAppBar" class="headerlink" title="SliverAppBar"></a>SliverAppBar</h3><p>相信很多 Android 开发的小伙伴会用到 MaterialDesign 的 CollapsingToolbarLayout 来实现折叠头部，既然 Android 有的，那么 Flutter 也不会少，毕竟 Flutter 主打的也是 MaterialDesign 啊。首先看下 SliverAppBar 的源码吧，其实和 AppBar 的参数差不多，只是多了一些比较特殊的属性</p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> SliverAppBar(&#123;</span><br><span class="line">Key key,</span><br><span class="line"><span class="keyword">this</span>.leading,</span><br><span class="line"><span class="keyword">this</span>.automaticallyImplyLeading = <span class="keyword">true</span>,</span><br><span class="line"><span class="keyword">this</span>.title,</span><br><span class="line"><span class="keyword">this</span>.actions,</span><br><span class="line"><span class="keyword">this</span>.flexibleSpace, <span class="comment">// 通过这个来设置背景</span></span><br><span class="line"><span class="keyword">this</span>.bottom,</span><br><span class="line"><span class="keyword">this</span>.elevation,</span><br><span class="line"><span class="keyword">this</span>.forceElevated = <span class="keyword">false</span>, <span class="comment">// 是否显示层次感</span></span><br><span class="line"><span class="keyword">this</span>.backgroundColor,</span><br><span class="line"><span class="keyword">this</span>.brightness,</span><br><span class="line"><span class="keyword">this</span>.iconTheme,</span><br><span class="line"><span class="keyword">this</span>.textTheme,</span><br><span class="line"><span class="keyword">this</span>.primary = <span class="keyword">true</span>,</span><br><span class="line"><span class="keyword">this</span>.centerTitle,</span><br><span class="line"><span class="keyword">this</span>.titleSpacing = NavigationToolbar.kMiddleSpacing,</span><br><span class="line"><span class="keyword">this</span>.expandedHeight, <span class="comment">// 展开的高度</span></span><br><span class="line"><span class="comment">// 以下三个等例子再讲</span></span><br><span class="line"><span class="keyword">this</span>.floating = <span class="keyword">false</span>,</span><br><span class="line"><span class="keyword">this</span>.pinned = <span class="keyword">false</span>,</span><br><span class="line"><span class="keyword">this</span>.snap = <span class="keyword">false</span>,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>别的参数应该不陌生吧，都是 AppBar 的，那么直接来看个例子吧，还是通过上节说的 CustomScrollView 来包裹 Sliver 部件</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/posts/f600e8a7.html#more" rel="contents">
