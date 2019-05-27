@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527154815.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527154907.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/2888797-c604f0a652d1c172.gif">
-<meta property="og:updated_time" content="2019-05-27T07:50:31.602Z">
+<meta property="og:updated_time" content="2019-05-27T08:01:52.234Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flutter与Android的交互">
 <meta name="twitter:description" content="Flutter 说到底只是一个 UI 框架，很多功能都需要通过原生的 Api 来实现，那么就会涉及到 Flutter 和 Native 的交互，因为本人不懂 iOS 开发，所以只能讲下 Flutter 同 Android 的交互。 Android 项目配置 Flutter 依赖既然是互相交互，那么需要准备一个 Android 项目。接着就需要创建 flutter module，让 Android">
@@ -438,6 +438,7 @@
 <p>如果你用的是 Android Studio 进行开发的话，直接打开底部的 Terminal，直接创建 flutter module 依赖</p>
 <p><code>flutter create -t module flutter_native_contact</code> 至于 module 名可以随意填写，module 创建完后结构大概是这样的</p>
 <p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527154756.png" alt=""></p>
+<a id="more"></a>
 <p>接着切换到 module 下的 .android 文件夹，接着有坑来了，官网提供的方法是 <code>./gradlew flutter:assembleDebug</code> 可能会提示命令不存在，那么直接通过 <code>gradlew flutter:assembleDebug</code> 来运行，等它自动跑完后，打开根目录下的 <code>settings.gradle</code> 文件，加入官网提供的 gradle 代码</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">setBinding(<span class="keyword">new</span> Binding([gradle: <span class="keyword">this</span>]))                                 <span class="comment">// new</span></span><br><span class="line">evaluate(<span class="keyword">new</span> File(                                                      <span class="comment">// new</span></span><br><span class="line">  settingsDir.parentFile,                                               <span class="comment">// new</span></span><br><span class="line">  <span class="string">'flutter_native_contact/.android/include_flutter.groovy'</span>              <span class="comment">// new</span></span><br><span class="line">))                                                                      <span class="comment">// new</span></span><br></pre></td></tr></table></figure>
 <p>你以为这里没坑，真是图样图森破，没坑是不可能的，编译器大爷可能会给你甩这么个错误</p>
@@ -566,6 +567,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/posts/b7213cdb.html" rel="prev" title="FlutterPlugin开发流程">
+                FlutterPlugin开发流程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -653,7 +658,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">196</span>
+                  <span class="site-state-item-count">197</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
