@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="前端,JavaScript,">
+  <meta name="keywords" content="Android,Flutter,">
 
 
 
@@ -81,18 +81,24 @@
 
 
 
-<meta name="description" content="JS中DOM盒子模型深入分析CSS盒子模型传统盒子模型width height:不是盒子的宽高，而是盒子中的内容 盒子的宽度=width+border2+padding2//在一个对称的模型中 CSS3新增加的盒子模型增加该属性，width和height的数值就是盒子的宽高； box-sizing:border-box;">
-<meta name="keywords" content="前端,JavaScript">
+<meta name="description" content="前面讲完了常用的部件，BLoC 模式，数据持久化等常用的，今天再介绍个重头戏 —— 网络请求 HttpClientHttpClient 是 dart 自带的网络请求方式，在 dart:io 包下。使用 HttpClient 作为请求分以下几个步骤  创建 HttpClient 实例 HttpClient client = HttpClient();  打开连接，并设置一些头参数，请求参数等 //">
+<meta name="keywords" content="Android,Flutter">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS基础（八）盒子模型">
-<meta property="og:url" content="http://yoursite.com/posts/ba5b0d45.html">
+<meta property="og:title" content="Flutter入门指南之网络">
+<meta property="og:url" content="http://yoursite.com/posts/d9e32c9b.html">
 <meta property="og:site_name" content="zm.blog">
-<meta property="og:description" content="JS中DOM盒子模型深入分析CSS盒子模型传统盒子模型width height:不是盒子的宽高，而是盒子中的内容 盒子的宽度=width+border2+padding2//在一个对称的模型中 CSS3新增加的盒子模型增加该属性，width和height的数值就是盒子的宽高； box-sizing:border-box;">
+<meta property="og:description" content="前面讲完了常用的部件，BLoC 模式，数据持久化等常用的，今天再介绍个重头戏 —— 网络请求 HttpClientHttpClient 是 dart 自带的网络请求方式，在 dart:io 包下。使用 HttpClient 作为请求分以下几个步骤  创建 HttpClient 实例 HttpClient client = HttpClient();  打开连接，并设置一些头参数，请求参数等 //">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-16T07:44:23.995Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/2888797-1042230799d843a8.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527152811.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527152843.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527152854.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/2888797-cbe4a21cc6b3b828.gif">
+<meta property="og:updated_time" content="2019-05-27T07:30:00.352Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS基础（八）盒子模型">
-<meta name="twitter:description" content="JS中DOM盒子模型深入分析CSS盒子模型传统盒子模型width height:不是盒子的宽高，而是盒子中的内容 盒子的宽度=width+border2+padding2//在一个对称的模型中 CSS3新增加的盒子模型增加该属性，width和height的数值就是盒子的宽高； box-sizing:border-box;">
+<meta name="twitter:title" content="Flutter入门指南之网络">
+<meta name="twitter:description" content="前面讲完了常用的部件，BLoC 模式，数据持久化等常用的，今天再介绍个重头戏 —— 网络请求 HttpClientHttpClient 是 dart 自带的网络请求方式，在 dart:io 包下。使用 HttpClient 作为请求分以下几个步骤  创建 HttpClient 实例 HttpClient client = HttpClient();  打开连接，并设置一些头参数，请求参数等 //">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/2888797-1042230799d843a8.gif">
 
 
 
@@ -122,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/posts/ba5b0d45.html">
+  <link rel="canonical" href="http://yoursite.com/posts/d9e32c9b.html">
 
 
 
 
 
-  <title>JS基础（八）盒子模型 | zm.blog</title>
+  <title>Flutter入门指南之网络 | zm.blog</title>
   
 
 
@@ -307,7 +313,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/ba5b0d45.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/d9e32c9b.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -324,7 +330,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JS基础（八）盒子模型</h1>
+          <h1 class="post-title" itemprop="name headline">Flutter入门指南之网络</h1>
         
 
         <div class="post-meta">
@@ -336,8 +342,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-20T14:13:47+08:00">
-                2019-03-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-28T15:24:59+08:00">
+                2019-04-28
               </time>
             
 
@@ -359,8 +365,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -370,8 +376,8 @@
                 
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/Android/Flutter/" itemprop="url" rel="index">
+                    <span itemprop="name">Flutter</span>
                   </a>
                 </span>
 
@@ -388,8 +394,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/ba5b0d45.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/ba5b0d45.html" itemprop="commentCount"></span>
+                <a href="/posts/d9e32c9b.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/d9e32c9b.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -397,7 +403,7 @@
 
           
           
-             <span id="/posts/ba5b0d45.html" class="leancloud_visitors" data-flag-title="JS基础（八）盒子模型">
+             <span id="/posts/d9e32c9b.html" class="leancloud_visitors" data-flag-title="Flutter入门指南之网络">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -428,102 +434,53 @@
       
 
       
-        <h3 id="JS中DOM盒子模型深入分析"><a href="#JS中DOM盒子模型深入分析" class="headerlink" title="JS中DOM盒子模型深入分析"></a>JS中DOM盒子模型深入分析</h3><h3 id="CSS盒子模型"><a href="#CSS盒子模型" class="headerlink" title="CSS盒子模型"></a>CSS盒子模型</h3><h4 id="传统盒子模型"><a href="#传统盒子模型" class="headerlink" title="传统盒子模型"></a>传统盒子模型</h4><p>width height:不是盒子的宽高，而是盒子中的内容</p>
-<p>盒子的宽度=width+border<em>2+padding</em>2//在一个对称的模型中</p>
-<h4 id="CSS3新增加的盒子模型"><a href="#CSS3新增加的盒子模型" class="headerlink" title="CSS3新增加的盒子模型"></a>CSS3新增加的盒子模型</h4><p>增加该属性，width和height的数值就是盒子的宽高；</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">box-sizing</span><span class="selector-pseudo">:border-box</span>;</span><br></pre></td></tr></table></figure>
+        <p>前面讲完了常用的部件，<code>BLoC</code> 模式，数据持久化等常用的，今天再介绍个重头戏 —— 网络请求</p>
+<h4 id="HttpClient"><a href="#HttpClient" class="headerlink" title="HttpClient"></a>HttpClient</h4><p><code>HttpClient</code> 是 <code>dart</code> 自带的网络请求方式，在 <code>dart:io</code> 包下。使用 <code>HttpClient</code> 作为请求分以下几个步骤</p>
+<ol>
+<li><p>创建 HttpClient 实例</p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">HttpClient client = HttpClient();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开连接，并设置一些头参数，请求参数等</p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 如果 url 中没有查询参数可直接创建</span></span><br><span class="line"><span class="built_in">Uri</span> uri = <span class="built_in">Uri</span>.parse(<span class="string">'https://www.xxx.com'</span>);</span><br><span class="line"><span class="comment">// 如果存在查询参数则在 Uri 中添加</span></span><br><span class="line"><span class="built_in">Uri</span> uri = <span class="built_in">Uri</span>(scheme: <span class="string">'https'</span>, host: <span class="string">'www.xxx.com'</span>, queryParameters: &#123;<span class="string">'a'</span>: <span class="string">'AAA'</span>&#125;);</span><br><span class="line"><span class="comment">// 打开连接</span></span><br><span class="line">HttpClientRequest request = <span class="keyword">await</span> client.getUrl(uri);</span><br><span class="line">request.headers.add(<span class="string">'token'</span>, <span class="string">'Bear <span class="subst">$&#123;<span class="string">'x'</span> * <span class="number">20</span>&#125;</span>'</span>); <span class="comment">// 添加头部 token 信息</span></span><br><span class="line"><span class="comment">// 如果是 post 或者 put 请求，通过 `add` 添加请求体</span></span><br><span class="line"><span class="comment">// 因为 `add` 方法需要传入 `List&lt;int&gt;` 参数，可以通过 utf8.encode 进行编码</span></span><br><span class="line">request.add(utf8.encode(<span class="string">'&#123;"a": "aaa"&#125;'</span>));</span><br><span class="line"><span class="comment">// 也可以通过添加流的方式进行添加</span></span><br><span class="line">request.addStream(input);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>连接服务器</p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 设置 request 后通过 request.close() 获取一个响应对象 HttpClientResponse，</span></span><br><span class="line"><span class="comment">// 包括响应头，响应内容等</span></span><br><span class="line">HttpClientResponse response = <span class="keyword">await</span> request.close();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>读取服务器响应内容</p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="built_in">String</span> responseBody = <span class="keyword">await</span> response.transform(utf8.decoder).join();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关闭实例</p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">client.close();</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 <a id="more"></a>
-<h4 id="JS盒子模型"><a href="#JS盒子模型" class="headerlink" title="JS盒子模型"></a>JS盒子模型</h4><blockquote>
-<p>提供一些属性和方法用来描述盒子的样式的</p>
-</blockquote>
-<h5 id="client"><a href="#client" class="headerlink" title="client"></a>client</h5><p><code>clientWidth / clientHeight</code></p>
-<blockquote>
-<p>当前盒子可视区域的宽度和高度<br>可视区域：内容的宽高+padding*2<br>clientHeight=height+padding(top&amp;&amp;bottom)<br>clientWidth=height+padding(left&amp;&amp;right)<br>和内容是否溢出和我们是否设置了overflow:hidden没有关系</p>
-</blockquote>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">document.documentElement.clientWidth||document.body.clientHight</span><br></pre></td></tr></table></figure>
-<p>//获取当前页面一屏幕的宽度</p>
-<blockquote>
-<p>在不知盒子宽高的情况下，让盒子居中</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> winH=<span class="built_in">document</span>.documentElement.clientHeight||<span class="built_in">document</span>.body.clientHeight;</span><br><span class="line"><span class="keyword">var</span> winW=<span class="built_in">document</span>.documentElement.clientWigth||<span class="built_in">document</span>.body.clientWigth;</span><br><span class="line"><span class="keyword">var</span> boxW=box.clientWidth;</span><br><span class="line"><span class="keyword">var</span> boxH=box.clientHeight;</span><br><span class="line">box.style.left=(winW-boxW)/<span class="number">2</span>+<span class="string">'px'</span>;</span><br><span class="line">box.style.top=(winH-boxH)/<span class="number">2</span>+<span class="string">'px'</span>;</span><br></pre></td></tr></table></figure>
-<p><code>clientTop 和 clientLeft</code></p>
-<blockquote>
-<p>只有top和left，没有其他的<br>clientTop：盒子上边框的高度<br>clientLeft：盒子左边框的宽度<br><code>通过JS盒子模型获取的结果是不带单位的，而且只能是整数</code>，（他会自动四舍五入）</p>
-</blockquote>
-<h5 id="offset"><a href="#offset" class="headerlink" title="offset"></a>offset</h5><p><code>offsetWidth 和 offsetHeight</code></p>
-<blockquote>
-<p>在clientHeight和clientWidth的基础上加上了边框的长度；<br>offsetWidth=clientWidth+左右边框(border)<br>offsetHight=clienthight+上下边框<br>真实项目中，如果想要得到盒子的宽度和高度一般都用offsetWidth和offsetHeight，这样就包含了盒子的边框</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> winH=<span class="built_in">document</span>.documentElement.offsetHeight||<span class="built_in">document</span>.bodyElement.offsetHeight;</span><br><span class="line"><span class="keyword">var</span> winW=<span class="built_in">document</span>.documentElement.offsetWigth||<span class="built_in">document</span>.bodyElement.offsetclientWigth;</span><br><span class="line"><span class="keyword">var</span> boxW=box.offsetWidth;</span><br><span class="line"><span class="keyword">var</span> boxH=box.offsetHeight;</span><br><span class="line">box.style.left=(winW-boxW)/<span class="number">2</span>+<span class="string">'px'</span>;</span><br><span class="line">box.style.top=(winH-boxH)/<span class="number">2</span>+<span class="string">'px'</span>;</span><br></pre></td></tr></table></figure>
-<p><code>offssetParent</code></p>
-<blockquote>
-<p>当前和盒子的父级参照物（得到父级参照物元素）</p>
-</blockquote>
-<p>父级参照物不等价于父级元素，与父级元素没有直接关系<br>父级参照物：同一平面中最外层容器是所有里层盒子的父级参照物<br>一般情况下，一个页面所有元素的父级参照物都是body，body没有父级参照物；</p>
-<blockquote>
-</blockquote>
-<p>当我们给元素设置定位（会让元素脱离文档流）的时候，会改变父级参照物（不在一个平面上）</p>
-<blockquote>
-</blockquote>
-<p>offsetTop&amp;offsetLeft:<br>当前元素外边框距离父级参照物的内边框的偏移量<br>（标准IE8浏览器特殊性： 当前元素最外边框距离父级参照物的外边框的偏移里量 ）<br>window.navigator.userAgent 获取浏览器的版本号</p>
-<p><strong>获取页面中任何一个元素距离body的左偏移和上偏移，不知道该元素的具体位置。</strong><br>思路：</p>
-<blockquote>
-<p>首先获取自己的偏移量及父级参照物<br>如果父级参照物不是body，我们加上父级参照物的边框和偏移量。。。一直加到父级参照物为body的元素为止</p>
-</blockquote>
-<h5 id="scroll"><a href="#scroll" class="headerlink" title="scroll"></a>scroll</h5><p><code>scrollHeight &amp;&amp; scrollWidth</code></p>
-<blockquote>
-<p>没有内容溢出：获取的结果和clientWidth、clientHeight的结果相同；<br>有内容溢出：真实内容的宽度或高度，包含溢出内容的值，再加上padding或左padding的值<br>scrollWidth&amp;&amp;scrollHeight获取的是约等于的值<br>由于内容溢出，每个浏览器对于行高或文字的渲染不一样，回去的结果也不一样<br>是否设置overflow：hidden对最后的结果也有影响</p>
-</blockquote>
-<p>获取当前页面的真实高度（包含溢出）</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">document.documentElement.scrollWidth||document.body.scrollHight</span><br></pre></td></tr></table></figure>
-<p><code>scrollLeft &amp;&amp; scrollTop</code></p>
-<p>横向或竖向滚动条卷去的宽度或高度<br>(在拉动滚动条时，上面的内容会被卷去，就是scrollTop)</p>
-<ul>
-<li>最小值：0</li>
-<li>最大值：scrollHight-clientHight:真实页面高度-一屏幕的高度</li>
-<li>前面的JS盒子模型的属性都是<code>只读属性</code>，只能获取，不能修改；而<code>scrollTop&amp;&amp;scrollLeft</code>是<code>可读写属性</code>，既可以获取，也可以修改；</li>
-</ul>
-<h4 id="window-onscroll"><a href="#window-onscroll" class="headerlink" title="window.onscroll"></a>window.onscroll</h4><p>window.onscroll:浏览器滚动条滚动事件（只要滚动就会触发该事件）</p>
-<p>* 1、鼠标滚轮控制 或者 手动拖动滚动条</p>
-<p>* 2、键盘按键控制</p>
-<p>* 3、使用JS代码控制</p>
-<p>* …</p>
-<p>* 不管什么方式,只要滚动条动了就会触发这个事件</p>
-<h3 id="在JS中获取元素的具体的样式值"><a href="#在JS中获取元素的具体的样式值" class="headerlink" title="在JS中获取元素的具体的样式值"></a>在JS中获取元素的具体的样式值</h3><blockquote>
-<p>通过JS盒子模型12个属性（不包含offsetParent）获取的结果都是整数，没有单位，如果有小数，浏览器会自动四舍五入<br>通过JS盒子模型 属性获得的值都是组合值，不能单独获取某一个具体样式值</p>
-</blockquote>
-<h4 id="curEle-style-xxx"><a href="#curEle-style-xxx" class="headerlink" title="curEle.style.xxx;"></a><strong>curEle.style.xxx;</strong></h4><blockquote>
-<p>获取当前元素所有写在<strong>行内样式</strong>上的样式值(如果样式没有设置在行内元素上 得到空字符串)<br>特殊：只有把样式写在行内样式上，才可以通过这种方法获取到=》这种方法在真实项目中比较少见，因为我们很少在行内样式上写样式</p>
-</blockquote>
-<p><code>window.getComputedStyle &amp;&amp; curEle.currentStyle</code></p>
-<blockquote>
-<p>只要当前元素在页面中显示出来，我们就可以获得其样式值（不管是行内还是样式表），也就是获取所有经过浏览器计算过的值，包括你没有写浏览器默认设置的值。<br>window.getComputedStyle:适用于标准浏览器，IE6-8不兼容，在IE6-8的Window全局对象中，没有提供getComputedStyle这个属性和方法，我们使用curEle.currentStyle来获取需要的样式值</p>
-</blockquote>
-<p>//通过getComputedStyle获得的结果是一个对象,包含当前元素所有的样式属性和属性值</p>
-<blockquote>
-<p>语法：window.getComputedStyle([当前需要操作的元素],[当前元素的伪类，一般写null])<br>window.getComputedStyle(box,null).paddingleft;</p>
-</blockquote>
-<p>//通过 curEle.currentStyle来获取样式<br>box.currentStyle.paddingleft;</p>
-<blockquote>
-<p>封装一个公共的方法：getCss</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//getCSS：获取当前元素某一个样式的属性值</span></span><br><span class="line"><span class="comment">//@parameter curEle:当前需要操作的元素</span></span><br><span class="line"><span class="comment">//attr:要获取样式的属性名</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCss</span>(<span class="params">curEle,attr</span>)</span>&#123;</span><br><span class="line"><span class="keyword">var</span> value=<span class="literal">null</span>;</span><br><span class="line"><span class="keyword">var</span> reg=<span class="literal">null</span>;</span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">value=<span class="built_in">window</span>.getComputedStyle(cueEle,<span class="literal">null</span>)[attr];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span>(e)&#123;</span><br><span class="line">value=curEle.currentStyle</span><br><span class="line">&#125;</span><br><span class="line">reg=<span class="regexp">/^-?\d+(\.\d+)?(px|pt|em|rem)?$/i</span>;<span class="comment">//去除单位</span></span><br><span class="line">reg.test(value)?value=<span class="built_in">parseFloat</span>(value):<span class="literal">null</span>;</span><br><span class="line"><span class="keyword">return</span> value;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(getCss(box,<span class="string">'display'</span>));</span><br></pre></td></tr></table></figure>
-<p>方法二：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCss</span>(<span class="params">curEle, attr</span>) </span>&#123;</span><br><span class="line"><span class="keyword">var</span> value = <span class="literal">null</span>,</span><br><span class="line">reg = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="string">'getComputedStyle'</span> <span class="keyword">in</span> <span class="built_in">window</span>) &#123;</span><br><span class="line">value = <span class="built_in">window</span>.getComputedStyle(curEle, <span class="literal">null</span>)[attr];</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">value = curEle.currentStyle[attr];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//=&gt;去除单位</span></span><br><span class="line">reg = <span class="regexp">/^-?\d+(\.\d+)?(px|pt|rem|em)?$/i</span>;</span><br><span class="line">reg.test(value) ? value = <span class="built_in">parseFloat</span>(value) : <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">return</span> value;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(getCss(box, <span class="string">'display'</span>));</span><br></pre></td></tr></table></figure>
-<h4 id="设置元素的样式"><a href="#设置元素的样式" class="headerlink" title="设置元素的样式"></a>设置元素的样式</h4><blockquote>
-<p>curEle.style.xx=xxx;设置当前元素的行内样式；（<code>JS设置样式一般都设置在行内样式上，因为行内样式优先级最大</code>）（JS操作属性不支持-，所有-改成下一个单词大写）<br>curEle.className=xxx;设置元素的样式类名；</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">curEle[<span class="string">'style'</span>][attr]=value;</span><br><span class="line"><span class="comment">//传递value值，如果没有单位，需要补单位</span></span><br><span class="line"><span class="comment">//并不是所有的值都需要补单位，</span></span><br><span class="line"><span class="comment">//传递的值带单位，不需要不单位</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span>(attr===<span class="string">'opacity'</span>)&#123;</span><br><span class="line">curEle.style.opacity=value;</span><br><span class="line">curEle.style.filter=<span class="string">'alpha(opacity='</span>+value*<span class="number">100</span>%<span class="string">');</span></span><br><span class="line"><span class="string">&#125; !isNaN(value)&amp;&amp;!/^(zoom|lineHeight|zIndex|fontWeight)$/i.test(value)?value+='</span>px<span class="string">':null;</span></span><br><span class="line"><span class="string">curEle['</span>style<span class="string">'][attr]=value;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">setCss(box,'</span>padding<span class="string">','</span><span class="number">20</span>px<span class="string">');</span></span><br><span class="line"><span class="string">将3个方法封装在一个里面</span></span><br><span class="line"><span class="string">var css = function () &#123;</span></span><br><span class="line"><span class="string">var len = arguments.length,</span></span><br><span class="line"><span class="string">type = Object.prototype.toString.call(arguments[1]),</span></span><br><span class="line"><span class="string">fn = getCss;</span></span><br><span class="line"><span class="string">len &gt;= 3 ? fn = setCss : (len === 2 &amp;&amp; type === '</span>[object <span class="built_in">Object</span>]<span class="string">' ? fn = setGroupCss : null);</span></span><br><span class="line"><span class="string">return fn.apply(this, arguments);</span></span><br><span class="line"><span class="string">&#125;;</span></span><br></pre></td></tr></table></figure>
-<p><strong>children</strong></p>
-<p>不管在什么浏览器中，都可以获得当前元素的子节点,（元素节点）<br>但在IE6-8下，也会将注释节点获取到，因此有所差别</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">children</span>(<span class="params">curEle</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>编程常用方法：假设法 排除法</strong></p>
-<h4 id="JS中的动画"><a href="#JS中的动画" class="headerlink" title="JS中的动画"></a>JS中的动画</h4><blockquote>
-<p>1、步长偿固定，完成时间不固定<br>2、固定时间动画</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">linear</span>(<span class="params">t, b, c, d</span>) </span>&#123;</span><br><span class="line"><span class="keyword">return</span> t / d * c + b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> oBox = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</span><br><span class="line"><span class="keyword">var</span> time = <span class="number">0</span>,<span class="comment">//已经运动的时间</span></span><br><span class="line">duration = <span class="number">1000</span>,<span class="comment">//总时间</span></span><br><span class="line">begin = utils.css(oBox, <span class="string">'left'</span>),<span class="comment">//左边距</span></span><br><span class="line">target = utils.winBox(<span class="string">'clientWidth'</span>) - oBox.offsetWidth,<span class="comment">//目的地</span></span><br><span class="line">change = target - begin;<span class="comment">//总共需要走的距离</span></span><br><span class="line"><span class="keyword">var</span> timer = setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">time += <span class="number">17</span>;</span><br><span class="line"><span class="keyword">if</span> (time &gt;= duration) &#123;</span><br><span class="line">utils.css(oBox, <span class="string">'left'</span>, target);</span><br><span class="line">clearInterval(timer);</span><br><span class="line"><span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> curL = linear(time, begin, change, duration);</span><br><span class="line">utils.css(oBox, <span class="string">'left'</span>, curL);</span><br><span class="line">&#125;, <span class="number">17</span>);</span><br></pre></td></tr></table></figure>
-<h4 id="图片懒加载原理："><a href="#图片懒加载原理：" class="headerlink" title="图片懒加载原理："></a>图片懒加载原理：</h4><p>1、IMG标签的SRC不存放图片的地址(如果存放真实的地址,页面一加载图片肯定就加载出来了),我们把真实图片的地址存储在当前IMG标签的自定义属性上(DATA-IMG)<br>2、为了保证当前图片没有真实地址的时候,浏览器中不会出现叉叉或者出现ALT中的内容,我们一般都会把图片先隐藏(display:none opacity:0…)，等到后期把真实图片加载出来，在让当前图片展示<br>3、看不到真实图片了，我们最好给一个占位图片（占位图：要求一定要很小,最好是1KB）：我们在IMG外面包一层DIV盒子,把占位图赋值给当前盒子的背景图片来处理</p>
-<p>=&gt;开始IMG不显示,展示的是默认的背景图,当IMG真实地址加载完成后,我们让IMG显示,此时真实图片会覆盖住背景图</p>
+<p>例如我们要去请求 <code>Bird.so</code> 的首页并显示，我们可以这么实现</p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">_httpClientRequest() <span class="keyword">async</span> &#123;</span><br><span class="line">    HttpClient client;</span><br><span class="line">    <span class="comment">// try catch finally 用于捕获请求过程中发生的异常，在 finally 中设置保证 client 能够关闭</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      client = HttpClient();</span><br><span class="line">      HttpClientRequest request = <span class="keyword">await</span> client.getUrl(<span class="built_in">Uri</span>.parse(_BIRD_SO_URL));</span><br><span class="line">      HttpClientResponse response = <span class="keyword">await</span> request.close();</span><br><span class="line">      <span class="built_in">String</span> strResponse = <span class="keyword">await</span> response.transform(utf8.decoder).join();</span><br><span class="line">      setState(() =&gt; _netBack = strResponse);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="built_in">print</span>(<span class="string">'<span class="subst">$&#123;e.toString()&#125;</span>'</span>);</span><br><span class="line">      setState(() =&gt; _netBack = <span class="string">'Fail'</span>);</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">      client.close();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>最后实现的效果</p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/2888797-1042230799d843a8.gif" alt=""></p>
+<p>很显然，用 <code>HttpClient</code> 请求相对来说是个非常麻烦的过程，如果要涉及到文本上传之类的，那么就会更麻烦了，所以这边引入一个网络请求的插件 <code>dio</code>，写本文的时候版本为 <code>2.1.0</code></p>
+<h4 id="Dio"><a href="#Dio" class="headerlink" title="Dio"></a>Dio</h4><p>dio 是个非常强大的网络请求库，他的方式类似 <code>OkHttp</code>，我们可以直接查看<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fflutterchina%2Fdio%2Fblob%2Fmaster%2FREADME-ZH.md" target="_blank" rel="noopener">官方文档</a>，使用方式非常简单，创建一个 <code>Dio</code> 实例，然后就可以通过 <code>get</code>，<code>post</code> 等方式发起请求，返回 <code>Future&lt;Response&gt;</code>，而且支持多个并发请求，可以设置返回响应的类型，监听上传下载进度等等，看着就很给力。对于简单的方式，这边就不做太多介绍，主要讲下拦截器，也是非常给力的一部分。比如我们需要请求这么个接口 <code>https://randomuser.me/api/</code></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527152811.png" alt=""></p>
+<p>这个接口通过 <code>get</code> 请求，可以加入任意的查询参数。比如我们需要实现一个请求加解密的过程，如果每次都在上传参数或者返回请求的时候去加密，解密的话，就做了非常多无用功了，那么这时候拦截器就派上用场了。先定义下加解密的规则，上传的参数统一转为小写，不存在大写，请求回的数据，不能含有 <code>info</code> 字段。看下如何实现</p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">_dioRequest() <span class="keyword">async</span> &#123;</span><br><span class="line">    BaseOptions options = BaseOptions(connectTimeout: <span class="number">5000</span>, receiveTimeout: <span class="number">60000</span>);</span><br><span class="line">    Dio dio = Dio(options);</span><br><span class="line">    </span><br><span class="line">    dio.interceptors.add(InterceptorsWrapper(onRequest: (opt) &#123;</span><br><span class="line">      <span class="comment">// 获取查询的参数</span></span><br><span class="line">      <span class="built_in">Map</span> params = opt.queryParameters;</span><br><span class="line">      <span class="comment">// 将所有的参数转为小写，因为查询参数通过 map 形式上传</span></span><br><span class="line">      params.forEach((key, value) =&gt; </span><br><span class="line">                       opt.queryParameters[key] = <span class="string">'$value'</span>.toLowerCase());</span><br><span class="line">      <span class="comment">// 这边还可以做些别的操作，例如需要 token 进行用户身份验证，则通过头部进行添加</span></span><br><span class="line">      <span class="comment">// opt.headers['authorization'] = 'token';</span></span><br><span class="line">      <span class="comment">// 在官网中，提供了 lock 和 unlock 的写法，被 lock 后，接下来的请求会进入队列等待，</span></span><br><span class="line">      <span class="comment">// 直到 unlock 后才能继续，可以用于几个请求，后续的需要用到前面的返回值的情况使用</span></span><br><span class="line">        </span><br><span class="line">      <span class="comment">// 返回修改后的 RequestOptions</span></span><br><span class="line">      <span class="keyword">return</span> opt;</span><br><span class="line">    &#125;, onResponse: (resp) &#123;</span><br><span class="line">      <span class="comment">// 返回响应体后，将 info 字段的内容切除，并将 json 拼接完成</span></span><br><span class="line">      resp.data = <span class="string">'<span class="subst">$&#123;<span class="string">'<span class="subst">$&#123;resp.data&#125;</span>'</span>.split(<span class="string">', info'</span>).first&#125;</span>&#125;'</span>;</span><br><span class="line">      <span class="keyword">return</span> resp;</span><br><span class="line">    &#125;, onError: (error) &#123;</span><br><span class="line">      <span class="comment">// 发生错误时的回调</span></span><br><span class="line">      <span class="keyword">return</span> error;</span><br><span class="line">    &#125;));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 发送一个请求，可以查看下打印的结果</span></span><br><span class="line">    Response response = <span class="keyword">await</span> dio.<span class="keyword">get</span>(_USER_ME_URL, queryParameters: &#123;<span class="string">'a'</span>: <span class="string">'AAA'</span>, <span class="string">'b'</span>: <span class="string">'BbBbBb'</span>&#125;);</span><br><span class="line">    <span class="built_in">print</span>(response.data);</span><br><span class="line">    <span class="built_in">print</span>(response.request.headers);</span><br><span class="line">    <span class="built_in">print</span>(response.request.queryParameters);</span><br><span class="line">    setState(() =&gt; _netBack = response.data.toString()); <span class="comment">// 界面显示 response.data</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>看下最后的显示信息</p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527152843.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527152854.png" alt=""></p>
+<p>请求体的头部成功加上了 <code>authorization</code> 参数，请求的参数全部变为小写，返回的信息也把 info 字段值去除。在很多时候，请求接口后，需要将 json 转换成 pojo 类来处理，可以通过 <code>json_serializable</code> 这个三方插件实现，这边提供文章 <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fjuejin.im%2Fpost%2F5b5f00e7e51d45190571172f" target="_blank" rel="noopener">Flutter Json自动反序列化</a>，当然这种方式比较麻烦，这里推荐个 <code>Android Studio</code> 下的插件 <code>dart_json_format</code> 直接搜索就可以，如果用的是 <code>Vitual Code</code> 或者别的不是 <code>JetBrains</code> 系列的，这里有个转换的网址 <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fjaviercbk.github.io%2Fjson_to_dart" target="_blank" rel="noopener">JsonToDart</a>。</p>
+<p><em>以上代码查看 http_main.dart 文件</em></p>
+<h4 id="实践一下下"><a href="#实践一下下" class="headerlink" title="实践一下下"></a>实践一下下</h4><p>不知道小伙还记得前面讲的 <code>BLoC</code> 没有，忘了可以查看 <a href="https://zhangmiao.cc/posts/d121323a.html" target="_blank" rel="noopener">Flutter 状态管理及 BLoC</a>，这里结合 <code>BLoC</code> 和 <code>Dio</code> 实现界面和逻辑分离的小例子，接口使用前面提到的 <code>https://randomuser.me/api/</code> 接口。网络应该是比较常用的，所以对其进行一些封装还是很有必要的，这边提供下我自己封装的方法</p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:dio/dio.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用于错误信息回调</span></span><br><span class="line"><span class="keyword">typedef</span> ErrorCallback = <span class="keyword">void</span> <span class="built_in">Function</span>(<span class="built_in">String</span> msg);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HttpUtils</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> GET = <span class="string">'get'</span>;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> POST = <span class="string">'post'</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> Dio _dio;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> HttpUtils _instance;</span><br><span class="line"></span><br><span class="line">  Dio <span class="keyword">get</span> hp =&gt; _dio;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// dio 可以在 BaseOptions 中指定域名 baseUrl，</span></span><br><span class="line">  <span class="comment">// 后续接口就不需要再添加域名了</span></span><br><span class="line">  <span class="comment">// 如果请求的接口域名发生了变化，只要把全部 url 写全，就会自动使用新的域名</span></span><br><span class="line">  HttpUtils._internal(<span class="built_in">String</span> base) &#123;</span><br><span class="line">    <span class="comment">// 生成一个单例，防止多次打开关闭造成开销</span></span><br><span class="line">    _dio = Dio(BaseOptions(baseUrl: base, connectTimeout: <span class="number">10000</span>, receiveTimeout: <span class="number">10000</span>));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">factory</span> HttpUtils(<span class="built_in">String</span> base) &#123;</span><br><span class="line">    <span class="keyword">if</span> (_instance == <span class="keyword">null</span>) _instance = HttpUtils._internal(base);</span><br><span class="line">    <span class="keyword">return</span> _instance;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 添加拦截器</span></span><br><span class="line">  addInterceptor(<span class="built_in">List</span>&lt;InterceptorsWrapper&gt; interceptors) &#123;</span><br><span class="line">    _dio.interceptors.clear();</span><br><span class="line">    _dio.interceptors.addAll(interceptors);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Future&lt;Response&lt;T&gt;&gt; getRequest&lt;T&gt;(url, &#123;<span class="built_in">Map</span> params, ErrorCallback callback&#125;) =&gt;</span><br><span class="line">      _request(url, GET, params: params, callback: callback);</span><br><span class="line"></span><br><span class="line">  Future&lt;Response&lt;T&gt;&gt; postRequest&lt;T&gt;(url, &#123;<span class="built_in">Map</span> params, ErrorCallback callback&#125;) =&gt;</span><br><span class="line">      _request(url, POST, params: params, callback: callback);</span><br><span class="line"></span><br><span class="line">  Future&lt;Response&gt; download(url, path, &#123;ProgressCallback receive, CancelToken token&#125;) =&gt;</span><br><span class="line">      _dio.download(url, path, onReceiveProgress: receive, cancelToken: token);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// T 可以指定返回的类型，String 或者 Map&lt;String, dynamic&gt;</span></span><br><span class="line">  Future&lt;Response&lt;T&gt;&gt; _request&lt;T&gt;(</span><br><span class="line">    url,</span><br><span class="line">    <span class="built_in">String</span> method, &#123;</span><br><span class="line">    <span class="built_in">Map</span> params, <span class="comment">// 上传的参数</span></span><br><span class="line">    Options opt,</span><br><span class="line">    ErrorCallback callback, <span class="comment">// 错误回调</span></span><br><span class="line">    ProgressCallback send, <span class="comment">// 上传进度监听</span></span><br><span class="line">    ProgressCallback receive, <span class="comment">// 下载监听</span></span><br><span class="line">    CancelToken token, <span class="comment">// 用于取消的 token，可以多个请求绑定一个 token</span></span><br><span class="line">  &#125;) <span class="keyword">async</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      Response&lt;T&gt; rep;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (method == GET) &#123;</span><br><span class="line">        <span class="comment">// 如果不是重新创建 Dio 实例，get 方法使用 queryParams 会出错，不懂原因，使用拼接没有问题</span></span><br><span class="line">        <span class="keyword">if</span> (params != <span class="keyword">null</span> &amp;&amp; params.isNotEmpty) &#123;</span><br><span class="line">          <span class="keyword">var</span> sb = <span class="built_in">StringBuffer</span>(<span class="string">'?'</span>);</span><br><span class="line">          params.forEach((key, value) &#123;</span><br><span class="line">            sb.write(<span class="string">'$key=$value&amp;'</span>);</span><br><span class="line">          &#125;);</span><br><span class="line">          <span class="comment">// get 请求下拼接路径</span></span><br><span class="line">          url += sb.toString().substring(<span class="number">0</span>, sb.length - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        rep = <span class="keyword">await</span> _dio.<span class="keyword">get</span>(url, options: opt, onReceiveProgress: receive, cancelToken: token);</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method == POST) &#123;</span><br><span class="line">        <span class="comment">// post 参数放请求体</span></span><br><span class="line">        rep = params == <span class="keyword">null</span></span><br><span class="line">            ? <span class="keyword">await</span> _dio.post(url, options: opt, cancelToken: token, onSendProgress: send, onReceiveProgress: receive)</span><br><span class="line">            : <span class="keyword">await</span> _dio.post(url,</span><br><span class="line">                data: params, options: opt, cancelToken: token, onSendProgress: send, onReceiveProgress: receive);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 如果 statusCode 不是 200 则错误回调，返回空的 Response</span></span><br><span class="line">      <span class="keyword">if</span> (rep.statusCode != <span class="number">200</span> &amp;&amp; callback != <span class="keyword">null</span>) &#123;</span><br><span class="line">        callback(<span class="string">'network error, and code is <span class="subst">$&#123;rep.statusCode&#125;</span>'</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> rep;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="keyword">if</span> (callback != <span class="keyword">null</span>) &#123;</span><br><span class="line">        callback(<span class="string">'network error, catch error: <span class="subst">$&#123;e.toString()&#125;</span>'</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>封装后就可以愉快的调用了，如果有别的请求方式后期可以继续扩展。继续看代码，创建一个 <code>application.dart</code> 文件，用于存放全局参数</p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> HttpUtils http;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>并在 <code>main()</code> 方法中进行初始化，接下来就可以直接使用</p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  Application.http = HttpUtils(<span class="string">'https://randomuser.me'</span>);</span><br><span class="line">  </span><br><span class="line">  runApp(DemoApp());</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 透明状态栏</span></span><br><span class="line">  <span class="keyword">if</span> (Platform.isAndroid) &#123;</span><br><span class="line">      SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>看下最后的实现效果吧，刚进入没有数据则通过转圈圈提示，加载完数据后，点击头像更换下个</p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/2888797-cbe4a21cc6b3b828.gif" alt=""></p>
+<p>实现 <code>BLoC</code> 需要有一个管理类</p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserBloc</span> <span class="keyword">extends</span> <span class="title">BaseBloc</span> </span>&#123;</span><br><span class="line">  RandomUserModel _user;</span><br><span class="line"></span><br><span class="line">  RandomUserModel <span class="keyword">get</span> user =&gt; _user;</span><br><span class="line"></span><br><span class="line">  BehaviorSubject&lt;RandomUserModel&gt; _controller = BehaviorSubject();</span><br><span class="line"></span><br><span class="line">  Observable&lt;RandomUserModel&gt; <span class="keyword">get</span> stream =&gt; Observable(_controller.stream);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 网络请求获取新的数据，并更新</span></span><br><span class="line">  updateUserInfo() &#123;</span><br><span class="line">    Application.http.getRequest(<span class="string">'/api'</span>).then((response) &#123;</span><br><span class="line">      <span class="comment">// RandomUserModel 就是接口返回的 json 转成的 model 类</span></span><br><span class="line">      RandomUserModel model = RandomUserModel.fromMap(response.data);</span><br><span class="line">      _user = model;</span><br><span class="line">      <span class="comment">// add 到 controller 通知修改</span></span><br><span class="line">      _controller.add(model);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">void</span> dispose() &#123;</span><br><span class="line">    _controller?.close(); <span class="comment">// 及时销毁</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>设置好管理类后，就可以来编写界面了，界面也比较简单</p>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserPageDemo</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 将首字母大写</span></span><br><span class="line">  <span class="built_in">String</span> _upperFirst(<span class="built_in">String</span> content) &#123;</span><br><span class="line">    <span class="keyword">assert</span>(content != <span class="keyword">null</span> &amp;&amp; content.isNotEmpty);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'<span class="subst">$&#123;content.substring(<span class="number">0</span>, <span class="number">1</span>).toUpperCase()&#125;</span><span class="subst">$&#123;content.substring(<span class="number">1</span>)&#125;</span>'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 地址信息通用部件</span></span><br><span class="line">  Widget _userLocation(<span class="built_in">String</span> info) =&gt; Padding(</span><br><span class="line">      padding: <span class="keyword">const</span> EdgeInsets.only(top: <span class="number">4.0</span>),</span><br><span class="line">      child: Text(info, style: TextStyle(color: Colors.white, fontSize: <span class="number">16.0</span>)));</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    UserBloc _bloc = BlocProvider.of&lt;UserBloc&gt;(context);</span><br><span class="line">    _bloc.updateUserInfo();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      <span class="comment">// StreamBuilder 接受更新数据的 stream</span></span><br><span class="line">      body: StreamBuilder(</span><br><span class="line">          builder: (_, AsyncSnapshot&lt;RandomUserModel&gt; snapshot) =&gt; Container(</span><br><span class="line">                alignment: Alignment.center,</span><br><span class="line">                decoration: BoxDecoration(</span><br><span class="line">                    gradient: LinearGradient(</span><br><span class="line">                        begin: Alignment.topCenter,</span><br><span class="line">                        end: Alignment.bottomCenter,</span><br><span class="line">                        colors: [Colors.blue[<span class="number">600</span>], Colors.blue[<span class="number">400</span>]])),</span><br><span class="line">                child: !snapshot.hasData</span><br><span class="line">                    ? CupertinoActivityIndicator(radius: <span class="number">12.0</span>)</span><br><span class="line">                    : Column(mainAxisAlignment: MainAxisAlignment.center, children: &lt;Widget&gt;[</span><br><span class="line">                        InkWell( <span class="comment">// 用于切换数据</span></span><br><span class="line">                            child: ClipOval( <span class="comment">// 圆形头像</span></span><br><span class="line">                              child: FadeInImage.assetNetwork(</span><br><span class="line">                                  placeholder: <span class="string">'images/ava_default.png'</span>, image: snapshot.data.results[<span class="number">0</span>].picture.large),</span><br><span class="line">                            ),</span><br><span class="line">                            onTap: () =&gt; _bloc.updateUserInfo()), <span class="comment">// 更新数据</span></span><br><span class="line">                        Padding(</span><br><span class="line">                          padding: <span class="keyword">const</span> EdgeInsets.only(top: <span class="number">20.0</span>),</span><br><span class="line">                          child: Text(</span><br><span class="line">                              <span class="string">'<span class="subst">$&#123;_upperFirst(snapshot.data.results[<span class="number">0</span>].name.first)&#125;</span> <span class="subst">$&#123;_upperFirst(snapshot.data.results[<span class="number">0</span>].name.last)&#125;</span>'</span>,</span><br><span class="line">                              style: TextStyle(color: Colors.white, fontSize: <span class="number">24.0</span>)),</span><br><span class="line">                        ),</span><br><span class="line">                        Text(<span class="string">'<span class="subst">$&#123;snapshot.data.results[<span class="number">0</span>].email&#125;</span>'</span>,</span><br><span class="line">                            style: TextStyle(color: Colors.white, fontSize: <span class="number">18.0</span>)),</span><br><span class="line">                        _userLocation(<span class="string">'<span class="subst">$&#123;snapshot.data.results[<span class="number">0</span>].location.street&#125;</span>'</span>),</span><br><span class="line">                        _userLocation(<span class="string">'<span class="subst">$&#123;_upperFirst(snapshot.data.results[<span class="number">0</span>].location.city)&#125;</span>'</span>),</span><br><span class="line">                        _userLocation(<span class="string">'<span class="subst">$&#123;_upperFirst(snapshot.data.results[<span class="number">0</span>].location.state)&#125;</span>'</span>),</span><br><span class="line">                      ]),</span><br><span class="line">              ),</span><br><span class="line">          initialData: _bloc.user, <span class="comment">// 注入初始值</span></span><br><span class="line">          stream: _bloc.stream), <span class="comment">// 注入更新 stream</span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>以上代码查看 bloc_network 包下的所有文件</em></p>
 
       
     </div>
@@ -570,9 +527,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端/" rel="tag"># 前端</a>
+            <a href="/tags/Android/" rel="tag"># Android</a>
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/Flutter/" rel="tag"># Flutter</a>
           
         </div>
       
@@ -585,8 +542,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/eda90d92.html" rel="next" title="JS基础知识（七）正则">
-                <i class="fa fa-chevron-left"></i> JS基础知识（七）正则
+              <a href="/posts/6358b348.html" rel="next" title="Flutter入门指南(十二)之数据持久化">
+                <i class="fa fa-chevron-left"></i> Flutter入门指南(十二)之数据持久化
               </a>
             
           </div>
@@ -594,10 +551,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/db9fe196.html" rel="prev" title="JS基础（九）定时器">
-                JS基础（九）定时器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -830,7 +783,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JS中DOM盒子模型深入分析"><span class="nav-number">1.</span> <span class="nav-text">JS中DOM盒子模型深入分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS盒子模型"><span class="nav-number">2.</span> <span class="nav-text">CSS盒子模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#传统盒子模型"><span class="nav-number">2.1.</span> <span class="nav-text">传统盒子模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS3新增加的盒子模型"><span class="nav-number">2.2.</span> <span class="nav-text">CSS3新增加的盒子模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JS盒子模型"><span class="nav-number">2.3.</span> <span class="nav-text">JS盒子模型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#client"><span class="nav-number">2.3.1.</span> <span class="nav-text">client</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#offset"><span class="nav-number">2.3.2.</span> <span class="nav-text">offset</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#scroll"><span class="nav-number">2.3.3.</span> <span class="nav-text">scroll</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#window-onscroll"><span class="nav-number">2.4.</span> <span class="nav-text">window.onscroll</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在JS中获取元素的具体的样式值"><span class="nav-number">3.</span> <span class="nav-text">在JS中获取元素的具体的样式值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#curEle-style-xxx"><span class="nav-number">3.1.</span> <span class="nav-text">curEle.style.xxx;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置元素的样式"><span class="nav-number">3.2.</span> <span class="nav-text">设置元素的样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JS中的动画"><span class="nav-number">3.3.</span> <span class="nav-text">JS中的动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图片懒加载原理："><span class="nav-number">3.4.</span> <span class="nav-text">图片懒加载原理：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#HttpClient"><span class="nav-number">1.</span> <span class="nav-text">HttpClient</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dio"><span class="nav-number">2.</span> <span class="nav-text">Dio</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实践一下下"><span class="nav-number">3.</span> <span class="nav-text">实践一下下</span></a></li></ol></div>
             
 
           </div>
@@ -1000,9 +953,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/posts/ba5b0d45.html';
-          this.page.identifier = 'posts/ba5b0d45.html';
-          this.page.title = 'JS基础（八）盒子模型';
+          this.page.url = 'http://yoursite.com/posts/d9e32c9b.html';
+          this.page.identifier = 'posts/d9e32c9b.html';
+          this.page.title = 'Flutter入门指南之网络';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://zhangmiao.disqus.com/embed.js';
