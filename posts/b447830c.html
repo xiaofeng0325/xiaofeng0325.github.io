@@ -91,10 +91,9 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527153406.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/2888797-50e81d7c4da87e57.gif">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/2888797-3003a99b33b58f43.gif">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/2888797-eb02699bb66b1535.gif">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527153900.png">
-<meta property="og:updated_time" content="2019-05-27T07:41:09.092Z">
+<meta property="og:updated_time" content="2019-05-27T07:45:04.613Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flutter入门指南(十四)之实战">
 <meta name="twitter:description" content="讲完了常用的部件和网络请求后，差不多该进入整体实战了，这里我们将写一个比较熟悉的项目，郭神的 cool weather。项目将使用 fluro 实现路由管理，dio 实现网络请求，rxdart 实现 BLoC 进行状态管理和逻辑分离，使用文件，shared_preferences，sqflite 实现本地的数据持久化。这边先给出项目的地址：flutter_weather，以及最后实现的效果图：">
@@ -435,10 +434,23 @@
 
       
         <p>讲完了常用的部件和网络请求后，差不多该进入整体实战了，这里我们将写一个比较熟悉的项目，郭神的 cool weather。项目将使用 fluro 实现路由管理，dio 实现网络请求，rxdart 实现 BLoC 进行状态管理和逻辑分离，使用文件，shared_preferences，sqflite 实现本地的数据持久化。这边先给出项目的地址：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fkukyxs%2Fflutter_weather" target="_blank" rel="noopener">flutter_weather</a>，以及最后实现的效果图：</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527153406.png" alt=""></p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/2888797-50e81d7c4da87e57.gif" alt=""></p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/2888797-3003a99b33b58f43.gif" alt=""></p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/2888797-eb02699bb66b1535.gif" alt=""></p>
+<table>
+<thead>
+<tr>
+<th>首页</th>
+<th>录音</th>
+<th>播放</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527153406.png" alt=""></td>
+<td><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/2888797-50e81d7c4da87e57.gif" alt=""></td>
+<td><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/2888797-eb02699bb66b1535.gif" alt=""></td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
 <p>除了 fluro 别的基本上前面都讲了，所以在开始正式的实战前，先讲下 fluro</p>
 <h4 id="Fluro"><a href="#Fluro" class="headerlink" title="Fluro"></a>Fluro</h4><p>fluro 是对 Navigator 的一个封装，方便更好的管理路由跳转，当然还存在一些缺陷，例如目前只支持传递字符串，不能传递中文等，但是这些问题都算不上是大问题。</p>
 <p>fluro 的使用很简单，大概分如下的步骤：</p>
