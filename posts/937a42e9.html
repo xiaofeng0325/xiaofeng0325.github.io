@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Android,Java,代码规范,">
+  <meta name="keywords" content="Android,Weex,">
 
 
 
@@ -81,23 +81,18 @@
 
 
 
-<meta name="description" content="前言 无论你是个人开发还是团队，一个良好的代码规范，能够在项目当中发挥举足轻重的作用；它不仅能使你们的开发更加高效，而且还会减少BUG产生的几率，增强代码可维护性及稳定性。  关于规范，我们分两部分来讲，因为Android主要是用Java语言来写的，所以我们区别对待。 JAVA代码规范强制性规范: 代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。 代码中的命名严禁使用拼音">
-<meta name="keywords" content="Android,Java,代码规范">
+<meta name="description" content="只含有运行时的构建版本 平台的差异 执行环境 DOM 样式 事件   Web 渲染器 单文件组件 编译目标 使用weex-loader   支持的功能 全局配置 全局 API 选项 生命周期钩子 实例属性 实例方法 模板指令 特殊属性 内置组件">
+<meta name="keywords" content="Android,Weex">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android代码规范指南">
-<meta property="og:url" content="http://yoursite.com/posts/89cc132f.html">
+<meta property="og:title" content="Weex 中使用Vue.js">
+<meta property="og:url" content="http://yoursite.com/posts/937a42e9.html">
 <meta property="og:site_name" content="zm.blog">
-<meta property="og:description" content="前言 无论你是个人开发还是团队，一个良好的代码规范，能够在项目当中发挥举足轻重的作用；它不仅能使你们的开发更加高效，而且还会减少BUG产生的几率，增强代码可维护性及稳定性。  关于规范，我们分两部分来讲，因为Android主要是用Java语言来写的，所以我们区别对待。 JAVA代码规范强制性规范: 代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。 代码中的命名严禁使用拼音">
+<meta property="og:description" content="只含有运行时的构建版本 平台的差异 执行环境 DOM 样式 事件   Web 渲染器 单文件组件 编译目标 使用weex-loader   支持的功能 全局配置 全局 API 选项 生命周期钩子 实例属性 实例方法 模板指令 特殊属性 内置组件">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtl8cge3dj32cr0lcacg.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtla83leij30la05lt97.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtlam313hj30ul0kb42i.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtlb01lizj30ul0kb41c.jpg">
-<meta property="og:updated_time" content="2019-05-16T07:44:23.972Z">
+<meta property="og:updated_time" content="2019-05-31T07:56:59.313Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android代码规范指南">
-<meta name="twitter:description" content="前言 无论你是个人开发还是团队，一个良好的代码规范，能够在项目当中发挥举足轻重的作用；它不仅能使你们的开发更加高效，而且还会减少BUG产生的几率，增强代码可维护性及稳定性。  关于规范，我们分两部分来讲，因为Android主要是用Java语言来写的，所以我们区别对待。 JAVA代码规范强制性规范: 代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。 代码中的命名严禁使用拼音">
-<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtl8cge3dj32cr0lcacg.jpg">
+<meta name="twitter:title" content="Weex 中使用Vue.js">
+<meta name="twitter:description" content="只含有运行时的构建版本 平台的差异 执行环境 DOM 样式 事件   Web 渲染器 单文件组件 编译目标 使用weex-loader   支持的功能 全局配置 全局 API 选项 生命周期钩子 实例属性 实例方法 模板指令 特殊属性 内置组件">
 
 
 
@@ -127,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/posts/89cc132f.html">
+  <link rel="canonical" href="http://yoursite.com/posts/937a42e9.html">
 
 
 
 
 
-  <title>Android代码规范指南 | zm.blog</title>
+  <title>Weex 中使用Vue.js | zm.blog</title>
   
 
 
@@ -312,7 +307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/89cc132f.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/937a42e9.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -329,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Android代码规范指南</h1>
+          <h1 class="post-title" itemprop="name headline">Weex 中使用Vue.js</h1>
         
 
         <div class="post-meta">
@@ -341,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-03T15:14:08+08:00">
-                2018-12-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-21T15:51:25+08:00">
+                2018-07-21
               </time>
             
 
@@ -375,8 +370,8 @@
                 
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/代码规范/" itemprop="url" rel="index">
-                    <span itemprop="name">代码规范</span>
+                  <a href="/categories/Android/Weex/" itemprop="url" rel="index">
+                    <span itemprop="name">Weex</span>
                   </a>
                 </span>
 
@@ -393,8 +388,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/89cc132f.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/89cc132f.html" itemprop="commentCount"></span>
+                <a href="/posts/937a42e9.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/937a42e9.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -402,7 +397,7 @@
 
           
           
-             <span id="/posts/89cc132f.html" class="leancloud_visitors" data-flag-title="Android代码规范指南">
+             <span id="/posts/937a42e9.html" class="leancloud_visitors" data-flag-title="Weex 中使用Vue.js">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -433,357 +428,700 @@
       
 
       
-        <p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtl8cge3dj32cr0lcacg.jpg" alt=""></p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>无论你是个人开发还是团队，一个良好的代码规范，能够在项目当中发挥举足轻重的作用；它不仅能使你们的开发更加高效，而且还会减少BUG产生的几率，增强代码可维护性及稳定性。</p>
-</blockquote>
-<p>关于规范，我们分两部分来讲，因为Android主要是用Java语言来写的，所以我们区别对待。</p>
-<h2 id="JAVA代码规范"><a href="#JAVA代码规范" class="headerlink" title="JAVA代码规范"></a>JAVA代码规范</h2><h4 id="强制性规范"><a href="#强制性规范" class="headerlink" title="强制性规范:"></a>强制性规范:</h4><ol>
-<li>代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。</li>
-<li>代码中的命名严禁使用拼音与英文混合的方式，更不允许直接使用中文的方式。</li>
-<li>类名使用UpperCamelCase 风格，必须遵从驼峰形式。</li>
-<li>方法名、参数名、成员变量、局部变量都统一使用 lowerCamelCase 风格，必须遵从驼峰形式。</li>
-<li>常量命名全部大写，单词间用下划线隔开，力求语义表达完整清楚，不要嫌名字长例如：<strong>MAX_STOCK_COUNT</strong>。</li>
-<li>抽象类命名使用 Abstract 或 Base 开头;异常类命名使用 Exception 结尾;测试类 命名以它要测试的类的名称开始。</li>
-<li>杜绝不规范的英文缩写：AbstractClass 缩写成AbsClass；condition缩写成condi;此类随意缩写严重降低了代码的可阅读性。</li>
-<li>如果使用到了设计模式，建议在类名中体现出具体的模式：</li>
-<li><p>关于Service或Dao层的命名</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class ComponentFactory</span><br><span class="line">public class BufferStrategy</span><br><span class="line">public class ScrollerProxy</span><br></pre></td></tr></table></figure>
+        <ul>
+<li>只含有运行时的构建版本</li>
+<li>平台的差异<ul>
+<li>执行环境</li>
+<li>DOM</li>
+<li>样式</li>
+<li>事件</li>
+</ul>
 </li>
-<li><p>实体类必须重载toString()方法，这样可以通过调用对象的toString()来排查问题。</p>
+<li>Web 渲染器</li>
+<li>单文件组件<ul>
+<li>编译目标</li>
+<li>使用weex-loader</li>
+</ul>
 </li>
-<li>Object 的 equals 方法容易抛空指针异常，应使用常量或确定有值的对象来调用 equals。<blockquote>
-<p>正例: “test”.equals(object);<br> 反例: object.equals(“test”);</p>
-</blockquote>
+<li>支持的功能<ul>
+<li>全局配置</li>
+<li>全局 API</li>
+<li>选项</li>
+<li>生命周期钩子</li>
+<li>实例属性</li>
+<li>实例方法</li>
+<li>模板指令</li>
+<li>特殊属性</li>
+<li>内置组件</li>
+</ul>
 </li>
-<li>避免通过一个类的对象引用访问此类的静态变量或静态方法，无谓增加编译器解析成本，直接用类名来访问即可。</li>
-</ol>
+</ul>
 <a id="more"></a>
-<h4 id="推荐规范："><a href="#推荐规范：" class="headerlink" title="推荐规范："></a>推荐规范：</h4><ol>
-<li><p>集合初始化时，尽量指定集合初始值大小；</p>
+<p>在 WeexSDK <a href="https://github.com/alibaba/weex/releases/tag/v0.10.0" target="_blank" rel="noopener">v0.10.0</a> （发布于 2016 年 2 月 17 日）以及后续的版本中，集成了 v2 版本的 Vue.js。Vue 是一套构建用户界面的渐进式框架，详情请参阅其<a href="https://cn.vuejs.org/" target="_blank" rel="noopener">官方网站</a>。</p>
 <blockquote>
-<p>ArrayList尽量使用ArrayList(int initialCapacity) 初始化 。</p>
+<p>如果没有特别指示，文章中的 “Vue.js” 或者 “Vue” 都指的是 v2 版本的 Vue。</p>
 </blockquote>
-</li>
-<li><p>使用 entrySet 遍历 Map 类集合 KV，而不是 keySet 方式进行遍历</p>
-</li>
-</ol>
+<h2 id="只含有运行时的构建版本"><a href="#只含有运行时的构建版本" class="headerlink" title="只含有运行时的构建版本"></a>只含有运行时的构建版本</h2><p>如果你熟悉 Vue.js，你应该知道 Vue.js 有两种构建版本: <a href="https://cn.vuejs.org/v2/guide/installation.html#运行时-编译器-vs-只包含运行时" target="_blank" rel="noopener"><strong>运行时 + 编译器</strong> 与 <strong>只包含运行时</strong></a>。它们之间的区别在于编译器是否需要能够在运行时编译 <code>template</code> 选项。由于运行时构建版本比完整版本的构建版本轻约 30%（Vue 官方估算），为了更好的性能和更小的代码体积，Weex 集成的是运行时版本的 Vue。</p>
+<p>具体来说，差异如下：</p>
+<ul>
+<li>定义组件时不支持 <a href="https://cn.vuejs.org/v2/api/#template" target="_blank" rel="noopener"><code>template</code></a> 选项。</li>
+<li>不支持使用 <a href="https://cn.vuejs.org/v2/guide/components.html#X-Templates" target="_blank" rel="noopener"><code>x-templates</code></a>。</li>
+<li>不支持使用 <a href="https://cn.vuejs.org/v2/api/#Vue-compile" target="_blank" rel="noopener"><code>Vue.compile</code></a>。</li>
+</ul>
+<h2 id="平台的差异"><a href="#平台的差异" class="headerlink" title="平台的差异"></a>平台的差异</h2><p>Vue.js 最初是为 Web 平台设计的。虽然可以基于Weex开发原生应用程序，但是仍然存在许多<a href="https://weex.apache.org/zh/guide/platform-difference.html" target="_blank" rel="noopener">Weex 与 Web 平台的差异</a>。</p>
+<p>与 Web 平台的主要差异是: 执行环境、DOM、样式和事件。</p>
+<h3 id="执行环境"><a href="#执行环境" class="headerlink" title="执行环境"></a>执行环境</h3><p>Weex 主要用于编写多页的应用程序，每个页面都对应了原生开发中的 <em>View</em> 或者 <em>Activity</em>，并且保持自己的上下文。即使 Weex 的所有页面都使用的都是同一个 Javascript 引擎的实例(virtual machine)，每个页面是执行环境也是互相隔离的（基于 Sandbox 技术）。</p>
 <blockquote>
-<p>说明:keySet 其实是遍历了 2 次，一次是转为 Iterator 对象，另一次是从 hashMap 中取出 key 所对应的 value。而 entrySet 只是遍历了一次就把 key 和 value 都放到了 entry 中，效 率更高。如果是 JDK8，使用 Map.foreach 方法。</p>
+<p>使用 <a href="https://weex.apache.org/zh/docs/api/broadcast-channel.html" target="_blank" rel="noopener">BroadcastChannel</a> 可以实现跨页通信。</p>
 </blockquote>
-<ol start="3">
-<li>高度注意 Map 类集合 K/V 能不能存储 null 值的情况，如下表格:</li>
-</ol>
+<p>具体来讲，每个页面的 Vue 变量都是不同的实例，即使是写在 Vue 上的“全局”配置（<code>Vue.config.xxx</code>）也只会影响 Weex 上的单个页面。</p>
+<p>在此基础上，一些 Vue 的 SPA （单页面应用）技术，如 <a href="https://vuex.vuejs.org/zh-cn/" target="_blank" rel="noopener">Vuex</a> 和 <a href="https://router.vuejs.org/zh-cn/" target="_blank" rel="noopener">vue-router</a> 也将单页内生效。更通俗地说，“页面”概念在 SPA 技术中是虚拟的，但在 Weex 上却是真实的。即便如此，Vuex 和 vue-router 都是独立的库，都有自己的概念和使用场景，仍然可以在 Weex 里<a href="https://weex.apache.org/zh/guide/advanced/use-vuex-and-vue-router.html" target="_blank" rel="noopener">使用 Vuex 和 vue-router</a>。</p>
+<h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><p>因为在 Android 和 iOS 上没有 DOM（Document Object Model），如果你要手动操作和生成 DOM 元素的话可能会遇到一些兼容性问题。在你使用现代前端框架的情况下，操作数据与组件而不是生成的元素是一个比较好的做法。</p>
+<p>一些与 DOM 相关的特性，比如 <code>v-html</code>，<code>vm.$el</code>，<code>template</code> 选项，在不同的平台上可能无法获得相同的反应。</p>
+<p>准确来说，<a href="https://cn.vuejs.org/v2/api/#vm-el" target="_blank" rel="noopener"><code>vm.$el</code></a>属性类型在web环境下是<code>HTMLElement</code>，但是在移动端并没有这个类型。实际上，它是一个由 <em>Weex 文档对象模型</em> 定义的特殊数据结构。</p>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><p>样式表和 CSS 规则是由 Weex js 框架和原生渲染引擎管理的。要实现完整的 CSS 对象模型（CSSOM：CSS Object Model）并支持所有的 CSS 规则是非常困难的，而且没有这个必要。</p>
+<p>出现性能考虑，<strong>Weex 目前只支持单个类选择器，并且只支持 CSS 规则的子集</strong>。详情请参阅 <em>通用样式</em> 与 <em>文本样式</em>。</p>
+<p>在 Weex 里， 每一个 Vue 组件的样式都是 <em>scoped</em>。</p>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><p>目前在 Weex 里不支持事件冒泡和捕获，因此 Weex 原生组件不支持<a href="https://cn.vuejs.org/v2/guide/events.html#事件修饰符" target="_blank" rel="noopener">事件修饰符</a>，例如<code>.prevent</code>，<code>.capture</code>，<code>.stop</code>，<code>.self</code> 。</p>
+<p>此外，<a href="https://cn.vuejs.org/v2/guide/events.html#按键修饰符" target="_blank" rel="noopener">按键修饰符</a>以及<a href="https://cn.vuejs.org/v2/guide/events.html#系统修饰键" target="_blank" rel="noopener">系统修饰键</a> 例如 <code>.enter</code>，<code>.tab</code>，<code>.ctrl</code>，<code>.shift</code> 在移动端基本没有意义，在 Weex 中也不支持。</p>
+<h2 id="Web-渲染器"><a href="#Web-渲染器" class="headerlink" title="Web 渲染器"></a>Web 渲染器</h2><p>如果你想在网络上呈现你的页面，你需要 <a href="https://github.com/weexteam/weex-vue-render" target="_blank" rel="noopener">weex-vue-render</a> 来实现它。</p>
+<p><code>weex-vue-render</code>是 Vue DSL 的 Web 渲染器， 它在 Web 上实现了 Weex 的内置组件和内置模块。详情请参阅<a href="https://github.com/weexteam/weex-vue-render" target="_blank" rel="noopener">这里</a>。</p>
+<h2 id="单文件组件"><a href="#单文件组件" class="headerlink" title="单文件组件"></a>单文件组件</h2><p>Vue 中的<a href="https://cn.vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="noopener">单文件组件</a>（即<code>*.vue</code>文件）是一种特殊的文件格式，扩展名为<code>.vue</code>。这个模板会在构建时便于到<code>render</code>函数里。</p>
+<p>此外，所有的编辑器里都支持一个好的<a href="https://github.com/vuejs/awesome-vue#source-code-editing" target="_blank" rel="noopener">语法高亮插件</a>。</p>
+<blockquote>
+<p>在 Weex 中使用单个文件组件语法是一种很好的做法。</p>
+</blockquote>
+<p>TIP</p>
+<p>在 Weex 中使用 Vue 的单个文件组件语法是一种最佳实践。</p>
+<p>因为针对 Weex 的 Web 平台的编译工具并不一样，如果你直接写的 <code>render</code> 函数，则绕过了 weex-loader 编译模板的过程，这样的话你需要自行处理平台差异的细节。</p>
+<h3 id="编译目标"><a href="#编译目标" class="headerlink" title="编译目标"></a>编译目标</h3><p>因为平台的差异以及为了提高网络性能，<code>*.vue</code>文件需要用两种不同的方式来编译：</p>
+<ul>
+<li>对于 Web 平台来说，你可以用任何正式的方式来编译源文件，例如 使用 <strong>Webpack + vue-loader</strong> 或者 <strong>Browserify + vueify</strong> 来编译<code>*.vue</code>文件。</li>
+<li>对于安卓与 iOS 平台来说， 你需要使用 <a href="https://github.com/weexteam/weex-loader" target="_blank" rel="noopener">weex-loader</a> 来编译<code>*.vue</code>文件。</li>
+</ul>
+<p>不同的平台使用不同的<code>bundles</code>，可以充分利用平台原有的特性，减少构建时的兼容性代码。但是源代码仍然是一样的，唯一的区别是编译它的方法。</p>
+<h3 id="使用weex-loader"><a href="#使用weex-loader" class="headerlink" title="使用weex-loader"></a>使用weex-loader</h3><p><a href="https://github.com/weexteam/weex-loader" target="_blank" rel="noopener">weex-loader</a> 是一个 webpack 的 <a href="https://webpack.js.org/concepts/loaders/#using-loaders" target="_blank" rel="noopener">loader</a>，它能把<code>*.vue</code>文件转化为简单的javascript 模块用于安卓以及 iOS 平台。所有的特性和配置都是跟 <a href="https://vue-loader-v14.vuejs.org/zh-cn/" target="_blank" rel="noopener">vue-loader</a> 一样的。</p>
+<p>需要注意的是，如果 Webpack 的 <em>entry</em> 配置项是一个 <code>*.vue</code> 文件的话，你仍需要传递一个额外的 <code>entry</code> 参数作为标记。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> webpackConfig = &#123;</span><br><span class="line">  <span class="comment">// Add the entry parameter for the .vue file</span></span><br><span class="line">  entry: <span class="string">'./path/to/App.vue?entry=true'</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* ... */</span></span><br><span class="line"></span><br><span class="line">  use: &#123;</span><br><span class="line">    loaders: [&#123;</span><br><span class="line">      <span class="comment">// matches the .vue file path which contains the entry parameter</span></span><br><span class="line">      test: <span class="regexp">/\.vue(\?^^]+)?$/</span>,</span><br><span class="line">      loaders: [<span class="string">'weex-loader'</span>]</span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>如果你现在用的是.js文件做入口文件，你不需要写那些额外的参数。</strong> 推荐 webpack 配置的入口文件使用 javascript 文件。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  entry: <span class="string">'./path/to/entry.js'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>TIP</p>
+<p>无论什么情况下都使用 javascript 文件作为入口文件。</p>
+<h2 id="支持的功能"><a href="#支持的功能" class="headerlink" title="支持的功能"></a>支持的功能</h2><h3 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h3><blockquote>
+<p>Vue “全局”配置只会影响 Weex 上的单一页面，配置不会在不同的 Weex 页面之间共享。</p>
+</blockquote>
 <table>
 <thead>
 <tr>
-<th>集合类</th>
-<th>Key</th>
-<th>Value</th>
-<th>Super</th>
+<th>Vue 全局配置</th>
+<th>是否支持</th>
 <th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Hashtable</td>
-<td>不允许为null</td>
-<td>不允许为null</td>
-<td>Dictionary</td>
-<td>线程安全</td>
+<td><a href="https://cn.vuejs.org/v2/api/#silent" target="_blank" rel="noopener">Vue.config.silent</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>ConcurrentHashMap</td>
-<td>不允许为null</td>
-<td>不允许为null</td>
-<td>AbstractMap</td>
-<td>分段锁技术</td>
+<td><a href="https://cn.vuejs.org/v2/api/#optionMergeStrategies" target="_blank" rel="noopener">Vue.config.optionMergeStrategies</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>TreeMap</td>
-<td>不允许为null</td>
-<td>允许为null</td>
-<td>AbstractMap</td>
-<td>线程不安全</td>
+<td><a href="https://cn.vuejs.org/v2/api/#devtools" target="_blank" rel="noopener">Vue.config.devtools</a></td>
+<td><strong>不支持</strong></td>
+<td>只在 Web 环境下支持</td>
 </tr>
 <tr>
-<td>HashMap</td>
-<td>允许为null</td>
-<td>允许为null</td>
-<td>AbstractMap</td>
-<td>线程不安全</td>
+<td><a href="https://cn.vuejs.org/v2/api/#errorHandler" target="_blank" rel="noopener">Vue.config.errorHandler</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#warnHandler" target="_blank" rel="noopener">Vue.config.warnHandler</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#ignoredElements" target="_blank" rel="noopener">Vue.config.ignoredElements</a></td>
+<td><strong>支持</strong></td>
+<td>不推荐</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#keyCodes" target="_blank" rel="noopener">Vue.config.keyCodes</a></td>
+<td><strong>不支持</strong></td>
+<td>在移动端无用</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#performance" target="_blank" rel="noopener">Vue.config.performance</a></td>
+<td><strong>不支持</strong></td>
+<td>与 <em>devtools</em> 一样</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#productionTip" target="_blank" rel="noopener">Vue.config.productionTip</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
-<ol start="4">
-<li>利用 Set 元素唯一的特性，可以快速对一个集合进行去重操作，避免使用 List 的 contains 方法进行遍历、对比、去重操作。</li>
-<li>通过双重检查锁(double-checked locking)(在并发场景)实现延迟初始化的优 化问题隐患(可参考 The “Double-Checked Locking is Broken” Declaration),推荐问题 解决方案中较为简单一种(适用于 JDK5 及以上版本)，将目标属性声明为 volatile 型。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*反例*：</span><br><span class="line">class Foo &#123;</span><br><span class="line">    private Helper helper = null;</span><br><span class="line">    </span><br><span class="line">    public Helper getHelper() &#123;</span><br><span class="line">     if (helper == null) </span><br><span class="line">            synchronized(this) &#123; </span><br><span class="line">                if (helper == null)</span><br><span class="line">                    helper = new Helper(); </span><br><span class="line">            &#125; </span><br><span class="line">            return helper; </span><br><span class="line">    &#125; </span><br><span class="line">// other functions and members... </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Android代码规范"><a href="#Android代码规范" class="headerlink" title="Android代码规范"></a>Android代码规范</h2><h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><ol>
-<li><strong>Activity</strong> 命名一律使用 <strong>模块名+Activity</strong> 的方式。例如，<strong>LoginActivity、SignupActivity</strong>；</li>
-<li><strong>Fragment</strong> 命名一律使用 <strong>模块名+Fragment</strong> 的方式；</li>
-<li>自定义<strong>View</strong>：Custom(建议)+功能名+View/ViewGroup(具体的组件名称)。例如：<strong>CustomImageScroller</strong>、<strong>CustomRatingBar</strong>。</li>
-<li><strong>Widget</strong> 小组件：<strong>ScanWidget、WeatherWidget</strong>。</li>
-<li><strong>Dialog</strong>对话框：<strong>功能名+Dialog</strong>。例如：<strong>LoginDialog、ProgressDialog</strong> </li>
-<li>尽量在每一个Activity或类中加入TAG,方便我们查看Activity的信息。(Tip : 使用Android Studio提供的快捷键<strong>logt</strong>可快速生成当前 类的常量)</li>
-<li>对于使用Intent传递数据，声明一些Key的时候：</li>
-</ol>
-<blockquote>
-<p>EXTRA_KEY_+具体Key名称，例如我们现在有一个人的名字和年龄要传那么首先定义：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public static final String EXTRA_KEY_PERSON_NAME=&quot;EXTRA_KEY_PERSON_NAME&quot;</span><br><span class="line">public static final String EXTRA_KEY_PERSON_AGE=&quot;EXTRA_KEY_PERSON_AGE&quot;</span><br></pre></td></tr></table></figure>
-<p>然后在具体的页面 new Intent()，依次传递进去值，这样写其实没什么问题；但是试想一下，如果你要调用的Activity是类似于一个工具性质或通用的Activity（图片选择器、登录、注册等等），这时候你要传递的key又很多，如果业务复杂的话，你应该会被这样冗余且不易阅读的代码直接搞崩溃掉。</p>
-<p>所以最好的办法就是在你要调用Activity提供一个<strong>静态工厂方法</strong>，要知道静态工厂方法所带来的好处太多了，由于Activity是不允许通过new的方式来初始化的，所以静态工厂方法的好处在此就不那么明显，但是已经足够我们优化我们的代码了。举个例子，我们有一个笔记 NoteActivity，用于创建笔记和修改笔记，</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//笔记Id</span><br><span class="line">private static final String EXTRA_KEY_NOTE_ID =&quot;EXTRA_KEY_NOTE_ID&quot; ;</span><br><span class="line">//笔记内容</span><br><span class="line">private static final String EXTRA_KEY_NOTE_CONTENT =&quot;EXTRA_KEY_NOTE_CONTENT&quot; ;</span><br><span class="line">//笔记模式</span><br><span class="line">private static final String EXTRA_KEY_NOTE_MODE =&quot;EXTRA_KEY_NOTE_MODE&quot; ;</span><br><span class="line"></span><br><span class="line">//用于创建笔记</span><br><span class="line">public static void startForCreate(Context context, int noteId) &#123;</span><br><span class="line">    start(context, noteId, null, MODE_CREATE);</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">//用于编辑笔记</span><br><span class="line">public static void startForEdit(Context context, int noteId, String content) &#123;</span><br><span class="line">    start(context, noteId, content, MODE_UPDATE);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static void start(Context context, int noteId, String content, int mode) &#123;</span><br><span class="line">    Intent starter = new Intent(context, TableShareListSettingActivity.class);</span><br><span class="line">    starter.putExtra(EXTRA_KEY_NOTE_ID,noteId);</span><br><span class="line">    starter.putExtra(EXTRA_KEY_NOTE_CONTENT,content);</span><br><span class="line">    starter.putExtra(EXTRA_KEY_NOTE_CONTENT,mode);</span><br><span class="line">    context.startActivity(starter);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>通过以上方法，我们能够很好的解耦复杂的Activity之间的调用，再加上静态方法工厂方法名，代码可阅读行大大提高，最终我们看到的调用NoteActivity将会是很简洁的一段代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">NoteActivity.startForCreate(this,noteId);</span><br><span class="line">NoteActivity.startForEdit(this,noteId,content);</span><br></pre></td></tr></table></figure>
-<p>此外，Android Studio工具中其实已经在Live Template中提供了这样的代码:CMD+J( For MAC OS),简单的输入starter就可以快速地在当前的Activity中添加一个Intent的静态操作方法，这其实也说明了Android官方团队也鼓励我们这么做。<br> 如下图所示：</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtla83leij30la05lt97.jpg" alt=""></p>
-<p>一下子省了好多代码，简直太赞了有木有！</p>
-<ol start="8">
-<li>增加类注释，使用Android Studio的 File And Code Template：</li>
-</ol>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtlam313hj30ul0kb42i.jpg" alt=""></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtlb01lizj30ul0kb41c.jpg" alt=""></p>
-<ol>
-<li>所有的常量加上注释，且功能相同的排放在一起，不同的进行换行；</li>
-<li>Activity中变量采用m开头+类名。例如，mTable、mPerson；</li>
-<li>Activity中的控件：m+模块名+控件类型名称。例如，<strong>mLoginEditText,mLoginTextView</strong>;</li>
-</ol>
-<h4 id="资源Res"><a href="#资源Res" class="headerlink" title="资源Res"></a>资源Res</h4><p>1.按照资源的类型，分为以下几种</p>
-<blockquote>
-<p>控件Id命名：控件缩写 _模块（module) _功能名(function)</p>
-</blockquote>
-<table>
+<h3 id="全局-API"><a href="#全局-API" class="headerlink" title="全局 API"></a>全局 API</h3><table>
 <thead>
 <tr>
-<th>控件类型</th>
-<th>ID命名规则</th>
+<th>Vue 全局 API</th>
+<th>是否支持</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>TextView</td>
-<td>tv_module_function</td>
+<td><a href="https://cn.vuejs.org/v2/api/#Vue-extend" target="_blank" rel="noopener">Vue.extend</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>EditText</td>
-<td>et_module_function</td>
+<td><a href="https://cn.vuejs.org/v2/api/#Vue-nextTick" target="_blank" rel="noopener">Vue.nextTick</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>ImageView</td>
-<td>iv_module_function</td>
+<td><a href="https://cn.vuejs.org/v2/api/#Vue-set" target="_blank" rel="noopener">Vue.set</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>Button</td>
-<td>btn_module_function</td>
+<td><a href="https://cn.vuejs.org/v2/api/#Vue-delete" target="_blank" rel="noopener">Vue.delete</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>ListView</td>
-<td>lv_module_function</td>
+<td><a href="https://cn.vuejs.org/v2/api/#Vue-directive" target="_blank" rel="noopener">Vue.directive</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>GridView</td>
-<td>gv_module_function</td>
+<td><a href="https://cn.vuejs.org/v2/api/#Vue-filter" target="_blank" rel="noopener">Vue.filter</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>CheckBox</td>
-<td>check_module_function</td>
+<td><a href="https://cn.vuejs.org/v2/api/#Vue-component" target="_blank" rel="noopener">Vue.component</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>RadioButton</td>
-<td>radio_module_function</td>
+<td><a href="https://cn.vuejs.org/v2/api/#Vue-use" target="_blank" rel="noopener">Vue.use</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>LinearLayout</td>
-<td>ll_module_function</td>
+<td><a href="https://cn.vuejs.org/v2/api/#Vue-mixin" target="_blank" rel="noopener">Vue.mixin</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>RelativeLayout</td>
-<td>rl_module_function</td>
+<td><a href="https://cn.vuejs.org/v2/api/#Vue-version" target="_blank" rel="noopener">Vue.version</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>FrameLayout</td>
-<td>fl_module_function</td>
-</tr>
-<tr>
-<td>GridLayout</td>
-<td>gl_module_function</td>
-</tr>
-<tr>
-<td>···</td>
-<td>···</td>
+<td><a href="https://cn.vuejs.org/v2/api/#Vue-compile" target="_blank" rel="noopener">Vue.compile</a></td>
+<td><strong>不支持</strong></td>
+<td>Weex 用的是 <a href="https://cn.vuejs.org/v2/guide/installation.html#运行时-编译器-vs-只包含运行时" target="_blank" rel="noopener">只包含运行时构建</a></td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>Color资源命名</p>
-</blockquote>
-<table>
+<h3 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h3><table>
 <thead>
 <tr>
-<th>Resources Type</th>
-<th>命名规则</th>
+<th>Vue 选项</th>
+<th>是否支持</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>color</td>
-<td>组件名+具体作用名。例 R.color.button_text</td>
+<td><a href="https://cn.vuejs.org/v2/api/#data" target="_blank" rel="noopener">data</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#props" target="_blank" rel="noopener">props</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#propsData" target="_blank" rel="noopener">propsData</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#computed" target="_blank" rel="noopener">computed</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#methods" target="_blank" rel="noopener">methods</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#watch" target="_blank" rel="noopener">watch</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#el" target="_blank" rel="noopener">el</a></td>
+<td><strong>支持</strong></td>
+<td>在移动端<code>el</code>的值是无意义的</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#template" target="_blank" rel="noopener">template</a></td>
+<td><strong>不支持</strong></td>
+<td>Weex 用的是 <a href="https://cn.vuejs.org/v2/guide/installation.html#运行时-编译器-vs-只包含运行时" target="_blank" rel="noopener">只包含运行时构建</a></td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#render" target="_blank" rel="noopener">render</a></td>
+<td><strong>支持</strong></td>
+<td>不推荐</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#renderError" target="_blank" rel="noopener">renderError</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#directives" target="_blank" rel="noopener">directives</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#filters" target="_blank" rel="noopener">filters</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#components" target="_blank" rel="noopener">components</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#parent" target="_blank" rel="noopener">parent</a></td>
+<td><strong>支持</strong></td>
+<td>不推荐</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#mixins" target="_blank" rel="noopener">mixins</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#extends" target="_blank" rel="noopener">extends</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#provide-inject" target="_blank" rel="noopener">provide/inject</a></td>
+<td><strong>支持</strong></td>
+<td>不推荐</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#name" target="_blank" rel="noopener">name</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#delimiters" target="_blank" rel="noopener">delimiters</a></td>
+<td><strong>支持</strong></td>
+<td>不推荐</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#functional" target="_blank" rel="noopener">functional</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#model" target="_blank" rel="noopener">model</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#inheritAttrs" target="_blank" rel="noopener">inheritAttrs</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#comments" target="_blank" rel="noopener">comments</a></td>
+<td><strong>不支持</strong></td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>String资源命名</p>
-</blockquote>
+<h3 id="生命周期钩子"><a href="#生命周期钩子" class="headerlink" title="生命周期钩子"></a>生命周期钩子</h3><p>Vue 组件的实例生命周期钩子将在特定的阶段发出，详情请参考 Vue 组件的<a href="https://cn.vuejs.org/v2/guide/instance.html#生命周期图示" target="_blank" rel="noopener">生命周期图示</a>。</p>
 <table>
 <thead>
 <tr>
-<th>Resources Type</th>
-<th>命名规则</th>
+<th>Vue 生命周期钩子</th>
+<th>是否支持</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>string</td>
-<td>具体功能。 例 R.string.hello</td>
+<td><a href="https://cn.vuejs.org/v2/api/#beforeCreate" target="_blank" rel="noopener">beforeCreate</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#created" target="_blank" rel="noopener">created</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#beforeMount" target="_blank" rel="noopener">beforeMount</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#mounted" target="_blank" rel="noopener">mounted</a></td>
+<td><strong>支持</strong></td>
+<td>和 Web 端不完全一样（下文有详解）</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#beforeUpdate" target="_blank" rel="noopener">beforeUpdate</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#updated" target="_blank" rel="noopener">updated</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#activated" target="_blank" rel="noopener">activated</a></td>
+<td><strong>不支持</strong></td>
+<td>不支持<code>&lt;keep-alive&gt;</code></td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#deactivated" target="_blank" rel="noopener">deactivated</a></td>
+<td><strong>不支持</strong></td>
+<td>不支持<code>&lt;keep-alive&gt;</code></td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#beforeDestroy" target="_blank" rel="noopener">beforeDestroy</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#destroyed" target="_blank" rel="noopener">destroyed</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#errorCaptured" target="_blank" rel="noopener">errorCaptured</a></td>
+<td><strong>支持</strong></td>
+<td>在 Vue 2.5.0+， Weex SDK 0.18+ 中新增</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>Drawable资源命名</p>
-</blockquote>
-<table>
+<p>关于 “mounted” 生命周期</p>
+<p>和浏览不同的是，Weex 的渲染流程是<strong>异步</strong>的，而且渲染出来的结果都是原生系统中的 View，这些数据都无法被 javascript 直接获取到。因此在 Weex 上，Vue 的 <code>mounted</code> 生命周期在当前组件的 virtual-dom (Vue 里的 VNode) 构建完成后就会触发，此时相应的原生视图未必已经渲染完成。</p>
+<h3 id="实例属性"><a href="#实例属性" class="headerlink" title="实例属性"></a>实例属性</h3><table>
 <thead>
 <tr>
-<th>Resources Type</th>
-<th>命名规则</th>
+<th>Vue 实例属性</th>
+<th>是否支持</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>launcher icon</td>
-<td>ic_launcher。例R.drawable.ic_launcher</td>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-data" target="_blank" rel="noopener">vm.$data</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>normal icon</td>
-<td>ic_具体模块_功能。例R.drawable.ic_audio_pause</td>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-props" target="_blank" rel="noopener">vm.$props</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>Toolbar icon</td>
-<td>ic_ab_功能名。例如ic_ab_search</td>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-el" target="_blank" rel="noopener">vm.$el</a></td>
+<td><strong>支持</strong></td>
+<td>移动端没有<code>HTMLElement</code></td>
 </tr>
 <tr>
-<td>selector</td>
-<td>selector_模块_功能名。例如 selector_login_button</td>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-options" target="_blank" rel="noopener">vm.$options</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>shape</td>
-<td>shape_模块<em>功能名</em>状态。例如 R.drawable.shape_login_button_normal</td>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-parent" target="_blank" rel="noopener">vm.$parent</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-root" target="_blank" rel="noopener">vm.$root</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-children" target="_blank" rel="noopener">vm.$children</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-slots" target="_blank" rel="noopener">vm.$slots</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-scopedSlots" target="_blank" rel="noopener">vm.$scopedSlots</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-refs" target="_blank" rel="noopener">vm.$refs</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-isServer" target="_blank" rel="noopener">vm.$isServer</a></td>
+<td><strong>支持</strong></td>
+<td>永远是<code>false</code></td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-attrs" target="_blank" rel="noopener">vm.$attrs</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-listeners" target="_blank" rel="noopener">vm.$listeners</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>Layout资源命名</p>
-</blockquote>
-<table>
+<h3 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h3><table>
 <thead>
 <tr>
-<th>类型</th>
-<th>命名规则</th>
+<th>Vue 实例方法</th>
+<th>是否支持</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>activity</td>
-<td>activity_模块名。例如 R.layout.activity_login</td>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-watch" target="_blank" rel="noopener">vm.$watch()</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>fragment</td>
-<td>fragment_模块名。例如 R.layout.fragment_login_layout_header</td>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-set" target="_blank" rel="noopener">vm.$set()</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>include</td>
-<td>layout_模块名_功能名。例如 @layout/layout_login_bottom</td>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-delete" target="_blank" rel="noopener">vm.$delete()</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>adapter</td>
-<td>adapter_item_模块名_功能名。例如 R.layout.adapter_item_simple_text</td>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-on" target="_blank" rel="noopener">vm.$on()</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>dialog</td>
-<td>dialog_模块_功能名。例如 R.layout.dialog_time_picker</td>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-once" target="_blank" rel="noopener">vm.$once()</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>list header</td>
-<td>header_模块_功能。例如 R.layout.header_main_top_ad</td>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-off" target="_blank" rel="noopener">vm.$off()</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>list footer</td>
-<td>footer_模块_功能。例如 R.layout.footer_main_bottom_action</td>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-emit" target="_blank" rel="noopener">vm.$emit()</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>widget</td>
-<td>widget_模块_功能。例如 R.layout.widget_app_clock</td>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-mount" target="_blank" rel="noopener">vm.$mount()</a></td>
+<td><strong>不支持</strong></td>
+<td>你不需要手动安装 Vue 实例</td>
 </tr>
 <tr>
-<td>···</td>
-<td>···</td>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-forceUpdate" target="_blank" rel="noopener">vm.$forceUpdate()</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-nextTick" target="_blank" rel="noopener">vm.$nextTick()</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#vm-destroy" target="_blank" rel="noopener">vm.$destroy()</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>Menu资源命名</p>
-</blockquote>
-<table>
+<h3 id="模板指令"><a href="#模板指令" class="headerlink" title="模板指令"></a>模板指令</h3><table>
 <thead>
 <tr>
-<th>Resources Type</th>
-<th>命名规则</th>
+<th>Vue 指令</th>
+<th>是否支持</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>menu</td>
-<td>menu_模块名。例如 menu_login</td>
+<td><a href="https://cn.vuejs.org/v2/api/#v-text" target="_blank" rel="noopener">v-text</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-html" target="_blank" rel="noopener">v-html</a></td>
+<td><strong>不支持</strong></td>
+<td>Weex 中没有 HTML 解析器，这不是很好的实现</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-show" target="_blank" rel="noopener">v-show</a></td>
+<td><strong>不支持</strong></td>
+<td>不支持 <code>display: none;</code></td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-if" target="_blank" rel="noopener">v-if</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-else" target="_blank" rel="noopener">v-else</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-else-if" target="_blank" rel="noopener">v-else-if</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-for" target="_blank" rel="noopener">v-for</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-on" target="_blank" rel="noopener">v-on</a></td>
+<td><strong>支持</strong></td>
+<td>不支持<a href="https://cn.vuejs.org/v2/guide/events.html#事件修饰符" target="_blank" rel="noopener">事件修饰符</a></td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-bind" target="_blank" rel="noopener">v-bind</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-model" target="_blank" rel="noopener">v-model</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-pre" target="_blank" rel="noopener">v-pre</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-cloak" target="_blank" rel="noopener">v-cloak</a></td>
+<td><strong>不支持</strong></td>
+<td>只支持单类名选择器</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#v-once" target="_blank" rel="noopener">v-once</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>Values资源命名</p>
-</blockquote>
-<table>
+<h3 id="特殊属性"><a href="#特殊属性" class="headerlink" title="特殊属性"></a>特殊属性</h3><table>
 <thead>
 <tr>
-<th>Resources Type</th>
-<th>命名规则</th>
+<th>Vue 特殊属性</th>
+<th>是否支持</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>color</td>
-<td>模块名_color。例如 material_design_color</td>
+<td><a href="https://cn.vuejs.org/v2/api/#key" target="_blank" rel="noopener">key</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>dimens</td>
-<td>模块名_dimens。例如 material_design_dimens</td>
+<td><a href="https://cn.vuejs.org/v2/api/#ref" target="_blank" rel="noopener">ref</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>style</td>
-<td>模块名_style。例如 material_design_style</td>
+<td><a href="https://cn.vuejs.org/v2/api/#slot" target="_blank" rel="noopener">slot</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 <tr>
-<td>themes</td>
-<td>模块名_themes。例如 material_design_themes</td>
+<td><a href="https://cn.vuejs.org/v2/api/#slot-scope" target="_blank" rel="noopener">slot-scope</a></td>
+<td><strong>支持</strong></td>
+<td>在 Vue 2.5.0+， Weex SDK 0.18+ 中新增</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#scope" target="_blank" rel="noopener">scope</a></td>
+<td><strong>支持</strong></td>
+<td>不推荐</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#is" target="_blank" rel="noopener">is</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>其实代码规范只是一个Guideline，没有说非要某一种风格来编写代码。如果你的团队有自己的一套代码规范，然后开发也很高效，代码也很容易阅读且可维护，就完全可以按照自己的团队的技术规范来。我想表达的是，在编写的代码的时候，能有一个Guideline（准则）或者说是一个约定，我们共同遵守这样的约定，来达到我一开始说的代码规范性所带来的意义。</p>
-<blockquote>
-<p>正所谓，“离娄之明，公输子之巧，不以规矩，不能成方圆。”</p>
-</blockquote>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://github.com/zhangmiaocc/AndroidCodeStyleGuide/blob/master/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4Java%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8Cv1.2.0.pdf" target="_blank" rel="noopener">阿里巴巴Java开发手册</a></p>
+<h3 id="内置组件"><a href="#内置组件" class="headerlink" title="内置组件"></a>内置组件</h3><table>
+<thead>
+<tr>
+<th>Vue 内置组件</th>
+<th>是否支持</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#component" target="_blank" rel="noopener">component</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#transition" target="_blank" rel="noopener">transition</a></td>
+<td><strong>不支持</strong></td>
+<td>在移动端 <em>enter</em> 与 <em>leave</em> 的概念可能有点不同， 并且 Weex 不支持<code>display: none;</code></td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#transition-group" target="_blank" rel="noopener">transition-group</a></td>
+<td><strong>不支持</strong></td>
+<td>跟 <em>transition</em> 一样</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#keep-alive" target="_blank" rel="noopener">keep-alive</a></td>
+<td><strong>不支持</strong></td>
+<td>移动端的原生组件不能被前端缓存</td>
+</tr>
+<tr>
+<td><a href="https://cn.vuejs.org/v2/api/#slot" target="_blank" rel="noopener">slot</a></td>
+<td><strong>支持</strong></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -832,9 +1170,7 @@
           
             <a href="/tags/Android/" rel="tag"># Android</a>
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
-          
-            <a href="/tags/代码规范/" rel="tag"># 代码规范</a>
+            <a href="/tags/Weex/" rel="tag"># Weex</a>
           
         </div>
       
@@ -847,8 +1183,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/b0d3dc9.html" rel="next" title="设置iPhone来电铃声">
-                <i class="fa fa-chevron-left"></i> 设置iPhone来电铃声
+              <a href="/posts/6abab605.html" rel="next" title="Google推荐的图片加载库Glide介绍">
+                <i class="fa fa-chevron-left"></i> Google推荐的图片加载库Glide介绍
               </a>
             
           </div>
@@ -857,8 +1193,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/4cae3fd9.html" rel="prev" title="Unable to resolve dependency for ':trunk@debug/compileClasspath'">
-                Unable to resolve dependency for ':trunk@debug/compileClasspath' <i class="fa fa-chevron-right"></i>
+              <a href="/posts/78b41fa0.html" rel="prev" title="【Android珍藏】推荐10个炫酷的开源库">
+                【Android珍藏】推荐10个炫酷的开源库 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1092,7 +1428,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JAVA代码规范"><span class="nav-number">2.</span> <span class="nav-text">JAVA代码规范</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#强制性规范"><span class="nav-number">2.0.1.</span> <span class="nav-text">强制性规范:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#推荐规范："><span class="nav-number">2.0.2.</span> <span class="nav-text">推荐规范：</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#Android代码规范"><span class="nav-number">3.</span> <span class="nav-text">Android代码规范</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码："><span class="nav-number">3.0.1.</span> <span class="nav-text">代码：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#资源Res"><span class="nav-number">3.0.2.</span> <span class="nav-text">资源Res</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#只含有运行时的构建版本"><span class="nav-number">1.</span> <span class="nav-text">只含有运行时的构建版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#平台的差异"><span class="nav-number">2.</span> <span class="nav-text">平台的差异</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行环境"><span class="nav-number">2.1.</span> <span class="nav-text">执行环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM"><span class="nav-number">2.2.</span> <span class="nav-text">DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样式"><span class="nav-number">2.3.</span> <span class="nav-text">样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件"><span class="nav-number">2.4.</span> <span class="nav-text">事件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-渲染器"><span class="nav-number">3.</span> <span class="nav-text">Web 渲染器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单文件组件"><span class="nav-number">4.</span> <span class="nav-text">单文件组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编译目标"><span class="nav-number">4.1.</span> <span class="nav-text">编译目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用weex-loader"><span class="nav-number">4.2.</span> <span class="nav-text">使用weex-loader</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#支持的功能"><span class="nav-number">5.</span> <span class="nav-text">支持的功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全局配置"><span class="nav-number">5.1.</span> <span class="nav-text">全局配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局-API"><span class="nav-number">5.2.</span> <span class="nav-text">全局 API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选项"><span class="nav-number">5.3.</span> <span class="nav-text">选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期钩子"><span class="nav-number">5.4.</span> <span class="nav-text">生命周期钩子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例属性"><span class="nav-number">5.5.</span> <span class="nav-text">实例属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例方法"><span class="nav-number">5.6.</span> <span class="nav-text">实例方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模板指令"><span class="nav-number">5.7.</span> <span class="nav-text">模板指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊属性"><span class="nav-number">5.8.</span> <span class="nav-text">特殊属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内置组件"><span class="nav-number">5.9.</span> <span class="nav-text">内置组件</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1262,9 +1598,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/posts/89cc132f.html';
-          this.page.identifier = 'posts/89cc132f.html';
-          this.page.title = 'Android代码规范指南';
+          this.page.url = 'http://yoursite.com/posts/937a42e9.html';
+          this.page.identifier = 'posts/937a42e9.html';
+          this.page.title = 'Weex 中使用Vue.js';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://zhangmiao.disqus.com/embed.js';
