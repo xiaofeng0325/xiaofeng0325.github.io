@@ -1440,8 +1440,8 @@
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>设计模式</tag>
         <tag>Java</tag>
+        <tag>设计模式</tag>
       </tags>
   </entry>
   <entry>
@@ -1646,9 +1646,9 @@
         <category>建站</category>
       </categories>
       <tags>
-        <tag>VSCode</tag>
         <tag>Hexo</tag>
         <tag>建站</tag>
+        <tag>VSCode</tag>
       </tags>
   </entry>
   <entry>
@@ -1722,8 +1722,8 @@
         <category>设计模式</category>
       </categories>
       <tags>
-        <tag>设计模式</tag>
         <tag>Java</tag>
+        <tag>设计模式</tag>
       </tags>
   </entry>
   <entry>
@@ -1735,8 +1735,8 @@
         <category>设计模式</category>
       </categories>
       <tags>
-        <tag>设计模式</tag>
         <tag>Java</tag>
+        <tag>设计模式</tag>
       </tags>
   </entry>
   <entry>
@@ -1748,8 +1748,8 @@
         <category>设计模式</category>
       </categories>
       <tags>
-        <tag>设计模式</tag>
         <tag>Java</tag>
+        <tag>设计模式</tag>
       </tags>
   </entry>
   <entry>
@@ -2014,8 +2014,8 @@
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>EventBus</tag>
         <tag>XBus</tag>
+        <tag>EventBus</tag>
       </tags>
   </entry>
   <entry>
@@ -2296,6 +2296,19 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Google推荐的图片加载库Glide介绍]]></title>
+    <url>%2Fposts%2F6abab605.html</url>
+    <content type="text"><![CDATA[英文原文 Introduction to Glide, Image Loader Library for Android, recommended by Google 在泰国举行的谷歌开发者论坛上，谷歌为我们介绍了一个名叫 Glide 的图片加载库，作者是bumptech。这个库被广泛的运用在google的开源项目中，包括2014年google I/O大会上发布的官方app。它的成功让我非常感兴趣。我花了一整晚的时间把玩，决定分享一些自己的经验。在开始之前我想说， Glide 和 Picasso 有90%的相似度，准确的说，就是Picasso的克隆版本。但是在细节上还是有不少区别的。 导入库 Glide 和 Picasso 都在jcenter上。在项目中添加依赖非常简单： Glidedependencies &#123; compile 'com.github.bumptech.glide:glide:3.5.2' compile 'com.android.support:support-v4:22.0.0'&#125; Picassodependencies &#123; compile 'com.squareup.picasso:picasso:2.5.1'&#125; 虽然两者看起来一样，但是Glide更易用，因为Glide的with方法不光接受Context，还接受Activity 和 Fragment，Context会自动的从他们获取。 同时将Activity/Fragment作为with()参数的好处是：图片加载会和Activity/Fragment的生命周期保持一致，比如Paused状态在暂停加载，在Resumed的时候又自动重新加载。所以我建议传参的时候传递Activity 和 Fragment给Glide，而不是Context。 默认Bitmap格式是RGB_565下面是加载图片时和Picasso的比较（1920x1080 像素的图片加载到768x432的ImageView中） 可以看到Glide加载的图片质量要差于Picasso（ps：我看不出来哈），为什么？这是因为Glide默认的Bitmap格式是RGB_565 ，比ARGB_8888格式的内存开销要小一半。下面是Picasso在ARGB8888下与Glide在RGB565下的内存开销图（应用自身占用了8m，因此以8为基准线比较）： 如果你对默认的RGB_565效果还比较满意，可以不做任何事，但是如果你觉得难以接受，可以创建一个新的GlideModule将Bitmap格式转换到ARGB_8888： public class GlideConfiguration implements GlideModule &#123; @Override public void applyOptions(Context context, GlideBuilder builder) &#123; // Apply options to the builder here. builder.setDecodeFormat(DecodeFormat.PREFER_ARGB_8888); &#125; @Override public void registerComponents(Context context, Glide glide) &#123; // register ModelLoaders here. &#125; &#125; 同时在AndroidManifest.xml中将GlideModule定义为meta-data &lt;meta-data android:name="com.inthecheesefactory.lab.glidepicasso.GlideConfiguration" android:value="GlideModule"/&gt; 这样看起来就会好很多。我们再来看看内存开销图，这次貌似Glide花费了两倍于上次的内存，但是Picasso的内存开销仍然远大于Glide。 原因在于Picasso是加载了全尺寸的图片到内存，然后让GPU来实时重绘大小。而Glide加载的大小和ImageView的大小是一致的，因此更小。当然，Picasso也可以指定加载的图片大小的： Picasso.with(this) .load("http://nuuneoi.com/uploads/source/playstore/cover.jpg") .resize(768, 432) .into(ivImgPicasso); 但是问题在于你需要主动计算ImageView的大小，或者说你的ImageView大小是具体的值（而不是wrap_content），你也可以这样： Picasso.with(this) .load("http://nuuneoi.com/uploads/source/playstore/cover.jpg") .fit() .centerCrop() .into(ivImgPicasso); 现在Picasso的内存开销就和Glide差不多了。 虽然内存开销差距不到，但是在这个问题上Glide完胜Picasso。因为Glide可以自动计算出任意情况下的ImageView大小。 Image质量的细节这是将ImageView还原到真实大小时的比较。 你可以看到，Glide加载的图片没有Picasso那么平滑，我还没有找到一个可以直观改变图片大小调整算法的方法。但是这并不算什么坏事，因为很难察觉。 磁盘缓存Picasso和Glide在磁盘缓存策略上有很大的不同。Picasso缓存的是全尺寸的，而Glide缓存的是跟ImageView尺寸相同的。 上面提到的平滑度的问题依然存在，而且如果加载的是RGB565图片，那么缓存中的图片也是RGB565。我尝试将ImageView调整成不同大小，但不管大小如何Picasso只缓存一个全尺寸的。Glide则不同，它会为每种大小的ImageView缓存一次。尽管一张图片已经缓存了一次，但是假如你要在另外一个地方再次以不同尺寸显示，需要重新下载，调整成新尺寸的大小，然后将这个尺寸的也缓存起来。具体说来就是：假如在第一个页面有一个200x200的ImageView，在第二个页面有一个100x100的ImageView，这两个ImageView本来是要显示同一张图片，却需要下载两次。不过，你可以改变这种行为，让Glide既缓存全尺寸又缓存其他尺寸： Glide.with(this) .load("http://nuuneoi.com/uploads/source/playstore/cover.jpg") .diskCacheStrategy(DiskCacheStrategy.ALL) .into(ivImgGlide); 下次在任何ImageView中加载图片的时候，全尺寸的图片将从缓存中取出，重新调整大小，然后缓存。Glide的这种方式优点是加载显示非常快。而Picasso的方式则因为需要在显示之前重新调整大小而导致一些延迟，即便你添加了这段代码来让其立即显示：// Picasso.noFade(); Picasso和Glide各有所长，你根据自己的需求选择合适的。对我而言，我更喜欢Glide，因为它远比Picasso快，虽然需要更大的空间来缓存。（从上图也可以看出，Glide加载速度远快于Picasso） 特性你可以做到几乎和Picasso一样多的事情，代码也几乎一样。 Image Resizing// Picasso.resize(300, 200); //Glide.override(300, 200); Center Cropping// Picasso.centerCrop(); // Glide.centerCrop(); Transforming// Picasso.transform(new CircleTransform()) // Glide.transform(new CircleTransform(context)) 设置占位图或者加载错误图// Picasso.placeholder(R.drawable.placeholder).error(R.drawable.imagenotfound) // Glide.placeholder(R.drawable.placeholder).error(R.drawable.imagenotfound) 几乎和Picasso一样，从Picasso转换到Glide对你来说就是小菜一碟。 有什么Glide可以做而Picasso做不到Glide可以加载GIF动态图，而Picasso不能。 同时因为Glide和Activity/Fragment的生命周期是一致的，因此gif的动画也会自动的随着Activity/Fragment的状态暂停、重放。Glide 的缓存在gif这里也是一样，调整大小然后缓存。但是从我的一次测试结果来看Glide 动画会消费太多的内存，因此谨慎使用。除了gif动画之外，Glide还可以将任何的本地视频解码成一张静态图片。还有一个特性是你可以配置图片显示的动画，而Picasso只有一种动画：fading in。最后一个是可以使用thumbnail()产生一个你所加载图片的thumbnail。其实还有一些特性，不过不是非常重要，比如将图像转换成字节数组等。 配置有许多可以配置的选项，比如大小，缓存的磁盘位置，最大缓存空间，位图格式等等。可以在这个页面查看这些配置Configuration 。 库的大小Picasso (v2.5.1)的大小约118kb，而Glide (v3.5.2)的大小约430kb。 Anyway 312KB difference might not be that significant.不过312kb的差距并不是很重要。Picasso和Glide的方法个数分别是840和2678个。 必须指出，对于DEX文件65535个方法的限制来说，2678是一个相当大的数字了。建议在使用Glide的时候开启ProGuard。 总结Glide和Picasso都是非常完美的库。Glide加载图像以及磁盘缓存的方式都要优于Picasso，速度更快，并且Glide更有利于减少OutOfMemoryError的发生，GIF动画是Glide的杀手锏。不过Picasso的图片质量更高。你更喜欢哪个呢？虽然我使用了很长时间的Picasso，但是我得承认现在我更喜欢Glide。我的建议是使用Glide，但是将Bitmap格式换成 ARGB_8888、让Glide缓存同时缓存全尺寸和改变尺寸两种。]]></content>
+      <categories>
+        <category>Android</category>
+        <category>Glide</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Glide</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Android Studio 完美修改应用包名]]></title>
     <url>%2Fposts%2F9b574dca.html</url>
     <content type="text"><![CDATA[我们平时新建项目有些朋友可能当时就是随意写的一个包名，然后在项目过程中， 又感觉这个包名不太好，所以就要对包名进行修改。 修改最外层包名 修改中间层包名 看到没有，我们只需要在setting里面，把 compact empty middle packages 这个选项去掉，这样，我们的包的层次结构就分开了，这个时候我们就可以根据自己的需要去做相应的修改了。 新增：Studio 3.0 之后，setting 中的选项名字该成了 Hide empty middle packages 另外说明一点，在 Studio 里面我们的 getPackageName 对应的是 applicationId , 而manifest 的那个package，在这里的作用其实是为了引用内部资源文件，以及保证 Activity 等源文件的路径正确而已，所以，在 Studio 中修改发布程序包名，则只需要在 build 文件中修改 applicationId 就可以了。 补充在 Studio 3.0 还有一种可直接通过 Androidmenifest 修改部分包名的方法（亲测过）。这里就不上图了。语言给大家描述一下，有什么问题可以博客下方留言。 修改流程如下：进入 Androidmanifest.xml 文件，找到 package 名称，选中需要修改的部分。比如原包名为com.zm.android如果需要修改中间的 zm ，那么我们就选中 zm ,依次进行 右键 - &gt; Refactor -&gt; Rename , (Mac 快捷键为 fn + shift+F6)然后选择 Rename package , 输入要修改目标的名称 ，直接点击 Refactor , 左下方继续点击 Do Refactor , 等待修改成功~！]]></content>
@@ -2318,6 +2331,20 @@
       </categories>
       <tags>
         <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[debug.keystore的SHA1和MD5]]></title>
+    <url>%2Fposts%2F1a48ee1.html</url>
+    <content type="text"><![CDATA[切换到debug.keystore目录cd ~/.android/ 查看debug.keystore的SHA1和MD5接着输入如下命令keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android 结果如下图]]></content>
+      <categories>
+        <category>Android</category>
+        <category>Android Tips</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>AndroidStudio</tag>
+        <tag>Android Tips</tag>
       </tags>
   </entry>
   <entry>
@@ -2381,33 +2408,6 @@
       <tags>
         <tag>Android</tag>
         <tag>Weex</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Google推荐的图片加载库Glide介绍]]></title>
-    <url>%2Fposts%2F6abab605.html</url>
-    <content type="text"><![CDATA[英文原文 Introduction to Glide, Image Loader Library for Android, recommended by Google 在泰国举行的谷歌开发者论坛上，谷歌为我们介绍了一个名叫 Glide 的图片加载库，作者是bumptech。这个库被广泛的运用在google的开源项目中，包括2014年google I/O大会上发布的官方app。它的成功让我非常感兴趣。我花了一整晚的时间把玩，决定分享一些自己的经验。在开始之前我想说， Glide 和 Picasso 有90%的相似度，准确的说，就是Picasso的克隆版本。但是在细节上还是有不少区别的。 导入库 Glide 和 Picasso 都在jcenter上。在项目中添加依赖非常简单： Glidedependencies &#123; compile 'com.github.bumptech.glide:glide:3.5.2' compile 'com.android.support:support-v4:22.0.0'&#125; Picassodependencies &#123; compile 'com.squareup.picasso:picasso:2.5.1'&#125; 虽然两者看起来一样，但是Glide更易用，因为Glide的with方法不光接受Context，还接受Activity 和 Fragment，Context会自动的从他们获取。 同时将Activity/Fragment作为with()参数的好处是：图片加载会和Activity/Fragment的生命周期保持一致，比如Paused状态在暂停加载，在Resumed的时候又自动重新加载。所以我建议传参的时候传递Activity 和 Fragment给Glide，而不是Context。 默认Bitmap格式是RGB_565下面是加载图片时和Picasso的比较（1920x1080 像素的图片加载到768x432的ImageView中） 可以看到Glide加载的图片质量要差于Picasso（ps：我看不出来哈），为什么？这是因为Glide默认的Bitmap格式是RGB_565 ，比ARGB_8888格式的内存开销要小一半。下面是Picasso在ARGB8888下与Glide在RGB565下的内存开销图（应用自身占用了8m，因此以8为基准线比较）： 如果你对默认的RGB_565效果还比较满意，可以不做任何事，但是如果你觉得难以接受，可以创建一个新的GlideModule将Bitmap格式转换到ARGB_8888： public class GlideConfiguration implements GlideModule &#123; @Override public void applyOptions(Context context, GlideBuilder builder) &#123; // Apply options to the builder here. builder.setDecodeFormat(DecodeFormat.PREFER_ARGB_8888); &#125; @Override public void registerComponents(Context context, Glide glide) &#123; // register ModelLoaders here. &#125; &#125; 同时在AndroidManifest.xml中将GlideModule定义为meta-data &lt;meta-data android:name="com.inthecheesefactory.lab.glidepicasso.GlideConfiguration" android:value="GlideModule"/&gt; 这样看起来就会好很多。我们再来看看内存开销图，这次貌似Glide花费了两倍于上次的内存，但是Picasso的内存开销仍然远大于Glide。 原因在于Picasso是加载了全尺寸的图片到内存，然后让GPU来实时重绘大小。而Glide加载的大小和ImageView的大小是一致的，因此更小。当然，Picasso也可以指定加载的图片大小的： Picasso.with(this) .load("http://nuuneoi.com/uploads/source/playstore/cover.jpg") .resize(768, 432) .into(ivImgPicasso); 但是问题在于你需要主动计算ImageView的大小，或者说你的ImageView大小是具体的值（而不是wrap_content），你也可以这样： Picasso.with(this) .load("http://nuuneoi.com/uploads/source/playstore/cover.jpg") .fit() .centerCrop() .into(ivImgPicasso); 现在Picasso的内存开销就和Glide差不多了。 虽然内存开销差距不到，但是在这个问题上Glide完胜Picasso。因为Glide可以自动计算出任意情况下的ImageView大小。 Image质量的细节这是将ImageView还原到真实大小时的比较。 你可以看到，Glide加载的图片没有Picasso那么平滑，我还没有找到一个可以直观改变图片大小调整算法的方法。但是这并不算什么坏事，因为很难察觉。 磁盘缓存Picasso和Glide在磁盘缓存策略上有很大的不同。Picasso缓存的是全尺寸的，而Glide缓存的是跟ImageView尺寸相同的。 上面提到的平滑度的问题依然存在，而且如果加载的是RGB565图片，那么缓存中的图片也是RGB565。我尝试将ImageView调整成不同大小，但不管大小如何Picasso只缓存一个全尺寸的。Glide则不同，它会为每种大小的ImageView缓存一次。尽管一张图片已经缓存了一次，但是假如你要在另外一个地方再次以不同尺寸显示，需要重新下载，调整成新尺寸的大小，然后将这个尺寸的也缓存起来。具体说来就是：假如在第一个页面有一个200x200的ImageView，在第二个页面有一个100x100的ImageView，这两个ImageView本来是要显示同一张图片，却需要下载两次。不过，你可以改变这种行为，让Glide既缓存全尺寸又缓存其他尺寸： Glide.with(this) .load("http://nuuneoi.com/uploads/source/playstore/cover.jpg") .diskCacheStrategy(DiskCacheStrategy.ALL) .into(ivImgGlide); 下次在任何ImageView中加载图片的时候，全尺寸的图片将从缓存中取出，重新调整大小，然后缓存。Glide的这种方式优点是加载显示非常快。而Picasso的方式则因为需要在显示之前重新调整大小而导致一些延迟，即便你添加了这段代码来让其立即显示：// Picasso.noFade(); Picasso和Glide各有所长，你根据自己的需求选择合适的。对我而言，我更喜欢Glide，因为它远比Picasso快，虽然需要更大的空间来缓存。（从上图也可以看出，Glide加载速度远快于Picasso） 特性你可以做到几乎和Picasso一样多的事情，代码也几乎一样。 Image Resizing// Picasso.resize(300, 200); //Glide.override(300, 200); Center Cropping// Picasso.centerCrop(); // Glide.centerCrop(); Transforming// Picasso.transform(new CircleTransform()) // Glide.transform(new CircleTransform(context)) 设置占位图或者加载错误图// Picasso.placeholder(R.drawable.placeholder).error(R.drawable.imagenotfound) // Glide.placeholder(R.drawable.placeholder).error(R.drawable.imagenotfound) 几乎和Picasso一样，从Picasso转换到Glide对你来说就是小菜一碟。 有什么Glide可以做而Picasso做不到Glide可以加载GIF动态图，而Picasso不能。 同时因为Glide和Activity/Fragment的生命周期是一致的，因此gif的动画也会自动的随着Activity/Fragment的状态暂停、重放。Glide 的缓存在gif这里也是一样，调整大小然后缓存。但是从我的一次测试结果来看Glide 动画会消费太多的内存，因此谨慎使用。除了gif动画之外，Glide还可以将任何的本地视频解码成一张静态图片。还有一个特性是你可以配置图片显示的动画，而Picasso只有一种动画：fading in。最后一个是可以使用thumbnail()产生一个你所加载图片的thumbnail。其实还有一些特性，不过不是非常重要，比如将图像转换成字节数组等。 配置有许多可以配置的选项，比如大小，缓存的磁盘位置，最大缓存空间，位图格式等等。可以在这个页面查看这些配置Configuration 。 库的大小Picasso (v2.5.1)的大小约118kb，而Glide (v3.5.2)的大小约430kb。 Anyway 312KB difference might not be that significant.不过312kb的差距并不是很重要。Picasso和Glide的方法个数分别是840和2678个。 必须指出，对于DEX文件65535个方法的限制来说，2678是一个相当大的数字了。建议在使用Glide的时候开启ProGuard。 总结Glide和Picasso都是非常完美的库。Glide加载图像以及磁盘缓存的方式都要优于Picasso，速度更快，并且Glide更有利于减少OutOfMemoryError的发生，GIF动画是Glide的杀手锏。不过Picasso的图片质量更高。你更喜欢哪个呢？虽然我使用了很长时间的Picasso，但是我得承认现在我更喜欢Glide。我的建议是使用Glide，但是将Bitmap格式换成 ARGB_8888、让Glide缓存同时缓存全尺寸和改变尺寸两种。]]></content>
-      <categories>
-        <category>Android</category>
-        <category>Glide</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-        <tag>Glide</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[debug.keystore的SHA1和MD5]]></title>
-    <url>%2Fposts%2F1a48ee1.html</url>
-    <content type="text"><![CDATA[切换到debug.keystore目录cd ~/.android/ 查看debug.keystore的SHA1和MD5接着输入如下命令keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android 结果如下图]]></content>
-      <categories>
-        <category>Android</category>
-        <category>Android Tips</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-        <tag>Android Tips</tag>
-        <tag>AndroidStudio</tag>
       </tags>
   </entry>
   <entry>
@@ -2496,9 +2496,9 @@
         <category>快捷键</category>
       </categories>
       <tags>
+        <tag>快捷键</tag>
         <tag>Mac</tag>
         <tag>VSCode</tag>
-        <tag>快捷键</tag>
       </tags>
   </entry>
   <entry>
@@ -2524,8 +2524,8 @@
         <category>git</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>快捷键</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -2538,8 +2538,8 @@
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>代码片段</tag>
         <tag>Java</tag>
+        <tag>代码片段</tag>
       </tags>
   </entry>
   <entry>
@@ -2563,8 +2563,8 @@
         <category>快捷键</category>
       </categories>
       <tags>
-        <tag>Mac</tag>
         <tag>快捷键</tag>
+        <tag>Mac</tag>
         <tag>iTem2</tag>
       </tags>
   </entry>
@@ -2576,8 +2576,8 @@
         <category>快捷键</category>
       </categories>
       <tags>
-        <tag>Mac</tag>
         <tag>快捷键</tag>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -2588,8 +2588,8 @@
         <category>快捷键</category>
       </categories>
       <tags>
-        <tag>Mac</tag>
         <tag>快捷键</tag>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
