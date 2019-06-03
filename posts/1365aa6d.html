@@ -81,21 +81,21 @@
 
 
 
-<meta name="description" content="背景Tangram 客户端 SDK 对后端数据格式有标准化的需求，而后端接口格式千千万万，总不会是每个接口格式都能如你所愿，Tangram4TAC 就是为了解决这种问题构建，以标准化模型来在 TAC 在构建一个 Tangram 页面。 SDK 介绍 一期 SDK 非常简单，尽量精简抽象，主要提供了 Tangram 组件模型的定义和默认的数据转换输出服务（称之为 render）。如上图所示，橘色部分">
+<meta name="description" content="背景Tangram 客户端 SDK 对后端数据格式有标准化的需求，而后端接口格式千千万万，总不会是每个接口格式都能如你所愿，Tangram4TAC 就是为了解决这种问题构建，以标准化模型来在 TAC 在构建一个 Tangram 页面。 SDK 介绍">
 <meta name="keywords" content="Android,Tangram">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在 TAC 上使用 Tangram4 TAC SDK">
 <meta property="og:url" content="http://yoursite.com/posts/1365aa6d.html">
 <meta property="og:site_name" content="zm.blog">
-<meta property="og:description" content="背景Tangram 客户端 SDK 对后端数据格式有标准化的需求，而后端接口格式千千万万，总不会是每个接口格式都能如你所愿，Tangram4TAC 就是为了解决这种问题构建，以标准化模型来在 TAC 在构建一个 Tangram 页面。 SDK 介绍 一期 SDK 非常简单，尽量精简抽象，主要提供了 Tangram 组件模型的定义和默认的数据转换输出服务（称之为 render）。如上图所示，橘色部分">
+<meta property="og:description" content="背景Tangram 客户端 SDK 对后端数据格式有标准化的需求，而后端接口格式千千万万，总不会是每个接口格式都能如你所愿，Tangram4TAC 就是为了解决这种问题构建，以标准化模型来在 TAC 在构建一个 Tangram 页面。 SDK 介绍">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/5/24/163912175134d274?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/5/24/1639121a70fb868d?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/5/24/1639121ca5693b5e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
-<meta property="og:updated_time" content="2019-06-03T08:54:54.581Z">
+<meta property="og:updated_time" content="2019-06-03T08:56:29.021Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在 TAC 上使用 Tangram4 TAC SDK">
-<meta name="twitter:description" content="背景Tangram 客户端 SDK 对后端数据格式有标准化的需求，而后端接口格式千千万万，总不会是每个接口格式都能如你所愿，Tangram4TAC 就是为了解决这种问题构建，以标准化模型来在 TAC 在构建一个 Tangram 页面。 SDK 介绍 一期 SDK 非常简单，尽量精简抽象，主要提供了 Tangram 组件模型的定义和默认的数据转换输出服务（称之为 render）。如上图所示，橘色部分">
+<meta name="twitter:description" content="背景Tangram 客户端 SDK 对后端数据格式有标准化的需求，而后端接口格式千千万万，总不会是每个接口格式都能如你所愿，Tangram4TAC 就是为了解决这种问题构建，以标准化模型来在 TAC 在构建一个 Tangram 页面。 SDK 介绍">
 <meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/5/24/163912175134d274?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
 
 
@@ -434,6 +434,7 @@
       
         <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>Tangram 客户端 SDK 对后端数据格式有标准化的需求，而后端接口格式千千万万，总不会是每个接口格式都能如你所愿，Tangram4TAC 就是为了解决这种问题构建，以标准化模型来在 TAC 在构建一个 Tangram 页面。</p>
 <h2 id="SDK-介绍"><a href="#SDK-介绍" class="headerlink" title="SDK 介绍"></a>SDK 介绍</h2><p><img src="https://user-gold-cdn.xitu.io/2018/5/24/163912175134d274?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p>
+<a id="more"></a>
 <p>一期 SDK 非常简单，尽量精简抽象，主要提供了 Tangram 组件模型的定义和默认的数据转换输出服务（称之为 render）。如上图所示，橘色部分为 SDK 提供的核心模型对象，Cell 是组件定义，Container 是容器定义，Style 是样式定义。浅绿色部分为 Tangram 内置的布局类型组件定义。白色部分为业务自定义组件，不集成在 SDK 内部，用户可以自己扩展任意部分来实现自己的组件 model 对象。</p>
 <p><img src="https://user-gold-cdn.xitu.io/2018/5/24/1639121a70fb868d?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p>
 <p>Cell、Container、Style 的属性定义也是按照现有 Tangram 的规范来定义，业务字段需要用户自己继承对应的类来扩展。</p>
