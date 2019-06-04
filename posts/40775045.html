@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="对于vue来说，组件之间的消息传递是非常重要的，下面是我对组件之间消息传递的各种方式的总结，总共有8种方式。  1 props和$emit 2 $attrs和$listeners 3 中央事件总线 4 provide和inject 5 v-model 6 $parent和$children 7 boradcast和dispatch 8 vuex处理组件之间的数据交互">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-16T07:44:23.996Z">
+<meta property="og:updated_time" content="2019-06-04T02:45:20.760Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue组件之间8种组件通信方式总结">
 <meta name="twitter:description" content="对于vue来说，组件之间的消息传递是非常重要的，下面是我对组件之间消息传递的各种方式的总结，总共有8种方式。  1 props和$emit 2 $attrs和$listeners 3 中央事件总线 4 provide和inject 5 v-model 6 $parent和$children 7 boradcast和dispatch 8 vuex处理组件之间的数据交互">
@@ -428,8 +428,7 @@
       
 
       
-        <blockquote>
-<p>对于vue来说，组件之间的消息传递是非常重要的，下面是我对组件之间消息传递的各种方式的总结，总共有8种方式。</p>
+        <p>对于vue来说，组件之间的消息传递是非常重要的，下面是我对组件之间消息传递的各种方式的总结，总共有8种方式。</p>
 <ul>
 <li>1 <code>props和$emit</code></li>
 <li>2 <code>$attrs和$listeners</code></li>
@@ -440,7 +439,6 @@
 <li>7 <code>boradcast和dispatch</code></li>
 <li>8 vuex处理组件之间的数据交互</li>
 </ul>
-</blockquote>
 <a id="more"></a>
 <h2 id="1-props和-emit"><a href="#1-props和-emit" class="headerlink" title="1.props和$emit"></a>1.<code>props和$emit</code></h2><p>父组件向子组件传递数据是通过prop传递的，子组件传递数据给父组件是通过<code>$emit</code>触发事件来做到的。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Vue.component(&apos;child&apos;,&#123;</span><br><span class="line">        data()&#123;</span><br><span class="line">            return &#123;</span><br><span class="line">                mymessage:this.message</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        template:`</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;input type=&quot;text&quot; v-model=&quot;mymessage&quot; @input=&quot;passData(mymessage)&quot;&gt; &lt;/div&gt;</span><br><span class="line">        `,</span><br><span class="line">        props:[&apos;message&apos;],//得到父组件传递过来的数据</span><br><span class="line">        methods:&#123;</span><br><span class="line">            passData(val)&#123;</span><br><span class="line">                //触发父组件中的事件</span><br><span class="line">                this.$emit(&apos;getChildData&apos;,val)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    Vue.component(&apos;parent&apos;,&#123;</span><br><span class="line">        template:`</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;p&gt;this is parent compoent!&lt;/p&gt;</span><br><span class="line">                &lt;child :message=&quot;message&quot; v-on:getChildData=&quot;getChildData&quot;&gt;&lt;/child&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        `,</span><br><span class="line">        data()&#123;</span><br><span class="line">            return &#123;</span><br><span class="line">                message:&apos;hello&apos;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            //执行子组件触发的事件</span><br><span class="line">            getChildData(val)&#123;</span><br><span class="line">                console.log(val)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    var app=new Vue(&#123;</span><br><span class="line">        el:&apos;#app&apos;,</span><br><span class="line">        template:`</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;parent&gt;&lt;/parent&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        `</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
