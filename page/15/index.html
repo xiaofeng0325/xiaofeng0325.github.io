@@ -1942,7 +1942,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/bb30f1ae.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/f55ab614.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -1961,7 +1961,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/bb30f1ae.html" itemprop="url">Android常用库和插件</a></h1>
+                <a class="post-title-link" href="/posts/f55ab614.html" itemprop="url">Gradle使用总结二</a></h1>
         
 
         <div class="post-meta">
@@ -1973,8 +1973,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-28T10:51:21+08:00">
-                2018-09-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-02T10:39:24+08:00">
+                2018-10-02
               </time>
             
 
@@ -2007,8 +2007,8 @@
                 
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/插件库/" itemprop="url" rel="index">
-                    <span itemprop="name">插件库</span>
+                  <a href="/categories/Android/Gradle/" itemprop="url" rel="index">
+                    <span itemprop="name">Gradle</span>
                   </a>
                 </span>
 
@@ -2025,8 +2025,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/bb30f1ae.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/bb30f1ae.html" itemprop="commentCount"></span>
+                <a href="/posts/f55ab614.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/f55ab614.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -2034,7 +2034,7 @@
 
           
           
-             <span id="/posts/bb30f1ae.html" class="leancloud_visitors" data-flag-title="Android常用库和插件">
+             <span id="/posts/f55ab614.html" class="leancloud_visitors" data-flag-title="Gradle使用总结二">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -2066,19 +2066,16 @@
 
       
         
-          <h1 id="下拉刷新"><a href="#下拉刷新" class="headerlink" title="下拉刷新"></a>下拉刷新</h1><h3 id="PullLoadMoreRecyclerView"><a href="#PullLoadMoreRecyclerView" class="headerlink" title="PullLoadMoreRecyclerView"></a>PullLoadMoreRecyclerView</h3><ul>
-<li>实现RecyclerView下拉刷新和上拉加载更多以及RecyclerView线性、网格、瀑布流效果演示</li>
-<li><a href="https://github.com/WuXiaolong/PullLoadMoreRecyclerView" target="_blank" rel="noopener">https://github.com/WuXiaolong/PullLoadMoreRecyclerView</a>  </li>
-<li>start 1247</li>
-</ul>
-<h3 id="android-Ultra-Pull-To-Refresh"><a href="#android-Ultra-Pull-To-Refresh" class="headerlink" title="android-Ultra-Pull-To-Refresh"></a>android-Ultra-Pull-To-Refresh</h3><ul>
-<li>这是现在已经停止维护的下拉刷新项目的替代方案。继承于ViewGroup可以包含任何View。功能比SwipeRefreshLayout强大。使用起来非常简单。良好的设计，如果你想定制自己的UI样式，非常简单，就像给ListView加一个Header View那么简单。</li>
-<li><a href="https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh" target="_blank" rel="noopener">https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh</a></li>
-<li>start 9322</li>
-</ul>
+          <h2 id="一、自定义Android-gradle工程"><a href="#一、自定义Android-gradle工程" class="headerlink" title="一、自定义Android gradle工程"></a>一、自定义Android gradle工程</h2><h3 id="1、defaultConfig默认配置"><a href="#1、defaultConfig默认配置" class="headerlink" title="1、defaultConfig默认配置"></a>1、defaultConfig默认配置</h3><blockquote>
+<p><code>defaultConfig</code> 是默认的配置，是一个<code>ProductFlavour</code>。对于多渠道打包，等情况，如果不针对自定义的是一个<code>ProductFlavour</code>单独配置的话，则默认使用<code>defaultConfig</code>的配置</p>
+</blockquote>
+<h4 id="（1）applicationId"><a href="#（1）applicationId" class="headerlink" title="（1）applicationId"></a>（1）applicationId</h4><p>指定生成的app包名，对应值是 <code>String</code>，如：<code>applicationId &quot;com.android.xx&quot;</code></p>
+<h4 id="（2）minSdkVersion"><a href="#（2）minSdkVersion" class="headerlink" title="（2）minSdkVersion"></a>（2）minSdkVersion</h4><p>App最低支持的Android操作系统版本，对应值是 <code>int</code>型（即对于sdk 的ApiLevel）如，<code>minSdkVersion 25</code></p>
+<h4 id="（3）targetSdkVersion"><a href="#（3）targetSdkVersion" class="headerlink" title="（3）targetSdkVersion"></a>（3）targetSdkVersion</h4><p>配置当前是基于哪个sdk版本进行开发，可选值与 minSdkVersion一样</p>
+<h4 id="（4）versionCode"><a href="#（4）versionCode" class="headerlink" title="（4）versionCode"></a>（4）versionCode</h4><p>内部版本号，对应值是<code>int</code>型，用于配置Android App内部版本号，通常用于版本的升级</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/posts/bb30f1ae.html#more" rel="contents">
+            <a class="btn" href="/posts/f55ab614.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2168,7 +2165,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">218</span>
+                  <span class="site-state-item-count">220</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2179,7 +2176,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
