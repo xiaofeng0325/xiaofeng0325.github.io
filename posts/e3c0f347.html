@@ -81,13 +81,13 @@
 
 
 
-<meta name="description" content="我们通常所说的排序算法往往指的是内部排序算法，即数据记录在内存中进行排序。 　　排序算法大体可分为两种： 　　　　一种是比较排序，时间复杂度O(nlogn) ~ O(n^2)，主要有：冒泡排序，选择排序，插入排序，归并排序，堆排序，快速排序等。 　　　　另一种是非比较排序，时间复杂度可以达到O(n)，主要有：计数排序，基数排序，桶排序等。  下表给出了常见比较排序算法的性能：">
+<meta name="description" content="我们通常所说的排序算法往往指的是内部排序算法，即数据记录在内存中进行排序。  　　排序算法大体可分为两种：  　　　　一种是比较排序，时间复杂度O(nlogn) ~ O(n^2)，主要有：冒泡排序，选择排序，插入排序，归并排序，堆排序，快速排序等。  　　　　另一种是非比较排序，时间复杂度可以达到O(n)，主要有：计数排序，基数排序，桶排序等。 下表给出了常见比较排序算法的性能：">
 <meta name="keywords" content="算法,冒泡排序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用排序算法总结">
 <meta property="og:url" content="http://yoursite.com/posts/e3c0f347.html">
 <meta property="og:site_name" content="zm.blog">
-<meta property="og:description" content="我们通常所说的排序算法往往指的是内部排序算法，即数据记录在内存中进行排序。 　　排序算法大体可分为两种： 　　　　一种是比较排序，时间复杂度O(nlogn) ~ O(n^2)，主要有：冒泡排序，选择排序，插入排序，归并排序，堆排序，快速排序等。 　　　　另一种是非比较排序，时间复杂度可以达到O(n)，主要有：计数排序，基数排序，桶排序等。  下表给出了常见比较排序算法的性能：">
+<meta property="og:description" content="我们通常所说的排序算法往往指的是内部排序算法，即数据记录在内存中进行排序。  　　排序算法大体可分为两种：  　　　　一种是比较排序，时间复杂度O(nlogn) ~ O(n^2)，主要有：冒泡排序，选择排序，插入排序，归并排序，堆排序，快速排序等。  　　　　另一种是非比较排序，时间复杂度可以达到O(n)，主要有：计数排序，基数排序，桶排序等。 下表给出了常见比较排序算法的性能：">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190605153547.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/739525-20160329100443676-1647340243.gif">
@@ -102,10 +102,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/739525-20160328211504519-1388466622.gif">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/739525-20160328213839160-2037856208.gif">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/739525-20160328215109269-23458370.gif">
-<meta property="og:updated_time" content="2019-06-05T08:21:05.391Z">
+<meta property="og:updated_time" content="2019-06-05T08:26:38.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用排序算法总结">
-<meta name="twitter:description" content="我们通常所说的排序算法往往指的是内部排序算法，即数据记录在内存中进行排序。 　　排序算法大体可分为两种： 　　　　一种是比较排序，时间复杂度O(nlogn) ~ O(n^2)，主要有：冒泡排序，选择排序，插入排序，归并排序，堆排序，快速排序等。 　　　　另一种是非比较排序，时间复杂度可以达到O(n)，主要有：计数排序，基数排序，桶排序等。  下表给出了常见比较排序算法的性能：">
+<meta name="twitter:description" content="我们通常所说的排序算法往往指的是内部排序算法，即数据记录在内存中进行排序。  　　排序算法大体可分为两种：  　　　　一种是比较排序，时间复杂度O(nlogn) ~ O(n^2)，主要有：冒泡排序，选择排序，插入排序，归并排序，堆排序，快速排序等。  　　　　另一种是非比较排序，时间复杂度可以达到O(n)，主要有：计数排序，基数排序，桶排序等。 下表给出了常见比较排序算法的性能：">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190605153547.png">
 
 
@@ -442,12 +442,10 @@
       
 
       
-        <blockquote>
-<p>我们通常所说的排序算法往往指的是<strong>内部排序算法</strong>，即数据记录在内存中进行排序。</p>
-<p>　　排序算法大体可分为两种：</p>
-<p>　　　　一种是<strong>比较排序</strong>，时间复杂度O(nlogn) ~ O(n^2)，主要有：<strong>冒泡排序</strong>，<strong>选择排序</strong>，<strong>插入排序</strong>，<strong>归并排序</strong>，<strong>堆排序</strong>，<strong>快速排序</strong>等。</p>
-<p>　　　　另一种是<strong>非比较排序</strong>，时间复杂度可以达到O(n)，主要有：<strong>计数排序</strong>，<strong>基数排序</strong>，<strong>桶排序</strong>等。</p>
-</blockquote>
+        <p>我们通常所说的排序算法往往指的是<strong>内部排序算法</strong>，即数据记录在内存中进行排序。</p>
+<p> 　　排序算法大体可分为两种：</p>
+<p> 　　　　一种是<strong>比较排序</strong>，时间复杂度O(nlogn) ~ O(n^2)，主要有：<strong>冒泡排序</strong>，<strong>选择排序</strong>，<strong>插入排序</strong>，<strong>归并排序</strong>，<strong>堆排序</strong>，<strong>快速排序</strong>等。</p>
+<p> 　　　　另一种是<strong>非比较排序</strong>，时间复杂度可以达到O(n)，主要有：<strong>计数排序</strong>，<strong>基数排序</strong>，<strong>桶排序</strong>等。</p>
 <p>下表给出了常见比较排序算法的性能：</p>
 <p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190605153547.png" alt=""></p>
 <a id="more"></a>
