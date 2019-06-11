@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="Android    一、Android四大组件    二、Fragment相关    三、动画相关    四、布局相关    五、数据存储    六、线程、进程    七、网络    八、WebView    九、图片    十、Camera相关    十一、音视频相关    十二、ViewPager相关    十三、RecyclerView相关    十四、Canvas相关    十五、传感器">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-11T03:28:15.088Z">
+<meta property="og:updated_time" content="2019-06-11T03:30:46.675Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android知识点归纳总结提纲">
 <meta name="twitter:description" content="Android    一、Android四大组件    二、Fragment相关    三、动画相关    四、布局相关    五、数据存储    六、线程、进程    七、网络    八、WebView    九、图片    十、Camera相关    十一、音视频相关    十二、ViewPager相关    十三、RecyclerView相关    十四、Canvas相关    十五、传感器">
@@ -526,17 +526,8 @@
 <li>夜间模式</li>
 <li>待续…</li>
 </ul>
-<h2 id="Java部分"><a href="#Java部分" class="headerlink" title="Java部分"></a>Java部分</h2><h3 id="一、Java基础"><a href="#一、Java基础" class="headerlink" title="一、Java基础"></a>一、Java基础</h3><p>Java基础数据类型，各占用多少字节，数据类型之间的相互转换，数据类型之间的比较==和equals的区别<br>String、StringBuffer、StringBuilder区别，哪个是线程安全的，何时需要使用后面两个（有什么区别），String属于Java的基础数据类型吗，字符串操作（分隔、拼接、替换、查找），字符串比较，String与其他基础数据类型的包装类型之间的互转，String与char或byte Array之间的互转，创建字符串变量有几种方式有什么区别，什么是字符串池，为什么说Java字符串是不可变对象<br>Java集合相关，集合的排序/遍历/复制， HashMap原理，HashMap 和 HashTable 区别，LinkedHashMap源码分析， HashCode 作用，如何重载hashCode方法，ArrayList与LinkList区别与联系, List与数组[]相互转换，List,Set,Map的区别，ConcurrentHashMap的实现原理，要存储一个数据元素不重复的集合该使用哪种集合，要存储一个数据元素是有序的集合该使用哪种集合，ArrayList和HashMap 等集合是如何扩容的<br>Java反射相关，方法、成员变量<br>Java注解相关<br>Java线程同步相关，Java死锁产生的原因及避免，方法锁、对象锁、类锁的意义和区别，线程同步的方法：Synchronized、lock、reentrantLock分析，Synchronized原理，Volatile实现原理，ThreadLocal的原理和用法，ThreadPool的用法和示例，wait()和sleep()的区别，wait/notify关键字的理解<br>Java枚举相关<br>Java内存管理，虚拟机 ，GC机制，Java引用类型，循环引用，Java内存泄漏，Java内存模型（堆内存 栈内存 常量池），Java中new 一个对象是存在哪里的<br>JVM类加载机制，ClassLoader(类加载器)的理解，Android中的区别<br>什么是多态，Java封装、继承和多态的理解<br>什么是内部类？内部类的作用，静态内部类的作用<br>什么是抽象类，抽象类和接口区别，抽象类是否可以没有方法和属性，接口的意义<br>Java泛型相关，如何通过泛型传递Java类作为参数<br>序列化的方式 Serializable 和Parcelable 的区别<br>静态属性和静态方法是否可以被继承？重写？以及原因？<br>final，finally，finalize的区别<br>utf-8编码中的中文占几个字节；int型几个字节？，java unicode编码，中文与unicode互转<br>什么是深拷贝和浅拷贝<br>如何实现多线程断点续传<br>Class.forName()和ClassLoader的区别<br>待续…</p>
-<h3 id="二、Java数据结构和算法"><a href="#二、Java数据结构和算法" class="headerlink" title="二、Java数据结构和算法"></a>二、Java数据结构和算法</h3><ul>
-<li>1、栈和队列，栈和队列的概念理解，Java代码实现栈LIFO（后进先出）和队列FIFO（先进先出），实现思路，入栈/出栈，栈顶/栈底，入队/出队，队头/队尾，栈/队的遍历，循环队列，判断栈/队列是否为空</li>
-<li>2、数组和链表，数组和链表的特点和区别，Java代码实现链表结构，数组和链表分别实现查找、插入，删除等操作以及各自的时间复杂度和空间复杂度，链表的反序，两个有序链表的合并，双向链表结构的实现，双向链表的插入、删除等，自定义一个动态数组，Java 类中哪些结构属于数组/链表</li>
-<li>3、排序算法，Java八大排序算法的实现思路（选择排序，快速排序，冒泡排序，堆排序，希尔排序，归并排序，直接插入排序，基数排序）以及各自的时间复杂度和空间复杂度，最快的排序算法是哪个？ 哪些是稳定/不稳定的排序算法，快排的优化，手写冒泡、快排代码</li>
-<li>4、查找算法，Java代码实现顺序查找和二分查找，实现思路</li>
-<li>5、二叉树，二叉树排序，二叉树遍历、查找、删除，哈夫曼树、红黑树</li>
-<li>6、Hash表，及Hash冲突的解决</li>
-<li>7、Java有向图的遍历，BFS遍历和DFS遍历（深度优先搜索算法和广度优先搜索算法）、Prim、Dijkstra算法</li>
-<li>8、经典问题：海量数据的处理 （10亿个数中找出最大的10000个数 TOP K问题）<br>两个不重复的数组集合中，两个集合都是海量数据，内存中放不下，求共同元素<br>烧一根不均匀的绳，从头烧到尾总共需要1个小时。现在有若干条材质相同的绳子，问如何用烧绳的方法来计时一个小时十五分钟呢？<br>时针走一圈，时针分针重合几次<br>N*N的方格纸,里面有多少个正方形<br>待续…</li>
-</ul>
+<h2 id="Java部分"><a href="#Java部分" class="headerlink" title="Java部分"></a>Java部分</h2><h3 id="一、Java基础"><a href="#一、Java基础" class="headerlink" title="一、Java基础"></a>一、Java基础</h3><p>1：Java基础数据类型，各占用多少字节，数据类型之间的相互转换，数据类型之间的比较==和equals的区别<br>2：String、StringBuffer、StringBuilder区别，哪个是线程安全的，何时需要使用后面两个（有什么区别），String属于Java的基础数据类型吗，字符串操作（分隔、拼接、替换、查找），字符串比较，String与其他基础数据类型的包装类型之间的互转，String与char或byte Array之间的互转，创建字符串变量有几种方式有什么区别，什么是字符串池，为什么说Java字符串是不可变对象<br>3：Java集合相关，集合的排序/遍历/复制， HashMap原理，HashMap 和 HashTable 区别，LinkedHashMap源码分析， HashCode 作用，如何重载hashCode方法，ArrayList与LinkList区别与联系, List与数组[]相互转换，List,Set,Map的区别，ConcurrentHashMap的实现原理，要存储一个数据元素不重复的集合该使用哪种集合，要存储一个数据元素是有序的集合该使用哪种集合，ArrayList和HashMap 等集合是如何扩容的<br>4：Java反射相关，方法、成员变量<br>5：Java注解相关<br>6：Java线程同步相关，Java死锁产生的原因及避免，方法锁、对象锁、类锁的意义和区别，线程同步的方法：Synchronized、lock、reentrantLock分析，Synchronized原理，Volatile实现原理，ThreadLocal的原理和用法，ThreadPool的用法和示例，wait()和sleep()的区别，wait/notify关键字的理解<br>7：Java枚举相关<br>8：Java内存管理，虚拟机 ，GC机制，Java引用类型，循环引用，Java内存泄漏，Java内存模型（堆内存 栈内存 常量池），Java中new 一个对象是存在哪里的<br>9：JVM类加载机制，ClassLoader(类加载器)的理解，Android中的区别<br>10：什么是多态，Java封装、继承和多态的理解<br>11：什么是内部类？内部类的作用，静态内部类的作用<br>12：什么是抽象类，抽象类和接口区别，抽象类是否可以没有方法和属性，接口的意义<br>13：Java泛型相关，如何通过泛型传递Java类作为参数<br>14：序列化的方式 Serializable 和Parcelable 的区别<br>15：静态属性和静态方法是否可以被继承？重写？以及原因？<br>16：final，finally，finalize的区别<br>17：utf-8编码中的中文占几个字节；int型几个字节？，java unicode编码，中文与unicode互转<br>18：什么是深拷贝和浅拷贝<br>19：如何实现多线程断点续传<br>20：Class.forName()和ClassLoader的区别<br>21：待续…</p>
+<h3 id="二、Java数据结构和算法"><a href="#二、Java数据结构和算法" class="headerlink" title="二、Java数据结构和算法"></a>二、Java数据结构和算法</h3><p>1：栈和队列，栈和队列的概念理解，Java代码实现栈LIFO（后进先出）和队列FIFO（先进先出），实现思路，入栈/出栈，栈顶/栈底，入队/出队，队头/队尾，栈/队的遍历，循环队列，判断栈/队列是否为空<br>2：数组和链表，数组和链表的特点和区别，Java代码实现链表结构，数组和链表分别实现查找、插入，删除等操作以及各自的时间复杂度和空间复杂度，链表的反序，两个有序链表的合并，双向链表结构的实现，双向链表的插入、删除等，自定义一个动态数组，Java 类中哪些结构属于数组/链表<br>3：排序算法，Java八大排序算法的实现思路（选择排序，快速排序，冒泡排序，堆排序，希尔排序，归并排序，直接插入排序，基数排序）以及各自的时间复杂度和空间复杂度，最快的排序算法是哪个？ 哪些是稳定/不稳定的排序算法，快排的优化，手写冒泡、快排代码<br>4：查找算法，Java代码实现顺序查找和二分查找，实现思路<br>5：二叉树，二叉树排序，二叉树遍历、查找、删除，哈夫曼树、红黑树<br>6：Hash表，及Hash冲突的解决<br>7：Java有向图的遍历，BFS遍历和DFS遍历（深度优先搜索算法和广度优先搜索算法）、Prim、Dijkstra算法<br>8：经典问题：海量数据的处理 （10亿个数中找出最大的10000个数 TOP K问题）<br>9：两个不重复的数组集合中，两个集合都是海量数据，内存中放不下，求共同元素<br>10：烧一根不均匀的绳，从头烧到尾总共需要1个小时。现在有若干条材质相同的绳子，问如何用烧绳的方法来计时一个小时十五分钟呢？<br>11：时针走一圈，时针分针重合几次<br>12：N*N的方格纸,里面有多少个正方形<br>13：待续…</p>
 
       
     </div>
