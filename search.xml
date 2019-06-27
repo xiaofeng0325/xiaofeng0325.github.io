@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[OkHttp3源码分析]]></title>
+    <url>%2Fposts%2F1eadb261.html</url>
+    <content type="text"><![CDATA[为什么okHttp3 好用呢？OkHttp是一个精巧的网络请求库,有如下特性: 支持http2，对一台机器的所有请求共享同一个socket 内置连接池，支持连接复用，减少延迟 支持透明的gzip压缩响应体 通过缓存避免重复的请求 请求失败时自动重试主机的其他ip，自动重定向 好用的API 实现网络请求方法:OkHttp3的最底层是Socket，而不是URLConnection，它通过Platform的Class.forName()反射获得当前Runtime使用的socket库 socket发起网络请求的流程一般是：(1). 创建socket对象;(2). 连接到目标网络;(3). 进行输入输出流操作。 (1)(2)的实现，封装在connection接口中，具体的实现类是RealConnection。(3)是通过stream接口来实现，根据不同的网络协议，有Http1xStream和Http2xStream两个实现类由于创建网络连接的时间较久(如果是HTTP的话，需要进行三次握手)，而请求经常是频繁的碎片化的，所以为了提高网络连接的效率，OKHttp3实现了网络连接复用 运用到的设计模式： 单例模式：（建议用单例模式创建okHttpClient）OkHttpClient， 可以通过 new OkHttpClient() 或 new OkHttpClient.Builder() 来创建对象， 但是—特别注意， OkHttpClient() 对象最好是共享的， 建议使用单例模式创建。 因为每个 OkHttpClient 对象都管理自己独有的线程池和连接池。 这一点很多同学，甚至在我经历的团队中就有人踩过坑， 每一个请求都创建一个 OkHttpClient 导致内存爆掉 外观模式 : OKHttpClient 里面组合了很多的类对象。其实是将OKHttp的很多功能模块，全部包装进这个类中，让这个类单独提供对外的API，这种设计叫做外观模式（外观模式：隐藏系统的复杂性，并向客户端提供了一个客户端可以访问系统的接口） Builder模式 : OkHttpClient 比较复杂， 太多属性， 而且客户的组合需求多样化， 所以OKhttp使用建造者模式（Build模式：使用多个简单的对象一步一步构建成一个复杂的对象，一个 Builder 类会一步一步构造最终的对象） 工厂方法模式：Call接口提供了内部接口Factory(用于将对象的创建延迟到该工厂类的子类中进行，从而实现动态的配置，工厂方法模式。（工厂方法模式：这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。） 享元模式：在Dispatcher的线程池中，所用到了享元模式，一个不限容量的线程池 ， 线程空闲时存活时间为 60 秒。线程池实现了对象复用，降低线程创建开销，从设计模式上来讲，使用了享元模式。（享元模式：尝试重用现有的同类对象，如果未找到匹配的对象，则创建新对象，主要用于减少创建对象的数量，以减少内存占用和提高性能） 责任链模式：很明显，在okhttp中的拦截器模块，执行过程用到。OkHttp3 的拦截器链中， 内置了5个默认的拦截器，分别用于重试、请求对象转换、缓存、链接、网络读写（责任链模式：为请求创建了一个接收者对象的链。这种模式给予请求的类型，对请求的发送者和接收者进行解耦。这种类型的设计模式属于行为型模式。在这种模式中，通常每个接收者都包含对另一个接收者的引用。如果一个对象不能处理该请求，那么它会把相同的请求传给下一个接收者，依此类推。） 策略模式 ：CacheInterceptor 实现了数据的选择策略， 来自网络还是来自本地？ 这个场景也是比较契合策略模式场景， CacheInterceptor 需要一个策略提供者提供它一个策略（锦囊）， CacheInterceptor 根据这个策略去选择走网络数据还是本地缓存。缓存的策略过程：1、 请求头包含 “If-Modified-Since” 或 “If-None-Match” 暂时不走缓存2、 客户端通过 cacheControl 指定了无缓存，不走缓存3、客户端通过 cacheControl 指定了缓存，则看缓存过期时间，符合要求走缓存。 4、 如果走了网络请求，响应状态码为 304（只有客户端请求头包含 “If-Modified-Since” 或 “If-None-Match” ，服务器数据没变化的话会返回304状态码，不会返回响应内容）， 表示客户端继续用缓存。 （策略模式：一个类的行为或其算法可以在运行时更改。这种类型的设计模式属于行为型模式。策略模式中，我们创建表示各种策略的对象和一个行为随着策略对象改变而改变的 context 对象。策略对象改变 context 对象的执行算法。） 源码中用到的几个重要的类及作用解释： 1.OkhttpClient :对外的API，OKHttp的很多功能模块，全部包装进这个类；创建分为两种：一种是new OkHttpClient()的方式，另一种是使用建造者（Builder）模式 – new OkHttpClient.Builder()….Build()。那么这两种方式有什么区别呢？ 第一种：new OkHttpClient()，OkHttp做了很多工作，很多我们需要的参数在这里都获得默认值,也就是默认值设定。 第二种：默认的设置和第一种方式相同，但是我们可以利用建造者模式单独的设置每一个属性；注意事项：OkHttpClient强烈建议全局单例使用，因为每一个OkHttpClient都有自己单独的连接池和线程池，复用连接池和线程池能够减少延迟、节省内存。 2.RealCall类：集成Call类，从源代码中，可看到使用Call类，发送出（同步／异步）请求.RealCall的主要作用：发送请求，当中还有拦截器的建立过程，异步回调。 3.Dispatcher类（调度器，多线程）：保存同步和异步Call的地方，并负责执行异步AsyncCall 4.拦截器链：有用户自定义的interceptor、retryAndFollowUpInterceptor、BridgeInterceptor、CacheInterceptor、ConnectInterceptor、 networkInterceptors、CallServerInterceptor。依次通过以上拦截器，传递给RealCall中的ApplicationInterceptorChain。拦截器之所以可以依次调用，并最终再从后先前返回Response，都依赖于ApplicatiionInterceptorChain的proceed方法. 5.HttpEngine类：OKhttp底层的实现，（还在看） 缓存策略：提到缓存策略，就要提到CacheInterceptor拦截器，如下图 CacheStrategy实现缓存策略，CacheStrategy使用Factory模式进行构造，该类决定是使用缓存还是使用网络请求 Cache是封装了实际的缓存操作；DiskLruCache:Cache基于DiskLruCache； 线程池（同步，异步）： 针对异步请求，Dispatcher使用了两个Deque，一个保存准备执行的请求，一个保存正在执行的请求，为什么要用两个呢？因为Dispatcher默认支持最大的并发请求是64个，单个Host最多执行5个并发请求，如果超过，则Call会先被放入到readyAsyncCall中，当出现空闲的线程时，再将readyAsyncCall中的线程移入到runningAsynCalls中，执行请求。 如果正在执行的请求总数&lt;=64 &amp;&amp; 单个Host正在执行的请求&lt;=5，则将请求加入到runningAsyncCalls集合中，紧接着就是利用线程池执行该请求，否则就将该请求放入readyAsyncCalls集合中。 未完待续。]]></content>
+      <categories>
+        <category>Android</category>
+        <category>开源库</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>开源库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[View的绘制流程]]></title>
     <url>%2Fposts%2Fbfd836fe.html</url>
     <content type="text"><![CDATA[Android 中 Activity 是作为应用程序的载体存在，代表着一个完整的用户界面，提供了一个窗口来绘制各种视图，当 Activity 启动时，我们会通过 setContentView 方法来设置一个内容视图，这个内容视图就是用户看到的界面。 PhoneWindow 是 Android 系统中最基本的窗口系统，每个 Activity 会创建一个。PhoneWindow 是 Activity 和 View 系统交互的借口。DecorView 本质上是一个 FrameLayout，是 Activity 中所有 View 的祖先。 绘制的整体流程当一个应用启动时，会启动一个主 Activity，Android 系统会根据 Activity 的布局来对它进行绘制。绘制会从根视图 ViewRoot 的 performTraversals() 方法开始，从上到下遍历整个视图树，每个 View 控制负责绘制自己，而 ViewGroup 还需要负责通知自己的子 View 进行绘制操作。视图操作的过程可以分为三个步骤，分别是测量(Measure)、布局(Layout)和绘制(Draw)。performTraversals 方法在类 ViewRootImpl 内，其核心代码如下。 int childWidthMeasureSpec = getRootMeasureSpec(mWidth, lp.width);int childHeightMeasureSpec = getRootMeasureSpec(mHeight, lp.height);...// 测量performMeasure(childWidthMeasureSpec, childHeightMeasureSpec);...// 布局performLayout(lp, mWidth, mHeight);...// 绘制performDraw(); MeasureSpecMeasureSpec 表示的是一个 32 位的整数值，它的高 2 位表示测量模式 SpecMode，低 30 位表示某种测量模式下的规格大小 SpecSize。MeasureSpec 是 View 类的一个静态内部类，用来说明应该如何测量这个View。 三种测量模式。 UNSPECIFIED：不指定测量模式，父视图没有限制子视图的大小，子视图可以是想要的任何尺寸，通常用于系统内部，应用开发中很少使用到。 EXACTLY：精确测量模式，当该视图的 layout_width 或者 layout_height 指定为具体数值或者 match_parent 时生效，表示父视图已经决定了子视图的精确大小，这种模式下 View 的测量值就是 SpecSize 的值。 AT_MOST：最大值模式，当前视图的 layout_width 或者 layout_height 指定为 wrap_content 时生效，此时子视图的尺寸可以是不超过父视图运行的最大尺寸的任何尺寸。 对 DecorView 而言，它的 MeasureSpec 由窗口尺寸和其自身的 LayoutParams 共同决定；对于普通的 View，它的 MeasureSpec 由父视图的 MeasureSpec 和其本身的 LayoutParams 共同决定。 MeasureMeasure 用来计算 View 的实际大小。页面的测量流程从 performMeasure 方法开始。 private void performMeasure(int childWidthMeasureSpec, int childHeightMeasureSpec) &#123; if (mView == null) &#123; return; &#125; Trace.traceBegin(Trace.TRACE_TAG_VIEW, "measure"); try &#123; mView.measure(childWidthMeasureSpec, childHeightMeasureSpec); &#125; finally &#123; Trace.traceEnd(Trace.TRACE_TAG_VIEW); &#125;&#125; 具体操作是分发给 ViewGroup 的，由 ViewGroup 在它的 measureChild 方法中传递给子 View。ViewGroup 通过遍历自身所有的子 View，并逐个调用子 View 的 measure 方法实现测量操作。 // 遍历测量 ViewGroup 中所有的 Viewprotected void measureChildren(int widthMeasureSpec, int heightMeasureSpec) &#123; final int size = mChildrenCount; final View[] children = mChildren; for (int i = 0; i &lt; size; ++i) &#123; final View child = children[i]; if ((child.mViewFlags &amp; VISIBILITY_MASK) != GONE) &#123; measureChild(child, widthMeasureSpec, heightMeasureSpec); &#125; &#125;&#125;// 测量某个指定的 Viewprotected void measureChild(View child, int parentWidthMeasureSpec, int parentHeightMeasureSpec) &#123; final LayoutParams lp = child.getLayoutParams(); final int childWidthMeasureSpec = getChildMeasureSpec(parentWidthMeasureSpec, mPaddingLeft + mPaddingRight, lp.width); final int childHeightMeasureSpec = getChildMeasureSpec(parentHeightMeasureSpec, mPaddingTop + mPaddingBottom, lp.height); child.measure(childWidthMeasureSpec, childHeightMeasureSpec);&#125; View (ViewGroup) 的 Measure 方法，最终的测量是通过回调 onMeasure 方法实现的，这个通常由 View 的特定子类自己实现，可以通过重写这个方法实现自定义 View。 public final void measure(int widthMeasureSpec, int heightMeasureSpec) &#123; ... onMeasure(widthMeasureSpec, heightMeasureSpec); ....&#125;// 如果需要自定义测量，子类需重写这个方法protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) &#123; setMeasuredDimension(getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec), getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec));&#125;// 如果 View 没有重写onMeasure 方法，默认会直接调用 getDefaultSize public static int getDefaultSize(int size, int measureSpec) &#123; int result = size; int specMode = MeasureSpec.getMode(measureSpec); int specSize = MeasureSpec.getSize(measureSpec); switch (specMode) &#123; case MeasureSpec.UNSPECIFIED: result = size; break; case MeasureSpec.AT_MOST: case MeasureSpec.EXACTLY: result = specSize; break; &#125; return result; &#125; LayoutLayout 过程用来确定 View 在父容器的布局位置，他是父容器获取子 View 的位置参数后，调用子 View 的 layout 方法并将位置参数传入实现的。ViewRootImpl 的 performLayout 代码如下。 private void performLayout(WindowManager.LayoutParams lp, int desiredWindowWidth, int desiredWindowHeight) &#123; ... host.layout(0, 0, host.getMeasuredWidth(), host.getMeasuredHeight()); ...&#125; View 的 layout 方法代码。 public void layout(int l, int t, int r, int b) &#123; onLayout(changed, l, t, r, b);&#125;// 空方法，子类如果是 ViewGroup 类型，则重写这个方法，实现 ViewGroup 中所有 View 控件布局protected void onLayout(boolean changed, int left, int top, int right, int bottom) &#123;&#125; DrawDraw 操作用来将控件绘制出来，绘制的流程从 performDraw 方法开始。performDraw 方法在类 ViewRootImpl 内，其核心代码如下。 private void performDraw() &#123; boolean canUseAsync = draw(fullRedrawNeeded);&#125;private boolean draw(boolean fullRedrawNeeded) &#123; ... if (!drawSoftware(surface, mAttachInfo, xOffset, yOffset, scalingRequired, dirty, surfaceInsets)) &#123; return false; &#125;&#125;private boolean drawSoftware(Surface surface, AttachInfo attachInfo, int xoff, int yoff, boolean scalingRequired, Rect dirty, Rect surfaceInsets) &#123; ... mView.draw(canvas); ...&#125; 最终调用到每个 View 的 draw 方法绘制每个具体的 View，绘制基本上可以分为六个步骤。 public void draw(Canvas canvas) &#123; ... // Step 1, draw the background, if needed if (!dirtyOpaque) &#123; drawBackground(canvas); &#125; ... // Step 2, save the canvas' layers saveCount = canvas.getSaveCount(); ... // Step 3, draw the content if (!dirtyOpaque) onDraw(canvas); // Step 4, draw the children dispatchDraw(canvas); // Step 5, draw the fade effect and restore layers canvas.drawRect(left, top, right, top + length, p); ... canvas.restoreToCount(saveCount); ... // Step 6, draw decorations (foreground, scrollbars) onDrawForeground(canvas);&#125;]]></content>
+      <categories>
+        <category>Android</category>
+        <category>View</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>View</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Android中RelativeLayout和LinearLayout性能分析]]></title>
@@ -1174,10 +1195,10 @@
       <tags>
         <tag>Android</tag>
         <tag>Android Tips</tag>
-        <tag>.so文件</tag>
         <tag>armeabi-v7a</tag>
         <tag>arm64-v8a</tag>
         <tag>abi兼容</tag>
+        <tag>.so文件</tag>
       </tags>
   </entry>
   <entry>
@@ -1191,9 +1212,9 @@
       <tags>
         <tag>Android</tag>
         <tag>Android Tips</tag>
+        <tag>.so文件</tag>
         <tag>ABI</tag>
         <tag>CPU</tag>
-        <tag>.so文件</tag>
       </tags>
   </entry>
   <entry>
@@ -2241,8 +2262,8 @@
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>EventBus</tag>
         <tag>XBus</tag>
+        <tag>EventBus</tag>
       </tags>
   </entry>
   <entry>
@@ -2570,8 +2591,8 @@
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>AndroidStudio</tag>
         <tag>Android Tips</tag>
+        <tag>AndroidStudio</tag>
       </tags>
   </entry>
   <entry>
