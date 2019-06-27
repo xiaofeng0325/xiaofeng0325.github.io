@@ -430,28 +430,15 @@
 
       
         
-          
-          1.前言
-Android开发过程中，使用第三方的框架库已成家常便饭，使用第三方好处避免重复造轮子、降低成本、提升效率、降低风险等等，当遇到框架库不能满足现有业务、框架库设计缺陷或者漏洞、API使用深度不够时，如果停留只会使用层面，就会增加修改过程的难度，所以对于使用的框架库最好还是有个系统的认识；
-
-本文带大家深入讲解 OkHttp；
-
-
-
-2.目录
-
-3.定义
-一款处理网络请求的开源项目，由Square公司贡献。
-
-
-4.作用
-通过建造者模式（Builder Pattern）方式，完成复杂的网络请求。
-
-
-5.特点
-1.同时支持HTTP1.1与支持HTTP2.0；
-2.同时支持同步与异步请求
-          ...
+          <h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h1><ul>
+<li><p>Android开发过程中，使用第三方的框架库已成家常便饭，使用第三方好处<strong>避免重复造轮子、降低成本、提升效率、降低风险等等</strong>，当遇到<strong>框架库不能满足现有业务、框架库设计缺陷或者漏洞、API使用深度不够</strong>时，如果停留只会使用层面，就会增加修改过程的难度，所以对于使用的框架库最好还是有个系统的认识；</p>
+</li>
+<li><p>本文带大家深入讲解 <code>OkHttp</code>；</p>
+<hr>
+</li>
+</ul>
+<h1 id="2-目录"><a href="#2-目录" class="headerlink" title="2.目录"></a>2.目录</h1><p><img src="https://upload-images.jianshu.io/upload_images/10018045-56a0928f8a714469.png?imageMogr2/auto-orient/" alt="img"></p>
+<hr>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/posts/9c0f9a31.html#more" rel="contents">
@@ -524,7 +511,7 @@ Android开发过程中，使用第三方的框架库已成家常便饭，使用�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/1eadb261.html" itemprop="url">OkHttp3源码分析</a></h1>
+                <a class="post-title-link" href="/posts/1eadb261.html" itemprop="url">OkHttp3源码分析一</a></h1>
         
 
         <div class="post-meta">
@@ -597,7 +584,7 @@ Android开发过程中，使用第三方的框架库已成家常便饭，使用�
 
           
           
-             <span id="/posts/1eadb261.html" class="leancloud_visitors" data-flag-title="OkHttp3源码分析">
+             <span id="/posts/1eadb261.html" class="leancloud_visitors" data-flag-title="OkHttp3源码分析一">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -629,22 +616,7 @@ Android开发过程中，使用第三方的框架库已成家常便饭，使用�
 
       
         
-          
-          一、OkHttp3流程图
-二、源码整体架构
-上图是OkHttp3的整体框架，大致可以分为以下几层：
-
-Interface——接口层：接收用户的网络访问请求（同步请求/异步请求），发起实际的网络访问
-Protocol——协议层：处理协议逻辑
-Connection——连接层：管理网络连接，发送新的请求，接收服务器访问
-Cache——缓存层：管理本地缓存
-I/O——I/O层：实际数据读写实现
-Inteceptor——拦截器层：拦截网络访问，插入拦截逻辑
-
-2.1 Interface——接口层接口层接收用户的网络访问请求（同步请求/异步请求），发起实际的网络访问
-
-OkHttpClient：是OkHt
-          ...
+          <h2 id="一、OkHttp3流程图"><a href="#一、OkHttp3流程图" class="headerlink" title="一、OkHttp3流程图"></a>一、OkHttp3流程图</h2><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190627165616.png" alt=""></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/posts/1eadb261.html#more" rel="contents">

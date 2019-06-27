@@ -81,22 +81,22 @@
 
 
 
-<meta name="description" content="一、OkHttp3流程图 二、源码整体架构 上图是OkHttp3的整体框架，大致可以分为以下几层：  Interface——接口层：接收用户的网络访问请求（同步请求/异步请求），发起实际的网络访问 Protocol——协议层：处理协议逻辑 Connection——连接层：管理网络连接，发送新的请求，接收服务器访问 Cache——缓存层：管理本地缓存 I/O——I/O层：实际数据读写实现 Intec">
+<meta name="description" content="一、OkHttp3流程图">
 <meta name="keywords" content="Android,开源库">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OkHttp3源码分析">
+<meta property="og:title" content="OkHttp3源码分析一">
 <meta property="og:url" content="http://yoursite.com/posts/1eadb261.html">
 <meta property="og:site_name" content="zm.blog">
-<meta property="og:description" content="一、OkHttp3流程图 二、源码整体架构 上图是OkHttp3的整体框架，大致可以分为以下几层：  Interface——接口层：接收用户的网络访问请求（同步请求/异步请求），发起实际的网络访问 Protocol——协议层：处理协议逻辑 Connection——连接层：管理网络连接，发送新的请求，接收服务器访问 Cache——缓存层：管理本地缓存 I/O——I/O层：实际数据读写实现 Intec">
+<meta property="og:description" content="一、OkHttp3流程图">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190627165616.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190627165658.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190627170713.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190627170509.png">
-<meta property="og:updated_time" content="2019-06-27T09:12:38.234Z">
+<meta property="og:updated_time" content="2019-06-27T09:23:28.146Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OkHttp3源码分析">
-<meta name="twitter:description" content="一、OkHttp3流程图 二、源码整体架构 上图是OkHttp3的整体框架，大致可以分为以下几层：  Interface——接口层：接收用户的网络访问请求（同步请求/异步请求），发起实际的网络访问 Protocol——协议层：处理协议逻辑 Connection——连接层：管理网络连接，发送新的请求，接收服务器访问 Cache——缓存层：管理本地缓存 I/O——I/O层：实际数据读写实现 Intec">
+<meta name="twitter:title" content="OkHttp3源码分析一">
+<meta name="twitter:description" content="一、OkHttp3流程图">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190627165616.png">
 
 
@@ -133,7 +133,7 @@
 
 
 
-  <title>OkHttp3源码分析 | zm.blog</title>
+  <title>OkHttp3源码分析一 | zm.blog</title>
   
 
 
@@ -329,7 +329,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">OkHttp3源码分析</h1>
+          <h1 class="post-title" itemprop="name headline">OkHttp3源码分析一</h1>
         
 
         <div class="post-meta">
@@ -402,7 +402,7 @@
 
           
           
-             <span id="/posts/1eadb261.html" class="leancloud_visitors" data-flag-title="OkHttp3源码分析">
+             <span id="/posts/1eadb261.html" class="leancloud_visitors" data-flag-title="OkHttp3源码分析一">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -434,6 +434,7 @@
 
       
         <h2 id="一、OkHttp3流程图"><a href="#一、OkHttp3流程图" class="headerlink" title="一、OkHttp3流程图"></a>一、OkHttp3流程图</h2><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190627165616.png" alt=""></p>
+<a id="more"></a>
 <h2 id="二、源码整体架构"><a href="#二、源码整体架构" class="headerlink" title="二、源码整体架构"></a>二、源码整体架构</h2><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190627165658.png" alt=""></p>
 <p>上图是OkHttp3的整体框架，大致可以分为以下几层：</p>
 <ul>
@@ -976,7 +977,7 @@
         var disqus_config = function () {
           this.page.url = 'http://yoursite.com/posts/1eadb261.html';
           this.page.identifier = 'posts/1eadb261.html';
-          this.page.title = 'OkHttp3源码分析';
+          this.page.title = 'OkHttp3源码分析一';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://zhangmiao.disqus.com/embed.js';
