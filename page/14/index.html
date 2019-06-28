@@ -1864,16 +1864,7 @@
 
       
         
-          <h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h3><h4 id="Handler允许你发送和处理Message，以及和线程相关联的Runnable对象。每一个Handler实例都与一个线程及该线程的MessageQueue相关联。既当你创建一个Handler时，该Handler必须绑定一个线程以及该线程的消息队列，一旦它被创建，它能把messages和runnables传送到message-queue，并在它们从message-queue中出来的时候执行它们。"><a href="#Handler允许你发送和处理Message，以及和线程相关联的Runnable对象。每一个Handler实例都与一个线程及该线程的MessageQueue相关联。既当你创建一个Handler时，该Handler必须绑定一个线程以及该线程的消息队列，一旦它被创建，它能把messages和runnables传送到message-queue，并在它们从message-queue中出来的时候执行它们。" class="headerlink" title="  Handler允许你发送和处理Message，以及和线程相关联的Runnable对象。每一个Handler实例都与一个线程及该线程的MessageQueue相关联。既当你创建一个Handler时，该Handler必须绑定一个线程以及该线程的消息队列，一旦它被创建，它能把messages和runnables传送到message queue，并在它们从message queue中出来的时候执行它们。"></a>  <strong>Handler允许你发送和处理Message，以及和线程相关联的Runnable对象。每一个Handler实例都与一个线程及该线程的MessageQueue相关联。既当你创建一个Handler时，该Handler必须绑定一个线程以及该线程的消息队列，一旦它被创建，它能把messages和runnables传送到message queue，并在它们从message queue中出来的时候执行它们。</strong></h4><p>  <strong>Handler主要有两个主要用途：</strong></p>
-<blockquote>
-<ul>
-<li><strong>在未来的某个时间点调度messages和runnables的执行</strong></li>
-<li><strong>将要在不同线程上执行的操作加入队列</strong></li>
-</ul>
-</blockquote>
-<blockquote>
-<p><strong>当你的应用程序被创建出来的时候，主线程会专门运行一个message queue来管理最顶级的应用对象(如activities, broadcast receivers，等等)以及它们创建的任何其它窗口。你可以创建你自己的线程，通过Handler来与主线程建立联系</strong></p>
-</blockquote>
+          <p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190628123319.png" alt=""></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/posts/7a63eeca.html#more" rel="contents">
