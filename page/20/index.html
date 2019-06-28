@@ -306,6 +306,189 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/3defa4a1.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhangMiao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zm.blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/3defa4a1.html" itemprop="url">Android Webview里设置Cookie</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-03T15:39:42+08:00">
+                2018-08-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/Webview/" itemprop="url" rel="index">
+                    <span itemprop="name">Webview</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/3defa4a1.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/3defa4a1.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/3defa4a1.html" class="leancloud_visitors" data-flag-title="Android Webview里设置Cookie">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>Android中WebView加载网页，有时候需要通过cookie想网页传递信息，这时候这样操作。</p>
+</blockquote>
+<h4 id="Step-1-设置接收cookie"><a href="#Step-1-设置接收cookie" class="headerlink" title="Step 1 设置接收cookie"></a>Step 1 设置接收cookie</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">CookieManager.setAcceptFileSchemeCookies(<span class="keyword">true</span>);</span><br><span class="line">CookieManager.getInstance().setAcceptCookie(<span class="keyword">true</span>);</span><br><span class="line">CookieManager.setAcceptFileSchemeCookies(<span class="keyword">true</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="Step-2-设置cookie的值，通过setcookie方法"><a href="#Step-2-设置cookie的值，通过setcookie方法" class="headerlink" title="Step 2 设置cookie的值，通过setcookie方法"></a>Step 2 设置cookie的值，通过setcookie方法</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;String&gt; cookies = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">cookies.add(<span class="string">"app_key="</span> + App.getAppKey());</span><br><span class="line">cookies.add(<span class="string">"os="</span> + <span class="string">"Android"</span> + Build.VERSION.SDK_INT);</span><br></pre></td></tr></table></figure>
+<h4 id=""><a href="#" class="headerlink" title=""></a>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/posts/3defa4a1.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </h4></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/494f41c5.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1960,190 +2143,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/553b92de.html">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ZhangMiao">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zm.blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/553b92de.html" itemprop="url">跑马灯MarqueeView（支持任何View）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-24T10:43:31+08:00">
-                2018-07-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/代码片段/" itemprop="url" rel="index">
-                    <span itemprop="name">代码片段</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/553b92de.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/553b92de.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/posts/553b92de.html" class="leancloud_visitors" data-flag-title="跑马灯MarqueeView（支持任何View）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>类似TextView的android:ellipsize=”marquee”的跑马灯效果 任意View都可实现</p>
-<p>源码：<a href="https://github.com/zhangmiaocc/MarqueeView" target="_blank" rel="noopener">MarqueeView</a><br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zm.marqueeview;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.content.Context;</span><br><span class="line"><span class="keyword">import</span> android.util.AttributeSet;</span><br><span class="line"><span class="keyword">import</span> android.view.LayoutInflater;</span><br><span class="line"><span class="keyword">import</span> android.view.MotionEvent;</span><br><span class="line"><span class="keyword">import</span> android.view.View;</span><br><span class="line"><span class="keyword">import</span> android.view.WindowManager;</span><br><span class="line"><span class="keyword">import</span> android.widget.HorizontalScrollView;</span><br><span class="line"><span class="keyword">import</span> android.widget.LinearLayout;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 跑马灯MarqueeView</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MarqueeView</span> <span class="keyword">extends</span> <span class="title">HorizontalScrollView</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Context context;</span><br><span class="line">    <span class="keyword">private</span> LinearLayout mainLayout;<span class="comment">//跑马灯滚动部分</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> scrollSpeed = <span class="number">5</span>;<span class="comment">//滚动速度</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> scrollDirection = LEFT_TO_RIGHT;<span class="comment">//滚动方向</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> currentX;<span class="comment">//当前x坐标</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> viewMargin = <span class="number">100</span>;<span class="comment">//View间距</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> viewWidth;<span class="comment">//View总宽度</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> screenWidth;<span class="comment">//屏幕宽度</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> LEFT_TO_RIGHT = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> RIGHT_TO_LEFT = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MarqueeView</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>(context, <span class="keyword">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MarqueeView</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>(context, attrs, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MarqueeView</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyle)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context, attrs, defStyle);</span><br><span class="line">        <span class="keyword">this</span>.context = context;</span><br><span class="line">        initView();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">initView</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);</span><br><span class="line">        screenWidth = wm.getDefaultDisplay().getWidth();</span><br><span class="line">        mainLayout = (LinearLayout) LayoutInflater.from(context).inflate(R.layout.scroll_content, <span class="keyword">null</span>);</span><br><span class="line">        <span class="keyword">this</span>.addView(mainLayout);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addViewInQueue</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">        LinearLayout.LayoutParams lp = <span class="keyword">new</span> LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,</span><br><span class="line">                LinearLayout.LayoutParams.WRAP_CONTENT);</span><br><span class="line">        lp.setMargins(viewMargin, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">        view.setLayoutParams(lp);</span><br><span class="line">        mainLayout.addView(view);</span><br><span class="line">        view.measure(<span class="number">0</span>, <span class="number">0</span>);<span class="comment">//测量view</span></span><br><span class="line">        viewWidth = viewWidth + view.getMeasuredWidth() + viewMargin;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//开始滚动</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startScroll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        removeCallbacks(<span class="keyword">this</span>);</span><br><span class="line">        currentX = (scrollDirection == LEFT_TO_RIGHT ? viewWidth : -screenWidth);</span><br><span class="line">        post(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//停止滚动</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">stopScroll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        removeCallbacks(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//设置View间距</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setViewMargin</span><span class="params">(<span class="keyword">int</span> viewMargin)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.viewMargin = viewMargin;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//设置滚动速度</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setScrollSpeed</span><span class="params">(<span class="keyword">int</span> scrollSpeed)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.scrollSpeed = scrollSpeed;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//设置滚动方向 默认从左向右</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setScrollDirection</span><span class="params">(<span class="keyword">int</span> scrollDirection)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.scrollDirection = scrollDirection;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (scrollDirection) &#123;</span><br><span class="line">            <span class="keyword">case</span> LEFT_TO_RIGHT:</span><br><span class="line">                mainLayout.scrollTo(currentX, <span class="number">0</span>);</span><br><span class="line">                currentX--;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (-currentX &gt;= screenWidth) &#123;</span><br><span class="line">                    mainLayout.scrollTo(viewWidth, <span class="number">0</span>);</span><br><span class="line">                    currentX = viewWidth;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> RIGHT_TO_LEFT:</span><br><span class="line">                mainLayout.scrollTo(currentX, <span class="number">0</span>);</span><br><span class="line">                currentX++;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (currentX &gt;= viewWidth) &#123;</span><br><span class="line">                    mainLayout.scrollTo(-screenWidth, <span class="number">0</span>);</span><br><span class="line">                    currentX = -screenWidth;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        postDelayed(<span class="keyword">this</span>, <span class="number">50</span> / scrollSpeed);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouchEvent</span><span class="params">(MotionEvent ev)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/553b92de.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/19/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/21/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/19/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/21/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2191,7 +2195,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">230</span>
+                  <span class="site-state-item-count">231</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2213,7 +2217,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">97</span>
+                  <span class="site-state-item-count">98</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
