@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190629135345.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190629135431.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190629135455.png">
-<meta property="og:updated_time" content="2019-06-29T06:11:08.868Z">
+<meta property="og:updated_time" content="2019-06-29T08:05:13.230Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android启动模式和应用场景">
 <meta name="twitter:description" content="在一个项目中会包括着多个Activity，系统中使用任务栈来存储创建的Activity实例，任务栈是一种“后进先出”的栈结构。举个栗子，若我们多次启动同一个Activity。系统会创建多个实例依次放入任务栈中。当按back键返回时，每按一次，一个Activity出栈，直到栈空为止。当栈中无不论什么Activity。系统就会回收此任务栈。 上面这个样例中的Activity并没有设置启动模式，你会发现">
@@ -437,7 +437,7 @@
 <p>上面这个样例中的Activity并没有设置启动模式，你会发现多次启动同一个Activity。而系统却创建了多个实例，白白浪费内存，这样的情况Android早就替我们考虑好了。Android为Activity 的创建提供了4种启动模式，而依据实际应用场景的不同。为Activity 选择不同的启动模式，最大化降低了每次都须要在栈中创建一个新的Activity的压力，降低内存使用。</p>
 <p>启动模式的具体说明和使用场景？以下依据这篇博文来一一解惑。</p>
 <a id="more"></a>
-<h1 id="一-Android启动模式具体解释"><a href="#一-Android启动模式具体解释" class="headerlink" title="一. Android启动模式具体解释"></a><strong>一. Android启动模式具体解释</strong></h1><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190629135301.png" alt=""></p>
+<h1 id="一-Android启动模式具体解释"><a href="#一-Android启动模式具体解释" class="headerlink" title="一. Android启动模式具体解释"></a>一. Android启动模式具体解释</h1><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190629135301.png" alt=""></p>
 <h2 id="1-Standard-标准模式"><a href="#1-Standard-标准模式" class="headerlink" title="1. Standard 标准模式"></a><strong>1. Standard 标准模式</strong></h2><p><strong>说明：</strong> Android创建Activity时的默认模式，假设没有为Activity设置启动模式的话，默觉得标准模式。<strong>每次启动一个Activity都会又一次创建一个新的实例入栈，无论这个实例是否存在</strong>。</p>
 <p><strong>生命周期：</strong>如上所看到的，每次被创建的实例Activity 的生命周期符合典型情况，它的onCreate、onStart、onResume都会被调用。</p>
 <p><strong>举例：</strong>此时Activity 栈中以此有A、B、C三个Activity，此时C处于栈顶，启动模式为<strong>Standard 模式</strong>。</p>
@@ -460,20 +460,20 @@
 <h2 id="4-SingleInstance-单实例模式"><a href="#4-SingleInstance-单实例模式" class="headerlink" title="4. SingleInstance 单实例模式"></a><strong>4. SingleInstance 单实例模式</strong></h2><p><strong>说明：</strong> SingleInstance比較特殊，是全局单例模式，是一种加强的SingleTask模式。它除了具有它所有特性外，还加强了一点：具有此模式的Activity仅仅能单独位于一个任务栈中。</p>
 <p>这个经常使用于系统中的应用，比如Launch、锁屏键的应用等等，整个系统中仅仅有一个！所以在我们的应用中一般不会用到。了解就可以。</p>
 <p><strong>举例：</strong>比方 A Activity是该模式，启动A后。系统会为它创建一个单独的任务栈，由于栈内复用的特性。兴许的请求均不会创建新的Activity，除非这个独特的任务栈被系统销毁。</p>
-<h1 id="二-启动模式的使用方式"><a href="#二-启动模式的使用方式" class="headerlink" title="二.启动模式的使用方式"></a><strong>二.启动模式的使用方式</strong></h1><h2 id="1-在-Manifest-xml中指定Activity启动模式"><a href="#1-在-Manifest-xml中指定Activity启动模式" class="headerlink" title="1. 在 Manifest.xml中指定Activity启动模式"></a><strong>1. 在 Manifest.xml中指定Activity启动模式</strong></h2><p>一种静态的指定方法，在Manifest.xml文件里声明Activity的同一时候指定它的启动模式，这样在代码中跳转时会依照指定的模式来创建Activity。样例例如以下：</p>
+<h1 id="二-启动模式的使用方式"><a href="#二-启动模式的使用方式" class="headerlink" title="二.启动模式的使用方式"></a>二.启动模式的使用方式</h1><h2 id="1-在-Manifest-xml中指定Activity启动模式"><a href="#1-在-Manifest-xml中指定Activity启动模式" class="headerlink" title="1. 在 Manifest.xml中指定Activity启动模式"></a><strong>1. 在 Manifest.xml中指定Activity启动模式</strong></h2><p>一种静态的指定方法，在Manifest.xml文件里声明Activity的同一时候指定它的启动模式，这样在代码中跳转时会依照指定的模式来创建Activity。样例例如以下：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">activity</span> </span></span><br><span class="line"><span class="tag">          <span class="attr">android:name</span>=<span class="string">"..activity.MultiportActivity"</span> </span></span><br><span class="line"><span class="tag">          <span class="attr">android:launchMode</span>=<span class="string">"singleTask"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="2-启动Activity时。在Intent中指定启动模式去创建Activity"><a href="#2-启动Activity时。在Intent中指定启动模式去创建Activity" class="headerlink" title="2. 启动Activity时。在Intent中指定启动模式去创建Activity"></a><strong>2. 启动Activity时。在Intent中指定启动模式去创建Activity</strong></h2><p>一种动态的启动模式，在new 一个Intent后，通过Intent的addFlags方法去动态指定一个启动模式。样例例如以下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Intent intent = <span class="keyword">new</span> Intent();</span><br><span class="line">intent.setClass(context, MainActivity.class);</span><br><span class="line">intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);</span><br><span class="line">context.startActivity(intent);</span><br></pre></td></tr></table></figure>
 <p><strong>注意：</strong>以上两种方式都能够为Activity指定启动模式，可是二者还是有差别的。</p>
 <p><strong>（1）优先级</strong>：动态指定方式即另外一种比第一种优先级要<strong>高</strong>，若两者同一时候存在，以另外一种方式为准。<br><strong>（2）限定范围</strong>：第一种方式无法为Activity直接指定 <strong>FLAG_ACTIVITY_CLEAR_TOP</strong> 标识，另外一种方式无法为Activity指定 <strong>singleInstance</strong> 模式。</p>
-<h1 id="三-Activity-的-Flags"><a href="#三-Activity-的-Flags" class="headerlink" title="三. Activity 的 Flags"></a><strong>三. Activity 的 Flags</strong></h1><p>标记位既能够设定Activity的启动模式，如同上面介绍的，在动态指定启动模式，比方 <strong>FLAG_ACTIVITY_NEW_TASK</strong> 和 <strong>FLAG_ACTIVITY_SINGLE_TOP</strong> 等。它还能够影响Activity 的运行状态 ，比方 <strong>FLAG_ACTIVITY_CLEAN_TOP</strong> 和 <strong>FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS</strong> 等。</p>
+<h1 id="三-Activity-的-Flags"><a href="#三-Activity-的-Flags" class="headerlink" title="三. Activity 的 Flags"></a>三. Activity 的 Flags</h1><p>标记位既能够设定Activity的启动模式，如同上面介绍的，在动态指定启动模式，比方 <strong>FLAG_ACTIVITY_NEW_TASK</strong> 和 <strong>FLAG_ACTIVITY_SINGLE_TOP</strong> 等。它还能够影响Activity 的运行状态 ，比方 <strong>FLAG_ACTIVITY_CLEAN_TOP</strong> 和 <strong>FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS</strong> 等。</p>
 <p>以下介绍几个基本的标记位，切勿死记，理解几个就可以，须要时再查官方文档。</p>
 <h3 id="1-FLAG-ACTIVITY-NEW-TASK"><a href="#1-FLAG-ACTIVITY-NEW-TASK" class="headerlink" title="1. FLAG_ACTIVITY_NEW_TASK"></a><strong>1. FLAG_ACTIVITY_NEW_TASK</strong></h3><p>作用是为Activity指定 “<strong>SingleTask</strong>”启动模式。跟在AndroidMainfest.xml指定效果同样。</p>
 <h3 id="2-FLAG-ACTIVITY-SINGLE-TOP"><a href="#2-FLAG-ACTIVITY-SINGLE-TOP" class="headerlink" title="2. FLAG_ACTIVITY_SINGLE_TOP"></a><strong>2. FLAG_ACTIVITY_SINGLE_TOP</strong></h3><p>作用是为Activity指定 “<strong>SingleTop</strong>”启动模式，跟在AndroidMainfest.xml指定效果同样。</p>
 <h3 id="3-FLAG-ACTIVITY-CLEAN-TOP"><a href="#3-FLAG-ACTIVITY-CLEAN-TOP" class="headerlink" title="3. FLAG_ACTIVITY_CLEAN_TOP"></a><strong>3. FLAG_ACTIVITY_CLEAN_TOP</strong></h3><p>具有此标记位的Activity，启动时会将与该Activity在同一任务栈的其他Activity出栈。一般与SingleTask启动模式一起出现。它会完毕SingleTask的作用。但事实上SingleTask启动模式默认具有此标记位的作用</p>
 <h3 id="4-FLAG-ACTIVITY-EXCLUDE-FROM-RECENTS"><a href="#4-FLAG-ACTIVITY-EXCLUDE-FROM-RECENTS" class="headerlink" title="4.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS"></a><strong>4.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS</strong></h3><p>具有此标记位的Activity不会出如今历史Activity的列表中，使用场景：当某些情况下我们不希望用户通过历史列表回到Activity时，此标记位便体现了它的效果。它等同于在xml中指定Activity的属性：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">android:excludeFromRecents="trure"</span><br></pre></td></tr></table></figure>
-<h1 id="四-启动模式的实际应用场景"><a href="#四-启动模式的实际应用场景" class="headerlink" title="四. 启动模式的实际应用场景"></a><strong>四. 启动模式的实际应用场景</strong></h1><p>这四种模式中的Standard模式是最普通的一种，没有什么特别注意。而SingleInstance模式是整个系统的单例模式，在我们的应用中一般不会应用到。所以，这里就具体解说 <strong>SingleTop</strong> 和 <strong>SingleTask</strong>模式的运用场景：</p>
+<h1 id="四-启动模式的实际应用场景"><a href="#四-启动模式的实际应用场景" class="headerlink" title="四. 启动模式的实际应用场景"></a>四. 启动模式的实际应用场景</h1><p>这四种模式中的Standard模式是最普通的一种，没有什么特别注意。而SingleInstance模式是整个系统的单例模式，在我们的应用中一般不会应用到。所以，这里就具体解说 <strong>SingleTop</strong> 和 <strong>SingleTask</strong>模式的运用场景：</p>
 <h2 id="1-SingleTask模式的运用场景"><a href="#1-SingleTask模式的运用场景" class="headerlink" title="1. SingleTask模式的运用场景"></a><strong>1. SingleTask模式的运用场景</strong></h2><p>最常见的应用场景就是保持我们应用开启后仅仅有一个Activity的实例。最典型的样例就是应用中展示的主页（Home页）。</p>
 <p>假设用户在主页跳转到其他页面，运行多次操作后想返回到主页，假设不使用SingleTask模式，在点击返回的过程中会多次看到主页，这明显就是设计不合理了。</p>
 <h2 id="2-SingleTop模式的运用场景"><a href="#2-SingleTop模式的运用场景" class="headerlink" title="2. SingleTop模式的运用场景"></a><strong>2. SingleTop模式的运用场景</strong></h2><p>假设你在当前的Activity中又要启动同类型的Activity，此时建议将此类型Activity的启动模式指定为SingleTop，能够降低Activity的创建，节省内存！</p>
