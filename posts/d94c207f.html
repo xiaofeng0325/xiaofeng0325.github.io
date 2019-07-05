@@ -89,12 +89,12 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="本文主要是梳理 View 绘制的整体流程，帮助开发者对 View 的绘制有一个更深层次的理解。 整体流程View 绘制中主要流程分为measure，layout， draw 三个阶段。  measure ：根据父 view 传递的 MeasureSpec 进行计算大小。 layout ：根据 measure 子 View 所得到的布局大小和布局参数，将子View放在合适的位置上。 draw ：把">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxpx8qnkskj30sy0xy0vx.jpg">
-<meta property="og:updated_time" content="2019-05-16T07:44:23.971Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190705093454.png">
+<meta property="og:updated_time" content="2019-07-05T01:35:02.443Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AndroidView的绘制流程">
 <meta name="twitter:description" content="本文主要是梳理 View 绘制的整体流程，帮助开发者对 View 的绘制有一个更深层次的理解。 整体流程View 绘制中主要流程分为measure，layout， draw 三个阶段。  measure ：根据父 view 传递的 MeasureSpec 进行计算大小。 layout ：根据 measure 子 View 所得到的布局大小和布局参数，将子View放在合适的位置上。 draw ：把">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fxpx8qnkskj30sy0xy0vx.jpg">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190705093454.png">
 
 
 
@@ -528,11 +528,11 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@CallSuper</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">(Canvas canvas)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*-----------省略代码---------------*/</span></span><br><span class="line">    <span class="comment">// Step 1, draw the background, if needed</span></span><br><span class="line">    <span class="keyword">int</span> saveCount;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!dirtyOpaque) &#123;</span><br><span class="line">        drawBackground(canvas);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*-----------省略代码---------------*/</span></span><br><span class="line">    <span class="keyword">if</span> (!verticalEdges &amp;&amp; !horizontalEdges) &#123;</span><br><span class="line">        <span class="comment">// Step 3, draw the content</span></span><br><span class="line">        <span class="keyword">if</span> (!dirtyOpaque) onDraw(canvas);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Step 4, draw the children</span></span><br><span class="line">        dispatchDraw(canvas);</span><br><span class="line"></span><br><span class="line">        drawAutofilledHighlight(canvas);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Overlay is part of the content and draws beneath Foreground</span></span><br><span class="line">        <span class="keyword">if</span> (mOverlay != <span class="keyword">null</span> &amp;&amp; !mOverlay.isEmpty()) &#123;</span><br><span class="line">            mOverlay.getOverlayView().dispatchDraw(canvas);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Step 6, draw decorations (foreground, scrollbars)</span></span><br><span class="line">        onDrawForeground(canvas);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Step 7, draw the default focus highlight</span></span><br><span class="line">        drawDefaultFocusHighlight(canvas);</span><br><span class="line"></span><br><span class="line">     <span class="comment">/*-----------省略代码---------------*/</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>draw 过程中一共分成7步，其中两步我们直接直接跳过不分析了。</p>
 <p>第一步：drawBackground(canvas)： 作用就是绘制 View 的背景。</p>
-<p>第三步：onDraw(canvas) ：绘制 View 的内容。View 的内容是根据自己需求自己绘制的，所以方法是一个空方法，View的继承类自己复写实现绘制内容。</p>
+<p>第二步：onDraw(canvas) ：绘制 View 的内容。View 的内容是根据自己需求自己绘制的，所以方法是一个空方法，View的继承类自己复写实现绘制内容。</p>
 <p>第三步：dispatchDraw（canvas）：遍历子View进行绘制内容。在 View 里面是一个空实现，ViewGroup 里面才会有实现。在自定义 ViewGroup 一般不用复写这个方法，因为它在里面的实现帮我们实现了子 View 的绘制过程，基本满足需求。</p>
 <p>第四步：onDrawForeground(canvas)：对前景色跟滚动条进行绘制。</p>
 <p>第五步：drawDefaultFocusHighlight(canvas)：绘制默认焦点高亮。</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fxpx8qnkskj30sy0xy0vx.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190705093454.png" alt=""></p>
 <p>好了，整个绘制流程就分析完毕了！</p>
 
       
