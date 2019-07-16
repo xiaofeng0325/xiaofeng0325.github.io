@@ -89,18 +89,18 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="前言为了帮助开发着打造一款优秀的APP，Google可谓费尽心力，推出了各种诸如MVP,MVVM等等项目架构的思路，帮助开发者更加高效的开发，尽管这样，Google还是接着推出了一个新的项目架构，以便给予开发者更多的选择，至于这种架构思路和MVP等框架的优劣，各位看完文章或许自有定论。 1.生命周期在移动操作系统上开发软件其实是十分复杂的一件事情，因为我们随时需要面对系统和用户的各种不可预料的操作">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fvcksuiy0bj30e90iftab.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fvckt2a2ppj30ng0kdt91.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fvckt8fvu4j30pk0kd0t8.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fvckthotgsj30jg0al75v.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fvcktu7zlgj30ei0f3aaj.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fvcku0qv86j30go0f2wfr.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fvcku6fa66j30qo0k03zb.jpg">
-<meta property="og:updated_time" content="2019-05-16T07:44:23.959Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190716102710.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190716102851.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190716102945.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190716104214.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190716104334.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190716104419.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190716105653.png">
+<meta property="og:updated_time" content="2019-07-16T02:58:22.161Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 项目最新架构">
 <meta name="twitter:description" content="前言为了帮助开发着打造一款优秀的APP，Google可谓费尽心力，推出了各种诸如MVP,MVVM等等项目架构的思路，帮助开发者更加高效的开发，尽管这样，Google还是接着推出了一个新的项目架构，以便给予开发者更多的选择，至于这种架构思路和MVP等框架的优劣，各位看完文章或许自有定论。 1.生命周期在移动操作系统上开发软件其实是十分复杂的一件事情，因为我们随时需要面对系统和用户的各种不可预料的操作">
-<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fvcksuiy0bj30e90iftab.jpg">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190716102710.png">
 
 
 
@@ -439,17 +439,17 @@
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>为了帮助开发着打造一款优秀的APP，Google可谓费尽心力，推出了各种诸如MVP,MVVM等等项目架构的思路，帮助开发者更加高效的开发，尽管这样，Google还是接着推出了一个新的项目架构，以便给予开发者更多的选择，至于这种架构思路和MVP等框架的优劣，各位看完文章或许自有定论。</p>
 <h2 id="1-生命周期"><a href="#1-生命周期" class="headerlink" title="1.生命周期"></a>1.生命周期</h2><p>在移动操作系统上开发软件其实是十分复杂的一件事情，因为我们随时需要面对系统和用户的各种不可预料的操作，很多时候，事情并不向着我们预设的方向方向进展。因此系统向我们提供了核心组件的生命周期这种东西，告知我们的APP正处在什么样的状况中，以便于我们做出相应的处理。</p>
 <a id="more"></a>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fvcksuiy0bj30e90iftab.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190716102710.png" alt=""></p>
 <p>如上图。虽然Google给出了Activity非常详尽的生命周期结构，因此我们对根据生命周期做出相应的合理的安排，比如添加和移除实时GPS位置监听：</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fvckt2a2ppj30ng0kdt91.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190716102851.png" alt=""></p>
 <p>可是随着业务的逐渐复杂，我们可能在添加监听之间需要向服务器验证某些用户信息，等返回信息正确才去监听定位。那么在网络异步回调的时候，我们就很难知道当前的activity的生命周期状态。</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fvckt8fvu4j30pk0kd0t8.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190716102945.png" alt=""></p>
 <p>如果发生上图的情况，那么我们的占用的相关资源就可能永远无法移除了。这还只是冰山一角，大家尽可以想想，当我们的异步调用面对无法预知的用户操作和系统处理的时候，什么问题都可能发生。</p>
 <p>总而言之，由于我们对于UI实时的状态做不到了如指掌，以至于对数据和逻辑的处理就无法尽善尽美。这是类似隐患得不到很好的解决根本原因。</p>
 <h2 id="2-Google大礼包"><a href="#2-Google大礼包" class="headerlink" title="2. Google大礼包"></a>2. Google大礼包</h2><p>这次Google推出了一套新的项目架构组件和架构思路，从UI到Data,帮助我们更加精准的开发自己的APP。</p>
 <h3 id="2-1-核心：Lifecycle-Components"><a href="#2-1-核心：Lifecycle-Components" class="headerlink" title="2.1 核心：Lifecycle Components"></a>2.1 核心：Lifecycle Components</h3><p>这套架构最核心的就是生命周期组件，：Lifecycle Components用于管理UI控制器（Activity/Freagment）的生命周期，方便查询当前组件生命周期的状态。</p>
 <p>可查询的状态如下：</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fvckthotgsj30jg0al75v.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190716104214.png" alt=""></p>
 <p>具体的使用方式有两种：</p>
 <ul>
 <li>继承LifecycleActivity/LifecycleFragment即可</li>
@@ -488,11 +488,11 @@
 <p>这是ViewModel的最基本的用法，它负责从各个地方获取数据，然后把数据装到LiveData中，提供给UI；当然ViewModel也可以在不同的Fragment中共享，在这里就不多讲了。</p>
 <p>由于ViewModel的本身和activity/fragment的生命周期绑定，当与之绑定的最后一个UI 销毁时，ViewModel才会clean自身的数据。</p>
 <p>如图所示</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fvcktu7zlgj30ei0f3aaj.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190716104334.png" alt=""></p>
 <h2 id="4-数据持久化：Room"><a href="#4-数据持久化：Room" class="headerlink" title="4.数据持久化：Room"></a>4.数据持久化：Room</h2><p>Room是Google提供的SQLite的ORM的解决方案，其实本质上和其他的ORM框架没什么特别大的差别，没有太多新意，因此只给出大体的架构图，有兴趣的同学可以自行去学习</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fvcku0qv86j30go0f2wfr.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190716104419.png" alt=""></p>
 <h2 id="5-总结"><a href="#5-总结" class="headerlink" title="5.总结"></a>5.总结</h2><p>我们现在回头看整个架构</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fvcku6fa66j30qo0k03zb.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190716105653.png" alt=""></p>
 <p>其实最有有趣的就是UI-ViewModel这个部分，这套架构至少可以帮助我们做到一下几点：</p>
 <ul>
 <li>UI与Data真正分离</li>
