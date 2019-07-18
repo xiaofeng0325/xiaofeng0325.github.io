@@ -90,9 +90,9 @@
 <meta property="og:description" content="一、简介EventBus是由greenrobot 组织贡献的一个Android事件发布/订阅轻量级框架。EventBus是一个Android端优化的publish/subscribe消息总线，简化了应用程序内各组件间、组件与后台线程间的通信。比如请求网络，等网络返回时通过Handler或Broadcast通知UI，两个Fragment之间需要通过Listener通信，这些需求都可以通过EventB">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190520162153.png">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/5735230-6ff7db612aeb5c22?imageMogr2/auto-orient/strip%7CimageView2/2/w/286">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/5735230-7cfdaad8449a9837?imageMogr2/auto-orient/strip%7CimageView2/2/w/274">
-<meta property="og:updated_time" content="2019-05-20T08:22:10.672Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/5735230-6ff7db612aeb5c22.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/5735230-7cfdaad8449a9837.gif">
+<meta property="og:updated_time" content="2019-07-18T06:24:10.350Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android框架之路——EventBus的使用">
 <meta name="twitter:description" content="一、简介EventBus是由greenrobot 组织贡献的一个Android事件发布/订阅轻量级框架。EventBus是一个Android端优化的publish/subscribe消息总线，简化了应用程序内各组件间、组件与后台线程间的通信。比如请求网络，等网络返回时通过Handler或Broadcast通知UI，两个Fragment之间需要通过Listener通信，这些需求都可以通过EventB">
@@ -502,13 +502,12 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@OnClick</span>(&#123;R.id.sendData, R.id.receive&#125;)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onViewClicked</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span> (view.getId()) &#123;</span><br><span class="line">        <span class="keyword">case</span> R.id.sendData:</span><br><span class="line">            <span class="comment">//发送事件</span></span><br><span class="line">            EventBus.getDefault().post(<span class="keyword">new</span> UserEvent(<span class="string">"Mr.sorrow"</span>, <span class="string">"123456"</span>));</span><br><span class="line">            finish();</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> R.id.receive:</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>实现结果：</p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/5735230-6ff7db612aeb5c22.gif" alt=""></p>
 </li>
 </ul>
 </li>
-</ol>
-<p><img src="https://upload-images.jianshu.io/upload_images/5735230-6ff7db612aeb5c22?imageMogr2/auto-orient/strip%7CimageView2/2/w/286" alt="img"></p>
-<ol start="2">
-<li><strong>发送粘性事件：</strong></li>
+<li><p><strong>发送粘性事件：</strong></p>
+</li>
 </ol>
 <ul>
 <li><p>MainActivity中发送粘性事件；</p>
@@ -518,9 +517,9 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SecActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line">    <span class="meta">@BindView</span>(R.id.sendData)</span><br><span class="line">    Button mSendData;</span><br><span class="line">    <span class="meta">@BindView</span>(R.id.receive)</span><br><span class="line">    Button mReceive;</span><br><span class="line">    <span class="meta">@BindView</span>(R.id.tv_receive)</span><br><span class="line">    TextView mTvReceive;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(@Nullable Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_sec);</span><br><span class="line">        ButterKnife.bind(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@OnClick</span>(&#123;R.id.sendData, R.id.receive&#125;)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onViewClicked</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (view.getId()) &#123;</span><br><span class="line">            <span class="keyword">case</span> R.id.sendData:</span><br><span class="line">                <span class="comment">//发送事件</span></span><br><span class="line">                EventBus.getDefault().post(<span class="keyword">new</span> UserEvent(<span class="string">"Mr.sorrow"</span>, <span class="string">"123456"</span>));</span><br><span class="line">                finish();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> R.id.receive:</span><br><span class="line">                <span class="comment">//要接收时开始注册</span></span><br><span class="line">                EventBus.getDefault().register(SecActivity.<span class="keyword">this</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//处理事件逻辑</span></span><br><span class="line">    <span class="meta">@Subscribe</span>(threadMode = ThreadMode.MAIN, sticky = <span class="keyword">true</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">receiveEventBus</span><span class="params">(MessageEvent messageEvent)</span> </span>&#123;</span><br><span class="line">        mTvReceive.setText(messageEvent.toString());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onDestroy();</span><br><span class="line">        <span class="comment">//解注册</span></span><br><span class="line">        EventBus.getDefault().removeAllStickyEvents();</span><br><span class="line">        EventBus.getDefault().unregister(SecActivity.<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>实现效果</p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/5735230-7cfdaad8449a9837.gif" alt=""> </p>
 </li>
 </ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/5735230-7cfdaad8449a9837?imageMogr2/auto-orient/strip%7CimageView2/2/w/274" alt="img"> </p>
 
       
     </div>
