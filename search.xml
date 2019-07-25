@@ -1739,8 +1739,8 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>建站</tag>
         <tag>博客</tag>
+        <tag>建站</tag>
       </tags>
   </entry>
   <entry>
@@ -1764,8 +1764,8 @@
         <category>Mac</category>
       </categories>
       <tags>
-        <tag>博客</tag>
         <tag>Mac</tag>
+        <tag>博客</tag>
         <tag>终端</tag>
       </tags>
   </entry>
@@ -2430,8 +2430,8 @@
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>XBus</tag>
         <tag>EventBus</tag>
+        <tag>XBus</tag>
       </tags>
   </entry>
   <entry>
@@ -2660,6 +2660,19 @@
       <tags>
         <tag>Android</tag>
         <tag>设计架构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Android开发总结(思维导图)]]></title>
+    <url>%2Fposts%2F737b202d.html</url>
+    <content type="text"><![CDATA[概述结合自己的理解，用 xmind（思维导图工具） 总结了 Android 应用开发的一些知识点，方便快速梳理整体的知识体系。]]></content>
+      <categories>
+        <category>Android</category>
+        <category>Android Tips</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Android Tips</tag>
       </tags>
   </entry>
   <entry>
@@ -3056,8 +3069,8 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>建站</tag>
         <tag>博客</tag>
+        <tag>建站</tag>
       </tags>
   </entry>
   <entry>
