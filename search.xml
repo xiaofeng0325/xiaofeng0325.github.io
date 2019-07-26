@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[java.lang.ClassNotFoundException:"org.apache.http.ProtocolVersion"]]></title>
     <url>%2Fposts%2Fc7a54c5f.html</url>
-    <content type="text"><![CDATA[运行项目遇到以下问题：Caused by: java.lang.ClassNotFoundException: Didn't find class "org.apache.http.ProtocolVersion" on path: DexPathList[[zip file "/data/user_de/0/com.google.android.gms/app_chimera/m/00000043/MapsDynamite.apk"],nativeLibraryDirectories=[/data/user_de/0/com.google.android.gms/app_chimera/m/00000043/MapsDynamite.apk!/lib/arm64-v8a, /system/lib64, /product/lib64]] 解决方案：1.在清单文件增加代码: &lt;application android:usesCleartextTraffic="true"&gt; 2.在清单文件清单再加一句代码： &lt;application android:usesCleartextTraffic="true"&gt; &lt;uses-library android:name="org.apache.http.legacy" android:required="false" /&gt;&lt;/application&gt; 好了，重新运行解决了.最根本的做法是使用https进行接口访问，毕竟涉及数据的安全性。当然了，这需要服务器的支持。还有第三方sdk，也需要使用https。]]></content>
+    <content type="text"><![CDATA[运行项目遇到以下问题： Caused by: java.lang.ClassNotFoundException: Didn’t find class “org.apache.http.ProtocolVersion” on path: DexPathList[[zip file “/data/user_de/0/com.google.android.gms/app_chimera/m/00000043/MapsDynamite.apk”],nativeLibraryDirectories=[/data/user_de/0/com.google.android.gms/app_chimera/m/00000043/MapsDynamite.apk!/lib/arm64-v8a, /system/lib64, /product/lib64]] 解决方案：1.在清单文件增加代码: &lt;application android:usesCleartextTraffic="true"&gt; 2.在清单文件清单再加一句代码： &lt;application android:usesCleartextTraffic="true"&gt; &lt;uses-library android:name="org.apache.http.legacy" android:required="false" /&gt;&lt;/application&gt; 好了，重新运行解决了.最根本的做法是使用https进行接口访问，毕竟涉及数据的安全性。当然了，这需要服务器的支持。还有第三方sdk，也需要使用https。]]></content>
       <categories>
         <category>Android</category>
         <category>Exception</category>

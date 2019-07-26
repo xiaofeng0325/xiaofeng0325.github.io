@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="运行项目遇到以下问题：Caused by: java.lang.ClassNotFoundException: Didn&apos;t find class &quot;org.apache.http.ProtocolVersion&quot; on path: DexPathList[[zip file &quot;/data/user_de/0/com.google.android.gms/app_chimera/m/0000004">
+<meta name="description" content="运行项目遇到以下问题： Caused by: java.lang.ClassNotFoundException: Didn’t find class “org.apache.http.ProtocolVersion” on path: DexPathList[[zip file “/data/user_de/0/com.google.android.gms/app_chimera/m/000000">
 <meta name="keywords" content="Android,Exception">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java.lang.ClassNotFoundException:&quot;org.apache.http.ProtocolVersion&quot;">
 <meta property="og:url" content="http://yoursite.com/posts/c7a54c5f.html">
 <meta property="og:site_name" content="zm.blog">
-<meta property="og:description" content="运行项目遇到以下问题：Caused by: java.lang.ClassNotFoundException: Didn&apos;t find class &quot;org.apache.http.ProtocolVersion&quot; on path: DexPathList[[zip file &quot;/data/user_de/0/com.google.android.gms/app_chimera/m/0000004">
+<meta property="og:description" content="运行项目遇到以下问题： Caused by: java.lang.ClassNotFoundException: Didn’t find class “org.apache.http.ProtocolVersion” on path: DexPathList[[zip file “/data/user_de/0/com.google.android.gms/app_chimera/m/000000">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-26T03:44:17.444Z">
+<meta property="og:updated_time" content="2019-07-26T03:46:34.082Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java.lang.ClassNotFoundException:&quot;org.apache.http.ProtocolVersion&quot;">
-<meta name="twitter:description" content="运行项目遇到以下问题：Caused by: java.lang.ClassNotFoundException: Didn&apos;t find class &quot;org.apache.http.ProtocolVersion&quot; on path: DexPathList[[zip file &quot;/data/user_de/0/com.google.android.gms/app_chimera/m/0000004">
+<meta name="twitter:description" content="运行项目遇到以下问题： Caused by: java.lang.ClassNotFoundException: Didn’t find class “org.apache.http.ProtocolVersion” on path: DexPathList[[zip file “/data/user_de/0/com.google.android.gms/app_chimera/m/000000">
 
 
 
@@ -428,7 +428,9 @@
       
 
       
-        <h3 id="运行项目遇到以下问题："><a href="#运行项目遇到以下问题：" class="headerlink" title="运行项目遇到以下问题："></a>运行项目遇到以下问题：</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Caused by: java.lang.ClassNotFoundException: Didn<span class="string">'t find class "org.apache.http.ProtocolVersion" on path: DexPathList[[zip file "/data/user_de/0/com.google.android.gms/app_chimera/m/00000043/MapsDynamite.apk"],nativeLibraryDirectories=[/data/user_de/0/com.google.android.gms/app_chimera/m/00000043/MapsDynamite.apk!/lib/arm64-v8a, /system/lib64, /product/lib64]]</span></span><br></pre></td></tr></table></figure>
+        <h3 id="运行项目遇到以下问题："><a href="#运行项目遇到以下问题：" class="headerlink" title="运行项目遇到以下问题："></a>运行项目遇到以下问题：</h3><blockquote>
+<p>Caused by: java.lang.ClassNotFoundException: Didn’t find class “org.apache.http.ProtocolVersion” on path: DexPathList[[zip file “/data/user_de/0/com.google.android.gms/app_chimera/m/00000043/MapsDynamite.apk”],nativeLibraryDirectories=[/data/user_de/0/com.google.android.gms/app_chimera/m/00000043/MapsDynamite.apk!/lib/arm64-v8a, /system/lib64, /product/lib64]]</p>
+</blockquote>
 <h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p><strong>1.在清单文件增加代码:</strong></p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">application</span></span></span><br><span class="line"><span class="tag">     <span class="attr">android:usesCleartextTraffic</span>=<span class="string">"true"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><strong>2.在清单文件清单再加一句代码：</strong></p>

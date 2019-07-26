@@ -430,7 +430,9 @@
 
       
         
-          <h3 id="运行项目遇到以下问题："><a href="#运行项目遇到以下问题：" class="headerlink" title="运行项目遇到以下问题："></a>运行项目遇到以下问题：</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Caused by: java.lang.ClassNotFoundException: Didn<span class="string">'t find class "org.apache.http.ProtocolVersion" on path: DexPathList[[zip file "/data/user_de/0/com.google.android.gms/app_chimera/m/00000043/MapsDynamite.apk"],nativeLibraryDirectories=[/data/user_de/0/com.google.android.gms/app_chimera/m/00000043/MapsDynamite.apk!/lib/arm64-v8a, /system/lib64, /product/lib64]]</span></span><br></pre></td></tr></table></figure>
+          <h3 id="运行项目遇到以下问题："><a href="#运行项目遇到以下问题：" class="headerlink" title="运行项目遇到以下问题："></a>运行项目遇到以下问题：</h3><blockquote>
+<p>Caused by: java.lang.ClassNotFoundException: Didn’t find class “org.apache.http.ProtocolVersion” on path: DexPathList[[zip file “/data/user_de/0/com.google.android.gms/app_chimera/m/00000043/MapsDynamite.apk”],nativeLibraryDirectories=[/data/user_de/0/com.google.android.gms/app_chimera/m/00000043/MapsDynamite.apk!/lib/arm64-v8a, /system/lib64, /product/lib64]]</p>
+</blockquote>
 <h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p><strong>1.在清单文件增加代码:</strong></p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">application</span></span></span><br><span class="line"><span class="tag">     <span class="attr">android:usesCleartextTraffic</span>=<span class="string">"true"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><strong>2.在清单文件清单再加一句代码：</strong></p>
