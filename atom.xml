@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-13T10:16:36.038Z</updated>
+  <updated>2019-08-13T10:17:35.408Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Banner</title>
+    <title>BannerViewPage</title>
     <link href="http://yoursite.com/posts/6831bdd1.html"/>
     <id>http://yoursite.com/posts/6831bdd1.html</id>
     <published>2019-08-13T10:13:23.000Z</published>
-    <updated>2019-08-13T10:16:36.038Z</updated>
+    <updated>2019-08-13T10:17:35.408Z</updated>
     
     <content type="html"><![CDATA[<h1 id="BannerViewPage"><a href="#BannerViewPage" class="headerlink" title="BannerViewPage"></a><a href="https://github.com/zhangmiaocc/BannerViewPage" target="_blank" rel="noopener">BannerViewPage</a></h1><p>Banner当前屏幕显示下一页内容的一部分，用ViewPager偏移来实现。</p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/aaa.gif" alt=""></p><a id="more"></a>]]></content>
     

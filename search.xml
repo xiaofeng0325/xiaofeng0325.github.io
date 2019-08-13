@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Banner]]></title>
+    <title><![CDATA[BannerViewPage]]></title>
     <url>%2Fposts%2F6831bdd1.html</url>
     <content type="text"><![CDATA[BannerViewPageBanner当前屏幕显示下一页内容的一部分，用ViewPager偏移来实现。]]></content>
       <categories>
@@ -2467,8 +2467,8 @@
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>XBus</tag>
         <tag>EventBus</tag>
+        <tag>XBus</tag>
       </tags>
   </entry>
   <entry>
