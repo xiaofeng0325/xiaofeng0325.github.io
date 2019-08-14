@@ -1471,7 +1471,7 @@
   <entry>
     <title><![CDATA[Android骨架屏，了解一下]]></title>
     <url>%2Fposts%2F2114cdef.html</url>
-    <content type="text"><![CDATA[以前做应用开发时，在数据尚未加载前一般会先给用户一个提示，最简单粗暴的方式就是菊花图，大多数做法是放一张有个性的静态图，示意正在加载数据，这样体验会好些，直到出现 Skeleton Screen（中文一般叫做骨架屏）极大地提升用户感知体验。其实一开始我并不知道这个效果叫什么名字，后来在 GitHub 看到有人开源了，赶紧 Star。今天我给大家推荐几个 Skeleton Screen 相关库，来了解学习一波。 1、ShimmerRecyclerView简介A custom recycler view with shimmer views to indicate that views are loading （英语渣渣，这句话始终翻译不顺/捂脸）。 效果预览 源码地址https://github.com/sharish/ShimmerRecyclerView 2、Skeleton简介这个库提供了一种显示骨架加载视图的简便方法，它现在使用闪存动画的内存优化版本，因此速度更快，您也可以设置更大的布局动画。 效果预览 源码地址https://github.com/ethanhua/Skeleton 3、spruce-android简介Spruce 是一个轻量级动画库，可帮助编排屏幕上的动画。该库同时支持 iOS。 效果预览 源码地址https://github.com/willowtreeapps/spruce-android]]></content>
+    <content type="text"><![CDATA[以前做应用开发时，在数据尚未加载前一般会先给用户一个提示，最简单粗暴的方式就是菊花图，大多数做法是放一张有个性的静态图，示意正在加载数据，这样体验会好些，直到出现 Skeleton Screen（中文一般叫做骨架屏）极大地提升用户感知体验。其实一开始我并不知道这个效果叫什么名字，后来在 GitHub 看到有人开源了，赶紧 Star。今天我给大家推荐几个 Skeleton Screen 相关库，来了解学习一波。 1、ShimmerRecyclerView简介A custom recycler view with shimmer views to indicate that views are loading （英语渣渣，这句话始终翻译不顺/捂脸）。 效果预览 2、Skeleton简介这个库提供了一种显示骨架加载视图的简便方法，它现在使用闪存动画的内存优化版本，因此速度更快，您也可以设置更大的布局动画。 效果预览 3、spruce-android简介Spruce 是一个轻量级动画库，可帮助编排屏幕上的动画。该库同时支持 iOS。 效果预览]]></content>
       <categories>
         <category>Android</category>
         <category>开源库</category>
