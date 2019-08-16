@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.8.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    save_scroll: false,
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="前言技术群里面经常有人问到一些炫酷的UI效果实现方法，有时候我都是给一个相同或者相似效果的Github链接，有同学私信给我说，大佬，怎么这些效果你都能找到？你是怎么搜索的，或者有其他什么秘方？会利用Google、百度等搜索工具搜索是一方面，另一个重要的方面是：记录搜藏，当看到一个炫酷的效果的时候，记得收藏起来，记录到自己云笔记或者收藏夹里，看得多了，印象就比较深刻，当遇到类似效果的时候，到自己记录">
+<meta name="keywords" content="Android,开源库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Android珍藏】推荐10个炫酷的开源库">
+<meta property="og:url" content="http://yoursite.com/posts/78b41fa0.html">
+<meta property="og:site_name" content="zm.blog">
+<meta property="og:description" content="前言技术群里面经常有人问到一些炫酷的UI效果实现方法，有时候我都是给一个相同或者相似效果的Github链接，有同学私信给我说，大佬，怎么这些效果你都能找到？你是怎么搜索的，或者有其他什么秘方？会利用Google、百度等搜索工具搜索是一方面，另一个重要的方面是：记录搜藏，当看到一个炫酷的效果的时候，记得收藏起来，记录到自己云笔记或者收藏夹里，看得多了，印象就比较深刻，当遇到类似效果的时候，到自己记录">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299da85c9f67?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299da84d0139?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299da7975f18?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299da7ed3aa5?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299da77a0edf?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299da7f85f8c?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299ddb558444?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299e5c76b977?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299de6276c0f?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299e60c3ba0c?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299ec33a615c?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299ecd379e18?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299ee9f8d20f?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299f344cf516?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299f3ba944db?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299f53d69dcd?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299f75c6098d?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299f79c974c3?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299f8d953b82?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299fa4d5c662?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299fb9f75cda?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299fd18b7670?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299fd6b43abe?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299fe71830fb?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299fe7016d69?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299fe72a6cb2?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b29a007186453?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b29a010de2abb?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b29a037078a2b?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b29a04330019d?imageslim">
+<meta property="og:updated_time" content="2019-05-31T08:05:34.458Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【Android珍藏】推荐10个炫酷的开源库">
+<meta name="twitter:description" content="前言技术群里面经常有人问到一些炫酷的UI效果实现方法，有时候我都是给一个相同或者相似效果的Github链接，有同学私信给我说，大佬，怎么这些效果你都能找到？你是怎么搜索的，或者有其他什么秘方？会利用Google、百度等搜索工具搜索是一方面，另一个重要的方面是：记录搜藏，当看到一个炫酷的效果的时候，记得收藏起来，记录到自己云笔记或者收藏夹里，看得多了，印象就比较深刻，当遇到类似效果的时候，到自己记录">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299da85c9f67?imageslim">
+  <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
+  <link rel="canonical" href="http://yoursite.com/posts/78b41fa0">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>【Android珍藏】推荐10个炫酷的开源库 | zm.blog</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?64a1d6b8fd3f610a210ef1ef8372bd3d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  <div class="container sidebar-position-left">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">zm.blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">select * from learn</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    
+  <div class="popup search-popup">
+  <div class="search-header">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <div class="search-input-wrapper">
+      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
+    </div>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+  <div id="search-result"></div>
+</div>
+
+
+  </div>
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/78b41fa0.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhangMiao">
+      <meta itemprop="description" content="Change for the Better">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zm.blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">【Android珍藏】推荐10个炫酷的开源库
+
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-22 21:47:34" itemprop="dateCreated datePublished" datetime="2018-07-22T21:47:34+08:00">2018-07-22</time>
+            </span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Android/开源库/" itemprop="url" rel="index"><span itemprop="name">开源库</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span id="/posts/78b41fa0.html" class="post-meta-item leancloud_visitors" data-flag-title="【Android珍藏】推荐10个炫酷的开源库" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>技术群里面经常有人问到一些炫酷的UI效果实现方法，有时候我都是给一个相同或者相似效果的Github链接，有同学私信给我说，大佬，怎么这些效果你都能找到？你是怎么搜索的，或者有其他什么秘方？会利用Google、百度等搜索工具搜索是一方面，另一个重要的方面是：记录搜藏，当看到一个炫酷的效果的时候，记得收藏起来，记录到自己云笔记或者收藏夹里，看得多了，印象就比较深刻，当遇到类似效果的时候，到自己记录收藏的地方找就是了。今天为大家推荐我所收藏的一些炫酷实用的效果的开源库（选择其中10个）。</p>
+<h4 id="1、-DiscreteScrollView"><a href="#1、-DiscreteScrollView" class="headerlink" title="1、 DiscreteScrollView"></a>1、 <a href="https://github.com/yarolegovich/DiscreteScrollView" target="_blank" rel="noopener">DiscreteScrollView</a></h4><p><strong>简介：</strong>  DiscreteScrollView是基于RecyclerView 实现的一个横向滑动列表，当前Item显示在屏幕中央并且可以左右滑动，有点像ViewPager,但是可以快速滑动。提供了简单的API来实现炫酷的动画效果。</p>
+<h5 id="效果展示："><a href="#效果展示：" class="headerlink" title="效果展示："></a>效果展示：</h5><p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299da85c9f67?imageslim" alt="3b58fb9f1a05b73543f69f4f3a6179d9"><br><a id="more"></a><br><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299da84d0139?imageslim" alt="3c9810ca0e4d4284e1f0be95dc53d746"></p>
+<h4 id="2、MaterialViewPager"><a href="#2、MaterialViewPager" class="headerlink" title="2、MaterialViewPager"></a>2、<a href="https://github.com/pinguo-zhouwei/MaterialViewPager" target="_blank" rel="noopener">MaterialViewPager</a></h4><p><strong>简介：</strong> 和名字一样，Material Design 效果的ViewPager, 效果很nice,请看gif</p>
+<h5 id="效果展示-有多重模式-："><a href="#效果展示-有多重模式-：" class="headerlink" title="效果展示(有多重模式)："></a>效果展示(有多重模式)：</h5><ul>
+<li>Titlebar Logo</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299da7975f18?imageslim" alt="Titlebar Logo"></p>
+<ul>
+<li>Fading Logo</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299da7ed3aa5?imageslim" alt="Fading Logo"></p>
+<ul>
+<li>Hide Logo and Toolbar</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299da77a0edf?imageslim" alt="Hide Logo and Toolbar"></p>
+<ul>
+<li>Sticky Toolbar</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299da7f85f8c?imageslim" alt="Sticky Toolbar"></p>
+<ul>
+<li>Transparent Toolbar</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299ddb558444?imageslim" alt="Transparent Toolbar"></p>
+<ul>
+<li>Standard</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299e5c76b977?imageslim" alt="Standard"></p>
+<h4 id="3、BoomMenu"><a href="#3、BoomMenu" class="headerlink" title="3、BoomMenu"></a>3、<a href="https://github.com/pinguo-zhouwei/BoomMenu" target="_blank" rel="noopener">BoomMenu</a></h4><p><strong>简介：</strong>  传统的菜单是不是看得有些厌倦了，boom ….爆炸效果的菜单了解一下？功能强大、效果炫酷，有很多种模式。</p>
+<h5 id="效果展示：-1"><a href="#效果展示：-1" class="headerlink" title="效果展示："></a>效果展示：</h5><p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299de6276c0f?imageslim" alt="ham-button"></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299e60c3ba0c?imageslim" alt="text-inside-button"></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299ec33a615c?imageslim" alt="text-outside-button"></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299ecd379e18?imageslim" alt="test5"></p>
+<h4 id="4、LayoutManagerGroup"><a href="#4、LayoutManagerGroup" class="headerlink" title="4、LayoutManagerGroup"></a>4、<a href="https://github.com/DingMouRen/LayoutManagerGroup" target="_blank" rel="noopener">LayoutManagerGroup</a></h4><p><strong>简介：</strong> 自定义RecyclerView 的LayoutManager实现几种炫酷的效果。</p>
+<h5 id="效果展示：-2"><a href="#效果展示：-2" class="headerlink" title="效果展示："></a>效果展示：</h5><ul>
+<li>EchelonLayoutManager</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299ee9f8d20f?imageslim" alt="EchelonLayoutManager"></p>
+<ul>
+<li>SkidRightLayoutManager</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299f344cf516?imageslim" alt="SkidRightLayoutManager"></p>
+<ul>
+<li>SlideLayoutManager</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299f3ba944db?imageslim" alt="SlideLayoutManager"></p>
+<h4 id="5、Android-SpinKit"><a href="#5、Android-SpinKit" class="headerlink" title="5、Android-SpinKit"></a>5、<a href="https://github.com/ybq/Android-SpinKit" target="_blank" rel="noopener">Android-SpinKit</a></h4><p><strong>简介：</strong>  Android 自定义View 的方式实现的各种炫酷的动画，特别精致和优美，以前专门写文章介绍过。</p>
+<h5 id="效果展示：-3"><a href="#效果展示：-3" class="headerlink" title="效果展示："></a>效果展示：</h5><p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299f53d69dcd?imageslim" alt="Loading"></p>
+<h4 id="6、Matisse"><a href="#6、Matisse" class="headerlink" title="6、Matisse"></a>6、<a href="https://github.com/zhihu/Matisse" target="_blank" rel="noopener">Matisse</a></h4><p><strong>简介：</strong> Matisse是知乎开源的一个本地选择照片和视频的库，UI设计得非常精美。有如特性：</p>
+<ul>
+<li>可以在Fragment/Activity 中使用</li>
+<li>选择照片的格式包括：PNG、JPEG 、GIF.视频格式包括：MPEG, MP4</li>
+<li>支持不同的主题并且可以自定义主题</li>
+<li>支持不同的图片加载方式（Picasso、Glide等）</li>
+<li>自定义过滤规则</li>
+</ul>
+<p><strong>效果展示：</strong></p>
+<ul>
+<li>Zhihu Style</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299f75c6098d?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p>
+<ul>
+<li>Dracula Style</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299f79c974c3?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="screenshot_dracula"></p>
+<ul>
+<li>Preview</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299f8d953b82?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="screenshot_previe"></p>
+<h4 id="7、CosmoCalendar"><a href="#7、CosmoCalendar" class="headerlink" title="7、CosmoCalendar"></a>7、<a href="https://github.com/ApplikeySolutions/CosmoCalendar" target="_blank" rel="noopener">CosmoCalendar</a></h4><p><strong>简介：</strong>  一个高度自定义的日历库，UI精美，支持多种模式。</p>
+<p><strong>效果展示：</strong></p>
+<ul>
+<li>单个日期选择</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299fa4d5c662?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p>
+<ul>
+<li>多个日期选择</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299fb9f75cda?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p>
+<ul>
+<li>选择一个范围日期</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299fd18b7670?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="Calendar-range-years_2"></p>
+<ul>
+<li>自定义</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299fd6b43abe?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="Calendar-dialogue-dark_2"></p>
+<h4 id="8、CardStackView"><a href="#8、CardStackView" class="headerlink" title="8、CardStackView"></a>8、<a href="https://github.com/loopeer/CardStackView" target="_blank" rel="noopener">CardStackView</a></h4><p><strong>简介：</strong> 三种炫酷的列表卡片滑动动画，分别为：alldown, updown, updownstack</p>
+<p><strong>效果展示：</strong></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299fe71830fb?imageslim" alt="screenshot3"></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299fe7016d69?imageslim" alt="screenshot2"></p>
+<h4 id="9、CalendarExaple"><a href="#9、CalendarExaple" class="headerlink" title="9、CalendarExaple"></a>9、<a href="https://github.com/codbking/CalendarExaple" target="_blank" rel="noopener">CalendarExaple</a></h4><p><strong>简介：</strong> 这是一个高仿钉钉和小米的日历控件，支持快速滑动，界面缓存。想要定制化UI，使用起来非常简单，就像使用ListView一样</p>
+<p>一些特点：</p>
+<p>可以自定义日历控件UI 支持快速滑动 支持农历和阳历 界面UI缓存和日历数据缓存 扩展view支持listView的滑动</p>
+<p><strong>效果展示：</strong></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b299fe72a6cb2?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b29a007186453?imageslim" alt="bbbb"></p>
+<h4 id="10、MZBannerView"><a href="#10、MZBannerView" class="headerlink" title="10、MZBannerView"></a>10、<a href="https://github.com/pinguo-zhouwei/MZBannerView" target="_blank" rel="noopener">MZBannerView</a></h4><p><strong>简介：</strong> 仿魅族BannerView,图片轮播控件,支持多种模式切换：普通ViewPager使用，普通Banner使用，仿魅族Banner使用。</p>
+<p><strong>效果展示：</strong></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b29a010de2abb?imageslim" alt="MZBannerView"></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b29a037078a2b?imageslim" alt="MZBannerView"></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/19/164b29a04330019d?imageslim" alt="MZBannerView"></p>
+<h4 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h4><p>在我们平时的工作、学习中，要养成记笔记的好习惯、好记性不如烂笔头。平时自己遇到一些炫酷的效果，我都喜欢记录到笔记中，遇到相似的需求就好找了。本文这些炫酷的效果有兴趣的可以去对应的Github 查看使用方式，试试效果，都挺赞的。</p>
+<p>来源：掘金-<a href="https://juejin.im/post/5b50898ef265da0fa21a7f0f" target="_blank" rel="noopener">依然范特稀西</a></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Android/" rel="tag"># Android</a>
+            
+              <a href="/tags/开源库/" rel="tag"># 开源库</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/posts/926ca595.html" rel="next" title="网易严选App感受Weex开发">
+                  <i class="fa fa-chevron-left"></i> 网易严选App感受Weex开发
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/posts/fbda19a9.html" rel="prev" title="Android中多线程切换的几种方法">
+                  Android中多线程切换的几种方法 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ZhangMiao</p>
+  <div class="site-description motion-element" itemprop="description">Change for the Better</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">243</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">101</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=153942241&site=qq&menu=yes" title="QQ &rarr; http://wpa.qq.com/msgrd?v=3&uin=153942241&site=qq&menu=yes" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/zhangmiaocc" title="Github &rarr; https://github.com/zhangmiaocc" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>Github</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://stackoverflow.com" title="StackOverflow &rarr; https://stackoverflow.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+    
+  </div>
+
+
+  <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+    <div class="links-of-blogroll-title">
+      <i class="fa  fa-fw fa-link"></i>
+      links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc" rel="noopener" target="_blank">Zhangmiao</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://xuebin.me" title="https://xuebin.me" rel="noopener" target="_blank">Leo</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://jspang.com/" title="http://jspang.com/" rel="noopener" target="_blank">Jspang</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://blankj.com/" title="https://blankj.com/" rel="noopener" target="_blank">Blankj</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://wuxiaolong.me/" title="http://wuxiaolong.me/" rel="noopener" target="_blank">WuXiaoLong</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://molunerfinn.com" title="https://molunerfinn.com" rel="noopener" target="_blank">Molunerfinn</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://zhanghongyang.com" title="http://zhanghongyang.com" rel="noopener" target="_blank">Hongyang</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://liuwangshu.cn/" title="http://liuwangshu.cn/" rel="noopener" target="_blank">Liuwangshu</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://liuxsen.github.io" title="https://liuxsen.github.io" rel="noopener" target="_blank">Liuxen</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.ofind.cn/" title="https://www.ofind.cn/" rel="noopener" target="_blank">Ofind</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://www.gcssloop.com/" title="http://www.gcssloop.com/" rel="noopener" target="_blank">Gcssloop</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1、-DiscreteScrollView"><span class="nav-number">2.</span> <span class="nav-text">1、 DiscreteScrollView</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#效果展示："><span class="nav-number">2.1.</span> <span class="nav-text">效果展示：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、MaterialViewPager"><span class="nav-number">3.</span> <span class="nav-text">2、MaterialViewPager</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#效果展示-有多重模式-："><span class="nav-number">3.1.</span> <span class="nav-text">效果展示(有多重模式)：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、BoomMenu"><span class="nav-number">4.</span> <span class="nav-text">3、BoomMenu</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#效果展示：-1"><span class="nav-number">4.1.</span> <span class="nav-text">效果展示：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、LayoutManagerGroup"><span class="nav-number">5.</span> <span class="nav-text">4、LayoutManagerGroup</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#效果展示：-2"><span class="nav-number">5.1.</span> <span class="nav-text">效果展示：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、Android-SpinKit"><span class="nav-number">6.</span> <span class="nav-text">5、Android-SpinKit</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#效果展示：-3"><span class="nav-number">6.1.</span> <span class="nav-text">效果展示：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、Matisse"><span class="nav-number">7.</span> <span class="nav-text">6、Matisse</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、CosmoCalendar"><span class="nav-number">8.</span> <span class="nav-text">7、CosmoCalendar</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、CardStackView"><span class="nav-number">9.</span> <span class="nav-text">8、CardStackView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9、CalendarExaple"><span class="nav-number">10.</span> <span class="nav-text">9、CalendarExaple</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、MZBannerView"><span class="nav-number">11.</span> <span class="nav-text">10、MZBannerView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结尾"><span class="nav-number">12.</span> <span class="nav-text">结尾</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZhangMiao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1277928793&web_id=1277928793"></script>
+  </div>
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+      </div>
+
+    
+
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+
+  
+
+
+
+
+
+  
+  <script>
+  function leancloudSelector(url) {
+    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+  }
+  if (CONFIG.page.isPost) {
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = visitors.getAttribute('id').trim();
+      var title = visitors.getAttribute('data-flag-title').trim();
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
+            
+              .catch(error => {
+                console.log('Failed to save visitor count', error);
+              })
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  } else {
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return element.getAttribute('id').trim();
+      });
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length === 0) {
+            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
+              element.innerText = 0;
+            });
+            return;
+          }
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            leancloudSelector(url).innerText = time;
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = leancloudSelector(url);
+            if (element.innerText == '') {
+              element.innerText = 0;
+            }
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  }
+
+  fetch('https://app-router.leancloud.cn/2/route?appId=8iIYW0IGofqyvJiiuU5R9buW-gzGzoHsz')
+    .then(response => response.json())
+    .then(({ api_server }) => {
+      var Counter = (method, url, data) => {
+        return fetch(`https://${api_server}/1.1${url}`, {
+          method: method,
+          headers: {
+            'X-LC-Id': '8iIYW0IGofqyvJiiuU5R9buW-gzGzoHsz',
+            'X-LC-Key': 'ssmxRx0kELJir6mA02ziW3Ql',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
+        if (localhost.test(document.URL)) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
+
+
+</body>
+</html>

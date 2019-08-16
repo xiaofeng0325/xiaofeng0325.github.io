@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="generator" content="Hexo 3.8.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    save_scroll: false,
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="什么是Flutter2018年2月27日，在2018世界移动大会上，Google发布了Flutter的第一个Beta版本。Flutter是Google用以帮助开发者在Ios和Android两个平台开发高质量原生应用的全新移动UI框架，点击查看Flutter介绍视频。 其实我第一次听说Flutter是在收到谷歌开发者公众号的推送里，当时读完了那篇文章觉得Flutter的优点确实比较突出：  热重载（">
+<meta name="keywords" content="Android,Flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="你好，Flutter">
+<meta property="og:url" content="http://yoursite.com/posts/be2502a3.html">
+<meta property="og:site_name" content="zm.blog">
+<meta property="og:description" content="什么是Flutter2018年2月27日，在2018世界移动大会上，Google发布了Flutter的第一个Beta版本。Flutter是Google用以帮助开发者在Ios和Android两个平台开发高质量原生应用的全新移动UI框架，点击查看Flutter介绍视频。 其实我第一次听说Flutter是在收到谷歌开发者公众号的推送里，当时读完了那篇文章觉得Flutter的优点确实比较突出：  热重载（">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190514142342.png">
+<meta property="og:updated_time" content="2019-05-16T07:44:23.974Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="你好，Flutter">
+<meta name="twitter:description" content="什么是Flutter2018年2月27日，在2018世界移动大会上，Google发布了Flutter的第一个Beta版本。Flutter是Google用以帮助开发者在Ios和Android两个平台开发高质量原生应用的全新移动UI框架，点击查看Flutter介绍视频。 其实我第一次听说Flutter是在收到谷歌开发者公众号的推送里，当时读完了那篇文章觉得Flutter的优点确实比较突出：  热重载（">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190514142342.png">
+  <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
+  <link rel="canonical" href="http://yoursite.com/posts/be2502a3">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>你好，Flutter | zm.blog</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?64a1d6b8fd3f610a210ef1ef8372bd3d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  <div class="container sidebar-position-left">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">zm.blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">select * from learn</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    
+  <div class="popup search-popup">
+  <div class="search-header">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <div class="search-input-wrapper">
+      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
+    </div>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+  <div id="search-result"></div>
+</div>
+
+
+  </div>
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/be2502a3.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhangMiao">
+      <meta itemprop="description" content="Change for the Better">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zm.blog">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">你好，Flutter
+
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-06 17:40:06" itemprop="dateCreated datePublished" datetime="2018-12-06T17:40:06+08:00">2018-12-06</time>
+            </span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Android/Flutter/" itemprop="url" rel="index"><span itemprop="name">Flutter</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span id="/posts/be2502a3.html" class="post-meta-item leancloud_visitors" data-flag-title="你好，Flutter" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="什么是Flutter"><a href="#什么是Flutter" class="headerlink" title="什么是Flutter"></a>什么是Flutter</h2><p>2018年2月27日，在2018世界移动大会上，Google发布了Flutter的第一个Beta版本。Flutter是Google用以帮助开发者在Ios和Android两个平台开发高质量原生应用的全新移动UI框架，<a href="http://v.youku.com/v_show/id_XMzQyNTE1NDMxMg==.html" target="_blank" rel="noopener">点击查看Flutter介绍视频</a>。</p>
+<p>其实我第一次听说Flutter是在收到谷歌开发者公众号的推送里，当时读完了那篇文章觉得Flutter的优点确实比较突出：</p>
+<ol>
+<li>热重载（Hot Reload），作为一个菜鸟安卓开发者，能热重载真的太舒服了，利用Android Studio直接一个ctrl+s就可以保存并重载，模拟器立马就可以看见效果，就这一点比原生安卓制作简直不知道高到哪里去了。</li>
+<li>一切皆为Widget的理念，对于Flutter来说，手机应用里的所有东西都是Widget，通过可组合的空间集合、丰富的动画库以及分层课扩展的架构实现了富有感染力的灵活界面设计。</li>
+<li>借助可移植的GPU加速的渲染引擎以及高性能本地代码运行时以达到跨平台设备的高质量用户体验。 这段介绍是直接抄下来的，虽然我并不知道什么叫可移植的GPU加速的渲染引擎，但是最终结果就是利用Flutter构建的应用在运行效率上会和原生应用差不多。<br> 酷安上有一个Flutter的演示Demo，<a href="https://www.coolapk.com/apk/io.flutter.gallery" target="_blank" rel="noopener">Flutter Gallery</a>。<br> 如果经常逛酷安的一定会发现这个画廊的演示Demo的图标和另一个演示Demo的图标是一样的，<a href="https://www.coolapk.com/apk/com.google.fuchsia.armadillo" target="_blank" rel="noopener">Google Fuchsia OS Preview</a>,这个应用的是传闻的Google正在研发的新一代操作系统，所以个人认为，Flutter的存在可能不仅仅是实现在安卓和IOS上的运行，更是为了日后丰富Fuchsia这个新系统的软件生态而存在的。</li>
+</ol>
+<a id="more"></a>
+<h2 id="Flutter的核心内容"><a href="#Flutter的核心内容" class="headerlink" title="Flutter的核心内容"></a>Flutter的核心内容</h2><p>接下来我想写一下我自己通过这两天的接触对于Flutter的核心内容也就是上面好处的第二点的理解。</p>
+<h4 id="一切都是控件（Widget）"><a href="#一切都是控件（Widget）" class="headerlink" title="一切都是控件（Widget）"></a>一切都是控件（Widget）</h4><p>在Flutter中，每个应用程序都是Widget，这点和其他的应用框架不一样，Flutter的对象模型是统一的，也就是控件。<br> 一个控件可以定义：</p>
+<ul>
+<li>结构元素（比如按钮或者菜单）</li>
+<li>风格元素（比如字体或者颜色方案）</li>
+<li>布局</li>
+<li>一些业务逻辑</li>
+<li>等等。。。。<br> 控件是基于构图形成层次结构，每个控件嵌套在其中，并从其父代继承属性，没有单独的“应用程序”对象，只有根控件。</li>
+</ul>
+<p>您可以通过告知框架用另一个控件替换层次结构中的控件来响应事件，比如用户交互，然后框架会对比新的控件和旧的控件，并有效的更新用户界面，即更新有变化的控件。</p>
+<p>也就是说，在Flutter中，一个应用就是有许许多多的Widget组合而成的。</p>
+<h2 id="构建第一个Flutter实例"><a href="#构建第一个Flutter实例" class="headerlink" title="构建第一个Flutter实例"></a>构建第一个Flutter实例</h2><p>先来介绍一下Flutter里面的基本空间：</p>
+<ul>
+<li>Text：文本控件，在应用中创建各种样式的文本。</li>
+<li>Row,Column：Flex控件，可以创建水平(Row)或垂直(Column)方向的布局，是基于Web的flexbox的布局模式设计的。</li>
+<li>Stack：非线性布局（水平或垂直），控件可以堆叠在其他控件上，可以使用Positioned控件控制Stack相对顶部、右部、底部和左部的位置，是基于Web的absolute定位的布局模式。</li>
+<li>Container：创建矩形的可视元素，可以用BoxDecoration来设计样式，比如背景、边框和阴影，Container也有边距、填充和大小限制，另外，还可以在三维空间利用矩阵进行变换。</li>
+</ul>
+<p>结合实例分析：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyAppBar</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  MyAppBar(&#123;<span class="keyword">this</span>.title&#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">final</span> Widget title;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="function">Widget <span class="title">build</span><span class="params">(BuildContext context)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// <span class="doctag">TODO:</span> implement build</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Container(</span><br><span class="line">      height: <span class="number">56.0</span>,</span><br><span class="line">      padding: <span class="keyword">const</span> EdgeInsets.symmetric(horizontal: <span class="number">8.0</span>),</span><br><span class="line">      decoration: <span class="keyword">new</span> BoxDecoration(color: Colors.blue[<span class="number">500</span>]),</span><br><span class="line">      <span class="comment">//new Row意味着该子布局为水平布局</span></span><br><span class="line">      child: <span class="keyword">new</span> Row(</span><br><span class="line">        children: &lt;Widget&gt;[</span><br><span class="line">          <span class="comment">//布局依次为图标按钮，剩余容器和图标按钮，如果把第二个IconButton移动到Expanded前则内容会发生改变</span></span><br><span class="line">          <span class="keyword">new</span> IconButton(</span><br><span class="line">              icon: <span class="keyword">new</span> Icon(Icons.menu),</span><br><span class="line">              tooltip: <span class="string">'导航菜单'</span>,</span><br><span class="line">              onPressed: <span class="keyword">null</span></span><br><span class="line">          ),</span><br><span class="line">          <span class="comment">//Expanded的作用可以使用剩余的所有空间。</span></span><br><span class="line">          <span class="keyword">new</span> Expanded(</span><br><span class="line">              child: title</span><br><span class="line">          ),</span><br><span class="line">          <span class="keyword">new</span> IconButton(</span><br><span class="line">              icon: <span class="keyword">new</span> Icon(Icons.search),</span><br><span class="line">              tooltip: <span class="string">'搜索'</span>,</span><br><span class="line">              onPressed: <span class="keyword">null</span></span><br><span class="line">          )</span><br><span class="line">        ],</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyScaffold</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="function">Widget <span class="title">build</span><span class="params">(BuildContext context)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// <span class="doctag">TODO:</span> implement build</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Material(</span><br><span class="line">      child: <span class="keyword">new</span> Column(</span><br><span class="line">        children: &lt;Widget&gt;[</span><br><span class="line">          <span class="keyword">new</span> MyAppBar(</span><br><span class="line">            title: <span class="keyword">new</span> Text(</span><br><span class="line">              <span class="string">'示例标题'</span>,</span><br><span class="line">              style: Theme</span><br><span class="line">                  .of(context)</span><br><span class="line">                  .primaryTextTheme</span><br><span class="line">                  .title,</span><br><span class="line">            ),</span><br><span class="line">          ),</span><br><span class="line">          <span class="keyword">new</span> Expanded(</span><br><span class="line">            child: <span class="keyword">new</span> Center(</span><br><span class="line">              child: <span class="keyword">new</span> Text(<span class="string">'你好世界！'</span>),</span><br><span class="line">            ),</span><br><span class="line">          )</span><br><span class="line">        ],</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  runApp(<span class="keyword">new</span> MaterialApp(</span><br><span class="line">    title: <span class="string">'我的应用'</span>,</span><br><span class="line">    home: <span class="keyword">new</span> MyScaffold(),</span><br><span class="line">  ));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190514142342.png" alt=""></p>
+<p>其实说真的我第一眼看到这段代码的时候，第一想法就是，为什么会有这么多括号？但是这不是重点，有点编程经验的都知道要先从main函数看起，这里的main函数里面套了一个runApp函数，</p>
+<blockquote>
+<p>runApp函数接受指定的控件(Widget)，并使其作为控件树(widget tree)的根控件。</p>
+</blockquote>
+<p>runApp里面new了一个MaterialApp对象，然后这个对象有两个参数，第一个是titile，指明了这个控件的标题是啥，第二个参数是home，指明了这个控件的主体是啥。<br> 再深入的看就会发现，home的值是一个new出来的MyScaffold对象，这时我们就可以去查看MyScaffold这个类的声明代码。</p>
+<p>MyScaffold控件为子控件设置垂直布局，在垂直顶部放置一个MyAppBar的实例（这个控件也是自己创建的），将MyAppBar的Text控件作为标题使用，将控件作为参数传递给其他控件非常方便实用的，你可以创建通用的控件，以各种方式重复的使用。最后，MyScaffold使用Expanded，用一个中心文本来填充剩余的空间。</p>
+<p>MyAppBar控件创建了一个Container(容器)，高度为56设备无关像素(device-independent pixels)，内部左右填充8像素(pixels)。在容器内部，MyAppBar为子控件设置Row(水平)布局，中间的title控件被设置成Expanded，Expanded的作用是展开Row、Column和Flex的子控件，意味它可以使用剩余的所有空间。</p>
+<p>其实上述的分析过程就是一个对控件数的一个遍历，从根控件到里面的子控件，Flutter的设计理念就是一切皆为控件，组件套组建。虽然上述代码不是java，c等主流代码，但是理解起来却并不是非常难懂，上手难度确实不大，值得体验。</p>
+<p>最后，推荐一些链接：<br> <a href="https://flutter.io/" target="_blank" rel="noopener">Flutter官网</a><br> <a href="http://blog.csdn.net/column/details/13593.html" target="_blank" rel="noopener">Flutter教程</a><br> <a href="http://flutter-dev.cn/" target="_blank" rel="noopener">Flutter中文开发者论坛</a></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Android/" rel="tag"># Android</a>
+            
+              <a href="/tags/Flutter/" rel="tag"># Flutter</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/posts/a8aa4c4c.html" rel="next" title="HTTP长连接说明">
+                  <i class="fa fa-chevron-left"></i> HTTP长连接说明
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/posts/2114cdef.html" rel="prev" title="Android骨架屏，了解一下">
+                  Android骨架屏，了解一下 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ZhangMiao</p>
+  <div class="site-description motion-element" itemprop="description">Change for the Better</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">243</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">101</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=153942241&site=qq&menu=yes" title="QQ &rarr; http://wpa.qq.com/msgrd?v=3&uin=153942241&site=qq&menu=yes" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/zhangmiaocc" title="Github &rarr; https://github.com/zhangmiaocc" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>Github</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://stackoverflow.com" title="StackOverflow &rarr; https://stackoverflow.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+    
+  </div>
+
+
+  <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+    <div class="links-of-blogroll-title">
+      <i class="fa  fa-fw fa-link"></i>
+      links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc" rel="noopener" target="_blank">Zhangmiao</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://xuebin.me" title="https://xuebin.me" rel="noopener" target="_blank">Leo</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://jspang.com/" title="http://jspang.com/" rel="noopener" target="_blank">Jspang</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://blankj.com/" title="https://blankj.com/" rel="noopener" target="_blank">Blankj</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://wuxiaolong.me/" title="http://wuxiaolong.me/" rel="noopener" target="_blank">WuXiaoLong</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://molunerfinn.com" title="https://molunerfinn.com" rel="noopener" target="_blank">Molunerfinn</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://zhanghongyang.com" title="http://zhanghongyang.com" rel="noopener" target="_blank">Hongyang</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://liuwangshu.cn/" title="http://liuwangshu.cn/" rel="noopener" target="_blank">Liuwangshu</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://liuxsen.github.io" title="https://liuxsen.github.io" rel="noopener" target="_blank">Liuxen</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="https://www.ofind.cn/" title="https://www.ofind.cn/" rel="noopener" target="_blank">Ofind</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://www.gcssloop.com/" title="http://www.gcssloop.com/" rel="noopener" target="_blank">Gcssloop</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Flutter"><span class="nav-number">1.</span> <span class="nav-text">什么是Flutter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flutter的核心内容"><span class="nav-number">2.</span> <span class="nav-text">Flutter的核心内容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一切都是控件（Widget）"><span class="nav-number">2.0.1.</span> <span class="nav-text">一切都是控件（Widget）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建第一个Flutter实例"><span class="nav-number">3.</span> <span class="nav-text">构建第一个Flutter实例</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZhangMiao</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1277928793&web_id=1277928793"></script>
+  </div>
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+      </div>
+
+    
+
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+
+
+
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+
+  
+
+
+
+
+
+  
+  <script>
+  function leancloudSelector(url) {
+    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+  }
+  if (CONFIG.page.isPost) {
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = visitors.getAttribute('id').trim();
+      var title = visitors.getAttribute('data-flag-title').trim();
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
+            
+              .catch(error => {
+                console.log('Failed to save visitor count', error);
+              })
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  } else {
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return element.getAttribute('id').trim();
+      });
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length === 0) {
+            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
+              element.innerText = 0;
+            });
+            return;
+          }
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            leancloudSelector(url).innerText = time;
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = leancloudSelector(url);
+            if (element.innerText == '') {
+              element.innerText = 0;
+            }
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  }
+
+  fetch('https://app-router.leancloud.cn/2/route?appId=8iIYW0IGofqyvJiiuU5R9buW-gzGzoHsz')
+    .then(response => response.json())
+    .then(({ api_server }) => {
+      var Counter = (method, url, data) => {
+        return fetch(`https://${api_server}/1.1${url}`, {
+          method: method,
+          headers: {
+            'X-LC-Id': '8iIYW0IGofqyvJiiuU5R9buW-gzGzoHsz',
+            'X-LC-Key': 'ssmxRx0kELJir6mA02ziW3Ql',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
+        if (localhost.test(document.URL)) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.3.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
+
+
+</body>
+</html>
