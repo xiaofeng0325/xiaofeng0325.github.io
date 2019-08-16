@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,15 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="一、OkHttp3流程图">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190627165616.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190627165658.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190627170713.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190627170509.png">
 <meta property="og:updated_time" content="2019-06-28T03:45:03.440Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OkHttp3源码分析一">
 <meta name="twitter:description" content="一、OkHttp3流程图">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190627165616.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/1eadb261">
 
@@ -280,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -362,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/1eadb261.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/1eadb261.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -372,9 +385,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="一、OkHttp3流程图"><a href="#一、OkHttp3流程图" class="headerlink" title="一、OkHttp3流程图"></a>一、OkHttp3流程图</h2><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190627165616.png" alt=""></p>
+        <h2 id="一、OkHttp3流程图"><a href="#一、OkHttp3流程图" class="headerlink" title="一、OkHttp3流程图"></a>一、OkHttp3流程图</h2><p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190627165616.png"></p>
 <a id="more"></a>
-<h2 id="二、源码整体架构"><a href="#二、源码整体架构" class="headerlink" title="二、源码整体架构"></a>二、源码整体架构</h2><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190627165658.png" alt=""></p>
+<h2 id="二、源码整体架构"><a href="#二、源码整体架构" class="headerlink" title="二、源码整体架构"></a>二、源码整体架构</h2><p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190627165658.png"></p>
 <p>上图是OkHttp3的整体框架，大致可以分为以下几层：</p>
 <ul>
 <li>Interface——接口层：接收用户的网络访问请求（同步请求/异步请求），发起实际的网络访问</li>
@@ -395,7 +408,7 @@
 <p>AsyncCall继承NamedRunnable，实现了抽象方法execute（），所以每一个Call就是一个线程，而执行Call的过程就是执行其execute（）方法的过程。</p>
 </li>
 <li><p><strong>Dispatcher(调度器)</strong>是OkHttp的任务队列，其内部维护了一个线程池，当有接收到一个Call时，Dispatcher负责在线程池中找到空闲的线程并执行其execute方法。</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190627170713.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190627170713.png"></p>
 <p>针对异步请求，Dispatcher使用了两个Deque，一个保存准备执行的请求，一个保存正在执行的请求，为什么要用两个呢？因为Dispatcher默认支持最大的并发请求是64个，单个Host最多执行5个并发请求，如果超过，则Call会先被放入到readyAsyncCall中，当出现空闲的线程时，再将readyAsyncCall中的线程移入到runningAsynCalls中，执行请求。</p>
 <p>如果正在执行的请求总数&lt;=64 &amp;&amp; 单个Host正在执行的请求&lt;=5，则将请求加入到runningAsyncCalls集合中，紧接着就是利用线程池执行该请求，否则就将该请求放入readyAsyncCalls集合中。</p>
 </li>
@@ -405,7 +418,7 @@
 <p>RealConnection：描述一个物理Socket连接，连接池中维护多个RealConnection实例。<br>StreamAllocation： 由于Http/2支持多路复用，一个RealConnection可以支持多个网络访问请求，所以OkHttp又引入了StreamAllocation来描述一个实际的网络请求开销（从逻辑上一个Stream对应一个Call，但在实际网络请求过程中一个Call常常涉及到多次请求。如重定向，Authenticate等场景。所以准确地说，一个Stream对应一次请求，而一个Call对应一组有逻辑关联的Stream），一个RealConnection对应一个或多个StreamAllocation,所以StreamAllocation可以看做是RealConenction的计数器，当RealConnection的引用计数变为0，且长时间没有被其他请求重新占用就将被释放。</p>
 <h4 id="2-4-Cache——缓存层"><a href="#2-4-Cache——缓存层" class="headerlink" title="2.4 Cache——缓存层"></a>2.4 Cache——缓存层</h4><p>Cache层负责维护请求缓存，当用户的网络请求在本地已有符合要求的缓存时，OkHttp会直接从缓存中返回结果，从而节省网络开销。</p>
 <p>缓存策略：提到缓存策略，就要提到CacheInterceptor拦截器，如下图</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190627170509.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190627170509.png"></p>
 <p>CacheStrategy实现缓存策略，CacheStrategy使用Factory模式进行构造，该类决定是使用缓存还是使用网络请求</p>
 <p>Cache是封装了实际的缓存操作；<br>DiskLruCache:Cache基于DiskLruCache；</p>
 <h4 id="2-5-I-O层"><a href="#2-5-I-O层" class="headerlink" title="2.5 I/O层"></a>2.5 I/O层</h4><p>I/O层负责实际的数据读写。OkHttp的另一大有点就是其高效的I/O操作，这归因于其高效的I/O库okio。</p>
@@ -444,6 +457,8 @@
     
     
     
+      
+
         
       
         
@@ -511,6 +526,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1088,6 +1112,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1103,6 +1132,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1224,8 +1262,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1240,6 +1310,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/1eadb261.html";
+    this.page.identifier = "posts/1eadb261.html";
+    this.page.title = 'OkHttp3源码分析一';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

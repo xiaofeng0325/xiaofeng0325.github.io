@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,15 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="前言 无论你是个人开发还是团队，一个良好的代码规范，能够在项目当中发挥举足轻重的作用；它不仅能使你们的开发更加高效，而且还会减少BUG产生的几率，增强代码可维护性及稳定性。  关于规范，我们分两部分来讲，因为Android主要是用Java语言来写的，所以我们区别对待。 JAVA代码规范强制性规范: 代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。 代码中的命名严禁使用拼音">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtl8cge3dj32cr0lcacg.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtla83leij30la05lt97.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtlam313hj30ul0kb42i.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtlb01lizj30ul0kb41c.jpg">
 <meta property="og:updated_time" content="2019-05-16T07:44:23.972Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android代码规范指南">
 <meta name="twitter:description" content="前言 无论你是个人开发还是团队，一个良好的代码规范，能够在项目当中发挥举足轻重的作用；它不仅能使你们的开发更加高效，而且还会减少BUG产生的几率，增强代码可维护性及稳定性。  关于规范，我们分两部分来讲，因为Android主要是用Java语言来写的，所以我们区别对待。 JAVA代码规范强制性规范: 代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。 代码中的命名严禁使用拼音">
-<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtl8cge3dj32cr0lcacg.jpg">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/89cc132f">
 
@@ -280,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -362,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/89cc132f.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/89cc132f.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -372,7 +385,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtl8cge3dj32cr0lcacg.jpg" alt=""></p>
+        <p><img alt="" data-src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtl8cge3dj32cr0lcacg.jpg"></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
 <p>无论你是个人开发还是团队，一个良好的代码规范，能够在项目当中发挥举足轻重的作用；它不仅能使你们的开发更加高效，而且还会减少BUG产生的几率，增强代码可维护性及稳定性。</p>
 </blockquote>
@@ -478,13 +491,13 @@
 <p>通过以上方法，我们能够很好的解耦复杂的Activity之间的调用，再加上静态方法工厂方法名，代码可阅读行大大提高，最终我们看到的调用NoteActivity将会是很简洁的一段代码：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">NoteActivity.startForCreate(this,noteId);</span><br><span class="line">NoteActivity.startForEdit(this,noteId,content);</span><br></pre></td></tr></table></figure>
 <p>此外，Android Studio工具中其实已经在Live Template中提供了这样的代码:CMD+J( For MAC OS),简单的输入starter就可以快速地在当前的Activity中添加一个Intent的静态操作方法，这其实也说明了Android官方团队也鼓励我们这么做。<br> 如下图所示：</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtla83leij30la05lt97.jpg" alt=""></p>
+<p><img alt="" data-src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtla83leij30la05lt97.jpg"></p>
 <p>一下子省了好多代码，简直太赞了有木有！</p>
 <ol start="8">
 <li>增加类注释，使用Android Studio的 File And Code Template：</li>
 </ol>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtlam313hj30ul0kb42i.jpg" alt=""></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtlb01lizj30ul0kb41c.jpg" alt=""></p>
+<p><img alt="" data-src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtlam313hj30ul0kb42i.jpg"></p>
+<p><img alt="" data-src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtlb01lizj30ul0kb41c.jpg"></p>
 <ol>
 <li>所有的常量加上注释，且功能相同的排放在一起，不同的进行换行；</li>
 <li>Activity中变量采用m开头+类名。例如，mTable、mPerson；</li>
@@ -729,6 +742,8 @@
     
     
     
+      
+
         
       
         
@@ -798,6 +813,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1375,6 +1399,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1390,6 +1419,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1511,8 +1549,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1527,6 +1597,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/89cc132f.html";
+    this.page.identifier = "posts/89cc132f.html";
+    this.page.title = 'Android代码规范指南';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

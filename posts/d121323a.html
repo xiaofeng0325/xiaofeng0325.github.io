@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,15 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="Stream在 dart 部分记得分享过 Stream 的文章链接，但是我知道你们肯定没几个愿意看的，所以这里再提下。还是得从源码开始…因为源码的注释比较长，就不贴注释了，可以自己看，我这边就提取一些关键信息。 Stream 是 Dart 提供的一种数据流订阅管理的”工具”，感觉有点像 Android 中的 EventBus 或者 RxBus，Stream 可以接收任何对象，包括是另外一个 Str">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527150910.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527150935.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527150951.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/2888797-31cb9b8c3a99abaf.gif">
 <meta property="og:updated_time" content="2019-05-27T07:12:22.212Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flutter入门指南(十一)之状态管理，BLoC">
 <meta name="twitter:description" content="Stream在 dart 部分记得分享过 Stream 的文章链接，但是我知道你们肯定没几个愿意看的，所以这里再提下。还是得从源码开始…因为源码的注释比较长，就不贴注释了，可以自己看，我这边就提取一些关键信息。 Stream 是 Dart 提供的一种数据流订阅管理的”工具”，感觉有点像 Android 中的 EventBus 或者 RxBus，Stream 可以接收任何对象，包括是另外一个 Str">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527150910.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/d121323a">
 
@@ -280,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -362,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/d121323a.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/d121323a.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -383,21 +396,21 @@
 <p>还是看下例子会比较直观</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_StreamHomeState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">StreamHome</span>&gt; </span>&#123;</span><br><span class="line">  StreamController _controller = StreamController();  <span class="comment">// 创建单订阅类型 `StreamController`</span></span><br><span class="line">  Sink _sink;</span><br><span class="line">  StreamSubscription _subscription;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">void</span> initState() &#123;</span><br><span class="line">    <span class="keyword">super</span>.initState();</span><br><span class="line"></span><br><span class="line">    _sink = _controller.sink; <span class="comment">// _sink 用于添加数据</span></span><br><span class="line">    <span class="comment">// _controller.stream 会返回一个单订阅 stream，</span></span><br><span class="line">    <span class="comment">// 通过 listen 返回 StreamSubscription，用于操作流的监听操作</span></span><br><span class="line">    _subscription = _controller.stream.listen((data) =&gt; <span class="built_in">print</span>(<span class="string">'Listener: $data'</span>));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 添加数据，stream 会通过 `listen` 方法打印</span></span><br><span class="line">    _sink.add(<span class="string">'A'</span>);</span><br><span class="line">    _sink.add(<span class="number">11</span>);</span><br><span class="line">    _sink.add(<span class="number">11.16</span>);</span><br><span class="line">    _sink.add([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br><span class="line">    _sink.add(&#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">2</span>&#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">void</span> dispose() &#123;</span><br><span class="line">    <span class="keyword">super</span>.dispose();</span><br><span class="line">    <span class="comment">// 最后要释放资源...</span></span><br><span class="line">    _sink.close();</span><br><span class="line">    _controller.close();</span><br><span class="line">    _subscription.cancel();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      body: Container(),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>看下控制台的输出：</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527150910.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527150910.png"></p>
 <p>果然把所有的数据都打印出来了，前面有说过，单订阅的 stream 只有当 <code>listen</code> 后才会发送数据，不试试我还是不相信的，我们把 <code>_sink.add</code> 放到 <code>listen</code> 前面去执行，再看控制台的打印结果。居然真的是一样的，Google 粑粑果然诚不欺我。接着试下 <code>pause</code>，<code>resume</code> 方法，看下数据如何监听，修改代码</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">_sink = _controller.sink;</span><br><span class="line">_subscription = _controller.stream.listen((data) =&gt; <span class="built_in">print</span>(<span class="string">'Listener: $data'</span>));</span><br><span class="line">_sink.add(<span class="string">'A'</span>);</span><br><span class="line">_subscription.pause(); <span class="comment">// 暂停监听</span></span><br><span class="line">_sink.add(<span class="number">11</span>);</span><br><span class="line">_sink.add(<span class="number">11.16</span>);</span><br><span class="line">_subscription.resume(); <span class="comment">// 恢复监听</span></span><br><span class="line">_sink.add([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br><span class="line">_sink.add(&#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">2</span>&#125;);</span><br></pre></td></tr></table></figure>
 <p>再看控制台的打印，你们可以先猜下是什么结果，我猜大部分人都会觉得应该是不会有 11 和 11.16 打印出来了。然鹅事实并非这样，打印的结果并未发生变化，也就是说，调用 <code>pause</code> 方法后，stream 被堵住了，数据不继续发送了。</p>
 <p>接下来看下广播订阅 stream，对代码做下修改</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">StreamController _controller = StreamController.broadcast();</span><br><span class="line">  Sink _sink;</span><br><span class="line">  StreamSubscription _subscription;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">void</span> initState() &#123;</span><br><span class="line">    <span class="keyword">super</span>.initState();</span><br><span class="line"></span><br><span class="line">    _sink = _controller.sink;</span><br><span class="line"></span><br><span class="line">    _sink.add(<span class="string">'A'</span>);</span><br><span class="line">    _subscription = _controller.stream.listen((data) =&gt; <span class="built_in">print</span>(<span class="string">'Listener: $data'</span>));</span><br><span class="line"></span><br><span class="line">    _sink.add(<span class="number">11</span>);</span><br><span class="line">    _subscription.pause();</span><br><span class="line">    _sink.add(<span class="number">11.16</span>);</span><br><span class="line">    _subscription.resume();</span><br><span class="line"></span><br><span class="line">    _sink.add([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br><span class="line">    _sink.add(&#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">2</span>&#125;);</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我们再看下控制台的打印：</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527150935.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527150935.png"></p>
 <p>你猜对答案了吗，这边做下小总结：</p>
 <p><strong>单订阅 Stream 只有当存在监听的时候，才发送数据，广播订阅 Stream 则不考虑这点，有数据就发送；当监听调用 pause 以后，不管哪种类型的 stream 都会停止发送数据，当 resume 之后，把前面存着的数据都发送出去。</strong></p>
 <p>sink 可以接受任何类型的数据，也可以通过泛型对传入的数据进行限制，比如我们对 <code>StreamController</code> 进行类型指定 <code>StreamController&lt;int&gt; _controller = StreamController.broadcast();</code> 因为没有对 <code>Sink</code> 的类型进行限制，还是可以添加除了 <code>int</code> 外的类型参数，但是运行的时候就会报错，<code>_controller</code> 对你传入的参数做了类型判定，拒绝进入。</p>
 <p><code>Stream</code> 中还提供了很多 <code>StremTransformer</code>，用于对监听到的数据进行处理，比如我们发送 0~19 的 20 个数据，只接受大于 10 的前 5 个数据，那么可以对 stream 如下操作</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">_subscription = _controller.stream</span><br><span class="line">    .where((value) =&gt; value &gt; <span class="number">10</span>)</span><br><span class="line">    .take(<span class="number">5</span>)</span><br><span class="line">    .listen((data) =&gt; <span class="built_in">print</span>(<span class="string">'Listen: $data'</span>));</span><br><span class="line"></span><br><span class="line"><span class="built_in">List</span>.generate(<span class="number">20</span>, (index) =&gt; _sink.add(index));</span><br></pre></td></tr></table></figure>
 <p>那么打印出来的数据如下图</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527150951.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527150951.png"></p>
 <p>除了 <code>where</code>，<code>take</code> 还有很多 <code>Transformer</code>， 例如 <code>map</code>，<code>skip</code> 等等，小伙伴们可以自行研究。了解了 <code>Stream</code> 的基本属性后，就可以继续往下了~</p>
 <h4 id="StreamBuilder"><a href="#StreamBuilder" class="headerlink" title="StreamBuilder"></a>StreamBuilder</h4><p>前面提到了 stream 通过 <code>listen</code> 进行监听数据的变化，<code>Flutter</code> 就为我们提供了这么个部件 <code>StreamBuilder</code> 专门用于监听 stream 的变化，然后自动刷新重建。接着来看下源码</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> StreamBuilder(&#123;</span><br><span class="line">    Key key,</span><br><span class="line">    <span class="keyword">this</span>.initialData, <span class="comment">// 初始数据，不传入则为 null</span></span><br><span class="line">    Stream&lt;T&gt; stream,</span><br><span class="line">    <span class="meta">@required</span> <span class="keyword">this</span>.builder</span><br><span class="line">  &#125;) : <span class="keyword">assert</span>(builder != <span class="keyword">null</span>),</span><br><span class="line">       <span class="keyword">super</span>(key: key, stream: stream);</span><br><span class="line"></span><br><span class="line"><span class="meta">@override</span></span><br><span class="line">AsyncSnapshot&lt;T&gt; initial() =&gt; AsyncSnapshot&lt;T&gt;.withData(ConnectionState.none, initialData);</span><br></pre></td></tr></table></figure>
@@ -406,7 +419,7 @@
 <p>在之前更新数据都需要通过 <code>setState</code> 进行更新，这里了解完了 <code>stream</code>，我们就不使用 <code>setState</code> 更新，使用 <code>Stream</code> 来更新</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_StreamHomeState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">StreamHome</span>&gt; </span>&#123;</span><br><span class="line">  <span class="comment">// 定义一个全局的 `StreamController`</span></span><br><span class="line">  StreamController&lt;<span class="built_in">int</span>&gt; _controller = StreamController.broadcast();</span><br><span class="line">  <span class="comment">// `sink` 用于传入新的数据</span></span><br><span class="line">  Sink&lt;<span class="built_in">int</span>&gt; _sink;</span><br><span class="line">  <span class="built_in">int</span> _counter = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">void</span> initState() &#123;</span><br><span class="line">    <span class="keyword">super</span>.initState();</span><br><span class="line">    _sink = _controller.sink;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">void</span> dispose() &#123;</span><br><span class="line">    <span class="keyword">super</span>.dispose();</span><br><span class="line">    <span class="comment">// 需要销毁资源</span></span><br><span class="line">    _sink.close();</span><br><span class="line">    _controller.close();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      body: SafeArea(</span><br><span class="line">          child: Container(</span><br><span class="line">        alignment: Alignment.center,</span><br><span class="line">        child: StreamBuilder(</span><br><span class="line">          builder: (_, snapshot) =&gt; Text(<span class="string">'<span class="subst">$&#123;snapshot.data&#125;</span>'</span>, style: TextStyle(fontSize: <span class="number">24.0</span>)),</span><br><span class="line">          stream: _controller.stream, <span class="comment">// stream 在 StreamBuilder 销毁的时候会自动销毁</span></span><br><span class="line">          initialData: _counter,</span><br><span class="line">        ),</span><br><span class="line">      )),</span><br><span class="line">      <span class="comment">// 通过 `sink` 传入新的数据，去通知 `stream` 更新到 builder 中</span></span><br><span class="line">      floatingActionButton: FloatingActionButton(</span><br><span class="line">        onPressed: () =&gt; _sink.add(_counter++),</span><br><span class="line">        child: Icon(Icons.add),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>那么当点击按钮的时候，就会刷新界面上的值，通过上面的源码分析，<code>StreamBuilder</code> 也是通过 <code>setState</code> 方法进行刷新，那么两种方法孰优孰劣呢，当然是通过 <code>Stream</code> 啦，这不是废话吗。<strong>因为通过调用 setState 刷新的话，会把整个界面都进行重构，但是通过 StreamBuilder 的话，只刷新其 builder，这样效率就更高了</strong>，最后看小效果吧，所谓有图有真相嘛</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/2888797-31cb9b8c3a99abaf.gif" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/2888797-31cb9b8c3a99abaf.gif"></p>
 <p>这一步，我们摒弃了 <code>setState</code> 方法，那么下一步，我们试试把 <code>StatefulWidget</code> 替换成 <code>StatelessWidget</code> 吧，而且<strong>官方也推荐使用 StatelessWidget 替换 StatefulWidget</strong>，这里就需要提下 <code>BLoC</code> 模式了。</p>
 <h4 id="BLoC"><a href="#BLoC" class="headerlink" title="BLoC"></a>BLoC</h4><p>说实话，现在 Google 下 「flutter bloc」能搜到很多文章，基本上都是通过 <code>InheritedWidget</code> 来实现的，例如这篇<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fjuejin.im%2Fpost%2F5bb6f344f265da0aa664d68a" target="_blank" rel="noopener">Flutter | 状态管理探索篇——BLoC(三)</a>，但是 <code>InheritedWidget</code> 没有提供 <code>dispose</code> 方法，那么就会存在 <code>StreamController</code> 不能及时销毁等问题，所以，参考了一篇国外的文章，<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fwww.didierboelens.com%2F2018%2F08%2Freactive-programming---streams---bloc%2F" target="_blank" rel="noopener">Reactive Programming - Streams - BLoC</a> 这里通过使用 <code>StatefulWidget</code> 来实现，当该部件销毁的时候，可以在其 <code>dispose</code> 方法中及时销毁 <code>StreamController</code>，这里我还是先当个搬运工，搬下大佬为我们实现好的基类</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">BaseBloc</span> </span>&#123;</span><br><span class="line">  <span class="keyword">void</span> dispose(); <span class="comment">// 该方法用于及时销毁资源</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BlocProvider</span>&lt;<span class="title">T</span> <span class="keyword">extends</span> <span class="title">BaseBloc</span>&gt; <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> Widget child; <span class="comment">// 这个 `widget` 在 stream 接收到通知的时候刷新</span></span><br><span class="line">  <span class="keyword">final</span> T bloc; </span><br><span class="line">  </span><br><span class="line">  BlocProvider(&#123;Key key, <span class="meta">@required</span> <span class="keyword">this</span>.child, <span class="meta">@required</span> <span class="keyword">this</span>.bloc&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  _BlocProviderState&lt;T&gt; createState() =&gt; _BlocProviderState&lt;T&gt;();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 该方法用于返回 Bloc 实例</span></span><br><span class="line">  <span class="keyword">static</span> T of&lt;T <span class="keyword">extends</span> BaseBloc&gt;(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">final</span> type = _typeOf&lt;BlocProvider&lt;T&gt;&gt;(); <span class="comment">// 获取当前 Bloc 的类型</span></span><br><span class="line">    <span class="comment">// 通过类型获取相应的 Provider，再通过 Provider 获取 bloc 实例</span></span><br><span class="line">    BlocProvider&lt;T&gt; provider = context.ancestorWidgetOfExactType(type); </span><br><span class="line">    <span class="keyword">return</span> provider.bloc; </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> <span class="built_in">Type</span> _typeOf&lt;T&gt;() =&gt; T;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_BlocProviderState</span>&lt;<span class="title">T</span>&gt; <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">BlocProvider</span>&lt;<span class="title">BaseBloc</span>&gt;&gt; </span>&#123;</span><br><span class="line">    </span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">void</span> dispose() &#123;</span><br><span class="line">    widget.bloc.dispose(); <span class="comment">// 及时销毁资源</span></span><br><span class="line">    <span class="keyword">super</span>.dispose();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> widget.child;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -479,6 +492,8 @@
     
     
     
+      
+
         
       
         
@@ -546,6 +561,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1123,6 +1147,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1138,6 +1167,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1259,8 +1297,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1275,6 +1345,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/d121323a.html";
+    this.page.identifier = "posts/d121323a.html";
+    this.page.title = 'Flutter入门指南(十一)之状态管理，BLoC';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

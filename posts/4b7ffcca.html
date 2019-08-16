@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,12 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="数据类型的转换汇总Number类型的转换把其他数据类型转换为number类型的方法  isNaN,Number,parsseIn,praseFloat在进行加减乘除运算时  &apos;12px&apos;=&amp;gt;NaN; &quot;主灯&quot;=&amp;gt;NaN[ ] /null /false / &apos; &apos; /=&amp;gt;0&amp;#123; &amp;#125; /^$/ function()&amp;#123;&amp;#125;/ undefined /=">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190428180838.png">
 <meta property="og:updated_time" content="2019-05-16T07:44:23.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS基础（三）数据类型汇总">
 <meta name="twitter:description" content="数据类型的转换汇总Number类型的转换把其他数据类型转换为number类型的方法  isNaN,Number,parsseIn,praseFloat在进行加减乘除运算时  &apos;12px&apos;=&amp;gt;NaN; &quot;主灯&quot;=&amp;gt;NaN[ ] /null /false / &apos; &apos; /=&amp;gt;0&amp;#123; &amp;#125; /^$/ function()&amp;#123;&amp;#125;/ undefined /=">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190428180838.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/4b7ffcca">
 
@@ -277,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -359,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/4b7ffcca.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/4b7ffcca.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -388,7 +404,7 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//对象和对象比较：比较的是空间地址,不是同一个空间，肯定是false</span></span><br><span class="line">[]==[] =&gt;<span class="literal">false</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> a=&#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> b=a;</span><br><span class="line">a==<span class="function"><span class="params">b</span> =&gt;</span><span class="literal">true</span> <span class="comment">//(空间地址相同)</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">//对象和数字比较，先调用toString方法</span></span><br><span class="line">[]==<span class="number">0</span> =&gt;<span class="literal">true</span></span><br><span class="line">(&#123;&#125;)==<span class="function"><span class="params">NaN</span> =&gt;</span><span class="literal">false</span> <span class="literal">NaN</span>和任何东西都不等，包括自己</span><br><span class="line"> </span><br><span class="line"><span class="comment">//对象和字符串比较 (把两边都转化为字符串)</span></span><br><span class="line">[]==<span class="string">''</span> =&gt;<span class="literal">true</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">//对象和布尔：（把两边都转化为数字）</span></span><br><span class="line">[]==<span class="function"><span class="params">true</span> =&gt;</span><span class="number">0</span>==<span class="number">1</span> =&gt;<span class="literal">false</span></span><br><span class="line">[]==<span class="function"><span class="params">false</span> =&gt;</span><span class="literal">true</span></span><br><span class="line">![]==<span class="function"><span class="params">false</span> =&gt;</span><span class="literal">true</span> <span class="comment">//![]把数组变为布尔再取反[]=true</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">//字符串和数字：（把两边都转化为数字）</span></span><br><span class="line"><span class="comment">//字符串和布尔： （把两边都转化为数字）</span></span><br><span class="line"><span class="comment">//布尔和数字： （把两边都转化为数字）</span></span><br></pre></td></tr></table></figure>
 <p>规律，两个等于号比较时，左右两边的的数据类型不一样，浏览器会把两边类型都转为<strong>数字</strong>再比较（对象类型比较特殊，应该先转化为字符串，再转化为数字），但是null和undefined除外null和undefined和其他任何值都不相等 </p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="literal">null</span>==<span class="function"><span class="params">undefined</span> =&gt;</span><span class="literal">true</span> </span><br><span class="line"><span class="literal">null</span>===<span class="function"><span class="params">undefined</span> =&gt;</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<p>规律，两个等于号比较时，两边类型相同时，直接比较，对象和对象比较的是空间地址；{}！={}，另外NaN和任何值都不等<br><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190428180838.png" alt=""></p>
+<p>规律，两个等于号比较时，两边类型相同时，直接比较，对象和对象比较的是空间地址；{}！={}，另外NaN和任何值都不等<br><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190428180838.png"></p>
 <h3 id="JS中的数据类型检测汇总"><a href="#JS中的数据类型检测汇总" class="headerlink" title="JS中的数据类型检测汇总"></a>JS中的数据类型检测汇总</h3><h3 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h3><blockquote>
 <p>用来检测数据类型的运算符<br>语法：typeof [value]，typeof后面跟的都是值<br>返回结果：首先是个字符串，字符串中包含了我们需要检测的数据类型<br>typeof null=’object’ &gt;虽然时基本数据类型，但是它属于空对象指针，检测结果是对象（局限性）<br>并且不能细分出当前对象是数组还是正则（局限性）<br>typeof 1&gt;1?1:2; =&gt;2 //优先级，先计算typeof 1;再比较，</p>
 </blockquote>
@@ -409,6 +425,8 @@
     
     
     
+      
+
         
       
         
@@ -476,6 +494,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1053,6 +1080,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1068,6 +1100,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1189,8 +1230,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1205,6 +1278,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/4b7ffcca.html";
+    this.page.identifier = "posts/4b7ffcca.html";
+    this.page.title = 'JS基础（三）数据类型汇总';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,15 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="Weex 是使用流行的 Web 开发体验来开发高性能原生应用的框架。“Weex” 的发音是 /wiːks/, 和 “Weeks“ 同音。  Write Once, Run EverywhereWeex 致力于使开发者能基于通用跨平台的 Web 开发语言和开发经验，来构建 Android、iOS 和 Web 应用。简单来说，在集成了 WeexSDK 之后，你可以使用 JavaScript 语言和前">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://weex.apache.org/assets/img/weex-example-yo.f145cfa8.png">
-<meta property="og:image" content="https://weex.apache.org/assets/img/native-component.3ed5300a.png">
-<meta property="og:image" content="https://weex.apache.org/assets/img/different-switch.5dcdbc2e.png">
-<meta property="og:image" content="https://weex.apache.org/assets/img/vue-rax.bd610684.png">
 <meta property="og:updated_time" content="2019-05-31T07:33:12.662Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="什么是 Weex ？">
 <meta name="twitter:description" content="Weex 是使用流行的 Web 开发体验来开发高性能原生应用的框架。“Weex” 的发音是 /wiːks/, 和 “Weeks“ 同音。  Write Once, Run EverywhereWeex 致力于使开发者能基于通用跨平台的 Web 开发语言和开发经验，来构建 Android、iOS 和 Web 应用。简单来说，在集成了 WeexSDK 之后，你可以使用 JavaScript 语言和前">
-<meta name="twitter:image" content="https://weex.apache.org/assets/img/weex-example-yo.f145cfa8.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/96214312">
 
@@ -280,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -362,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/96214312.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/96214312.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -384,14 +397,14 @@
 <li>访问 <a href="http://dotwe.org/vue" target="_blank" rel="noopener">Weex online playground</a>. 在这个网站上，你可以浏览、修改、新建各种基于 Vue.js 的<a href="https://weex.apache.org/zh/guide/(https://vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="noopener">单页面</a>)例子，并用 WeexPlayground 应用扫码查看实时效果。</li>
 </ul>
 <p>这里有一个使用 Weex 和 Vue.js 开发的<a href="http://dotwe.org/vue/8da01827631b21150a12dd54d7114380" target="_blank" rel="noopener">最简单的例子</a>。你可以大致了解 Weex 是如何工作的。</p>
-<p><img src="https://weex.apache.org/assets/img/weex-example-yo.f145cfa8.png" alt="Weex Example"></p>
+<p><img alt="Weex Example" data-src="https://weex.apache.org/assets/img/weex-example-yo.f145cfa8.png"></p>
 <p>在 <code>&lt;template&gt;</code> 部分，包含了 <code>&lt;div&gt;</code> 元素，这个被广泛应用于 Web 页面中，在 Weex 里它也是一个通用的容器。<code>&lt;text&gt;</code>元素就和普通的 HTML 不太一样了，它提供了显示文本的能力，在 Weex 上，所有文本必须放在 <code>&lt;text&gt;</code> 标签中。</p>
 <p>在 <code>&lt;style&gt;</code> 部分，你可以定义各种 CSS 样式。需要注意的是，这些样式在 Weex 里只能作用于当前组件，<a href="https://vue-loader.vuejs.org/en/features/scoped-css.html" target="_blank" rel="noopener"><strong>scoped</strong></a>。</p>
 <h3 id="原生组件"><a href="#原生组件" class="headerlink" title="原生组件"></a>原生组件</h3><p>在上面的例子中，<code>&lt;div&gt;</code> 和 <code>&lt;text&gt;</code> 在移动端上渲染出来的都是原生组件，充分利用了操作系统组件的能力与渲染速度。</p>
-<p><img src="https://weex.apache.org/assets/img/native-component.3ed5300a.png" alt="Native Components"></p>
+<p><img alt="Native Components" data-src="https://weex.apache.org/assets/img/native-component.3ed5300a.png"></p>
 <p>Weex 提供了一套基础的<a href="https://weex.apache.org/zh/docs/components/div.html" target="_blank" rel="noopener">内置组件</a>。你可以对这些基础组件进行封装、组合形成自己的组件；也可以创建自己的全新组件来包装操作系统提供的地图、视频等功能。可以访问 <a href="https://weex.apache.org/zh/guide/extend/extend-ios.html" target="_blank" rel="noopener">扩展 iOS 能力</a> 和 <a href="https://weex.apache.org/zh/guide/extend/extend-android.html" target="_blank" rel="noopener">扩展 Android 能力</a>来了解如何去实现自定义组件。</p>
 <p>在框架内部，Weex 使用原生组件来渲染，并尽可能保持多平台一致性。但在不同平台上，或多或少会有一些渲染、行为上的差异。比如对于 <a href="http://dotwe.org/vue/d96943452b6708422197c47920903823" target="_blank" rel="noopener"><code></code></a> 组件，在不同平台上的视觉效果是不一致的。</p>
-<p><img src="https://weex.apache.org/assets/img/different-switch.5dcdbc2e.png" alt="Different switch"></p>
+<p><img alt="Different switch" data-src="https://weex.apache.org/assets/img/different-switch.5dcdbc2e.png"></p>
 <h3 id="原生模块"><a href="#原生模块" class="headerlink" title="原生模块"></a>原生模块</h3><p>对于那些不依赖于 UI 组件的功能，Weex 将它们包装成多个 <strong>模块</strong>，比如 <a href="https://weex.apache.org/zh/docs/modules/animation.html" target="_blank" rel="noopener">动画模块</a>。在前端代码中，使用 <code>weex.requireModule(&#39;xxx&#39;)</code> 引入一个模块，之后就可以调用它提供的各种方法。Weex 模块包装了网络、存储、剪切板、导航等各种功能供前端调用。比如你可以使用 <a href="http://dotwe.org/vue/2ae062b6a04124a35bbe2da3b1e5c07b" target="_blank" rel="noopener"><code>stream</code></a> 模块来获取 Vue.js 的 Star 数量。</p>
 <p>Weex 已经提供了不少<a href="https://weex.apache.org/zh/docs/modules/animation.html" target="_blank" rel="noopener">内置模块</a>，同时也支持将 App 特有的功能包装成自定义模块提供给前端调用。如果想了解怎么做，可以浏览以下文档。</p>
 <ul>
@@ -402,7 +415,7 @@
 <h3 id="一次编写，处处运行"><a href="#一次编写，处处运行" class="headerlink" title="一次编写，处处运行"></a>一次编写，处处运行</h3><p>Weex 的目标就是使用开发者基于一份代码，编写出可以运行在 iOS，Android 和 Web 上的应用，并最大化地提高开发效率和简化测试、构建、发布流程。</p>
 <p>有一些场景，你可能仍然需要写一些平台相关的代码。Weex 提供 <code>WXEnvironment</code> 用来获取 Weex 运行的环境变量，浏览 <a href="https://weex.apache.org/zh/docs/api/weex-variable.html" target="_blank" rel="noopener">Weex 环境变量</a>，了解更多。</p>
 <h2 id="使用前端框架"><a href="#使用前端框架" class="headerlink" title="使用前端框架"></a>使用前端框架</h2><p>Weex 应用需要依赖前端框架来编写，但 Weex 并没有绑定、限制在特定的框架上。目前 <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue.js</a> 和 <a href="https://alibaba.github.io/rax/" target="_blank" rel="noopener">Rax</a> 是最广泛应用于 Weex 开发的前端框架，也是目前功能最全、最稳定的方案。</p>
-<p><img src="https://weex.apache.org/assets/img/vue-rax.bd610684.png" alt="Vue 和 Rax"></p>
+<p><img alt="Vue 和 Rax" data-src="https://weex.apache.org/assets/img/vue-rax.bd610684.png"></p>
 <ul>
 <li><strong>Vue.js</strong> 是一个不断进化中的前端框架。</li>
 <li><strong>Rax</strong> 是提供类 React 语法和兼容性的前端框架。</li>
@@ -417,6 +430,8 @@
     
     
     
+      
+
         
       
         
@@ -484,6 +499,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1061,6 +1085,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1076,6 +1105,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1197,8 +1235,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1213,6 +1283,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/96214312.html";
+    this.page.identifier = "posts/96214312.html";
+    this.page.title = '什么是 Weex ？';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

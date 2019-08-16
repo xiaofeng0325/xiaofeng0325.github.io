@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,21 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="需求：APP端 将公司的微信小程序 分享至微信好友 最近，微信小程序比较火热，公司也在做这一块，目前公司的小程序都是由H5端开发的，我们Android端也接到一个任务，那就是Android端应支持微信小程序的分享，并且通过分享出去的小程序可以启动我们的APP； 今天我们先来完成：Android端应支持微信小程序的分享！！！  分析： 微信开放平台SDK支持小程序类型分享，详见官方文档： https">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/10170988-3b81737f56ba521c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/574/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/10170988-41434fc8f9cde5e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/468/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/10170988-f9301d33315a0600.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/10170988-9e4471ecd4f57858.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/10170988-ed00884ed3ececec.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/619/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/10170988-994435cefdc1bb11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/833/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/10170988-6d9fa50e0424721e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/10170988-807127a9a61d72d5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/467/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/10170988-4ecf4405b433089d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/470/format/webp">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/10170988-d799ac004a10eb54.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/421/format/webp">
 <meta property="og:updated_time" content="2019-05-16T07:44:23.955Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android APP分享微信小程序">
 <meta name="twitter:description" content="需求：APP端 将公司的微信小程序 分享至微信好友 最近，微信小程序比较火热，公司也在做这一块，目前公司的小程序都是由H5端开发的，我们Android端也接到一个任务，那就是Android端应支持微信小程序的分享，并且通过分享出去的小程序可以启动我们的APP； 今天我们先来完成：Android端应支持微信小程序的分享！！！  分析： 微信开放平台SDK支持小程序类型分享，详见官方文档： https">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/10170988-3b81737f56ba521c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/574/format/webp">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/83fb494f">
 
@@ -286,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -368,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/83fb494f.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/83fb494f.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -386,11 +393,11 @@
 <a id="more"></a>
 <p>把文档看了一遍，发现限制是比较多的，但是功能实现还是很简单的，下面让我们开始吧！！！</p>
 <p><strong>开发：</strong></p>
-<h4 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h4><p><img src="https://upload-images.jianshu.io/upload_images/10170988-3b81737f56ba521c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/574/format/webp" alt="img"></p>
-<h4 id="小程序与APP主体账号绑定"><a href="#小程序与APP主体账号绑定" class="headerlink" title="小程序与APP主体账号绑定"></a>小程序与APP主体账号绑定</h4><p>开发人员希望通过APP分享小程序，需要先将小程序与APP主体账号（即APP的微信开放平台账号）绑定，APP才具有分享对应小程序的能力。如果没有与主体账号绑定，分享时是报错的，如下图：<br>​<br><img src="https://upload-images.jianshu.io/upload_images/10170988-41434fc8f9cde5e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/468/format/webp" alt="img"></p>
-<h5 id="登录APP所在的微信开放平台：https-open-weixin-qq-com"><a href="#登录APP所在的微信开放平台：https-open-weixin-qq-com" class="headerlink" title="登录APP所在的微信开放平台：https://open.weixin.qq.com/"></a>登录APP所在的微信开放平台：<a href="https://link.jianshu.com?t=https%3A%2F%2Fopen.weixin.qq.com%2F" target="_blank" rel="noopener">https://open.weixin.qq.com/</a></h5><h5 id="绑定小程序"><a href="#绑定小程序" class="headerlink" title="绑定小程序"></a>绑定小程序</h5><p><img src="https://upload-images.jianshu.io/upload_images/10170988-f9301d33315a0600.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt="img"></p>
+<h4 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h4><p><img alt="img" data-src="https://upload-images.jianshu.io/upload_images/10170988-3b81737f56ba521c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/574/format/webp"></p>
+<h4 id="小程序与APP主体账号绑定"><a href="#小程序与APP主体账号绑定" class="headerlink" title="小程序与APP主体账号绑定"></a>小程序与APP主体账号绑定</h4><p>开发人员希望通过APP分享小程序，需要先将小程序与APP主体账号（即APP的微信开放平台账号）绑定，APP才具有分享对应小程序的能力。如果没有与主体账号绑定，分享时是报错的，如下图：<br>​<br><img alt="img" data-src="https://upload-images.jianshu.io/upload_images/10170988-41434fc8f9cde5e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/468/format/webp"></p>
+<h5 id="登录APP所在的微信开放平台：https-open-weixin-qq-com"><a href="#登录APP所在的微信开放平台：https-open-weixin-qq-com" class="headerlink" title="登录APP所在的微信开放平台：https://open.weixin.qq.com/"></a>登录APP所在的微信开放平台：<a href="https://link.jianshu.com?t=https%3A%2F%2Fopen.weixin.qq.com%2F" target="_blank" rel="noopener">https://open.weixin.qq.com/</a></h5><h5 id="绑定小程序"><a href="#绑定小程序" class="headerlink" title="绑定小程序"></a>绑定小程序</h5><p><img alt="img" data-src="https://upload-images.jianshu.io/upload_images/10170988-f9301d33315a0600.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp"></p>
 <p>由上图可以看到，绑定小程序的数量是有限制的。我们点击【绑定小程序】按钮，打开的新页面</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/10170988-9e4471ecd4f57858.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt="img"></p>
+<p><img alt="img" data-src="https://upload-images.jianshu.io/upload_images/10170988-9e4471ecd4f57858.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp"></p>
 <p> 输入小程序开发的主账号和密码，输入验证码提交就可以了，然后再通过手机微信扫码验证一下。 绑定成功后，直接就能在绑定列表中看到已绑定的小程序！！！</p>
 <h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><h5 id="小程序端提供参数："><a href="#小程序端提供参数：" class="headerlink" title="小程序端提供参数："></a>小程序端提供参数：</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">miniProgram.userName=<span class="string">"xxx"</span>; <span class="comment">//小程序ID</span></span><br><span class="line">miniProgram.path=<span class="string">"pages/xxx/xxx"</span>; <span class="comment">//小程序路径</span></span><br></pre></td></tr></table></figure>
 <h5 id="配置gradle"><a href="#配置gradle" class="headerlink" title="配置gradle"></a>配置gradle</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    compile <span class="string">'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -401,23 +408,25 @@ b. 配置gradle（微信sdk包、签名文件）
 c. 增加分享小程序的按钮和事件
 </code></pre><h5 id="下载微信开放平台官方Demo"><a href="#下载微信开放平台官方Demo" class="headerlink" title="下载微信开放平台官方Demo"></a>下载微信开放平台官方Demo</h5><p> <a href="https://link.jianshu.com?t=https%3A%2F%2Fopen.weixin.qq.com%2Fzh_CN%2Fhtmledition%2Fres%2Fdev%2Fdownload%2Fsdk%2FWeChatSDK_sample_Android.zip" target="_blank" rel="noopener">https://open.weixin.qq.com/zh_CN/htmledition/res/dev/download/sdk/WeChatSDK_sample_Android.zip</a></p>
 <h5 id="修改包名"><a href="#修改包名" class="headerlink" title="修改包名"></a>修改包名</h5><p> 使用Androidstudio打开demo，目录结构如下图，修改其包名</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/10170988-ed00884ed3ececec.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/619/format/webp" alt="img"></p>
+<p><img alt="img" data-src="https://upload-images.jianshu.io/upload_images/10170988-ed00884ed3ececec.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/619/format/webp"></p>
 <p>如上图，取消compact empty middle packages的默认选中<br>在对应包名的文件夹上，直接右键修改名称，改成包名对应的名称，并全部应用<br>可参考：<a href="https://www.jianshu.com/p/557e1906db1a" target="_blank" rel="noopener">https://www.jianshu.com/p/557e1906db1a</a><br>修改后的包名，必须是你项目APP的实际包名，且已通过微信开放平台审核的APP包名；</p>
-<h5 id="配置gradle（修改依赖、修改签名）"><a href="#配置gradle（修改依赖、修改签名）" class="headerlink" title="配置gradle（修改依赖、修改签名）"></a>配置gradle（修改依赖、修改签名）</h5><p> <img src="https://upload-images.jianshu.io/upload_images/10170988-994435cefdc1bb11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/833/format/webp" alt="img"></p>
+<h5 id="配置gradle（修改依赖、修改签名）"><a href="#配置gradle（修改依赖、修改签名）" class="headerlink" title="配置gradle（修改依赖、修改签名）"></a>配置gradle（修改依赖、修改签名）</h5><p> <img alt="img" data-src="https://upload-images.jianshu.io/upload_images/10170988-994435cefdc1bb11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/833/format/webp"></p>
 <p>签名必须使用你项目APP对应的签名文件，即你申请微信开放平台时APP对应的签名文件；</p>
 <h5 id="修改APP-ID"><a href="#修改APP-ID" class="headerlink" title="修改APP_ID"></a>修改APP_ID</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Constants</span> </span>&#123;</span><br><span class="line">    <span class="comment">// APP_ID 替换为你的应用从官方网站申请到的合法appId</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String APP_ID = <span class="string">"wxf666676666636666"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ShowMsgActivity</span> </span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String STitle = <span class="string">"showmsg_title"</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String SMessage = <span class="string">"showmsg_message"</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String BAThumbData = <span class="string">"showmsg_thumb_data"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="增加分享小程序的按钮和事件"><a href="#增加分享小程序的按钮和事件" class="headerlink" title="增加分享小程序的按钮和事件"></a>增加分享小程序的按钮和事件</h5><p><img src="https://upload-images.jianshu.io/upload_images/10170988-6d9fa50e0424721e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt="img"></p>
-<p> <img src="https://upload-images.jianshu.io/upload_images/10170988-807127a9a61d72d5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/467/format/webp" alt="img"></p>
+<h5 id="增加分享小程序的按钮和事件"><a href="#增加分享小程序的按钮和事件" class="headerlink" title="增加分享小程序的按钮和事件"></a>增加分享小程序的按钮和事件</h5><p><img alt="img" data-src="https://upload-images.jianshu.io/upload_images/10170988-6d9fa50e0424721e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp"></p>
+<p> <img alt="img" data-src="https://upload-images.jianshu.io/upload_images/10170988-807127a9a61d72d5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/467/format/webp"></p>
 <h5 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h5><p> 选择分享的人员</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/10170988-4ecf4405b433089d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/470/format/webp" alt="img"></p>
+<p><img alt="img" data-src="https://upload-images.jianshu.io/upload_images/10170988-4ecf4405b433089d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/470/format/webp"></p>
 <p>收到分享的小程序卡片</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/10170988-d799ac004a10eb54.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/421/format/webp" alt="img"></p>
+<p><img alt="img" data-src="https://upload-images.jianshu.io/upload_images/10170988-d799ac004a10eb54.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/421/format/webp"></p>
 
     </div>
 
     
     
     
+      
+
         
       
         
@@ -485,6 +494,15 @@ c. 增加分享小程序的按钮和事件
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1062,6 +1080,11 @@ c. 增加分享小程序的按钮和事件
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1077,6 +1100,15 @@ c. 增加分享小程序的按钮和事件
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1198,8 +1230,40 @@ c. 增加分享小程序的按钮和事件
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1214,6 +1278,38 @@ c. 增加分享小程序的按钮和事件
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/83fb494f.html";
+    this.page.identifier = "posts/83fb494f.html";
+    this.page.title = 'Android APP分享微信小程序';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

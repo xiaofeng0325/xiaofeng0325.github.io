@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,12 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="类似TextView的android:ellipsize=”marquee”的跑马灯效果 任意View都可实现 源码：MarqueeView">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/123sdsnas.gif">
 <meta property="og:updated_time" content="2019-07-19T08:08:17.899Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="跑马灯MarqueeView（支持任何View）">
 <meta name="twitter:description" content="类似TextView的android:ellipsize=”marquee”的跑马灯效果 任意View都可实现 源码：MarqueeView">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/123sdsnas.gif">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/553b92de">
 
@@ -277,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -359,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/553b92de.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/553b92de.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -371,7 +387,7 @@
       
         <p>类似TextView的android:ellipsize=”marquee”的跑马灯效果 任意View都可实现</p>
 <p>源码：<a href="https://github.com/zhangmiaocc/MarqueeView" target="_blank" rel="noopener">MarqueeView</a></p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/123sdsnas.gif" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/123sdsnas.gif"></p>
 <a id="more"></a>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.zm.marqueeview;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.content.Context;</span><br><span class="line"><span class="keyword">import</span> android.util.AttributeSet;</span><br><span class="line"><span class="keyword">import</span> android.view.LayoutInflater;</span><br><span class="line"><span class="keyword">import</span> android.view.MotionEvent;</span><br><span class="line"><span class="keyword">import</span> android.view.View;</span><br><span class="line"><span class="keyword">import</span> android.view.WindowManager;</span><br><span class="line"><span class="keyword">import</span> android.widget.HorizontalScrollView;</span><br><span class="line"><span class="keyword">import</span> android.widget.LinearLayout;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 跑马灯MarqueeView</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MarqueeView</span> <span class="keyword">extends</span> <span class="title">HorizontalScrollView</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Context context;</span><br><span class="line">    <span class="keyword">private</span> LinearLayout mainLayout;<span class="comment">//跑马灯滚动部分</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> scrollSpeed = <span class="number">5</span>;<span class="comment">//滚动速度</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> scrollDirection = LEFT_TO_RIGHT;<span class="comment">//滚动方向</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> currentX;<span class="comment">//当前x坐标</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> viewMargin = <span class="number">100</span>;<span class="comment">//View间距</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> viewWidth;<span class="comment">//View总宽度</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> screenWidth;<span class="comment">//屏幕宽度</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> LEFT_TO_RIGHT = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> RIGHT_TO_LEFT = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MarqueeView</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>(context, <span class="keyword">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MarqueeView</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>(context, attrs, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MarqueeView</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyle)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context, attrs, defStyle);</span><br><span class="line">        <span class="keyword">this</span>.context = context;</span><br><span class="line">        initView();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">initView</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);</span><br><span class="line">        screenWidth = wm.getDefaultDisplay().getWidth();</span><br><span class="line">        mainLayout = (LinearLayout) LayoutInflater.from(context).inflate(R.layout.scroll_content, <span class="keyword">null</span>);</span><br><span class="line">        <span class="keyword">this</span>.addView(mainLayout);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addViewInQueue</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">        LinearLayout.LayoutParams lp = <span class="keyword">new</span> LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,</span><br><span class="line">                LinearLayout.LayoutParams.WRAP_CONTENT);</span><br><span class="line">        lp.setMargins(viewMargin, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">        view.setLayoutParams(lp);</span><br><span class="line">        mainLayout.addView(view);</span><br><span class="line">        view.measure(<span class="number">0</span>, <span class="number">0</span>);<span class="comment">//测量view</span></span><br><span class="line">        viewWidth = viewWidth + view.getMeasuredWidth() + viewMargin;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//开始滚动</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">startScroll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        removeCallbacks(<span class="keyword">this</span>);</span><br><span class="line">        currentX = (scrollDirection == LEFT_TO_RIGHT ? viewWidth : -screenWidth);</span><br><span class="line">        post(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//停止滚动</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">stopScroll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        removeCallbacks(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//设置View间距</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setViewMargin</span><span class="params">(<span class="keyword">int</span> viewMargin)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.viewMargin = viewMargin;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//设置滚动速度</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setScrollSpeed</span><span class="params">(<span class="keyword">int</span> scrollSpeed)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.scrollSpeed = scrollSpeed;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//设置滚动方向 默认从左向右</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setScrollDirection</span><span class="params">(<span class="keyword">int</span> scrollDirection)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.scrollDirection = scrollDirection;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (scrollDirection) &#123;</span><br><span class="line">            <span class="keyword">case</span> LEFT_TO_RIGHT:</span><br><span class="line">                mainLayout.scrollTo(currentX, <span class="number">0</span>);</span><br><span class="line">                currentX--;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (-currentX &gt;= screenWidth) &#123;</span><br><span class="line">                    mainLayout.scrollTo(viewWidth, <span class="number">0</span>);</span><br><span class="line">                    currentX = viewWidth;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> RIGHT_TO_LEFT:</span><br><span class="line">                mainLayout.scrollTo(currentX, <span class="number">0</span>);</span><br><span class="line">                currentX++;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (currentX &gt;= viewWidth) &#123;</span><br><span class="line">                    mainLayout.scrollTo(-screenWidth, <span class="number">0</span>);</span><br><span class="line">                    currentX = -screenWidth;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        postDelayed(<span class="keyword">this</span>, <span class="number">50</span> / scrollSpeed);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouchEvent</span><span class="params">(MotionEvent ev)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -380,6 +396,8 @@
     
     
     
+      
+
         
       
         
@@ -447,6 +465,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -998,6 +1025,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1013,6 +1045,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1134,8 +1175,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1150,6 +1223,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/553b92de.html";
+    this.page.identifier = "posts/553b92de.html";
+    this.page.title = '跑马灯MarqueeView（支持任何View）';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

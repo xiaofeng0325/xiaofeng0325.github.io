@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,16 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="Lottie是一个支持Android、iOS、React Native，并由 Adobe After Effects制作aep格式的动画，然后经由bodymovin插件转化渲染为json格式可被移动端本地识别解析的Airbnb开源库。Lottie实时呈现After Effects动画效果，让应用程序可以像使用静态图片一样轻松地使用动画。Lottie支持API 14及以上。 一、预览">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://github.com/airbnb/lottie-android/raw/master/gifs/Example1.gif">
-<meta property="og:image" content="https://github.com/airbnb/lottie-android/raw/master/gifs/Example2.gif">
-<meta property="og:image" content="https://github.com/airbnb/lottie-android/raw/master/gifs/Example3.gif">
-<meta property="og:image" content="https://github.com/airbnb/lottie-android/raw/master/gifs/Community%202_3.gif">
-<meta property="og:image" content="https://github.com/airbnb/lottie-android/raw/master/gifs/Example4.gif">
 <meta property="og:updated_time" content="2019-05-16T07:44:23.946Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lottie Android For Animation">
 <meta name="twitter:description" content="Lottie是一个支持Android、iOS、React Native，并由 Adobe After Effects制作aep格式的动画，然后经由bodymovin插件转化渲染为json格式可被移动端本地识别解析的Airbnb开源库。Lottie实时呈现After Effects动画效果，让应用程序可以像使用静态图片一样轻松地使用动画。Lottie支持API 14及以上。 一、预览">
-<meta name="twitter:image" content="https://github.com/airbnb/lottie-android/raw/master/gifs/Example1.gif">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/1444979e">
 
@@ -281,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -363,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/1444979e.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/1444979e.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -374,10 +386,10 @@
 
       
         <p>Lottie是一个支持<a href="https://link.jianshu.com?t=https://github.com/airbnb/lottie-android" target="_blank" rel="noopener">Android</a>、<a href="https://link.jianshu.com?t=https://github.com/airbnb/lottie-ios" target="_blank" rel="noopener">iOS</a>、<a href="https://link.jianshu.com?t=https://github.com/airbnb/lottie-react-native" target="_blank" rel="noopener">React Native</a>，并由 <a href="https://link.jianshu.com?t=http://www.adobe.com/cn/products/aftereffects.html" target="_blank" rel="noopener">Adobe After Effects</a>制作aep格式的动画，然后经由<a href="https://link.jianshu.com?t=https://github.com/bodymovin/bodymovin" target="_blank" rel="noopener">bodymovin</a>插件转化渲染为json格式可被移动端本地识别解析的<a href="https://link.jianshu.com?t=https://github.com/airbnb" target="_blank" rel="noopener">Airbnb</a>开源库。<br>Lottie实时呈现After Effects动画效果，让应用程序可以像使用静态图片一样轻松地使用动画。<br>Lottie支持API 14及以上。</p>
-<h4 id="一、预览"><a href="#一、预览" class="headerlink" title="一、预览"></a>一、预览</h4><p><a href="https://github.com/airbnb/lottie-android/blob/master/gifs/Example1.gif" target="_blank" rel="noopener"><img src="https://github.com/airbnb/lottie-android/raw/master/gifs/Example1.gif" alt="Example1"></a><br><a id="more"></a><br><a href="https://github.com/airbnb/lottie-android/blob/master/gifs/Example2.gif" target="_blank" rel="noopener"><img src="https://github.com/airbnb/lottie-android/raw/master/gifs/Example2.gif" alt="Example2"></a></p>
-<p><a href="https://github.com/airbnb/lottie-android/blob/master/gifs/Example3.gif" target="_blank" rel="noopener"><img src="https://github.com/airbnb/lottie-android/raw/master/gifs/Example3.gif" alt="Example3"></a></p>
-<p><a href="https://github.com/airbnb/lottie-android/blob/master/gifs/Community%202_3.gif" target="_blank" rel="noopener"><img src="https://github.com/airbnb/lottie-android/raw/master/gifs/Community%202_3.gif" alt="Community"></a></p>
-<p><a href="https://github.com/airbnb/lottie-android/blob/master/gifs/Example4.gif" target="_blank" rel="noopener"><img src="https://github.com/airbnb/lottie-android/raw/master/gifs/Example4.gif" alt="Example4"></a></p>
+<h4 id="一、预览"><a href="#一、预览" class="headerlink" title="一、预览"></a>一、预览</h4><p><a href="https://github.com/airbnb/lottie-android/blob/master/gifs/Example1.gif" target="_blank" rel="noopener"><img alt="Example1" data-src="https://github.com/airbnb/lottie-android/raw/master/gifs/Example1.gif"></a><br><a id="more"></a><br><a href="https://github.com/airbnb/lottie-android/blob/master/gifs/Example2.gif" target="_blank" rel="noopener"><img alt="Example2" data-src="https://github.com/airbnb/lottie-android/raw/master/gifs/Example2.gif"></a></p>
+<p><a href="https://github.com/airbnb/lottie-android/blob/master/gifs/Example3.gif" target="_blank" rel="noopener"><img alt="Example3" data-src="https://github.com/airbnb/lottie-android/raw/master/gifs/Example3.gif"></a></p>
+<p><a href="https://github.com/airbnb/lottie-android/blob/master/gifs/Community%202_3.gif" target="_blank" rel="noopener"><img alt="Community" data-src="https://github.com/airbnb/lottie-android/raw/master/gifs/Community%202_3.gif"></a></p>
+<p><a href="https://github.com/airbnb/lottie-android/blob/master/gifs/Example4.gif" target="_blank" rel="noopener"><img alt="Example4" data-src="https://github.com/airbnb/lottie-android/raw/master/gifs/Example4.gif"></a></p>
 <p> 二 、基本使用</p>
 <p>在自己项目module的build.gradle文件中添加如下代码：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">dependencies &#123;  </span><br><span class="line">  compile <span class="string">'com.airbnb.android:lottie:2.0.0-beta4'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -408,6 +420,8 @@
     
     
     
+      
+
         
       
         
@@ -475,6 +489,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1052,6 +1075,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1067,6 +1095,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1188,8 +1225,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1204,6 +1273,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/1444979e.html";
+    this.page.identifier = "posts/1444979e.html";
+    this.page.title = 'Lottie Android For Animation';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

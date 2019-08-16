@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,15 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="2017 年google 后，Android studio版本更新至3.0，更新中，连带着com.android.tools.build:gradle 工具也升级到了3.0.0，在3.0.0中使用了最新的Gralde 4.0 里程碑版本作为gradle的编译版本，该版本gradle编译速度有所加速，更加欣喜的是，完全支持Java8。 当然，对于Kotlin的支持，在这个版本也有所体现，Kotli">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fvezmhkutaj304h042we9.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fvezmhiskgj306f05edfm.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fvezmhgoxyj30a108xjrx.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fvezrsr2yhj30o306j3za.jpg">
 <meta property="og:updated_time" content="2019-05-16T07:44:23.960Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android编译implement、api和compile区别">
 <meta name="twitter:description" content="2017 年google 后，Android studio版本更新至3.0，更新中，连带着com.android.tools.build:gradle 工具也升级到了3.0.0，在3.0.0中使用了最新的Gralde 4.0 里程碑版本作为gradle的编译版本，该版本gradle编译速度有所加速，更加欣喜的是，完全支持Java8。 当然，对于Kotlin的支持，在这个版本也有所体现，Kotli">
-<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fvezmhkutaj304h042we9.jpg">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/de9d44d2">
 
@@ -280,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -362,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/de9d44d2.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/de9d44d2.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -380,19 +393,19 @@
 <p>下面我们来看看他们之前的差异：</p>
 <a id="more"></a>
 <p><strong>首先是2.x版本的依赖方式</strong></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fvezmhkutaj304h042we9.jpg" alt=""> </p>
+<p><img alt="" data-src="https://ws3.sinaimg.cn/large/006tNbRwly1fvezmhkutaj304h042we9.jpg"> </p>
 <p>再来看看3.0的</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fvezmhiskgj306f05edfm.jpg" alt=""></p>
+<p><img alt="" data-src="https://ws3.sinaimg.cn/large/006tNbRwly1fvezmhiskgj306f05edfm.jpg"></p>
 <p>可以看到在<code>Android studio3.0</code>中，<code>compile</code>依赖关系已被弃用，被<code>implementation</code>和<code>api</code>替代，<code>provided</code>被<code>compile only</code>替代，<code>apk</code>被<code>runtime only</code>替代。</p>
 <p>我们先来看看<code>implementation</code>和<code>api</code>的区别：</p>
 <p><strong>api</strong>：跟 2.x 版本的 <code>compile</code>完全相同<br><strong>implementation</strong>：使用了该命令编译的依赖，它仅仅对当前的<code>Moudle</code>提供接口。例如我们当前项目结构如下</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fvezmhgoxyj30a108xjrx.jpg" alt=""></p>
+<p><img alt="" data-src="https://ws3.sinaimg.cn/large/006tNbRwly1fvezmhgoxyj30a108xjrx.jpg"></p>
 <p><code>LibraryA</code> 中引用了 <code>LibraryC</code> 的库，如果对 <code>LibraryC</code> 的依赖用的是 <code>implementation</code> 关键字。 如下：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    . . . . </span><br><span class="line">    implementation project（path：&apos;：libraryC&apos;）</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>那么<code>LibraryC</code> 中的接口，仅仅只能给 <code>LibraryA</code> 使用，而我们的 <code>App Moudle</code> 是无法访问到 <code>LibraryC</code> 提供的接口的，也就是将该依赖隐藏在内部，而不对外部公开。这就是<code>implementation</code>关键字的作用。</p>
 <h4 id="api-指令"><a href="#api-指令" class="headerlink" title="api 指令"></a>api 指令</h4><p> 完全等同于compile指令，没区别，你将所有的compile改成api，完全没有错。</p>
 <h4 id="implement指令"><a href="#implement指令" class="headerlink" title="implement指令"></a>implement指令</h4><p> 这个指令的特点就是，对于使用了该命令编译的依赖，对该项目有依赖的项目将无法访问到使用该命令编译的依赖中的任何程序，也就是将该依赖隐藏在内部，而不对外部公开。</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fvezrsr2yhj30o306j3za.jpg" alt=""> </p>
+<p><img alt="" data-src="https://ws3.sinaimg.cn/large/006tNbRwly1fvezrsr2yhj30o306j3za.jpg"> </p>
 <p><strong>建议</strong><br>在<code>Google IO</code> 相关话题的中提到了一个建议，就是依赖首先应该设置为<code>implement</code>的，如果没有错，那就用<code>implement</code>，如果有错，那么使用<code>api</code>指令，这样会使编译速度有所增快。</p>
 <p><strong>那为什么要这么做呢？</strong><br>答案是： 1. 加快编译速度。2. 隐藏对外不必要的接口。</p>
 <p><strong>为什么能加快编译速度呢？</strong><br> 这对于大型项目含有多个<code>Moudle</code>模块的， 以上图为例，比如我们改动 <code>LibraryC</code> 接口的相关代码，这时候编译只需要单独编译<code>LibraryA</code>模块就行， 如果使用的是<code>api</code>或者旧时代的<code>compile</code>，由于<code>App Moudle</code> 也可以访问到 <code>LibraryC</code>,所以 <code>App Moudle</code>部分也需要重新编译。当然这是在全编的情况下。</p>
@@ -417,6 +430,8 @@
     
     
     
+      
+
         
       
         
@@ -484,6 +499,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1061,6 +1085,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1076,6 +1105,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1197,8 +1235,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1213,6 +1283,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/de9d44d2.html";
+    this.page.identifier = "posts/de9d44d2.html";
+    this.page.title = 'android编译implement、api和compile区别';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

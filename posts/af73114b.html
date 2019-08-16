@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,21 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="和MVC框架模式一样，Model模型处理数据代码不变在Android的App开发中，很多人经常会头疼于App的架构如何设计：  我的App需要应用这些设计架构吗？ MVC,MVP等架构讲的是什么？区别是什么？  本文就来带你分析一下这几个架构的特性，优缺点，以及App架构设计中应该注意的问题。 1.架构设计的目的通过设计使程序模块化，做到模块内部的高聚合和模块之间的低耦合。这样做的好处是使得程序在">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://assets.tianmaying.com/md-image/0f7bfc3b4bb89562737510b0af1f7ad0.png">
-<meta property="og:image" content="http://assets.tianmaying.com/md-image/91bd52d637fd71834128144f058551cb.png">
-<meta property="og:image" content="http://assets.tianmaying.com/md-image/ea995e88af236afbd8fdc4906a67e829">
-<meta property="og:image" content="http://pic001.cnblogs.com/images/2012/1/2012040113391482.jpg">
-<meta property="og:image" content="http://assets.tianmaying.com/md-image/f7002cd0e8951e46fd963bff0a0081d8.jpg">
-<meta property="og:image" content="http://assets.tianmaying.com/md-image/ee7b3f65d6ff23453e78193b6a37d79b.jpg">
-<meta property="og:image" content="http://assets.tianmaying.com/md-image/6dca6529ad6a21f5081838638a408d82.png">
-<meta property="og:image" content="http://assets.tianmaying.com/md-image/bb8f3106230c33063ab53393dfe1876a.jpg">
-<meta property="og:image" content="http://assets.tianmaying.com/md-image/f5d7cffdc79c3e06c7dbf73ef201eda2.gif">
-<meta property="og:image" content="http://assets.tianmaying.com/md-image/c0924cd420e4f027bf4fc9f38088a2af.jpg">
 <meta property="og:updated_time" content="2019-05-16T07:44:23.946Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android App的设计架构：MVC,MVP,MVVM与架构经验谈">
 <meta name="twitter:description" content="和MVC框架模式一样，Model模型处理数据代码不变在Android的App开发中，很多人经常会头疼于App的架构如何设计：  我的App需要应用这些设计架构吗？ MVC,MVP等架构讲的是什么？区别是什么？  本文就来带你分析一下这几个架构的特性，优缺点，以及App架构设计中应该注意的问题。 1.架构设计的目的通过设计使程序模块化，做到模块内部的高聚合和模块之间的低耦合。这样做的好处是使得程序在">
-<meta name="twitter:image" content="http://assets.tianmaying.com/md-image/0f7bfc3b4bb89562737510b0af1f7ad0.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/af73114b">
 
@@ -286,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -368,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/af73114b.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/af73114b.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -391,7 +398,7 @@
 <p>但如果当前开发的App最终代码量在<strong>10W</strong>行以上，本地需要进行<strong>复杂操作</strong>，同时也需要考虑到与其余的Android开发者以及后台开发人员之间的<strong>同步配合</strong>，那就需要在架构上进行一些思考！</p>
 </blockquote>
 <a id="more"></a>
-<h1 id="2-MVC设计架构"><a href="#2-MVC设计架构" class="headerlink" title="2.MVC设计架构"></a>2.MVC设计架构</h1><p><a href="http://assets.tianmaying.com/md-image/0f7bfc3b4bb89562737510b0af1f7ad0.png" target="_blank" rel="noopener"><img src="http://assets.tianmaying.com/md-image/0f7bfc3b4bb89562737510b0af1f7ad0.png" alt="微信截图_20151201004323.png"></a></p>
+<h1 id="2-MVC设计架构"><a href="#2-MVC设计架构" class="headerlink" title="2.MVC设计架构"></a>2.MVC设计架构</h1><p><a href="http://assets.tianmaying.com/md-image/0f7bfc3b4bb89562737510b0af1f7ad0.png" target="_blank" rel="noopener"><img alt="微信截图_20151201004323.png" data-src="http://assets.tianmaying.com/md-image/0f7bfc3b4bb89562737510b0af1f7ad0.png"></a></p>
 <h2 id="MVC简介"><a href="#MVC简介" class="headerlink" title="MVC简介"></a>MVC简介</h2><p>MVC全名是Model View Controller，如图，是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。</p>
 <p>其中M层处理数据，业务逻辑等；V层处理界面的显示结果；C层起到桥梁的作用，来控制V层和M层通信以此来达到分离视图显示和业务逻辑层。</p>
 <h2 id="Android中的MVC"><a href="#Android中的MVC" class="headerlink" title="Android中的MVC"></a>Android中的MVC</h2><p>Android中界面部分也采用了当前比较流行的MVC框架，在Android中：</p>
@@ -409,7 +416,7 @@
 <p>我们针对业务模型，建立的数据结构和相关的类，就可以理解为AndroidApp的Model，Model是与View无关，而与业务相关的（感谢@Xander的讲解）。对数据库的操作、对网络等的操作都应该在Model里面处理，当然对业务计算等操作也是必须放在的该层的。就是应用程序中二进制的数据。</p>
 <h2 id="MVC代码实例"><a href="#MVC代码实例" class="headerlink" title="MVC代码实例"></a>MVC代码实例</h2><p>我们来看看MVC在Android开发中是怎么应用的吧！</p>
 <p>先上界面图</p>
-<p><a href="http://assets.tianmaying.com/md-image/91bd52d637fd71834128144f058551cb.png" target="_blank" rel="noopener"><img src="http://assets.tianmaying.com/md-image/91bd52d637fd71834128144f058551cb.png" alt="20150606093217165.png"></a></p>
+<p><a href="http://assets.tianmaying.com/md-image/91bd52d637fd71834128144f058551cb.png" target="_blank" rel="noopener"><img alt="20150606093217165.png" data-src="http://assets.tianmaying.com/md-image/91bd52d637fd71834128144f058551cb.png"></a></p>
 <p><strong>Controller控制器&amp;View</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">ActionBarActivity</span> <span class="keyword">implements</span> <span class="title">OnWeatherListener</span>, <span class="title">View</span>.<span class="title">OnClickListener</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> WeatherModel weatherModel;</span><br><span class="line">    <span class="keyword">private</span> EditText cityNOInput;</span><br><span class="line">    <span class="keyword">private</span> TextView city;</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        weatherModel = <span class="keyword">new</span> WeatherModelImpl();</span><br><span class="line">        initView();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//初始化View</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initView</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        cityNOInput = findView(R.id.et_city_no);</span><br><span class="line">        city = findView(R.id.tv_city);</span><br><span class="line">        ...</span><br><span class="line">        findView(R.id.btn_go).setOnClickListener(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//显示结果</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">displayResult</span><span class="params">(Weather weather)</span> </span>&#123;</span><br><span class="line">        WeatherInfo weatherInfo = weather.getWeatherinfo();</span><br><span class="line">        city.setText(weatherInfo.getCity());</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (v.getId()) &#123;</span><br><span class="line">            <span class="keyword">case</span> R.id.btn_go:</span><br><span class="line">                weatherModel.getWeather(cityNOInput.getText().toString().trim(), <span class="keyword">this</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSuccess</span><span class="params">(Weather weather)</span> </span>&#123;</span><br><span class="line">        displayResult(weather);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Toast.makeText(<span class="keyword">this</span>, 获取天气信息失败, Toast.LENGTH_SHORT).show();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> T <span class="title">findView</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (T) findViewById(id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>从上面代码可以看到，Activity持有了WeatherModel模型的对象，当用户有点击Button交互的时候，Activity作为Controller控制层读取View视图层EditTextView的数据，然后向Model模型发起数据请求，也就是调用WeatherModel对象的方法 getWeather（）方法。当Model模型处理数据结束后，通过接口OnWeatherListener通知View视图层数据处理完毕，View视图层该更新界面UI了。然后View视图层调用displayResult（）方法更新UI。至此，整个MVC框架流程就在Activity中体现出来了。</p>
@@ -421,7 +428,7 @@
 <h1 id="3-MVP设计架构"><a href="#3-MVP设计架构" class="headerlink" title="3.MVP设计架构"></a>3.MVP设计架构</h1><p>在App开发过程中，经常出现的问题就是某一部分的代码量过大，虽然做了模块划分和接口隔离，但也很难完全避免。从实践中看到，这更多的出现在UI部分，也就是Activity里。想象一下，一个2000+行以上基本不带注释的Activity，我的第一反应就是想吐。Activity内容过多的原因其实很好解释，因为Activity本身需要担负与用户之间的操作交互，界面的展示，不是单纯的Controller或View。而且<strong>现在大部分的Activity还对整个App起到类似IOS中的【ViewController】的作用</strong>，这又带入了大量的逻辑代码，造成Activity的臃肿。为了解决这个问题，让我们引入MVP框架。</p>
 <h2 id="MVC的缺点"><a href="#MVC的缺点" class="headerlink" title="MVC的缺点"></a>MVC的缺点</h2><p>在Android开发中，Activity并不是一个标准的MVC模式中的Controller，它的首要职责是加载应用的布局和初始化用户 界面，并接受并处理来自用户的操作请求，进而作出响应。随着界面及其逻辑的复杂度不断提升，Activity类的职责不断增加，以致变得庞大臃肿。</p>
 <h2 id="什么是MVP"><a href="#什么是MVP" class="headerlink" title="什么是MVP?"></a>什么是MVP?</h2><p>MVP从更早的MVC框架演变过来，与MVC有一定的相似性：Controller/Presenter负责逻辑的处理，Model提供数据，View负责显示。</p>
-<p><a href="http://assets.tianmaying.com/md-image/ea995e88af236afbd8fdc4906a67e829" target="_blank" rel="noopener"><img src="http://assets.tianmaying.com/md-image/ea995e88af236afbd8fdc4906a67e829" alt="Clipboard Image.png"></a></p>
+<p><a href="http://assets.tianmaying.com/md-image/ea995e88af236afbd8fdc4906a67e829" target="_blank" rel="noopener"><img alt="Clipboard Image.png" data-src="http://assets.tianmaying.com/md-image/ea995e88af236afbd8fdc4906a67e829"></a></p>
 <p>MVP框架由3部分组成：View负责显示，Presenter负责逻辑处理，Model提供数据。在MVP模式里通常包含3个要素（加上View interface是4个）：</p>
 <ul>
 <li>View:负责绘制UI元素、与用户进行交互(在Android中体现为Activity)</li>
@@ -439,7 +446,7 @@
 <li>通常View与Presenter是一对一的，但复杂的View可能绑定多个Presenter来处理逻辑。而Controller是基于行为的，并且可以被多个View共享，Controller可以负责决定显示哪个View</li>
 <li>Presenter与View的交互是通过接口来进行的，更有利于添加单元测试。</li>
 </ul>
-<p><a href="http://pic001.cnblogs.com/images/2012/1/2012040113391482.jpg" target="_blank" rel="noopener"><img src="http://pic001.cnblogs.com/images/2012/1/2012040113391482.jpg" alt="MVC与MVP区别"></a></p>
+<p><a href="http://pic001.cnblogs.com/images/2012/1/2012040113391482.jpg" target="_blank" rel="noopener"><img alt="MVC与MVP区别" data-src="http://pic001.cnblogs.com/images/2012/1/2012040113391482.jpg"></a></p>
 <p>因此我们可以发现<strong>MVP的优点</strong>如下：</p>
 <p>1、模型与视图完全分离，我们可以修改视图而不影响模型；</p>
 <p>2、可以更高效地使用模型，因为所有的交互都发生在一个地方——Presenter内部；</p>
@@ -449,7 +456,7 @@
 <p>UI层一般包括Activity，Fragment，Adapter等直接和UI相关的类，UI层的Activity在启动之后实例化相应的Presenter，App的控制权后移，由UI转移到Presenter，两者之间的通信通过BroadCast、Handler或者接口完成，只传递事件和结果。</p>
 <p>举个简单的例子，UI层通知逻辑层（Presenter）用户点击了一个Button，逻辑层（Presenter）自己决定应该用什么行为进行响应，该找哪个模型（Model）去做这件事，最后逻辑层（Presenter）将完成的结果更新到UI层。</p>
 <h2 id="MVP的变种：Passive-View"><a href="#MVP的变种：Passive-View" class="headerlink" title="MVP的变种：Passive View"></a>MVP的变种：Passive View</h2><p>MVP的变种有很多，其中使用最广泛的是Passive View模式，即被动视图。在这种模式下，View和Model之间不能直接交互，View通过Presenter与Model打交道。Presenter接受View的UI请求，完成简单的UI处理逻辑，并调用Model进行业务处理，并调用View将相应的结果反映出来。View直接依赖Presenter，但是Presenter间接依赖View，它直接依赖的是View实现的接口。</p>
-<p><img src="http://assets.tianmaying.com/md-image/f7002cd0e8951e46fd963bff0a0081d8.jpg" alt=""></p>
+<p><img alt="" data-src="http://assets.tianmaying.com/md-image/f7002cd0e8951e46fd963bff0a0081d8.jpg"></p>
 <p>相对于View的被动，那Presenter就是主动的一方。对于Presenter的主动，有如下的理解：</p>
 <ul>
 <li>Presenter是整个MVP体系的控制中心，而不是单纯的处理View请求的人；</li>
@@ -472,11 +479,11 @@
 </ul>
 <p>强化Presenter的作用，将所有逻辑操作都放在Presenter内也容易造成Presenter内的代码量过大，对于这点，有一个方法是在UI层和Presenter之间设置中介者Mediator，将例如数据校验、组装在内的轻量级逻辑操作放在Mediator中；在Presenter和Model之间使用代理Proxy；通过上述两者分担一部分Presenter的逻辑操作，但整体框架的控制权还是在Presenter手中。Mediator和Proxy不是必须的，只在Presenter负担过大时才建议使用。</p>
 <p>最终的架构如下图所示：</p>
-<p><a href="http://assets.tianmaying.com/md-image/ee7b3f65d6ff23453e78193b6a37d79b.jpg" target="_blank" rel="noopener"><img src="http://assets.tianmaying.com/md-image/ee7b3f65d6ff23453e78193b6a37d79b.jpg" alt="1422253914_8854.jpg"></a></p>
+<p><a href="http://assets.tianmaying.com/md-image/ee7b3f65d6ff23453e78193b6a37d79b.jpg" target="_blank" rel="noopener"><img alt="1422253914_8854.jpg" data-src="http://assets.tianmaying.com/md-image/ee7b3f65d6ff23453e78193b6a37d79b.jpg"></a></p>
 <h2 id="MVP代码实例"><a href="#MVP代码实例" class="headerlink" title="MVP代码实例"></a>MVP代码实例</h2><p>我们来看看MVP在Android开发中是怎么应用的吧！！</p>
 <p>我们用另一个例子来解释。</p>
 <p>先来看包结构图</p>
-<p><a href="http://assets.tianmaying.com/md-image/6dca6529ad6a21f5081838638a408d82.png" target="_blank" rel="noopener"><img src="http://assets.tianmaying.com/md-image/6dca6529ad6a21f5081838638a408d82.png" alt="20140928093820322.png"></a></p>
+<p><a href="http://assets.tianmaying.com/md-image/6dca6529ad6a21f5081838638a408d82.png" target="_blank" rel="noopener"><img alt="20140928093820322.png" data-src="http://assets.tianmaying.com/md-image/6dca6529ad6a21f5081838638a408d82.png"></a></p>
 <p><strong>建立Bean</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserBean</span> </span>&#123;</span><br><span class="line">     <span class="keyword">private</span> String mFirstName;</span><br><span class="line">     <span class="keyword">private</span> String mLastName;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="title">UserBean</span><span class="params">(String firstName, String lastName)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>. mFirstName = firstName;</span><br><span class="line">            <span class="keyword">this</span>. mLastName = lastName;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">getFirstName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> mFirstName;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">getLastName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> mLastName;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>建立Model</strong></p>
@@ -502,7 +509,7 @@
 <h1 id="4-MVC、MVP与MVVM的关系"><a href="#4-MVC、MVP与MVVM的关系" class="headerlink" title="4.MVC、MVP与MVVM的关系"></a>4.MVC、MVP与MVVM的关系</h1><p>首先介绍下MVVM。</p>
 <h2 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h2><p>MVVM可以算是MVP的升级版，其中的VM是ViewModel的缩写，ViewModel可以理解成是View的数据模型和Presenter的合体，ViewModel和View之间的交互通过Data Binding完成，而Data Binding可以实现双向的交互，这就使得视图和控制层之间的耦合程度进一步降低，关注点分离更为彻底，同时减轻了Activity的压力。</p>
 <p>在比较之前，先从图上看看三者的异同。</p>
-<p><a href="http://assets.tianmaying.com/md-image/bb8f3106230c33063ab53393dfe1876a.jpg" target="_blank" rel="noopener"><img src="http://assets.tianmaying.com/md-image/bb8f3106230c33063ab53393dfe1876a.jpg" alt="2f9e4ee7d9616257ab41de204c06ffd5_b.jpg"></a></p>
+<p><a href="http://assets.tianmaying.com/md-image/bb8f3106230c33063ab53393dfe1876a.jpg" target="_blank" rel="noopener"><img alt="2f9e4ee7d9616257ab41de204c06ffd5_b.jpg" data-src="http://assets.tianmaying.com/md-image/bb8f3106230c33063ab53393dfe1876a.jpg"></a></p>
 <p>刚开始理解这些概念的时候认为这几种模式虽然都是要将view和model解耦，但是非此即彼，没有关系，一个应用只会用一种模式。后来慢慢发现世界绝对不是只有黑白两面，中间最大的一块其实是灰色地带，同样，这几种模式的边界并非那么明显，可能你在自己的应用中都会用到。实际上也根本没必要去纠结自己到底用的是MVC、MVP还是MVVP，不管黑猫白猫，捉住老鼠就是好猫。</p>
 <h2 id="MVC-gt-MVP-gt-MVVM演进过程"><a href="#MVC-gt-MVP-gt-MVVM演进过程" class="headerlink" title="MVC-&gt;MVP-&gt;MVVM演进过程"></a>MVC-&gt;MVP-&gt;MVVM演进过程</h2><p>MVC -&gt; MVP -&gt; MVVM 这几个软件设计模式是一步步演化发展的，MVVM 是从 MVP 的进一步发展与规范，MVP 隔离了MVC中的 M 与 V 的直接联系后，靠 Presenter 来中转，所以使用 MVP 时 P 是直接调用 View 的接口来实现对视图的操作的，这个 View 接口的东西一般来说是 showData、showLoading等等。M 与 V已经隔离了，方便测试了，但代码还不够优雅简洁，所以 MVVM 就弥补了这些缺陷。在 MVVM 中就出现的 Data Binding 这个概念，意思就是 View 接口的 showData 这些实现方法可以不写了，通过 Binding 来实现。</p>
 <h2 id="同"><a href="#同" class="headerlink" title="同"></a>同</h2><p>如果把这三者放在一起比较，先说一下三者的共同点，也就是Model和View：</p>
@@ -526,13 +533,13 @@
 <h2 id="一点心得"><a href="#一点心得" class="headerlink" title="一点心得"></a>一点心得</h2><p>MVP和MVVM完全隔离了Model和View，但是在有些情况下，数据从Model到ViewModel或者Presenter的拷贝开销很大，可能也会结合MVC的方式，Model直接通知View进行变更。在实际的应用中很有可能你已经在不知不觉中将几种模式融合在一起，但是为了代码的可扩展、可测试性，必须做到模块的解耦，不相关的代码不要放在一起。网上有一个故事讲，一个人在一家公司做一个新产品时，一名外包公司的新员工直接在View中做了数据库持久化操作，而且一个hibernate代码展开后发现竟然有几百行的SQL语句，搞得他们惊讶不已，一时成为笑谈。</p>
 <p>个人理解，在广义地谈论MVC架构时，并非指本文中严格定义的MVC，而是指的MV*，也就是视图和模型的分离，只要一个框架提供了视图和模型分离的功能，我们就可以认为它是一个MVC框架。在开发深入之后，可以再体会用到的框架到底是MVC、MVP还是MVVM。</p>
 <h1 id="5-基于AOP的框架设计"><a href="#5-基于AOP的框架设计" class="headerlink" title="5. 基于AOP的框架设计"></a>5. 基于AOP的框架设计</h1><p>AOP(Aspect-Oriented Programming, 面向切面编程)，诞生于上个世纪90年代，是对OOP(Object-Oriented Programming, 面向对象编程)的补充和完善。OOP引入封装、继承和多态性等概念来建立一种对象层次结构，用以模拟公共行为的一个集合。当我们需要为分散的对象引入公共行为的时候，OOP则显得无能为力。也就是说，OOP允许你定义从上到下的关系，但并不适合定义从左到右的关系。例如日志功能。日志代码往往水平地散布在所有对象层次中，而与它所散布到的对象的核心功能毫无关系。对于其他类型的代码，如安全性、异常处理和透明的持续性也是如此。这种散布在各处的无关的代码被称为横切（Cross-Cutting）代码，在OOP设计中，它导致了大量代码的重复，而不利于各个模块的重用。而AOP技术则恰恰相反，它利用一种称为“横切”的技术，剖解开封装的对象内部，并将那些影响了多个类的公共行为封装到一个可重用模块，并将其名为“Aspect”，即方面。所谓“方面”，简单地说，就是将那些与业务无关，却为业务模块所共同调用的逻辑或责任封装起来，便于减少系统的重复代码，降低模块间的耦合度，并有利于未来的可操作性和可维护性。</p>
-<p><a href="http://assets.tianmaying.com/md-image/f5d7cffdc79c3e06c7dbf73ef201eda2.gif" target="_blank" rel="noopener"><img src="http://assets.tianmaying.com/md-image/f5d7cffdc79c3e06c7dbf73ef201eda2.gif" alt="aop2.1.gif"></a></p>
+<p><a href="http://assets.tianmaying.com/md-image/f5d7cffdc79c3e06c7dbf73ef201eda2.gif" target="_blank" rel="noopener"><img alt="aop2.1.gif" data-src="http://assets.tianmaying.com/md-image/f5d7cffdc79c3e06c7dbf73ef201eda2.gif"></a></p>
 <h2 id="5-1-AOP在Android中的使用"><a href="#5-1-AOP在Android中的使用" class="headerlink" title="5.1 AOP在Android中的使用"></a>5.1 AOP在Android中的使用</h2><p>AOP把软件系统分为两个部分：核心关注点和横切关注点。业务处理的主要流程是核心关注点，与之关系不大的部分是横切关注点。横切关注点的一个特点是，他们经常发生在核心关注点的多处，而各处都基本相似。AOP的作用在于分离系统中的各种关注点，将核心关注点和横切关注点分离开来。在Android App中，哪些是我们需要的横切关注点？个人认为主要包括以下几个方面：Http, SharedPreferences, Json, Xml, File, Device, System, Log, 格式转换等。Android App的需求差别很大，不同的需求横切关注点必然是不一样的。一般的App工程中应该有一个Util Package来存放相关的切面操作，在项目多了之后可以将其中使用较多的Util封装为一个Jar包供工程调用。</p>
 <p>在使用MVP和AOP对App进行纵向和横向的切割之后，能够使得App整体的结构更清晰合理，避免局部的代码臃肿，方便开发、测试以及后续的维护。</p>
 <h1 id="6-干货：AndroidApp架构的设计经验"><a href="#6-干货：AndroidApp架构的设计经验" class="headerlink" title="6. 干货：AndroidApp架构的设计经验"></a>6. 干货：AndroidApp架构的设计经验</h1><p>首先是作者最最喜欢的一句话，也是对创业公司特别适用的一句话，也是对不要过度设计的一种诠释：</p>
 <p>先实现，再重构吧。直接考虑代码不臃肿得话，不知道什么时候才能写好了<br>先实现，再重构吧。直接考虑代码不臃肿得话，不知道什么时候才能写好了<br>先实现，再重构吧。直接考虑代码不臃肿得话，不知道什么时候才能写好了<br>（重要的事情说三遍)</p>
 <h2 id="6-1-整体架构"><a href="#6-1-整体架构" class="headerlink" title="6.1 整体架构"></a>6.1 整体架构</h2><p>代码和文档规范，根据需求进行模块划分，确定交互方式，形成接口文档，这些较为通用的内容不再细说。做Android App时，一般将App进行纵向和横向的划分。纵向的App由UI层，逻辑层和模型层构成，整体结构基于MVP思想(图片来自网络)。</p>
-<p><a href="http://assets.tianmaying.com/md-image/c0924cd420e4f027bf4fc9f38088a2af.jpg" target="_blank" rel="noopener"><img src="http://assets.tianmaying.com/md-image/c0924cd420e4f027bf4fc9f38088a2af.jpg" alt="9fe1e5679a642f9f82373d2a32d461b7_b.jpg"></a></p>
+<p><a href="http://assets.tianmaying.com/md-image/c0924cd420e4f027bf4fc9f38088a2af.jpg" target="_blank" rel="noopener"><img alt="9fe1e5679a642f9f82373d2a32d461b7_b.jpg" data-src="http://assets.tianmaying.com/md-image/c0924cd420e4f027bf4fc9f38088a2af.jpg"></a></p>
 <p>UI层内部多用模板方法，以Activity为例一般有BaseActivity，提供包括一些基础样式，Dialog，ActionBar在内的内容，展现的Activity都会继承BaseActivity并实现预留的接口，Activity之间的继承不超过3次；为避免Activity内代码过多，将App的整体控制权后移，也借鉴了IOC做法，大量的逻辑操作放在逻辑层中，逻辑层和UI层通过接口或者Broadcast等实现通信，只传递结果。一般Activity里的代码量都很大，通过这两种方式一般我写的单个Activity内代码量不超过400行。</p>
 <p>逻辑层实现的是绝大部分的逻辑操作，由UI层启动，在内部通过接口调用模型层的方法，在逻辑层内大量使用了代理。打个比方，UI层告诉逻辑层我需要做的事，逻辑层去找相应的人(模型层)去做，最后只告诉UI这件事做的结果。</p>
 <p>模型层没什么好说的，这部分一般由大量的Package组成，代码量是三层中最大的，需要在内部进行分层。</p>
@@ -575,6 +582,8 @@
     
     
     
+      
+
         
       
         
@@ -642,6 +651,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1219,6 +1237,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1234,6 +1257,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1355,8 +1387,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1371,6 +1435,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/af73114b.html";
+    this.page.identifier = "posts/af73114b.html";
+    this.page.title = 'Android App的设计架构：MVC,MVP,MVVM与架构经验谈';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

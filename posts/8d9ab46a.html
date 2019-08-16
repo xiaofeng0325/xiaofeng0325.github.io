@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,18 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="前面的小节基本上讲完了常用的部件和容器部件，也可以完成很多的界面，但是又一个问题，假如我们要显示一段文字，比如将 一段又臭又长的文字 在界面上显示 1000 次，不难完成吧 // ..省略一些无关代码body: Text(&apos;一段又臭又长的文字&apos; * 1000, softWrap: true) 很简单，运行到手机…「诶诶诶，**，怎么只显示了一部分，剩下的怎么画不下去」 日常开发中，会遇到很多这种情">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190522104259.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/640.gif">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/1212.gif">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190522105021.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190522105054.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190522105306.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/a1.gif">
 <meta property="og:updated_time" content="2019-05-27T07:03:39.686Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flutter入门指南(七)之滑动部件">
 <meta name="twitter:description" content="前面的小节基本上讲完了常用的部件和容器部件，也可以完成很多的界面，但是又一个问题，假如我们要显示一段文字，比如将 一段又臭又长的文字 在界面上显示 1000 次，不难完成吧 // ..省略一些无关代码body: Text(&apos;一段又臭又长的文字&apos; * 1000, softWrap: true) 很简单，运行到手机…「诶诶诶，**，怎么只显示了一部分，剩下的怎么画不下去」 日常开发中，会遇到很多这种情">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190522104259.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/8d9ab46a">
 
@@ -283,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -365,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/8d9ab46a.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/8d9ab46a.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -411,19 +421,19 @@
 <p>加入我们的 item 之间的分割线需要如下样式：奇数位和偶数位之间用黑色分割线，偶数位和奇数位之间用红色分割线</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 需要分割线的时候才使用，不能指定 item 的高度</span></span><br><span class="line">body: ListView.separated(</span><br><span class="line">    itemBuilder: (_, index) =&gt; Padding(</span><br><span class="line">        padding: <span class="keyword">const</span> EdgeInsets.symmetric(vertical: <span class="number">20.0</span>),</span><br><span class="line">        child: Center(child: Text(letters[index], style: TextStyle(color: Colors.blue))),</span><br><span class="line">      ),</span><br><span class="line">    <span class="comment">// 这里用来定义分割线</span></span><br><span class="line">    separatorBuilder: (_, index) =&gt; Divider(height: <span class="number">1.0</span>, color: index % <span class="number">2</span> == <span class="number">0</span> ? Colors.black : Colors.red),</span><br><span class="line">    itemCount: letters.length),</span><br></pre></td></tr></table></figure>
 <p>最终的效果如下：</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190522104259.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190522104259.png"></p>
 <p>以上代码查看 listview_main.dart 文件</p>
 <p>总结下：如果 item 的高度能够准确获取，一定要指定 itemExtent 的值，这样会更加高效，至于要通过哪种方式来生成，完全看个人喜好吧。</p>
 <h3 id="ExpansionTile"><a href="#ExpansionTile" class="headerlink" title="ExpansionTile"></a>ExpansionTile</h3><p>既然讲到了 ListView，在日常开发中，折叠列表也是一个比较常用的，所以这边要提下 ExpansionTile 这个部件，因为相对比较简单，所以直接上代码了</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExpansionTilesDemoPage</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        title: Text(<span class="string">'ExpansionTile Demo'</span>),</span><br><span class="line">      ),</span><br><span class="line">      body: ExpansionTile(</span><br><span class="line">        <span class="comment">// 最前面的 widget</span></span><br><span class="line">        leading: Icon(Icons.phone_android),</span><br><span class="line">        <span class="comment">// 替换默认箭头</span></span><br><span class="line"><span class="comment">//        trailing: Icon(Icons.phone_iphone),</span></span><br><span class="line">        title: Text(<span class="string">'Parent'</span>),</span><br><span class="line">        <span class="comment">// 默认是否展开</span></span><br><span class="line">        initiallyExpanded: <span class="keyword">true</span>,</span><br><span class="line">        <span class="comment">// 展开时候的背景色</span></span><br><span class="line">        backgroundColor: Colors.yellow[<span class="number">100</span>],</span><br><span class="line">        <span class="comment">// 展开或者收缩的回调，true 表示展开</span></span><br><span class="line">        onExpansionChanged: (expanded) =&gt; <span class="built_in">print</span>(<span class="string">'ExpansionTile is <span class="subst">$&#123;expanded ? <span class="string">'expanded'</span> : <span class="string">'collapsed'</span>&#125;</span>'</span>),</span><br><span class="line">        children: <span class="built_in">List</span>.generate(</span><br><span class="line">            <span class="number">10</span>,</span><br><span class="line">                (position) =&gt;</span><br><span class="line">                Container(</span><br><span class="line">                  padding: <span class="keyword">const</span> EdgeInsets.only(left: <span class="number">80.0</span>),</span><br><span class="line">                  child: Text(<span class="string">'Children <span class="subst">$&#123;position + <span class="number">1</span>&#125;</span>'</span>),</span><br><span class="line">                  height: <span class="number">50.0</span>,</span><br><span class="line">                  alignment: Alignment.centerLeft,</span><br><span class="line">                )),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这样就完成了一个折叠部件，看下最后的效果</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/640.gif" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/640.gif"></p>
 <p>那么实现折叠列表也就是通过 ListView 创建一个 ExpansionTile 列表即可，先准备下模拟的数据</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">final</span> _keys = [<span class="string">'ParentA'</span>, <span class="string">'ParentB'</span>, <span class="string">'ParentC'</span>, <span class="string">'ParentD'</span>, <span class="string">'ParentE'</span>, <span class="string">'ParentF'</span>];</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">Map</span>&lt;<span class="built_in">String</span>, <span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt;&gt; _data = &#123;</span><br><span class="line">    <span class="string">'ParentA'</span>: [<span class="string">'Child A0'</span>, <span class="string">'Child A1'</span>, <span class="string">'Child A2'</span>, <span class="string">'Child A3'</span>, <span class="string">'Child A4'</span>, <span class="string">'Child A5'</span>],</span><br><span class="line">    <span class="string">'ParentB'</span>: [<span class="string">'Child B0'</span>, <span class="string">'Child B1'</span>, <span class="string">'Child B2'</span>, <span class="string">'Child B3'</span>, <span class="string">'Child B4'</span>, <span class="string">'Child B5'</span>],</span><br><span class="line">    <span class="string">'ParentC'</span>: [<span class="string">'Child C0'</span>, <span class="string">'Child C1'</span>, <span class="string">'Child C2'</span>, <span class="string">'Child C3'</span>, <span class="string">'Child C4'</span>, <span class="string">'Child C5'</span>],</span><br><span class="line">    <span class="string">'ParentD'</span>: [<span class="string">'Child D0'</span>, <span class="string">'Child D1'</span>, <span class="string">'Child D2'</span>, <span class="string">'Child D3'</span>, <span class="string">'Child D4'</span>, <span class="string">'Child D5'</span>],</span><br><span class="line">    <span class="string">'ParentE'</span>: [<span class="string">'Child E0'</span>, <span class="string">'Child E1'</span>, <span class="string">'Child E2'</span>, <span class="string">'Child E3'</span>, <span class="string">'Child E4'</span>, <span class="string">'Child E5'</span>],</span><br><span class="line">    <span class="string">'ParentF'</span>: [<span class="string">'Child F0'</span>, <span class="string">'Child F1'</span>, <span class="string">'Child F2'</span>, <span class="string">'Child F3'</span>, <span class="string">'Child F4'</span>, <span class="string">'Child F5'</span>]</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
 <p>在平时开发过程中，后台返回的数据应该是列表嵌套列表的形式比较多，我这边主要就是为了偷懒就随便弄了，接着修改下 body 的代码</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">body: ListView(</span><br><span class="line">          children: _keys</span><br><span class="line">              .map((key) =&gt; ExpansionTile(</span><br><span class="line">                    title: Text(key),</span><br><span class="line">                    children: _data[key]</span><br><span class="line">                        .map((value) =&gt; InkWell(</span><br><span class="line">                            child: Container(</span><br><span class="line">                              child: Text(value),</span><br><span class="line">                              padding: <span class="keyword">const</span> EdgeInsets.only(left: <span class="number">80.0</span>),</span><br><span class="line">                              height: <span class="number">50.0</span>,</span><br><span class="line">                              alignment: Alignment.centerLeft,</span><br><span class="line">                            ),</span><br><span class="line">                            onTap: () &#123;&#125;))</span><br><span class="line">                        .toList(),</span><br><span class="line">                  ))</span><br><span class="line">              .toList()),</span><br></pre></td></tr></table></figure>
 <p>最终的效果就是个折叠列表了</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/1212.gif" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/1212.gif"></p>
 <p>该部分代码查看 expansion_tile_main.dart 文件</p>
 <p>当然了，只要数据到位，别说两层折叠，三层，四层甚至更多层都能够实现，源码中有实现四层的 demo，这边就不贴代码了，有需要的小伙伴可以查看源码</p>
 <h3 id="GridView"><a href="#GridView" class="headerlink" title="GridView"></a>GridView</h3><p>生成列表可以通过 ListView 来实现，那么同样，实现网格列表 Flutter 也提供了 GridView 来实现，实现 GridView 的方法也很多…我数了下，大概有 10 种..对你没看错，就是那么多，(诶诶诶，别走啊…虽然方法有点多，但是，大同小异)</p>
@@ -434,11 +444,11 @@
 <p>那么接下来的使用就比较简单了</p>
  <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GridViewDemoPage</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 自行设置</span></span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt; letters = [ ..... ];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 用于区分网格单元</span></span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">List</span>&lt;Color&gt; colors = [Colors.red, Colors.green, Colors.blue, Colors.pink];</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        title: Text(<span class="string">'GridView Demo'</span>),</span><br><span class="line">      ),</span><br><span class="line">        body: GridView(</span><br><span class="line">        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(</span><br><span class="line">            crossAxisCount: <span class="number">5</span>, <span class="comment">// 单行的个数</span></span><br><span class="line">            mainAxisSpacing: <span class="number">10.0</span>, <span class="comment">// 同 scrollDirection 挂钩，item 之间在主轴方向的间隔</span></span><br><span class="line">            crossAxisSpacing: <span class="number">10.0</span>, <span class="comment">// item 之间在副轴方法的间隔</span></span><br><span class="line">            childAspectRatio: <span class="number">1.0</span> <span class="comment">// item 的宽高比</span></span><br><span class="line">            ),</span><br><span class="line">        <span class="comment">// 需要根据 index 设置不同背景色，所以使用 List.generate，如果不设置背景色，也可用 iterable.map().toList</span></span><br><span class="line">        children: <span class="built_in">List</span>.generate(</span><br><span class="line">            letters.length,</span><br><span class="line">            (index) =&gt; Container(</span><br><span class="line">                  alignment: Alignment.center,</span><br><span class="line">                  child: Text(letters[index]),</span><br><span class="line">                  color: colors[index % <span class="number">4</span>],</span><br><span class="line">                )),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>关键地方已经添加了注释，跑下运行效果</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190522105021.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190522105021.png"></p>
 <p>接下来换一种 delegate 试试效果，当然这个最大值可以根据个人喜好来设置</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">body: GridView(</span><br><span class="line">        <span class="comment">// 通过设置 `maxCrossAxisExtent` 来指定最大的宽度，在这个值范围内，会选取相对较大的值</span></span><br><span class="line">        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(</span><br><span class="line">            maxCrossAxisExtent: <span class="number">60.0</span>, crossAxisSpacing: <span class="number">10.0</span>, mainAxisSpacing: <span class="number">10.0</span>, childAspectRatio: <span class="number">1.0</span>),</span><br><span class="line">        children: <span class="built_in">List</span>.generate(</span><br><span class="line">            letters.length,</span><br><span class="line">            (index) =&gt; Container(</span><br><span class="line">                  alignment: Alignment.center,</span><br><span class="line">                  child: Text(letters[index]),</span><br><span class="line">                  color: colors[index % <span class="number">4</span>],</span><br><span class="line">                )),</span><br><span class="line">      )</span><br></pre></td></tr></table></figure>
 <p>最后效果：</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190522105054.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190522105054.png"></p>
 <p>为了方便写法呢，Flutter 对以上的两种方式进行了封装，省略了 delegate</p>
 <p><strong>GridView.count/GridView.extent</strong></p>
 <p>直接看下如何修改</p>
@@ -456,7 +466,7 @@
 <p>到这 10 种方式就说完了。终于可以歇一口气了。</p>
 <p>该部分代码查看 gridview_main.dart 文件</p>
 <h3 id="CustomScrollView"><a href="#CustomScrollView" class="headerlink" title="CustomScrollView"></a>CustomScrollView</h3><p>在平时的开发中，应该会遇到这么种情况，头部是一个 GridView 接下来拼接一些别的部件，然后再拼接一个列表，例如下图</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190522105306.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190522105306.png"></p>
 <p>因为 GridView  和 ListView 亮着都是可滑动的部件，直接拼接肯定会有「滑动冲突」，所以 Flutter 就提供了一个粘合剂，CustomScrollView，那么 Flutter 如何实现呢，因为会涉及到 Sliver 系列部件，所以这边先看下大概的代码，下节会补充 Sliver 系列部件的内容</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomScrollDemoPage</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 这边用的 A-Z 字母</span></span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">List</span>&lt;<span class="built_in">String</span>&gt; letters = [ ..... ];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">List</span>&lt;Color&gt; colors = [Colors.red, Colors.green, Colors.blue, Colors.pink, Colors.yellow, Colors.deepPurple];</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        title: Text(<span class="string">'CustomScrollDemo'</span>),</span><br><span class="line">      ),</span><br><span class="line">      body: CustomScrollView(</span><br><span class="line">        <span class="comment">// 这里需要传入 `Sliver` 部件，下节课填坑</span></span><br><span class="line">        slivers: &lt;Widget&gt;[</span><br><span class="line">          <span class="comment">// SliverGrid 实现同 GridView 实现方式一样</span></span><br><span class="line">          <span class="comment">// 同样 SliverGrid 有提供 `count`, `entent` 方法便于快速生成 SliverGrid</span></span><br><span class="line">          SliverGrid(</span><br><span class="line">              delegate: SliverChildBuilderDelegate(</span><br><span class="line">                  (_, index) =&gt; InkWell(</span><br><span class="line">                        child: Image.asset(<span class="string">'images/ali.jpg'</span>),</span><br><span class="line">                        onTap: () &#123;&#125;,</span><br><span class="line">                      ),</span><br><span class="line">                  childCount: <span class="number">8</span>),</span><br><span class="line">              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(</span><br><span class="line">                  crossAxisCount: <span class="number">4</span>, mainAxisSpacing: <span class="number">10.0</span>, crossAxisSpacing: <span class="number">10.0</span>)),</span><br><span class="line">          <span class="comment">// 这里下节讲</span></span><br><span class="line">          SliverToBoxAdapter(</span><br><span class="line">              child: Container(</span><br><span class="line">                  color: Colors.black12,</span><br><span class="line">                  margin: <span class="keyword">const</span> EdgeInsets.symmetric(vertical: <span class="number">10.0</span>),</span><br><span class="line">                  child: Column(children: &lt;Widget&gt;[</span><br><span class="line">                    Divider(height: <span class="number">2.0</span>, color: Colors.black54),</span><br><span class="line">                    Stack(</span><br><span class="line">                      alignment: Alignment.center,</span><br><span class="line">                      children: &lt;Widget&gt;[</span><br><span class="line">                        Image.asset(<span class="string">'images/app_bar_hor.jpg'</span>, fit: BoxFit.cover),</span><br><span class="line">                        Text(<span class="string">'我是一些别的东西..例如广告'</span>, textScaleFactor: <span class="number">1.5</span>, style: TextStyle(color: Colors.red))</span><br><span class="line">                      ],</span><br><span class="line">                    ),</span><br><span class="line">                    Divider(height: <span class="number">2.0</span>, color: Colors.black54),</span><br><span class="line">                  ], mainAxisAlignment: MainAxisAlignment.spaceBetween),</span><br><span class="line">                  alignment: Alignment.center)),</span><br><span class="line">          <span class="comment">// SliverFixedExtentList 实现同 List.custom 实现类似</span></span><br><span class="line">          SliverFixedExtentList(</span><br><span class="line">              delegate: SliverChildBuilderDelegate(</span><br><span class="line">                  (_, index) =&gt; InkWell(</span><br><span class="line">                        child: Container(</span><br><span class="line">                          child: Text(letters[index] * <span class="number">10</span>,</span><br><span class="line">                              style: TextStyle(color: colors[index % colors.length], letterSpacing: <span class="number">2.0</span>),</span><br><span class="line">                              textScaleFactor: <span class="number">1.5</span>),</span><br><span class="line">                          alignment: Alignment.center,</span><br><span class="line">                        ),</span><br><span class="line">                        onTap: () &#123;&#125;,</span><br><span class="line">                      ),</span><br><span class="line">                  childCount: letters.length),</span><br><span class="line">              itemExtent: <span class="number">60.0</span>)</span><br><span class="line">        ],</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>该部分代码查看 custom_scroll_main.dart 文件</p>
@@ -464,13 +474,15 @@
 <h3 id="ScrollController"><a href="#ScrollController" class="headerlink" title="ScrollController"></a>ScrollController</h3><p>因为需要根据滑动的距离显示回到顶部按钮，那么就需要通过一个状态位来控制按钮显隐</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ScrollControllerDemoPage</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  _ScrollControllerDemoPageState createState() =&gt; _ScrollControllerDemoPageState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_ScrollControllerDemoPageState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">ScrollControllerDemoPage</span>&gt; </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> _scrollController = ScrollController();</span><br><span class="line">  <span class="keyword">var</span> _showBackTop = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">void</span> initState() &#123;</span><br><span class="line">    <span class="keyword">super</span>.initState();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 对 scrollController 进行监听</span></span><br><span class="line">    _scrollController.addListener(() &#123;</span><br><span class="line">      <span class="comment">// _scrollController.position.pixels 获取当前滚动部件滚动的距离</span></span><br><span class="line">      <span class="comment">// window.physicalSize.height 获取屏幕高度</span></span><br><span class="line">      <span class="comment">// 当滚动距离大于 800 后，显示回到顶部按钮</span></span><br><span class="line">      setState(() =&gt; _showBackTop = _scrollController.position.pixels &gt;= <span class="number">800</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">void</span> dispose() &#123;</span><br><span class="line">    <span class="comment">// 记得销毁对象</span></span><br><span class="line">    _scrollController.dispose();</span><br><span class="line">    <span class="keyword">super</span>.dispose();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        title: Text(<span class="string">'ScrollController Demo'</span>),</span><br><span class="line">      ),</span><br><span class="line">      body: ListView(</span><br><span class="line">        controller: _scrollController,</span><br><span class="line">        children: <span class="built_in">List</span>.generate(</span><br><span class="line">            <span class="number">20</span>, (index) =&gt; Container(height: <span class="number">50.0</span>, alignment: Alignment.center, child: Text(<span class="string">'Item <span class="subst">$&#123;index + <span class="number">1</span>&#125;</span>'</span>))),</span><br><span class="line">      ),</span><br><span class="line">      floatingActionButton: _showBackTop <span class="comment">// 当需要显示的时候展示按钮，不需要的时候隐藏，设置 null</span></span><br><span class="line">          ? FloatingActionButton(</span><br><span class="line">              onPressed: () &#123;</span><br><span class="line">                <span class="comment">// scrollController 通过 animateTo 方法滚动到某个具体高度</span></span><br><span class="line">                <span class="comment">// duration 表示动画的时长，curve 表示动画的运行方式，flutter 在 Curves 提供了许多方式</span></span><br><span class="line">                _scrollController.animateTo(<span class="number">0.0</span>, duration: <span class="built_in">Duration</span>(milliseconds: <span class="number">500</span>), curve: Curves.decelerate);</span><br><span class="line">              &#125;,</span><br><span class="line">              child: Icon(Icons.vertical_align_top),</span><br><span class="line">            )</span><br><span class="line">          : <span class="keyword">null</span>,</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>最后的效果图</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/a1.gif" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/a1.gif"></p>
 
     </div>
 
     
     
     
+      
+
         
       
         
@@ -538,6 +550,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1115,6 +1136,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1130,6 +1156,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1251,8 +1286,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1267,6 +1334,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/8d9ab46a.html";
+    this.page.identifier = "posts/8d9ab46a.html";
+    this.page.title = 'Flutter入门指南(七)之滑动部件';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

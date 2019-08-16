@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,15 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="目前,Android 组件化普遍使用于移动开发,但是组件化的初衷是为了解耦代码,并行开发效率;小型app似乎会care不到,完全解耦的组件化会在app越来越臃肿的时候带来很大的提升;  1.组件化介绍ok,那么我们需要知道完全解耦的组件化框架应该注意哪些点:  主app只加载业务组件,不可调用组件;组件与组件之间不存在调用关系;这样无论是主app和业务组件都是完全独立,完全解耦的; 主app和组">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190706170645.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190706171115.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190706171141.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190706171230.png">
 <meta property="og:updated_time" content="2019-07-06T09:13:00.180Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android组件化，完全解耦">
 <meta name="twitter:description" content="目前,Android 组件化普遍使用于移动开发,但是组件化的初衷是为了解耦代码,并行开发效率;小型app似乎会care不到,完全解耦的组件化会在app越来越臃肿的时候带来很大的提升;  1.组件化介绍ok,那么我们需要知道完全解耦的组件化框架应该注意哪些点:  主app只加载业务组件,不可调用组件;组件与组件之间不存在调用关系;这样无论是主app和业务组件都是完全独立,完全解耦的; 主app和组">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190706170645.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/d7e6359d">
 
@@ -280,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -362,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/d7e6359d.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/d7e6359d.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -383,8 +396,8 @@
 <li>每一个组件应当是一个app可单独编译:Library和Application之间转化使用gradle配置相应的Manifest和applicationId</li>
 </ol>
 <a id="more"></a>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190706170645.png" alt=""></p>
-<h4 id="2-单独编译组件化配置-gradle"><a href="#2-单独编译组件化配置-gradle" class="headerlink" title="2.单独编译组件化配置(gradle)"></a>2.单独编译组件化配置(gradle)</h4><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190706171115.png" alt=""><br><strong>依赖关系</strong></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190706170645.png"></p>
+<h4 id="2-单独编译组件化配置-gradle"><a href="#2-单独编译组件化配置-gradle" class="headerlink" title="2.单独编译组件化配置(gradle)"></a>2.单独编译组件化配置(gradle)</h4><p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190706171115.png"><br><strong>依赖关系</strong></p>
 <ul>
 <li>App 依赖common</li>
 <li>Home/Login/News 依赖common</li>
@@ -396,7 +409,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//注释1: 配置切换application/Library的打包</span><br><span class="line">if (isRunHome.toBoolean())&#123;</span><br><span class="line">    apply plugin: &apos;com.android.application&apos;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    apply plugin: &apos;com.android.library&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">    .......</span><br><span class="line"></span><br><span class="line">    sourceSets &#123;</span><br><span class="line">       //注释2: Library/Application切换  AndroidManifest  </span><br><span class="line">        main &#123;</span><br><span class="line">            if (isRunLogin.toBoolean())&#123;</span><br><span class="line">                manifest.srcFile &apos;src/main/AndroidManifest.xml&apos;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                manifest.srcFile &apos;src/main/manifest/AndroidManifest.xml&apos;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ......</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
 <ul>
 <li>注释1: 切换application/Libaray的打包配置</li>
-<li>注释2: Application为单独编译,需要有applicationId,并且主Activity需要配置main属性;<br>Libaray为集成编译,组件不能有applicationId,且不可以设置启动的main Activity<br>下面看集成编译(Library)和单独编译(Application)的Manifest配置:<br><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190706171141.png" alt=""></li>
+<li>注释2: Application为单独编译,需要有applicationId,并且主Activity需要配置main属性;<br>Libaray为集成编译,组件不能有applicationId,且不可以设置启动的main Activity<br>下面看集成编译(Library)和单独编译(Application)的Manifest配置:<br><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190706171141.png"></li>
 </ul>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line">//集成编译,打包为Library</span><br><span class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">package</span>=<span class="string">"component.android.com.home"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">application</span> <span class="attr">android:theme</span>=<span class="string">"@style/home_AppTheme"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".view.activity.HomeActivity"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line">//单独编译,打包为单独Application 可单独编译</span><br><span class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">package</span>=<span class="string">"component.android.com.home"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">application</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:allowBackup</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:icon</span>=<span class="string">"@mipmap/ic_launcher"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:label</span>=<span class="string">"@string/app_name"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:name</span>=<span class="string">".global.HomeApp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:roundIcon</span>=<span class="string">"@mipmap/ic_launcher_round"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:supportsRtl</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:theme</span>=<span class="string">"@style/home_AppTheme"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".view.activity.HomeActivity"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.MAIN"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -419,7 +432,7 @@
 <h4 id="4-组件之间的逻辑交互"><a href="#4-组件之间的逻辑交互" class="headerlink" title="4.组件之间的逻辑交互"></a>4.组件之间的逻辑交互</h4><p>App点击跳转home,须判断登录逻辑:</p>
 <ul>
 <li>1.登录则跳转home组件的homeActivity</li>
-<li>2.未登录则跳转login组件的loginActivity,点击登录,再重复以上逻辑<br>这样 主app,home和login就实现了一个简单的交互逻辑<br><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190706171230.png" alt=""><br>首先开component:</li>
+<li>2.未登录则跳转login组件的loginActivity,点击登录,再重复以上逻辑<br>这样 主app,home和login就实现了一个简单的交互逻辑<br><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190706171230.png"><br>首先开component:</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//ILoginService</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ILoginService</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">getLoginStatus</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getLoginUserId</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//DefultLoginService</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DefultLoginService</span> <span class="keyword">implements</span> <span class="title">ILoginService</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">getLoginStatus</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getLoginUserId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//ComponentServiceFactory</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ComponentServiceFactory</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    ......</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ComponentServiceFactory <span class="title">getInstance</span><span class="params">(Context context)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (ComponentServiceFactory.class)&#123;</span><br><span class="line">                <span class="keyword">if</span> (instance == <span class="keyword">null</span>)&#123;</span><br><span class="line">                    instance = <span class="keyword">new</span> ComponentServiceFactory();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ILoginService loginService;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLoginService</span><span class="params">(ILoginService iloginService)</span></span>&#123;</span><br><span class="line">        loginService = iloginService;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ILoginService <span class="title">getLoginService</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (loginService == <span class="keyword">null</span>)&#123;</span><br><span class="line">            loginService = <span class="keyword">new</span> DefultLoginService();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> loginService;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>然后在login中通过common的ComponentServiceFactory注册对应的loginService</p>
@@ -452,6 +465,8 @@
     
     
     
+      
+
         
       
         
@@ -519,6 +534,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1096,6 +1120,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1111,6 +1140,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1232,8 +1270,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1248,6 +1318,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/d7e6359d.html";
+    this.page.identifier = "posts/d7e6359d.html";
+    this.page.title = 'Android组件化，完全解耦';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,25 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="面试大纲 java基础、面向对象、集合、线程使用； Android 机型适配、SDK适配、内存优化、内存溢出、内存泄漏； MVC/MVP/MVVM的使用场景； 了解并能使用最新流行开源库RXjava+Retrofit+OKHttp、Glide、EventBus等； JNI及NDK的使用、熟悉Framework。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722160840.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722160920.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722160945.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161023.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161217.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161310.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161327.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161341.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161424.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161409.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161434.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161447.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161503.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161536.png">
 <meta property="og:updated_time" content="2019-07-22T09:19:05.257Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android面试总结">
 <meta name="twitter:description" content="面试大纲 java基础、面向对象、集合、线程使用； Android 机型适配、SDK适配、内存优化、内存溢出、内存泄漏； MVC/MVP/MVVM的使用场景； 了解并能使用最新流行开源库RXjava+Retrofit+OKHttp、Glide、EventBus等； JNI及NDK的使用、熟悉Framework。">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722160840.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/27a6e4df">
 
@@ -290,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -372,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/27a6e4df.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/27a6e4df.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -498,7 +501,7 @@
 <h4 id="13-Android-版本特性"><a href="#13-Android-版本特性" class="headerlink" title="13.Android 版本特性"></a>13.Android 版本特性</h4><p><strong>6.0需要代码请求权限checkPermissions，7.0应用间文件共享限制，系统广播删除，8.0通知渠道、悬浮窗、透明窗口不允许屏幕旋转，9.0明文流量的网络请求（Https加密）</strong></p>
 <p><strong>Android SDK兼容</strong>：<strong>minSdkVersion必须</strong>，targetSdkVersion针对某版本，maxSdkVersion非必需。</p>
 <p>详细特性可见转载文档：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fblog.csdn.net%2Fccw0054%2Farticle%2Fdetails%2F83061841" target="_blank" rel="noopener">Android 各版本新特性介绍 - 落叶Ex的博客 - CSDN博客</a></p>
-<h4 id="14-BroadcastReceiver广播"><a href="#14-BroadcastReceiver广播" class="headerlink" title="14.BroadcastReceiver广播"></a>14.BroadcastReceiver广播</h4><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722160840.png" alt=""></p>
+<h4 id="14-BroadcastReceiver广播"><a href="#14-BroadcastReceiver广播" class="headerlink" title="14.BroadcastReceiver广播"></a>14.BroadcastReceiver广播</h4><p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722160840.png"></p>
 <p>BroadcastReceiver比较</p>
 <p>特别注意：<strong>动态广播最好在Activity 的 onResume()注册、onPause()注销。</strong></p>
 <p>原因：对于动态广播，有注册就必然得有注销，否则会导致<strong>内存泄露，</strong>重复注册、重复注销也不允许</p>
@@ -592,12 +595,12 @@
 <p>React Native (简称RN)是Facebook于2015年4月开源的跨平台移动应用开发框架，是Facebook早先开源的JS框架 React 在原生移动应用平台的衍生产物，目前支持iOS和安卓两大平台。RN使用Javascript语言，类似于HTML的JSX，以及CSS来开发移动应用，因此熟悉Web前端开发的技术人员只需很少的学习就可以进入移动应用开发领域。 <strong>flutter。</strong></p>
 <h4 id="27-Framework-工作原理"><a href="#27-Framework-工作原理" class="headerlink" title="27.Framework 工作原理"></a>27.Framework 工作原理</h4><p><strong>Android 系统对Linux、kernel、lib库等封装，提供WMS、AMS、binder机制，handler-message机制等方式，供APP使用。Framework 就是提供APP生存环境。</strong></p>
 <h4 id="28-Android-屏幕适配"><a href="#28-Android-屏幕适配" class="headerlink" title="28.Android 屏幕适配"></a>28.Android 屏幕适配</h4><p>各种dp文件，使用各种尺寸屏幕</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722160920.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722160920.png"></p>
 <p><strong>布局文件中view设置高宽时不限定大小，尽量使用wrap_content，match_parent；代码中设置高宽前可获取屏幕大小，如果是线性布局可设置view在LinearLayout的weight；单位dp适配屏幕，单位sp适用字体，多图片，多布局。</strong></p>
 <h4 id="29-事件分发机制"><a href="#29-事件分发机制" class="headerlink" title="29.事件分发机制"></a>29.事件分发机制</h4><p>dispatchTouchEvent() 负责事件分发。当点击事件产生后，事件首先传递给当前Activity，调用Activity的dispatchTouchEvent()方法，返回值为true则表示View或子View消费了此事件，如果返回true，则表示没有消费事件，并调用父View的onTouchEvent方法。</p>
 <p>onTouchEvent()用于处理事件，返回值决定当前控件是否消费了这个事件，也就是说在当前控件在<strong>调用父View的onTouchEvent方法</strong>完Touch事件后，是否还允许Touch事件继续向上（父控件）传递，一但返回True，则父控件不用操心自己来处理Touch事件。返回true，则向上传递给父控件。</p>
 <p>onInterceptTouchEvent() ViewGroup的一个方法，用于处理事件（类似于预处理，当然也可以不处理）并改变事件的传递方向，也就是决定是否允许Touch事件继续向下（子控件）传递，一但返回True（代表事件在当前的viewGroup中会被处理），则向下传递之路被截断（所有子控件将没有机会参与Touch事件），同时把事件传递给当前的控件的onTouchEvent()处理；返回false，则把事件交给子控件的onInterceptTouchEvent()。</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722160945.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722160945.png"></p>
 <p>事件分发机制原理图</p>
 <p>当一个Touch事件(触摸事件为例)到达根节点，即Acitivty的ViewGroup时，它会依次下发，下发的过程是调用子View(ViewGroup)的dispatchTouchEvent方法实现的。简单来说，就是ViewGroup遍历它包含着的子View，调用每个View的dispatchTouchEvent方法，而当子View为ViewGroup时，又会通过调用ViwGroup的dispatchTouchEvent方法继续调用其内部的View的dispatchTouchEvent方法。上述例子中的消息下发顺序是这样的：①-②-⑤-⑥-⑦-③-④。dispatchTouchEvent方法只负责事件的分发，它拥有boolean类型的返回值，当返回为true时，顺序下发会中断。</p>
 <p>小结：onInterceptTouchEvent()默认返回false，不做截获。返回true之后，事件流的后端控件就没有机会处理touch事件。view的onTouchEvent()返回了false，那么该事件将被传递至其上一层次的view的onTouchEvent()处理，如果onTouchEvent()返回了true，那么后续事件将可以继续传递给该view的onTouchEvent()处理。</p>
@@ -654,7 +657,7 @@
 <p><strong>wait()释放同步锁，需要notify唤醒，是object方法。</strong></p>
 <p><strong><em>线程的生命周期？如何中断？</em></strong></p>
 <p>生命周期：文章转载：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fwww.cnblogs.com%2Fwzy330782%2Fp%2F5456923.html" target="_blank" rel="noopener">多线程——线程的生命周期 - 积_跬步 - 博客园</a></p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161023.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161023.png"></p>
 <p><strong>① 新建状态(New Thread)</strong>：在Java语言中使用new 操作符创建一个线程后，该线程仅仅是一个空对象，它具备类线程的一些特征，但此时系统没有为其分配资源，这时的线程处于创建状态。</p>
 <p>线程处于创建状态时，可通过Thread类的方法来设置各种属性，如线程的优先级(setPriority)、线程名(setName)和线程的类型(setDaemon)等。</p>
 <p><strong>② 就绪状态(Runnable)</strong>：使用start()方法启动一个线程后，系统为该线程分配了除CPU外的所需资源，使该线程处于就绪状态。此外，如果某个线程执行了yield()方法，那么该线程会被暂时剥夺CPU资源，重新进入就绪状态。</p>
@@ -672,7 +675,7 @@
 <p>③ 使用interrupt方法中断线程。</p>
 <h4 id="41-线程安全的单例"><a href="#41-线程安全的单例" class="headerlink" title="41.线程安全的单例"></a>41.线程安全的单例</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> SingleInstance instance;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingleInstance <span class="title">getInstance</span><span class="params">(SingleInstance instance)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (SingleInstance.class) &#123;</span><br><span class="line">                <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    instance = <span class="keyword">new</span> SingleInstance();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="42-Serializable-序列化接口，开销大，建议使用，java方法；"><a href="#42-Serializable-序列化接口，开销大，建议使用，java方法；" class="headerlink" title="42.Serializable 序列化接口，开销大，建议使用，java方法；"></a>42.Serializable 序列化接口，开销大，建议使用，java方法；</h4><p> Parcelelable 使用麻烦，效率高，多用于内存，Android方法。</p>
-<h4 id="43-Service启动方式和生命周期"><a href="#43-Service启动方式和生命周期" class="headerlink" title="43.Service启动方式和生命周期"></a>43.Service启动方式和生命周期</h4><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161217.png" alt=""></p>
+<h4 id="43-Service启动方式和生命周期"><a href="#43-Service启动方式和生命周期" class="headerlink" title="43.Service启动方式和生命周期"></a>43.Service启动方式和生命周期</h4><p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161217.png"></p>
 <p>①startService()：开启，调用者退出后Service仍在；<br> 生命周期：onCreate()–onStartCommand()–onDestory()<br> 通过startService启动后，service会一直无限期运行下去，只有外部调用了stopService()或stopSelf()方法时，该Service才会停止运行并销毁。<br> ②bindService()：开启，调用者退出后Service随即退出。<br> 生命周期：onCreate()–onBind()–onUnBind()–onDestory()<br> ①+② 的生命周期：onCreate()–onStartCommand()–onBind()–onUnBind()–onDestory()</p>
 <h4 id="44-Android-常见布局"><a href="#44-Android-常见布局" class="headerlink" title="44.Android 常见布局"></a>44.Android 常见布局</h4><p> FrameLayout （框架布局）、LinearLayout（线性布局）、AbsoluteLayout（绝对布局）、RelativeLayout（相对布局）、TableLayout（表格布局）</p>
 <h4 id="45-Http是服务层，借助HttpClient和HttpUrlConnection建立短连接，请求一次后断开，需要重连时才连。"><a href="#45-Http是服务层，借助HttpClient和HttpUrlConnection建立短连接，请求一次后断开，需要重连时才连。" class="headerlink" title="45.Http是服务层，借助HttpClient和HttpUrlConnection建立短连接，请求一次后断开，需要重连时才连。"></a>45.Http是服务层，借助HttpClient和HttpUrlConnection建立短连接，请求一次后断开，需要重连时才连。</h4><p> ①HttpClient：开源框架，无封装，原始，使用方便，开发快，实现比较稳定，Android废弃，Android 6.0删除；<br> ②HttpUrlConnection：对网络请求没有HttpClient封装彻底，Android2.2之前存在bug，所以2.2之前用HttpClient，之后用容易优化的HttpUrlConnection，开源框架，封装了请求头、参数、内容体、响应在I/O流，接口中统一封成了HttpGet/HttpPost，减少了操作的繁琐性，访问速度快。</p>
@@ -707,7 +710,7 @@
 <p>​    <strong>JNI和NDK的关系：JNI实现目的，NDK是Android实现JNI的手段，即在AS开发环境中通过NDK从而实现JNI功能。</strong></p>
 <h4 id="52-常用的设计模式及其实现思想和作用"><a href="#52-常用的设计模式及其实现思想和作用" class="headerlink" title="52.常用的设计模式及其实现思想和作用"></a><strong>52.常用的设计模式及其实现思想和作用</strong></h4><p><strong>转载文章：23种设计模式全解析 - codeTao - 博客园</strong></p>
 <p><strong>①单例模式：</strong>单例对象能保证在一个JVM中，该对象只有一个实例存在。</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161310.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161310.png"></p>
 <p><strong>②工厂模式</strong></p>
 <p>一个抽象产品类，可以派生出多个具体产品类。 一个抽象工厂类，可以派生出多个具体工厂类。每个具体工厂类只能创建一个具体产品类的实例。</p>
 <p>抽象工厂模式：多个抽象产品类，每个抽象产品类可以派生出多个具体产品类。 一个抽象工厂类，可以派生出多个具体工厂类。 每个具体工厂类可以创建多个具体产品类的实例，也就是创建的是一个产品线下的多个产品。 </p>
@@ -715,7 +718,7 @@
 <p>将某个类的接口转换成客户端期望的另一个接口表示，目的是消除由于接口不匹配所造成的类的兼容性问题。主要分为三类：类的适配器模式、对象的适配器模式、接口的适配器模式。</p>
 <p><strong>④装饰模式（Decorator）</strong></p>
 <p>顾名思义，装饰模式就是给一个对象增加一些新的功能，而且是动态的，要求装饰对象和被装饰对象实现同一个接口，装饰对象持有被装饰对象的实例。</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161327.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161327.png"></p>
 <p>Source类是被装饰类，Decorator类是一个装饰类，可以为Source类动态的添加一些功能。</p>
 <p>装饰器模式的应用场景：</p>
 <p>1、需要扩展一个类的功能。</p>
@@ -750,15 +753,15 @@
 <p><strong>②外部类中持有非静态内部类的静态对象</strong>  保持一致的生命周期，将内部类对象改成非静态；</p>
 <p>③<strong>Handler 或 Runnable 作为非静态内部类</strong>  Handler 和 Runnable 作为匿名内部类，都会持有 Activity 的引用，由于 Handler 和 Runnable 的生命周期比 Activity 长，导致Activity 无法被回收，从而造成内存泄漏。  解决办法：将Handler 和 Runnable 定义为静态内部类，在Activity 的onDestory()方法中调用Handler 的 removeCallbacks 方法来移除 Message。</p>
 <p>还有一种特殊情况，如果 Handler 或者 Runnable 中持有 Context 对象，那么即使使用静态内部类，还是会发生内存泄漏。解决办法：使用弱引用</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161341.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161341.png"></p>
 <p>④其他内存泄漏情况：比如BraodcastReceiver 未注销，InputStream 未关闭，再代码中多注意注销或关闭。</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161424.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161424.png"></p>
 <h4 id="55-LeakCanary内存优化"><a href="#55-LeakCanary内存优化" class="headerlink" title="55.LeakCanary内存优化"></a>55.LeakCanary内存优化</h4><p>参考文章：<a href="https://www.jianshu.com/p/261e70f3083f" target="_blank" rel="noopener">LeakCanary原理解析 - 简书</a></p>
 <p>①项目如何使用LeakCanary</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161409.png" alt=""></p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161434.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161409.png"></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161434.png"></p>
 <p>LeakCanary.enableDisplayLeakActivity(context);内存溢出图标，图标以通知的形式显示内存溢出</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161447.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161447.png"></p>
 <p>②工作机制</p>
 <p>LeakCanary.install() 会返回一个预定义的 <strong>RefWatcher</strong>，同时也会启用一个 <strong>ActivityRefWatcher</strong>，用于自动监控调用Activity.onDestroy() 之后泄露的 activity。</p>
 <p>1.RefWatcher.watch() 创建一个 <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fsquare%2Fleakcanary%2Fblob%2Fmaster%2Flibrary%2Fleakcanary-watcher%2Fsrc%2Fmain%2Fjava%2Fcom%2Fsquareup%2Fleakcanary%2FKeyedWeakReference.java" target="_blank" rel="noopener">KeyedWeakReference</a> 到要被监控的对象。</p>
@@ -802,7 +805,7 @@
 <p><strong>⑤线程池容量的动态调整</strong></p>
 <p>1）setCorePoolSize：设置核心池大小</p>
 <p>2）setMaximumPoolSize：设置线程池最大能创建的线程数目大小</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161503.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161503.png"></p>
 <p>参考文章：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fwww.cnblogs.com%2Fsuperfj%2Fp%2F7544971.html" target="_blank" rel="noopener">由浅入深理解Java线程池及线程池的如何使用 - Janti - 博客园</a></p>
 <p>corePoolSize :线程池的核心池大小，在创建线程池之后，线程池默认没有任何线程。</p>
 <p>当有任务过来的时候才会去创建创建线程执行任务。换个说法，线程池创建之后，线程池中的线程数为0，当任务过来就会创建一个线程去执行，直到线程数达到corePoolSize之后，就会被到达的任务放在队列中。（注意是到达的任务）。换句更精炼的话：corePoolSize表示允许线程池中允许同时运行的最大线程数。</p>
@@ -837,13 +840,15 @@
 <p>参考文章：<a href="https://www.jianshu.com/p/3b143cf39013" target="_blank" rel="noopener">Fresco的使用小结 - 简书</a></p>
 <p><a href="https://blog.csdn.net/yw59792649/article/details/78921025" target="_blank" rel="noopener">https://blog.csdn.net/yw59792649/article/details/78921025</a></p>
 <h4 id="60-React-Native"><a href="#60-React-Native" class="headerlink" title="60.React Native"></a>60.React Native</h4><p><strong>混合开发技术移动开发-混合App介绍 - Primise7的博客 - CSDN博客</strong></p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161536.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722161536.png"></p>
 
     </div>
 
     
     
     
+      
+
         
       
         
@@ -911,6 +916,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1488,6 +1502,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1503,6 +1522,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1624,8 +1652,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1640,6 +1700,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/27a6e4df.html";
+    this.page.identifier = "posts/27a6e4df.html";
+    this.page.title = 'Android面试总结';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

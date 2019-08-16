@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,23 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="前言vlayout 的设计思路请参考Tangram 的基础 —— vlayout（Android）。框架已经开源，欢迎移步到 github上指教。本文介绍 vlayout 的基本布局样式上的属性说明。 margin, paddingMargin, padding就是外边距、内边距，概念与Android系统的margin, padding一样，但也有不同的地方：  它不是整个RecyclerView">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://pingguohe.net/images/vlayout/MarginPadding.png">
-<meta property="og:image" content="http://pingguohe.net/images/vlayout/Background.png">
-<meta property="og:image" content="http://pingguohe.net/images/vlayout/AspectRatio.png">
-<meta property="og:image" content="http://pingguohe.net/images/vlayout/DividerHeight.png">
-<meta property="og:image" content="http://pingguohe.net/images/vlayout/Weights.png">
-<meta property="og:image" content="http://pingguohe.net/images/vlayout/HGapVGap.png">
-<meta property="og:image" content="http://pingguohe.net/images/vlayout/SpanCountSpanSize.png">
-<meta property="og:image" content="http://pingguohe.net/images/vlayout/AutoExpand.png">
-<meta property="og:image" content="http://pingguohe.net/images/vlayout/FixAreaAdjuster.png">
-<meta property="og:image" content="http://pingguohe.net/images/vlayout/AlignTypeXY.png">
-<meta property="og:image" content="http://pingguohe.net/images/vlayout/ShowType.png">
-<meta property="og:image" content="http://pingguohe.net/images/vlayout/StickyStart.png">
 <meta property="og:updated_time" content="2019-06-03T08:36:17.160Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vlayout使用说明（二）">
 <meta name="twitter:description" content="前言vlayout 的设计思路请参考Tangram 的基础 —— vlayout（Android）。框架已经开源，欢迎移步到 github上指教。本文介绍 vlayout 的基本布局样式上的属性说明。 margin, paddingMargin, padding就是外边距、内边距，概念与Android系统的margin, padding一样，但也有不同的地方：  它不是整个RecyclerView">
-<meta name="twitter:image" content="http://pingguohe.net/images/vlayout/MarginPadding.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/2be51ee4">
 
@@ -288,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -370,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/2be51ee4.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/2be51ee4.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -388,12 +393,12 @@
 <li><code>LayoutHelper</code>的margin和padding与页面<code>RecyclerView</code>的margin和padding可以共存。</li>
 <li>目前主要针对非fix类型的<code>LayoutHelper</code>实现了margin和padding，fix类型<code>LayoutHelper</code>内部没有相对位置关系，不处理边距。</li>
 </ul>
-<p><img src="http://pingguohe.net/images/vlayout/MarginPadding.png" alt="margin-padding"></p>
+<p><img alt="margin-padding" data-src="http://pingguohe.net/images/vlayout/MarginPadding.png"></p>
 <a id="more"></a>
 <h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>对于<code>LayoutHelper</code>，调用</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public void setPadding(int leftPadding, int topPadding, int rightPadding, int bottomPadding)</span><br><span class="line">public void setMargin(int leftMargin, int topMargin, int rightMargin, int bottomMargin)</span><br></pre></td></tr></table></figure>
 <h2 id="bgColor-bgImg"><a href="#bgColor-bgImg" class="headerlink" title="bgColor, bgImg"></a>bgColor, bgImg</h2><p>背景颜色或者背景图，这其实不是布局属性，但是由于在vlayout对视图进行了直接布局，不同区域的视图的父节点都是<code>RecyclerView</code>，如果想要针对某一块区域单独绘制背景，就很难做到了。vlayout框架对此做了特殊处理，对于非fix、非float类型的<code>LayoutHelper</code>，支持配置背景色或背景图。同样目前主要针对非fix类型的<code>LayoutHelper</code>实现这个特性。</p>
-<p><img src="http://pingguohe.net/images/vlayout/Background.png" alt="background"></p>
+<p><img alt="background" data-src="http://pingguohe.net/images/vlayout/Background.png"></p>
 <h3 id="接口-1"><a href="#接口-1" class="headerlink" title="接口"></a>接口</h3><p>使用背景色</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public void setBgColor(int bgColor)</span><br></pre></td></tr></table></figure>
 <p>使用背景图</p>
@@ -406,38 +411,38 @@
 <li><code>LayoutHelper</code>定义的aspectRatio，指的是一行视图整体的宽度与高度之比，当然整体的宽度是减去了<code>RecyclerView和</code>对应的<code>LayoutHelper</code>的margin, padding。</li>
 <li>视图的<code>LayoutParams</code>定义的aspectRatio，指的是在<code>LayoutHelper</code>计算出视图宽度之后，用来确定视图高度时使用的，它会覆盖通过<code>LayoutHelper</code>的aspectRatio计算出来的视图高度，因此具备更高优先级。</li>
 </ul>
-<p><img src="http://pingguohe.net/images/vlayout/AspectRatio.png" alt="aspectRatio"></p>
+<p><img alt="aspectRatio" data-src="http://pingguohe.net/images/vlayout/AspectRatio.png"></p>
 <h3 id="接口-2"><a href="#接口-2" class="headerlink" title="接口"></a>接口</h3><p>对于<code>LayoutHelper</code>，调用</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public void setAspectRatio(float aspectRatio)</span><br></pre></td></tr></table></figure>
 <p>对于<code>LayoutParams</code>，调用</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">((VirutalLayoutManager.LayoutParams) layoutParams).mAspectRatio</span><br></pre></td></tr></table></figure>
 <h2 id="dividerHeight"><a href="#dividerHeight" class="headerlink" title="dividerHeight"></a>dividerHeight</h2><p><code>LinearLayoutHelper</code>的属性，<code>LinearLayoutHelper</code>是像<code>ListView</code>一样的线性布局，dividerHeight就是每个组件之间的间距。</p>
-<p><img src="http://pingguohe.net/images/vlayout/DividerHeight.png" alt="dividerHeight"></p>
+<p><img alt="dividerHeight" data-src="http://pingguohe.net/images/vlayout/DividerHeight.png"></p>
 <h3 id="接口-3"><a href="#接口-3" class="headerlink" title="接口"></a>接口</h3><p>对于<code>LinearLayoutHelper</code>，调用</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public void setDividerHeight(int dividerHeight)</span><br></pre></td></tr></table></figure>
 <h2 id="weights"><a href="#weights" class="headerlink" title="weights"></a>weights</h2><p><code>ColumnLayoutHelper</code>, <code>GridLayoutHelper</code>的属性，它们都是提供网格状的布局能力，<strong>建议使用GridLayoutHelper</strong>，它的能力更加强大，参考下文介绍。默认情况下，每个网格中每一列的宽度是一样的，通过weights属性，可以指定让每一列的宽度成比例分配，就像<code>LinearLayout</code>的weight属性一样。 weights属性是一个float数组，每一项代表某一列占父容器宽度的百分比，总和建议是100，否则布局会超出容器宽度；如果布局中有4列，那么weights的长度也应该是4；长度大于4，多出的部分不参与宽度计算；如果小于4，不足的部分默认平分剩余的空间。</p>
-<p><img src="http://pingguohe.net/images/vlayout/Weights.png" alt="weights"></p>
+<p><img alt="weights" data-src="http://pingguohe.net/images/vlayout/Weights.png"></p>
 <h3 id="接口-4"><a href="#接口-4" class="headerlink" title="接口"></a>接口</h3><p>对于<code>ColumnLayoutHelper</code>, <code>GridLayoutHelper</code>，调用</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public void setWeights(float[] weights)</span><br></pre></td></tr></table></figure>
 <h2 id="vGap-hGap"><a href="#vGap-hGap" class="headerlink" title="vGap, hGap"></a>vGap, hGap</h2><p><code>GridLayoutHelper</code>与<code>StaggeredGridLayoutHelper</code>都有这两个属性，分别控制视图之间的垂直间距和水平间距。</p>
-<p><img src="http://pingguohe.net/images/vlayout/HGapVGap.png" alt="vgap-hgap"></p>
+<p><img alt="vgap-hgap" data-src="http://pingguohe.net/images/vlayout/HGapVGap.png"></p>
 <h3 id="接口-5"><a href="#接口-5" class="headerlink" title="接口"></a>接口</h3><p>对于<code>GridLayoutHelper</code>, <code>StaggeredGridLayoutHelper</code>，调用</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public void setHGap(int hGap)</span><br><span class="line">public void setVGap(int vGap)</span><br></pre></td></tr></table></figure>
 <h2 id="spanCount-spanSizeLookup"><a href="#spanCount-spanSizeLookup" class="headerlink" title="spanCount, spanSizeLookup"></a>spanCount, spanSizeLookup</h2><p><code>GridLayoutHelper</code>的属性，参考于系统的<code>GridLayoutManager</code>，spanCount表示网格的列数，默认情况下每一个视图都占用一个网格区域，但通过提供自定义的spanSizeLookUp，可以指定某个位置的视图占用多个网格区域。</p>
-<p><img src="http://pingguohe.net/images/vlayout/SpanCountSpanSize.png" alt="spanCount-spanSize"></p>
+<p><img alt="spanCount-spanSize" data-src="http://pingguohe.net/images/vlayout/SpanCountSpanSize.png"></p>
 <h3 id="接口-6"><a href="#接口-6" class="headerlink" title="接口"></a>接口</h3><p>使用spanCount调用</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public void setSpanCount(int spanCount)</span><br></pre></td></tr></table></figure>
 <p>使用spanSizeLookup</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public void setSpanSizeLookup(SpanSizeLookup spanSizeLookup)</span><br></pre></td></tr></table></figure>
 <h2 id="autoExpand"><a href="#autoExpand" class="headerlink" title="autoExpand"></a>autoExpand</h2><p><code>GridLayoutHelper</code>的属性，当一行里视图的个数少于spanCount值的时候，如果autoExpand为true，视图的总宽度会填满可用区域；否则会在屏幕上留空白区域。</p>
-<p><img src="http://pingguohe.net/images/vlayout/AutoExpand.png" alt="autoExpand"></p>
+<p><img alt="autoExpand" data-src="http://pingguohe.net/images/vlayout/AutoExpand.png"></p>
 <h3 id="接口-7"><a href="#接口-7" class="headerlink" title="接口"></a>接口</h3><p>调用</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public void setAutoExpand(boolean isAutoExpand)</span><br></pre></td></tr></table></figure>
 <h2 id="lane"><a href="#lane" class="headerlink" title="lane"></a>lane</h2><p><code>StaggeredGridLayoutHelper</code>中有这个属性，与<code>GridLayoutHelper</code>里的spanCount类似，控制瀑布流的列数。</p>
 <h3 id="接口-8"><a href="#接口-8" class="headerlink" title="接口"></a>接口</h3><p>调用</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public void setLane(int lane)</span><br></pre></td></tr></table></figure>
 <h2 id="fixAreaAdjuster"><a href="#fixAreaAdjuster" class="headerlink" title="fixAreaAdjuster"></a>fixAreaAdjuster</h2><p>fix类型的<code>LayoutHelper</code>，在可能需要设置一个相对父容器四个边的偏移量，比如整个页面里有一个固定的标题栏添加在vlayout容器上，vlayout内部的fix类型视图不希望与外部的标题有所重叠，那么就可以设置一个fixAreaAdjuster来做偏移。</p>
-<p><img src="http://pingguohe.net/images/vlayout/FixAreaAdjuster.png" alt="fixAreaAdjuster"></p>
+<p><img alt="fixAreaAdjuster" data-src="http://pingguohe.net/images/vlayout/FixAreaAdjuster.png"></p>
 <h3 id="接口-9"><a href="#接口-9" class="headerlink" title="接口"></a>接口</h3><p>调用</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public void setAdjuster(FixAreaAdjuster adjuster)</span><br></pre></td></tr></table></figure>
 <h2 id="alignType-x-y"><a href="#alignType-x-y" class="headerlink" title="alignType, x, y"></a>alignType, x, y</h2><p><code>FixLayoutHelper</code>, <code>ScrollFixLayoutHelper</code>, <code>FloatLayoutHelper</code>的属性，表示吸边时的基准位置，有四个取值，分别是<code>TOP_LEFT</code>, <code>TOP_RIGHT</code>, <code>BOTTOM_LEFT</code>, <code>BOTTOM_RIGHT</code>。<code>x</code>和<code>y</code>是相对这四个位置的偏移量，最终的偏移量还要受上述的fixAreaAdjuster影响。</p>
@@ -447,7 +452,7 @@
 <li><code>BOTTOM_LEFT</code>：基准位置是左下角，<code>x</code>是视图左边相对父容器的左边距偏移量，<code>y</code>是视图底边相对父容器的下边距偏移量；</li>
 <li><code>BOTTOM_RIGHT</code>：基准位置是右下角，<code>x</code>是视图右边相对父容器的右边距偏移量，<code>y</code>是视图底边相对父容器的下边距偏移量；</li>
 </ul>
-<p><img src="http://pingguohe.net/images/vlayout/AlignTypeXY.png" alt="alignTypeXY"></p>
+<p><img alt="alignTypeXY" data-src="http://pingguohe.net/images/vlayout/AlignTypeXY.png"></p>
 <h3 id="接口-10"><a href="#接口-10" class="headerlink" title="接口"></a>接口</h3><p>设置基准调用</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public void setAlignType(int alignType)</span><br></pre></td></tr></table></figure>
 <p>设置偏移量调用</p>
@@ -458,11 +463,11 @@
 <li><code>SHOW_ON_ENTER</code>：默认不显示视图，当页面滚动到这个视图的位置的时候，才显示；</li>
 <li><code>SHOW_ON_LEAVE</code>：默认不显示视图，当页面滚出这个视图的位置的时候显示；</li>
 </ul>
-<p><img src="http://pingguohe.net/images/vlayout/ShowType.png" alt="showType"></p>
+<p><img alt="showType" data-src="http://pingguohe.net/images/vlayout/ShowType.png"></p>
 <p>调用</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public void setShowType(int showType)</span><br></pre></td></tr></table></figure>
 <h2 id="stickyStart-offset"><a href="#stickyStart-offset" class="headerlink" title="stickyStart, offset"></a>stickyStart, offset</h2><p><code>StickyLayoutHelper</code>的属性，当视图的位置在屏幕范围内时，视图会随页面滚动而滚动；当视图的位置滑出屏幕时，<code>StickyLayoutHelper</code>会将视图固定在顶部（<code>stickyStart = true</code>）或者底部（<code>stickyStart = false</code>），固定的位置支持设置偏移量offset。</p>
-<p><img src="http://pingguohe.net/images/vlayout/StickyStart.png" alt="stickyStart"></p>
+<p><img alt="stickyStart" data-src="http://pingguohe.net/images/vlayout/StickyStart.png"></p>
 <p>调用</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public void setStickyStart(boolean stickyStart)</span><br><span class="line">public void setOffset(int offset)</span><br></pre></td></tr></table></figure>
     </div>
@@ -470,6 +475,8 @@
     
     
     
+      
+
         
       
         
@@ -537,6 +544,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1114,6 +1130,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1129,6 +1150,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1250,8 +1280,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1266,6 +1328,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/2be51ee4.html";
+    this.page.identifier = "posts/2be51ee4.html";
+    this.page.title = 'vlayout使用说明（二）';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

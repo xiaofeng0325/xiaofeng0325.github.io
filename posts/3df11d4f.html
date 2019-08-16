@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,30 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="https://xclient.info/s/omni-plan.html 00:00  什么要用omniplan？最近工作当中，对项目交付的要求越来越高了。 这意味着不能像之前那样，做完方案就丢给开发，然后到了指定时间再收获了。 那么怎么掌握项目全部的进度呢，用万能的excel画格子吗？  画格子 当然在产品经理面前，Excel无所不能，上到画原型，下到数据库管理。但是在面对一个较大的项目的时候">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175611.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175639.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175706.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175723.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175743.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175822.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180005.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180039.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180106.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180127.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180143.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180158.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180217.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180236.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180325.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180342.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180403.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180429.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180811.png">
 <meta property="og:updated_time" content="2019-05-16T07:44:23.980Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Omniplan 5分钟入个门">
 <meta name="twitter:description" content="https://xclient.info/s/omni-plan.html 00:00  什么要用omniplan？最近工作当中，对项目交付的要求越来越高了。 这意味着不能像之前那样，做完方案就丢给开发，然后到了指定时间再收获了。 那么怎么掌握项目全部的进度呢，用万能的excel画格子吗？  画格子 当然在产品经理面前，Excel无所不能，上到画原型，下到数据库管理。但是在面对一个较大的项目的时候">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175611.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/3df11d4f">
 
@@ -295,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -370,6 +352,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/3df11d4f.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/3df11d4f.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -384,7 +382,7 @@
 <h2 id="00-00-什么要用omniplan？"><a href="#00-00-什么要用omniplan？" class="headerlink" title="00:00  什么要用omniplan？"></a>00:00  什么要用omniplan？</h2><p>最近工作当中，对项目交付的要求越来越高了。</p>
 <p>这意味着不能像之前那样，做完方案就丢给开发，然后到了指定时间再收获了。</p>
 <p>那么怎么掌握项目全部的进度呢，用万能的excel画格子吗？</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175611.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175611.png"></p>
 <p>画格子</p>
 <p>当然在产品经理面前，Excel无所不能，上到画原型，下到数据库管理。但是在面对一个较大的项目的时候，仍然会有一些问题：</p>
 <ol>
@@ -397,24 +395,24 @@
 <h2 id="00-30-打开omniplan看看"><a href="#00-30-打开omniplan看看" class="headerlink" title="00:30  打开omniplan看看"></a>00:30  打开omniplan看看</h2><p>什么，才过了30秒？是的。</p>
 <p>安装下载omniplan可以直接到官网或者mac app store购买下载，对于一个生产力工具来说，价格不算贵。</p>
 <p>当然你要是找到了别的渠道来下载……那我是管不着的。</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175639.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175639.png"></p>
 <p>界面</p>
 <p>恩，这些红字加的很不优雅，但不重要。</p>
 <p>左边是任务列表，可以加分组，中间是时间的甘特图，可以拖拽。上边是面板的切换。</p>
 <p>右边是信息列表，可以填写一些更仔细的信息。</p>
 <p>相信我，5分钟时间里，你基本是用不到右侧的这些内容的。</p>
 <h2 id="01-00-录入任务，分组"><a href="#01-00-录入任务，分组" class="headerlink" title="01:00 录入任务，分组"></a>01:00 录入任务，分组</h2><p>点击左边的列表，就可以录入任务，打完之后按回车，快速新建下一个任务。</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175706.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175706.png"></p>
 <p>分组</p>
 <p>另一个很有用的功能是多选多个任务，新建一个群组。群组的时间和进度会根据子任务计算。</p>
 <p>同样的，你也可以拖拽任务上下移，排序，剪切，复制什么的。</p>
 <h2 id="01-20-给任务安排时间"><a href="#01-20-给任务安排时间" class="headerlink" title="01:20 给任务安排时间"></a>01:20 给任务安排时间</h2><p>给任务安排时间很简单，鼠标放到蓝条的最右边，然后拖拽拉长就行。</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175723.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175723.png"></p>
 <p>我们都知道，任务实际上是存在逻辑顺序的，比如得先完成原型，才能做视觉，才能开始开发。</p>
 <p>所以我们需要给这些任务加上关联关系：</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175743.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175743.png"></p>
 <p>拖拽这个右边的箭头关联到下一个任务上，就完成了 A任务完成时-B任务开始的逻辑。</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175822.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175822.png"></p>
 <p>omniplan会根据你的任务逻辑关系自动安排时间，看起来不错！</p>
 <h2 id="02-00-节奏好像不对？"><a href="#02-00-节奏好像不对？" class="headerlink" title="02:00 节奏好像不对？"></a>02:00 节奏好像不对？</h2><p>所有的项目都安排好了时间，但是现在有两个时间上的问题：</p>
 <ol>
@@ -426,40 +424,40 @@
 <li>里程碑</li>
 <li>弹性任务（omniplan中叫做吊床任务）</li>
 </ol>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180005.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180005.png"></p>
 <p>里程碑是一种没有时间消耗的任务，用来标记一个项目的状态变化，或者把一个大项目拆成若干阶段都是很好用的。</p>
 <p>弹性任务很有意思，它自己本身的起点和终点都取决于前后的任务。在这个例子中，直到发版之前，工程师都可以继续对性能调优。</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180039.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180039.png"></p>
 <p>想要切换任务状态很简单，在右边信息面板中切换就行（怎么感觉打自己脸了）。</p>
 <h2 id="03-00-谁来负责？"><a href="#03-00-谁来负责？" class="headerlink" title="03:00 谁来负责？"></a>03:00 谁来负责？</h2><p>完成了所有项目节奏之后，接下来要解决的问题是人员安排的问题（当然你可以先把人员确定之后再安排时间节奏。）</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180106.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180106.png"></p>
 <p>点第二个视图，切换到下一个界面。</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180127.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180127.png"></p>
 <p>这里是资源列表（资源可以是人，也可以是设备，素材等。）考虑到我们的例子是个开发的项目，我添加一些工程师进去吧。</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180143.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180143.png"></p>
 <p>好像全是犬科动物……后面的单位表示这个人是全职（100%工时）。</p>
 <p>接下来给他们把工作都分配一下，很简单，用拖动的办法。</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180158.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180158.png"></p>
 <p>这时返回任务面板看一下：</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180217.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180217.png"></p>
 <p>看起来不错！</p>
 <h2 id="04-00-项目在运行"><a href="#04-00-项目在运行" class="headerlink" title="04:00 项目在运行"></a>04:00 项目在运行</h2><p>项目开始运行起来之后，我们需要时刻关注其中的进度变化。</p>
 <p>比如田园犬完成了自己的原型，我们需要在甘特图中标识出来。</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180236.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180236.png"></p>
 <p>拖动这个进度指示器来展示工作的进度。</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180325.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180325.png"></p>
 <p>如果任务建了分组，那么分组的进度也会变化。</p>
 <h2 id="04-30-糟糕，项目延误了！"><a href="#04-30-糟糕，项目延误了！" class="headerlink" title="04:30 糟糕，项目延误了！"></a>04:30 糟糕，项目延误了！</h2><p>这大概是大家都不愿意遇到的问题，项目遇到了一些不按预期进展的情况。</p>
 <p>这里假设一下，产品经理这几天状态不好，比实际上用时晚了一天。</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180342.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180342.png"></p>
 <p>本来23号设计师就开始工作了，但是因为产品经理不给力，导致24号才开始。这里我们需要将产品经理的用时拉长一天，其他的任务会一起后移。</p>
 <p>怎么体现出来产品经理确实延误了呢？</p>
 <p>我们需要讲一下今天最后一个功能：基线。</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180403.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180403.png"></p>
 <p>这个功能是将当前的项目进度保存一份，方便与实际的进度进行比对。</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180429.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180429.png"></p>
 <p>点击面板切换右边的基线比对选项，直接选择 拆分：实际 vs 基线。</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180811.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505180811.png"></p>
 <p>这么一比对就很清晰了</p>
 <blockquote>
 <p><strong>都是产品经理的锅！！</strong></p>
@@ -472,6 +470,8 @@
     
     
     
+      
+
         
       
         
@@ -541,6 +541,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1118,6 +1127,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1133,6 +1147,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1254,8 +1277,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1270,6 +1325,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/3df11d4f.html";
+    this.page.identifier = "posts/3df11d4f.html";
+    this.page.title = 'Omniplan 5分钟入个门';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

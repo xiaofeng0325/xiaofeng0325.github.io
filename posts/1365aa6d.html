@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,14 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="背景Tangram 客户端 SDK 对后端数据格式有标准化的需求，而后端接口格式千千万万，总不会是每个接口格式都能如你所愿，Tangram4TAC 就是为了解决这种问题构建，以标准化模型来在 TAC 在构建一个 Tangram 页面。 SDK 介绍">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/5/24/163912175134d274?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/5/24/1639121a70fb868d?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/5/24/1639121ca5693b5e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
 <meta property="og:updated_time" content="2019-06-03T08:57:15.743Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在 TAC 上使用 Tangram4 TAC SDK">
 <meta name="twitter:description" content="背景Tangram 客户端 SDK 对后端数据格式有标准化的需求，而后端接口格式千千万万，总不会是每个接口格式都能如你所愿，Tangram4TAC 就是为了解决这种问题构建，以标准化模型来在 TAC 在构建一个 Tangram 页面。 SDK 介绍">
-<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/5/24/163912175134d274?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/1365aa6d">
 
@@ -279,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -361,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/1365aa6d.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/1365aa6d.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -372,10 +386,10 @@
 
       
         <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>Tangram 客户端 SDK 对后端数据格式有标准化的需求，而后端接口格式千千万万，总不会是每个接口格式都能如你所愿，Tangram4TAC 就是为了解决这种问题构建，以标准化模型来在 TAC 在构建一个 Tangram 页面。</p>
-<h2 id="SDK-介绍"><a href="#SDK-介绍" class="headerlink" title="SDK 介绍"></a>SDK 介绍</h2><p><img src="https://user-gold-cdn.xitu.io/2018/5/24/163912175134d274?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p>
+<h2 id="SDK-介绍"><a href="#SDK-介绍" class="headerlink" title="SDK 介绍"></a>SDK 介绍</h2><p><img alt="img" data-src="https://user-gold-cdn.xitu.io/2018/5/24/163912175134d274?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"></p>
 <a id="more"></a>
 <p>一期 SDK 非常简单，尽量精简抽象，主要提供了 Tangram 组件模型的定义和默认的数据转换输出服务（称之为 render）。如上图所示，橘色部分为 SDK 提供的核心模型对象，Cell 是组件定义，Container 是容器定义，Style 是样式定义。浅绿色部分为 Tangram 内置的布局类型组件定义。白色部分为业务自定义组件，不集成在 SDK 内部，用户可以自己扩展任意部分来实现自己的组件 model 对象。</p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/5/24/1639121a70fb868d?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p>
+<p><img alt="img" data-src="https://user-gold-cdn.xitu.io/2018/5/24/1639121a70fb868d?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"></p>
 <p>Cell、Container、Style 的属性定义也是按照现有 Tangram 的规范来定义，业务字段需要用户自己继承对应的类来扩展。</p>
 <p>当我们用这些模型对象构建好 Tangram 组件树之后，就需要对外输出数据，一般情况下对外输出的不是原始的对象，可能是需要转换成 JSON 或者 Map 对象，过程中还需要对字段进行一些处理。SDK 内提供了几个辅助工具：</p>
 <p><code>@FieldExcluder</code> 注解：model 内部可能会有一些用来保存状态，传递上下文信息的字段，并不需要最终输出属性，通过此注解将这些属性在转换过程中过滤掉，减少冗余数据。 <code>@FieldNameMapper</code> 注解：默认情况下，我们期望 model 内部的属性定义名和输出字段名一致，但也有存在不兼容的情况，比如 Style 里的背景色字段要求按照 CSS 的规范输出 background-color 属性名，而 JAVA 的变量名不支持这种规范，所以可以通过该注解提供一个别名，比如：</p>
@@ -394,13 +408,15 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for (int i = 0; i &lt; 5; i++) &#123;</span><br><span class="line">    IconStyle iconStyle = new IconStyle();</span><br><span class="line">    iconStyle.setTitleColor(&quot;#FF0000&quot;);</span><br><span class="line">    if (i == 1) &#123;</span><br><span class="line">        iconStyle.setDisableReuse(true);</span><br><span class="line">    &#125;</span><br><span class="line">    Icon icon = new Icon();</span><br><span class="line">    icon.setStyle(iconStyle);</span><br><span class="line">    icon.setId(String.valueOf(i));</span><br><span class="line">    icon.setTitle(&quot;icon_&quot; + i);</span><br><span class="line">    icon.setImgUrl(&quot;https://gw.alicdn.com/tfs/TB1ISdWSFXXXXbFXXXXXXXXXXXX-146-147.png&quot;);</span><br><span class="line">    icon.setAction(&quot;https://www.tmall.com/&quot;);</span><br><span class="line">    fiveColumnContainer.addChild(icon);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>6.调用 render 方法输出数据返回给 TAC。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Map&lt;String, Object&gt; result = (Map&lt;String, Object&gt;) fiveColumnContainer.render();</span><br><span class="line">resultList.add(result);</span><br></pre></td></tr></table></figure>
-<p>上述流程总结起来如图： <img src="https://user-gold-cdn.xitu.io/2018/5/24/1639121ca5693b5e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p>
+<p>上述流程总结起来如图： <img alt="img" data-src="https://user-gold-cdn.xitu.io/2018/5/24/1639121ca5693b5e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"></p>
 
     </div>
 
     
     
     
+      
+
         
       
         
@@ -468,6 +484,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1045,6 +1070,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1060,6 +1090,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1181,8 +1220,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1197,6 +1268,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/1365aa6d.html";
+    this.page.identifier = "posts/1365aa6d.html";
+    this.page.title = '在 TAC 上使用 Tangram4 TAC SDK';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,15 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="上节填完了 Scaffold 留下的坑，这节继续填坑，之前留下关于 Layout 的坑，又是一堆部件袭来 1、Container为了让我们的界面更容易被扩展，通常会在最外层包裹一层 Container，其构造函数也不是很难理解 Container(&amp;#123;    Key key,    this.alignment, // child 的对齐方式，包括左对齐，居中，右对齐，左上对齐..等等">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425163312.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425163435.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425163555.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425163821.png">
 <meta property="og:updated_time" content="2019-05-22T03:02:46.524Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flutter入门指南(四)常用布局">
 <meta name="twitter:description" content="上节填完了 Scaffold 留下的坑，这节继续填坑，之前留下关于 Layout 的坑，又是一堆部件袭来 1、Container为了让我们的界面更容易被扩展，通常会在最外层包裹一层 Container，其构造函数也不是很难理解 Container(&amp;#123;    Key key,    this.alignment, // child 的对齐方式，包括左对齐，居中，右对齐，左上对齐..等等">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425163312.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/14587b6a">
 
@@ -280,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -362,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/14587b6a.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/14587b6a.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -379,7 +392,7 @@
 <p>让我们写个圆角矩形的外层，内层值显示白色文字</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HomePage</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      body: SafeArea(</span><br><span class="line">          child: Container(</span><br><span class="line">        alignment: Alignment.center,</span><br><span class="line">        <span class="comment">// 宽，高度同上层容器相同</span></span><br><span class="line">        width: MediaQuery.of(context).size.width,</span><br><span class="line">        height: MediaQuery.of(context).size.height,</span><br><span class="line">        margin: <span class="keyword">const</span> EdgeInsets.all(<span class="number">8.0</span>),</span><br><span class="line">        padding: <span class="keyword">const</span> EdgeInsets.all(<span class="number">20.0</span>),</span><br><span class="line">        <span class="comment">// Container 的样式</span></span><br><span class="line">        decoration: BoxDecoration(</span><br><span class="line">            borderRadius: BorderRadius.circular(<span class="number">20.0</span>),</span><br><span class="line">            color: Colors.red,</span><br><span class="line"><span class="comment">//            shape: BoxShape.circle, // 该属性不可同 borderRadius 一起使用</span></span><br><span class="line">            backgroundBlendMode: BlendMode.colorDodge, <span class="comment">// 背景图片和颜色混合模式</span></span><br><span class="line">            image: DecorationImage(image: AssetImage(<span class="string">'images/ali.jpg'</span>), fit: BoxFit.cover)),</span><br><span class="line">        child: Text(<span class="string">'Container Text'</span>, style: TextStyle(color: Colors.white, fontSize: <span class="number">30.0</span>)),</span><br><span class="line"><span class="comment">//        color: Theme.of(context).primaryColor, // 该属性不可和 decoration 一起使用</span></span><br><span class="line">      )),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>效果图如下</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425163312.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425163312.png"></p>
 <p>该部分代码查看 column_main.dart 文件</p>
 <p>看到这，应该很多小伙伴注意到 margin 和 padding 属性用来和别的部件保持间距，那…那我就是不用 Container 呢(专门来挑事的…)，当然没问题，有个专门用来设置间距的部件 Padding，看名字就可以看出来作用了，修改下 child 部分代码，这边先提前用下接下来会讲的部件</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">child: Column(</span><br><span class="line">          children: &lt;Widget&gt;[</span><br><span class="line">            Text(<span class="string">'Container Text'</span>, style: TextStyle(color: Colors.white, fontSize: <span class="number">30.0</span>)),</span><br><span class="line">            Padding(</span><br><span class="line">                <span class="comment">// 需要传入一个间隔值，`Flutter` 提供了很多 EdgeInsets 来设置间隔，</span></span><br><span class="line">                <span class="comment">// 参数也很明确，可以一一尝试</span></span><br><span class="line">                padding: <span class="keyword">const</span> EdgeInsets.symmetric(vertical: <span class="number">12.0</span>),</span><br><span class="line">                <span class="comment">// 传入需要间隔的部件</span></span><br><span class="line">                child: Text(<span class="string">'Container Text'</span>, style: TextStyle(color: Colors.white, fontSize: <span class="number">30.0</span>)))</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br></pre></td></tr></table></figure>
@@ -389,7 +402,7 @@
 <p>Row 和 Column 都有主轴和副轴，如何区分呢，布局平行方向为主轴，垂直方向为副轴，我们把 Container 的 child 修改成 Column，然后把 Text 放到 Column 中，多放几个，然后自己设置 mainAxisAlignment 属性，查看布局的变化</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ... 省略相同代码</span></span><br><span class="line">child: Column(</span><br><span class="line">          mainAxisAlignment: MainAxisAlignment.spaceAround,</span><br><span class="line">          children: &lt;Widget&gt;[</span><br><span class="line">            Text(<span class="string">'Container Text 1'</span>, style: TextStyle(color: Colors.white, fontSize: <span class="number">30.0</span>)),</span><br><span class="line">            Text(<span class="string">'Container Text 2'</span>, style: TextStyle(color: Colors.white, fontSize: <span class="number">30.0</span>)),</span><br><span class="line">            Text(<span class="string">'Container Text 3'</span>, style: TextStyle(color: Colors.white, fontSize: <span class="number">30.0</span>)),</span><br><span class="line">            Text(<span class="string">'Container Text 4'</span>, style: TextStyle(color: Colors.white, fontSize: <span class="number">30.0</span>)),</span><br><span class="line">            Text(<span class="string">'Container Text 5'</span>, style: TextStyle(color: Colors.white, fontSize: <span class="number">30.0</span>)),</span><br><span class="line">          ],</span><br><span class="line">        )</span><br></pre></td></tr></table></figure>
 <p>最后的效果图如下</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425163435.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425163435.png"></p>
 <p>这边 Column 内部的子部件因为高度相同，如果不同还需要等分空间的话，就不可以通过设置 mainAxisAlignment 属性来实现了，这里介绍一个等分的部件 Expanded</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> Expanded(&#123;</span><br><span class="line">    Key key,</span><br><span class="line">    <span class="built_in">int</span> flex = <span class="number">1</span>, <span class="comment">// 所占比例</span></span><br><span class="line">    <span class="meta">@required</span> Widget child, <span class="comment">// 子部件</span></span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
 <p>直接给 Text 外层加一个 Expanded 即可实现效果，当然可以按照需求来设置 flex 来修改比例值。</p>
@@ -399,14 +412,14 @@
 <p>既然遇到问题，当然要解决，不然和产品去撕逼吗..？这边，我们把 Row 换成另一个布局 Wrap 然后再运行，Prefect，Wrap 和 Row 的参数基本类似</p>
 <h3 id="3、Wrap"><a href="#3、Wrap" class="headerlink" title="3、Wrap"></a>3、Wrap</h3><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">Wrap(&#123;</span><br><span class="line">    Key key,</span><br><span class="line">    <span class="keyword">this</span>.direction = Axis.horizontal,</span><br><span class="line">    <span class="keyword">this</span>.alignment = WrapAlignment.start,</span><br><span class="line">    <span class="keyword">this</span>.spacing = <span class="number">0.0</span>, <span class="comment">// 两个子部件之间的间隔，默认 0.0，如果值过大，可能导致原来同行的两个部件分行</span></span><br><span class="line">    <span class="keyword">this</span>.runAlignment = WrapAlignment.start, </span><br><span class="line">    <span class="keyword">this</span>.runSpacing = <span class="number">0.0</span>, <span class="comment">// 排布方向上 两个子部件的间隔</span></span><br><span class="line">    <span class="keyword">this</span>.crossAxisAlignment = WrapCrossAlignment.start,</span><br><span class="line">    <span class="keyword">this</span>.textDirection,</span><br><span class="line">    <span class="keyword">this</span>.verticalDirection = VerticalDirection.down,</span><br><span class="line">    <span class="built_in">List</span>&lt;Widget&gt; children = <span class="keyword">const</span> &lt;Widget&gt;[],</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
 <p>当然，很多时候只有以上的布局是不行的，比如我们需要实现一个圆形头像，然后一段文字在其上面 ，例如下面的效果</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425163555.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425163555.png"></p>
 <p>接下来介绍一个堆叠的部件 Stack，源码比较简单，就不贴了，直接上效果代码</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HomePage</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      body: Center(</span><br><span class="line">          child: Stack(</span><br><span class="line">        <span class="comment">// 内部子部件的对齐方式</span></span><br><span class="line">        alignment: Alignment.center,</span><br><span class="line">        children: &lt;Widget&gt;[</span><br><span class="line">          <span class="comment">// 圆形头像，指定半径，指定背景图为头像即可</span></span><br><span class="line">          CircleAvatar(backgroundImage: AssetImage(<span class="string">'images/ali.jpg'</span>), radius: <span class="number">100.0</span>),</span><br><span class="line">          Text(</span><br><span class="line">            <span class="string">'Kuky'</span>, style: TextStyle(color: Colors.white, fontSize: <span class="number">34.0</span>)),</span><br><span class="line">        ],</span><br><span class="line">      )),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>如果我们需要第三个部件，底部距离圆形头像10px，那么只靠 alignment 是不可能实现了</p>
 <p>所以，另外一个灰常流弊的部件就出来了 Positioned，其源码也比较简单，我还是不贴了吧~，还是直接上代码，直接修改</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HomePage</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      body: Center(</span><br><span class="line">          child: Stack(</span><br><span class="line">        alignment: Alignment.center,</span><br><span class="line">        children: &lt;Widget&gt;[</span><br><span class="line">          CircleAvatar(backgroundImage: AssetImage(<span class="string">'images/ali.jpg'</span>), radius: <span class="number">100.0</span>),</span><br><span class="line">          Text(</span><br><span class="line">            <span class="string">'Kuky'</span>,</span><br><span class="line">            style: TextStyle(color: Colors.white, fontSize: <span class="number">34.0</span>),</span><br><span class="line">          ),</span><br><span class="line">          Positioned(child: Text(<span class="string">'另外一段文字'</span>, style: TextStyle(color: Colors.white, fontSize: <span class="number">20.0</span>)), bottom: <span class="number">10.0</span>), <span class="comment">// left, right, top, bottom 分别表示和 stack 的间距</span></span><br><span class="line">        ],</span><br><span class="line">      )),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>最后的效果图如下</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425163821.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425163821.png"></p>
 <p>很好，今天填了布局的这个大坑，而且讲的部件貌似还挺多的，虽然还是比较简单，剩下的就给小伙伴们慢慢消化今天的内容。</p>
 <p>下节，除了有常用的部件外，我会尽量加上实战内容</p>
 <p>代码地址:</p>
@@ -417,6 +430,8 @@
     
     
     
+      
+
         
       
         
@@ -484,6 +499,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1061,6 +1085,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1076,6 +1105,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1197,8 +1235,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1213,6 +1283,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/14587b6a.html";
+    this.page.identifier = "posts/14587b6a.html";
+    this.page.title = 'Flutter入门指南(四)常用布局';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

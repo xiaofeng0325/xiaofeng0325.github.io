@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -61,20 +62,9 @@
 <meta property="og:url" content="https://zhangmiao.cc/posts/9e398b2.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175552.png">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fycfchdd5uj30qy078jsz.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fycfezi4g7j30pi06kdhd.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fycffzzrvmj30po0723zj.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fycfgrcmguj30ma05amxv.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fycgfsi0urj30ly04o3z5.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fycfj0gt3vj30mg058q3g.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fycfk3xvtvj30nq05274u.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fycfkri4lzj30r204kmy5.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fycflbykyvj30pw04adh0.jpg">
 <meta property="og:updated_time" content="2019-05-16T07:44:23.980Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpannableString之富文本显示效果">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175552.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/9e398b2">
 
@@ -283,6 +273,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -365,6 +356,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/9e398b2.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/9e398b2.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -375,39 +382,39 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175552.png" alt=""></p>
+        <p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190505175552.png"></p>
 <a id="more"></a>
 <h4 id="TextViewSpannableString"><a href="#TextViewSpannableString" class="headerlink" title="TextViewSpannableString"></a><a href="https://github.com/zhangmiaocc/TextViewSpannableString" target="_blank" rel="noopener"><code>TextViewSpannableString</code></a></h4><h3 id="一：简介"><a href="#一：简介" class="headerlink" title="一：简介"></a>一：简介</h3><p><strong>SpannableString</strong>其实和<strong>String</strong>一样，都是一种字符串类型，<strong>SpannableString</strong>可以直接作为TextView的显示文本，不同的是<strong>SpannableString</strong>可以通过使用其方法<strong>setSpan方法</strong>实现字符串各种形式风格的显示,重要的是可以指定设置的区间，也就是为字符串指定下标区间内的子字符串设置格式。</p>
 <p><code>setSpan(Object what, int start, int end, int flags)</code>方法需要用户输入四个参数，<code>what</code>表示设置的格式是什么，可以是前景色、背景色也可以是可点击的文本等等，<code>start</code>表示需要设置格式的子字符串的起始下标，同理<code>end</code>表示终了下标，<code>flags</code>属性就有意思了，共有四种属性：</p>
 <p><code>Spanned.SPAN_INCLUSIVE_EXCLUSIVE</code> 从起始下标到终了下标，包括起始下标<br><code>Spanned.SPAN_INCLUSIVE_INCLUSIVE</code> 从起始下标到终了下标，同时包括起始下标和终了下标<br><code>Spanned.SPAN_EXCLUSIVE_EXCLUSIVE</code> 从起始下标到终了下标，但都不包括起始下标和终了下标<br><code>Spanned.SPAN_EXCLUSIVE_INCLUSIVE</code> 从起始下标到终了下标，包括终了下标</p>
 <p>SpannableString的setSpan()方法可以同时使用多个，实现多种效果叠加。</p>
-<h3 id="二：Span常用的格式"><a href="#二：Span常用的格式" class="headerlink" title="二：Span常用的格式"></a>二：Span常用的格式</h3><h4 id="2-1：ForegroundColorSpan"><a href="#2-1：ForegroundColorSpan" class="headerlink" title="2.1：ForegroundColorSpan"></a>2.1：ForegroundColorSpan</h4><p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fycfchdd5uj30qy078jsz.jpg" alt=""></p>
+<h3 id="二：Span常用的格式"><a href="#二：Span常用的格式" class="headerlink" title="二：Span常用的格式"></a>二：Span常用的格式</h3><h4 id="2-1：ForegroundColorSpan"><a href="#2-1：ForegroundColorSpan" class="headerlink" title="2.1：ForegroundColorSpan"></a>2.1：ForegroundColorSpan</h4><p><img alt="" data-src="https://ws4.sinaimg.cn/large/006tNbRwly1fycfchdd5uj30qy078jsz.jpg"></p>
 <p><code>ForegroundColorSpan</code>，为文本设置前景色，效果和TextView的setTextColor()类似，实现方法如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SpannableString spannableString = <span class="keyword">new</span> SpannableString(<span class="string">"设置文字的前景色为淡蓝色"</span>);</span><br><span class="line">ForegroundColorSpan colorSpan = <span class="keyword">new</span> ForegroundColorSpan(Color.parseColor(<span class="string">"#0099EE"</span>));</span><br><span class="line">spannableString.setSpan(colorSpan, <span class="number">9</span>, spannableString.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE); </span><br><span class="line">textView.setText(spannableString);</span><br></pre></td></tr></table></figure>
 <p>设置的区间是9到字符串的最后，也就是图中“淡蓝色”三字。</p>
-<h4 id="2-2：BackgroundColorSpan"><a href="#2-2：BackgroundColorSpan" class="headerlink" title="2.2：BackgroundColorSpan"></a>2.2：BackgroundColorSpan</h4><p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fycfezi4g7j30pi06kdhd.jpg" alt=""></p>
+<h4 id="2-2：BackgroundColorSpan"><a href="#2-2：BackgroundColorSpan" class="headerlink" title="2.2：BackgroundColorSpan"></a>2.2：BackgroundColorSpan</h4><p><img alt="" data-src="https://ws4.sinaimg.cn/large/006tNbRwly1fycfezi4g7j30pi06kdhd.jpg"></p>
 <p><code>BackgroundColorSpan</code>，为文本设置背景色，效果和TextView的setBackground()类，实现方法如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SpannableString spannableString = <span class="keyword">new</span> SpannableString(<span class="string">"设置文字的背景色为淡绿色"</span>);</span><br><span class="line">BackgroundColorSpan colorSpan = <span class="keyword">new</span> BackgroundColorSpan(Color.parseColor(<span class="string">"#AC00FF30"</span>));</span><br><span class="line">spannableString.setSpan(colorSpan, <span class="number">9</span>, spannableString.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);</span><br><span class="line">textView.setText(spannableString);</span><br></pre></td></tr></table></figure>
-<h4 id="2-3：RelativeSizeSpan"><a href="#2-3：RelativeSizeSpan" class="headerlink" title="2.3：RelativeSizeSpan"></a>2.3：RelativeSizeSpan</h4><p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fycffzzrvmj30po0723zj.jpg" alt=""></p>
+<h4 id="2-3：RelativeSizeSpan"><a href="#2-3：RelativeSizeSpan" class="headerlink" title="2.3：RelativeSizeSpan"></a>2.3：RelativeSizeSpan</h4><p><img alt="" data-src="https://ws4.sinaimg.cn/large/006tNbRwly1fycffzzrvmj30po0723zj.jpg"></p>
 <p><code>RelativeSizeSpan</code>，设置文字相对大小，在TextView原有的文字大小的基础上，相对设置文字大小，实现方法如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SpannableString spannableString = <span class="keyword">new</span> SpannableString(<span class="string">"万丈高楼平地起"</span>);</span><br><span class="line"></span><br><span class="line">RelativeSizeSpan sizeSpan01 = <span class="keyword">new</span> RelativeSizeSpan(<span class="number">1.2f</span>);</span><br><span class="line">RelativeSizeSpan sizeSpan02 = <span class="keyword">new</span> RelativeSizeSpan(<span class="number">1.4f</span>);</span><br><span class="line">RelativeSizeSpan sizeSpan03 = <span class="keyword">new</span> RelativeSizeSpan(<span class="number">1.6f</span>);</span><br><span class="line">RelativeSizeSpan sizeSpan04 = <span class="keyword">new</span> RelativeSizeSpan(<span class="number">1.8f</span>);</span><br><span class="line">RelativeSizeSpan sizeSpan05 = <span class="keyword">new</span> RelativeSizeSpan(<span class="number">1.6f</span>);</span><br><span class="line">RelativeSizeSpan sizeSpan06 = <span class="keyword">new</span> RelativeSizeSpan(<span class="number">1.4f</span>);</span><br><span class="line">RelativeSizeSpan sizeSpan07 = <span class="keyword">new</span> RelativeSizeSpan(<span class="number">1.2f</span>);</span><br><span class="line"></span><br><span class="line">spannableString.setSpan(sizeSpan01, <span class="number">0</span>, <span class="number">1</span>, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);</span><br><span class="line">spannableString.setSpan(sizeSpan02, <span class="number">1</span>, <span class="number">2</span>, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);</span><br><span class="line">spannableString.setSpan(sizeSpan03, <span class="number">2</span>, <span class="number">3</span>, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);</span><br><span class="line">spannableString.setSpan(sizeSpan04, <span class="number">3</span>, <span class="number">4</span>, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);</span><br><span class="line">spannableString.setSpan(sizeSpan05, <span class="number">4</span>, <span class="number">5</span>, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);</span><br><span class="line">spannableString.setSpan(sizeSpan06, <span class="number">5</span>, <span class="number">6</span>, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);</span><br><span class="line">spannableString.setSpan(sizeSpan07, <span class="number">6</span>, <span class="number">7</span>, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);</span><br><span class="line">textView.setText(spannableString);</span><br></pre></td></tr></table></figure>
-<h4 id="2-4：StrikethroughSpan"><a href="#2-4：StrikethroughSpan" class="headerlink" title="2.4：StrikethroughSpan"></a>2.4：StrikethroughSpan</h4><p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fycfgrcmguj30ma05amxv.jpg" alt=""></p>
+<h4 id="2-4：StrikethroughSpan"><a href="#2-4：StrikethroughSpan" class="headerlink" title="2.4：StrikethroughSpan"></a>2.4：StrikethroughSpan</h4><p><img alt="" data-src="https://ws2.sinaimg.cn/large/006tNbRwly1fycfgrcmguj30ma05amxv.jpg"></p>
 <p><code>StrikethroughSpan</code>，为文本设置中划线，也就是常说的删除线，实现方法如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SpannableString spannableString = <span class="keyword">new</span> SpannableString(<span class="string">"为文字设置删除线"</span>);</span><br><span class="line">StrikethroughSpan strikethroughSpan = <span class="keyword">new</span> StrikethroughSpan();</span><br><span class="line">spannableString.setSpan(strikethroughSpan, <span class="number">5</span>, spannableString.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);</span><br><span class="line">textView.setText(spannableString);</span><br></pre></td></tr></table></figure>
-<h4 id="2-5：UnderlineSpan"><a href="#2-5：UnderlineSpan" class="headerlink" title="2.5：UnderlineSpan"></a>2.5：UnderlineSpan</h4><p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fycgfsi0urj30ly04o3z5.jpg" alt=""></p>
+<h4 id="2-5：UnderlineSpan"><a href="#2-5：UnderlineSpan" class="headerlink" title="2.5：UnderlineSpan"></a>2.5：UnderlineSpan</h4><p><img alt="" data-src="https://ws1.sinaimg.cn/large/006tNbRwly1fycgfsi0urj30ly04o3z5.jpg"></p>
 <p><code>UnderlineSpan</code>，为文本设置下划线，具体实现方法如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SpannableString spannableString = <span class="keyword">new</span> SpannableString(<span class="string">"为文字设置下划线"</span>);</span><br><span class="line">UnderlineSpan underlineSpan = <span class="keyword">new</span> UnderlineSpan();</span><br><span class="line">spannableString.setSpan(underlineSpan, <span class="number">5</span>, spannableString.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);</span><br><span class="line">textView.setText(spannableString);</span><br></pre></td></tr></table></figure>
-<h4 id="2-6：SuperscriptSpan"><a href="#2-6：SuperscriptSpan" class="headerlink" title="2.6：SuperscriptSpan"></a>2.6：SuperscriptSpan</h4><p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fycfj0gt3vj30mg058q3g.jpg" alt=""></p>
+<h4 id="2-6：SuperscriptSpan"><a href="#2-6：SuperscriptSpan" class="headerlink" title="2.6：SuperscriptSpan"></a>2.6：SuperscriptSpan</h4><p><img alt="" data-src="https://ws3.sinaimg.cn/large/006tNbRwly1fycfj0gt3vj30mg058q3g.jpg"></p>
 <p><code>SuperscriptSpan</code>，设置上标，具体实现方法如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SpannableString spannableString = <span class="keyword">new</span> SpannableString(<span class="string">"为文字设置上标"</span>);</span><br><span class="line">SuperscriptSpan superscriptSpan = <span class="keyword">new</span> SuperscriptSpan();</span><br><span class="line">spannableString.setSpan(superscriptSpan, <span class="number">5</span>, spannableString.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);</span><br><span class="line">textView.setText(spannableString);</span><br></pre></td></tr></table></figure>
 <p>从效果图可以看出，被设置为上标的文字大小和下面的文本文字大小一样，只要我们稍加修饰，结合<code>RelativeSizeSpan</code>设置小字体文本作为上标，分分钟实现指数公式有木有，再也不用<code>2^2+3^2=13</code>这样缺乏审美的数学公式了，是不是超实用？</p>
-<h4 id="2-7：SubscriptSpan"><a href="#2-7：SubscriptSpan" class="headerlink" title="2.7：SubscriptSpan"></a>2.7：SubscriptSpan</h4><p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fycfk3xvtvj30nq05274u.jpg" alt=""></p>
+<h4 id="2-7：SubscriptSpan"><a href="#2-7：SubscriptSpan" class="headerlink" title="2.7：SubscriptSpan"></a>2.7：SubscriptSpan</h4><p><img alt="" data-src="https://ws4.sinaimg.cn/large/006tNbRwly1fycfk3xvtvj30nq05274u.jpg"></p>
 <p><code>SubscriptSpan</code>，设置下标，功能与设置上标类似，不做过多描述，具体实现方法如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SpannableString spannableString = <span class="keyword">new</span> SpannableString(<span class="string">"为文字设置下标"</span>);</span><br><span class="line">SubscriptSpan subscriptSpan = <span class="keyword">new</span> SubscriptSpan();</span><br><span class="line">spannableString.setSpan(subscriptSpan, <span class="number">5</span>, spannableString.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);</span><br><span class="line">textView.setText(spannableString);</span><br></pre></td></tr></table></figure>
-<h4 id="2-8：StyleSpan"><a href="#2-8：StyleSpan" class="headerlink" title="2.8：StyleSpan"></a>2.8：StyleSpan</h4><p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fycfkri4lzj30r204kmy5.jpg" alt=""></p>
+<h4 id="2-8：StyleSpan"><a href="#2-8：StyleSpan" class="headerlink" title="2.8：StyleSpan"></a>2.8：StyleSpan</h4><p><img alt="" data-src="https://ws3.sinaimg.cn/large/006tNbRwly1fycfkri4lzj30r204kmy5.jpg"></p>
 <p><code>StyleSpan</code>，为文字设置风格（粗体、斜体），和TextView属性textStyle类似，实现方法如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SpannableString spannableString = <span class="keyword">new</span> SpannableString(<span class="string">"为文字设置粗体、斜体风格"</span>);</span><br><span class="line">StyleSpan styleSpan_B  = <span class="keyword">new</span> StyleSpan(Typeface.BOLD);</span><br><span class="line">StyleSpan styleSpan_I  = <span class="keyword">new</span> StyleSpan(Typeface.ITALIC);</span><br><span class="line">spannableString.setSpan(styleSpan_B, <span class="number">5</span>, <span class="number">7</span>, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);</span><br><span class="line">spannableString.setSpan(styleSpan_I, <span class="number">8</span>, <span class="number">10</span>, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);</span><br><span class="line">textView.setHighlightColor(Color.parseColor(<span class="string">"#36969696"</span>));</span><br><span class="line">textView.setText(spannableString);</span><br></pre></td></tr></table></figure>
-<h4 id="2-9：ImageSpan"><a href="#2-9：ImageSpan" class="headerlink" title="2.9：ImageSpan"></a>2.9：ImageSpan</h4><p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fycflbykyvj30pw04adh0.jpg" alt=""></p>
+<h4 id="2-9：ImageSpan"><a href="#2-9：ImageSpan" class="headerlink" title="2.9：ImageSpan"></a>2.9：ImageSpan</h4><p><img alt="" data-src="https://ws2.sinaimg.cn/large/006tNbRwly1fycflbykyvj30pw04adh0.jpg"></p>
 <p><code>ImageSpan</code>，设置文本图片，实现方法如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SpannableString spannableString = <span class="keyword">new</span> SpannableString(<span class="string">"在文本中添加表情（表情）"</span>);</span><br><span class="line">Drawable drawable = getResources().getDrawable(R.mipmap.a9c);</span><br><span class="line">drawable.setBounds(<span class="number">0</span>, <span class="number">0</span>, <span class="number">42</span>, <span class="number">42</span>);</span><br><span class="line">ImageSpan imageSpan = <span class="keyword">new</span> ImageSpan(drawable);</span><br><span class="line">spannableString.setSpan(imageSpan, <span class="number">6</span>, <span class="number">8</span>, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);</span><br><span class="line">textView.setText(spannableString);</span><br></pre></td></tr></table></figure>
 <p>这一个是不是很炫酷？再加一个解析算法，将文本中特定的文本转换成特定的表情图片，分分钟实现聊天表情显示效果有木有啊朋友们！</p>
@@ -428,6 +435,8 @@
     
     
     
+      
+
         
       
         
@@ -495,6 +504,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1072,6 +1090,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1087,6 +1110,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1208,8 +1240,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1224,6 +1288,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/9e398b2.html";
+    this.page.identifier = "posts/9e398b2.html";
+    this.page.title = 'SpannableString之富文本显示效果';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

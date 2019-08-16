@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,12 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="入职ZTC接近两年，因为业务繁重，从入职开始一直在做业务上的需求，项目还是MVC模式开发，由此可见工程的耦合度极高，也是众多反锁的业务互相关联导致最初开发的时候没有很好的设计架构。经过大半年的边重构项目边合并老项目新需求的开发，见证了开发团队一路走来的努力，Android团队也在自己预期的想法中向前迈进。  前言在公司的发展方向上，由单一的求职平台，到人脉社交，问答社区的扩展，让我察觉到组件化必">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190514142946.png">
 <meta property="og:updated_time" content="2019-05-16T07:44:23.974Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="公司Android项目架构演进">
 <meta name="twitter:description" content="入职ZTC接近两年，因为业务繁重，从入职开始一直在做业务上的需求，项目还是MVC模式开发，由此可见工程的耦合度极高，也是众多反锁的业务互相关联导致最初开发的时候没有很好的设计架构。经过大半年的边重构项目边合并老项目新需求的开发，见证了开发团队一路走来的努力，Android团队也在自己预期的想法中向前迈进。  前言在公司的发展方向上，由单一的求职平台，到人脉社交，问答社区的扩展，让我察觉到组件化必">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190514142946.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/600a4740">
 
@@ -277,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -359,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/600a4740.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/600a4740.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -383,7 +399,7 @@
 </ul>
 <h4 id="组件化方案"><a href="#组件化方案" class="headerlink" title="组件化方案"></a>组件化方案</h4><p>现在GitHub上面流行着各大家公司开源的路由库，他们基本采用组件化的方案是</p>
 <a id="more"></a>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190514142946.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190514142946.png"></p>
 <p>这个是比较通用组件化的一个方式，当然不同厂有着会根据自己的实际情况进行改造流程，但是基本大同小异，我们五花八门讨论得最多的是不同业务组件的路由通讯协议封装，我们将一个个业务组件细化拆分，不可能最后是互相直接依赖使用导致各种混乱和耦合，我们此时需要的是路由，它帮我们管理各业务组件间有序地通讯，路由重点划一下:<strong>事件分发和动态拦截。</strong></p>
 <p>我第一期组件化的工作方向是功能模块化与业务组件化相结合。这是因为我们项目是一直遵循着模块化，对功能的整理比较好，我这边不对每一个业务进行拆分组件化，也就是不采用现很热门的路由通讯方式，因为如果我将项目弄成完全组件化，是过度封装了，导致开发成本不协调，然而目前我们首要处理的问题是业务组件复用问题，所以避免我们重复造轮子，我们先将咨询组件、支付组件、定位组件、网络请求组件、推送组件进行分离，同时优化封装图片加载库、普通工具库、Banner工具库、友盟第三方库、图片选择库、JSBridge库、地图库等非业务性的基础库。</p>
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>组件化的推进工作，从简单的分离代码，里面帮助我们更好地梳理了陈旧代码，及时整理好wiki。到享受面向过程、面向对象、面向接口、面向切面的编程乐趣。</p>
@@ -394,6 +410,8 @@
     
     
     
+      
+
         
       
         
@@ -461,6 +479,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1038,6 +1065,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1053,6 +1085,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1174,8 +1215,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1190,6 +1263,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/600a4740.html";
+    this.page.identifier = "posts/600a4740.html";
+    this.page.title = '公司Android项目架构演进';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

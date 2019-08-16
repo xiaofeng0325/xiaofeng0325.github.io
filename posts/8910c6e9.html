@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,27 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="前言作为前端工程师，我们每天都离不开用控制台调试代码，console.log也成了我们最常用的命令，那除了用console.log，还有许多console的方法可以使用，熟练掌握它们，可以让我们在控制台看到的信息更美观准确，也会大大提高我们的开发效率哦，下面就跟小肆一起来看看吧.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173111.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173133.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173226.png">
-<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173607.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173629.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173651.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173716.png">
-<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173757.png">
-<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430174030.png">
-<meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430174454.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430174653.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430174712.png">
 <meta property="og:updated_time" content="2019-05-16T07:44:23.986Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chrome的控制台,Console命令的各种用法你真的都已经了解了吗？">
 <meta name="twitter:description" content="前言作为前端工程师，我们每天都离不开用控制台调试代码，console.log也成了我们最常用的命令，那除了用console.log，还有许多console的方法可以使用，熟练掌握它们，可以让我们在控制台看到的信息更美观准确，也会大大提高我们的开发效率哦，下面就跟小肆一起来看看吧.">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173111.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/8910c6e9">
 
@@ -292,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -374,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/8910c6e9.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/8910c6e9.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -387,7 +388,7 @@
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>作为前端工程师，我们每天都离不开用控制台调试代码，<code>console.log</code>也成了我们最常用的命令，那除了用<code>console.log</code>，还有许多console的方法可以使用，熟练掌握它们，可以让我们在控制台看到的信息更美观准确，也会大大提高我们的开发效率哦，下面就跟小肆一起来看看吧.</p>
 <a id="more"></a>
 <h3 id="Chrome的控制台"><a href="#Chrome的控制台" class="headerlink" title="Chrome的控制台"></a>Chrome的控制台</h3><p>大部分常用浏览器都有各自的控制台，不过小肆用着最习惯的还是Chrome的控制台，打开chrome，win系统按F12，mac系统按command+option+J就可以呼出控制台了，切换到Console标签就能看到如下信息：</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173111.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173111.png"></p>
 <p>我们可以看到，baidu还在控制台给我们留了个小彩蛋，我想这个彩蛋也是为我们程序员同学留的吧。让我们先学第一个命令清除控制台来开始吧。</p>
 <h2 id="清除控制台"><a href="#清除控制台" class="headerlink" title="清除控制台"></a>清除控制台</h2><p>在chorme下清除控制台的方法有很多：</p>
 <ul>
@@ -398,9 +399,9 @@
 <h2 id="显示信息的命令"><a href="#显示信息的命令" class="headerlink" title="显示信息的命令"></a>显示信息的命令</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'技术放肆聊'</span>)     <span class="comment">// 输出普通信息</span></span><br><span class="line"><span class="built_in">console</span>.info(<span class="string">'技术放肆聊'</span>)    <span class="comment">// 输出提示信息</span></span><br><span class="line"><span class="built_in">console</span>.warn(<span class="string">'技术放肆聊'</span>)    <span class="comment">// 输出警告信息</span></span><br><span class="line"><span class="built_in">console</span>.error(<span class="string">'技术放肆聊'</span>)   <span class="comment">// 输出错误信息</span></span><br><span class="line"><span class="built_in">console</span>.debug(<span class="string">'技术放肆聊'</span>)   <span class="comment">// 输出调试信息</span></span><br></pre></td></tr></table></figure>
 <p><code>console.log</code>、<code>console.info</code>、<code>console.debug</code>这三个命令可以理解为一个，我们只需要用<code>console.log</code>就行，并且chrome还不支持<code>console.debug</code>命令。</p>
 <p><code>console.warn</code>命令输出警告信息，信息前带有黄色警告符号。<br><code>console.error</code>输出错误信息，信息前带有红色错误符号，表示出错，同时会显示错误发生的堆栈。<br>上段代码在chrome控制台输出效果如下:</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173133.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173133.png"></p>
 <p>在safari输出效果如下:</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173226.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173226.png"></p>
 <h3 id="占位符"><a href="#占位符" class="headerlink" title="占位符"></a>占位符</h3><p>console上述的命令支持printf的占位符格式，支持的占位符有：字符（%s）、整数（%d或%i）、浮点数（%f）和对象（%o）:</p>
 <table>
 <thead>
@@ -438,27 +439,27 @@
 </table>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//字符(%s)</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"%s"</span>,<span class="string">"技术放肆聊"</span>);</span><br><span class="line"><span class="comment">//整数(%d或%i)</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"%d年%d月%d日"</span>,<span class="number">2019</span>,<span class="number">1</span>,<span class="number">6</span>); </span><br><span class="line"><span class="comment">//浮点数(%f)</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"PI=%f"</span>,<span class="number">3.1415926</span>);</span><br></pre></td></tr></table></figure>
 <p>显示效果如下：</p>
-<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图4"><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173607.png" alt=""></p>
+<p><img alt="图4" data-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173607.png"></p>
 <p>%o、%O 都是用来输出 Object 对象的，对普通的 Object 对象，两者没区别，但是打印dom节点时就不一样了：</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173629.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173629.png"></p>
 <p>%c 占位符是最常用的。使用 %c 占位符时，对应的后面的参数必须是 CSS 语句，用来对输出内容进行 CSS 渲染。常见的输出方式有两种：文字样式、图片输出。</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173651.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173651.png"></p>
 <h2 id="信息分组"><a href="#信息分组" class="headerlink" title="信息分组"></a>信息分组</h2><p><code>console.group()</code>用于将显示的信息分组，可以把信息进行折叠和展开。<br><code>console.groupEnd()</code>结束内联分组</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173716.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173716.png"></p>
 <h2 id="将对象以树状结构展现"><a href="#将对象以树状结构展现" class="headerlink" title="将对象以树状结构展现"></a>将对象以树状结构展现</h2><p><code>console.dir()</code>可以显示一个对象所有的属性和方法.</p>
-<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图8"><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173757.png" alt=""></p>
+<p><img alt="图8" data-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173757.png"></p>
 <h2 id="显示某个节点的内容"><a href="#显示某个节点的内容" class="headerlink" title="显示某个节点的内容"></a>显示某个节点的内容</h2><p><code>console.dirxml()</code>用来显示网页的某个节点(node)所包含的html/xml代码</p>
-<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图9"><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430174030.png" alt=""></p>
+<p><img alt="图9" data-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430174030.png"></p>
 <h2 id="判断变量是否是真"><a href="#判断变量是否是真" class="headerlink" title="判断变量是否是真"></a>判断变量是否是真</h2><p><code>console.assert()</code>用来判断一个表达式或变量是否为真，<br>此方法接受两个参数，第一个参数是表达式，第二个参数是字符串。只有当第一个参数为false，才会输出第二个参数，否则不会有任何结果。</p>
-<p><img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" alt="图10"><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430174454.png" alt=""></p>
+<p><img alt="图10" data-src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430174454.png"></p>
 <h2 id="计时功能"><a href="#计时功能" class="headerlink" title="计时功能"></a>计时功能</h2><p><code>console.time()</code>和<code>console.timeEnd()</code>，用来显示代码的运行时间</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">console.time(<span class="string">"控制台计时器"</span>);</span><br><span class="line"><span class="keyword">for</span>(var i = <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(var j = <span class="number">0</span>; j &lt; <span class="number">10000</span>; j++)&#123;&#125;       </span><br><span class="line">&#125;</span><br><span class="line">console.timeEnd(<span class="string">"控制台计时器"</span>);</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430174653.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430174653.png"></p>
 <h2 id="性能分析performance-profile"><a href="#性能分析performance-profile" class="headerlink" title="性能分析performance profile"></a>性能分析performance profile</h2><p><code>console.profile()</code>和<code>console.proileEnd()</code>用来分析程序各个部分的运行时间，找出瓶颈所在。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">All</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;</span><br><span class="line">         funcA(<span class="number">100</span>);</span><br><span class="line">     &#125;</span><br><span class="line">     funcB(<span class="number">1000</span>);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">funcA</span>(<span class="params">count</span>)</span>&#123;</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; count; i++)&#123;&#125;;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcB</span>(<span class="params">count</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; count; i++)&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.profile(<span class="string">"性能分析器"</span>);</span><br><span class="line">All();</span><br><span class="line"><span class="built_in">console</span>.profileEnd();</span><br></pre></td></tr></table></figure>
 <p>详细的信息在chrome控制台里的”profile”选项里查看</p>
 <h2 id="console-count-统计代码被执行的次数"><a href="#console-count-统计代码被执行的次数" class="headerlink" title="console.count()统计代码被执行的次数"></a>console.count()统计代码被执行的次数</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.count(<span class="string">"myFunction 被执行的次数"</span>);</span><br><span class="line">&#125;</span><br><span class="line">myFunction();       <span class="comment">//myFunction 被执行的次数: 1</span></span><br><span class="line">myFunction();       <span class="comment">//myFunction 被执行的次数: 2</span></span><br><span class="line">myFunction();       <span class="comment">//myFunction 被执行的次数: 3</span></span><br></pre></td></tr></table></figure>
-<h2 id="console-table表格显示方法"><a href="#console-table表格显示方法" class="headerlink" title="console.table表格显示方法"></a>console.table表格显示方法</h2><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430174712.png" alt=""></p>
+<h2 id="console-table表格显示方法"><a href="#console-table表格显示方法" class="headerlink" title="console.table表格显示方法"></a>console.table表格显示方法</h2><p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430174712.png"></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>合理的利用console的各种方法，会使我们的调试过程更加愉悦，今天的分享就到这里了，记得右下角点好看呦！</p>
 <p>转自：<a href="https://mp.weixin.qq.com/s/8jcqYIPZGQVsLo3fou41Zw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/8jcqYIPZGQVsLo3fou41Zw</a></p>
 
@@ -467,6 +468,8 @@
     
     
     
+      
+
         
       
         
@@ -534,6 +537,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1111,6 +1123,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1126,6 +1143,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1247,8 +1273,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1263,6 +1321,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/8910c6e9.html";
+    this.page.identifier = "posts/8910c6e9.html";
+    this.page.title = 'Chrome的控制台,Console命令的各种用法你真的都已经了解了吗？';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

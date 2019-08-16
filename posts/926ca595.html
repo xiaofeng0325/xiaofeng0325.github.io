@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -61,29 +62,9 @@
 <meta property="og:url" content="https://zhangmiao.cc/posts/926ca595.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190531171839.png">
-<meta property="og:image" content="https://segmentfault.com/img/remote/1460000012869673">
-<meta property="og:image" content="https://segmentfault.com/img/remote/1460000011150040">
-<meta property="og:image" content="https://segmentfault.com/img/remote/1460000011150041">
-<meta property="og:image" content="https://segmentfault.com/img/remote/1460000011150042">
-<meta property="og:image" content="https://segmentfault.com/img/remote/1460000011150043">
-<meta property="og:image" content="https://segmentfault.com/img/remote/1460000011150044">
-<meta property="og:image" content="https://segmentfault.com/img/remote/1460000011150045">
-<meta property="og:image" content="https://segmentfault.com/img/remote/1460000011150046">
-<meta property="og:image" content="https://segmentfault.com/img/remote/1460000011150047">
-<meta property="og:image" content="https://segmentfault.com/img/remote/1460000011150048">
-<meta property="og:image" content="https://segmentfault.com/img/remote/1460000011150049">
-<meta property="og:image" content="https://segmentfault.com/img/remote/1460000011150050">
-<meta property="og:image" content="https://segmentfault.com/img/remote/1460000011150051">
-<meta property="og:image" content="https://segmentfault.com/img/remote/1460000011150052">
-<meta property="og:image" content="https://segmentfault.com/img/remote/1460000011150053">
-<meta property="og:image" content="https://segmentfault.com/img/remote/1460000011150054">
-<meta property="og:image" content="https://segmentfault.com/img/remote/1460000011150055">
-<meta property="og:image" content="https://segmentfault.com/img/remote/1460000011150056">
 <meta property="og:updated_time" content="2019-05-31T09:19:40.634Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网易严选App感受Weex开发">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190531171839.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/926ca595">
 
@@ -292,6 +273,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -374,6 +356,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/926ca595.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/926ca595.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -384,7 +382,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190531171839.png" alt=""></p>
+        <p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190531171839.png"></p>
 <a id="more"></a>
 <blockquote>
 <p>此处是 demo 源码：<br><a href="https://github.com/zwwill/yanxuan-weex-demo" target="_blank" rel="noopener">https://github.com/zwwill/yanxuan-weex-demo</a></p>
@@ -423,7 +421,7 @@
 <p>a) JDK1.8+<br>b) Show Package Details<br>c) Android SDK Build Tools<br>d) Android Support Repository</p>
 <p><strong>配置基础环境：</strong><br>a) ANDROID_HOME （如运行是遇到问题可参考此文 <a href="http://www.jianshu.com/p/a77396301b22" target="_blank" rel="noopener">http://www.jianshu.com/p/a77396301b22</a>）<br>b) JAVA_HOME</p>
 <h2 id="Hello-Weex"><a href="#Hello-Weex" class="headerlink" title="Hello Weex"></a>Hello Weex</h2><p>官方文档上的入门 Hello world 是 web 端的，紧接着介绍了如何「<strong>集成 Weex 到已有应用</strong>」</p>
-<p><img src="https://segmentfault.com/img/remote/1460000012869673" alt="img"></p>
+<p><img alt="img" data-src="https://segmentfault.com/img/remote/1460000012869673"></p>
 <p>但是，身为一个 web 前端开发者，如果你不懂原生语音的话，介绍这些并不能起到很好的引导作用，因为web前端开发者都有「<strong>一统前端界</strong>」的野心（Web+Android+IOS），「寄人篱下」只能是暂时的。</p>
 <p>快速创建并运行一个纯 Weex App 对于「纯」前端同学来说，才是有意思的事儿。<br>但：</p>
 <blockquote>
@@ -565,11 +563,11 @@
 <h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>此方法多用于解决 bug，检测控件的布局问题</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 调试单个页面</span><br><span class="line">$ weex debug your_weex.vue</span><br><span class="line"># 调试整个工程</span><br><span class="line">$weex debug your/path -e App.vue</span><br></pre></td></tr></table></figure>
 <p>执行调试命令后，会将指定的文件打包成 JSBundle，并启动一个 weex Devtool 服务（<a href="http://localhost/" target="_blank" rel="noopener">http://localhost</a>:8088可访问，如下图），同时将 JSBundle 文件传递至该服务跟路径下的weex文件夹内（<a href="http://localhost/" target="_blank" rel="noopener">http://localhost</a>:8088/weex/App.js，实际是下图右边二维码的的内容）。</p>
-<p><img src="https://segmentfault.com/img/remote/1460000011150040" alt="img"></p>
+<p><img alt="img" data-src="https://segmentfault.com/img/remote/1460000011150040"></p>
 <p>使用 Weex Playground App 扫下左二维码进入调试模，见下图</p>
-<p><img src="https://segmentfault.com/img/remote/1460000011150041" alt="img"></p>
+<p><img alt="img" data-src="https://segmentfault.com/img/remote/1460000011150041"></p>
 <p>再次扫码右方二维码，点击【inspector】即可进入调试模式。</p>
-<p><img src="https://segmentfault.com/img/remote/1460000011150042" alt="img"></p>
+<p><img alt="img" data-src="https://segmentfault.com/img/remote/1460000011150042"></p>
 <p>每一个控件都是相同的数据结构</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;view class=&quot;WXText&quot; frame=&quot;&#123;&#123;0,0&#125;,&#123;414,736&#125;&#125;&quot; hidden=&quot;NO&quot; alpha=&quot;1&quot; opaque=&quot;YES&quot;&gt;&lt;/view&gt;</span><br></pre></td></tr></table></figure>
 <ul>
@@ -583,16 +581,16 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ weex your_weex.vue</span><br></pre></td></tr></table></figure>
 <p>如果出现 access 权限报错，使用管理员指令</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ sudo weex your_weex.vue</span><br></pre></td></tr></table></figure>
-<p><img src="https://segmentfault.com/img/remote/1460000011150043" alt="img"></p>
+<p><img alt="img" data-src="https://segmentfault.com/img/remote/1460000011150043"></p>
 <p>此时本地同时启动一个watch的服务器用于检查代码变更，自动重新构建 JSBundle，视觉同步刷新。</p>
 <p>上图看到的效果即为H5页面的效果，我们一般在整个单页编写完成后在使用 Weex Playground App 扫码查看真机效果，或者你也可以在编写的同时使用真机观察代码的运行效果，每次重新构建包到重绘的速度还是很快的。</p>
 <p>但前提是你要保证，你的手机和电脑的连在同一个局域网下，并且使用IP访问。</p>
-<h1 id="Weex-的原理"><a href="#Weex-的原理" class="headerlink" title="Weex 的原理"></a>Weex 的原理</h1><p><img src="https://segmentfault.com/img/remote/1460000011150044" alt="img"></p>
+<h1 id="Weex-的原理"><a href="#Weex-的原理" class="headerlink" title="Weex 的原理"></a>Weex 的原理</h1><p><img alt="img" data-src="https://segmentfault.com/img/remote/1460000011150044"></p>
 <p>虽然说，Weex 可以抹平三端开发的差异，但是知其然也应知其所以然使用起来才能游刃有余。</p>
 <h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><p>熟悉 React Native 的人都知道， React Native 的发布实际上就是发布一个 JSBundle，Weex 也是这样，但不同的是，Weex 将工程进行分包，发布多个 JSBundle。因为 Weex 是单页独立开发的，每个页面都将通过 Weex 打包器将 vue/we 页面打包成一个单独的 JSBundle，这样的好处在于减少单个 bundle 包的大小，使其变的足够小巧轻量，提高增量更新的效率。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 仅打包</span><br><span class="line">$ npm run build</span><br><span class="line"># 打包+构建</span><br><span class="line">$ weex build ios</span><br><span class="line"># 打包+构建+安装执行</span><br><span class="line">$ weex run ios</span><br></pre></td></tr></table></figure>
 <p>以上三种均会触发 Weex 对工程进行打包。<br>在我们执行了以上打包命令后，所有的工程文件将被单独打成一个独立的 JSBundle，如下：</p>
-<p><img src="https://segmentfault.com/img/remote/1460000011150045" alt="img"></p>
+<p><img alt="img" data-src="https://segmentfault.com/img/remote/1460000011150045"></p>
 <p>打包后的 JSBundle 有两种格式</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 由.vue文件打包出来的包格式（简写），使用 vue 2.0 语法编写</span><br><span class="line">// &#123; &quot;framework&quot;: &quot;Vue&quot;&#125; </span><br><span class="line">/******/ (function(modules) &#123; </span><br><span class="line">          .......</span><br><span class="line">/******/ &#125;)</span><br><span class="line"># 由.we文件打包出来的包格式（简写），使用 weex 语法编写</span><br><span class="line">// &#123; &quot;framework&quot;: &quot;Weex&quot; &#125;</span><br><span class="line">/******/ (function(modules) &#123; </span><br><span class="line">          .......</span><br><span class="line">/******/ &#125;)</span><br></pre></td></tr></table></figure>
 <p>不同的头部是要告诉使用什么语法解析此JSBundle。</p>
@@ -611,11 +609,11 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  tag: &apos;div&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    staticStyle: &#123; justifyContent: &apos;center&apos; &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  children: [&#123;</span><br><span class="line">    tag: &apos;text&apos;,</span><br><span class="line">    data: &#123;</span><br><span class="line">      staticClass: &apos;txt&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    context: &#123;</span><br><span class="line">      $options: &#123;</span><br><span class="line">        style: &#123;</span><br><span class="line">          freestyle: &#123;</span><br><span class="line">            textAlign: &apos;center&apos;,</span><br><span class="line">            fontSize: 200</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    children: [&#123;</span><br><span class="line">      tag: &apos;&apos;,</span><br><span class="line">      text: &apos;文字&apos;</span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>有了统一的 VNode 节点，各端即可根据自己的方法解析渲染原生UI了，之前的所有操作都是一致的，包括文件格式、打包编译过程、模板指令、组件的生命周期、数据绑定等。</p>
 <p>然而由于目标执行环境不同（浏览器和 Weex 容器），在渲染真实原生 UI 的时候调用的接口也不同。</p>
-<p><img src="https://segmentfault.com/img/remote/1460000011150046" alt="img"></p>
+<p><img alt="img" data-src="https://segmentfault.com/img/remote/1460000011150046"></p>
 <p>此过程发生在【Weex SDK】的【Weex Runtime】中。</p>
 <p>最总【Weex Runtime】发起渲染指令<code>callNative({...})</code>有RenderEngine完成渲染</p>
-<p><img src="https://segmentfault.com/img/remote/1460000011150047" alt="img"></p>
-<p><img src="https://segmentfault.com/img/remote/1460000011150048" alt="img"></p>
+<p><img alt="img" data-src="https://segmentfault.com/img/remote/1460000011150047"></p>
+<p><img alt="img" data-src="https://segmentfault.com/img/remote/1460000011150048"></p>
 <h2 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h2><ul>
 <li>Weex 文件分包打包成单个 JSBundle 文件</li>
 <li>发布到发包服务器上，通过热更新 push 到用户的客户端，交由【Weex SDK】执行解析</li>
@@ -624,29 +622,29 @@
 <li>【Native RenderEngine】接收到指令后执行渲染操作，作出渲染出完整的界面</li>
 </ul>
 <p>官方配图：</p>
-<p><img src="https://segmentfault.com/img/remote/1460000011150049" alt="img"></p>
+<p><img alt="img" data-src="https://segmentfault.com/img/remote/1460000011150049"></p>
 <p>扩充配图：</p>
-<p><img src="https://segmentfault.com/img/remote/1460000011150050" alt="img"></p>
+<p><img alt="img" data-src="https://segmentfault.com/img/remote/1460000011150050"></p>
 <h1 id="Weex-的工作模式"><a href="#Weex-的工作模式" class="headerlink" title="Weex 的工作模式"></a>Weex 的工作模式</h1><h2 id="1-全页模式"><a href="#1-全页模式" class="headerlink" title="1. 全页模式"></a>1. 全页模式</h2><p>目前支持单页使用或整个 App 使用 Weex 开发（还不完善，需要开发 Router 和生命周期管理）。</p>
 <p>本文先行的严选 demo 便是使用第二种全屏模式，使用 Weex 开发整个 App，期间触碰到 Weex 的在此模式下诸多不足，如 StatusBar 控制、Tab 切换、开场动画自定义、3DTouch、 Widget 等等原生的特色功能没有现成的 API，需要我们自己扩展，甚至扩展不了。因此并不能完全“灭掉”原生。</p>
 <p>所以，目前在阿里内部使用较多的是此模式中的单页模式，这也是为什么官方文档在介绍原理后就直接奔入<strong>集成到原生应用</strong>的主题上去了。</p>
-<p><img src="https://segmentfault.com/img/remote/1460000011150051" alt="img"></p>
+<p><img alt="img" data-src="https://segmentfault.com/img/remote/1460000011150051"></p>
 <h2 id="2-Native-Component-模式"><a href="#2-Native-Component-模式" class="headerlink" title="2. Native Component 模式"></a>2. Native Component 模式</h2><p>把 Weex 当作一个 iOS/Android 组件来使用，类比 ImageView。这类需求遍布手淘主链路，如首页、主搜结果、交易组件化等，这类 Native 页面主体已经很稳定，但是局部动态化需求旺盛导致频繁发版，解决这类问题也是 Weex 的重点。</p>
 <h2 id="3-H5-Component-模式"><a href="#3-H5-Component-模式" class="headerlink" title="3. H5 Component 模式"></a>3. H5 Component 模式</h2><p>在 H5 种使用 Weex，类比 WVC。一些较复杂或特殊的 H5 页面短期内无法完全转为 Weex 全页模式（或RN），比如互动类页面、一些复杂频道页等。这个痛点的解决办法是：在现有的H5页面上做微调，引入Native 解决长列表内存暴增、滚动不流畅、动画/手势体验差等问题。</p>
 <p>另外，WVC 将会融入到 Weex 中，成为 Weex 的 H5 Components 模式。</p>
-<h1 id="严选-App-Demo-实现过程中的感想"><a href="#严选-App-Demo-实现过程中的感想" class="headerlink" title="严选 App Demo 实现过程中的感想"></a>严选 App Demo 实现过程中的感想</h1><h2 id="Vue-Router-amp-Tab"><a href="#Vue-Router-amp-Tab" class="headerlink" title="Vue-Router &amp; Tab"></a>Vue-Router &amp; Tab</h2><p><img src="https://segmentfault.com/img/remote/1460000011150052" alt="img"></p>
+<h1 id="严选-App-Demo-实现过程中的感想"><a href="#严选-App-Demo-实现过程中的感想" class="headerlink" title="严选 App Demo 实现过程中的感想"></a>严选 App Demo 实现过程中的感想</h1><h2 id="Vue-Router-amp-Tab"><a href="#Vue-Router-amp-Tab" class="headerlink" title="Vue-Router &amp; Tab"></a>Vue-Router &amp; Tab</h2><p><img alt="img" data-src="https://segmentfault.com/img/remote/1460000011150052"></p>
 <p>由于 Weex 没有封装 Tab 的组件，因此笔者使用了很多方法来实现Tab切换的功能。</p>
 <p>1、vue-router：router 思想方便管理，但是每次切换都是新的实例，没有tab模式<br>2、opacity、visablity：此处需要注意，Weex的渲染机制和web是有区别的，对夫层设置 opacity 或者visiablity隐藏是无法同时隐藏定位为<code>position:fixed;</code> 的子元素。<br>3、position、transform：改变 tab 层的位置，此方法在定位为 <code>position:fixed;</code> 的子元素上依然无效。</p>
 <h2 id="image-amp-iconfont"><a href="#image-amp-iconfont" class="headerlink" title="image &amp; iconfont"></a>image &amp; iconfont</h2><p>Weex 中所有的静态资源基本都是网络资源，包括图片、字体图片等，所以使用 iconfont 图标是再合适不过的了。</p>
 <p>此 demo 中所有的 icon 均使用 的iconfont。</p>
-<p><img src="https://segmentfault.com/img/remote/1460000011150053" alt="img"></p>
+<p><img alt="img" data-src="https://segmentfault.com/img/remote/1460000011150053"></p>
 <p>此处强烈推荐一个站点 <a href="http://www.iconfont.cn/" target="_blank" rel="noopener">www.iconfont.cn</a>。</p>
-<p><img src="https://segmentfault.com/img/remote/1460000011150054" alt="img"></p>
+<p><img alt="img" data-src="https://segmentfault.com/img/remote/1460000011150054"></p>
 <p>在此平台你可以找到几乎所有你需要的 icon，你也可以上传自己的 icon 到自己创建的项目中。同时该系统还提供生成ttf、woff 资源，并且做了 cdn 加速和 gzip 压缩，是不是跟 Weex很配呢？</p>
 <p>不过也有风险，就是，如果哪天阿里不在维护并回收该平台的资源了，你的 app 可能就会变成这样，全是方框，或者 padding 掉你 H5 的页面</p>
-<p><img src="https://segmentfault.com/img/remote/1460000011150055" alt="img"></p>
+<p><img alt="img" data-src="https://segmentfault.com/img/remote/1460000011150055"></p>
 <p>当然，这种及情况出现的几率很小，如果你是一个大公司，你手上有更好的资源急速方案，那就自己保存吧。</p>
-<h2 id="webview"><a href="#webview" class="headerlink" title="webview"></a>webview</h2><p><img src="https://segmentfault.com/img/remote/1460000011150056" alt="img"></p>
+<h2 id="webview"><a href="#webview" class="headerlink" title="webview"></a>webview</h2><p><img alt="img" data-src="https://segmentfault.com/img/remote/1460000011150056"></p>
 <p>UIWebView是我们开发App常用的一个控件，不过Weex帮我们封装好的API明显时不够用的，目前只有<code>pagestart</code>、<code>pagefinish</code>、<code>error</code>，并没有封装像RN那样的<code>onShouldStartLoadWithRequest</code>拦截地址请求的API，在我看来，这有些不合理，并不清楚轮子的制造者是什么意图。</p>
 <h2 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h2><p>性能是一个大课题，在此就不做展开了，只稍微提及一些我们开发需要注意的几点</p>
 <ul>
@@ -680,6 +678,8 @@
     
     
     
+      
+
         
       
         
@@ -747,6 +747,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1324,6 +1333,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1339,6 +1353,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1460,8 +1483,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1476,6 +1531,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/926ca595.html";
+    this.page.identifier = "posts/926ca595.html";
+    this.page.title = '网易严选App感受Weex开发';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,18 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="代码的注释是我们平时必须面对的问题，今天我们就来看看如何自定义属于自己的注释模板，提高我们的开发效率。 1.新建的类自动生成的注释；  2.自定义注释模板。 新建类自动生成的注释1.打开相应的设置：​     File–&amp;gt;Settings–&amp;gt;Editor–&amp;gt;File and code Template。 选择Files中的Class 在上面添加你想要添加的注释：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fvn2vsyla0j31kw0q5go5.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fvn2ktdyadj31kw0tqju7.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fvn2q7fu6aj31kw0yijzw.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fvn2qu51x4j31kw0yaqdf.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fvn2t7wkq9j31kw101qcv.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79ly1fvn2uki5m1j31kw101wof.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNc79ly1fvn2v5k6pgj31kw0umdio.jpg">
 <meta property="og:updated_time" content="2019-05-16T07:44:23.960Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android Studio自定义注释模板">
 <meta name="twitter:description" content="代码的注释是我们平时必须面对的问题，今天我们就来看看如何自定义属于自己的注释模板，提高我们的开发效率。 1.新建的类自动生成的注释；  2.自定义注释模板。 新建类自动生成的注释1.打开相应的设置：​     File–&amp;gt;Settings–&amp;gt;Editor–&amp;gt;File and code Template。 选择Files中的Class 在上面添加你想要添加的注释：">
-<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNc79ly1fvn2vsyla0j31kw0q5go5.jpg">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/d339abc3">
 
@@ -283,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -365,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/d339abc3.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/d339abc3.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -381,35 +391,37 @@
 <h2 id="新建类自动生成的注释"><a href="#新建类自动生成的注释" class="headerlink" title="新建类自动生成的注释"></a>新建类自动生成的注释</h2><p>1.打开相应的设置：<br>​     File–&gt;Settings–&gt;Editor–&gt;File and code Template。</p>
 <p>选择Files中的Class</p>
 <p>在上面添加你想要添加的注释：</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fvn2vsyla0j31kw0q5go5.jpg" alt="image-20180926173840698"></p>
+<p><img alt="image-20180926173840698" data-src="https://ws3.sinaimg.cn/large/006tNc79ly1fvn2vsyla0j31kw0q5go5.jpg"></p>
 <a id="more"></a>
 <p>下面有一些变量可以选择：</p>
 <p>{USER} ：表示你系统名字；<br>{DATE}： 表示当前时间；<br>{NAME}:表示类名。<br>而且后面都有注释，相信大家也都能看得懂。</p>
 <p>这是设置后的结果画面：</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fvn2ktdyadj31kw0tqju7.jpg" alt="image-20180926172806712"></p>
+<p><img alt="image-20180926172806712" data-src="https://ws3.sinaimg.cn/large/006tNc79ly1fvn2ktdyadj31kw0tqju7.jpg"></p>
 <p>这边有许多变量可以引用，想要哪些变量，或者想自定义成什么样的注释，就看你自己的想象力了。 </p>
 <h2 id="万能注释模板-Java篇"><a href="#万能注释模板-Java篇" class="headerlink" title="万能注释模板 Java篇"></a>万能注释模板 Java篇</h2><p>1.打开相应位置：<br> File–&gt;Setting–&gt;Editor–&gt;LiveTemplate：</p>
 <p>2.新建一个Live Group:<br> 点击右边的+号，选择Template Group,命名自己的一个注释包。我自己命名为Zm Template Group。</p>
-<p> <img src="https://ws3.sinaimg.cn/large/006tNc79ly1fvn2q7fu6aj31kw0yijzw.jpg" alt="image-20180926173317831"></p>
+<p> <img alt="image-20180926173317831" data-src="https://ws3.sinaimg.cn/large/006tNc79ly1fvn2q7fu6aj31kw0yijzw.jpg"></p>
 <p>3.新建一个LIve Template：  在你刚刚新建的group下点击+号，新建一个Live Template:</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fvn2qu51x4j31kw0yaqdf.jpg" alt="image-20180926173353858"></p>
+<p><img alt="image-20180926173353858" data-src="https://ws4.sinaimg.cn/large/006tNc79ly1fvn2qu51x4j31kw0yaqdf.jpg"></p>
 <p>Abbraviation:是你设置的快捷键，我的快捷键是z。</p>
 <p>Expand with :补全你的注释的快捷键，默认为TAB,我改为了Enter。 </p>
 <p>4.添加你的注释： </p>
 <p>在下面自定义你想要的注释，这边的注释有点不同了，这边可以自定义变量名，格式和我的一样，用双$包起来。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>   $user$</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@email</span>    zm@zhangmiao.cc</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span>     $date$ $time$</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@describe</span> $desc$</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
 <p>5.点击Edit Variables，在Expression选择你需要方法，相当于给你的变量赋值:</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fvn2t7wkq9j31kw101qcv.jpg" alt="image-20180926173610970"></p>
+<p><img alt="image-20180926173610970" data-src="https://ws4.sinaimg.cn/large/006tNc79ly1fvn2t7wkq9j31kw101qcv.jpg"></p>
 <p>6.选择你要运用的地方： </p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fvn2uki5m1j31kw101wof.jpg" alt="image-20180926173728634"></p>
+<p><img alt="image-20180926173728634" data-src="https://ws4.sinaimg.cn/large/006tNc79ly1fvn2uki5m1j31kw101wof.jpg"></p>
 <p>你可以选择Java，C++ 等等。  点击Apply。就成功了，下面让我们来看看效果：</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fvn2v5k6pgj31kw0umdio.jpg" alt="image-20180926173803405"></p>
+<p><img alt="image-20180926173803405" data-src="https://ws1.sinaimg.cn/large/006tNc79ly1fvn2v5k6pgj31kw0umdio.jpg"></p>
 
     </div>
 
     
     
     
+      
+
         
       
         
@@ -477,6 +489,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1054,6 +1075,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1069,6 +1095,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1190,8 +1225,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1206,6 +1273,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/d339abc3.html";
+    this.page.identifier = "posts/d339abc3.html";
+    this.page.title = 'Android Studio自定义注释模板';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

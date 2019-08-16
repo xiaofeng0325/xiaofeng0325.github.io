@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,17 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="前言vlayout 是手机天猫 Android 版内广泛使用的一个基础 UI 框架项目 提供了一个用于RecyclerView的自定义的LayoutManger，可以实现不同布局格式的混排，目标是支撑客户端native页面的快速开发。它也是 Tangram 框架的基础模块，现已开源，欢迎移步到 github 上指教。 简介背景Android中UI性能消耗主要来自于两个方面：  布局层次嵌套导致多重">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://gw.alicdn.com/tps/TB1aGAlPFXXXXa6XVXXXXXXXXXX-1574-914.png">
-<meta property="og:image" content="https://gw.alicdn.com/tps/TB1MScdPFXXXXaJXVXXXXXXXXXX-1112-1095.png">
-<meta property="og:image" content="https://gw.alicdn.com/tps/TB1VCZCPFXXXXcoXpXXXXXXXXXX-1104-1630.png">
-<meta property="og:image" content="http://img3.tbcdn.cn/L1/461/1/1b9bfb42009047f75cee08ae741505de2c74ac0a">
-<meta property="og:image" content="https://gw.alicdn.com/tps/TB1N2gnPFXXXXawXVXXXXXXXXXX-288-512.png">
-<meta property="og:image" content="https://gw.alicdn.com/tps/TB1ofsVPFXXXXX0XXXXXXXXXXXX-288-512.png">
 <meta property="og:updated_time" content="2019-06-03T08:22:43.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tangram的基础 vlayout for android">
 <meta name="twitter:description" content="前言vlayout 是手机天猫 Android 版内广泛使用的一个基础 UI 框架项目 提供了一个用于RecyclerView的自定义的LayoutManger，可以实现不同布局格式的混排，目标是支撑客户端native页面的快速开发。它也是 Tangram 框架的基础模块，现已开源，欢迎移步到 github 上指教。 简介背景Android中UI性能消耗主要来自于两个方面：  布局层次嵌套导致多重">
-<meta name="twitter:image" content="https://gw.alicdn.com/tps/TB1aGAlPFXXXXa6XVXXXXXXXXXX-1574-914.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/df690640">
 
@@ -282,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -364,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/df690640.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/df690640.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -390,7 +401,7 @@
 <li>每一种LayoutHelper负责布局一批组件范围内的组件，不同组件范围内的组件之间，如果类型相同，可以在滑动过程中回收复用。因此回收粒度比较细，且可以跨布局类型复用。</li>
 <li>提供了自定义的布局样式，可以满足多样化的布局需求，比如每一个组件范围内的布局支持一个背景颜色、背景图片；网格布局里，可以支持1列、2列、3列、4列、5列共5种样式，每一列的宽度默认平均分配屏幕宽度，也可以指定按比例分配列宽。吸边布局支持吸到屏幕底部、屏幕顶部、屏幕左边、屏幕右边。这些都是系统默认的LayoutManager不支持的。</li>
 </ol>
-<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>整体的设计方案和思路如下： <img src="https://gw.alicdn.com/tps/TB1aGAlPFXXXXa6XVXXXXXXXXXX-1574-914.png" alt="img"></p>
+<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>整体的设计方案和思路如下： <img alt="img" data-src="https://gw.alicdn.com/tps/TB1aGAlPFXXXXa6XVXXXXXXXXXX-1574-914.png"></p>
 <ol>
 <li>RecyclerView是整个页面的主体，它的运行需要绑定一个Adapter和LayoutManager，在我们的设计里自定义了VirtualLayoutAdapter和VirtualLayoutManager来绑定到RecyclerView。</li>
 <li>VirtualLayoutAdapter继承自系统的Adaper，它除了提供系统要求创建组件、绑定数据到组件的功能，定义了两个接口：getLayoutHelper()——用于返回某个位置组件对应的一个LayoutHelper；setLayoutHelpers()——业务方调用此方法设置整个页面所需要的一系列LayoutHelper。不过这两个方法的具体实现都委托给VirtualLayoutManager来完成。</li>
@@ -406,7 +417,7 @@
 </ul>
 </li>
 </ol>
-<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p><img src="https://gw.alicdn.com/tps/TB1MScdPFXXXXaJXVXXXXXXXXXX-1112-1095.png" alt="img"></p>
+<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p><img alt="img" data-src="https://gw.alicdn.com/tps/TB1MScdPFXXXXaJXVXXXXXXXXXX-1112-1095.png"></p>
 <p>在使用vlayout的时候，首先做初始化工作，对业务使用方来说，和使用普通的 RecyclerView + LayoutManager 初始化流程基本一致。对于框架流程上来说，前前后后涉及了6个角色，基本流程如下：</p>
 <ol>
 <li>vlayout的业务使用方初始化RecyclerView对象。</li>
@@ -422,7 +433,7 @@
 <li>接下来还要将数据列表也传递给VirtualLayoutAdapter。</li>
 <li>至此，整个初始化流程就完成，这里暴露给业务方的主要是VirtualLayoutAdapter，它接收数据列表和LayoutHelper列表，内部在传递给RecyclerView和VirtualLayoutManager进行后续的工作。</li>
 </ol>
-<h3 id="布局过程"><a href="#布局过程" class="headerlink" title="布局过程"></a>布局过程</h3><p><img src="https://gw.alicdn.com/tps/TB1VCZCPFXXXXcoXpXXXXXXXXXX-1104-1630.png" alt="img"></p>
+<h3 id="布局过程"><a href="#布局过程" class="headerlink" title="布局过程"></a>布局过程</h3><p><img alt="img" data-src="https://gw.alicdn.com/tps/TB1VCZCPFXXXXcoXpXXXXXXXXXX-1104-1630.png"></p>
 <p>当完成前面的初始化工作，将数据和LayoutHelper都绑定到vlayout内部之后，紧接着就可以开始布局流程了。这里无论是刚打开页面第一次布局，还是用户滑动页面，进行一次新的布局，流程都是一致的。</p>
 <ol>
 <li>RecyclerView内部会维护一个状态，计算当前是否存在未填充满组件的区域，区域还有多大。</li>
@@ -441,9 +452,9 @@
 <li>这个空白区域进一步反馈给RecyclerView。RecyclerView会进行状态跟更新，如果空白区域都被填充满了，那么就结束一次布局了，如果还有，就要触发下一个位置的布局，在重复上述流程。</li>
 </ol>
 <h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>demo动效</p>
-<p><img src="http://img3.tbcdn.cn/L1/461/1/1b9bfb42009047f75cee08ae741505de2c74ac0a" alt="img"></p>
+<p><img alt="img" data-src="http://img3.tbcdn.cn/L1/461/1/1b9bfb42009047f75cee08ae741505de2c74ac0a"></p>
 <p>实战效果</p>
-<p><img src="https://gw.alicdn.com/tps/TB1N2gnPFXXXXawXVXXXXXXXXXX-288-512.png" alt="img"> <img src="https://gw.alicdn.com/tps/TB1ofsVPFXXXXX0XXXXXXXXXXXX-288-512.png" alt="img"></p>
+<p><img alt="img" data-src="https://gw.alicdn.com/tps/TB1N2gnPFXXXXawXVXXXXXXXXXX-288-512.png"> <img alt="img" data-src="https://gw.alicdn.com/tps/TB1ofsVPFXXXXX0XXXXXXXXXXXX-288-512.png"></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文着重介绍 vlayout 的设计思路和原理，如果要进一步熟悉其细节，最好是到 <a href="https://github.com/alibaba/vlayout" target="_blank" rel="noopener">github</a> 上下载源码阅读，结合本文的说明，效果会更佳。如果想要尝试使用 vlayout 搭建页面，也可以到 <a href="https://github.com/alibaba/vlayout" target="_blank" rel="noopener">github</a> 上下载 demo，阅读使用文档和样式属性说明文档。</p>
 
     </div>
@@ -451,6 +462,8 @@
     
     
     
+      
+
         
       
         
@@ -518,6 +531,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1095,6 +1117,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1110,6 +1137,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1231,8 +1267,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1247,6 +1315,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/df690640.html";
+    this.page.identifier = "posts/df690640.html";
+    this.page.title = 'Tangram的基础 vlayout for android';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

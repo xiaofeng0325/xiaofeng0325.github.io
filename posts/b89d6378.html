@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,17 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="上一节撸了个界面，虽然比较简单，但是把前面讲的知识串联了下，但是界面之间的跳转一直没说，这节就讲下 Flutter 中的「路由」来管理界面。 1、NavigatorFlutter 通过 Navigator  来进行页面之间的跳转，分为 push 系列和 pop 系列操作，带 push 方法为入栈操作，带 pop 方法为出栈操作。Navigator 的 push 方法分两类，一类是带 Name 的，">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425165301.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425165609.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425165652.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425165739.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425165912.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425165937.png">
 <meta property="og:updated_time" content="2019-05-22T03:02:57.042Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flutter入门指南(六)路由">
 <meta name="twitter:description" content="上一节撸了个界面，虽然比较简单，但是把前面讲的知识串联了下，但是界面之间的跳转一直没说，这节就讲下 Flutter 中的「路由」来管理界面。 1、NavigatorFlutter 通过 Navigator  来进行页面之间的跳转，分为 push 系列和 pop 系列操作，带 push 方法为入栈操作，带 pop 方法为出栈操作。Navigator 的 push 方法分两类，一类是带 Name 的，">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425165301.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/b89d6378">
 
@@ -282,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -364,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/b89d6378.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/b89d6378.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -386,7 +397,7 @@
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">Navigator.pushNamed(context, <span class="string">'/page_b'</span>);</span><br></pre></td></tr></table></figure>
 <p>效果相同。跳转后，可以发现，在 BPage 的 AppBar 上有个返回按钮，点击可以返回 APage ，那么也就是说通过 push 或者 pushNamed 方式跳转的时候，界面堆栈的变化是直接在原来的堆栈上添加一个新的 page</p>
 <p><strong>为了凸显堆栈的变化，所以绘制的图中，会比使用的实际页面多一个，下图同</strong></p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425165301.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425165301.png"></p>
 <p><strong>pushReplacement / pushReplacementNamed / popAndPushNamed</strong></p>
 <p>将 APage 中的跳转方式进行替换</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) =&gt; BPage()));</span><br></pre></td></tr></table></figure>
@@ -395,7 +406,7 @@
 <p>或者</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">/ 如果是第一个界面跳转到下个界面，勿用，`BPage` 会显示返回按钮，但是点击后，界面会变黑</span><br><span class="line"><span class="comment">// 因为 `APage` 已经不在堆栈中了，点击后堆栈就没有 `Page` 了，所以界面变黑</span></span><br><span class="line">Navigator.popAndPushNamed(context, <span class="string">'/page_b'</span>);</span><br></pre></td></tr></table></figure>
 <p>效果相同，跳转后，可以发现 BPage 的返回按钮消失了，消失了，消失了，我们可以试下点击返回按键，发现 App 直接退出了，也就是说，BPage 替代了 APage 在堆栈中的位置。那么堆栈的变化图就是这样的</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425165609.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425165609.png"></p>
 <p><strong>pushAndRemoveUntil / pushNamedAndRemoveUntil</strong></p>
 <p><strong>CASE 1</strong></p>
 <p>这个跳转方式需要通过 CPage 来协助完成，将 APage 的跳转方式修改为 push 方式，然后在 BPage 的第一个按钮加入如下代码</p>
@@ -403,26 +414,26 @@
 <p>或者</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">Navigator.pushNamedAndRemoveUntil(context, <span class="string">'/page_c'</span>, (Route router) =&gt; <span class="keyword">false</span>);</span><br></pre></td></tr></table></figure>
 <p>效果相同，点击 BPage 的跳转 CPage 按钮后，界面来到 CPage，然后发现还是没有返回按钮，没有返回按钮，没有返回按钮，点击下返回按键，然后发现 App 直接退出了，退出了，退出了，那么堆栈变化如图</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425165652.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425165652.png"></p>
 <p><strong>CASE 2</strong></p>
 <p>你以为这两个方法只是为了把堆栈都清空吗，那就太图样图森破了，这边展示另一种。修改跳转的代码</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">Navigator.pushAndRemoveUntil(context, </span><br><span class="line">                MaterialPageRoute(builder: (_) =&gt; CPage()), ModalRoute.withName(<span class="string">'/'</span>));</span><br></pre></td></tr></table></figure>
 <p>或者</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">Navigator.pushNamedAndRemoveUntil(context, <span class="string">'/page_c'</span>, ModalRoute.withName(<span class="string">'/'</span>));</span><br></pre></td></tr></table></figure>
 <p>点击跳转 CPage 以后，发现返回按钮又回来了…就这么回来了…只是修改了一个参数，点击返回按钮，又回到了 APage，你可以在 APage 跳转 BPage 中加入DPage EPage 等等更多的界面，只要保证 BPage 跳转 CPage 的方式不变，点击 CPage 的返回按钮，又回到 APage 了，所以…堆栈的变化图如下</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425165739.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425165739.png"></p>
 <p><strong>SUMMARY</strong></p>
 <p>为什么会这样变化呢，还记得在 MaterialApp 中注册的 router 么，APage 的 name 对应的为 ‘/‘，也就是说，该方法会把堆栈中在 ModalRoute.withName 所对应的 page 上的所有都 pop 出堆栈，如果把参数换成 /page_b，然后在跳转 CPage 之前加入更多的界面，点击 CPage 的返回按钮，就会回到 BPage</p>
 <p><strong>pop</strong></p>
 <p>在 BPage 的第二个按钮中加入 pop 操作</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">Navigator.pop(context);</span><br></pre></td></tr></table></figure>
 <p>跳转到 BPage 后点击该按钮，界面回到 APage，那么堆栈的变化很明显了，如图</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425165912.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425165912.png"></p>
 <p><strong>popUntil</strong></p>
 <p>这个方法还需要借助 CPage ，在 CPage 的按钮中加入</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">Navigator.popUntil(context, ModalRoute.withName(<span class="string">'/'</span>));</span><br></pre></td></tr></table></figure>
 <p>点击返回按钮，界面跳过 BPage 回到了 APage，解释同 pushAndRemoveUntil 那么堆栈的变化也显而易见咯</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425165937.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425165937.png"></p>
 <h3 id="2、Navigator-传值"><a href="#2、Navigator-传值" class="headerlink" title="2、Navigator 传值"></a>2、Navigator 传值</h3><p><strong>CASE 1 传值给下个界面</strong></p>
 <p>修改下 BPage 和 APage 的按钮点击事件</p>
 <figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BPage</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">String</span> message;</span><br><span class="line"></span><br><span class="line">  BPage(&#123;Key key, <span class="meta">@required</span> <span class="keyword">this</span>.message&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'passed value: $message'</span>);</span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      <span class="comment">// 省略相同代码</span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// APage 跳转事件</span></span><br><span class="line">Navigator.push(context, MaterialPageRoute(builder: </span><br><span class="line">                                          (_) =&gt; BPage(message: <span class="string">'Message From Page A'</span>)));</span><br></pre></td></tr></table></figure>
@@ -465,6 +476,8 @@
     
     
     
+      
+
         
       
         
@@ -532,6 +545,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1109,6 +1131,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1124,6 +1151,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1245,8 +1281,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1261,6 +1329,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/b89d6378.html";
+    this.page.identifier = "posts/b89d6378.html";
+    this.page.title = 'Flutter入门指南(六)路由';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

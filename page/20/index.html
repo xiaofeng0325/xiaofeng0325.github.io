@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -355,6 +356,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/9105b80c.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/9105b80c.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -367,7 +384,7 @@
       
           <p>Demo地址：<a href="https://github.com/zhangmiaocc/MyXBus" target="_blank" rel="noopener">MyXBus</a></p>
 <p>基于发布订阅(Pub/Sub)模式的一个事件消息库，使用通用的 <code>register(target)</code>, <code>unregister(target)</code>, <code>post(event)</code> 消息通信接口，能有效的减少甚至消除Android应用中异步任务逻辑和界面更新之间的耦合，实现模块化，提高开发效率。</p>
-<p><a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.mcxiaoke.xbus%22" target="_blank" rel="noopener"><img src="https://camo.githubusercontent.com/4ddb8d8e07afe670998def4db4d438479bb217fe/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f323031352e30382e31382d636f6d2e6d637869616f6b652e786275733a6275733a312e302e322d627269676874677265656e2e737667" alt="Maven Central"></a></p>
+<p><a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.mcxiaoke.xbus%22" target="_blank" rel="noopener"><img alt="Maven Central" data-src="https://camo.githubusercontent.com/4ddb8d8e07afe670998def4db4d438479bb217fe/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f323031352e30382e31382d636f6d2e6d637869616f6b652e786275733a6275733a312e302e322d627269676874677265656e2e737667"></a></p>
 <ul>
 <li>2015.09.15 <strong>1.0.2</strong> - 修复多线程发送事件的同步问题</li>
 <li>2015.08.18 <strong>1.0.1</strong> - 修复 <code>unresiger()</code> 的空指针问题</li>
@@ -391,6 +408,8 @@
     
     
     
+      
+
       <footer class="post-footer">
           <div class="post-eof"></div>
         
@@ -486,6 +505,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/6037db63.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/6037db63.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -498,7 +533,7 @@
       
           <h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a><strong>一、简介</strong></h3><p>EventBus是由greenrobot 组织贡献的一个Android事件发布/订阅轻量级框架。EventBus是一个Android端优化的publish/subscribe消息总线，简化了应用程序内各组件间、组件与后台线程间的通信。比如请求网络，等网络返回时通过Handler或Broadcast通知UI，两个Fragment之间需要通过Listener通信，这些需求都可以通过EventBus实现。</p>
 <p>官网地址：<a href="https://link.jianshu.com?t=http://greenrobot.org/eventbus/" target="_blank" rel="noopener">http://greenrobot.org/eventbus/</a><br>翻译：<a href="https://link.jianshu.com?t=http://blog.csdn.net/poorkick/article/details/55099311" target="_blank" rel="noopener">http://blog.csdn.net/poorkick/article/details/55099311</a></p>
-<p> <img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190520162153.png" alt=""></p>
+<p> <img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190520162153.png"></p>
 <h3 id=""><a href="#" class="headerlink" title=""></a><strong>
           <!--noindex-->
           
@@ -516,6 +551,8 @@
     
     
     
+      
+
       <footer class="post-footer">
           <div class="post-eof"></div>
         
@@ -611,6 +648,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/4514f8cf.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/4514f8cf.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -645,6 +698,8 @@
     
     
     
+      
+
       <footer class="post-footer">
           <div class="post-eof"></div>
         
@@ -740,6 +795,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/2ed74455.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/2ed74455.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -773,6 +844,8 @@
     
     
     
+      
+
       <footer class="post-footer">
           <div class="post-eof"></div>
         
@@ -868,6 +941,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/3bedd12e.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/3bedd12e.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -891,9 +980,9 @@
 </thead>
 <tbody>
 <tr>
-<td><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190520162326.png" alt=""></td>
-<td><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190520162402.png" alt=""></td>
-<td><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190520162417.png" alt=""></td>
+<td><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190520162326.png"></td>
+<td><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190520162402.png"></td>
+<td><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190520162417.png"></td>
 </tr>
 </tbody>
 </table>
@@ -913,6 +1002,8 @@
     
     
     
+      
+
       <footer class="post-footer">
           <div class="post-eof"></div>
         
@@ -1008,6 +1099,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/6f91fcbd.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/6f91fcbd.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -1040,6 +1147,8 @@
     
     
     
+      
+
       <footer class="post-footer">
           <div class="post-eof"></div>
         
@@ -1128,6 +1237,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/abebff90.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/abebff90.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -1160,6 +1285,8 @@
     
     
     
+      
+
       <footer class="post-footer">
           <div class="post-eof"></div>
         
@@ -1255,6 +1382,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/58d30177.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/58d30177.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -1275,9 +1418,9 @@
 </thead>
 <tbody>
 <tr>
-<td><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190520162448.png" alt=""></td>
-<td><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190520162509.png" alt=""></td>
-<td><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190520162527.png" alt=""></td>
+<td><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190520162448.png"></td>
+<td><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190520162509.png"></td>
+<td><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190520162527.png"></td>
 </tr>
 </tbody>
 </table>
@@ -1299,6 +1442,8 @@
     
     
     
+      
+
       <footer class="post-footer">
           <div class="post-eof"></div>
         
@@ -1387,6 +1532,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/95cd02d2.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/95cd02d2.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -1400,7 +1561,7 @@
           <blockquote>
 <p>即将步入人生的第一件大事，在此记录下点滴事件：</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190520162543.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190520162543.png"></p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1417,6 +1578,8 @@
     
     
     
+      
+
       <footer class="post-footer">
           <div class="post-eof"></div>
         
@@ -1512,6 +1675,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/1cc851d3.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/1cc851d3.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -1539,6 +1718,8 @@
     
     
     
+      
+
       <footer class="post-footer">
           <div class="post-eof"></div>
         
@@ -2111,6 +2292,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -2126,6 +2312,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -2247,8 +2442,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -2256,10 +2483,40 @@
   
 
   
+    
+      
+    
+  
+    <script src="/lib/quicklink/quicklink.umd.js"></script>
+    <script>
+      
+        window.addEventListener('load', () => {
+      
+        quicklink({
+          timeout: 3000,
+          priority: true,
+          ignores: [uri => uri.includes('#'),uri => uri == 'https://zhangmiao.cc/page/20/',]
+        });
+      
+        });
+      
+    </script>
+  
 
   
 
 
   
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+
 </body>
 </html>

@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,23 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="步骤 1保证电脑上有可以播放的音乐，找到喜欢的一首歌曲，鼠标右击用 iTunes 打开，「选中歌曲《故乡》」—「右键」—「歌曲信息」，如下图：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtk7gxr1xj30zw0lsjvb.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtk7vlpdej30e50i53zo.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtk6ydik7j30x70k2441.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtk8gzxxej30hd05c0td.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtk8sjoinj30i90cqwg8.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtk96eko1j30bg042wey.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtk9hc7pzj310i0m2adh.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtk9v0alfj313d0u049d.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtkajcnvbj31660u0jy6.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtkaz7cd8j318n0u0790.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtkbc6sohj30qq0aiabi.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fxtkbprwu0j30hr0vktac.jpg">
 <meta property="og:updated_time" content="2019-05-16T07:44:23.972Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设置iPhone来电铃声">
 <meta name="twitter:description" content="步骤 1保证电脑上有可以播放的音乐，找到喜欢的一首歌曲，鼠标右击用 iTunes 打开，「选中歌曲《故乡》」—「右键」—「歌曲信息」，如下图：">
-<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtk7gxr1xj30zw0lsjvb.jpg">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/b0d3dc9">
 
@@ -288,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -363,6 +352,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/b0d3dc9.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/b0d3dc9.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -374,30 +379,30 @@
 
       
         <h3 id="步骤-1"><a href="#步骤-1" class="headerlink" title="步骤 1"></a>步骤 1</h3><p>保证电脑上有可以播放的音乐，找到喜欢的一首歌曲，鼠标右击用 <code>iTunes</code> 打开，「选中歌曲《故乡》」—「右键」—「歌曲信息」，如下图：</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtk7gxr1xj30zw0lsjvb.jpg" alt=""> </p>
+<p><img alt="" data-src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtk7gxr1xj30zw0lsjvb.jpg"> </p>
 <a id="more"></a>
-<p>点击「歌曲信息」后，出现一个弹框，点击「选项」，勾选「停止」，右边的输入框里面输入 <code>0:28</code>，因为铃声必须是<code>40秒</code>之内的，然后点击「好」，如图：<br> <img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtk7vlpdej30e50i53zo.jpg" alt=""></p>
+<p>点击「歌曲信息」后，出现一个弹框，点击「选项」，勾选「停止」，右边的输入框里面输入 <code>0:28</code>，因为铃声必须是<code>40秒</code>之内的，然后点击「好」，如图：<br> <img alt="" data-src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtk7vlpdej30e50i53zo.jpg"></p>
 <p> （PS：假设这首歌的时间是5:20，你可以任意设置播放的时间段，假如高潮部分是1:32到2:05，则勾选’开始’并输入1:32，勾选’停止’并输入2:05）</p>
 <h3 id="步骤-2"><a href="#步骤-2" class="headerlink" title="步骤 2"></a>步骤 2</h3><p>还是选中歌曲《故乡》，右上角，依次选择「文件」—「转换」—「创建 AAC 版本」，如图：</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtk6ydik7j30x70k2441.jpg" alt=""></p>
+<p><img alt="" data-src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtk6ydik7j30x70k2441.jpg"></p>
 <p>然后可能会听到一个声音，说明创建成功，在刚刚选中的歌曲《故乡》下面会多出一个一模一样的来，只不过时间变成刚刚我填写的，如图：</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtk8gzxxej30hd05c0td.jpg" alt=""></p>
+<p><img alt="" data-src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtk8gzxxej30hd05c0td.jpg"></p>
 <h3 id="步骤-3"><a href="#步骤-3" class="headerlink" title="步骤 3"></a>步骤 3</h3><p>选中时间较短的《故乡》，右键选择「在 Finder 中显示」，如图：</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtk8sjoinj30i90cqwg8.jpg" alt=""></p>
+<p><img alt="" data-src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtk8sjoinj30i90cqwg8.jpg"></p>
 <p>这时可以看到<code>故乡.m4a</code>这样一个文件，是可以播放的，把它复制到桌面上来。鼠标选中桌面上的<code>故乡.m4a</code>，改为<code>故乡.m4r</code>，选择「使用 .m4r」，如图：</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtk96eko1j30bg042wey.jpg" alt=""></p>
+<p><img alt="" data-src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxtk96eko1j30bg042wey.jpg"></p>
 <h3 id="步骤-4"><a href="#步骤-4" class="headerlink" title="步骤 4"></a>步骤 4</h3><p>选择你的手机，如图：</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtk9hc7pzj310i0m2adh.jpg" alt=""></p>
+<p><img alt="" data-src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtk9hc7pzj310i0m2adh.jpg"></p>
 <p>勾选「手动管理音乐和视频」，之后点击「应用」，等待完成，如图：</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtk9v0alfj313d0u049d.jpg" alt=""></p>
-<h4 id="步骤-5"><a href="#步骤-5" class="headerlink" title="步骤 5"></a>步骤 5</h4><p>在桌面上把<code>故乡.m4r</code>歌曲拖到手机上，如下图：<br> <img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtkajcnvbj31660u0jy6.jpg" alt=""></p>
+<p><img alt="" data-src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtk9v0alfj313d0u049d.jpg"></p>
+<h4 id="步骤-5"><a href="#步骤-5" class="headerlink" title="步骤 5"></a>步骤 5</h4><p>在桌面上把<code>故乡.m4r</code>歌曲拖到手机上，如下图：<br> <img alt="" data-src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtkajcnvbj31660u0jy6.jpg"></p>
 <p>这时候发现手机下的「铃声」目录，会出现刚刚的歌曲，如图：</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtkaz7cd8j318n0u0790.jpg" alt=""></p>
+<p><img alt="" data-src="https://ws2.sinaimg.cn/large/006tNbRwgy1fxtkaz7cd8j318n0u0790.jpg"></p>
 <p>继续选择你的手机，点击同步，静静等待完成。</p>
 <p>在同步的过程中，如果出现如下图所示，则说明设置的铃声时间过长，应当在 <code>40s</code> 之内：</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtkbc6sohj30qq0aiabi.jpg" alt=""></p>
+<p><img alt="" data-src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtkbc6sohj30qq0aiabi.jpg"></p>
 <h3 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h3><p>同步完成后，算是大功告成了，拿起<code>iPhone</code>，按顺序 选择「设置」—「声音」—「电话铃声」，激动人心的时刻终于来了~~~</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fxtkbprwu0j30hr0vktac.jpg" alt=""></p>
+<p><img alt="" data-src="https://ws4.sinaimg.cn/large/006tNbRwly1fxtkbprwu0j30hr0vktac.jpg"></p>
 <p>大功告成.png</p>
 
     </div>
@@ -405,6 +410,8 @@
     
     
     
+      
+
         
       
         
@@ -472,6 +479,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1049,6 +1065,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1064,6 +1085,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1185,8 +1215,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1201,6 +1263,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/b0d3dc9.html";
+    this.page.identifier = "posts/b0d3dc9.html";
+    this.page.title = '设置iPhone来电铃声';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

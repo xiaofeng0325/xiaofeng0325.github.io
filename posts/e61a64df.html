@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,12 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="Optimizing Layout HierarchiesIt is a common misconception that using the basic layout structures leads to the most efficient layouts. However, each widget and layout you add to your application requir">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190625220831.png">
 <meta property="og:updated_time" content="2019-06-28T03:44:40.557Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android中RelativeLayout和LinearLayout性能分析">
 <meta name="twitter:description" content="Optimizing Layout HierarchiesIt is a common misconception that using the basic layout structures leads to the most efficient layouts. However, each widget and layout you add to your application requir">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190625220831.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/e61a64df">
 
@@ -277,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -359,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/e61a64df.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/e61a64df.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -380,7 +396,7 @@
 <h5 id="View是怎么呈现在界面上的？"><a href="#View是怎么呈现在界面上的？" class="headerlink" title="View是怎么呈现在界面上的？"></a>View是怎么呈现在界面上的？</h5><p>Android中的视图都是通过Window来呈现的，不管Activity、Dialog还是Toast它们都有一个Window，然后通过WindowManager来管理View。Window和顶级View——DecorView的通信是依赖ViewRoot完成的。</p>
 <h5 id="View和ViewGroup什么区别？"><a href="#View和ViewGroup什么区别？" class="headerlink" title="View和ViewGroup什么区别？"></a>View和ViewGroup什么区别？</h5><p>不管简单的Button和TextView还是复杂的RelativeLayout和ListView，他们的共同基类都是View。所以说，View是一种界面层控件的抽象，他代表了一个控件。那ViewGroup是什么东西，它可以被翻译成控件组，即一组View。ViewGroup也是继承View，这就意味着View本身可以是单个控件，也可以是多个控件组成的控件组。根据这个理论，Button显然是个View，而RelativeLayout不但是一个View还可以是一个ViewGroup，而ViewGroup内部是可以有子View的，这个子View同样也可能是ViewGroup，以此类推。</p>
 <h3 id="RelativeLayout和LinearLayout性能PK"><a href="#RelativeLayout和LinearLayout性能PK" class="headerlink" title="RelativeLayout和LinearLayout性能PK"></a>RelativeLayout和LinearLayout性能PK</h3><p>基于以上原理和大背景，我们要探讨的性能问题，说的简单明了一点就是：当RelativeLayout和LinearLayout分别作为ViewGroup，表达相同布局时绘制在屏幕上时谁更快一点。上面已经简单说了View的绘制，从ViewRoot的performTraversals（）方法开始依次调用perfromMeasure、performLayout和performDraw这三个方法。这三个方法分别完成顶级View的measure、layout和draw三大流程，其中perfromMeasure会调用measure，measure又会调用onMeasure，在onMeasure方法中则会对所有子元素进行measure，这个时候measure流程就从父容器传递到子元素中了，这样就完成了一次measure过程，接着子元素会重复父容器的measure，如此反复就完成了整个View树的遍历。同理，performLayout和performDraw也分别完成perfromMeasure类似的流程。通过这三大流程，分别遍历整棵View树，就实现了Measure，Layout，Draw这一过程，View就绘制出来了。那么我们就分别来追踪下RelativeLayout和LinearLayout这三大流程的执行耗时。<br>如下图，我们分别用两用种方式简单的实现布局测试下</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190625220831.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190625220831.png"></p>
 <h5 id="LinearLayout"><a href="#LinearLayout" class="headerlink" title="LinearLayout"></a>LinearLayout</h5><p>Measure：0.738ms<br> Layout：0.176ms<br> draw：7.655ms</p>
 <h5 id="RelativeLayout"><a href="#RelativeLayout" class="headerlink" title="RelativeLayout"></a>RelativeLayout</h5><p>Measure：2.280ms<br> Layout：0.153ms<br> draw：7.696ms<br> 从这个数据来看无论使用RelativeLayout还是LinearLayout，layout和draw的过程两者相差无几，考虑到误差的问题，几乎可以认为两者不分伯仲，关键是Measure的过程RelativeLayout却比LinearLayout慢了一大截。</p>
 <h3 id="Measure都干什么了"><a href="#Measure都干什么了" class="headerlink" title="Measure都干什么了"></a>Measure都干什么了</h3><h5 id="RelativeLayout的onMeasure-方法"><a href="#RelativeLayout的onMeasure-方法" class="headerlink" title="RelativeLayout的onMeasure()方法"></a>RelativeLayout的onMeasure()方法</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">View[] views = mSortedHorizontalChildren;</span><br><span class="line">    <span class="keyword">int</span> count = views.length;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</span><br><span class="line">      View child = views[i];</span><br><span class="line">      <span class="keyword">if</span> (child.getVisibility() != GONE) &#123;</span><br><span class="line">        LayoutParams params = (LayoutParams) child.getLayoutParams();</span><br><span class="line">        <span class="keyword">int</span>[] rules = params.getRules(layoutDirection);</span><br><span class="line"></span><br><span class="line">        applyHorizontalSizeRules(params, myWidth, rules);</span><br><span class="line">        measureChildHorizontal(child, params, myWidth, myHeight);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (positionChildHorizontal(child, params, myWidth, isWrapContentWidth)) &#123;</span><br><span class="line">          offsetHorizontalAxis = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    views = mSortedVerticalChildren;</span><br><span class="line">    count = views.length;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> targetSdkVersion = getContext().getApplicationInfo().targetSdkVersion;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</span><br><span class="line">      View child = views[i];</span><br><span class="line">      <span class="keyword">if</span> (child.getVisibility() != GONE) &#123;</span><br><span class="line">        LayoutParams params = (LayoutParams) child.getLayoutParams();</span><br><span class="line">       </span><br><span class="line">        applyVerticalSizeRules(params, myHeight);</span><br><span class="line">        measureChild(child, params, myWidth, myHeight);</span><br><span class="line">        <span class="keyword">if</span> (positionChildVertical(child, params, myHeight, isWrapContentHeight)) &#123;</span><br><span class="line">          offsetVerticalAxis = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (isWrapContentWidth) &#123;</span><br><span class="line">          <span class="keyword">if</span> (isLayoutRtl()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (targetSdkVersion &lt; Build.VERSION_CODES.KITKAT) &#123;</span><br><span class="line">              width = Math.max(width, myWidth - params.mLeft);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              width = Math.max(width, myWidth - params.mLeft - params.leftMargin);</span><br><span class="line">            &#125;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (targetSdkVersion &lt; Build.VERSION_CODES.KITKAT) &#123;</span><br><span class="line">              width = Math.max(width, params.mRight);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              width = Math.max(width, params.mRight + params.rightMargin);</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (isWrapContentHeight) &#123;</span><br><span class="line">          <span class="keyword">if</span> (targetSdkVersion &lt; Build.VERSION_CODES.KITKAT) &#123;</span><br><span class="line">            height = Math.max(height, params.mBottom);</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            height = Math.max(height, params.mBottom + params.bottomMargin);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (child != ignore || verticalGravity) &#123;</span><br><span class="line">          left = Math.min(left, params.mLeft - params.leftMargin);</span><br><span class="line">          top = Math.min(top, params.mTop - params.topMargin);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (child != ignore || horizontalGravity) &#123;</span><br><span class="line">          right = Math.max(right, params.mRight + params.rightMargin);</span><br><span class="line">          bottom = Math.max(bottom, params.mBottom + params.bottomMargin);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
@@ -400,6 +416,8 @@
     
     
     
+      
+
         
       
         
@@ -467,6 +485,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1044,6 +1071,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1059,6 +1091,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1180,8 +1221,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1196,6 +1269,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/e61a64df.html";
+    this.page.identifier = "posts/e61a64df.html";
+    this.page.title = 'Android中RelativeLayout和LinearLayout性能分析';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

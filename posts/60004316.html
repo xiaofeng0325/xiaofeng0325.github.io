@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,20 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="为啥叫“保姆”级项目，因为是真的贴心… flutter go                https://github.com/alibaba/flutter-go">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135152.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135724.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135809.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135241.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135024.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722134953.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722134928.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722134848.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722134825.png">
 <meta property="og:updated_time" content="2019-07-22T06:03:30.700Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flutter “保姆”级项目 Demo合集">
 <meta name="twitter:description" content="为啥叫“保姆”级项目，因为是真的贴心… flutter go                https://github.com/alibaba/flutter-go">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135152.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/60004316">
 
@@ -285,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -367,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/60004316.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/60004316.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -388,16 +396,16 @@
 </thead>
 <tbody>
 <tr>
-<td><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135152.png" alt=""></td>
-<td><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135724.png" alt=""></td>
-<td><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135809.png" alt=""></td>
+<td><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135152.png"></td>
+<td><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135724.png"></td>
+<td><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135809.png"></td>
 </tr>
 </tbody>
 </table>
 <p><em><a href="https://github.com/alibaba/flutter-go" target="_blank" rel="noopener">https://github.com/alibaba/flutter-go</a></em></p>
 <a id="more"></a>
 <h3 id="GSY的-flutter-合集"><a href="#GSY的-flutter-合集" class="headerlink" title="GSY的 flutter 合集"></a>GSY的 flutter 合集</h3><p>GSYFlutterDemo 作为简单示例和解决方案 Demo ，它可以给你学习和工作中提供一些便捷的帮助，比如 如何自定义布局，如何滚动控件到指定 child position ，如何调整 Text 控件的 Line Space ，如何监听键盘的弹出和收起 等等，所以例子方案都独立实现，方便阅读 CV 。</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135241.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135241.png"></p>
 <p>已有例子</p>
 <ul>
 <li>Controller 例子</li>
@@ -429,7 +437,7 @@
 <p><em><a href="https://juejin.im/user/582aca2ba22b9d006b59ae68/posts" target="_blank" rel="noopener">https://juejin.im/user/582aca2ba22b9d006b59ae68/posts</a></em></p>
 <p>实战项目：</p>
 <p><em><a href="https://github.com/CarGuo/GSYGithubAppFlutter" target="_blank" rel="noopener">https://github.com/CarGuo/GSYGithubAppFlutter</a></em></p>
-<h3 id="Flutter-NoteBook"><a href="#Flutter-NoteBook" class="headerlink" title="Flutter NoteBook"></a>Flutter NoteBook</h3><p>flutetr_note_book有许多flutter相关功能demo的集合，它能够帮助您快速学习一些零碎的知识，本项目将会不定期更新。<br><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135024.png" alt=""></p>
+<h3 id="Flutter-NoteBook"><a href="#Flutter-NoteBook" class="headerlink" title="Flutter NoteBook"></a>Flutter NoteBook</h3><p>flutetr_note_book有许多flutter相关功能demo的集合，它能够帮助您快速学习一些零碎的知识，本项目将会不定期更新。<br><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135024.png"></p>
 <p><em><a href="https://github.com/OpenFlutter/Flutter-Notebook" target="_blank" rel="noopener">https://github.com/OpenFlutter/Flutter-Notebook</a></em></p>
 <p>看介绍上写，原本作者计划是日更的，但是日更的压力太大了。</p>
 <p>我曾经尝试过做这样的事情，后来还是觉得不需要给自己太大压力才好，比如：wanandroid 上面的每日一问，现在变成了每周 3 问。</p>
@@ -437,7 +445,7 @@
 <p>就像谈恋爱，天天觉得有压力，烦那就不长久了~</p>
 <p>好在作者并没有断更，希望作者能坚持更久，感谢。</p>
 <h3 id="flutter-app"><a href="#flutter-app" class="headerlink" title="flutter_app"></a>flutter_app</h3><p>本项目包括各种基本控件使用（Text、TextField、Icon、Image、Listview、Gridview、Picker、Stepper、Dialog、Slider、Row、Appbar、Sizebox、BottomSheet、Chip、Dismissible、FlutterLogo、Check、Switch、TabBar、BottomNavigationBar、Sliver等）、豆瓣电影、每日一文、和天气、百姓生活、随机诗词、联系人、句子迷、好奇心日报等板块</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722134953.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722134953.png"></p>
 <p>这个项目比较大的特色，就是汇集了非常多的实战 app，那么你看到哪个页面效果就能去看看它的实现。</p>
 <p>当然了，现在做具体 app 类似开源项目，最麻烦的就是开放 api 了，很多抓取的一方面不确定是否违规，另一方面极度不稳定，我以前经常推荐完整项目，但是经常过了一段时间就不能访问了。</p>
 <p>所以，你们真要练手，不妨使用 wanandroid.com 的开放 API，网站多数接口和开放 API 是使用的相同的接口，除非这个网站挂了，否则 API 一直很稳定，数据也同步更新，也算我对外的一些付出啦。</p>
@@ -445,11 +453,11 @@
 <h3 id="awesome-flutter"><a href="#awesome-flutter" class="headerlink" title="awesome-flutter"></a>awesome-flutter</h3><p>类似于收集不错的 Flutter 库，工具，文章，实例等。</p>
 <p>因为是国外开发者做的，所以关注的更多是国外的内容，所以和以上项目做互补还是非常不错的。</p>
 <p>这个资源合集，分类非常细致，有入门，进阶；视频教程等等。</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722134928.png" alt=""></p>
+<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722134928.png"></p>
 <p><em><a href="https://github.com/Solido/awesome-flutter" target="_blank" rel="noopener">https://github.com/Solido/awesome-flutter</a></em></p>
 <p>另外有一个小技巧，就是你想看什么方向技术的时候，果断用 awesome + 关键词 搜索。</p>
-<h3 id="awesome-kotlin"><a href="#awesome-kotlin" class="headerlink" title="awesome kotlin"></a>awesome kotlin</h3><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722134848.png" alt=""></p>
-<h3 id="awesome-android"><a href="#awesome-android" class="headerlink" title="awesome android"></a>awesome android</h3><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722134825.png" alt=""></p>
+<h3 id="awesome-kotlin"><a href="#awesome-kotlin" class="headerlink" title="awesome kotlin"></a>awesome kotlin</h3><p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722134848.png"></p>
+<h3 id="awesome-android"><a href="#awesome-android" class="headerlink" title="awesome android"></a>awesome android</h3><p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722134825.png"></p>
 <p>学到了吧。</p>
 
     </div>
@@ -457,6 +465,8 @@
     
     
     
+      
+
         
       
         
@@ -524,6 +534,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1101,6 +1120,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1116,6 +1140,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1237,8 +1270,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1253,6 +1318,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/60004316.html";
+    this.page.identifier = "posts/60004316.html";
+    this.page.title = 'Flutter “保姆”级项目 Demo合集';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>

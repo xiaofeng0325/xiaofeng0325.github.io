@@ -20,6 +20,7 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
 <script id="hexo-configurations">
@@ -33,10 +34,10 @@
     back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
     save_scroll: true,
     copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
+    fancybox: true,
+    mediumzoom: true,
+    lazyload: true,
+    pangu: true,
     algolia: {
       appID: '',
       apiKey: '',
@@ -44,7 +45,7 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},
     path: 'search.xml',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     translation: {
@@ -63,14 +64,10 @@
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="随着ReactNative、Weex与Flutter等跨端框架的发展，大前端的概念也逐渐普及开来，纯粹的Native开发相对变得比较少，前端也成为了客户端同学必须要掌握的一门技术，但是客户端同学做的是跨端开发，在学习路线上和前端同学又稍有不同，下面从客户端同学的视角去讨论如何学习前端知识。 这里为大家整理了一份跨端技术图谱，这份图谱并没有去穷尽所有的前端技术，只是从客户端开发的视角去梳理常用的技术">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxfpcyx62rj30pe16z78s.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxfpdifpz4j30u00vkqqy.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fxfpf8fs0nj30u01l07i9.jpg">
 <meta property="og:updated_time" content="2019-05-16T07:44:23.967Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端学习指南">
 <meta name="twitter:description" content="随着ReactNative、Weex与Flutter等跨端框架的发展，大前端的概念也逐渐普及开来，纯粹的Native开发相对变得比较少，前端也成为了客户端同学必须要掌握的一门技术，但是客户端同学做的是跨端开发，在学习路线上和前端同学又稍有不同，下面从客户端同学的视角去讨论如何学习前端知识。 这里为大家整理了一份跨端技术图谱，这份图谱并没有去穷尽所有的前端技术，只是从客户端开发的视角去梳理常用的技术">
-<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fxfpcyx62rj30pe16z78s.jpg">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/ca8423a1">
 
@@ -279,6 +276,7 @@
 
   <div id="posts" class="posts-expand">
     
+    <div class="reading-progress-bar"></div>
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
@@ -361,6 +359,22 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/posts/ca8423a1.html#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/ca8423a1.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -375,7 +389,7 @@
 <p>这里为大家整理了一份跨端技术图谱，这份图谱并没有去穷尽所有的前端技术，只是从客户端开发的视角去梳理常用的技术点，帮助大家理清脉络。</p>
 <a id="more"></a>
 <p>更多关于跨端技术的讨论可以参见<a href="https://link.juejin.im?target=https%3A%2F%2Fgithub.com%2FBeesX%2FBeesHybrid" target="_blank" rel="noopener">BeesHybrid</a>项目。</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxfpcyx62rj30pe16z78s.jpg" alt=""></p>
+<p><img alt="" data-src="https://ws2.sinaimg.cn/large/006tNbRwly1fxfpcyx62rj30pe16z78s.jpg"></p>
 <h2 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h2><p>IDE推荐<a href="https://link.juejin.im?target=https%3A%2F%2Fcode.visualstudio.com%2F" target="_blank" rel="noopener">VSCode</a>，轻量级、插件丰富，常用插件如下所示：</p>
 <ul>
 <li>Terminal：命令行工具。</li>
@@ -515,7 +529,7 @@
 <li><a href="https://link.juejin.im?target=https%3A%2F%2Fdevelopers.taobao.com%2F%3Fspm%3Da21224.framework.0.0.6f4a2f68DEEOFd" target="_blank" rel="noopener">淘宝轻应用</a>：基于WebView与Weex两套容器渲染，自建了一套类Vue的DSL。</li>
 </ul>
 <p>事实上，小程序承载的更多是业务形态，我们从业务开发角度对小程序的前端架构做个总结。</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fxfpdifpz4j30u00vkqqy.jpg" alt=""></p>
+<p><img alt="" data-src="https://ws2.sinaimg.cn/large/006tNbRwly1fxfpdifpz4j30u00vkqqy.jpg"></p>
 <h3 id="微信小程序"><a href="#微信小程序" class="headerlink" title="微信小程序"></a>微信小程序</h3><blockquote>
 <p>小程序是一种新的开放能力，开发者可以快速地开发一个小程序。小程序可以在微信内被便捷地获取和传播，同时具有出色的使用体验。</p>
 </blockquote>
@@ -608,13 +622,15 @@
 <li>跨平台解决方案</li>
 </ul>
 <p><a href="https://link.juejin.im?target=http%3A%2F%2Fwww.cnblogs.com%2Funruledboy%2Fp%2FWebFrontEndStack.html" target="_blank" rel="noopener">图片来源</a></p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fxfpf8fs0nj30u01l07i9.jpg" alt=""></p>
+<p><img alt="" data-src="https://ws3.sinaimg.cn/large/006tNbRwly1fxfpf8fs0nj30u01l07i9.jpg"></p>
 
     </div>
 
     
     
     
+      
+
         
       
         
@@ -682,6 +698,15 @@
 
           </div>
           
+    
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+  
 
         </div>
           
@@ -1259,6 +1284,11 @@
 
   
   <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
+  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
+  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
+  <script src="/lib/reading_progress/reading_progress.js"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
@@ -1274,6 +1304,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
@@ -1395,8 +1434,40 @@
 
 
 
+<script>
+if (document.querySelectorAll('div.pdf').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
+    document.querySelectorAll('div.pdf').forEach(element => {
+      PDFObject.embed(element.getAttribute('target'), element, {
+        pdfOpenParams: {
+          navpanes: 0,
+          toolbar: 0,
+          statusbar: 0,
+          pagemode: 'thumbs',
+          view: 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height: element.getAttribute('height') || '500px'
+      });
+    });
+  }, window.PDFObject);
+}
+</script>
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
 
@@ -1411,6 +1482,38 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://zhangmiao.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function disqus_config() {
+    this.page.url = "https://zhangmiao.cc/posts/ca8423a1.html";
+    this.page.identifier = "posts/ca8423a1.html";
+    this.page.title = '前端学习指南';};
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://zhangmiao.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+  
+</script>
 
 </body>
 </html>
