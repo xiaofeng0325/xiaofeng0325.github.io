@@ -59,7 +59,7 @@
 <meta name="keywords" content="Android,Flutter">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Flutter开发环境搭建Mac版">
-<meta property="og:url" content="http://yoursite.com/posts/3223dff5.html">
+<meta property="og:url" content="https://zhangmiao.cc/posts/3223dff5.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="系统环境要求Flutter因为是新出的框架，所以对系统还是有一定的要求的。  MacOS （64-bit） 磁盘空间：大于700M，如果算上Android Studio等编辑工具，尽量大于3G。 命令号工具：bash、mkdir、rm、git、curl、unzip、which、brew 这些命令在都可以使用。  注意：一般你会在brew这个命令下载坑，很多mac系统都没有安装这个，你可以进行安装，">
 <meta property="og:locale" content="zh-CN">
@@ -67,7 +67,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190528111601.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190528113518.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190528113803.png">
-<meta property="og:image" content="http://yoursite.com/Users/zhangmiao/Library/Application%20Support/typora-user-images/image-20190528113941915.png">
+<meta property="og:image" content="https://zhangmiao.cc/Users/zhangmiao/Library/Application%20Support/typora-user-images/image-20190528113941915.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190528115821.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190528115944.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190528120632.png">
@@ -77,7 +77,7 @@
 <meta name="twitter:description" content="系统环境要求Flutter因为是新出的框架，所以对系统还是有一定的要求的。  MacOS （64-bit） 磁盘空间：大于700M，如果算上Android Studio等编辑工具，尽量大于3G。 命令号工具：bash、mkdir、rm、git、curl、unzip、which、brew 这些命令在都可以使用。  注意：一般你会在brew这个命令下载坑，很多mac系统都没有安装这个，你可以进行安装，">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190528111109.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
-  <link rel="canonical" href="http://yoursite.com/posts/3223dff5">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/3223dff5">
 
 
 <script id="page-configurations">
@@ -241,15 +241,18 @@
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
-    </div>
+    <div class="search-input" id="search-input"></div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
   </div>
-  <div id="search-result"></div>
+  <div class="algolia-results">
+    <div id="algolia-stats"></div>
+    <div id="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+  </div>
 </div>
+
 
 
   </div>
@@ -275,7 +278,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/3223dff5.html">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/3223dff5.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -430,7 +433,7 @@
     <strong>本文作者： </strong>ZhangMiao</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/posts/3223dff5.html" title="Flutter开发环境搭建Mac版">http://yoursite.com/posts/3223dff5.html</a>
+    <a href="https://zhangmiao.cc/posts/3223dff5.html" title="Flutter开发环境搭建Mac版">https://zhangmiao.cc/posts/3223dff5.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -877,7 +880,7 @@
       
         
       
-        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
       <span class="links-of-author-item">
@@ -928,7 +931,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc" rel="noopener" target="_blank">Zhangmiao</a>
+          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc">Zhangmiao</a>
         </li>
       
         <li class="links-of-blogroll-item">
@@ -1183,7 +1186,10 @@
 
 
 
-  <script src="/js/local-search.js?v=7.3.0"></script>
+  
+<link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+<script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/algolia-search.js?v=7.3.0"></script>
+
 
 
 

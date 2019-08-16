@@ -59,7 +59,7 @@
 <meta name="keywords" content="Android,微信小程序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android APP分享微信小程序">
-<meta property="og:url" content="http://yoursite.com/posts/83fb494f.html">
+<meta property="og:url" content="https://zhangmiao.cc/posts/83fb494f.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="需求：APP端 将公司的微信小程序 分享至微信好友 最近，微信小程序比较火热，公司也在做这一块，目前公司的小程序都是由H5端开发的，我们Android端也接到一个任务，那就是Android端应支持微信小程序的分享，并且通过分享出去的小程序可以启动我们的APP； 今天我们先来完成：Android端应支持微信小程序的分享！！！  分析： 微信开放平台SDK支持小程序类型分享，详见官方文档： https">
 <meta property="og:locale" content="zh-CN">
@@ -79,7 +79,7 @@
 <meta name="twitter:description" content="需求：APP端 将公司的微信小程序 分享至微信好友 最近，微信小程序比较火热，公司也在做这一块，目前公司的小程序都是由H5端开发的，我们Android端也接到一个任务，那就是Android端应支持微信小程序的分享，并且通过分享出去的小程序可以启动我们的APP； 今天我们先来完成：Android端应支持微信小程序的分享！！！  分析： 微信开放平台SDK支持小程序类型分享，详见官方文档： https">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/10170988-3b81737f56ba521c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/574/format/webp">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
-  <link rel="canonical" href="http://yoursite.com/posts/83fb494f">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/83fb494f">
 
 
 <script id="page-configurations">
@@ -243,15 +243,18 @@
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
-    </div>
+    <div class="search-input" id="search-input"></div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
   </div>
-  <div id="search-result"></div>
+  <div class="algolia-results">
+    <div id="algolia-stats"></div>
+    <div id="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+  </div>
 </div>
+
 
 
   </div>
@@ -277,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/83fb494f.html">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/83fb494f.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -401,7 +404,7 @@ c. 增加分享小程序的按钮和事件
     <strong>本文作者： </strong>ZhangMiao</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/posts/83fb494f.html" title="Android APP分享微信小程序">http://yoursite.com/posts/83fb494f.html</a>
+    <a href="https://zhangmiao.cc/posts/83fb494f.html" title="Android APP分享微信小程序">https://zhangmiao.cc/posts/83fb494f.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -848,7 +851,7 @@ c. 增加分享小程序的按钮和事件
       
         
       
-        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
       <span class="links-of-author-item">
@@ -899,7 +902,7 @@ c. 增加分享小程序的按钮和事件
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc" rel="noopener" target="_blank">Zhangmiao</a>
+          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc">Zhangmiao</a>
         </li>
       
         <li class="links-of-blogroll-item">
@@ -1154,7 +1157,10 @@ c. 增加分享小程序的按钮和事件
 
 
 
-  <script src="/js/local-search.js?v=7.3.0"></script>
+  
+<link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+<script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/algolia-search.js?v=7.3.0"></script>
+
 
 
 

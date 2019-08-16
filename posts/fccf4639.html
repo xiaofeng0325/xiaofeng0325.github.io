@@ -59,7 +59,7 @@
 <meta name="keywords" content="Android,Weex">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Weex 创建一个app">
-<meta property="og:url" content="http://yoursite.com/posts/fccf4639.html">
+<meta property="og:url" content="https://zhangmiao.cc/posts/fccf4639.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="以下步骤假设您已经了解了 Node.js 和 npm 的基本知识。如果对它们不熟悉，可以访问 https://docs.npmjs.com/ 来了解更多关于 npm 的用法。  Weex 提供了一个命令行工具 weex-toolkit 来帮助开发者使用 Weex。它可以用来快速创建一个空项目、初始化 iOS 和 Android 开发环境、调试、安装插件等操作。 目前 weex-toolkit 只">
 <meta property="og:locale" content="zh-CN">
@@ -70,7 +70,7 @@
 <meta name="twitter:description" content="以下步骤假设您已经了解了 Node.js 和 npm 的基本知识。如果对它们不熟悉，可以访问 https://docs.npmjs.com/ 来了解更多关于 npm 的用法。  Weex 提供了一个命令行工具 weex-toolkit 来帮助开发者使用 Weex。它可以用来快速创建一个空项目、初始化 iOS 和 Android 开发环境、调试、安装插件等操作。 目前 weex-toolkit 只">
 <meta name="twitter:image" content="https://weex.apache.org/assets/img/toolkit-preview.be71ed77.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
-  <link rel="canonical" href="http://yoursite.com/posts/fccf4639">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/fccf4639">
 
 
 <script id="page-configurations">
@@ -234,15 +234,18 @@
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
-    </div>
+    <div class="search-input" id="search-input"></div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
   </div>
-  <div id="search-result"></div>
+  <div class="algolia-results">
+    <div id="algolia-stats"></div>
+    <div id="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+  </div>
 </div>
+
 
 
   </div>
@@ -268,7 +271,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/fccf4639.html">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/fccf4639.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -382,7 +385,7 @@
     <strong>本文作者： </strong>ZhangMiao</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/posts/fccf4639.html" title="Weex 创建一个app">http://yoursite.com/posts/fccf4639.html</a>
+    <a href="https://zhangmiao.cc/posts/fccf4639.html" title="Weex 创建一个app">https://zhangmiao.cc/posts/fccf4639.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -829,7 +832,7 @@
       
         
       
-        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
       <span class="links-of-author-item">
@@ -880,7 +883,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc" rel="noopener" target="_blank">Zhangmiao</a>
+          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc">Zhangmiao</a>
         </li>
       
         <li class="links-of-blogroll-item">
@@ -1135,7 +1138,10 @@
 
 
 
-  <script src="/js/local-search.js?v=7.3.0"></script>
+  
+<link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+<script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/algolia-search.js?v=7.3.0"></script>
+
 
 
 

@@ -59,7 +59,7 @@
 <meta name="keywords" content="Android,Flutter">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Flutter入门指南(六)路由">
-<meta property="og:url" content="http://yoursite.com/posts/b89d6378.html">
+<meta property="og:url" content="https://zhangmiao.cc/posts/b89d6378.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="上一节撸了个界面，虽然比较简单，但是把前面讲的知识串联了下，但是界面之间的跳转一直没说，这节就讲下 Flutter 中的「路由」来管理界面。 1、NavigatorFlutter 通过 Navigator  来进行页面之间的跳转，分为 push 系列和 pop 系列操作，带 push 方法为入栈操作，带 pop 方法为出栈操作。Navigator 的 push 方法分两类，一类是带 Name 的，">
 <meta property="og:locale" content="zh-CN">
@@ -75,7 +75,7 @@
 <meta name="twitter:description" content="上一节撸了个界面，虽然比较简单，但是把前面讲的知识串联了下，但是界面之间的跳转一直没说，这节就讲下 Flutter 中的「路由」来管理界面。 1、NavigatorFlutter 通过 Navigator  来进行页面之间的跳转，分为 push 系列和 pop 系列操作，带 push 方法为入栈操作，带 pop 方法为出栈操作。Navigator 的 push 方法分两类，一类是带 Name 的，">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190425165301.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
-  <link rel="canonical" href="http://yoursite.com/posts/b89d6378">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/b89d6378">
 
 
 <script id="page-configurations">
@@ -239,15 +239,18 @@
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
-    </div>
+    <div class="search-input" id="search-input"></div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
   </div>
-  <div id="search-result"></div>
+  <div class="algolia-results">
+    <div id="algolia-stats"></div>
+    <div id="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+  </div>
 </div>
+
 
 
   </div>
@@ -273,7 +276,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/b89d6378.html">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/b89d6378.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -448,7 +451,7 @@
     <strong>本文作者： </strong>ZhangMiao</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/posts/b89d6378.html" title="Flutter入门指南(六)路由">http://yoursite.com/posts/b89d6378.html</a>
+    <a href="https://zhangmiao.cc/posts/b89d6378.html" title="Flutter入门指南(六)路由">https://zhangmiao.cc/posts/b89d6378.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -895,7 +898,7 @@
       
         
       
-        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
       <span class="links-of-author-item">
@@ -946,7 +949,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc" rel="noopener" target="_blank">Zhangmiao</a>
+          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc">Zhangmiao</a>
         </li>
       
         <li class="links-of-blogroll-item">
@@ -1201,7 +1204,10 @@
 
 
 
-  <script src="/js/local-search.js?v=7.3.0"></script>
+  
+<link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+<script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/algolia-search.js?v=7.3.0"></script>
+
 
 
 

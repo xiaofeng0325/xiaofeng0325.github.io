@@ -59,7 +59,7 @@
 <meta name="keywords" content="Android,开源库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Android珍藏】推荐10个炫酷的开源库">
-<meta property="og:url" content="http://yoursite.com/posts/78b41fa0.html">
+<meta property="og:url" content="https://zhangmiao.cc/posts/78b41fa0.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="前言技术群里面经常有人问到一些炫酷的UI效果实现方法，有时候我都是给一个相同或者相似效果的Github链接，有同学私信给我说，大佬，怎么这些效果你都能找到？你是怎么搜索的，或者有其他什么秘方？会利用Google、百度等搜索工具搜索是一方面，另一个重要的方面是：记录搜藏，当看到一个炫酷的效果的时候，记得收藏起来，记录到自己云笔记或者收藏夹里，看得多了，印象就比较深刻，当遇到类似效果的时候，到自己记录">
 <meta property="og:locale" content="zh-CN">
@@ -99,7 +99,7 @@
 <meta name="twitter:description" content="前言技术群里面经常有人问到一些炫酷的UI效果实现方法，有时候我都是给一个相同或者相似效果的Github链接，有同学私信给我说，大佬，怎么这些效果你都能找到？你是怎么搜索的，或者有其他什么秘方？会利用Google、百度等搜索工具搜索是一方面，另一个重要的方面是：记录搜藏，当看到一个炫酷的效果的时候，记得收藏起来，记录到自己云笔记或者收藏夹里，看得多了，印象就比较深刻，当遇到类似效果的时候，到自己记录">
 <meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/7/19/164b299da85c9f67?imageslim">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
-  <link rel="canonical" href="http://yoursite.com/posts/78b41fa0">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/78b41fa0">
 
 
 <script id="page-configurations">
@@ -263,15 +263,18 @@
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
-    </div>
+    <div class="search-input" id="search-input"></div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
   </div>
-  <div id="search-result"></div>
+  <div class="algolia-results">
+    <div id="algolia-stats"></div>
+    <div id="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+  </div>
 </div>
+
 
 
   </div>
@@ -297,7 +300,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/78b41fa0.html">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/78b41fa0.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -491,7 +494,7 @@
     <strong>本文作者： </strong>ZhangMiao</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/posts/78b41fa0.html" title="【Android珍藏】推荐10个炫酷的开源库">http://yoursite.com/posts/78b41fa0.html</a>
+    <a href="https://zhangmiao.cc/posts/78b41fa0.html" title="【Android珍藏】推荐10个炫酷的开源库">https://zhangmiao.cc/posts/78b41fa0.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -938,7 +941,7 @@
       
         
       
-        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
       <span class="links-of-author-item">
@@ -989,7 +992,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc" rel="noopener" target="_blank">Zhangmiao</a>
+          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc">Zhangmiao</a>
         </li>
       
         <li class="links-of-blogroll-item">
@@ -1244,7 +1247,10 @@
 
 
 
-  <script src="/js/local-search.js?v=7.3.0"></script>
+  
+<link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+<script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/algolia-search.js?v=7.3.0"></script>
+
 
 
 

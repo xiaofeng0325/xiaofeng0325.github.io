@@ -59,7 +59,7 @@
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android中多线程切换的几种方法">
-<meta property="og:url" content="http://yoursite.com/posts/fbda19a9.html">
+<meta property="og:url" content="https://zhangmiao.cc/posts/fbda19a9.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="我们知道，多线程是Android开发中必现的场景，很多原生API和开源项目都有多线程的内容，这里简单总结和探讨一下常见的多线程切换方式。我们先回顾一下Java多线程的几个基础内容，然后再分析总结一些经典代码中对于线程切换的实现方式。 几点基础多线程切换，大概可以切分为这样几个内容：如何开启多个线程，如何定义每个线程的任务，如何在线程之间互相通信。 ThreadThread可以解决开启多个线程的问题">
 <meta property="og:locale" content="zh-CN">
@@ -68,7 +68,7 @@
 <meta name="twitter:title" content="Android中多线程切换的几种方法">
 <meta name="twitter:description" content="我们知道，多线程是Android开发中必现的场景，很多原生API和开源项目都有多线程的内容，这里简单总结和探讨一下常见的多线程切换方式。我们先回顾一下Java多线程的几个基础内容，然后再分析总结一些经典代码中对于线程切换的实现方式。 几点基础多线程切换，大概可以切分为这样几个内容：如何开启多个线程，如何定义每个线程的任务，如何在线程之间互相通信。 ThreadThread可以解决开启多个线程的问题">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
-  <link rel="canonical" href="http://yoursite.com/posts/fbda19a9">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/fbda19a9">
 
 
 <script id="page-configurations">
@@ -232,15 +232,18 @@
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
-    </div>
+    <div class="search-input" id="search-input"></div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
   </div>
-  <div id="search-result"></div>
+  <div class="algolia-results">
+    <div id="algolia-stats"></div>
+    <div id="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+  </div>
 </div>
+
 
 
   </div>
@@ -266,7 +269,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/fbda19a9.html">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/fbda19a9.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -431,7 +434,7 @@
     <strong>本文作者： </strong>ZhangMiao</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/posts/fbda19a9.html" title="Android中多线程切换的几种方法">http://yoursite.com/posts/fbda19a9.html</a>
+    <a href="https://zhangmiao.cc/posts/fbda19a9.html" title="Android中多线程切换的几种方法">https://zhangmiao.cc/posts/fbda19a9.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -876,7 +879,7 @@
       
         
       
-        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
       <span class="links-of-author-item">
@@ -927,7 +930,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc" rel="noopener" target="_blank">Zhangmiao</a>
+          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc">Zhangmiao</a>
         </li>
       
         <li class="links-of-blogroll-item">
@@ -1182,7 +1185,10 @@
 
 
 
-  <script src="/js/local-search.js?v=7.3.0"></script>
+  
+<link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+<script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/algolia-search.js?v=7.3.0"></script>
+
 
 
 

@@ -59,7 +59,7 @@
 <meta name="keywords" content="Android,Tangram">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tangram Android设计说明">
-<meta property="og:url" content="http://yoursite.com/posts/1867f4d.html">
+<meta property="og:url" content="https://zhangmiao.cc/posts/1867f4d.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="前言前段时间开源了团队内的vlayout项目，从 Github 上反馈来看，还是深受欢迎。 但如果仅仅是采用 vlayout 搭建页面，使用起来还不是特别灵活，在此基础之上，我们封装了一套动态化调整界面的模块，命名为 Tangram，现在同样已开源——Tangram Android和Tangram iOS。我们希望将它打造成某一特定领域的解决方案，提速业务开发。 基本模型在前面的文章《页面动态化的">
 <meta property="og:locale" content="zh-CN">
@@ -72,7 +72,7 @@
 <meta name="twitter:description" content="前言前段时间开源了团队内的vlayout项目，从 Github 上反馈来看，还是深受欢迎。 但如果仅仅是采用 vlayout 搭建页面，使用起来还不是特别灵活，在此基础之上，我们封装了一套动态化调整界面的模块，命名为 Tangram，现在同样已开源——Tangram Android和Tangram iOS。我们希望将它打造成某一特定领域的解决方案，提速业务开发。 基本模型在前面的文章《页面动态化的">
 <meta name="twitter:image" content="https://gw.alicdn.com/tfs/TB1MrvuQpXXXXXsaXXXXXXXXXXX-632-627.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
-  <link rel="canonical" href="http://yoursite.com/posts/1867f4d">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/1867f4d">
 
 
 <script id="page-configurations">
@@ -236,15 +236,18 @@
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
-    </div>
+    <div class="search-input" id="search-input"></div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
   </div>
-  <div id="search-result"></div>
+  <div class="algolia-results">
+    <div id="algolia-stats"></div>
+    <div id="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+  </div>
 </div>
+
 
 
   </div>
@@ -270,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/1867f4d.html">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/1867f4d.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -377,9 +380,9 @@
 </ol>
 <h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><p>本文简要地对 Tangram Android 内部的设计和工作流程进行了说明，有助于对阅读源码的理解。但是建议读者在对 Tangram 有一定了解的基础之上再阅读此文，否则可能有云里雾里的感觉，因为这里涉及到大量的知识点没法完全展开，可以参考以下文章进行了解。</p>
 <ul>
-<li><a href="https://zhangmiao.cc/posts/57a68464.html" target="_blank" rel="noopener">《Tangram是我们对界面动态化的态度》</a></li>
-<li><a href="https://zhangmiao.cc/posts/2ee0ad3d.html" target="_blank" rel="noopener">《页面动态化的基础 —— Tangram》</a></li>
-<li><a href="https://zhangmiao.cc/posts/df690640.html" target="_blank" rel="noopener">《Tangram 的基础 —— vlayout（Android）》</a></li>
+<li><a href="https://zhangmiao.cc/posts/57a68464.html">《Tangram是我们对界面动态化的态度》</a></li>
+<li><a href="https://zhangmiao.cc/posts/2ee0ad3d.html">《页面动态化的基础 —— Tangram》</a></li>
+<li><a href="https://zhangmiao.cc/posts/df690640.html">《Tangram 的基础 —— vlayout（Android）》</a></li>
 <li><a href="http://tangram.pingguohe.net/docs/android/access-tangram" target="_blank" rel="noopener">《Tangram Android 使用指南》</a></li>
 </ul>
 
@@ -398,7 +401,7 @@
     <strong>本文作者： </strong>ZhangMiao</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/posts/1867f4d.html" title="Tangram Android设计说明">http://yoursite.com/posts/1867f4d.html</a>
+    <a href="https://zhangmiao.cc/posts/1867f4d.html" title="Tangram Android设计说明">https://zhangmiao.cc/posts/1867f4d.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -845,7 +848,7 @@
       
         
       
-        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
       <span class="links-of-author-item">
@@ -896,7 +899,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc" rel="noopener" target="_blank">Zhangmiao</a>
+          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc">Zhangmiao</a>
         </li>
       
         <li class="links-of-blogroll-item">
@@ -1151,7 +1154,10 @@
 
 
 
-  <script src="/js/local-search.js?v=7.3.0"></script>
+  
+<link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+<script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/algolia-search.js?v=7.3.0"></script>
+
 
 
 

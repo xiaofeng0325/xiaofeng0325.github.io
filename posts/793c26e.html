@@ -59,7 +59,7 @@
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面向忙碌开发者的Android">
-<meta property="og:url" content="http://yoursite.com/posts/793c26e.html">
+<meta property="og:url" content="https://zhangmiao.cc/posts/793c26e.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="面向忙碌开发者的 Android 视频教程（Tuts+） Android 开发资源列表（Sharif Ahmed） 我如何在23天内开发了一款 Android 游戏？（Bigosaur） Android 学习教程 Android Bootstrap [PDF] Android 性能小贴士（Romain Guy &amp;amp; Chet Haase） [PDF] Android 应用中使用 Dagger">
 <meta property="og:locale" content="zh-CN">
@@ -68,7 +68,7 @@
 <meta name="twitter:title" content="面向忙碌开发者的Android">
 <meta name="twitter:description" content="面向忙碌开发者的 Android 视频教程（Tuts+） Android 开发资源列表（Sharif Ahmed） 我如何在23天内开发了一款 Android 游戏？（Bigosaur） Android 学习教程 Android Bootstrap [PDF] Android 性能小贴士（Romain Guy &amp;amp; Chet Haase） [PDF] Android 应用中使用 Dagger">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
-  <link rel="canonical" href="http://yoursite.com/posts/793c26e">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/793c26e">
 
 
 <script id="page-configurations">
@@ -232,15 +232,18 @@
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
-    </div>
+    <div class="search-input" id="search-input"></div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
   </div>
-  <div id="search-result"></div>
+  <div class="algolia-results">
+    <div id="algolia-stats"></div>
+    <div id="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+  </div>
 </div>
+
 
 
   </div>
@@ -266,7 +269,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/793c26e.html">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/793c26e.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -673,7 +676,7 @@
     <strong>本文作者： </strong>ZhangMiao</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/posts/793c26e.html" title="面向忙碌开发者的Android">http://yoursite.com/posts/793c26e.html</a>
+    <a href="https://zhangmiao.cc/posts/793c26e.html" title="面向忙碌开发者的Android">https://zhangmiao.cc/posts/793c26e.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -1109,7 +1112,7 @@
       
         
       
-        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
       <span class="links-of-author-item">
@@ -1160,7 +1163,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc" rel="noopener" target="_blank">Zhangmiao</a>
+          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc">Zhangmiao</a>
         </li>
       
         <li class="links-of-blogroll-item">
@@ -1398,7 +1401,10 @@
 
 
 
-  <script src="/js/local-search.js?v=7.3.0"></script>
+  
+<link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+<script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/algolia-search.js?v=7.3.0"></script>
+
 
 
 

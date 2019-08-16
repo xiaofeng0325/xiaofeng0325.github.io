@@ -59,7 +59,7 @@
 <meta name="keywords" content="ZhangMiao">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于我">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta property="og:url" content="https://zhangmiao.cc/about/index.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="写给自己 我们每个人由我们一再重复的行为所铸造的，因而优秀不是一种行为，而是一种习惯。时代在进步，科技在发展，不能将自己的成长仅仅局限于工作中的成长，希望这个计划可以坚持下去让自己能够快速成长！ 可以不成功，但不可以不成长！21天习惯养成计划 首先21天养成一个习惯是不可能的。这里的21天是给自己一个缓冲，我会给自己一些刻意的约束和暗示（如朋友圈打卡），慢慢的去适应这个习惯，然后从22天开始，我希">
 <meta property="og:locale" content="zh-CN">
@@ -68,7 +68,7 @@
 <meta name="twitter:title" content="关于我">
 <meta name="twitter:description" content="写给自己 我们每个人由我们一再重复的行为所铸造的，因而优秀不是一种行为，而是一种习惯。时代在进步，科技在发展，不能将自己的成长仅仅局限于工作中的成长，希望这个计划可以坚持下去让自己能够快速成长！ 可以不成功，但不可以不成长！21天习惯养成计划 首先21天养成一个习惯是不可能的。这里的21天是给自己一个缓冲，我会给自己一些刻意的约束和暗示（如朋友圈打卡），慢慢的去适应这个习惯，然后从22天开始，我希">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
-  <link rel="canonical" href="http://yoursite.com/about/">
+  <link rel="canonical" href="https://zhangmiao.cc/about/">
 
 
 <script id="page-configurations">
@@ -232,15 +232,18 @@
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
-    </div>
+    <div class="search-input" id="search-input"></div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
   </div>
-  <div id="search-result"></div>
+  <div class="algolia-results">
+    <div id="algolia-stats"></div>
+    <div id="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+  </div>
 </div>
+
 
 
   </div>
@@ -727,7 +730,7 @@
       
         
       
-        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
       <span class="links-of-author-item">
@@ -778,7 +781,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc" rel="noopener" target="_blank">Zhangmiao</a>
+          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc">Zhangmiao</a>
         </li>
       
         <li class="links-of-blogroll-item">
@@ -1033,7 +1036,10 @@
 
 
 
-  <script src="/js/local-search.js?v=7.3.0"></script>
+  
+<link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+<script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/algolia-search.js?v=7.3.0"></script>
+
 
 
 

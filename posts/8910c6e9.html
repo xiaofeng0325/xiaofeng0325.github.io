@@ -59,7 +59,7 @@
 <meta name="keywords" content="前端,Console">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Chrome的控制台,Console命令的各种用法你真的都已经了解了吗？">
-<meta property="og:url" content="http://yoursite.com/posts/8910c6e9.html">
+<meta property="og:url" content="https://zhangmiao.cc/posts/8910c6e9.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="前言作为前端工程师，我们每天都离不开用控制台调试代码，console.log也成了我们最常用的命令，那除了用console.log，还有许多console的方法可以使用，熟练掌握它们，可以让我们在控制台看到的信息更美观准确，也会大大提高我们的开发效率哦，下面就跟小肆一起来看看吧.">
 <meta property="og:locale" content="zh-CN">
@@ -85,7 +85,7 @@
 <meta name="twitter:description" content="前言作为前端工程师，我们每天都离不开用控制台调试代码，console.log也成了我们最常用的命令，那除了用console.log，还有许多console的方法可以使用，熟练掌握它们，可以让我们在控制台看到的信息更美观准确，也会大大提高我们的开发效率哦，下面就跟小肆一起来看看吧.">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190430173111.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
-  <link rel="canonical" href="http://yoursite.com/posts/8910c6e9">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/8910c6e9">
 
 
 <script id="page-configurations">
@@ -249,15 +249,18 @@
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
-    </div>
+    <div class="search-input" id="search-input"></div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
   </div>
-  <div id="search-result"></div>
+  <div class="algolia-results">
+    <div id="algolia-stats"></div>
+    <div id="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+  </div>
 </div>
+
 
 
   </div>
@@ -283,7 +286,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/8910c6e9.html">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/8910c6e9.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -450,7 +453,7 @@
     <strong>本文作者： </strong>ZhangMiao</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/posts/8910c6e9.html" title="Chrome的控制台,Console命令的各种用法你真的都已经了解了吗？">http://yoursite.com/posts/8910c6e9.html</a>
+    <a href="https://zhangmiao.cc/posts/8910c6e9.html" title="Chrome的控制台,Console命令的各种用法你真的都已经了解了吗？">https://zhangmiao.cc/posts/8910c6e9.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -897,7 +900,7 @@
       
         
       
-        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
       <span class="links-of-author-item">
@@ -948,7 +951,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc" rel="noopener" target="_blank">Zhangmiao</a>
+          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc">Zhangmiao</a>
         </li>
       
         <li class="links-of-blogroll-item">
@@ -1203,7 +1206,10 @@
 
 
 
-  <script src="/js/local-search.js?v=7.3.0"></script>
+  
+<link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+<script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/algolia-search.js?v=7.3.0"></script>
+
 
 
 

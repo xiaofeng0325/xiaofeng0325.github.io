@@ -56,10 +56,10 @@
 </script>
 
   <meta name="description" content="早期的Android系统几乎只支持ARMv5的CPU架构，你知道现在它支持多少种吗？ Android系统目前支持以下七种不同的CPU架构：ARMv5，ARMv7 (从2010年起)，x86 (从2011年起)，MIPS (从2012年起)，ARMv8，MIPS64和x86_64 (从2014年起)，每一种都关联着一个相应的ABI。 应用程序二进制接口ABI（Application Binary I">
-<meta name="keywords" content="Android,Android Tips,ABI,CPU,.so文件">
+<meta name="keywords" content="Android,Android Tips,.so文件,ABI,CPU">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android的.so文件、ABI和CPU的关系">
-<meta property="og:url" content="http://yoursite.com/posts/b9d5fd68.html">
+<meta property="og:url" content="https://zhangmiao.cc/posts/b9d5fd68.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="早期的Android系统几乎只支持ARMv5的CPU架构，你知道现在它支持多少种吗？ Android系统目前支持以下七种不同的CPU架构：ARMv5，ARMv7 (从2010年起)，x86 (从2011年起)，MIPS (从2012年起)，ARMv8，MIPS64和x86_64 (从2014年起)，每一种都关联着一个相应的ABI。 应用程序二进制接口ABI（Application Binary I">
 <meta property="og:locale" content="zh-CN">
@@ -70,7 +70,7 @@
 <meta name="twitter:description" content="早期的Android系统几乎只支持ARMv5的CPU架构，你知道现在它支持多少种吗？ Android系统目前支持以下七种不同的CPU架构：ARMv5，ARMv7 (从2010年起)，x86 (从2011年起)，MIPS (从2012年起)，ARMv8，MIPS64和x86_64 (从2014年起)，每一种都关联着一个相应的ABI。 应用程序二进制接口ABI（Application Binary I">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190514142122.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
-  <link rel="canonical" href="http://yoursite.com/posts/b9d5fd68">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/b9d5fd68">
 
 
 <script id="page-configurations">
@@ -234,15 +234,18 @@
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
-    </div>
+    <div class="search-input" id="search-input"></div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
   </div>
-  <div id="search-result"></div>
+  <div class="algolia-results">
+    <div id="algolia-stats"></div>
+    <div id="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+  </div>
 </div>
+
 
 
   </div>
@@ -268,7 +271,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/b9d5fd68.html">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/b9d5fd68.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -485,7 +488,7 @@
     <strong>本文作者： </strong>ZhangMiao</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/posts/b9d5fd68.html" title="Android的.so文件、ABI和CPU的关系">http://yoursite.com/posts/b9d5fd68.html</a>
+    <a href="https://zhangmiao.cc/posts/b9d5fd68.html" title="Android的.so文件、ABI和CPU的关系">https://zhangmiao.cc/posts/b9d5fd68.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -504,11 +507,11 @@
             
               <a href="/tags/Android-Tips/" rel="tag"># Android Tips</a>
             
+              <a href="/tags/so文件/" rel="tag"># .so文件</a>
+            
               <a href="/tags/ABI/" rel="tag"># ABI</a>
             
               <a href="/tags/CPU/" rel="tag"># CPU</a>
-            
-              <a href="/tags/so文件/" rel="tag"># .so文件</a>
             
           </div>
         
@@ -938,7 +941,7 @@
       
         
       
-        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
       <span class="links-of-author-item">
@@ -989,7 +992,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc" rel="noopener" target="_blank">Zhangmiao</a>
+          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc">Zhangmiao</a>
         </li>
       
         <li class="links-of-blogroll-item">
@@ -1244,7 +1247,10 @@
 
 
 
-  <script src="/js/local-search.js?v=7.3.0"></script>
+  
+<link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+<script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/algolia-search.js?v=7.3.0"></script>
+
 
 
 

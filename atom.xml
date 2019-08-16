@@ -5,9 +5,9 @@
   <subtitle>select * from learn</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://zhangmiao.cc/"/>
   <updated>2019-08-13T10:17:35.408Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://zhangmiao.cc/</id>
   
   <author>
     <name>ZhangMiao</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>BannerViewPage</title>
-    <link href="http://yoursite.com/posts/6831bdd1.html"/>
-    <id>http://yoursite.com/posts/6831bdd1.html</id>
+    <link href="https://zhangmiao.cc/posts/6831bdd1.html"/>
+    <id>https://zhangmiao.cc/posts/6831bdd1.html</id>
     <published>2019-08-13T10:13:23.000Z</published>
     <updated>2019-08-13T10:17:35.408Z</updated>
     
@@ -32,21 +32,21 @@
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
     
-      <category term="View" scheme="http://yoursite.com/categories/Android/View/"/>
+      <category term="View" scheme="https://zhangmiao.cc/categories/Android/View/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
     
-      <category term="View" scheme="http://yoursite.com/tags/View/"/>
+      <category term="View" scheme="https://zhangmiao.cc/tags/View/"/>
     
   </entry>
   
   <entry>
     <title>关于OKR的解读</title>
-    <link href="http://yoursite.com/posts/5b77eb6.html"/>
-    <id>http://yoursite.com/posts/5b77eb6.html</id>
+    <link href="https://zhangmiao.cc/posts/5b77eb6.html"/>
+    <id>https://zhangmiao.cc/posts/5b77eb6.html</id>
     <published>2019-07-31T06:56:33.000Z</published>
     <updated>2019-07-31T07:00:21.114Z</updated>
     
@@ -71,17 +71,17 @@
     
     </summary>
     
-      <category term="awsome" scheme="http://yoursite.com/categories/awsome/"/>
+      <category term="awsome" scheme="https://zhangmiao.cc/categories/awsome/"/>
     
     
-      <category term="awsome" scheme="http://yoursite.com/tags/awsome/"/>
+      <category term="awsome" scheme="https://zhangmiao.cc/tags/awsome/"/>
     
   </entry>
   
   <entry>
     <title>什么是灰度发布，灰度测试</title>
-    <link href="http://yoursite.com/posts/5b196854.html"/>
-    <id>http://yoursite.com/posts/5b196854.html</id>
+    <link href="https://zhangmiao.cc/posts/5b196854.html"/>
+    <id>https://zhangmiao.cc/posts/5b196854.html</id>
     <published>2019-07-30T07:36:54.000Z</published>
     <updated>2019-07-30T07:40:29.370Z</updated>
     
@@ -105,17 +105,17 @@
     
     </summary>
     
-      <category term="awsome" scheme="http://yoursite.com/categories/awsome/"/>
+      <category term="awsome" scheme="https://zhangmiao.cc/categories/awsome/"/>
     
     
-      <category term="awsome" scheme="http://yoursite.com/tags/awsome/"/>
+      <category term="awsome" scheme="https://zhangmiao.cc/tags/awsome/"/>
     
   </entry>
   
   <entry>
     <title>java.lang.ClassNotFoundException:&quot;org.apache.http.ProtocolVersion&quot;</title>
-    <link href="http://yoursite.com/posts/c7a54c5f.html"/>
-    <id>http://yoursite.com/posts/c7a54c5f.html</id>
+    <link href="https://zhangmiao.cc/posts/c7a54c5f.html"/>
+    <id>https://zhangmiao.cc/posts/c7a54c5f.html</id>
     <published>2019-07-26T03:38:39.000Z</published>
     <updated>2019-07-26T03:46:34.082Z</updated>
     
@@ -134,21 +134,21 @@
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
     
-      <category term="Exception" scheme="http://yoursite.com/categories/Android/Exception/"/>
+      <category term="Exception" scheme="https://zhangmiao.cc/categories/Android/Exception/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
     
-      <category term="Exception" scheme="http://yoursite.com/tags/Exception/"/>
+      <category term="Exception" scheme="https://zhangmiao.cc/tags/Exception/"/>
     
   </entry>
   
   <entry>
     <title>GoogleMap使用介绍</title>
-    <link href="http://yoursite.com/posts/50fe3b5b.html"/>
-    <id>http://yoursite.com/posts/50fe3b5b.html</id>
+    <link href="https://zhangmiao.cc/posts/50fe3b5b.html"/>
+    <id>https://zhangmiao.cc/posts/50fe3b5b.html</id>
     <published>2019-07-25T08:17:10.000Z</published>
     <updated>2019-07-25T08:48:12.764Z</updated>
     
@@ -161,21 +161,21 @@
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
     
-      <category term="Map" scheme="http://yoursite.com/categories/Android/Map/"/>
+      <category term="Map" scheme="https://zhangmiao.cc/categories/Android/Map/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
     
-      <category term="Map" scheme="http://yoursite.com/tags/Map/"/>
+      <category term="Map" scheme="https://zhangmiao.cc/tags/Map/"/>
     
   </entry>
   
   <entry>
     <title>最新Android框架排行榜，上百项资源汇总不容错过</title>
-    <link href="http://yoursite.com/posts/b0de6447.html"/>
-    <id>http://yoursite.com/posts/b0de6447.html</id>
+    <link href="https://zhangmiao.cc/posts/b0de6447.html"/>
+    <id>https://zhangmiao.cc/posts/b0de6447.html</id>
     <published>2019-07-22T03:30:00.000Z</published>
     <updated>2019-07-22T03:36:29.957Z</updated>
     
@@ -206,21 +206,21 @@
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
     
-      <category term="框架" scheme="http://yoursite.com/categories/Android/%E6%A1%86%E6%9E%B6/"/>
+      <category term="框架" scheme="https://zhangmiao.cc/categories/Android/%E6%A1%86%E6%9E%B6/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
     
-      <category term="框架" scheme="http://yoursite.com/tags/%E6%A1%86%E6%9E%B6/"/>
+      <category term="框架" scheme="https://zhangmiao.cc/tags/%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
   <entry>
     <title>Android面试总结</title>
-    <link href="http://yoursite.com/posts/27a6e4df.html"/>
-    <id>http://yoursite.com/posts/27a6e4df.html</id>
+    <link href="https://zhangmiao.cc/posts/27a6e4df.html"/>
+    <id>https://zhangmiao.cc/posts/27a6e4df.html</id>
     <published>2019-07-10T06:29:31.000Z</published>
     <updated>2019-07-22T09:19:05.257Z</updated>
     
@@ -238,21 +238,21 @@
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
     
-      <category term="面试" scheme="http://yoursite.com/categories/Android/%E9%9D%A2%E8%AF%95/"/>
+      <category term="面试" scheme="https://zhangmiao.cc/categories/Android/%E9%9D%A2%E8%AF%95/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
     
-      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+      <category term="面试" scheme="https://zhangmiao.cc/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>Android面试题集</title>
-    <link href="http://yoursite.com/posts/4a3cde30.html"/>
-    <id>http://yoursite.com/posts/4a3cde30.html</id>
+    <link href="https://zhangmiao.cc/posts/4a3cde30.html"/>
+    <id>https://zhangmiao.cc/posts/4a3cde30.html</id>
     <published>2019-07-02T06:36:57.000Z</published>
     <updated>2019-07-22T09:18:42.537Z</updated>
     
@@ -264,21 +264,21 @@
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
     
-      <category term="面试" scheme="http://yoursite.com/categories/Android/%E9%9D%A2%E8%AF%95/"/>
+      <category term="面试" scheme="https://zhangmiao.cc/categories/Android/%E9%9D%A2%E8%AF%95/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
     
-      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+      <category term="面试" scheme="https://zhangmiao.cc/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>Android知识间记，快速回顾各种知识</title>
-    <link href="http://yoursite.com/posts/97843d21.html"/>
-    <id>http://yoursite.com/posts/97843d21.html</id>
+    <link href="https://zhangmiao.cc/posts/97843d21.html"/>
+    <id>https://zhangmiao.cc/posts/97843d21.html</id>
     <published>2019-07-01T06:45:30.000Z</published>
     <updated>2019-07-22T06:56:59.753Z</updated>
     
@@ -303,21 +303,21 @@
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
     
-      <category term="面试" scheme="http://yoursite.com/categories/Android/%E9%9D%A2%E8%AF%95/"/>
+      <category term="面试" scheme="https://zhangmiao.cc/categories/Android/%E9%9D%A2%E8%AF%95/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
     
-      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+      <category term="面试" scheme="https://zhangmiao.cc/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>Flutter “保姆”级项目 Demo合集</title>
-    <link href="http://yoursite.com/posts/60004316.html"/>
-    <id>http://yoursite.com/posts/60004316.html</id>
+    <link href="https://zhangmiao.cc/posts/60004316.html"/>
+    <id>https://zhangmiao.cc/posts/60004316.html</id>
     <published>2019-05-12T05:40:05.000Z</published>
     <updated>2019-07-22T06:03:30.700Z</updated>
     
@@ -346,21 +346,21 @@
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
     
-      <category term="Flutter" scheme="http://yoursite.com/categories/Android/Flutter/"/>
+      <category term="Flutter" scheme="https://zhangmiao.cc/categories/Android/Flutter/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
     
-      <category term="Flutter" scheme="http://yoursite.com/tags/Flutter/"/>
+      <category term="Flutter" scheme="https://zhangmiao.cc/tags/Flutter/"/>
     
   </entry>
   
   <entry>
     <title>FlutterPlugin开发流程</title>
-    <link href="http://yoursite.com/posts/b7213cdb.html"/>
-    <id>http://yoursite.com/posts/b7213cdb.html</id>
+    <link href="https://zhangmiao.cc/posts/b7213cdb.html"/>
+    <id>https://zhangmiao.cc/posts/b7213cdb.html</id>
     <published>2019-04-29T08:00:03.000Z</published>
     <updated>2019-05-27T08:02:01.728Z</updated>
     
@@ -384,21 +384,21 @@
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
     
-      <category term="Flutter" scheme="http://yoursite.com/categories/Android/Flutter/"/>
+      <category term="Flutter" scheme="https://zhangmiao.cc/categories/Android/Flutter/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
     
-      <category term="Flutter" scheme="http://yoursite.com/tags/Flutter/"/>
+      <category term="Flutter" scheme="https://zhangmiao.cc/tags/Flutter/"/>
     
   </entry>
   
   <entry>
     <title>Flutter与Android的交互</title>
-    <link href="http://yoursite.com/posts/5ae94dfd.html"/>
-    <id>http://yoursite.com/posts/5ae94dfd.html</id>
+    <link href="https://zhangmiao.cc/posts/5ae94dfd.html"/>
+    <id>https://zhangmiao.cc/posts/5ae94dfd.html</id>
     <published>2019-04-29T07:46:33.000Z</published>
     <updated>2019-05-27T08:01:52.234Z</updated>
     
@@ -414,21 +414,21 @@
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
     
-      <category term="Flutter" scheme="http://yoursite.com/categories/Android/Flutter/"/>
+      <category term="Flutter" scheme="https://zhangmiao.cc/categories/Android/Flutter/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
     
-      <category term="Flutter" scheme="http://yoursite.com/tags/Flutter/"/>
+      <category term="Flutter" scheme="https://zhangmiao.cc/tags/Flutter/"/>
     
   </entry>
   
   <entry>
     <title>Flutter入门指南(十四)之实战</title>
-    <link href="http://yoursite.com/posts/b447830c.html"/>
-    <id>http://yoursite.com/posts/b447830c.html</id>
+    <link href="https://zhangmiao.cc/posts/b447830c.html"/>
+    <id>https://zhangmiao.cc/posts/b447830c.html</id>
     <published>2019-04-28T07:33:17.000Z</published>
     <updated>2019-05-31T08:17:27.004Z</updated>
     
@@ -456,25 +456,25 @@
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
     
-      <category term="Flutter" scheme="http://yoursite.com/categories/Android/Flutter/"/>
+      <category term="Flutter" scheme="https://zhangmiao.cc/categories/Android/Flutter/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
     
-      <category term="Flutter" scheme="http://yoursite.com/tags/Flutter/"/>
+      <category term="Flutter" scheme="https://zhangmiao.cc/tags/Flutter/"/>
     
   </entry>
   
   <entry>
     <title>Flutter入门指南(十三)之网络</title>
-    <link href="http://yoursite.com/posts/d9e32c9b.html"/>
-    <id>http://yoursite.com/posts/d9e32c9b.html</id>
+    <link href="https://zhangmiao.cc/posts/d9e32c9b.html"/>
+    <id>https://zhangmiao.cc/posts/d9e32c9b.html</id>
     <published>2019-04-28T07:24:59.000Z</published>
     <updated>2019-05-27T07:42:31.723Z</updated>
     
-    <content type="html"><![CDATA[<p>前面讲完了常用的部件，<code>BLoC</code> 模式，数据持久化等常用的，今天再介绍个重头戏 —— 网络请求</p><h4 id="HttpClient"><a href="#HttpClient" class="headerlink" title="HttpClient"></a>HttpClient</h4><p><code>HttpClient</code> 是 <code>dart</code> 自带的网络请求方式，在 <code>dart:io</code> 包下。使用 <code>HttpClient</code> 作为请求分以下几个步骤</p><ol><li><p>创建 HttpClient 实例</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">HttpClient client = HttpClient();</span><br></pre></td></tr></table></figure></li><li><p>打开连接，并设置一些头参数，请求参数等</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 如果 url 中没有查询参数可直接创建</span></span><br><span class="line"><span class="built_in">Uri</span> uri = <span class="built_in">Uri</span>.parse(<span class="string">'https://www.xxx.com'</span>);</span><br><span class="line"><span class="comment">// 如果存在查询参数则在 Uri 中添加</span></span><br><span class="line"><span class="built_in">Uri</span> uri = <span class="built_in">Uri</span>(scheme: <span class="string">'https'</span>, host: <span class="string">'www.xxx.com'</span>, queryParameters: &#123;<span class="string">'a'</span>: <span class="string">'AAA'</span>&#125;);</span><br><span class="line"><span class="comment">// 打开连接</span></span><br><span class="line">HttpClientRequest request = <span class="keyword">await</span> client.getUrl(uri);</span><br><span class="line">request.headers.add(<span class="string">'token'</span>, <span class="string">'Bear <span class="subst">$&#123;<span class="string">'x'</span> * <span class="number">20</span>&#125;</span>'</span>); <span class="comment">// 添加头部 token 信息</span></span><br><span class="line"><span class="comment">// 如果是 post 或者 put 请求，通过 `add` 添加请求体</span></span><br><span class="line"><span class="comment">// 因为 `add` 方法需要传入 `List&lt;int&gt;` 参数，可以通过 utf8.encode 进行编码</span></span><br><span class="line">request.add(utf8.encode(<span class="string">'&#123;"a": "aaa"&#125;'</span>));</span><br><span class="line"><span class="comment">// 也可以通过添加流的方式进行添加</span></span><br><span class="line">request.addStream(input);</span><br></pre></td></tr></table></figure></li><li><p>连接服务器</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 设置 request 后通过 request.close() 获取一个响应对象 HttpClientResponse，</span></span><br><span class="line"><span class="comment">// 包括响应头，响应内容等</span></span><br><span class="line">HttpClientResponse response = <span class="keyword">await</span> request.close();</span><br></pre></td></tr></table></figure></li><li><p>读取服务器响应内容</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="built_in">String</span> responseBody = <span class="keyword">await</span> response.transform(utf8.decoder).join();</span><br></pre></td></tr></table></figure></li><li><p>关闭实例</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">client.close();</span><br></pre></td></tr></table></figure></li></ol><a id="more"></a><p>例如我们要去请求 <code>Bird.so</code> 的首页并显示，我们可以这么实现</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">_httpClientRequest() <span class="keyword">async</span> &#123;</span><br><span class="line">    HttpClient client;</span><br><span class="line">    <span class="comment">// try catch finally 用于捕获请求过程中发生的异常，在 finally 中设置保证 client 能够关闭</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      client = HttpClient();</span><br><span class="line">      HttpClientRequest request = <span class="keyword">await</span> client.getUrl(<span class="built_in">Uri</span>.parse(_BIRD_SO_URL));</span><br><span class="line">      HttpClientResponse response = <span class="keyword">await</span> request.close();</span><br><span class="line">      <span class="built_in">String</span> strResponse = <span class="keyword">await</span> response.transform(utf8.decoder).join();</span><br><span class="line">      setState(() =&gt; _netBack = strResponse);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="built_in">print</span>(<span class="string">'<span class="subst">$&#123;e.toString()&#125;</span>'</span>);</span><br><span class="line">      setState(() =&gt; _netBack = <span class="string">'Fail'</span>);</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">      client.close();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure><p>最后实现的效果</p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/2888797-1042230799d843a8.gif" alt=""></p><p>很显然，用 <code>HttpClient</code> 请求相对来说是个非常麻烦的过程，如果要涉及到文本上传之类的，那么就会更麻烦了，所以这边引入一个网络请求的插件 <code>dio</code>，写本文的时候版本为 <code>2.1.0</code></p><h4 id="Dio"><a href="#Dio" class="headerlink" title="Dio"></a>Dio</h4><p>dio 是个非常强大的网络请求库，他的方式类似 <code>OkHttp</code>，我们可以直接查看<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fflutterchina%2Fdio%2Fblob%2Fmaster%2FREADME-ZH.md" target="_blank" rel="noopener">官方文档</a>，使用方式非常简单，创建一个 <code>Dio</code> 实例，然后就可以通过 <code>get</code>，<code>post</code> 等方式发起请求，返回 <code>Future&lt;Response&gt;</code>，而且支持多个并发请求，可以设置返回响应的类型，监听上传下载进度等等，看着就很给力。对于简单的方式，这边就不做太多介绍，主要讲下拦截器，也是非常给力的一部分。比如我们需要请求这么个接口 <code>https://randomuser.me/api/</code></p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527152811.png" alt=""></p><p>这个接口通过 <code>get</code> 请求，可以加入任意的查询参数。比如我们需要实现一个请求加解密的过程，如果每次都在上传参数或者返回请求的时候去加密，解密的话，就做了非常多无用功了，那么这时候拦截器就派上用场了。先定义下加解密的规则，上传的参数统一转为小写，不存在大写，请求回的数据，不能含有 <code>info</code> 字段。看下如何实现</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">_dioRequest() <span class="keyword">async</span> &#123;</span><br><span class="line">    BaseOptions options = BaseOptions(connectTimeout: <span class="number">5000</span>, receiveTimeout: <span class="number">60000</span>);</span><br><span class="line">    Dio dio = Dio(options);</span><br><span class="line">    </span><br><span class="line">    dio.interceptors.add(InterceptorsWrapper(onRequest: (opt) &#123;</span><br><span class="line">      <span class="comment">// 获取查询的参数</span></span><br><span class="line">      <span class="built_in">Map</span> params = opt.queryParameters;</span><br><span class="line">      <span class="comment">// 将所有的参数转为小写，因为查询参数通过 map 形式上传</span></span><br><span class="line">      params.forEach((key, value) =&gt; </span><br><span class="line">                       opt.queryParameters[key] = <span class="string">'$value'</span>.toLowerCase());</span><br><span class="line">      <span class="comment">// 这边还可以做些别的操作，例如需要 token 进行用户身份验证，则通过头部进行添加</span></span><br><span class="line">      <span class="comment">// opt.headers['authorization'] = 'token';</span></span><br><span class="line">      <span class="comment">// 在官网中，提供了 lock 和 unlock 的写法，被 lock 后，接下来的请求会进入队列等待，</span></span><br><span class="line">      <span class="comment">// 直到 unlock 后才能继续，可以用于几个请求，后续的需要用到前面的返回值的情况使用</span></span><br><span class="line">        </span><br><span class="line">      <span class="comment">// 返回修改后的 RequestOptions</span></span><br><span class="line">      <span class="keyword">return</span> opt;</span><br><span class="line">    &#125;, onResponse: (resp) &#123;</span><br><span class="line">      <span class="comment">// 返回响应体后，将 info 字段的内容切除，并将 json 拼接完成</span></span><br><span class="line">      resp.data = <span class="string">'<span class="subst">$&#123;<span class="string">'<span class="subst">$&#123;resp.data&#125;</span>'</span>.split(<span class="string">', info'</span>).first&#125;</span>&#125;'</span>;</span><br><span class="line">      <span class="keyword">return</span> resp;</span><br><span class="line">    &#125;, onError: (error) &#123;</span><br><span class="line">      <span class="comment">// 发生错误时的回调</span></span><br><span class="line">      <span class="keyword">return</span> error;</span><br><span class="line">    &#125;));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 发送一个请求，可以查看下打印的结果</span></span><br><span class="line">    Response response = <span class="keyword">await</span> dio.<span class="keyword">get</span>(_USER_ME_URL, queryParameters: &#123;<span class="string">'a'</span>: <span class="string">'AAA'</span>, <span class="string">'b'</span>: <span class="string">'BbBbBb'</span>&#125;);</span><br><span class="line">    <span class="built_in">print</span>(response.data);</span><br><span class="line">    <span class="built_in">print</span>(response.request.headers);</span><br><span class="line">    <span class="built_in">print</span>(response.request.queryParameters);</span><br><span class="line">    setState(() =&gt; _netBack = response.data.toString()); <span class="comment">// 界面显示 response.data</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure><p>看下最后的显示信息</p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527152843.png" alt=""></p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527152854.png" alt=""></p><p>请求体的头部成功加上了 <code>authorization</code> 参数，请求的参数全部变为小写，返回的信息也把 info 字段值去除。在很多时候，请求接口后，需要将 json 转换成 pojo 类来处理，可以通过 <code>json_serializable</code> 这个三方插件实现，这边提供文章 <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fjuejin.im%2Fpost%2F5b5f00e7e51d45190571172f" target="_blank" rel="noopener">Flutter Json自动反序列化</a>，当然这种方式比较麻烦，这里推荐个 <code>Android Studio</code> 下的插件 <code>dart_json_format</code> 直接搜索就可以，如果用的是 <code>Vitual Code</code> 或者别的不是 <code>JetBrains</code> 系列的，这里有个转换的网址 <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fjaviercbk.github.io%2Fjson_to_dart" target="_blank" rel="noopener">JsonToDart</a>。</p><p><em>以上代码查看 http_main.dart 文件</em></p><h4 id="实践一下下"><a href="#实践一下下" class="headerlink" title="实践一下下"></a>实践一下下</h4><p>不知道小伙还记得前面讲的 <code>BLoC</code> 没有，忘了可以查看 <a href="https://zhangmiao.cc/posts/d121323a.html" target="_blank" rel="noopener">Flutter 状态管理及 BLoC</a>，这里结合 <code>BLoC</code> 和 <code>Dio</code> 实现界面和逻辑分离的小例子，接口使用前面提到的 <code>https://randomuser.me/api/</code> 接口。网络应该是比较常用的，所以对其进行一些封装还是很有必要的，这边提供下我自己封装的方法</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:dio/dio.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用于错误信息回调</span></span><br><span class="line"><span class="keyword">typedef</span> ErrorCallback = <span class="keyword">void</span> <span class="built_in">Function</span>(<span class="built_in">String</span> msg);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HttpUtils</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> GET = <span class="string">'get'</span>;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> POST = <span class="string">'post'</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> Dio _dio;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> HttpUtils _instance;</span><br><span class="line"></span><br><span class="line">  Dio <span class="keyword">get</span> hp =&gt; _dio;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// dio 可以在 BaseOptions 中指定域名 baseUrl，</span></span><br><span class="line">  <span class="comment">// 后续接口就不需要再添加域名了</span></span><br><span class="line">  <span class="comment">// 如果请求的接口域名发生了变化，只要把全部 url 写全，就会自动使用新的域名</span></span><br><span class="line">  HttpUtils._internal(<span class="built_in">String</span> base) &#123;</span><br><span class="line">    <span class="comment">// 生成一个单例，防止多次打开关闭造成开销</span></span><br><span class="line">    _dio = Dio(BaseOptions(baseUrl: base, connectTimeout: <span class="number">10000</span>, receiveTimeout: <span class="number">10000</span>));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">factory</span> HttpUtils(<span class="built_in">String</span> base) &#123;</span><br><span class="line">    <span class="keyword">if</span> (_instance == <span class="keyword">null</span>) _instance = HttpUtils._internal(base);</span><br><span class="line">    <span class="keyword">return</span> _instance;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 添加拦截器</span></span><br><span class="line">  addInterceptor(<span class="built_in">List</span>&lt;InterceptorsWrapper&gt; interceptors) &#123;</span><br><span class="line">    _dio.interceptors.clear();</span><br><span class="line">    _dio.interceptors.addAll(interceptors);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Future&lt;Response&lt;T&gt;&gt; getRequest&lt;T&gt;(url, &#123;<span class="built_in">Map</span> params, ErrorCallback callback&#125;) =&gt;</span><br><span class="line">      _request(url, GET, params: params, callback: callback);</span><br><span class="line"></span><br><span class="line">  Future&lt;Response&lt;T&gt;&gt; postRequest&lt;T&gt;(url, &#123;<span class="built_in">Map</span> params, ErrorCallback callback&#125;) =&gt;</span><br><span class="line">      _request(url, POST, params: params, callback: callback);</span><br><span class="line"></span><br><span class="line">  Future&lt;Response&gt; download(url, path, &#123;ProgressCallback receive, CancelToken token&#125;) =&gt;</span><br><span class="line">      _dio.download(url, path, onReceiveProgress: receive, cancelToken: token);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// T 可以指定返回的类型，String 或者 Map&lt;String, dynamic&gt;</span></span><br><span class="line">  Future&lt;Response&lt;T&gt;&gt; _request&lt;T&gt;(</span><br><span class="line">    url,</span><br><span class="line">    <span class="built_in">String</span> method, &#123;</span><br><span class="line">    <span class="built_in">Map</span> params, <span class="comment">// 上传的参数</span></span><br><span class="line">    Options opt,</span><br><span class="line">    ErrorCallback callback, <span class="comment">// 错误回调</span></span><br><span class="line">    ProgressCallback send, <span class="comment">// 上传进度监听</span></span><br><span class="line">    ProgressCallback receive, <span class="comment">// 下载监听</span></span><br><span class="line">    CancelToken token, <span class="comment">// 用于取消的 token，可以多个请求绑定一个 token</span></span><br><span class="line">  &#125;) <span class="keyword">async</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      Response&lt;T&gt; rep;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (method == GET) &#123;</span><br><span class="line">        <span class="comment">// 如果不是重新创建 Dio 实例，get 方法使用 queryParams 会出错，不懂原因，使用拼接没有问题</span></span><br><span class="line">        <span class="keyword">if</span> (params != <span class="keyword">null</span> &amp;&amp; params.isNotEmpty) &#123;</span><br><span class="line">          <span class="keyword">var</span> sb = <span class="built_in">StringBuffer</span>(<span class="string">'?'</span>);</span><br><span class="line">          params.forEach((key, value) &#123;</span><br><span class="line">            sb.write(<span class="string">'$key=$value&amp;'</span>);</span><br><span class="line">          &#125;);</span><br><span class="line">          <span class="comment">// get 请求下拼接路径</span></span><br><span class="line">          url += sb.toString().substring(<span class="number">0</span>, sb.length - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        rep = <span class="keyword">await</span> _dio.<span class="keyword">get</span>(url, options: opt, onReceiveProgress: receive, cancelToken: token);</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method == POST) &#123;</span><br><span class="line">        <span class="comment">// post 参数放请求体</span></span><br><span class="line">        rep = params == <span class="keyword">null</span></span><br><span class="line">            ? <span class="keyword">await</span> _dio.post(url, options: opt, cancelToken: token, onSendProgress: send, onReceiveProgress: receive)</span><br><span class="line">            : <span class="keyword">await</span> _dio.post(url,</span><br><span class="line">                data: params, options: opt, cancelToken: token, onSendProgress: send, onReceiveProgress: receive);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 如果 statusCode 不是 200 则错误回调，返回空的 Response</span></span><br><span class="line">      <span class="keyword">if</span> (rep.statusCode != <span class="number">200</span> &amp;&amp; callback != <span class="keyword">null</span>) &#123;</span><br><span class="line">        callback(<span class="string">'network error, and code is <span class="subst">$&#123;rep.statusCode&#125;</span>'</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> rep;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="keyword">if</span> (callback != <span class="keyword">null</span>) &#123;</span><br><span class="line">        callback(<span class="string">'network error, catch error: <span class="subst">$&#123;e.toString()&#125;</span>'</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>封装后就可以愉快的调用了，如果有别的请求方式后期可以继续扩展。继续看代码，创建一个 <code>application.dart</code> 文件，用于存放全局参数</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> HttpUtils http;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>并在 <code>main()</code> 方法中进行初始化，接下来就可以直接使用</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  Application.http = HttpUtils(<span class="string">'https://randomuser.me'</span>);</span><br><span class="line">  </span><br><span class="line">  runApp(DemoApp());</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 透明状态栏</span></span><br><span class="line">  <span class="keyword">if</span> (Platform.isAndroid) &#123;</span><br><span class="line">      SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>看下最后的实现效果吧，刚进入没有数据则通过转圈圈提示，加载完数据后，点击头像更换下个</p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/2888797-cbe4a21cc6b3b828.gif" alt=""></p><p>实现 <code>BLoC</code> 需要有一个管理类</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserBloc</span> <span class="keyword">extends</span> <span class="title">BaseBloc</span> </span>&#123;</span><br><span class="line">  RandomUserModel _user;</span><br><span class="line"></span><br><span class="line">  RandomUserModel <span class="keyword">get</span> user =&gt; _user;</span><br><span class="line"></span><br><span class="line">  BehaviorSubject&lt;RandomUserModel&gt; _controller = BehaviorSubject();</span><br><span class="line"></span><br><span class="line">  Observable&lt;RandomUserModel&gt; <span class="keyword">get</span> stream =&gt; Observable(_controller.stream);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 网络请求获取新的数据，并更新</span></span><br><span class="line">  updateUserInfo() &#123;</span><br><span class="line">    Application.http.getRequest(<span class="string">'/api'</span>).then((response) &#123;</span><br><span class="line">      <span class="comment">// RandomUserModel 就是接口返回的 json 转成的 model 类</span></span><br><span class="line">      RandomUserModel model = RandomUserModel.fromMap(response.data);</span><br><span class="line">      _user = model;</span><br><span class="line">      <span class="comment">// add 到 controller 通知修改</span></span><br><span class="line">      _controller.add(model);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">void</span> dispose() &#123;</span><br><span class="line">    _controller?.close(); <span class="comment">// 及时销毁</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>设置好管理类后，就可以来编写界面了，界面也比较简单</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserPageDemo</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 将首字母大写</span></span><br><span class="line">  <span class="built_in">String</span> _upperFirst(<span class="built_in">String</span> content) &#123;</span><br><span class="line">    <span class="keyword">assert</span>(content != <span class="keyword">null</span> &amp;&amp; content.isNotEmpty);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'<span class="subst">$&#123;content.substring(<span class="number">0</span>, <span class="number">1</span>).toUpperCase()&#125;</span><span class="subst">$&#123;content.substring(<span class="number">1</span>)&#125;</span>'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 地址信息通用部件</span></span><br><span class="line">  Widget _userLocation(<span class="built_in">String</span> info) =&gt; Padding(</span><br><span class="line">      padding: <span class="keyword">const</span> EdgeInsets.only(top: <span class="number">4.0</span>),</span><br><span class="line">      child: Text(info, style: TextStyle(color: Colors.white, fontSize: <span class="number">16.0</span>)));</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    UserBloc _bloc = BlocProvider.of&lt;UserBloc&gt;(context);</span><br><span class="line">    _bloc.updateUserInfo();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      <span class="comment">// StreamBuilder 接受更新数据的 stream</span></span><br><span class="line">      body: StreamBuilder(</span><br><span class="line">          builder: (_, AsyncSnapshot&lt;RandomUserModel&gt; snapshot) =&gt; Container(</span><br><span class="line">                alignment: Alignment.center,</span><br><span class="line">                decoration: BoxDecoration(</span><br><span class="line">                    gradient: LinearGradient(</span><br><span class="line">                        begin: Alignment.topCenter,</span><br><span class="line">                        end: Alignment.bottomCenter,</span><br><span class="line">                        colors: [Colors.blue[<span class="number">600</span>], Colors.blue[<span class="number">400</span>]])),</span><br><span class="line">                child: !snapshot.hasData</span><br><span class="line">                    ? CupertinoActivityIndicator(radius: <span class="number">12.0</span>)</span><br><span class="line">                    : Column(mainAxisAlignment: MainAxisAlignment.center, children: &lt;Widget&gt;[</span><br><span class="line">                        InkWell( <span class="comment">// 用于切换数据</span></span><br><span class="line">                            child: ClipOval( <span class="comment">// 圆形头像</span></span><br><span class="line">                              child: FadeInImage.assetNetwork(</span><br><span class="line">                                  placeholder: <span class="string">'images/ava_default.png'</span>, image: snapshot.data.results[<span class="number">0</span>].picture.large),</span><br><span class="line">                            ),</span><br><span class="line">                            onTap: () =&gt; _bloc.updateUserInfo()), <span class="comment">// 更新数据</span></span><br><span class="line">                        Padding(</span><br><span class="line">                          padding: <span class="keyword">const</span> EdgeInsets.only(top: <span class="number">20.0</span>),</span><br><span class="line">                          child: Text(</span><br><span class="line">                              <span class="string">'<span class="subst">$&#123;_upperFirst(snapshot.data.results[<span class="number">0</span>].name.first)&#125;</span> <span class="subst">$&#123;_upperFirst(snapshot.data.results[<span class="number">0</span>].name.last)&#125;</span>'</span>,</span><br><span class="line">                              style: TextStyle(color: Colors.white, fontSize: <span class="number">24.0</span>)),</span><br><span class="line">                        ),</span><br><span class="line">                        Text(<span class="string">'<span class="subst">$&#123;snapshot.data.results[<span class="number">0</span>].email&#125;</span>'</span>,</span><br><span class="line">                            style: TextStyle(color: Colors.white, fontSize: <span class="number">18.0</span>)),</span><br><span class="line">                        _userLocation(<span class="string">'<span class="subst">$&#123;snapshot.data.results[<span class="number">0</span>].location.street&#125;</span>'</span>),</span><br><span class="line">                        _userLocation(<span class="string">'<span class="subst">$&#123;_upperFirst(snapshot.data.results[<span class="number">0</span>].location.city)&#125;</span>'</span>),</span><br><span class="line">                        _userLocation(<span class="string">'<span class="subst">$&#123;_upperFirst(snapshot.data.results[<span class="number">0</span>].location.state)&#125;</span>'</span>),</span><br><span class="line">                      ]),</span><br><span class="line">              ),</span><br><span class="line">          initialData: _bloc.user, <span class="comment">// 注入初始值</span></span><br><span class="line">          stream: _bloc.stream), <span class="comment">// 注入更新 stream</span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><em>以上代码查看 bloc_network 包下的所有文件</em></p>]]></content>
+    <content type="html"><![CDATA[<p>前面讲完了常用的部件，<code>BLoC</code> 模式，数据持久化等常用的，今天再介绍个重头戏 —— 网络请求</p><h4 id="HttpClient"><a href="#HttpClient" class="headerlink" title="HttpClient"></a>HttpClient</h4><p><code>HttpClient</code> 是 <code>dart</code> 自带的网络请求方式，在 <code>dart:io</code> 包下。使用 <code>HttpClient</code> 作为请求分以下几个步骤</p><ol><li><p>创建 HttpClient 实例</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">HttpClient client = HttpClient();</span><br></pre></td></tr></table></figure></li><li><p>打开连接，并设置一些头参数，请求参数等</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 如果 url 中没有查询参数可直接创建</span></span><br><span class="line"><span class="built_in">Uri</span> uri = <span class="built_in">Uri</span>.parse(<span class="string">'https://www.xxx.com'</span>);</span><br><span class="line"><span class="comment">// 如果存在查询参数则在 Uri 中添加</span></span><br><span class="line"><span class="built_in">Uri</span> uri = <span class="built_in">Uri</span>(scheme: <span class="string">'https'</span>, host: <span class="string">'www.xxx.com'</span>, queryParameters: &#123;<span class="string">'a'</span>: <span class="string">'AAA'</span>&#125;);</span><br><span class="line"><span class="comment">// 打开连接</span></span><br><span class="line">HttpClientRequest request = <span class="keyword">await</span> client.getUrl(uri);</span><br><span class="line">request.headers.add(<span class="string">'token'</span>, <span class="string">'Bear <span class="subst">$&#123;<span class="string">'x'</span> * <span class="number">20</span>&#125;</span>'</span>); <span class="comment">// 添加头部 token 信息</span></span><br><span class="line"><span class="comment">// 如果是 post 或者 put 请求，通过 `add` 添加请求体</span></span><br><span class="line"><span class="comment">// 因为 `add` 方法需要传入 `List&lt;int&gt;` 参数，可以通过 utf8.encode 进行编码</span></span><br><span class="line">request.add(utf8.encode(<span class="string">'&#123;"a": "aaa"&#125;'</span>));</span><br><span class="line"><span class="comment">// 也可以通过添加流的方式进行添加</span></span><br><span class="line">request.addStream(input);</span><br></pre></td></tr></table></figure></li><li><p>连接服务器</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 设置 request 后通过 request.close() 获取一个响应对象 HttpClientResponse，</span></span><br><span class="line"><span class="comment">// 包括响应头，响应内容等</span></span><br><span class="line">HttpClientResponse response = <span class="keyword">await</span> request.close();</span><br></pre></td></tr></table></figure></li><li><p>读取服务器响应内容</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="built_in">String</span> responseBody = <span class="keyword">await</span> response.transform(utf8.decoder).join();</span><br></pre></td></tr></table></figure></li><li><p>关闭实例</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">client.close();</span><br></pre></td></tr></table></figure></li></ol><a id="more"></a><p>例如我们要去请求 <code>Bird.so</code> 的首页并显示，我们可以这么实现</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">_httpClientRequest() <span class="keyword">async</span> &#123;</span><br><span class="line">    HttpClient client;</span><br><span class="line">    <span class="comment">// try catch finally 用于捕获请求过程中发生的异常，在 finally 中设置保证 client 能够关闭</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      client = HttpClient();</span><br><span class="line">      HttpClientRequest request = <span class="keyword">await</span> client.getUrl(<span class="built_in">Uri</span>.parse(_BIRD_SO_URL));</span><br><span class="line">      HttpClientResponse response = <span class="keyword">await</span> request.close();</span><br><span class="line">      <span class="built_in">String</span> strResponse = <span class="keyword">await</span> response.transform(utf8.decoder).join();</span><br><span class="line">      setState(() =&gt; _netBack = strResponse);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="built_in">print</span>(<span class="string">'<span class="subst">$&#123;e.toString()&#125;</span>'</span>);</span><br><span class="line">      setState(() =&gt; _netBack = <span class="string">'Fail'</span>);</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">      client.close();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure><p>最后实现的效果</p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/2888797-1042230799d843a8.gif" alt=""></p><p>很显然，用 <code>HttpClient</code> 请求相对来说是个非常麻烦的过程，如果要涉及到文本上传之类的，那么就会更麻烦了，所以这边引入一个网络请求的插件 <code>dio</code>，写本文的时候版本为 <code>2.1.0</code></p><h4 id="Dio"><a href="#Dio" class="headerlink" title="Dio"></a>Dio</h4><p>dio 是个非常强大的网络请求库，他的方式类似 <code>OkHttp</code>，我们可以直接查看<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fflutterchina%2Fdio%2Fblob%2Fmaster%2FREADME-ZH.md" target="_blank" rel="noopener">官方文档</a>，使用方式非常简单，创建一个 <code>Dio</code> 实例，然后就可以通过 <code>get</code>，<code>post</code> 等方式发起请求，返回 <code>Future&lt;Response&gt;</code>，而且支持多个并发请求，可以设置返回响应的类型，监听上传下载进度等等，看着就很给力。对于简单的方式，这边就不做太多介绍，主要讲下拦截器，也是非常给力的一部分。比如我们需要请求这么个接口 <code>https://randomuser.me/api/</code></p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527152811.png" alt=""></p><p>这个接口通过 <code>get</code> 请求，可以加入任意的查询参数。比如我们需要实现一个请求加解密的过程，如果每次都在上传参数或者返回请求的时候去加密，解密的话，就做了非常多无用功了，那么这时候拦截器就派上用场了。先定义下加解密的规则，上传的参数统一转为小写，不存在大写，请求回的数据，不能含有 <code>info</code> 字段。看下如何实现</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line">_dioRequest() <span class="keyword">async</span> &#123;</span><br><span class="line">    BaseOptions options = BaseOptions(connectTimeout: <span class="number">5000</span>, receiveTimeout: <span class="number">60000</span>);</span><br><span class="line">    Dio dio = Dio(options);</span><br><span class="line">    </span><br><span class="line">    dio.interceptors.add(InterceptorsWrapper(onRequest: (opt) &#123;</span><br><span class="line">      <span class="comment">// 获取查询的参数</span></span><br><span class="line">      <span class="built_in">Map</span> params = opt.queryParameters;</span><br><span class="line">      <span class="comment">// 将所有的参数转为小写，因为查询参数通过 map 形式上传</span></span><br><span class="line">      params.forEach((key, value) =&gt; </span><br><span class="line">                       opt.queryParameters[key] = <span class="string">'$value'</span>.toLowerCase());</span><br><span class="line">      <span class="comment">// 这边还可以做些别的操作，例如需要 token 进行用户身份验证，则通过头部进行添加</span></span><br><span class="line">      <span class="comment">// opt.headers['authorization'] = 'token';</span></span><br><span class="line">      <span class="comment">// 在官网中，提供了 lock 和 unlock 的写法，被 lock 后，接下来的请求会进入队列等待，</span></span><br><span class="line">      <span class="comment">// 直到 unlock 后才能继续，可以用于几个请求，后续的需要用到前面的返回值的情况使用</span></span><br><span class="line">        </span><br><span class="line">      <span class="comment">// 返回修改后的 RequestOptions</span></span><br><span class="line">      <span class="keyword">return</span> opt;</span><br><span class="line">    &#125;, onResponse: (resp) &#123;</span><br><span class="line">      <span class="comment">// 返回响应体后，将 info 字段的内容切除，并将 json 拼接完成</span></span><br><span class="line">      resp.data = <span class="string">'<span class="subst">$&#123;<span class="string">'<span class="subst">$&#123;resp.data&#125;</span>'</span>.split(<span class="string">', info'</span>).first&#125;</span>&#125;'</span>;</span><br><span class="line">      <span class="keyword">return</span> resp;</span><br><span class="line">    &#125;, onError: (error) &#123;</span><br><span class="line">      <span class="comment">// 发生错误时的回调</span></span><br><span class="line">      <span class="keyword">return</span> error;</span><br><span class="line">    &#125;));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 发送一个请求，可以查看下打印的结果</span></span><br><span class="line">    Response response = <span class="keyword">await</span> dio.<span class="keyword">get</span>(_USER_ME_URL, queryParameters: &#123;<span class="string">'a'</span>: <span class="string">'AAA'</span>, <span class="string">'b'</span>: <span class="string">'BbBbBb'</span>&#125;);</span><br><span class="line">    <span class="built_in">print</span>(response.data);</span><br><span class="line">    <span class="built_in">print</span>(response.request.headers);</span><br><span class="line">    <span class="built_in">print</span>(response.request.queryParameters);</span><br><span class="line">    setState(() =&gt; _netBack = response.data.toString()); <span class="comment">// 界面显示 response.data</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure><p>看下最后的显示信息</p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527152843.png" alt=""></p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190527152854.png" alt=""></p><p>请求体的头部成功加上了 <code>authorization</code> 参数，请求的参数全部变为小写，返回的信息也把 info 字段值去除。在很多时候，请求接口后，需要将 json 转换成 pojo 类来处理，可以通过 <code>json_serializable</code> 这个三方插件实现，这边提供文章 <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fjuejin.im%2Fpost%2F5b5f00e7e51d45190571172f" target="_blank" rel="noopener">Flutter Json自动反序列化</a>，当然这种方式比较麻烦，这里推荐个 <code>Android Studio</code> 下的插件 <code>dart_json_format</code> 直接搜索就可以，如果用的是 <code>Vitual Code</code> 或者别的不是 <code>JetBrains</code> 系列的，这里有个转换的网址 <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fjaviercbk.github.io%2Fjson_to_dart" target="_blank" rel="noopener">JsonToDart</a>。</p><p><em>以上代码查看 http_main.dart 文件</em></p><h4 id="实践一下下"><a href="#实践一下下" class="headerlink" title="实践一下下"></a>实践一下下</h4><p>不知道小伙还记得前面讲的 <code>BLoC</code> 没有，忘了可以查看 <a href="https://zhangmiao.cc/posts/d121323a.html">Flutter 状态管理及 BLoC</a>，这里结合 <code>BLoC</code> 和 <code>Dio</code> 实现界面和逻辑分离的小例子，接口使用前面提到的 <code>https://randomuser.me/api/</code> 接口。网络应该是比较常用的，所以对其进行一些封装还是很有必要的，这边提供下我自己封装的方法</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:dio/dio.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用于错误信息回调</span></span><br><span class="line"><span class="keyword">typedef</span> ErrorCallback = <span class="keyword">void</span> <span class="built_in">Function</span>(<span class="built_in">String</span> msg);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HttpUtils</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> GET = <span class="string">'get'</span>;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">const</span> POST = <span class="string">'post'</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> Dio _dio;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> HttpUtils _instance;</span><br><span class="line"></span><br><span class="line">  Dio <span class="keyword">get</span> hp =&gt; _dio;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// dio 可以在 BaseOptions 中指定域名 baseUrl，</span></span><br><span class="line">  <span class="comment">// 后续接口就不需要再添加域名了</span></span><br><span class="line">  <span class="comment">// 如果请求的接口域名发生了变化，只要把全部 url 写全，就会自动使用新的域名</span></span><br><span class="line">  HttpUtils._internal(<span class="built_in">String</span> base) &#123;</span><br><span class="line">    <span class="comment">// 生成一个单例，防止多次打开关闭造成开销</span></span><br><span class="line">    _dio = Dio(BaseOptions(baseUrl: base, connectTimeout: <span class="number">10000</span>, receiveTimeout: <span class="number">10000</span>));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">factory</span> HttpUtils(<span class="built_in">String</span> base) &#123;</span><br><span class="line">    <span class="keyword">if</span> (_instance == <span class="keyword">null</span>) _instance = HttpUtils._internal(base);</span><br><span class="line">    <span class="keyword">return</span> _instance;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 添加拦截器</span></span><br><span class="line">  addInterceptor(<span class="built_in">List</span>&lt;InterceptorsWrapper&gt; interceptors) &#123;</span><br><span class="line">    _dio.interceptors.clear();</span><br><span class="line">    _dio.interceptors.addAll(interceptors);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Future&lt;Response&lt;T&gt;&gt; getRequest&lt;T&gt;(url, &#123;<span class="built_in">Map</span> params, ErrorCallback callback&#125;) =&gt;</span><br><span class="line">      _request(url, GET, params: params, callback: callback);</span><br><span class="line"></span><br><span class="line">  Future&lt;Response&lt;T&gt;&gt; postRequest&lt;T&gt;(url, &#123;<span class="built_in">Map</span> params, ErrorCallback callback&#125;) =&gt;</span><br><span class="line">      _request(url, POST, params: params, callback: callback);</span><br><span class="line"></span><br><span class="line">  Future&lt;Response&gt; download(url, path, &#123;ProgressCallback receive, CancelToken token&#125;) =&gt;</span><br><span class="line">      _dio.download(url, path, onReceiveProgress: receive, cancelToken: token);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// T 可以指定返回的类型，String 或者 Map&lt;String, dynamic&gt;</span></span><br><span class="line">  Future&lt;Response&lt;T&gt;&gt; _request&lt;T&gt;(</span><br><span class="line">    url,</span><br><span class="line">    <span class="built_in">String</span> method, &#123;</span><br><span class="line">    <span class="built_in">Map</span> params, <span class="comment">// 上传的参数</span></span><br><span class="line">    Options opt,</span><br><span class="line">    ErrorCallback callback, <span class="comment">// 错误回调</span></span><br><span class="line">    ProgressCallback send, <span class="comment">// 上传进度监听</span></span><br><span class="line">    ProgressCallback receive, <span class="comment">// 下载监听</span></span><br><span class="line">    CancelToken token, <span class="comment">// 用于取消的 token，可以多个请求绑定一个 token</span></span><br><span class="line">  &#125;) <span class="keyword">async</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      Response&lt;T&gt; rep;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (method == GET) &#123;</span><br><span class="line">        <span class="comment">// 如果不是重新创建 Dio 实例，get 方法使用 queryParams 会出错，不懂原因，使用拼接没有问题</span></span><br><span class="line">        <span class="keyword">if</span> (params != <span class="keyword">null</span> &amp;&amp; params.isNotEmpty) &#123;</span><br><span class="line">          <span class="keyword">var</span> sb = <span class="built_in">StringBuffer</span>(<span class="string">'?'</span>);</span><br><span class="line">          params.forEach((key, value) &#123;</span><br><span class="line">            sb.write(<span class="string">'$key=$value&amp;'</span>);</span><br><span class="line">          &#125;);</span><br><span class="line">          <span class="comment">// get 请求下拼接路径</span></span><br><span class="line">          url += sb.toString().substring(<span class="number">0</span>, sb.length - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        rep = <span class="keyword">await</span> _dio.<span class="keyword">get</span>(url, options: opt, onReceiveProgress: receive, cancelToken: token);</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (method == POST) &#123;</span><br><span class="line">        <span class="comment">// post 参数放请求体</span></span><br><span class="line">        rep = params == <span class="keyword">null</span></span><br><span class="line">            ? <span class="keyword">await</span> _dio.post(url, options: opt, cancelToken: token, onSendProgress: send, onReceiveProgress: receive)</span><br><span class="line">            : <span class="keyword">await</span> _dio.post(url,</span><br><span class="line">                data: params, options: opt, cancelToken: token, onSendProgress: send, onReceiveProgress: receive);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 如果 statusCode 不是 200 则错误回调，返回空的 Response</span></span><br><span class="line">      <span class="keyword">if</span> (rep.statusCode != <span class="number">200</span> &amp;&amp; callback != <span class="keyword">null</span>) &#123;</span><br><span class="line">        callback(<span class="string">'network error, and code is <span class="subst">$&#123;rep.statusCode&#125;</span>'</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> rep;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="keyword">if</span> (callback != <span class="keyword">null</span>) &#123;</span><br><span class="line">        callback(<span class="string">'network error, catch error: <span class="subst">$&#123;e.toString()&#125;</span>'</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>封装后就可以愉快的调用了，如果有别的请求方式后期可以继续扩展。继续看代码，创建一个 <code>application.dart</code> 文件，用于存放全局参数</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> HttpUtils http;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>并在 <code>main()</code> 方法中进行初始化，接下来就可以直接使用</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> main() &#123;</span><br><span class="line">  Application.http = HttpUtils(<span class="string">'https://randomuser.me'</span>);</span><br><span class="line">  </span><br><span class="line">  runApp(DemoApp());</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 透明状态栏</span></span><br><span class="line">  <span class="keyword">if</span> (Platform.isAndroid) &#123;</span><br><span class="line">      SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>看下最后的实现效果吧，刚进入没有数据则通过转圈圈提示，加载完数据后，点击头像更换下个</p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/2888797-cbe4a21cc6b3b828.gif" alt=""></p><p>实现 <code>BLoC</code> 需要有一个管理类</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserBloc</span> <span class="keyword">extends</span> <span class="title">BaseBloc</span> </span>&#123;</span><br><span class="line">  RandomUserModel _user;</span><br><span class="line"></span><br><span class="line">  RandomUserModel <span class="keyword">get</span> user =&gt; _user;</span><br><span class="line"></span><br><span class="line">  BehaviorSubject&lt;RandomUserModel&gt; _controller = BehaviorSubject();</span><br><span class="line"></span><br><span class="line">  Observable&lt;RandomUserModel&gt; <span class="keyword">get</span> stream =&gt; Observable(_controller.stream);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 网络请求获取新的数据，并更新</span></span><br><span class="line">  updateUserInfo() &#123;</span><br><span class="line">    Application.http.getRequest(<span class="string">'/api'</span>).then((response) &#123;</span><br><span class="line">      <span class="comment">// RandomUserModel 就是接口返回的 json 转成的 model 类</span></span><br><span class="line">      RandomUserModel model = RandomUserModel.fromMap(response.data);</span><br><span class="line">      _user = model;</span><br><span class="line">      <span class="comment">// add 到 controller 通知修改</span></span><br><span class="line">      _controller.add(model);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">void</span> dispose() &#123;</span><br><span class="line">    _controller?.close(); <span class="comment">// 及时销毁</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>设置好管理类后，就可以来编写界面了，界面也比较简单</p><figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserPageDemo</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 将首字母大写</span></span><br><span class="line">  <span class="built_in">String</span> _upperFirst(<span class="built_in">String</span> content) &#123;</span><br><span class="line">    <span class="keyword">assert</span>(content != <span class="keyword">null</span> &amp;&amp; content.isNotEmpty);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'<span class="subst">$&#123;content.substring(<span class="number">0</span>, <span class="number">1</span>).toUpperCase()&#125;</span><span class="subst">$&#123;content.substring(<span class="number">1</span>)&#125;</span>'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 地址信息通用部件</span></span><br><span class="line">  Widget _userLocation(<span class="built_in">String</span> info) =&gt; Padding(</span><br><span class="line">      padding: <span class="keyword">const</span> EdgeInsets.only(top: <span class="number">4.0</span>),</span><br><span class="line">      child: Text(info, style: TextStyle(color: Colors.white, fontSize: <span class="number">16.0</span>)));</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    UserBloc _bloc = BlocProvider.of&lt;UserBloc&gt;(context);</span><br><span class="line">    _bloc.updateUserInfo();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> Scaffold(</span><br><span class="line">      <span class="comment">// StreamBuilder 接受更新数据的 stream</span></span><br><span class="line">      body: StreamBuilder(</span><br><span class="line">          builder: (_, AsyncSnapshot&lt;RandomUserModel&gt; snapshot) =&gt; Container(</span><br><span class="line">                alignment: Alignment.center,</span><br><span class="line">                decoration: BoxDecoration(</span><br><span class="line">                    gradient: LinearGradient(</span><br><span class="line">                        begin: Alignment.topCenter,</span><br><span class="line">                        end: Alignment.bottomCenter,</span><br><span class="line">                        colors: [Colors.blue[<span class="number">600</span>], Colors.blue[<span class="number">400</span>]])),</span><br><span class="line">                child: !snapshot.hasData</span><br><span class="line">                    ? CupertinoActivityIndicator(radius: <span class="number">12.0</span>)</span><br><span class="line">                    : Column(mainAxisAlignment: MainAxisAlignment.center, children: &lt;Widget&gt;[</span><br><span class="line">                        InkWell( <span class="comment">// 用于切换数据</span></span><br><span class="line">                            child: ClipOval( <span class="comment">// 圆形头像</span></span><br><span class="line">                              child: FadeInImage.assetNetwork(</span><br><span class="line">                                  placeholder: <span class="string">'images/ava_default.png'</span>, image: snapshot.data.results[<span class="number">0</span>].picture.large),</span><br><span class="line">                            ),</span><br><span class="line">                            onTap: () =&gt; _bloc.updateUserInfo()), <span class="comment">// 更新数据</span></span><br><span class="line">                        Padding(</span><br><span class="line">                          padding: <span class="keyword">const</span> EdgeInsets.only(top: <span class="number">20.0</span>),</span><br><span class="line">                          child: Text(</span><br><span class="line">                              <span class="string">'<span class="subst">$&#123;_upperFirst(snapshot.data.results[<span class="number">0</span>].name.first)&#125;</span> <span class="subst">$&#123;_upperFirst(snapshot.data.results[<span class="number">0</span>].name.last)&#125;</span>'</span>,</span><br><span class="line">                              style: TextStyle(color: Colors.white, fontSize: <span class="number">24.0</span>)),</span><br><span class="line">                        ),</span><br><span class="line">                        Text(<span class="string">'<span class="subst">$&#123;snapshot.data.results[<span class="number">0</span>].email&#125;</span>'</span>,</span><br><span class="line">                            style: TextStyle(color: Colors.white, fontSize: <span class="number">18.0</span>)),</span><br><span class="line">                        _userLocation(<span class="string">'<span class="subst">$&#123;snapshot.data.results[<span class="number">0</span>].location.street&#125;</span>'</span>),</span><br><span class="line">                        _userLocation(<span class="string">'<span class="subst">$&#123;_upperFirst(snapshot.data.results[<span class="number">0</span>].location.city)&#125;</span>'</span>),</span><br><span class="line">                        _userLocation(<span class="string">'<span class="subst">$&#123;_upperFirst(snapshot.data.results[<span class="number">0</span>].location.state)&#125;</span>'</span>),</span><br><span class="line">                      ]),</span><br><span class="line">              ),</span><br><span class="line">          initialData: _bloc.user, <span class="comment">// 注入初始值</span></span><br><span class="line">          stream: _bloc.stream), <span class="comment">// 注入更新 stream</span></span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><em>以上代码查看 bloc_network 包下的所有文件</em></p>]]></content>
     
     <summary type="html">
     
@@ -500,21 +500,21 @@
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
     
-      <category term="Flutter" scheme="http://yoursite.com/categories/Android/Flutter/"/>
+      <category term="Flutter" scheme="https://zhangmiao.cc/categories/Android/Flutter/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
     
-      <category term="Flutter" scheme="http://yoursite.com/tags/Flutter/"/>
+      <category term="Flutter" scheme="https://zhangmiao.cc/tags/Flutter/"/>
     
   </entry>
   
   <entry>
     <title>Flutter入门指南(十二)之数据持久化</title>
-    <link href="http://yoursite.com/posts/6358b348.html"/>
-    <id>http://yoursite.com/posts/6358b348.html</id>
+    <link href="https://zhangmiao.cc/posts/6358b348.html"/>
+    <id>https://zhangmiao.cc/posts/6358b348.html</id>
     <published>2019-04-28T07:18:47.000Z</published>
     <updated>2019-05-27T07:25:16.938Z</updated>
     
@@ -532,21 +532,21 @@
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
     
-      <category term="Flutter" scheme="http://yoursite.com/categories/Android/Flutter/"/>
+      <category term="Flutter" scheme="https://zhangmiao.cc/categories/Android/Flutter/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
     
-      <category term="Flutter" scheme="http://yoursite.com/tags/Flutter/"/>
+      <category term="Flutter" scheme="https://zhangmiao.cc/tags/Flutter/"/>
     
   </entry>
   
   <entry>
     <title>Flutter入门指南(十一)之状态管理，BLoC</title>
-    <link href="http://yoursite.com/posts/d121323a.html"/>
-    <id>http://yoursite.com/posts/d121323a.html</id>
+    <link href="https://zhangmiao.cc/posts/d121323a.html"/>
+    <id>https://zhangmiao.cc/posts/d121323a.html</id>
     <published>2019-04-27T07:07:53.000Z</published>
     <updated>2019-05-27T07:12:22.212Z</updated>
     
@@ -564,21 +564,21 @@
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
     
-      <category term="Flutter" scheme="http://yoursite.com/categories/Android/Flutter/"/>
+      <category term="Flutter" scheme="https://zhangmiao.cc/categories/Android/Flutter/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
     
-      <category term="Flutter" scheme="http://yoursite.com/tags/Flutter/"/>
+      <category term="Flutter" scheme="https://zhangmiao.cc/tags/Flutter/"/>
     
   </entry>
   
   <entry>
     <title>Flutter入门指南(十)之手势处理和动画</title>
-    <link href="http://yoursite.com/posts/d4756fd3.html"/>
-    <id>http://yoursite.com/posts/d4756fd3.html</id>
+    <link href="https://zhangmiao.cc/posts/d4756fd3.html"/>
+    <id>https://zhangmiao.cc/posts/d4756fd3.html</id>
     <published>2019-04-27T06:55:04.000Z</published>
     <updated>2019-05-27T07:06:50.600Z</updated>
     
@@ -593,21 +593,21 @@
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
     
-      <category term="Flutter" scheme="http://yoursite.com/categories/Android/Flutter/"/>
+      <category term="Flutter" scheme="https://zhangmiao.cc/categories/Android/Flutter/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
     
-      <category term="Flutter" scheme="http://yoursite.com/tags/Flutter/"/>
+      <category term="Flutter" scheme="https://zhangmiao.cc/tags/Flutter/"/>
     
   </entry>
   
   <entry>
     <title>Flutter入门指南(九)之弹窗和提示(SnackBar、BottomSheet、Dialog)</title>
-    <link href="http://yoursite.com/posts/5da6faeb.html"/>
-    <id>http://yoursite.com/posts/5da6faeb.html</id>
+    <link href="https://zhangmiao.cc/posts/5da6faeb.html"/>
+    <id>https://zhangmiao.cc/posts/5da6faeb.html</id>
     <published>2019-04-27T03:30:42.000Z</published>
     <updated>2019-05-27T07:03:53.115Z</updated>
     
@@ -621,21 +621,21 @@
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
     
-      <category term="Flutter" scheme="http://yoursite.com/categories/Android/Flutter/"/>
+      <category term="Flutter" scheme="https://zhangmiao.cc/categories/Android/Flutter/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
     
-      <category term="Flutter" scheme="http://yoursite.com/tags/Flutter/"/>
+      <category term="Flutter" scheme="https://zhangmiao.cc/tags/Flutter/"/>
     
   </entry>
   
   <entry>
     <title>Flutter入门指南(八)之Sliver组件及NestedScrollView</title>
-    <link href="http://yoursite.com/posts/f600e8a7.html"/>
-    <id>http://yoursite.com/posts/f600e8a7.html</id>
+    <link href="https://zhangmiao.cc/posts/f600e8a7.html"/>
+    <id>https://zhangmiao.cc/posts/f600e8a7.html</id>
     <published>2019-04-26T02:57:48.000Z</published>
     <updated>2019-05-27T07:03:44.066Z</updated>
     
@@ -651,21 +651,21 @@
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
     
-      <category term="Flutter" scheme="http://yoursite.com/categories/Android/Flutter/"/>
+      <category term="Flutter" scheme="https://zhangmiao.cc/categories/Android/Flutter/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
     
-      <category term="Flutter" scheme="http://yoursite.com/tags/Flutter/"/>
+      <category term="Flutter" scheme="https://zhangmiao.cc/tags/Flutter/"/>
     
   </entry>
   
   <entry>
     <title>Flutter入门指南(七)之滑动部件</title>
-    <link href="http://yoursite.com/posts/8d9ab46a.html"/>
-    <id>http://yoursite.com/posts/8d9ab46a.html</id>
+    <link href="https://zhangmiao.cc/posts/8d9ab46a.html"/>
+    <id>https://zhangmiao.cc/posts/8d9ab46a.html</id>
     <published>2019-04-26T02:37:07.000Z</published>
     <updated>2019-05-27T07:03:39.686Z</updated>
     
@@ -680,14 +680,14 @@
     
     </summary>
     
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
     
-      <category term="Flutter" scheme="http://yoursite.com/categories/Android/Flutter/"/>
+      <category term="Flutter" scheme="https://zhangmiao.cc/categories/Android/Flutter/"/>
     
     
-      <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
+      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
     
-      <category term="Flutter" scheme="http://yoursite.com/tags/Flutter/"/>
+      <category term="Flutter" scheme="https://zhangmiao.cc/tags/Flutter/"/>
     
   </entry>
   

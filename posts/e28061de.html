@@ -59,7 +59,7 @@
 <meta name="keywords" content="Android,Log,框架">
 <meta property="og:type" content="article">
 <meta property="og:title" content="android日志框架Logger的详细使用（目前最新版2.1.1）">
-<meta property="og:url" content="http://yoursite.com/posts/e28061de.html">
+<meta property="og:url" content="https://zhangmiao.cc/posts/e28061de.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="前言在开发过程中，log日志是每个人多会用上的。平时在开发大项目的时候，几乎每个类多需要加log，然而在发布之前，要求全部删除，真是累。因为系统log暂时没有统一管理的方法。还有就是，特别是在调试的时候，对于线程并发或者子线程的调试，还是加log调试比较精确，用debug工具调试经常和实际不符合。那么，如果使用系统log，调试完又得找出来删除，累++。 作为程序猿，这种笨方法肯定是会鄙视的。对于这">
 <meta property="og:locale" content="zh-CN">
@@ -82,7 +82,7 @@
 <meta name="twitter:description" content="前言在开发过程中，log日志是每个人多会用上的。平时在开发大项目的时候，几乎每个类多需要加log，然而在发布之前，要求全部删除，真是累。因为系统log暂时没有统一管理的方法。还有就是，特别是在调试的时候，对于线程并发或者子线程的调试，还是加log调试比较精确，用debug工具调试经常和实际不符合。那么，如果使用系统log，调试完又得找出来删除，累++。 作为程序猿，这种笨方法肯定是会鄙视的。对于这">
 <meta name="twitter:image" content="https://github.com/orhanobut/logger/raw/master/art/logger_output.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
-  <link rel="canonical" href="http://yoursite.com/posts/e28061de">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/e28061de">
 
 
 <script id="page-configurations">
@@ -246,15 +246,18 @@
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
-    </div>
+    <div class="search-input" id="search-input"></div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
   </div>
-  <div id="search-result"></div>
+  <div class="algolia-results">
+    <div id="algolia-stats"></div>
+    <div id="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+  </div>
 </div>
+
 
 
   </div>
@@ -280,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/e28061de.html">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/e28061de.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -453,7 +456,7 @@
     <strong>本文作者： </strong>ZhangMiao</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/posts/e28061de.html" title="android日志框架Logger的详细使用（目前最新版2.1.1）">http://yoursite.com/posts/e28061de.html</a>
+    <a href="https://zhangmiao.cc/posts/e28061de.html" title="android日志框架Logger的详细使用（目前最新版2.1.1）">https://zhangmiao.cc/posts/e28061de.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -902,7 +905,7 @@
       
         
       
-        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
       <span class="links-of-author-item">
@@ -953,7 +956,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc" rel="noopener" target="_blank">Zhangmiao</a>
+          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc">Zhangmiao</a>
         </li>
       
         <li class="links-of-blogroll-item">
@@ -1208,7 +1211,10 @@
 
 
 
-  <script src="/js/local-search.js?v=7.3.0"></script>
+  
+<link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+<script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/algolia-search.js?v=7.3.0"></script>
+
 
 
 

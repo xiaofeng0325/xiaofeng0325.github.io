@@ -59,7 +59,7 @@
 <meta name="keywords" content="Android,Android Tips,Gradle">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Gradle依赖配置说明">
-<meta property="og:url" content="http://yoursite.com/posts/7a69db10.html">
+<meta property="og:url" content="https://zhangmiao.cc/posts/7a69db10.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="之前对Android Gradle构建的依赖一直傻傻分不清，这段时间正好接入集团的一个二方库，踩了很多坑，也顺带把Gradle依赖这块搞清楚了，主要整理了下Gradle依赖的类型、依赖配置、如何查看依赖、依赖冲突如何解决。  依赖类型dependencies DSL标签是标准Gradle API中的一部分，而不是Android Gradle插件的特性，所以它不属于android标签。 依赖有三种">
 <meta property="og:locale" content="zh-CN">
@@ -68,7 +68,7 @@
 <meta name="twitter:title" content="Gradle依赖配置说明">
 <meta name="twitter:description" content="之前对Android Gradle构建的依赖一直傻傻分不清，这段时间正好接入集团的一个二方库，踩了很多坑，也顺带把Gradle依赖这块搞清楚了，主要整理了下Gradle依赖的类型、依赖配置、如何查看依赖、依赖冲突如何解决。  依赖类型dependencies DSL标签是标准Gradle API中的一部分，而不是Android Gradle插件的特性，所以它不属于android标签。 依赖有三种">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
-  <link rel="canonical" href="http://yoursite.com/posts/7a69db10">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/7a69db10">
 
 
 <script id="page-configurations">
@@ -232,15 +232,18 @@
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
-    </div>
+    <div class="search-input" id="search-input"></div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
   </div>
-  <div id="search-result"></div>
+  <div class="algolia-results">
+    <div id="algolia-stats"></div>
+    <div id="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+  </div>
 </div>
+
 
 
   </div>
@@ -266,7 +269,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/7a69db10.html">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/7a69db10.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -413,7 +416,7 @@
     <strong>本文作者： </strong>ZhangMiao</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/posts/7a69db10.html" title="Gradle依赖配置说明">http://yoursite.com/posts/7a69db10.html</a>
+    <a href="https://zhangmiao.cc/posts/7a69db10.html" title="Gradle依赖配置说明">https://zhangmiao.cc/posts/7a69db10.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -862,7 +865,7 @@
       
         
       
-        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
       <span class="links-of-author-item">
@@ -913,7 +916,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc" rel="noopener" target="_blank">Zhangmiao</a>
+          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc">Zhangmiao</a>
         </li>
       
         <li class="links-of-blogroll-item">
@@ -1168,7 +1171,10 @@
 
 
 
-  <script src="/js/local-search.js?v=7.3.0"></script>
+  
+<link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+<script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/algolia-search.js?v=7.3.0"></script>
+
 
 
 

@@ -59,7 +59,7 @@
 <meta name="keywords" content="Android,组件化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="公司Android项目架构演进">
-<meta property="og:url" content="http://yoursite.com/posts/600a4740.html">
+<meta property="og:url" content="https://zhangmiao.cc/posts/600a4740.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="入职ZTC接近两年，因为业务繁重，从入职开始一直在做业务上的需求，项目还是MVC模式开发，由此可见工程的耦合度极高，也是众多反锁的业务互相关联导致最初开发的时候没有很好的设计架构。经过大半年的边重构项目边合并老项目新需求的开发，见证了开发团队一路走来的努力，Android团队也在自己预期的想法中向前迈进。  前言在公司的发展方向上，由单一的求职平台，到人脉社交，问答社区的扩展，让我察觉到组件化必">
 <meta property="og:locale" content="zh-CN">
@@ -70,7 +70,7 @@
 <meta name="twitter:description" content="入职ZTC接近两年，因为业务繁重，从入职开始一直在做业务上的需求，项目还是MVC模式开发，由此可见工程的耦合度极高，也是众多反锁的业务互相关联导致最初开发的时候没有很好的设计架构。经过大半年的边重构项目边合并老项目新需求的开发，见证了开发团队一路走来的努力，Android团队也在自己预期的想法中向前迈进。  前言在公司的发展方向上，由单一的求职平台，到人脉社交，问答社区的扩展，让我察觉到组件化必">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190514142946.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
-  <link rel="canonical" href="http://yoursite.com/posts/600a4740">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/600a4740">
 
 
 <script id="page-configurations">
@@ -234,15 +234,18 @@
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
-    </div>
+    <div class="search-input" id="search-input"></div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
   </div>
-  <div id="search-result"></div>
+  <div class="algolia-results">
+    <div id="algolia-stats"></div>
+    <div id="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+  </div>
 </div>
+
 
 
   </div>
@@ -268,7 +271,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/600a4740.html">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/600a4740.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -377,7 +380,7 @@
     <strong>本文作者： </strong>ZhangMiao</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/posts/600a4740.html" title="公司Android项目架构演进">http://yoursite.com/posts/600a4740.html</a>
+    <a href="https://zhangmiao.cc/posts/600a4740.html" title="公司Android项目架构演进">https://zhangmiao.cc/posts/600a4740.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -824,7 +827,7 @@
       
         
       
-        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
       <span class="links-of-author-item">
@@ -875,7 +878,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc" rel="noopener" target="_blank">Zhangmiao</a>
+          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc">Zhangmiao</a>
         </li>
       
         <li class="links-of-blogroll-item">
@@ -1130,7 +1133,10 @@
 
 
 
-  <script src="/js/local-search.js?v=7.3.0"></script>
+  
+<link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+<script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/algolia-search.js?v=7.3.0"></script>
+
 
 
 

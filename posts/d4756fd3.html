@@ -59,7 +59,7 @@
 <meta name="keywords" content="Android,Flutter">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Flutter入门指南(十)之手势处理和动画">
-<meta property="og:url" content="http://yoursite.com/posts/d4756fd3.html">
+<meta property="og:url" content="https://zhangmiao.cc/posts/d4756fd3.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="在 Flutter 中，自带手势监听的目前为止好像只有按钮部件和一些 chip 部件，例如 Text 等部件需要实现手势监听，就需要借助带有监听事件的部件来实现了，这节我们会讲下 InkWell 和 GestureDetector 来实现手势的监听。 InkWell在前面的一些例子中，小伙伴应该看到了好几次 InkWell 这个部件，通过它我们可以实现对一些手势的监听，并实现 MD 的水波纹效果，">
 <meta property="og:locale" content="zh-CN">
@@ -74,7 +74,7 @@
 <meta name="twitter:description" content="在 Flutter 中，自带手势监听的目前为止好像只有按钮部件和一些 chip 部件，例如 Text 等部件需要实现手势监听，就需要借助带有监听事件的部件来实现了，这节我们会讲下 InkWell 和 GestureDetector 来实现手势的监听。 InkWell在前面的一些例子中，小伙伴应该看到了好几次 InkWell 这个部件，通过它我们可以实现对一些手势的监听，并实现 MD 的水波纹效果，">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/2888797-fad16bdf993f54d8.gif">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
-  <link rel="canonical" href="http://yoursite.com/posts/d4756fd3">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/d4756fd3">
 
 
 <script id="page-configurations">
@@ -238,15 +238,18 @@
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
-    </div>
+    <div class="search-input" id="search-input"></div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
   </div>
-  <div id="search-result"></div>
+  <div class="algolia-results">
+    <div id="algolia-stats"></div>
+    <div id="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+  </div>
 </div>
+
 
 
   </div>
@@ -272,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/d4756fd3.html">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/d4756fd3.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -563,7 +566,7 @@
     <strong>本文作者： </strong>ZhangMiao</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/posts/d4756fd3.html" title="Flutter入门指南(十)之手势处理和动画">http://yoursite.com/posts/d4756fd3.html</a>
+    <a href="https://zhangmiao.cc/posts/d4756fd3.html" title="Flutter入门指南(十)之手势处理和动画">https://zhangmiao.cc/posts/d4756fd3.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -1010,7 +1013,7 @@
       
         
       
-        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
       <span class="links-of-author-item">
@@ -1061,7 +1064,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc" rel="noopener" target="_blank">Zhangmiao</a>
+          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc">Zhangmiao</a>
         </li>
       
         <li class="links-of-blogroll-item">
@@ -1316,7 +1319,10 @@
 
 
 
-  <script src="/js/local-search.js?v=7.3.0"></script>
+  
+<link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+<script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/algolia-search.js?v=7.3.0"></script>
+
 
 
 

@@ -59,7 +59,7 @@
 <meta name="keywords" content="Android,Tangram">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tangram与VirtualView">
-<meta property="og:url" content="http://yoursite.com/posts/b1fd08a9.html">
+<meta property="og:url" content="https://zhangmiao.cc/posts/b1fd08a9.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="VirtualViewTangram中已经实现了页面布局的动态化，我们可以通过配置json文件自由的布局；但还有一个局限性，json中使用的卡片或者组件的type，必须是注册OK的（也就是在客户端已经实现好的）才能使用；如果想要在原来的版本中新增一个type类型的组件，这是没有办法做到的，还是只能通过升级客户端来实现。 于是，VirtualView出现了。">
 <meta property="og:locale" content="zh-CN">
@@ -71,7 +71,7 @@
 <meta name="twitter:description" content="VirtualViewTangram中已经实现了页面布局的动态化，我们可以通过配置json文件自由的布局；但还有一个局限性，json中使用的卡片或者组件的type，必须是注册OK的（也就是在客户端已经实现好的）才能使用；如果想要在原来的版本中新增一个type类型的组件，这是没有办法做到的，还是只能通过升级客户端来实现。 于是，VirtualView出现了。">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190603171427.png">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
-  <link rel="canonical" href="http://yoursite.com/posts/b1fd08a9">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/b1fd08a9">
 
 
 <script id="page-configurations">
@@ -235,15 +235,18 @@
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
-    </div>
+    <div class="search-input" id="search-input"></div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
   </div>
-  <div id="search-result"></div>
+  <div class="algolia-results">
+    <div id="algolia-stats"></div>
+    <div id="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+  </div>
 </div>
+
 
 
   </div>
@@ -269,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/b1fd08a9.html">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/b1fd08a9.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -371,7 +374,7 @@
     <strong>本文作者： </strong>ZhangMiao</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/posts/b1fd08a9.html" title="Tangram与VirtualView">http://yoursite.com/posts/b1fd08a9.html</a>
+    <a href="https://zhangmiao.cc/posts/b1fd08a9.html" title="Tangram与VirtualView">https://zhangmiao.cc/posts/b1fd08a9.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -818,7 +821,7 @@
       
         
       
-        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
       <span class="links-of-author-item">
@@ -869,7 +872,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc" rel="noopener" target="_blank">Zhangmiao</a>
+          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc">Zhangmiao</a>
         </li>
       
         <li class="links-of-blogroll-item">
@@ -1124,7 +1127,10 @@
 
 
 
-  <script src="/js/local-search.js?v=7.3.0"></script>
+  
+<link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+<script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/algolia-search.js?v=7.3.0"></script>
+
 
 
 

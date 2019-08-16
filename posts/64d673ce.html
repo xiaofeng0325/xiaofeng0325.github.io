@@ -59,7 +59,7 @@
 <meta name="keywords" content="前端,JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS基础（十）DOM0和DOM2级事件">
-<meta property="og:url" content="http://yoursite.com/posts/64d673ce.html">
+<meta property="og:url" content="https://zhangmiao.cc/posts/64d673ce.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="JS中的DOM0和DOM2事件JS中的事件基础及核心原理以及项目实战事件的定义 事件：元素天生具备的行为方式（和写不写JS代码没有关系）【onclick不是事件，click才是事件，浏览器会把一些常用事件挂载到元素对象的私有属性上，让我们可以实现DOM0事件绑定】，当我们去操作元素的时候会触发元素的很多事件事件绑定：给当前元素的某个事件绑定方法，目的是让当前元素某个事件被触发时，做出一些反应  事">
 <meta property="og:locale" content="zh-CN">
@@ -68,7 +68,7 @@
 <meta name="twitter:title" content="JS基础（十）DOM0和DOM2级事件">
 <meta name="twitter:description" content="JS中的DOM0和DOM2事件JS中的事件基础及核心原理以及项目实战事件的定义 事件：元素天生具备的行为方式（和写不写JS代码没有关系）【onclick不是事件，click才是事件，浏览器会把一些常用事件挂载到元素对象的私有属性上，让我们可以实现DOM0事件绑定】，当我们去操作元素的时候会触发元素的很多事件事件绑定：给当前元素的某个事件绑定方法，目的是让当前元素某个事件被触发时，做出一些反应  事">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
-  <link rel="canonical" href="http://yoursite.com/posts/64d673ce">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/64d673ce">
 
 
 <script id="page-configurations">
@@ -232,15 +232,18 @@
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
-    </div>
+    <div class="search-input" id="search-input"></div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
   </div>
-  <div id="search-result"></div>
+  <div class="algolia-results">
+    <div id="algolia-stats"></div>
+    <div id="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+  </div>
 </div>
+
 
 
   </div>
@@ -266,7 +269,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/64d673ce.html">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/64d673ce.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -571,7 +574,7 @@
     <strong>本文作者： </strong>ZhangMiao</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/posts/64d673ce.html" title="JS基础（十）DOM0和DOM2级事件">http://yoursite.com/posts/64d673ce.html</a>
+    <a href="https://zhangmiao.cc/posts/64d673ce.html" title="JS基础（十）DOM0和DOM2级事件">https://zhangmiao.cc/posts/64d673ce.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -1018,7 +1021,7 @@
       
         
       
-        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
       <span class="links-of-author-item">
@@ -1069,7 +1072,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc" rel="noopener" target="_blank">Zhangmiao</a>
+          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc">Zhangmiao</a>
         </li>
       
         <li class="links-of-blogroll-item">
@@ -1324,7 +1327,10 @@
 
 
 
-  <script src="/js/local-search.js?v=7.3.0"></script>
+  
+<link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+<script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/algolia-search.js?v=7.3.0"></script>
+
 
 
 

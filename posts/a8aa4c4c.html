@@ -59,7 +59,7 @@
 <meta name="keywords" content="网络,HTTP长连接">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTTP长连接说明">
-<meta property="og:url" content="http://yoursite.com/posts/a8aa4c4c.html">
+<meta property="og:url" content="https://zhangmiao.cc/posts/a8aa4c4c.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="[HTTP协议与TCP/IP协议的关系] [如何理解HTTP协议是无状态的] 什么是长连接、短连接？ [TCP连接] [TCP短连接] [TCP长连接]   [长连接和短连接的优点和缺点]  目前腾讯云负载均衡对七层负载均衡的HTTP长连接配置，可设置为默认值75s，用户可对不同的负载均衡实例进行自定义配置。那么，HTTP长连接、短连接究竟是什么？">
 <meta property="og:locale" content="zh-CN">
@@ -71,7 +71,7 @@
 <meta name="twitter:description" content="[HTTP协议与TCP/IP协议的关系] [如何理解HTTP协议是无状态的] 什么是长连接、短连接？ [TCP连接] [TCP短连接] [TCP长连接]   [长连接和短连接的优点和缺点]  目前腾讯云负载均衡对七层负载均衡的HTTP长连接配置，可设置为默认值75s，用户可对不同的负载均衡实例进行自定义配置。那么，HTTP长连接、短连接究竟是什么？">
 <meta name="twitter:image" content="https://mccdn.qcloud.com/static/img/da079414fde193f4d790c72a719eba78/image.jpg">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
-  <link rel="canonical" href="http://yoursite.com/posts/a8aa4c4c">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/a8aa4c4c">
 
 
 <script id="page-configurations">
@@ -235,15 +235,18 @@
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
-    </div>
+    <div class="search-input" id="search-input"></div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
   </div>
-  <div id="search-result"></div>
+  <div class="algolia-results">
+    <div id="algolia-stats"></div>
+    <div id="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+  </div>
 </div>
+
 
 
   </div>
@@ -269,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/a8aa4c4c.html">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/a8aa4c4c.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -393,7 +396,7 @@
     <strong>本文作者： </strong>ZhangMiao</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/posts/a8aa4c4c.html" title="HTTP长连接说明">http://yoursite.com/posts/a8aa4c4c.html</a>
+    <a href="https://zhangmiao.cc/posts/a8aa4c4c.html" title="HTTP长连接说明">https://zhangmiao.cc/posts/a8aa4c4c.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -840,7 +843,7 @@
       
         
       
-        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
       <span class="links-of-author-item">
@@ -891,7 +894,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc" rel="noopener" target="_blank">Zhangmiao</a>
+          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc">Zhangmiao</a>
         </li>
       
         <li class="links-of-blogroll-item">
@@ -1146,7 +1149,10 @@
 
 
 
-  <script src="/js/local-search.js?v=7.3.0"></script>
+  
+<link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+<script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/algolia-search.js?v=7.3.0"></script>
+
 
 
 

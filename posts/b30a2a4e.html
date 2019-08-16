@@ -59,7 +59,7 @@
 <meta name="keywords" content="Hexo,建站,VSCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HexoNext点击搜索一直转圈圈，解决控制字符问题">
-<meta property="og:url" content="http://yoursite.com/posts/b30a2a4e.html">
+<meta property="og:url" content="https://zhangmiao.cc/posts/b30a2a4e.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="1. 环境 macOS Sierra 10.13.6 vscode  1.29.0 最新版  2. 如何重现这个问题在使用中文输入法输入中文的时候，一直按后退键，例如输入sfsf，当你按了4下后退键时，你会发现，搜狗输入法弹出框虽然消失了，但是页面上还会剩下一个s, 这是你如何再次按一下后退的话，s就会变成bs, 变成隐藏字符。这个一般是右边有markdown渲染插件时才会出现。">
 <meta property="og:locale" content="zh-CN">
@@ -74,7 +74,7 @@
 <meta name="twitter:description" content="1. 环境 macOS Sierra 10.13.6 vscode  1.29.0 最新版  2. 如何重现这个问题在使用中文输入法输入中文的时候，一直按后退键，例如输入sfsf，当你按了4下后退键时，你会发现，搜狗输入法弹出框虽然消失了，但是页面上还会剩下一个s, 这是你如何再次按一下后退的话，s就会变成bs, 变成隐藏字符。这个一般是右边有markdown渲染插件时才会出现。">
 <meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fx7mhgetiij30be06jmxc.jpg">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
-  <link rel="canonical" href="http://yoursite.com/posts/b30a2a4e">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/b30a2a4e">
 
 
 <script id="page-configurations">
@@ -238,15 +238,18 @@
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
-    </div>
+    <div class="search-input" id="search-input"></div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
   </div>
-  <div id="search-result"></div>
+  <div class="algolia-results">
+    <div id="algolia-stats"></div>
+    <div id="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+  </div>
 </div>
+
 
 
   </div>
@@ -272,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/b30a2a4e.html">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/b30a2a4e.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -392,7 +395,7 @@
     <strong>本文作者： </strong>ZhangMiao</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/posts/b30a2a4e.html" title="HexoNext点击搜索一直转圈圈，解决控制字符问题">http://yoursite.com/posts/b30a2a4e.html</a>
+    <a href="https://zhangmiao.cc/posts/b30a2a4e.html" title="HexoNext点击搜索一直转圈圈，解决控制字符问题">https://zhangmiao.cc/posts/b30a2a4e.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -841,7 +844,7 @@
       
         
       
-        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
       <span class="links-of-author-item">
@@ -892,7 +895,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc" rel="noopener" target="_blank">Zhangmiao</a>
+          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc">Zhangmiao</a>
         </li>
       
         <li class="links-of-blogroll-item">
@@ -1147,7 +1150,10 @@
 
 
 
-  <script src="/js/local-search.js?v=7.3.0"></script>
+  
+<link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+<script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/algolia-search.js?v=7.3.0"></script>
+
 
 
 

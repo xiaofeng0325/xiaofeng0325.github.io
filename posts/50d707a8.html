@@ -59,7 +59,7 @@
 <meta name="keywords" content="Android,Android Tips">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android各系统版本新特性">
-<meta property="og:url" content="http://yoursite.com/posts/50d707a8.html">
+<meta property="og:url" content="https://zhangmiao.cc/posts/50d707a8.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="一. 低版本SDK如何实现高版本api？平时如果你的minSdk比较小，但是想调用高版本的一些API，android studio会提醒该方法在XX版本上才有，当前项目minSdk是多少。很多低版本的系统上就会找不到这个方法。那怎么做呢？可以去support包中找相应的方法。例如5.0才出的background tint，那么如果你的minSdk是小于5.0的话，那么studio就报错了，你可以去">
 <meta property="og:locale" content="zh-CN">
@@ -68,7 +68,7 @@
 <meta name="twitter:title" content="Android各系统版本新特性">
 <meta name="twitter:description" content="一. 低版本SDK如何实现高版本api？平时如果你的minSdk比较小，但是想调用高版本的一些API，android studio会提醒该方法在XX版本上才有，当前项目minSdk是多少。很多低版本的系统上就会找不到这个方法。那怎么做呢？可以去support包中找相应的方法。例如5.0才出的background tint，那么如果你的minSdk是小于5.0的话，那么studio就报错了，你可以去">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
-  <link rel="canonical" href="http://yoursite.com/posts/50d707a8">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/50d707a8">
 
 
 <script id="page-configurations">
@@ -232,15 +232,18 @@
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
-    </div>
+    <div class="search-input" id="search-input"></div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
   </div>
-  <div id="search-result"></div>
+  <div class="algolia-results">
+    <div id="algolia-stats"></div>
+    <div id="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+  </div>
 </div>
+
 
 
   </div>
@@ -266,7 +269,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/50d707a8.html">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/50d707a8.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -483,7 +486,7 @@
     <strong>本文作者： </strong>ZhangMiao</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/posts/50d707a8.html" title="Android各系统版本新特性">http://yoursite.com/posts/50d707a8.html</a>
+    <a href="https://zhangmiao.cc/posts/50d707a8.html" title="Android各系统版本新特性">https://zhangmiao.cc/posts/50d707a8.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -930,7 +933,7 @@
       
         
       
-        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
       </span>
     
       <span class="links-of-author-item">
@@ -981,7 +984,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc" rel="noopener" target="_blank">Zhangmiao</a>
+          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc">Zhangmiao</a>
         </li>
       
         <li class="links-of-blogroll-item">
@@ -1236,7 +1239,10 @@
 
 
 
-  <script src="/js/local-search.js?v=7.3.0"></script>
+  
+<link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+<script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/algolia-search.js?v=7.3.0"></script>
+
 
 
 
