@@ -1039,6 +1039,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Hexo 主题 next 添加图片背景]]></title>
+    <url>%2Fposts%2F60e96c42.html</url>
+    <content type="text"><![CDATA[前言next 主题默认背景是白色, 看多了难免感觉乏味. 我们可以通过自定义样式为其添加背景图片. 操作流程我们直接在 NEXT 预留的自定义样式文件 “themes/next/source/css/_custom/custom.styl” 中添加自己的样式即可, 在自定义样式文件中写入以下代码: // 添加背景图片body &#123; background: url(https://source.unsplash.com/random/1600x900?wallpapers); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: 50% 50%;&#125;// 修改主体透明度.main-inner &#123; background: #fff; opacity: 0.8;&#125;// 修改菜单栏透明度.header-inner &#123; opacity: 0.8;&#125; 其中: background: url() 中填写的是背景图片的 url 地址, 这里调用了 Unsplash 的 API, 随机选用该网站的高清美图作为博客背景. 该网站所有图片都是免费商用的, 所以无须担心侵权问题;网站 API 还有很多有趣的玩法, 参见: Documentation opacity 指定了对应元素的透明度, 这里是 “0.8”, 可以按需更改.]]></content>
+      <categories>
+        <category>建站</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>建站</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo修改永久链接的默认格式]]></title>
     <url>%2Fposts%2F36589e41.html</url>
     <content type="text"><![CDATA[Hexo的永久链接的默认格式是:year/:month/:day/:title/，比如访问站点下某一篇文章时，其路径是 2018/04/12/xxxx/，如果我们的文章标题是中文的，那么该路径就会出现中文字符。在路径中出现了中文字符很容易引发各种问题，而且也不利于seo，因为路径包含了年月日三个层级，层级太深不利于百度蜘蛛抓取。 解决办法就是利用其它的插件来生成唯一的路径，这样就算我们的文件标题随意修改，而不会导致原本的链接失效而造成站点下存在大量的死链。 安装插件在站点根目录使用 git bash 执行命令： npm install hexo-abbrlink --save 修改站点配置文件打开根目录下的_config.yml 文件，修改如下配置： # permalink: :year/:month/:day/:title/# permalink_defaults:permalink: posts/:abbrlink.htmlabbrlink: alg: crc32 # 算法：crc16(default) and crc32 rep: hex # 进制：dec(default) and hex 这里将页面都添加了.html的后缀，用来伪装成静态页面(虽说Hexo的页面本身就是静态页面)，这样可以直接从路径就知道这是个静态页面，方便seo。 接下来重新部署三连，可以看到我们的文章路径变成了/posts/xxxxx.html，接下来就算我们将文字标题命名为中文也没问题了。]]></content>
@@ -2467,8 +2479,8 @@
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>EventBus</tag>
         <tag>XBus</tag>
+        <tag>EventBus</tag>
       </tags>
   </entry>
   <entry>
