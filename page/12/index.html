@@ -29,9 +29,9 @@
     scheme: 'Gemini',
     version: '7.3.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    save_scroll: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":true,"dimmer":true},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    save_scroll: true,
     copycode: {"enable":false,"show_result":false,"style":null},
     fancybox: false,
     mediumzoom: false,
@@ -80,7 +80,7 @@
   };
 </script>
 
-  <title>zm.blog</title>
+  <title>zm.blog - select * from learn</title>
   
 
 
@@ -142,7 +142,7 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-        <p class="site-subtitle">select * from learn</p>
+        <h1 class="site-subtitle" itemprop="description">select * from learn</h1>
       
   </div>
 
@@ -166,6 +166,8 @@
         <li class="menu-item menu-item-home">
       
     
+      
+    
 
     <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
@@ -177,8 +179,10 @@
         <li class="menu-item menu-item-tags">
       
     
+      
+    
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">101</span></a>
 
   </li>
       
@@ -188,8 +192,10 @@
         <li class="menu-item menu-item-categories">
       
     
+      
+    
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">51</span></a>
 
   </li>
       
@@ -199,8 +205,10 @@
         <li class="menu-item menu-item-archives">
       
     
+      
+    
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">243</span></a>
 
   </li>
       
@@ -208,6 +216,8 @@
       
         
         <li class="menu-item menu-item-about">
+      
+    
       
     
 
@@ -250,6 +260,8 @@
 
     
 
+  <a href="https://github.com/zhangmiaocc" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
 
     <main id="main" class="main">
       <div class="main-inner">
@@ -271,7 +283,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
       <meta itemprop="description" content="Change for the Better">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -280,11 +292,11 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
               
               <a href="/posts/4ef397b8.html" class="post-title-link" itemprop="url">冒泡排序优化</a>
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -300,6 +312,18 @@
 
               <time title="创建时间：2018-12-10 11:52:04" itemprop="dateCreated datePublished" datetime="2018-12-10T11:52:04+08:00">2018-12-10</time>
             </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-06-05 15:29:34" itemprop="dateModified" datetime="2019-06-05T15:29:34+08:00">2019-06-05</time>
+              </span>
+            
           
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -385,7 +409,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
       <meta itemprop="description" content="Change for the Better">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -394,11 +418,11 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
               
               <a href="/posts/7a69db10.html" class="post-title-link" itemprop="url">Gradle依赖配置说明</a>
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -414,6 +438,18 @@
 
               <time title="创建时间：2018-12-10 11:41:31" itemprop="dateCreated datePublished" datetime="2018-12-10T11:41:31+08:00">2018-12-10</time>
             </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-05-16 15:44:23" itemprop="dateModified" datetime="2019-05-16T15:44:23+08:00">2019-05-16</time>
+              </span>
+            
           
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -500,7 +536,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
       <meta itemprop="description" content="Change for the Better">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -509,11 +545,11 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
               
               <a href="/posts/51192665.html" class="post-title-link" itemprop="url">Android优化总结</a>
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -529,6 +565,18 @@
 
               <time title="创建时间：2018-12-10 09:28:36" itemprop="dateCreated datePublished" datetime="2018-12-10T09:28:36+08:00">2018-12-10</time>
             </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-07-22 14:34:02" itemprop="dateModified" datetime="2019-07-22T14:34:02+08:00">2019-07-22</time>
+              </span>
+            
           
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -684,7 +732,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
       <meta itemprop="description" content="Change for the Better">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -693,11 +741,11 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
               
               <a href="/posts/2114cdef.html" class="post-title-link" itemprop="url">Android骨架屏，了解一下</a>
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -713,6 +761,18 @@
 
               <time title="创建时间：2018-12-06 19:00:42" itemprop="dateCreated datePublished" datetime="2018-12-06T19:00:42+08:00">2018-12-06</time>
             </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-14 11:42:17" itemprop="dateModified" datetime="2019-08-14T11:42:17+08:00">2019-08-14</time>
+              </span>
+            
           
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -798,7 +858,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
       <meta itemprop="description" content="Change for the Better">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -807,11 +867,11 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
               
               <a href="/posts/be2502a3.html" class="post-title-link" itemprop="url">你好，Flutter</a>
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -827,6 +887,18 @@
 
               <time title="创建时间：2018-12-06 17:40:06" itemprop="dateCreated datePublished" datetime="2018-12-06T17:40:06+08:00">2018-12-06</time>
             </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-05-16 15:44:23" itemprop="dateModified" datetime="2019-05-16T15:44:23+08:00">2019-05-16</time>
+              </span>
+            
           
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -914,7 +986,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
       <meta itemprop="description" content="Change for the Better">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -923,11 +995,11 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
               
               <a href="/posts/a8aa4c4c.html" class="post-title-link" itemprop="url">HTTP长连接说明</a>
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -943,6 +1015,18 @@
 
               <time title="创建时间：2018-12-06 17:00:31" itemprop="dateCreated datePublished" datetime="2018-12-06T17:00:31+08:00">2018-12-06</time>
             </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-05-16 15:44:23" itemprop="dateModified" datetime="2019-05-16T15:44:23+08:00">2019-05-16</time>
+              </span>
+            
           
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1028,7 +1112,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
       <meta itemprop="description" content="Change for the Better">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -1037,11 +1121,11 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
               
               <a href="/posts/38627c74.html" class="post-title-link" itemprop="url">移动App网络优化概述</a>
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -1057,6 +1141,18 @@
 
               <time title="创建时间：2018-12-06 16:50:09" itemprop="dateCreated datePublished" datetime="2018-12-06T16:50:09+08:00">2018-12-06</time>
             </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-05-16 15:44:23" itemprop="dateModified" datetime="2019-05-16T15:44:23+08:00">2019-05-16</time>
+              </span>
+            
           
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1145,7 +1241,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
       <meta itemprop="description" content="Change for the Better">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -1154,11 +1250,11 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
               
               <a href="/posts/600a4740.html" class="post-title-link" itemprop="url">公司Android项目架构演进</a>
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -1174,6 +1270,18 @@
 
               <time title="创建时间：2018-12-06 15:35:06" itemprop="dateCreated datePublished" datetime="2018-12-06T15:35:06+08:00">2018-12-06</time>
             </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-05-16 15:44:23" itemprop="dateModified" datetime="2019-05-16T15:44:23+08:00">2019-05-16</time>
+              </span>
+            
           
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1267,7 +1375,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
       <meta itemprop="description" content="Change for the Better">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -1276,11 +1384,11 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
               
               <a href="/posts/88a3890e.html" class="post-title-link" itemprop="url">Android中JSBridge的原理与实现</a>
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -1296,6 +1404,18 @@
 
               <time title="创建时间：2018-12-06 15:12:08" itemprop="dateCreated datePublished" datetime="2018-12-06T15:12:08+08:00">2018-12-06</time>
             </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-05-16 15:44:23" itemprop="dateModified" datetime="2019-05-16T15:44:23+08:00">2019-05-16</time>
+              </span>
+            
           
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1382,7 +1502,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
       <meta itemprop="description" content="Change for the Better">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -1391,11 +1511,11 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
               
               <a href="/posts/21cd72b5.html" class="post-title-link" itemprop="url">127.0.0.1和0.0.0.0地址的区别</a>
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -1411,6 +1531,18 @@
 
               <time title="创建时间：2018-12-06 14:23:17" itemprop="dateCreated datePublished" datetime="2018-12-06T14:23:17+08:00">2018-12-06</time>
             </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-07-22 14:26:04" itemprop="dateModified" datetime="2019-07-22T14:26:04+08:00">2019-07-22</time>
+              </span>
+            
           
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1506,6 +1638,7 @@
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" src="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4" alt="ZhangMiao">
   <p class="site-author-name" itemprop="name">ZhangMiao</p>
   <div class="site-description motion-element" itemprop="description">Change for the Better</div>
 </div>
@@ -1908,14 +2041,14 @@
   <div class="cc-license motion-element" itemprop="license">
     
   
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
 
 
   <div class="links-of-blogroll motion-element links-of-blogroll-inline">
     <div class="links-of-blogroll-title">
       <i class="fa  fa-fw fa-link"></i>
-      links
+      友情链接
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
@@ -1968,6 +2101,13 @@
 
         </div>
       </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
 
     </div>
   </aside>
@@ -1979,7 +2119,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -2023,9 +2163,6 @@
         
       </div>
     </footer>
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-      </div>
 
     
 
