@@ -2064,7 +2064,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #7de94a;
+  background: #ff1460;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3409,7 +3409,7 @@ header.post-header {
   }
 }
 body {
-  background: url("https:source.unsplash.com/random/1600x900?wallpapers");
+  background: url("https://source.unsplash.com/random/1600x900?wallpapers");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
