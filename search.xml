@@ -1387,10 +1387,10 @@
       <tags>
         <tag>Android</tag>
         <tag>Android Tips</tag>
+        <tag>.so文件</tag>
         <tag>armeabi-v7a</tag>
         <tag>arm64-v8a</tag>
         <tag>abi兼容</tag>
-        <tag>.so文件</tag>
       </tags>
   </entry>
   <entry>
@@ -1404,9 +1404,9 @@
       <tags>
         <tag>Android</tag>
         <tag>Android Tips</tag>
-        <tag>.so文件</tag>
         <tag>ABI</tag>
         <tag>CPU</tag>
+        <tag>.so文件</tag>
       </tags>
   </entry>
   <entry>
@@ -1814,8 +1814,8 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>博客</tag>
         <tag>建站</tag>
+        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
@@ -1839,8 +1839,8 @@
         <category>Mac</category>
       </categories>
       <tags>
-        <tag>Mac</tag>
         <tag>博客</tag>
+        <tag>Mac</tag>
         <tag>终端</tag>
       </tags>
   </entry>
@@ -2505,8 +2505,8 @@
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>XBus</tag>
         <tag>EventBus</tag>
+        <tag>XBus</tag>
       </tags>
   </entry>
   <entry>
@@ -3144,8 +3144,8 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>博客</tag>
         <tag>建站</tag>
+        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
