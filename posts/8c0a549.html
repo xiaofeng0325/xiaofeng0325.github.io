@@ -7,7 +7,7 @@
 <html class="theme-next gemini use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-<meta name="generator" content="Hexo 3.8.0">
+<meta name="generator" content="Hexo 3.9.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,18 +56,18 @@
   };
 </script>
 
-  <meta name="description" content="ABI和CPU的重要知识1、 大部分cpu都支持多于一种的ABI。2、 当一个应用安装在设备上，只有该设备支持的CPU架构对应的.so文件会被安装。3、    ABI目录（横向）和cpu（纵向） armeabi armeabi-v7a arm64-v8a mips mips64 x86 x86_64     ARMv5 支持         ARMv7 支持 支持        ARMv8 支持">
+  <meta name="description" content="ABI和CPU的重要知识1、 大部分cpu都支持多于一种的ABI。2、 当一个应用安装在设备上，只有该设备支持的CPU架构对应的.so文件会被安装。3、    ABI目录（横向）和cpu（纵向） armeabi armeabi-v7a arm64-v8a mips mips64 x86 x86_64    ARMv5 支持         ARMv7 支持 支持        ARMv8 支持 支">
 <meta name="keywords" content="Android,Android Tips,ABI,CPU">
 <meta property="og:type" content="article">
 <meta property="og:title" content="你必须知道的ABI和CPU关系">
 <meta property="og:url" content="https://zhangmiao.cc/posts/8c0a549.html">
 <meta property="og:site_name" content="zm.blog">
-<meta property="og:description" content="ABI和CPU的重要知识1、 大部分cpu都支持多于一种的ABI。2、 当一个应用安装在设备上，只有该设备支持的CPU架构对应的.so文件会被安装。3、    ABI目录（横向）和cpu（纵向） armeabi armeabi-v7a arm64-v8a mips mips64 x86 x86_64     ARMv5 支持         ARMv7 支持 支持        ARMv8 支持">
+<meta property="og:description" content="ABI和CPU的重要知识1、 大部分cpu都支持多于一种的ABI。2、 当一个应用安装在设备上，只有该设备支持的CPU架构对应的.so文件会被安装。3、    ABI目录（横向）和cpu（纵向） armeabi armeabi-v7a arm64-v8a mips mips64 x86 x86_64    ARMv5 支持         ARMv7 支持 支持        ARMv8 支持 支">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-16T07:44:23.977Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="你必须知道的ABI和CPU关系">
-<meta name="twitter:description" content="ABI和CPU的重要知识1、 大部分cpu都支持多于一种的ABI。2、 当一个应用安装在设备上，只有该设备支持的CPU架构对应的.so文件会被安装。3、    ABI目录（横向）和cpu（纵向） armeabi armeabi-v7a arm64-v8a mips mips64 x86 x86_64     ARMv5 支持         ARMv7 支持 支持        ARMv8 支持">
+<meta name="twitter:description" content="ABI和CPU的重要知识1、 大部分cpu都支持多于一种的ABI。2、 当一个应用安装在设备上，只有该设备支持的CPU架构对应的.so文件会被安装。3、    ABI目录（横向）和cpu（纵向） armeabi armeabi-v7a arm64-v8a mips mips64 x86 x86_64    ARMv5 支持         ARMv7 支持 支持        ARMv8 支持 支">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/8c0a549">
 
@@ -244,7 +244,9 @@
       <i class="fa fa-search"></i>
     </span>
     <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
+      <input autocomplete="off" autocorrect="off" autocapitalize="none"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="search-input">
     </div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
@@ -260,7 +262,7 @@
 
     
 
-  <a href="https://github.com/zhangmiaocc" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+  <a href="https://github.com/zhangmiaocc" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
     <main id="main" class="main">
@@ -275,20 +277,20 @@
     
     <div class="reading-progress-bar"></div>
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/8c0a549.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
       <meta itemprop="description" content="Change for the Better">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="zm.blog">
     </span>
       <header class="post-header">
@@ -332,14 +334,14 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Android/Android-Tips/" itemprop="url" rel="index"><span itemprop="name">Android Tips</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/Android-Tips/" itemprop="url" rel="index"><span itemprop="name">Android Tips</span></a></span>
 
                 
                 
@@ -396,8 +398,7 @@
 <th>x86_64</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>ARMv5</td>
 <td>支持</td>
 <td></td>
@@ -467,8 +468,7 @@
 <td>支持</td>
 <td>支持</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <ul>
 <li><p>注意：上表格中的空白部分，是我不知道它是否支持，极有可能是不支持</p>
 </li>
@@ -483,6 +483,7 @@
 </li>
 </ul>
 <a id="more"></a>
+
 <p>4、 64位设备（arm64-v8a, x86_64, mips64）能够运行32位的函数库，但是以32位模式运行，在64位平台上运行32位版本的ART和Android组件，将丢失专为64位优化过的性能（ART，webview，media等等）。</p>
 <p>5、 最好是针对特定平台提供相应平台的二进制包，这种情况下运行时就少了一个模拟层（例如x86设备上模拟arm的虚拟层），从而得到更好的性能（归功于最近的架构更新，例如硬件fpu，更多的寄存器，更好的向量化等）。</p>
 <p>6、 会安装优先级较高的ABI目录，则其它优先级较低的ABI目录（包括其它module中的ABI目录），都无法安装。例如：在cpu是ARMv7架构的手机上，如果检测到armeabi-v7a，就会选择安装armeabi-v7a，则armeabi下的文件，都无法安装了。</p>
@@ -496,7 +497,9 @@
 <h5 id="1、如果你的项目中，有其他优先级更高的ABI目录，但是你把ABI文件放到了优先级低的目录，则你的ABI文件无法被加载"><a href="#1、如果你的项目中，有其他优先级更高的ABI目录，但是你把ABI文件放到了优先级低的目录，则你的ABI文件无法被加载" class="headerlink" title="1、如果你的项目中，有其他优先级更高的ABI目录，但是你把ABI文件放到了优先级低的目录，则你的ABI文件无法被加载"></a>1、如果你的项目中，有其他优先级更高的ABI目录，但是你把ABI文件放到了优先级低的目录，则你的ABI文件无法被加载</h5><h5 id="2、如果你的项目中，ABI文件放在了，项目中优先级最高的ABI目录中（这个ABI目录是手机所支持的在项目中优先级最高的，但不一定是手机所支持的优先级最高的），则这个ABI文件，可以被加载，加载为ABI目录的所表示的架构类型。"><a href="#2、如果你的项目中，ABI文件放在了，项目中优先级最高的ABI目录中（这个ABI目录是手机所支持的在项目中优先级最高的，但不一定是手机所支持的优先级最高的），则这个ABI文件，可以被加载，加载为ABI目录的所表示的架构类型。" class="headerlink" title="2、如果你的项目中，ABI文件放在了，项目中优先级最高的ABI目录中（这个ABI目录是手机所支持的在项目中优先级最高的，但不一定是手机所支持的优先级最高的），则这个ABI文件，可以被加载，加载为ABI目录的所表示的架构类型。"></a>2、如果你的项目中，ABI文件放在了，项目中优先级最高的ABI目录中（这个ABI目录是手机所支持的在项目中优先级最高的，但不一定是手机所支持的优先级最高的），则这个ABI文件，可以被加载，加载为ABI目录的所表示的架构类型。</h5><p>例子：</p>
 <p>我的手机cpu架构是ARMv7，ABI文件是armeabi-v7a，但是放进了armeabi目录中</p>
 <p>在运行的过程中会出现两种情况：</p>
-<p>1、项目中有armeabi-v7a的目录，armeabi目录中的文件，无法被加载，运行后报错，出现如下log信息。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Caused by: java.lang.UnsatisfiedLinkError: dalvik.system.PathClassLoader[DexPathList[[zip file <span class="string">"/data/app/.xx../base.apk"</span>],nativeLibraryDirectories=[/data/app/.xx../lib/arm, /vendor/lib, /system/lib]]] couldn<span class="string">'t find "lib..xx...so"</span></span><br></pre></td></tr></table></figure></p>
+<p>1、项目中有armeabi-v7a的目录，armeabi目录中的文件，无法被加载，运行后报错，出现如下log信息。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Caused by: java.lang.UnsatisfiedLinkError: dalvik.system.PathClassLoader[DexPathList[[zip file <span class="string">"/data/app/.xx../base.apk"</span>],nativeLibraryDirectories=[/data/app/.xx../lib/arm, /vendor/lib, /system/lib]]] couldn<span class="string">'t find "lib..xx...so"</span></span><br></pre></td></tr></table></figure>
+
 <p>2、项目中只有armeabi的目录，armeabi目录是该项目优先级最高的ABI目录（虽然armeabi目录在ARMv7所支持的优先级最高的ABI目录不是最高），作为armv5，安装到手机上。</p>
 <p>####二、ABI二进制文件，放进了优先级高的ABI目录<br>可以被加载使用，被加载为ABI文件所表示的结构类型</p>
 <p>例子：</p>
@@ -507,7 +510,9 @@
 <p>例子：</p>
 <p>我的手机cpu架构是ARMv7，项目中使用两个第三方SDK：企业A和企业B</p>
 <p>企业A：ABI文件是armeabi-v7a，放进armeabi-v7a目录中。<br>企业B：ABI文件是armeabi-v5te，放进armeabi目录中。</p>
-<p>在运行时，会发现运行后crash，出现如下log信息。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Caused by: java.lang.UnsatisfiedLinkError: dalvik.system.PathClassLoader[DexPathList[[zip file <span class="string">"/data/app/.xx../base.apk"</span>],nativeLibraryDirectories=[/data/app/.xx../lib/arm, /vendor/lib, /system/lib]]] couldn<span class="string">'t find "lib..xx...so"</span></span><br></pre></td></tr></table></figure></p>
+<p>在运行时，会发现运行后crash，出现如下log信息。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Caused by: java.lang.UnsatisfiedLinkError: dalvik.system.PathClassLoader[DexPathList[[zip file <span class="string">"/data/app/.xx../base.apk"</span>],nativeLibraryDirectories=[/data/app/.xx../lib/arm, /vendor/lib, /system/lib]]] couldn<span class="string">'t find "lib..xx...so"</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>解决办法：</strong></p>
 <p>#####1、使用同一优先级的ABI文件，ABI文件放入优先级相同的ABI目录</p>
 <p>企业A：ABI文件是armeabi-v5te，放进armeabi目录中。<br>企业B：ABI文件是armeabi-v5te，放进armeabi目录中。<br>或<br>企业A：ABI文件是armeabi-v7a，放进armeabi-v7a目录中。<br>企业B：ABI文件是armeabi-v7a，放进armeabi-v7a目录中。</p>
@@ -628,8 +633,10 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" src="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4" alt="ZhangMiao">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4"
+      alt="ZhangMiao">
   <p class="site-author-name" itemprop="name">ZhangMiao</p>
   <div class="site-description motion-element" itemprop="description">Change for the Better</div>
 </div>
@@ -1135,7 +1142,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">ZhangMiao</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
 

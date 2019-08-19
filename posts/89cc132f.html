@@ -7,7 +7,7 @@
 <html class="theme-next gemini use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-<meta name="generator" content="Hexo 3.8.0">
+<meta name="generator" content="Hexo 3.9.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,18 +56,18 @@
   };
 </script>
 
-  <meta name="description" content="前言 无论你是个人开发还是团队，一个良好的代码规范，能够在项目当中发挥举足轻重的作用；它不仅能使你们的开发更加高效，而且还会减少BUG产生的几率，增强代码可维护性及稳定性。  关于规范，我们分两部分来讲，因为Android主要是用Java语言来写的，所以我们区别对待。 JAVA代码规范强制性规范: 代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。 代码中的命名严禁使用拼音">
+  <meta name="description" content="前言 无论你是个人开发还是团队，一个良好的代码规范，能够在项目当中发挥举足轻重的作用；它不仅能使你们的开发更加高效，而且还会减少BUG产生的几率，增强代码可维护性及稳定性。  关于规范，我们分两部分来讲，因为Android主要是用Java语言来写的，所以我们区别对待。 JAVA代码规范强制性规范: 代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。  代码中的命名严禁使用拼">
 <meta name="keywords" content="Android,Java,代码规范">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android代码规范指南">
 <meta property="og:url" content="https://zhangmiao.cc/posts/89cc132f.html">
 <meta property="og:site_name" content="zm.blog">
-<meta property="og:description" content="前言 无论你是个人开发还是团队，一个良好的代码规范，能够在项目当中发挥举足轻重的作用；它不仅能使你们的开发更加高效，而且还会减少BUG产生的几率，增强代码可维护性及稳定性。  关于规范，我们分两部分来讲，因为Android主要是用Java语言来写的，所以我们区别对待。 JAVA代码规范强制性规范: 代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。 代码中的命名严禁使用拼音">
+<meta property="og:description" content="前言 无论你是个人开发还是团队，一个良好的代码规范，能够在项目当中发挥举足轻重的作用；它不仅能使你们的开发更加高效，而且还会减少BUG产生的几率，增强代码可维护性及稳定性。  关于规范，我们分两部分来讲，因为Android主要是用Java语言来写的，所以我们区别对待。 JAVA代码规范强制性规范: 代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。  代码中的命名严禁使用拼">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-16T07:44:23.972Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android代码规范指南">
-<meta name="twitter:description" content="前言 无论你是个人开发还是团队，一个良好的代码规范，能够在项目当中发挥举足轻重的作用；它不仅能使你们的开发更加高效，而且还会减少BUG产生的几率，增强代码可维护性及稳定性。  关于规范，我们分两部分来讲，因为Android主要是用Java语言来写的，所以我们区别对待。 JAVA代码规范强制性规范: 代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。 代码中的命名严禁使用拼音">
+<meta name="twitter:description" content="前言 无论你是个人开发还是团队，一个良好的代码规范，能够在项目当中发挥举足轻重的作用；它不仅能使你们的开发更加高效，而且还会减少BUG产生的几率，增强代码可维护性及稳定性。  关于规范，我们分两部分来讲，因为Android主要是用Java语言来写的，所以我们区别对待。 JAVA代码规范强制性规范: 代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。  代码中的命名严禁使用拼">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/89cc132f">
 
@@ -244,7 +244,9 @@
       <i class="fa fa-search"></i>
     </span>
     <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
+      <input autocomplete="off" autocorrect="off" autocapitalize="none"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="search-input">
     </div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
@@ -260,7 +262,7 @@
 
     
 
-  <a href="https://github.com/zhangmiaocc" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+  <a href="https://github.com/zhangmiaocc" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
     <main id="main" class="main">
@@ -275,20 +277,20 @@
     
     <div class="reading-progress-bar"></div>
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/89cc132f.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
       <meta itemprop="description" content="Change for the Better">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="zm.blog">
     </span>
       <header class="post-header">
@@ -332,14 +334,14 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Android/代码规范/" itemprop="url" rel="index"><span itemprop="name">代码规范</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/代码规范/" itemprop="url" rel="index"><span itemprop="name">代码规范</span></a></span>
 
                 
                 
@@ -382,32 +384,43 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><img alt="" data-src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtl8cge3dj32cr0lcacg.jpg"></p>
+        <p><img alt data-src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtl8cge3dj32cr0lcacg.jpg"></p>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
 <p>无论你是个人开发还是团队，一个良好的代码规范，能够在项目当中发挥举足轻重的作用；它不仅能使你们的开发更加高效，而且还会减少BUG产生的几率，增强代码可维护性及稳定性。</p>
 </blockquote>
 <p>关于规范，我们分两部分来讲，因为Android主要是用Java语言来写的，所以我们区别对待。</p>
 <h2 id="JAVA代码规范"><a href="#JAVA代码规范" class="headerlink" title="JAVA代码规范"></a>JAVA代码规范</h2><h4 id="强制性规范"><a href="#强制性规范" class="headerlink" title="强制性规范:"></a>强制性规范:</h4><ol>
-<li>代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。</li>
-<li>代码中的命名严禁使用拼音与英文混合的方式，更不允许直接使用中文的方式。</li>
-<li>类名使用UpperCamelCase 风格，必须遵从驼峰形式。</li>
-<li>方法名、参数名、成员变量、局部变量都统一使用 lowerCamelCase 风格，必须遵从驼峰形式。</li>
-<li>常量命名全部大写，单词间用下划线隔开，力求语义表达完整清楚，不要嫌名字长例如：<strong>MAX_STOCK_COUNT</strong>。</li>
-<li>抽象类命名使用 Abstract 或 Base 开头;异常类命名使用 Exception 结尾;测试类 命名以它要测试的类的名称开始。</li>
-<li>杜绝不规范的英文缩写：AbstractClass 缩写成AbsClass；condition缩写成condi;此类随意缩写严重降低了代码的可阅读性。</li>
-<li>如果使用到了设计模式，建议在类名中体现出具体的模式：</li>
+<li><p>代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。</p>
+</li>
+<li><p>代码中的命名严禁使用拼音与英文混合的方式，更不允许直接使用中文的方式。</p>
+</li>
+<li><p>类名使用UpperCamelCase 风格，必须遵从驼峰形式。</p>
+</li>
+<li><p>方法名、参数名、成员变量、局部变量都统一使用 lowerCamelCase 风格，必须遵从驼峰形式。</p>
+</li>
+<li><p>常量命名全部大写，单词间用下划线隔开，力求语义表达完整清楚，不要嫌名字长例如：<strong>MAX_STOCK_COUNT</strong>。</p>
+</li>
+<li><p>抽象类命名使用 Abstract 或 Base 开头;异常类命名使用 Exception 结尾;测试类 命名以它要测试的类的名称开始。</p>
+</li>
+<li><p>杜绝不规范的英文缩写：AbstractClass 缩写成AbsClass；condition缩写成condi;此类随意缩写严重降低了代码的可阅读性。</p>
+</li>
+<li><p>如果使用到了设计模式，建议在类名中体现出具体的模式：</p>
+</li>
 <li><p>关于Service或Dao层的命名</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public class ComponentFactory</span><br><span class="line">public class BufferStrategy</span><br><span class="line">public class ScrollerProxy</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>实体类必须重载toString()方法，这样可以通过调用对象的toString()来排查问题。</p>
 </li>
-<li>Object 的 equals 方法容易抛空指针异常，应使用常量或确定有值的对象来调用 equals。<blockquote>
+<li><p>Object 的 equals 方法容易抛空指针异常，应使用常量或确定有值的对象来调用 equals。</p>
+<blockquote>
 <p>正例: “test”.equals(object);<br> 反例: object.equals(“test”);</p>
 </blockquote>
 </li>
-<li>避免通过一个类的对象引用访问此类的静态变量或静态方法，无谓增加编译器解析成本，直接用类名来访问即可。</li>
+<li><p>避免通过一个类的对象引用访问此类的静态变量或静态方法，无谓增加编译器解析成本，直接用类名来访问即可。</p>
+</li>
 </ol>
 <a id="more"></a>
+
 <h4 id="推荐规范："><a href="#推荐规范：" class="headerlink" title="推荐规范："></a>推荐规范：</h4><ol>
 <li><p>集合初始化时，尽量指定集合初始值大小；</p>
 <blockquote>
@@ -433,8 +446,7 @@
 <th>说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>Hashtable</td>
 <td>不允许为null</td>
 <td>不允许为null</td>
@@ -462,13 +474,13 @@
 <td>AbstractMap</td>
 <td>线程不安全</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <ol start="4">
 <li>利用 Set 元素唯一的特性，可以快速对一个集合进行去重操作，避免使用 List 的 contains 方法进行遍历、对比、去重操作。</li>
 <li>通过双重检查锁(double-checked locking)(在并发场景)实现延迟初始化的优 化问题隐患(可参考 The “Double-Checked Locking is Broken” Declaration),推荐问题 解决方案中较为简单一种(适用于 JDK5 及以上版本)，将目标属性声明为 volatile 型。</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">*反例*：</span><br><span class="line">class Foo &#123;</span><br><span class="line">    private Helper helper = null;</span><br><span class="line">    </span><br><span class="line">    public Helper getHelper() &#123;</span><br><span class="line">     if (helper == null) </span><br><span class="line">            synchronized(this) &#123; </span><br><span class="line">                if (helper == null)</span><br><span class="line">                    helper = new Helper(); </span><br><span class="line">            &#125; </span><br><span class="line">            return helper; </span><br><span class="line">    &#125; </span><br><span class="line">// other functions and members... </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="Android代码规范"><a href="#Android代码规范" class="headerlink" title="Android代码规范"></a>Android代码规范</h2><h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><ol>
 <li><strong>Activity</strong> 命名一律使用 <strong>模块名+Activity</strong> 的方式。例如，<strong>LoginActivity、SignupActivity</strong>；</li>
 <li><strong>Fragment</strong> 命名一律使用 <strong>模块名+Fragment</strong> 的方式；</li>
@@ -482,19 +494,22 @@
 <p>EXTRA_KEY_+具体Key名称，例如我们现在有一个人的名字和年龄要传那么首先定义：</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public static final String EXTRA_KEY_PERSON_NAME=&quot;EXTRA_KEY_PERSON_NAME&quot;</span><br><span class="line">public static final String EXTRA_KEY_PERSON_AGE=&quot;EXTRA_KEY_PERSON_AGE&quot;</span><br></pre></td></tr></table></figure>
+
 <p>然后在具体的页面 new Intent()，依次传递进去值，这样写其实没什么问题；但是试想一下，如果你要调用的Activity是类似于一个工具性质或通用的Activity（图片选择器、登录、注册等等），这时候你要传递的key又很多，如果业务复杂的话，你应该会被这样冗余且不易阅读的代码直接搞崩溃掉。</p>
 <p>所以最好的办法就是在你要调用Activity提供一个<strong>静态工厂方法</strong>，要知道静态工厂方法所带来的好处太多了，由于Activity是不允许通过new的方式来初始化的，所以静态工厂方法的好处在此就不那么明显，但是已经足够我们优化我们的代码了。举个例子，我们有一个笔记 NoteActivity，用于创建笔记和修改笔记，</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//笔记Id</span><br><span class="line">private static final String EXTRA_KEY_NOTE_ID =&quot;EXTRA_KEY_NOTE_ID&quot; ;</span><br><span class="line">//笔记内容</span><br><span class="line">private static final String EXTRA_KEY_NOTE_CONTENT =&quot;EXTRA_KEY_NOTE_CONTENT&quot; ;</span><br><span class="line">//笔记模式</span><br><span class="line">private static final String EXTRA_KEY_NOTE_MODE =&quot;EXTRA_KEY_NOTE_MODE&quot; ;</span><br><span class="line"></span><br><span class="line">//用于创建笔记</span><br><span class="line">public static void startForCreate(Context context, int noteId) &#123;</span><br><span class="line">    start(context, noteId, null, MODE_CREATE);</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">//用于编辑笔记</span><br><span class="line">public static void startForEdit(Context context, int noteId, String content) &#123;</span><br><span class="line">    start(context, noteId, content, MODE_UPDATE);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static void start(Context context, int noteId, String content, int mode) &#123;</span><br><span class="line">    Intent starter = new Intent(context, TableShareListSettingActivity.class);</span><br><span class="line">    starter.putExtra(EXTRA_KEY_NOTE_ID,noteId);</span><br><span class="line">    starter.putExtra(EXTRA_KEY_NOTE_CONTENT,content);</span><br><span class="line">    starter.putExtra(EXTRA_KEY_NOTE_CONTENT,mode);</span><br><span class="line">    context.startActivity(starter);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>通过以上方法，我们能够很好的解耦复杂的Activity之间的调用，再加上静态方法工厂方法名，代码可阅读行大大提高，最终我们看到的调用NoteActivity将会是很简洁的一段代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NoteActivity.startForCreate(this,noteId);</span><br><span class="line">NoteActivity.startForEdit(this,noteId,content);</span><br></pre></td></tr></table></figure>
+
 <p>此外，Android Studio工具中其实已经在Live Template中提供了这样的代码:CMD+J( For MAC OS),简单的输入starter就可以快速地在当前的Activity中添加一个Intent的静态操作方法，这其实也说明了Android官方团队也鼓励我们这么做。<br> 如下图所示：</p>
-<p><img alt="" data-src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtla83leij30la05lt97.jpg"></p>
+<p><img alt data-src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtla83leij30la05lt97.jpg"></p>
 <p>一下子省了好多代码，简直太赞了有木有！</p>
 <ol start="8">
 <li>增加类注释，使用Android Studio的 File And Code Template：</li>
 </ol>
-<p><img alt="" data-src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtlam313hj30ul0kb42i.jpg"></p>
-<p><img alt="" data-src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtlb01lizj30ul0kb41c.jpg"></p>
+<p><img alt data-src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxtlam313hj30ul0kb42i.jpg"></p>
+<p><img alt data-src="https://ws4.sinaimg.cn/large/006tNbRwgy1fxtlb01lizj30ul0kb41c.jpg"></p>
 <ol>
 <li>所有的常量加上注释，且功能相同的排放在一起，不同的进行换行；</li>
 <li>Activity中变量采用m开头+类名。例如，mTable、mPerson；</li>
@@ -511,8 +526,7 @@
 <th>ID命名规则</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>TextView</td>
 <td>tv_module_function</td>
 </tr>
@@ -564,8 +578,7 @@
 <td>···</td>
 <td>···</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <blockquote>
 <p>Color资源命名</p>
 </blockquote>
@@ -576,13 +589,11 @@
 <th>命名规则</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>color</td>
 <td>组件名+具体作用名。例 R.color.button_text</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <blockquote>
 <p>String资源命名</p>
 </blockquote>
@@ -593,13 +604,11 @@
 <th>命名规则</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>string</td>
 <td>具体功能。 例 R.string.hello</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <blockquote>
 <p>Drawable资源命名</p>
 </blockquote>
@@ -610,8 +619,7 @@
 <th>命名规则</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>launcher icon</td>
 <td>ic_launcher。例R.drawable.ic_launcher</td>
 </tr>
@@ -631,8 +639,7 @@
 <td>shape</td>
 <td>shape_模块<em>功能名</em>状态。例如 R.drawable.shape_login_button_normal</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <blockquote>
 <p>Layout资源命名</p>
 </blockquote>
@@ -643,8 +650,7 @@
 <th>命名规则</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>activity</td>
 <td>activity_模块名。例如 R.layout.activity_login</td>
 </tr>
@@ -680,8 +686,7 @@
 <td>···</td>
 <td>···</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <blockquote>
 <p>Menu资源命名</p>
 </blockquote>
@@ -692,13 +697,11 @@
 <th>命名规则</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>menu</td>
 <td>menu_模块名。例如 menu_login</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <blockquote>
 <p>Values资源命名</p>
 </blockquote>
@@ -709,8 +712,7 @@
 <th>命名规则</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>color</td>
 <td>模块名_color。例如 material_design_color</td>
 </tr>
@@ -726,8 +728,7 @@
 <td>themes</td>
 <td>模块名_themes。例如 material_design_themes</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>其实代码规范只是一个Guideline，没有说非要某一种风格来编写代码。如果你的团队有自己的一套代码规范，然后开发也很高效，代码也很容易阅读且可维护，就完全可以按照自己的团队的技术规范来。我想表达的是，在编写的代码的时候，能有一个Guideline（准则）或者说是一个约定，我们共同遵守这样的约定，来达到我一开始说的代码规范性所带来的意义。</p>
 <blockquote>
 <p>正所谓，“离娄之明，公输子之巧，不以规矩，不能成方圆。”</p>
@@ -846,8 +847,10 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" src="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4" alt="ZhangMiao">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4"
+      alt="ZhangMiao">
   <p class="site-author-name" itemprop="name">ZhangMiao</p>
   <div class="site-description motion-element" itemprop="description">Change for the Better</div>
 </div>
@@ -1353,7 +1356,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">ZhangMiao</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
 

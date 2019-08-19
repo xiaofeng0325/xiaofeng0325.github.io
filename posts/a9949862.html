@@ -7,7 +7,7 @@
 <html class="theme-next gemini use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-<meta name="generator" content="Hexo 3.8.0">
+<meta name="generator" content="Hexo 3.9.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,18 +56,18 @@
   };
 </script>
 
-  <meta name="description" content="1一个用于帮助 Android App 进行组件化改造的框架 —— 支持模块间的路由、通信、解耦 Demo展示Demo apk下载、Demo Gif一、什么是路由说简单点就是映射页面跳转关系的，当然它也包含跳转相关的一切功能。 二、为什么需要路由Android系统已经给我们提供了api来做页面跳转，比如startActivity，为什么还需要路由框架呢？我们来简单分析下路由框架存在的意义：  在一">
+  <meta name="description" content="1一个用于帮助 Android App 进行组件化改造的框架 —— 支持模块间的路由、通信、解耦  Demo展示Demo apk下载、Demo Gif一、什么是路由说简单点就是映射页面跳转关系的，当然它也包含跳转相关的一切功能。 二、为什么需要路由Android系统已经给我们提供了api来做页面跳转，比如startActivity，为什么还需要路由框架呢？我们来简单分析下路由框架存在的意义：  在">
 <meta name="keywords" content="Android,ARouter">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ARouter路由框架">
 <meta property="og:url" content="https://zhangmiao.cc/posts/a9949862.html">
 <meta property="og:site_name" content="zm.blog">
-<meta property="og:description" content="1一个用于帮助 Android App 进行组件化改造的框架 —— 支持模块间的路由、通信、解耦 Demo展示Demo apk下载、Demo Gif一、什么是路由说简单点就是映射页面跳转关系的，当然它也包含跳转相关的一切功能。 二、为什么需要路由Android系统已经给我们提供了api来做页面跳转，比如startActivity，为什么还需要路由框架呢？我们来简单分析下路由框架存在的意义：  在一">
+<meta property="og:description" content="1一个用于帮助 Android App 进行组件化改造的框架 —— 支持模块间的路由、通信、解耦  Demo展示Demo apk下载、Demo Gif一、什么是路由说简单点就是映射页面跳转关系的，当然它也包含跳转相关的一切功能。 二、为什么需要路由Android系统已经给我们提供了api来做页面跳转，比如startActivity，为什么还需要路由框架呢？我们来简单分析下路由框架存在的意义：  在">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-16T07:44:23.963Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ARouter路由框架">
-<meta name="twitter:description" content="1一个用于帮助 Android App 进行组件化改造的框架 —— 支持模块间的路由、通信、解耦 Demo展示Demo apk下载、Demo Gif一、什么是路由说简单点就是映射页面跳转关系的，当然它也包含跳转相关的一切功能。 二、为什么需要路由Android系统已经给我们提供了api来做页面跳转，比如startActivity，为什么还需要路由框架呢？我们来简单分析下路由框架存在的意义：  在一">
+<meta name="twitter:description" content="1一个用于帮助 Android App 进行组件化改造的框架 —— 支持模块间的路由、通信、解耦  Demo展示Demo apk下载、Demo Gif一、什么是路由说简单点就是映射页面跳转关系的，当然它也包含跳转相关的一切功能。 二、为什么需要路由Android系统已经给我们提供了api来做页面跳转，比如startActivity，为什么还需要路由框架呢？我们来简单分析下路由框架存在的意义：  在">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/a9949862">
 
@@ -244,7 +244,9 @@
       <i class="fa fa-search"></i>
     </span>
     <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
+      <input autocomplete="off" autocorrect="off" autocapitalize="none"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="search-input">
     </div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
@@ -260,7 +262,7 @@
 
     
 
-  <a href="https://github.com/zhangmiaocc" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+  <a href="https://github.com/zhangmiaocc" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
     <main id="main" class="main">
@@ -275,20 +277,20 @@
     
     <div class="reading-progress-bar"></div>
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/a9949862.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
       <meta itemprop="description" content="Change for the Better">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="zm.blog">
     </span>
       <header class="post-header">
@@ -332,14 +334,14 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Android/框架/" itemprop="url" rel="index"><span itemprop="name">框架</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/框架/" itemprop="url" rel="index"><span itemprop="name">框架</span></a></span>
 
                 
                 
@@ -383,6 +385,7 @@
 
       
         <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一个用于帮助 Android App 进行组件化改造的框架 —— 支持模块间的路由、通信、解耦</span><br></pre></td></tr></table></figure>
+
 <h4 id="Demo展示"><a href="#Demo展示" class="headerlink" title="Demo展示"></a>Demo展示</h4><h5 id="Demo-apk下载、Demo-Gif"><a href="#Demo-apk下载、Demo-Gif" class="headerlink" title="Demo apk下载、Demo Gif"></a><a href="https://github.com/alibaba/ARouter/blob/develop/demo/arouter-demo.apk" target="_blank" rel="noopener">Demo apk下载</a>、<a href="https://raw.githubusercontent.com/alibaba/ARouter/master/demo/arouter-demo.gif" target="_blank" rel="noopener">Demo Gif</a></h5><h4 id="一、什么是路由"><a href="#一、什么是路由" class="headerlink" title="一、什么是路由"></a>一、什么是路由</h4><p>说简单点就是映射页面跳转关系的，当然它也包含跳转相关的一切功能。</p>
 <h4 id="二、为什么需要路由"><a href="#二、为什么需要路由" class="headerlink" title="二、为什么需要路由"></a>二、为什么需要路由</h4><p>Android系统已经给我们提供了api来做页面跳转，比如startActivity，为什么还需要路由框架呢？我们来简单分析下路由框架存在的意义：</p>
 <ul>
@@ -392,6 +395,7 @@
 <li>其他…</li>
 </ul>
 <a id="more"></a>
+
 <h4 id="三、为什么需要路由"><a href="#三、为什么需要路由" class="headerlink" title="三、为什么需要路由"></a>三、为什么需要路由</h4><p>ARouter是阿里巴巴开源的Android平台中对页面、服务提供路由功能的中间件，提倡的是简单且够用。<br>GitHub：<a href="https://github.com/alibaba/ARouter" target="_blank" rel="noopener">https://github.com/alibaba/ARouter</a></p>
 <h4 id="四、功能介绍"><a href="#四、功能介绍" class="headerlink" title="四、功能介绍"></a>四、功能介绍</h4><ul>
 <li><strong>支持直接解析标准URL进行跳转，并自动注入参数到目标页面中</strong></li>
@@ -433,14 +437,18 @@
 </li>
 <li><p>使用 Gradle 插件实现路由表的自动加载</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: &apos;com.alibaba.arouter&apos;</span><br><span class="line"></span><br><span class="line">buildscript &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        jcenter()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    dependencies &#123;</span><br><span class="line">        classpath &quot;com.alibaba:arouter-register:?&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
 <p>可选使用，通过 ARouter 提供的注册插件进行路由表的自动加载(power by <a href="https://github.com/luckybilly/AutoRegister" target="_blank" rel="noopener">AutoRegister</a>)， 默认通过扫描 dex 的方式<br>进行加载通过 gradle 插件进行自动注册可以缩短初始化时间解决应用加固导致无法直接访问<br>dex 文件，初始化失败的问题，需要注意的是，该插件必须搭配 api 1.3.0 以上版本使用！</p>
 <h4 id="七、进阶用法"><a href="#七、进阶用法" class="headerlink" title="七、进阶用法"></a>七、进阶用法</h4><ol>
 <li>通过URL跳转<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 新建一个Activity用于监听Schame事件,之后直接把url传递给ARouter即可</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SchameFilterActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line"></span><br><span class="line">	Uri uri = getIntent().getData();</span><br><span class="line">	ARouter.getInstance().build(uri).navigation();</span><br><span class="line">	finish();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
-<p>AndroidManifest.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".activity.SchameFilterActivity"</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- Schame --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">data</span></span></span><br><span class="line"><span class="tag">		<span class="attr">android:host</span>=<span class="string">"m.aliyun.com"</span></span></span><br><span class="line"><span class="tag">		<span class="attr">android:scheme</span>=<span class="string">"arouter"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">	    <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.VIEW"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">	    <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.DEFAULT"</span>/&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.BROWSABLE"</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>AndroidManifest.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".activity.SchameFilterActivity"</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- Schame --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">data</span></span></span><br><span class="line"><span class="tag">		<span class="attr">android:host</span>=<span class="string">"m.aliyun.com"</span></span></span><br><span class="line"><span class="tag">		<span class="attr">android:scheme</span>=<span class="string">"arouter"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">	    <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.VIEW"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">	    <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.DEFAULT"</span>/&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.BROWSABLE"</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <ol start="2">
 <li><p>解析URL中的参数</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 为每一个参数声明一个字段，并使用 @Autowired 标注</span></span><br><span class="line"><span class="comment">// URL中不能传递Parcelable类型数据，通过ARouter api可以传递Parcelable对象</span></span><br><span class="line"><span class="meta">@Route</span>(path = <span class="string">"/test/activity"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test1Activity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">public</span> String name;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    <span class="meta">@Autowired</span>(name = <span class="string">"girl"</span>) <span class="comment">// 通过name来映射URL中的不同参数</span></span><br><span class="line">    <span class="keyword">boolean</span> boy;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    TestObj obj;    <span class="comment">// 支持解析自定义对象，URL中使用json传递</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">	ARouter.getInstance().inject(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// ARouter会自动对字段进行赋值，无需主动获取</span></span><br><span class="line">	Log.d(<span class="string">"param"</span>, name + age + boy);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果需要传递自定义对象，新建一个类（并非自定义对象类），然后实现 SerializationService,并使用@Route注解标注(方便用户自行选择序列化方式)，例如：</span></span><br><span class="line"><span class="meta">@Route</span>(path = <span class="string">"/yourservicegroupname/json"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JsonServiceImpl</span> <span class="keyword">implements</span> <span class="title">SerializationService</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> &lt;T&gt; <span class="function">T <span class="title">json2Object</span><span class="params">(String text, Class&lt;T&gt; clazz)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> JSON.parseObject(text, clazz);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">object2Json</span><span class="params">(Object instance)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> JSON.toJSONString(instance);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -462,6 +470,7 @@
 </li>
 <li><p>通过依赖注入解耦:服务管理(二) 发现服务</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    HelloService helloService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span>(name = <span class="string">"/yourservicegroupname/hello"</span>)</span><br><span class="line">    HelloService helloService2;</span><br><span class="line"></span><br><span class="line">    HelloService helloService3;</span><br><span class="line"></span><br><span class="line">    HelloService helloService4;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	ARouter.getInstance().inject(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testService</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	 <span class="comment">// 1. (推荐)使用依赖注入的方式发现服务,通过注解标注字段,即可使用，无需主动获取</span></span><br><span class="line">	 <span class="comment">// Autowired注解中标注name之后，将会使用byName的方式注入对应的字段，不设置name属性，会默认使用byType的方式发现服务(当同一接口有多个实现的时候，必须使用byName的方式发现服务)</span></span><br><span class="line">	helloService.sayHello(<span class="string">"Vergil"</span>);</span><br><span class="line">	helloService2.sayHello(<span class="string">"Vergil"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 2. 使用依赖查找的方式发现服务，主动去发现服务并使用，下面两种方式分别是byName和byType</span></span><br><span class="line">	helloService3 = ARouter.getInstance().navigation(HelloService.class);</span><br><span class="line">	helloService4 = (HelloService) ARouter.getInstance().build(<span class="string">"/yourservicegroupname/hello"</span>).navigation();</span><br><span class="line">	helloService3.sayHello(<span class="string">"Vergil"</span>);</span><br><span class="line">	helloService4.sayHello(<span class="string">"Vergil"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
 <h4 id="八、更多功能"><a href="#八、更多功能" class="headerlink" title="八、更多功能"></a>八、更多功能</h4><ol>
@@ -479,6 +488,7 @@
 </li>
 <li><p>生成路由文档</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 更新 build.gradle, 添加参数 AROUTER_GENERATE_DOC = enable</span><br><span class="line">// 生成的文档路径 : build/generated/source/apt/(debug or release)/com/alibaba/android/arouter/docs/arouter-map-of-$&#123;moduleName&#125;.json</span><br><span class="line">android &#123;</span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        ...</span><br><span class="line">        javaCompileOptions &#123;</span><br><span class="line">            annotationProcessorOptions &#123;</span><br><span class="line">                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: &quot;enable&quot;]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
 <h4 id="九、其他"><a href="#九、其他" class="headerlink" title="九、其他"></a>九、其他</h4><ol>
@@ -502,6 +512,7 @@
 </li>
 <li><p>Kotlin项目中的配置方式</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 可以参考 module-kotlin 模块中的写法</span><br><span class="line">apply plugin: &apos;kotlin-kapt&apos;</span><br><span class="line"></span><br><span class="line">kapt &#123;</span><br><span class="line">    arguments &#123;</span><br><span class="line">        arg(&quot;AROUTER_MODULE_NAME&quot;, project.getName())</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    compile &apos;com.alibaba:arouter-api:x.x.x&apos;</span><br><span class="line">    kapt &apos;com.alibaba:arouter-compiler:x.x.x&apos;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
 <h4 id="十、Q-amp-A"><a href="#十、Q-amp-A" class="headerlink" title="十、Q&amp;A"></a>十、Q&amp;A</h4><ol>
@@ -647,8 +658,10 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" src="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4" alt="ZhangMiao">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4"
+      alt="ZhangMiao">
   <p class="site-author-name" itemprop="name">ZhangMiao</p>
   <div class="site-description motion-element" itemprop="description">Change for the Better</div>
 </div>
@@ -1154,7 +1167,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">ZhangMiao</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
 

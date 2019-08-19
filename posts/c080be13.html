@@ -7,7 +7,7 @@
 <html class="theme-next gemini use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-<meta name="generator" content="Hexo 3.8.0">
+<meta name="generator" content="Hexo 3.9.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,18 +56,18 @@
   };
 </script>
 
-  <meta name="description" content="RTL 语言由来RTL 是 Right-to-left(从右向左) 的缩写。其意为人们书写阅读习惯是从右向左，朝左继续的，常见的 RTL 语言有阿拉伯语，希伯来语等。 看一下对比：    LTR RTL          那么对于这种从右到左的习惯，在 Android 布局中有没有支持呢？ 答案是有的：从 Android 4.2 即 SDK 17 开始，提供了全面的本地布局支持，允许镜像布局，可以">
+  <meta name="description" content="RTL 语言由来RTL 是 Right-to-left(从右向左) 的缩写。其意为人们书写阅读习惯是从右向左，朝左继续的，常见的 RTL 语言有阿拉伯语，希伯来语等。 看一下对比：    LTR RTL        那么对于这种从右到左的习惯，在 Android 布局中有没有支持呢？ 答案是有的：从 Android 4.2 即 SDK 17 开始，提供了全面的本地布局支持，允许镜像布局，可以同时">
 <meta name="keywords" content="Android,阿拉伯语">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android 中东阿拉伯语适配">
 <meta property="og:url" content="https://zhangmiao.cc/posts/c080be13.html">
 <meta property="og:site_name" content="zm.blog">
-<meta property="og:description" content="RTL 语言由来RTL 是 Right-to-left(从右向左) 的缩写。其意为人们书写阅读习惯是从右向左，朝左继续的，常见的 RTL 语言有阿拉伯语，希伯来语等。 看一下对比：    LTR RTL          那么对于这种从右到左的习惯，在 Android 布局中有没有支持呢？ 答案是有的：从 Android 4.2 即 SDK 17 开始，提供了全面的本地布局支持，允许镜像布局，可以">
+<meta property="og:description" content="RTL 语言由来RTL 是 Right-to-left(从右向左) 的缩写。其意为人们书写阅读习惯是从右向左，朝左继续的，常见的 RTL 语言有阿拉伯语，希伯来语等。 看一下对比：    LTR RTL        那么对于这种从右到左的习惯，在 Android 布局中有没有支持呢？ 答案是有的：从 Android 4.2 即 SDK 17 开始，提供了全面的本地布局支持，允许镜像布局，可以同时">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-08-17T14:08:53.430Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 中东阿拉伯语适配">
-<meta name="twitter:description" content="RTL 语言由来RTL 是 Right-to-left(从右向左) 的缩写。其意为人们书写阅读习惯是从右向左，朝左继续的，常见的 RTL 语言有阿拉伯语，希伯来语等。 看一下对比：    LTR RTL          那么对于这种从右到左的习惯，在 Android 布局中有没有支持呢？ 答案是有的：从 Android 4.2 即 SDK 17 开始，提供了全面的本地布局支持，允许镜像布局，可以">
+<meta name="twitter:description" content="RTL 语言由来RTL 是 Right-to-left(从右向左) 的缩写。其意为人们书写阅读习惯是从右向左，朝左继续的，常见的 RTL 语言有阿拉伯语，希伯来语等。 看一下对比：    LTR RTL        那么对于这种从右到左的习惯，在 Android 布局中有没有支持呢？ 答案是有的：从 Android 4.2 即 SDK 17 开始，提供了全面的本地布局支持，允许镜像布局，可以同时">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/c080be13">
 
@@ -244,7 +244,9 @@
       <i class="fa fa-search"></i>
     </span>
     <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="搜索..." spellcheck="false" type="text" id="search-input">
+      <input autocomplete="off" autocorrect="off" autocapitalize="none"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="search-input">
     </div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
@@ -260,7 +262,7 @@
 
     
 
-  <a href="https://github.com/zhangmiaocc" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+  <a href="https://github.com/zhangmiaocc" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
 
 
     <main id="main" class="main">
@@ -275,20 +277,20 @@
     
     <div class="reading-progress-bar"></div>
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/c080be13.html">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
       <meta itemprop="description" content="Change for the Better">
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="zm.blog">
     </span>
       <header class="post-header">
@@ -324,14 +326,14 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Android/Android-Tips/" itemprop="url" rel="index"><span itemprop="name">Android Tips</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/Android-Tips/" itemprop="url" rel="index"><span itemprop="name">Android Tips</span></a></span>
 
                 
                 
@@ -379,20 +381,19 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:center">LTR</th>
-<th style="text-align:center">RTL</th>
+<th align="center">LTR</th>
+<th align="center">RTL</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center"><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190817215957.png"></td>
-<td style="text-align:center"><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190817220045.png"></td>
+<tbody><tr>
+<td align="center"><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190817215957.png"></td>
+<td align="center"><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190817220045.png"></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>那么对于这种从右到左的习惯，在 Android 布局中有没有支持呢？</p>
 <p>答案是有的：从 Android 4.2 即 SDK 17 开始，提供了全面的本地布局支持，允许镜像布局，可以同时支持 RTL 和 LTR。</p>
 <a id="more"></a>
+
 <p>接下来我将介绍如何一步一步适配阿拉伯语。</p>
 <h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><table>
 <thead>
@@ -402,8 +403,7 @@
 <th>chinese</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>android:layoutDirection</td>
 <td>attribute for setting the direction of a component’s layout</td>
 <td>设置组件的布局排列方向</td>
@@ -423,32 +423,31 @@
 <td>method for getting the Locale-specified direction</td>
 <td>获取指定地区的惯用布局方式</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h3><p>在 AndroidManifest.xml 文件中 application 节点添加支持从右到左布局方式代码</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">application</span></span></span><br><span class="line"><span class="tag">        <span class="attr">...</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:supportsRtl</span>=<span class="string">"true"</span> &gt;</span></span><br><span class="line">        ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="切换语言"><a href="#切换语言" class="headerlink" title="切换语言"></a>切换语言</h3><p>相关链接：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F2900023%2Fchange-language-programmatically-in-android" target="_blank" rel="noopener">change-language-programmatically-in-android</a><br> 对应国家语言代码: <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F7973023%2Fwhat-is-the-list-of-supported-languages-locales-on-android" target="_blank" rel="noopener">what-is-the-list-of-supported-languages-locales-on-android</a><br> 下面切换语言方式 updateConfiguration 方法在 Api 25 已经过时, 新的切换方式实例 <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2FDroidKaigi%2Fconference-app-2017%2Fpull%2F315%2Ffiles" target="_blank" rel="noopener">地址</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">String languageToLoad  = <span class="string">"ar"</span>; <span class="comment">// your language</span></span><br><span class="line">Resources res = getResources(); </span><br><span class="line">DisplayMetrics dm = res.getDisplayMetrics();</span><br><span class="line">Locale locale = <span class="keyword">new</span> Locale(languageToLoad); </span><br><span class="line">Locale.setDefault(locale);</span><br><span class="line">Configuration config = <span class="keyword">new</span> Configuration();</span><br><span class="line">config.locale = locale;</span><br><span class="line">res.updateConfiguration(conf, dm);</span><br></pre></td></tr></table></figure>
+
 <h3 id="AS-一键适配"><a href="#AS-一键适配" class="headerlink" title="AS 一键适配"></a>AS 一键适配</h3><p>AS 支持一键适配 RTL，主要是在原来 Layout 中设置 Left 和 Right 属性的补充添加 Start 和 End 属性（你们在写布局的时候是不是很少用到 paddingStart、marginStart？接下来你们写布局的时候可不能再偷懒了，该加的还是得加上)</p>
 <p>Start 属性在 LTR 中对应 Left，在 RTL 中对应 Right，在API 17开始支持，为了兼容低版本，需要同时有 Left 和 Start。从市场来看，Android 4.2 系统以下的手机用户已经不多了，我的建议是可以不兼容，具体还得你们看自家产品在 4.2 系统以下用户数。</p>
 <blockquote>
 <p>Refactor &gt; Add RTL Support Where Possible…</p>
 </blockquote>
-<p><img alt="" data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190817215036.png"></p>
+<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190817215036.png"></p>
 <h3 id="利用第三方插件"><a href="#利用第三方插件" class="headerlink" title="利用第三方插件"></a>利用第三方插件</h3><table>
 <thead>
 <tr>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">描述</th>
+<th align="center">名称</th>
+<th align="center">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center"><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fznyang%2Fgradle-android-rtl" target="_blank" rel="noopener">gradle-android-rtl</a></td>
-<td style="text-align:center">自动修复布局文件中未添加RTL支持的标签</td>
+<tbody><tr>
+<td align="center"><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fznyang%2Fgradle-android-rtl" target="_blank" rel="noopener">gradle-android-rtl</a></td>
+<td align="center">自动修复布局文件中未添加RTL支持的标签</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>与 AS 插件的比较：</p>
 <ul>
 <li>性能更好。在处理大批量文件修改时，用AS工具会出现卡顿</li>
@@ -456,14 +455,20 @@
 </ul>
 <h3 id="使用全局样式"><a href="#使用全局样式" class="headerlink" title="使用全局样式"></a>使用全局样式</h3><h4 id="EditText"><a href="#EditText" class="headerlink" title="EditText"></a>EditText</h4><p>发现 EditText 控件基本都需要设置下面两个属性<br> 相关链接：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F10903647%2Fset-a-consistent-style-to-all-edittext-for-e-g" target="_blank" rel="noopener">set-a-consistent-style-to-all-edittext-for-e-g</a></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">android:textAlignment="viewStart"</span><br><span class="line">android:gravity="start"</span><br></pre></td></tr></table></figure>
+
 <p>那我们就可以在 style.xml 样式中全部 EditText 都设置</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light.NoActionBar"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">       ...</span></span><br><span class="line"><span class="xml">       <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"editTextStyle"</span>&gt;</span>@style/EditTextStyle.Alignment<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="undefined">       ...</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"EditTextStyle.Alignment"</span> <span class="attr">parent</span>=<span class="string">"@android:style/Widget.EditText"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textAlignment"</span>&gt;</span>viewStart<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:gravity"</span>&gt;</span>start<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textDirection"</span>&gt;</span>locale<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="TextView"><a href="#TextView" class="headerlink" title="TextView"></a>TextView</h4><p>全局给所有 TextView 添加一个 RTL 属性<br> 相关链接:<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F3078081%2Fsetting-global-styles-for-views-in-android" target="_blank" rel="noopener">setting-global-styles-for-views-in-android</a></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light.NoActionBar"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">       ...</span></span><br><span class="line"><span class="xml">       <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textViewStyle"</span>&gt;</span>@style/TextViewStyle.TextDirection<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="undefined">       ...</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"TextViewStyle.TextDirection"</span> <span class="attr">parent</span>=<span class="string">"android:Widget.TextView"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textDirection"</span>&gt;</span>locale<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="判断是否是-RTL-布局"><a href="#判断是否是-RTL-布局" class="headerlink" title="判断是否是 RTL 布局"></a>判断是否是 RTL 布局</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TextUtilsCompat.getLayoutDirectionFromLocale(Locale.getDefault()) == LayoutDirection.RTL</span><br></pre></td></tr></table></figure>
+
 <h3 id="对集合进行倒序处理"><a href="#对集合进行倒序处理" class="headerlink" title="对集合进行倒序处理"></a>对集合进行倒序处理</h3><p>在某些场合下, 这个方法很有用</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Collections.reverse(List&lt;?&gt; list);</span><br></pre></td></tr></table></figure>
+
 <h3 id="代码动态设置控件-setMargins"><a href="#代码动态设置控件-setMargins" class="headerlink" title="代码动态设置控件 setMargins"></a>代码动态设置控件 setMargins</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FrameLayout.LayoutParams params = <span class="keyword">new</span> FrameLayout.LayoutParams(</span><br><span class="line">                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);</span><br><span class="line">params.setMargins(<span class="number">10</span>, <span class="number">0</span>, <span class="number">10</span>, <span class="number">0</span>);</span><br><span class="line">params.setMarginEnd(<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+
 <h3 id="ViewPager"><a href="#ViewPager" class="headerlink" title="ViewPager"></a>ViewPager</h3><p>相关链接: <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F37196714%2Ftabs-swipe-direction-in-right-to-left-android-app" target="_blank" rel="noopener">tabs-swipe-direction-in-right-to-left-android-app</a></p>
 <blockquote>
 <p>Android 官方控件大多支持 RTL，ViewPager 除外，GitHub 上面有人对 ViewPager 进行修改支持 RTL, <a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fdiego-gomez-olvera%2FRtlViewPager" target="_blank" rel="noopener">地址</a></p>
@@ -605,8 +610,10 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" src="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4" alt="ZhangMiao">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4"
+      alt="ZhangMiao">
   <p class="site-author-name" itemprop="name">ZhangMiao</p>
   <div class="site-description motion-element" itemprop="description">Change for the Better</div>
 </div>
@@ -1112,7 +1119,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">ZhangMiao</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
 
