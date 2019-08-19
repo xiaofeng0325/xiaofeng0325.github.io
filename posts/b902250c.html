@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Android,Android Tips,">
 
 
 
@@ -81,16 +81,28 @@
 
 
 
-<meta name="description" content="Change for the Better">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zm.blog">
-<meta property="og:url" content="https://zhangmiao.cc/tags/Flutter/index.html">
+<meta name="description" content="Context到底是啥？Context 本身是一个抽象类，它的实现类为 ContextImpl。 另外有子类 ContextWrapper 和 ContextThemeWrapper，这两个子类都是 Context 的代理类，主要区别是 ContextThemeWrapper 有自己的主题资源。  一个 Context 意味着一个场景，一个场景就是我们和软件进行交互的一个过程。 从安卓程序的角度来">
+<meta name="keywords" content="Android,Android Tips">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android Context细节解析">
+<meta property="og:url" content="https://zhangmiao.cc/posts/b902250c.html">
 <meta property="og:site_name" content="zm.blog">
-<meta property="og:description" content="Change for the Better">
+<meta property="og:description" content="Context到底是啥？Context 本身是一个抽象类，它的实现类为 ContextImpl。 另外有子类 ContextWrapper 和 ContextThemeWrapper，这两个子类都是 Context 的代理类，主要区别是 ContextThemeWrapper 有自己的主题资源。  一个 Context 意味着一个场景，一个场景就是我们和软件进行交互的一个过程。 从安卓程序的角度来">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190819173910.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190819174053.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190819174212.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190819174304.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190819174343.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190819174949.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190819174503.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190819174546.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190819174608.png">
+<meta property="og:updated_time" content="2019-08-19T09:52:12.739Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zm.blog">
-<meta name="twitter:description" content="Change for the Better">
+<meta name="twitter:title" content="Android Context细节解析">
+<meta name="twitter:description" content="Context到底是啥？Context 本身是一个抽象类，它的实现类为 ContextImpl。 另外有子类 ContextWrapper 和 ContextThemeWrapper，这两个子类都是 Context 的代理类，主要区别是 ContextThemeWrapper 有自己的主题资源。  一个 Context 意味着一个场景，一个场景就是我们和软件进行交互的一个过程。 从安卓程序的角度来">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190819173910.png">
 
 
 
@@ -120,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://zhangmiao.cc/tags/Flutter/">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/b902250c.html">
 
 
 
 
 
-  <title>标签: Flutter | zm.blog</title>
+  <title>Android Context细节解析 | zm.blog</title>
   
 
 
@@ -156,7 +168,7 @@ var _hmt = _hmt || [];
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -292,290 +304,273 @@ var _hmt = _hmt || [];
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Flutter<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/b902250c.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhangMiao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zm.blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/posts/60004316.html" itemprop="url">
-              
-                <span itemprop="name">Flutter “保姆”级项目 Demo合集</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Android Context细节解析</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-12T13:40:05+08:00" content="2019-05-12">
-          05-12
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-19T17:37:48+08:00">
+                2019-08-19
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/Android-Tips/" itemprop="url" rel="index">
+                    <span itemprop="name">Android Tips</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/b902250c.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/b902250c.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/b902250c.html" class="leancloud_visitors" data-flag-title="Android Context细节解析">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/posts/b7213cdb.html" itemprop="url">
-              
-                <span itemprop="name">FlutterPlugin开发流程</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-29T16:00:03+08:00" content="2019-04-29">
-          04-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
+        <h2 id="Context到底是啥？"><a href="#Context到底是啥？" class="headerlink" title="Context到底是啥？"></a>Context到底是啥？</h2><p>Context 本身是一个抽象类，它的实现类为 ContextImpl。</p>
+<p>另外有子类 ContextWrapper 和 ContextThemeWrapper，这两个子类都是 Context 的代理类，主要区别是 ContextThemeWrapper 有自己的主题资源。</p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190819173910.png" alt></p>
+<p>一个 Context 意味着一个<strong>场景</strong>，一个场景就是我们和软件进行<strong>交互的一个过程</strong>。</p>
+<p>从安卓程序的角度来看，其实一个 Activity 就是一个 Context ，一个 Service 也是一个 Context。</p>
+<a id="more"></a>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/posts/5ae94dfd.html" itemprop="url">
-              
-                <span itemprop="name">Flutter与Android的交互</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-29T15:46:33+08:00" content="2019-04-29">
-          04-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/posts/b447830c.html" itemprop="url">
-              
-                <span itemprop="name">Flutter入门指南(十四)之实战</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-28T15:33:17+08:00" content="2019-04-28">
-          04-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/posts/d9e32c9b.html" itemprop="url">
-              
-                <span itemprop="name">Flutter入门指南(十三)之网络</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-28T15:24:59+08:00" content="2019-04-28">
-          04-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/posts/6358b348.html" itemprop="url">
-              
-                <span itemprop="name">Flutter入门指南(十二)之数据持久化</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-28T15:18:47+08:00" content="2019-04-28">
-          04-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/posts/d121323a.html" itemprop="url">
-              
-                <span itemprop="name">Flutter入门指南(十一)之状态管理，BLoC</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-27T15:07:53+08:00" content="2019-04-27">
-          04-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/posts/d4756fd3.html" itemprop="url">
-              
-                <span itemprop="name">Flutter入门指南(十)之手势处理和动画</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-27T14:55:04+08:00" content="2019-04-27">
-          04-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/posts/5da6faeb.html" itemprop="url">
-              
-                <span itemprop="name">Flutter入门指南(九)之弹窗和提示(SnackBar、BottomSheet、Dialog)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-27T11:30:42+08:00" content="2019-04-27">
-          04-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/posts/f600e8a7.html" itemprop="url">
-              
-                <span itemprop="name">Flutter入门指南(八)之Sliver组件及NestedScrollView</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-26T10:57:48+08:00" content="2019-04-26">
-          04-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+<h2 id="Context有啥作用？"><a href="#Context有啥作用？" class="headerlink" title="Context有啥作用？"></a>Context有啥作用？</h2><p>有啥用？要看它能做啥，看看主要提供了哪些接口了。</p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190819174053.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190819174212.png" alt></p>
+<p>还挺多的，看起来管得挺多，四大组件都管着，像个 Application 大管家。</p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190819174304.png" alt></p>
+<h2 id="一个app里有多少个Context？"><a href="#一个app里有多少个Context？" class="headerlink" title="一个app里有多少个Context？"></a>一个app里有多少个Context？</h2><p>前面说啦，一个Activity就是一个场景（Context），一个Service也是一个场景，所以，应用程序中有多少个Activity或者Service就会有多少个Context对象，也就是有多少个场景。</p>
+<h2 id="ContextImpl和ContextWrapper有啥区别？"><a href="#ContextImpl和ContextWrapper有啥区别？" class="headerlink" title="ContextImpl和ContextWrapper有啥区别？"></a>ContextImpl和ContextWrapper有啥区别？</h2><p>看下ContextWrapper：</p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190819174343.png" alt></p>
+<p>再看下ContextImpl：</p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190819174949.png" alt></p>
+<p>比较下：</p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190819174503.png" alt></p>
+<p>不同组件创建ContextImpl的方式：</p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190819174546.png" alt></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190819174608.png" alt></p>
+<p>Context相当于Application的大管家；</p>
+<p>ContextWrapper、ContextThemWrapper都是Context的代理类，ContextImpl是Context的主要实现类，是个实力派！</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="ZhangMiao 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="ZhangMiao 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    ZhangMiao
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://zhangmiao.cc/posts/b902250c.html" title="Android Context细节解析">https://zhangmiao.cc/posts/b902250c.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/Android-Tips/" rel="tag"># Android Tips</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/c080be13.html" rel="next" title="Android 中东阿拉伯语适配">
+                <i class="fa fa-chevron-left"></i> Android 中东阿拉伯语适配
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/tags/Flutter/page/2/">2</a><a class="extend next" rel="next" href="/tags/Flutter/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -583,6 +578,20 @@ var _hmt = _hmt || [];
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -603,8 +612,17 @@ var _hmt = _hmt || [];
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -755,6 +773,22 @@ var _hmt = _hmt || [];
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Context到底是啥？"><span class="nav-number">1.</span> <span class="nav-text">Context到底是啥？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Context有啥作用？"><span class="nav-number">2.</span> <span class="nav-text">Context有啥作用？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一个app里有多少个Context？"><span class="nav-number">3.</span> <span class="nav-text">一个app里有多少个Context？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ContextImpl和ContextWrapper有啥区别？"><span class="nav-number">4.</span> <span class="nav-text">ContextImpl和ContextWrapper有啥区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -926,6 +960,10 @@ var _hmt = _hmt || [];
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -943,6 +981,18 @@ var _hmt = _hmt || [];
       <script id="dsq-count-scr" src="https://zhangmiao.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://zhangmiao.cc/posts/b902250c.html';
+          this.page.identifier = 'posts/b902250c.html';
+          this.page.title = 'Android Context细节解析';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://zhangmiao.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
