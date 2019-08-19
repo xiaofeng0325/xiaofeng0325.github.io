@@ -380,7 +380,7 @@
 
       
           <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>Android安全架构规定：默认情况下，任何应用都没有权限执行对其他应用、操作系统或用户有不利影响的任何操作。这包括读写用户的私有数据（如联系人或电子邮件等）、读写其他应用的文件、执行网络访问、使设备保持唤醒状态等等。<br>如果要使用这些受保护的设备功能，首先要在应用的清单文件(AndroidManifest.xml)中添加一个或多个 <uses-permission>标记：</uses-permission></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">package</span>=<span class="string">"com.android.app.myapp"</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.RECEIVE_SMS"</span> /&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">package</span>=<span class="string">"com.android.app.myapp"</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.RECEIVE_SMS"</span> /&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -806,15 +806,15 @@
       
           <h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><ul>
 <li><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">node</a> &amp; npm</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ brew install node</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install node</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>检查 node &amp; npm</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ npm -v</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ npm -v</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://cli.vuejs.org/" target="_blank" rel="noopener">vue-cli</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install -g vue-cli</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g vue-cli</span><br></pre></td></tr></table></figure>
 <p>或</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install -g @vue/cli @vue/cli-init @vue/cli-service-global</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g @vue/cli @vue/cli-init @vue/cli-service-global</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
           <!--noindex-->
@@ -1115,7 +1115,7 @@
 <p>举个例子，我们定义若干个类 <code>class BMW</code>、<code>class Benz</code>、<code>class Audi</code>，分别对客观事物“宝马”、“奔驰”、“奥迪”三种汽车进行抽象，包含相关属性和行为（即方法）。但是我们知道，汽车都有通用的属性和行为，比如品牌、发动机、方向盘、轮胎等属性，前进、后退、转弯等行为，所以我们可以在宝马、奔驰等汽车之上，进一步抽象出“汽车”类 <code>abstract class Car</code>，包含通用的特性（属性和方法）。让 BMW、Benz、Audi 等继承抽象类 <code>extends Car</code>，便拥有了汽车的通用特性，然后在抽象类基础上定义各自的特殊属性及方法。</p>
 <p>这里的 <code>abstract class Car</code> 即抽象类，可以看出，<strong>抽象类是用来捕捉子类的通用特性的，包括属性及行为</strong>。</p>
 <h2 id="2-接口及其作用"><a href="#2-接口及其作用" class="headerlink" title="2. 接口及其作用"></a>2. 接口及其作用</h2><p>下面我们来看看接口，假使我研发出来一台会飞的汽车“伯特莱斯”（Bote-Royce），在程序中定义如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BoteRoyce</span> <span class="keyword">extends</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="comment">//...省略通用特性</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 可以飞</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"假装会飞~"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BoteRoyce</span> <span class="keyword">extends</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="comment">//...省略通用特性</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 可以飞</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fly</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"假装会飞~"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1407,7 +1407,7 @@
 <li>arm64-v8a: 64位支持<br>所谓的ARMv8架构，就是在MIPS64架构上增加了ARMv7架构中已经拥有的的TrustZone技术、虚拟化技术及NEON advanced SIMD技术等特性，研发成的。</li>
 </ul>
 <p>综上所述建议大家兼容armeabi-v7a和arm64-v8a这两个，其他架构少之又少，armeabi基本淘汰所以现在就不怎么考虑了。对于一般项目来说，足够了。</p>
-<p>在build.gradle的android里的defaultConfig内添加如下内容:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">defaultConfig &#123;  </span><br><span class="line">    ndk &#123;</span><br><span class="line">        abiFilters &quot;armeabi-v7a&quot;</span><br><span class="line">        abiFilters &quot;arm64-v8a&quot;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>在build.gradle的android里的defaultConfig内添加如下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">defaultConfig &#123;  </span><br><span class="line">    ndk &#123;</span><br><span class="line">        abiFilters &quot;armeabi-v7a&quot;</span><br><span class="line">        abiFilters &quot;arm64-v8a&quot;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           
             <div class="post-button text-center">

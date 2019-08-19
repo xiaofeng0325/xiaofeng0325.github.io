@@ -56,18 +56,18 @@
   };
 </script>
 
-  <meta name="description" content="uri &amp;amp; file 互转File file = new File(new URI(uri.toString())); URI uri = file.toURI(); uri &amp;amp; path 互转private String getPath(Uri uri) &amp;#123;         String[] projection = &amp;#123;MediaStore.Video.Med">
+  <meta name="description" content="uri &amp;amp; file 互转1File file = new File(new URI(uri.toString())); 1URI uri = file.toURI(); uri &amp;amp; path 互转1234567private String getPath(Uri uri) &amp;#123;         String[] projection = &amp;#123;MediaStore.">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android之uri、file、path相互转化">
 <meta property="og:url" content="https://zhangmiao.cc/posts/6f91fcbd.html">
 <meta property="og:site_name" content="zm.blog">
-<meta property="og:description" content="uri &amp;amp; file 互转File file = new File(new URI(uri.toString())); URI uri = file.toURI(); uri &amp;amp; path 互转private String getPath(Uri uri) &amp;#123;         String[] projection = &amp;#123;MediaStore.Video.Med">
+<meta property="og:description" content="uri &amp;amp; file 互转1File file = new File(new URI(uri.toString())); 1URI uri = file.toURI(); uri &amp;amp; path 互转1234567private String getPath(Uri uri) &amp;#123;         String[] projection = &amp;#123;MediaStore.">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-16T07:44:23.950Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android之uri、file、path相互转化">
-<meta name="twitter:description" content="uri &amp;amp; file 互转File file = new File(new URI(uri.toString())); URI uri = file.toURI(); uri &amp;amp; path 互转private String getPath(Uri uri) &amp;#123;         String[] projection = &amp;#123;MediaStore.Video.Med">
+<meta name="twitter:description" content="uri &amp;amp; file 互转1File file = new File(new URI(uri.toString())); 1URI uri = file.toURI(); uri &amp;amp; path 互转1234567private String getPath(Uri uri) &amp;#123;         String[] projection = &amp;#123;MediaStore.">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/6f91fcbd">
 
@@ -382,12 +382,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h4 id="uri-amp-file-互转"><a href="#uri-amp-file-互转" class="headerlink" title="uri &amp; file 互转"></a>uri &amp; file 互转</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File file = <span class="keyword">new</span> File(<span class="keyword">new</span> URI(uri.toString()));</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">URI uri = file.toURI();</span><br></pre></td></tr></table></figure>
-<h4 id="uri-amp-path-互转"><a href="#uri-amp-path-互转" class="headerlink" title="uri &amp; path 互转"></a>uri &amp; path 互转</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> String <span class="title">getPath</span><span class="params">(Uri uri)</span> </span>&#123;  </span><br><span class="line">       String[] projection = &#123;MediaStore.Video.Media.DATA&#125;;  </span><br><span class="line">       Cursor cursor = managedQuery(uri, projection, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);  </span><br><span class="line">       <span class="keyword">int</span> column_index = cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA);  </span><br><span class="line">       cursor.moveToFirst();  </span><br><span class="line">       <span class="keyword">return</span> cursor.getString(column_index);  </span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Uri uri = Uri.parse(path);</span><br></pre></td></tr></table></figure>
-<h4 id="file-amp-path-互转"><a href="#file-amp-path-互转" class="headerlink" title="file &amp; path 互转"></a>file &amp; path 互转</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String path = file.getPath()</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File file = <span class="keyword">new</span> File(path)</span><br></pre></td></tr></table></figure>
+        <h4 id="uri-amp-file-互转"><a href="#uri-amp-file-互转" class="headerlink" title="uri &amp; file 互转"></a>uri &amp; file 互转</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File file = <span class="keyword">new</span> File(<span class="keyword">new</span> URI(uri.toString()));</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">URI uri = file.toURI();</span><br></pre></td></tr></table></figure>
+<h4 id="uri-amp-path-互转"><a href="#uri-amp-path-互转" class="headerlink" title="uri &amp; path 互转"></a>uri &amp; path 互转</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> String <span class="title">getPath</span><span class="params">(Uri uri)</span> </span>&#123;  </span><br><span class="line">       String[] projection = &#123;MediaStore.Video.Media.DATA&#125;;  </span><br><span class="line">       Cursor cursor = managedQuery(uri, projection, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);  </span><br><span class="line">       <span class="keyword">int</span> column_index = cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA);  </span><br><span class="line">       cursor.moveToFirst();  </span><br><span class="line">       <span class="keyword">return</span> cursor.getString(column_index);  </span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Uri uri = Uri.parse(path);</span><br></pre></td></tr></table></figure>
+<h4 id="file-amp-path-互转"><a href="#file-amp-path-互转" class="headerlink" title="file &amp; path 互转"></a>file &amp; path 互转</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String path = file.getPath()</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File file = <span class="keyword">new</span> File(path)</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
     </div>
 

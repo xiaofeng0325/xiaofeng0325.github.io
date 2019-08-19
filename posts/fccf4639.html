@@ -388,23 +388,23 @@
 <p>Weex 提供了一个命令行工具 <a href="https://weex.apache.org/zh/tools/toolkit.html" target="_blank" rel="noopener">weex-toolkit</a> 来帮助开发者使用 Weex。它可以用来快速创建一个空项目、初始化 iOS 和 Android 开发环境、调试、安装插件等操作。</p>
 <p>目前 <code>weex-toolkit</code> 只支持创建 Vue.js 的项目。创建 Rax 的项目可以使用 <code>rax-cli</code>，参考 <a href="https://alibaba.github.io/rax/" target="_blank" rel="noopener">Rax 的官方网站</a> 了解其用法。</p>
 <h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>请确保你已经安装了 <a href="https://nodejs.org/" target="_blank" rel="noopener">Node.js</a>，然后全局安装 <code>weex-toolkit</code>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install weex-toolkit -g</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install weex-toolkit -g</span><br></pre></td></tr></table></figure>
 <p>这条命令会向你命令行环境中注册一个 <code>weex</code> 命令。你可以用 <code>weex create</code> 命令来创建一个空的模板项目：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">weex create awesome-app</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">weex create awesome-app</span><br></pre></td></tr></table></figure>
 <p>命令执行完以后，在当前目录的 <code>awesome-app</code> 文件夹里就有了一个空的 <strong>Weex + Vue.js</strong> 项目。</p>
 <a id="more"></a>
 <h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>下一步就是进入刚刚创建的文件夹，并且安装依赖，然后执行 <code>npm start</code>：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> awesome-app</span><br><span class="line">npm install</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> awesome-app</span><br><span class="line">npm install</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
 <p>然后工具会启动一个本地的 web 服务，监听 <code>8081</code> 端口。你可以打开 <code>http://localhost:8081</code> 查看页面在 Web 下的渲染效果。 源代码在 <code>src/</code> 目录中，你可以像一个普通的 Vue.js 项目一样来开发.</p>
 <p><img alt="Preview" data-src="https://weex.apache.org/assets/img/toolkit-preview.be71ed77.png"></p>
 <p>除此之外，你还可以打开 <code>http://localhost:8081/preview.html</code> 开启一个预览页面，它会把 web 端的页面放在一个 iframe 中渲染，而且在右侧生成一个二维码。用 <a href="https://weex.apache.org/zh/tools/playground.html" target="_blank" rel="noopener">Weex playground app</a> 扫描这个二维码可以看到页面在手机上渲染的真实效果。</p>
 <h2 id="编译和运行"><a href="#编译和运行" class="headerlink" title="编译和运行"></a>编译和运行</h2><p>默认情况下 <code>weex create</code> 命令并不初始化 iOS 和 Android 项目，你可以通过执行 <code>weex platform add</code> 来添加特定平台的项目。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">weex platform add ios</span><br><span class="line">weex platform add android</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">weex platform add ios</span><br><span class="line">weex platform add android</span><br></pre></td></tr></table></figure>
 <p>由于网络环境的不同，安装过程可能需要一些时间，请耐心等待。如果安装失败，请确保自己的网络环境畅通。</p>
 <p>为了能在本地机器上打开 Android 和 iOS 项目，你应该配置好客户端的开发环境。对于 iOS，你应该安装并且配置好 <a href="https://developer.apple.com/xcode/" target="_blank" rel="noopener">Xcode</a>。对于 Android，你应该安装并且配置好 <a href="https://developer.android.com/studio/index.html" target="_blank" rel="noopener">Android Studio</a>。当开发环境准备就绪后，运行下面的命令，可以在模拟器或真实设备上启动应用：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">weex run ios</span><br><span class="line">weex run android</span><br><span class="line">weex run web</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">weex run ios</span><br><span class="line">weex run android</span><br><span class="line">weex run web</span><br></pre></td></tr></table></figure>
 <h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><p><code>weex-toolkit</code> 还提供了强大的调试功能，只需要执行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">weex debug</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">weex debug</span><br></pre></td></tr></table></figure>
 <p>这条命令会启动一个调试服务，并且在 Chrome （目前只支持基于 V8 引擎的桌面浏览器） 中打开调试页面。详细用法请参考 <a href="https://weex.apache.org/zh/tools/toolkit.html" target="_blank" rel="noopener">weex-toolkit 的文档</a>。</p>
 
     </div>

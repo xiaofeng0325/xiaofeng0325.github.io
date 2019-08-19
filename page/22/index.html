@@ -1115,7 +1115,7 @@
 <p>下面开始进入正题，大家都知道，当布局嵌套深入比较深的时候，往往会伴随着一些性能问题。所以很多时候我们建议使用RelativeLayout或者GridLayout来简化掉布局的深度。</p>
 <p>而对于简化布局深度，ConstraintLayout几乎可以做到极致，接下来我们通过实例来尽可能将所有常见的属性一步步的介绍清楚。</p>
 <p>首先需要引入我们的ConstraintLayout，在build.gradle中加入：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">compile <span class="string">'com.android.support.constraint:constraint-layout:1.0.2'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile <span class="string">'com.android.support.constraint:constraint-layout:1.0.2'</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1400,8 +1400,8 @@
           <p>英文原文  <a href="https://inthecheesefactory.com/blog/get-to-know-glide-recommended-by-google/en" target="_blank" rel="noopener"> Introduction to Glide, Image Loader Library for Android, recommended by Google</a></p>
 <p>在泰国举行的谷歌开发者论坛上，谷歌为我们介绍了一个名叫 <a href="https://github.com/bumptech/glide" target="_blank" rel="noopener"><code>Glide</code></a> 的图片加载库，作者是bumptech。这个库被广泛的运用在google的开源项目中，包括2014年google I/O大会上发布的官方app。<br>它的成功让我非常感兴趣。我花了一整晚的时间把玩，决定分享一些自己的经验。在开始之前我想说， <a href="https://github.com/bumptech/glide" target="_blank" rel="noopener"><code>Glide</code></a> 和 <a href="https://github.com/square/picasso" target="_blank" rel="noopener"><code>Picasso</code></a> 有90%的相似度，准确的说，就是Picasso的克隆版本。但是在细节上还是有不少区别的。</p>
 <h3 id="导入库"><a href="#导入库" class="headerlink" title="导入库"></a>导入库</h3><p> <a href="https://github.com/bumptech/glide" target="_blank" rel="noopener"><code>Glide</code></a> 和 <a href="https://github.com/square/picasso" target="_blank" rel="noopener"><code>Picasso</code></a> 都在jcenter上。在项目中添加依赖非常简单：</p>
-<h5 id="Glide"><a href="#Glide" class="headerlink" title="Glide"></a>Glide</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    compile <span class="string">'com.github.bumptech.glide:glide:3.5.2'</span></span><br><span class="line">    compile <span class="string">'com.android.support:support-v4:22.0.0'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="Picasso"><a href="#Picasso" class="headerlink" title="Picasso"></a>Picasso</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">     compile <span class="string">'com.squareup.picasso:picasso:2.5.1'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="Glide"><a href="#Glide" class="headerlink" title="Glide"></a>Glide</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    compile <span class="string">'com.github.bumptech.glide:glide:3.5.2'</span></span><br><span class="line">    compile <span class="string">'com.android.support:support-v4:22.0.0'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="Picasso"><a href="#Picasso" class="headerlink" title="Picasso"></a>Picasso</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">     compile <span class="string">'com.squareup.picasso:picasso:2.5.1'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           
             <div class="post-button text-center">

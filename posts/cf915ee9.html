@@ -56,18 +56,18 @@
   };
 </script>
 
-  <meta name="description" content="概述Android安全架构规定：默认情况下，任何应用都没有权限执行对其他应用、操作系统或用户有不利影响的任何操作。这包括读写用户的私有数据（如联系人或电子邮件等）、读写其他应用的文件、执行网络访问、使设备保持唤醒状态等等。如果要使用这些受保护的设备功能，首先要在应用的清单文件(AndroidManifest.xml)中添加一个或多个 标记： &amp;lt;manifest xmlns:android=&quot;">
+  <meta name="description" content="概述Android安全架构规定：默认情况下，任何应用都没有权限执行对其他应用、操作系统或用户有不利影响的任何操作。这包括读写用户的私有数据（如联系人或电子邮件等）、读写其他应用的文件、执行网络访问、使设备保持唤醒状态等等。如果要使用这些受保护的设备功能，首先要在应用的清单文件(AndroidManifest.xml)中添加一个或多个 标记： 12345&amp;lt;manifest xmlns:andr">
 <meta name="keywords" content="Android,Android Tips,权限">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android权限大全">
 <meta property="og:url" content="https://zhangmiao.cc/posts/cf915ee9.html">
 <meta property="og:site_name" content="zm.blog">
-<meta property="og:description" content="概述Android安全架构规定：默认情况下，任何应用都没有权限执行对其他应用、操作系统或用户有不利影响的任何操作。这包括读写用户的私有数据（如联系人或电子邮件等）、读写其他应用的文件、执行网络访问、使设备保持唤醒状态等等。如果要使用这些受保护的设备功能，首先要在应用的清单文件(AndroidManifest.xml)中添加一个或多个 标记： &amp;lt;manifest xmlns:android=&quot;">
+<meta property="og:description" content="概述Android安全架构规定：默认情况下，任何应用都没有权限执行对其他应用、操作系统或用户有不利影响的任何操作。这包括读写用户的私有数据（如联系人或电子邮件等）、读写其他应用的文件、执行网络访问、使设备保持唤醒状态等等。如果要使用这些受保护的设备功能，首先要在应用的清单文件(AndroidManifest.xml)中添加一个或多个 标记： 12345&amp;lt;manifest xmlns:andr">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-16T07:44:23.978Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android权限大全">
-<meta name="twitter:description" content="概述Android安全架构规定：默认情况下，任何应用都没有权限执行对其他应用、操作系统或用户有不利影响的任何操作。这包括读写用户的私有数据（如联系人或电子邮件等）、读写其他应用的文件、执行网络访问、使设备保持唤醒状态等等。如果要使用这些受保护的设备功能，首先要在应用的清单文件(AndroidManifest.xml)中添加一个或多个 标记： &amp;lt;manifest xmlns:android=&quot;">
+<meta name="twitter:description" content="概述Android安全架构规定：默认情况下，任何应用都没有权限执行对其他应用、操作系统或用户有不利影响的任何操作。这包括读写用户的私有数据（如联系人或电子邮件等）、读写其他应用的文件、执行网络访问、使设备保持唤醒状态等等。如果要使用这些受保护的设备功能，首先要在应用的清单文件(AndroidManifest.xml)中添加一个或多个 标记： 12345&amp;lt;manifest xmlns:andr">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/cf915ee9">
 
@@ -383,7 +383,7 @@
 
       
         <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>Android安全架构规定：默认情况下，任何应用都没有权限执行对其他应用、操作系统或用户有不利影响的任何操作。这包括读写用户的私有数据（如联系人或电子邮件等）、读写其他应用的文件、执行网络访问、使设备保持唤醒状态等等。<br>如果要使用这些受保护的设备功能，首先要在应用的清单文件(AndroidManifest.xml)中添加一个或多个 <uses-permission>标记：</uses-permission></p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">package</span>=<span class="string">"com.android.app.myapp"</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.RECEIVE_SMS"</span> /&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">package</span>=<span class="string">"com.android.app.myapp"</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.RECEIVE_SMS"</span> /&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <table>
 <thead>

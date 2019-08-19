@@ -56,18 +56,18 @@
   };
 </script>
 
-  <meta name="description" content="今天在开发的时候遇到了一个ListView中添加的HeadView隐藏时仍然占用空间的解决方法； 具体问题如下：listView.addHeadView(headView); 但是在执行headView.setVisibility(View.GONE);后headView虽然隐藏了，但是仍然占用了空间； 解决方法： 在添加HeadView之前首先创建一个父布局parentView,即：Linear">
+  <meta name="description" content="今天在开发的时候遇到了一个ListView中添加的HeadView隐藏时仍然占用空间的解决方法； 具体问题如下：listView.addHeadView(headView); 但是在执行headView.setVisibility(View.GONE);后headView虽然隐藏了，但是仍然占用了空间； 解决方法： 在添加HeadView之前首先创建一个父布局parentView,即：12345L">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ListView中添加的HeadView隐藏时仍然占用空间的解决方法">
 <meta property="og:url" content="https://zhangmiao.cc/posts/df7e47f7.html">
 <meta property="og:site_name" content="zm.blog">
-<meta property="og:description" content="今天在开发的时候遇到了一个ListView中添加的HeadView隐藏时仍然占用空间的解决方法； 具体问题如下：listView.addHeadView(headView); 但是在执行headView.setVisibility(View.GONE);后headView虽然隐藏了，但是仍然占用了空间； 解决方法： 在添加HeadView之前首先创建一个父布局parentView,即：Linear">
+<meta property="og:description" content="今天在开发的时候遇到了一个ListView中添加的HeadView隐藏时仍然占用空间的解决方法； 具体问题如下：listView.addHeadView(headView); 但是在执行headView.setVisibility(View.GONE);后headView虽然隐藏了，但是仍然占用了空间； 解决方法： 在添加HeadView之前首先创建一个父布局parentView,即：12345L">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-16T07:44:23.956Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ListView中添加的HeadView隐藏时仍然占用空间的解决方法">
-<meta name="twitter:description" content="今天在开发的时候遇到了一个ListView中添加的HeadView隐藏时仍然占用空间的解决方法； 具体问题如下：listView.addHeadView(headView); 但是在执行headView.setVisibility(View.GONE);后headView虽然隐藏了，但是仍然占用了空间； 解决方法： 在添加HeadView之前首先创建一个父布局parentView,即：Linear">
+<meta name="twitter:description" content="今天在开发的时候遇到了一个ListView中添加的HeadView隐藏时仍然占用空间的解决方法； 具体问题如下：listView.addHeadView(headView); 但是在执行headView.setVisibility(View.GONE);后headView虽然隐藏了，但是仍然占用了空间； 解决方法： 在添加HeadView之前首先创建一个父布局parentView,即：12345L">
   <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
   <link rel="canonical" href="https://zhangmiao.cc/posts/df7e47f7">
 
@@ -386,8 +386,8 @@
 <p>具体问题如下：listView.addHeadView(headView);</p>
 <p>但是在执行headView.setVisibility(View.GONE);后headView虽然隐藏了，但是仍然占用了空间；</p>
 <p>解决方法：</p>
-<p>在添加HeadView之前首先创建一个父布局parentView,即：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">LinearLayout parentView=<span class="keyword">new</span> LinearLayout (Context context);</span><br><span class="line"></span><br><span class="line">parentView.addView(headView);</span><br><span class="line"></span><br><span class="line">listView.addHeadView(parentView);</span><br></pre></td></tr></table></figure></p>
-<p>之后再进行隐藏：<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//就可以实现以上所说的效果了。</span></span><br><span class="line">headView.setVisibility(View.GONE);</span><br></pre></td></tr></table></figure></p>
+<p>在添加HeadView之前首先创建一个父布局parentView,即：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">LinearLayout parentView=<span class="keyword">new</span> LinearLayout (Context context);</span><br><span class="line"></span><br><span class="line">parentView.addView(headView);</span><br><span class="line"></span><br><span class="line">listView.addHeadView(parentView);</span><br></pre></td></tr></table></figure></p>
+<p>之后再进行隐藏：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//就可以实现以上所说的效果了。</span></span><br><span class="line">headView.setVisibility(View.GONE);</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
     </div>
 

@@ -496,7 +496,7 @@
 <h5 id="1、如果你的项目中，有其他优先级更高的ABI目录，但是你把ABI文件放到了优先级低的目录，则你的ABI文件无法被加载"><a href="#1、如果你的项目中，有其他优先级更高的ABI目录，但是你把ABI文件放到了优先级低的目录，则你的ABI文件无法被加载" class="headerlink" title="1、如果你的项目中，有其他优先级更高的ABI目录，但是你把ABI文件放到了优先级低的目录，则你的ABI文件无法被加载"></a>1、如果你的项目中，有其他优先级更高的ABI目录，但是你把ABI文件放到了优先级低的目录，则你的ABI文件无法被加载</h5><h5 id="2、如果你的项目中，ABI文件放在了，项目中优先级最高的ABI目录中（这个ABI目录是手机所支持的在项目中优先级最高的，但不一定是手机所支持的优先级最高的），则这个ABI文件，可以被加载，加载为ABI目录的所表示的架构类型。"><a href="#2、如果你的项目中，ABI文件放在了，项目中优先级最高的ABI目录中（这个ABI目录是手机所支持的在项目中优先级最高的，但不一定是手机所支持的优先级最高的），则这个ABI文件，可以被加载，加载为ABI目录的所表示的架构类型。" class="headerlink" title="2、如果你的项目中，ABI文件放在了，项目中优先级最高的ABI目录中（这个ABI目录是手机所支持的在项目中优先级最高的，但不一定是手机所支持的优先级最高的），则这个ABI文件，可以被加载，加载为ABI目录的所表示的架构类型。"></a>2、如果你的项目中，ABI文件放在了，项目中优先级最高的ABI目录中（这个ABI目录是手机所支持的在项目中优先级最高的，但不一定是手机所支持的优先级最高的），则这个ABI文件，可以被加载，加载为ABI目录的所表示的架构类型。</h5><p>例子：</p>
 <p>我的手机cpu架构是ARMv7，ABI文件是armeabi-v7a，但是放进了armeabi目录中</p>
 <p>在运行的过程中会出现两种情况：</p>
-<p>1、项目中有armeabi-v7a的目录，armeabi目录中的文件，无法被加载，运行后报错，出现如下log信息。<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Caused by: java.lang.UnsatisfiedLinkError: dalvik.system.PathClassLoader[DexPathList[[zip file <span class="string">"/data/app/.xx../base.apk"</span>],nativeLibraryDirectories=[/data/app/.xx../lib/arm, /vendor/lib, /system/lib]]] couldn<span class="string">'t find "lib..xx...so"</span></span><br></pre></td></tr></table></figure></p>
+<p>1、项目中有armeabi-v7a的目录，armeabi目录中的文件，无法被加载，运行后报错，出现如下log信息。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Caused by: java.lang.UnsatisfiedLinkError: dalvik.system.PathClassLoader[DexPathList[[zip file <span class="string">"/data/app/.xx../base.apk"</span>],nativeLibraryDirectories=[/data/app/.xx../lib/arm, /vendor/lib, /system/lib]]] couldn<span class="string">'t find "lib..xx...so"</span></span><br></pre></td></tr></table></figure></p>
 <p>2、项目中只有armeabi的目录，armeabi目录是该项目优先级最高的ABI目录（虽然armeabi目录在ARMv7所支持的优先级最高的ABI目录不是最高），作为armv5，安装到手机上。</p>
 <p>####二、ABI二进制文件，放进了优先级高的ABI目录<br>可以被加载使用，被加载为ABI文件所表示的结构类型</p>
 <p>例子：</p>
@@ -507,7 +507,7 @@
 <p>例子：</p>
 <p>我的手机cpu架构是ARMv7，项目中使用两个第三方SDK：企业A和企业B</p>
 <p>企业A：ABI文件是armeabi-v7a，放进armeabi-v7a目录中。<br>企业B：ABI文件是armeabi-v5te，放进armeabi目录中。</p>
-<p>在运行时，会发现运行后crash，出现如下log信息。<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Caused by: java.lang.UnsatisfiedLinkError: dalvik.system.PathClassLoader[DexPathList[[zip file <span class="string">"/data/app/.xx../base.apk"</span>],nativeLibraryDirectories=[/data/app/.xx../lib/arm, /vendor/lib, /system/lib]]] couldn<span class="string">'t find "lib..xx...so"</span></span><br></pre></td></tr></table></figure></p>
+<p>在运行时，会发现运行后crash，出现如下log信息。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Caused by: java.lang.UnsatisfiedLinkError: dalvik.system.PathClassLoader[DexPathList[[zip file <span class="string">"/data/app/.xx../base.apk"</span>],nativeLibraryDirectories=[/data/app/.xx../lib/arm, /vendor/lib, /system/lib]]] couldn<span class="string">'t find "lib..xx...so"</span></span><br></pre></td></tr></table></figure></p>
 <p><strong>解决办法：</strong></p>
 <p>#####1、使用同一优先级的ABI文件，ABI文件放入优先级相同的ABI目录</p>
 <p>企业A：ABI文件是armeabi-v5te，放进armeabi目录中。<br>企业B：ABI文件是armeabi-v5te，放进armeabi目录中。<br>或<br>企业A：ABI文件是armeabi-v7a，放进armeabi-v7a目录中。<br>企业B：ABI文件是armeabi-v7a，放进armeabi-v7a目录中。</p>

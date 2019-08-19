@@ -601,7 +601,7 @@
 <li>singleTask 栈内复用模式，<br>* 首页</li>
 <li>singleInstance 单例模式，单独位于一个任务栈中<br>* 拨打电话界面<br>细节：<br>* taskAffinity：任务相关性，用于指定任务栈名称，默认为应用包名<br>* allowTaskReparenting：允许转移任务栈</li>
 </ul>
-<h4 id="View-工作原理"><a href="#View-工作原理" class="headerlink" title="View 工作原理"></a><strong>View 工作原理</strong></h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* DecorView (FrameLayout)</span><br><span class="line">   * LinearLayout</span><br><span class="line">       * titlebar</span><br><span class="line">       * Content</span><br><span class="line">       * 调用 setContentView 设置的 View</span><br></pre></td></tr></table></figure>
+<h4 id="View-工作原理"><a href="#View-工作原理" class="headerlink" title="View 工作原理"></a><strong>View 工作原理</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* DecorView (FrameLayout)</span><br><span class="line">   * LinearLayout</span><br><span class="line">       * titlebar</span><br><span class="line">       * Content</span><br><span class="line">       * 调用 setContentView 设置的 View</span><br></pre></td></tr></table></figure>
 <p>ViewRoot 的 performTraversals 方法调用触发开始 View 的绘制，然后会依次调用:</p>
 <ul>
 <li>performMeasure：遍历 View 的 measure 测量尺寸</li>

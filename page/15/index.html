@@ -661,7 +661,7 @@
 
       
           <h2 id="数据处理和视图加载分离"><a href="#数据处理和视图加载分离" class="headerlink" title="数据处理和视图加载分离"></a>数据处理和视图加载分离</h2><p>我们知道，从远端拉取数据肯定是要放在异步的，在我们拉取下来数据之后可能就匆匆把数据丢给了 VH 处理，其实，数据的处理逻辑我们也应该放在异步处理，这样 Adapter 在 notify change 后，ViewHolder 就可以简单无压力地做数据与视图的绑定逻辑，比如：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">mTextView.setText(Html.fromHtml(data).toString());</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mTextView.setText(Html.fromHtml(data).toString());</span><br></pre></td></tr></table></figure>
 <p>这里的 <code>Html.fromHtml(data)</code> 方法可能就是比较耗时的，存在多个 <code>TextView</code> 的话耗时会更为严重，这样便会引发掉帧、卡顿，而如果把这一步与网络异步线程放在一起，站在用户角度，最多就是网络刷新时间稍长一点。</p>
           <!--noindex-->
           

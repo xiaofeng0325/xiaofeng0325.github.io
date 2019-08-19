@@ -426,11 +426,11 @@
 <p> <strong>· 方法</strong></p>
 <p>1）将字符串转换成数字类型存储，如：将IP地址转换成整形数据。</p>
 <p>mysql提供了两个方法来处理ip地址：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">inet_aton // 把ip转为无符号整型(4-8位)</span><br><span class="line">inet_ntoa // 把整型的ip转为地址</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">inet_aton // 把ip转为无符号整型(4-8位)</span><br><span class="line">inet_ntoa // 把整型的ip转为地址</span><br></pre></td></tr></table></figure>
 <p>插入数据前，先用inet_aton把ip地址转为整型，可以节省空间。显示数据时，使用inet_ntoa把整型的ip地址转为地址显示即可。</p>
 <p>2）对于非负型的数据（如自增ID、整型IP）来说，要优先使用无符号整型来存储</p>
 <p>因为：无符号相对于有符号可以多出一倍的存储空间</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SIGNED INT -2147483648~2147483647</span><br><span class="line">UNSIGNED INT 0~4294967295</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SIGNED INT -2147483648~2147483647</span><br><span class="line">UNSIGNED INT 0~4294967295</span><br></pre></td></tr></table></figure>
 <p>VARCHAR(N)中的N代表的是字符数，而不是字节数</p>
 <p>使用UTF8存储255个汉字 Varchar(255)=765个字节。过大的长度会消耗更多的内存</p>
 <p><strong>2、避免使用TEXT、BLOB数据类型，最常见的TEXT类型可以存储64k的数据</strong></p>
@@ -538,9 +538,9 @@
 <p><strong>13、WHERE从句中禁止对列进行函数转换和计算</strong></p>
 <p>对列进行函数转换或计算时会导致无法使用索引。</p>
 <p> <strong>· 不推荐：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">where date(create_time)=&apos;20190101&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">where date(create_time)=&apos;20190101&apos;</span><br></pre></td></tr></table></figure>
 <p> <strong>· 推荐：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">where create_time &gt;=&apos;20190101&apos; and create_time &lt;=&apos;20190102&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">where create_time &gt;=&apos;20190101&apos; and create_time &lt;=&apos;20190102&apos;</span><br></pre></td></tr></table></figure>
 <p><strong>14、在明显不会有重复值时使用UNION ALL而不是UNION</strong></p>
 <p><strong>·</strong> UNION会把两个结果集的所有数据放到临时表中后再进行去重操作</p>
 <p><strong>·</strong> UNION ALL不会再对结果集进行去重操作</p>

@@ -395,7 +395,7 @@
 <li><a href="http://pan.baidu.com/share/link?shareid=150951&amp;uk=3607385901" target="_blank" rel="noopener">SwitchHosts! 下载地址2（百度网盘）</a></li>
 </ul>
 <h3 id="brew"><a href="#brew" class="headerlink" title="brew"></a>brew</h3><p>在 macOS 上，也可以使用 <code>brew cast</code> 安装，命令如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">brew cask install switchhosts</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install switchhosts</span><br></pre></td></tr></table></figure>
 <p>感谢 <a href="https://github.com/gobinathm" target="_blank" rel="noopener">@gobinathm</a>、<a href="https://github.com/iamybj" target="_blank" rel="noopener">@iamybj</a> 更新 <code>brew cask</code> 版本。</p>
 <h2 id="文件备份"><a href="#文件备份" class="headerlink" title="文件备份"></a>文件备份</h2><p>SwitchHosts! 的数据文件在 <code>~/.SwitchHosts</code> 目录下（Windows 用户为个人主目录下的 <code>.SwitchHosts</code> 目录下），其中 <code>~/.SwitchHosts/data.json</code> 是 hosts 数据文件，<code>~/.SwitchHosts/prefereces.json</code> 是配置信息。</p>
 <h2 id="运行-打包方法"><a href="#运行-打包方法" class="headerlink" title="运行/打包方法"></a>运行/打包方法</h2><h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><ul>
@@ -404,7 +404,7 @@
 <li><p>在根目录 <code>./</code> 下，运行 <code>npm install</code> 命令，安装开发依赖库；</p>
 </li>
 <li><p>在 <code>./app</code> 目录下，运行 <code>npm install</code> 命令，安装 App 运行依赖库；</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install</span><br><span class="line">cd app &amp;&amp; npm install &amp;&amp; cd ..</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">cd app &amp;&amp; npm install &amp;&amp; cd ..</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="构建及运行"><a href="#构建及运行" class="headerlink" title="构建及运行"></a>构建及运行</h3><ul>
@@ -413,20 +413,20 @@
 <li><p>在 <code>./</code> 目录下，运行 <code>npm run build</code> 命令，构建所需文件；</p>
 </li>
 <li><p>在 <code>./</code> 目录下，运行 <code>npm start</code> 命令，即可运行程序。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># create dll file</span><br><span class="line">npm run dll</span><br><span class="line"></span><br><span class="line"># build</span><br><span class="line">npm run build</span><br><span class="line"></span><br><span class="line"># start</span><br><span class="line">npm start</span><br><span class="line"></span><br><span class="line"># or start in developer mode</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># create dll file</span><br><span class="line">npm run dll</span><br><span class="line"></span><br><span class="line"># build</span><br><span class="line">npm run build</span><br><span class="line"></span><br><span class="line"># start</span><br><span class="line">npm start</span><br><span class="line"></span><br><span class="line"># or start in developer mode</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="打包发布"><a href="#打包发布" class="headerlink" title="打包发布"></a>打包发布</h3><ul>
 <li><p>建议使用 <a href="https://github.com/electron-userland/electron-packager" target="_blank" rel="noopener">electron-packager</a> 进行打包</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># install electron-packager for use from cli</span><br><span class="line">npm install electron-packager -g</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># install electron-packager for use from cli</span><br><span class="line">npm install electron-packager -g</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在 <code>./</code> 目录下，运行 <code>npm run pack</code> 命令，打包后的文件位于 <code>./dist</code> 目录；</p>
 </li>
 <li><p>首次执行此命令可能需要花费较多时间（需要下载对应的构建文件），也可先手动下载<a href="https://github.com/electron/electron/releases" target="_blank" rel="noopener">对应的发布版本</a>（<a href="https://npm.taobao.org/mirrors/electron/" target="_blank" rel="noopener">淘宝镜像</a>），手动保存到 <code>~/.electron</code> 目录下。更多信息请参考 <a href="http://electron.atom.io/docs/" target="_blank" rel="noopener">Electron 文档</a>。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># pack</span><br><span class="line">npm run pack  # the packed files will be in ./dist</span><br><span class="line"></span><br><span class="line"># 也可以只打包特定平台的版本，如</span><br><span class="line">npm run pack-mac  # pack for macOS, the packed files will be in ./dist</span><br><span class="line">npm run pack-win  # pack for Windows, the packed files will be in ./dist</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># pack</span><br><span class="line">npm run pack  # the packed files will be in ./dist</span><br><span class="line"></span><br><span class="line"># 也可以只打包特定平台的版本，如</span><br><span class="line">npm run pack-mac  # pack for macOS, the packed files will be in ./dist</span><br><span class="line">npm run pack-win  # pack for Windows, the packed files will be in ./dist</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>打包完成后，可运行以下命令将生成的程序压缩为 zip 文件。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># zip</span><br><span class="line">npm run zip  # the zipped files will be in ./dist</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># zip</span><br><span class="line">npm run zip  # the zipped files will be in ./dist</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h2><h3 id="v3-3"><a href="#v3-3" class="headerlink" title="v3.3"></a>v3.3</h3><ul>

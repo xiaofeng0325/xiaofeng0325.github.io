@@ -384,7 +384,7 @@
 <p>从更确切的角度说，是你的编辑器一旦开了webview，就会出现这个问题，即使是vscode的欢迎页，也是webview，也会导致这个问题。所以最好在写代码时尽量关闭webview。</p>
 <p><img alt="" data-src="https://ws1.sinaimg.cn/large/006tNbRwly1fx7mhgetiij30be06jmxc.jpg"></p>
 <h1 id="3-如何让隐藏字符现身"><a href="#3-如何让隐藏字符现身" class="headerlink" title="3. 如何让隐藏字符现身"></a>3. 如何让隐藏字符现身</h1><p>Mac版的vscode控制字符一般是不会显示出来的，可以用一下的方法让其显示出来</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;editor.renderControlCharacters&quot;: true</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;editor.renderControlCharacters&quot;: true</span><br></pre></td></tr></table></figure>
 <p>在编辑器中显示的像很小的<code>BS</code>, 表示backspace的意思。一般是在输入时，按了后退或者删除会偶尔出现这个字符。</p>
 <p><img alt="" data-src="https://ws1.sinaimg.cn/large/006tNbRwly1fx7mhrljotj30lu0d2aa8.jpg"></p>
 <h1 id="4-隐藏的控制字符会出现什么问题？"><a href="#4-隐藏的控制字符会出现什么问题？" class="headerlink" title="4. 隐藏的控制字符会出现什么问题？"></a>4. 隐藏的控制字符会出现什么问题？</h1><h2 id="4-1-控制字符在github上会出现问号"><a href="#4-1-控制字符在github上会出现问号" class="headerlink" title="4.1. 控制字符在github上会出现问号"></a>4.1. 控制字符在github上会出现问号</h2><p>例如下图的的和同字之间就是出现一个隐藏字符，在github上就会出现一个带有背景的问号。</p>
@@ -397,7 +397,7 @@
 <p>在本家chromium已被合并，因此，在8月上旬发行的vscode 1.15将会重新确定(vscode 1.15, electron 1.7.4)。<code>事实上，到现在这个问题还是没解决的</code></p>
 <p><strong>特点</strong></p>
 <p>格式化程序，用于删除打开的文档中包含的控制字符。要被删除的控制字符默认如下。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/[\u0000]|[\u0001]|[\u0002]|[\u0003]|[\u0004]|[\u0005]|[\u0006]|[\u0007]|[\u0008]|[\u000b]|[\u000c]|[\u000d]|[\u000e]|[\u000f]|[\u0010]|[\u0011]|[\u0012]|[\u0013]|[\u0014]|[\u0015]|[\u0016]|[\u0017]|[\u0018]|[\u0019]|[\u001a]|[\u001b]|[\u001c]|[\u001d]|[\u001e]|[\u001f]|[\u001c]|[\u007f]/gm</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/[\u0000]|[\u0001]|[\u0002]|[\u0003]|[\u0004]|[\u0005]|[\u0006]|[\u0007]|[\u0008]|[\u000b]|[\u000c]|[\u000d]|[\u000e]|[\u000f]|[\u0010]|[\u0011]|[\u0012]|[\u0013]|[\u0014]|[\u0015]|[\u0016]|[\u0017]|[\u0018]|[\u0019]|[\u001a]|[\u001b]|[\u001c]|[\u001d]|[\u001e]|[\u001f]|[\u001c]|[\u007f]/gm</span><br></pre></td></tr></table></figure>
 <p><strong>用法</strong></p>
 <ul>
 <li>“editor.formatOnSave”: true 如果被设定,保存时启动</li>

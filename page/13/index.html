@@ -535,7 +535,7 @@
 <p> 1、Java如何调用JavaScript<br> 2、JavaScript如何调用Java<br> 3、方法参数以及回调如何处理<br> 4、通信的数据格式是怎么样的</p>
 <p>下面从以上问题依次开始讨论:</p>
 <h3 id="1、Java如何调用JavaScript"><a href="#1、Java如何调用JavaScript" class="headerlink" title="1、Java如何调用JavaScript"></a>1、Java如何调用JavaScript</h3><p>在Android 中，Java与JavaScript的一切交互都是依托于WebView的。可通过如下方法来完成，其中function（）即为JavaScript代码，来实现相应的具体H5层功能</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">WebView.loadUrl(<span class="string">"javascript:function()"</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WebView.loadUrl(<span class="string">"javascript:function()"</span>);</span><br></pre></td></tr></table></figure>
 <h3 id="2、JavaScript如何调用Java"><a href="#2、JavaScript如何调用Java" class="headerlink" title="2、JavaScript如何调用Java"></a>2、JavaScript如何调用Java</h3><p>要实现在JavaScript中调用Java，就需要在JavaScript中有触发Java方法的对象和方法。在JavaScript中，当调用window对象的prompt方法时，会触发Java中的WebChromeClient对象的onJsPrompt方法，因此可以利用这个机制来实现js调用native的代码。</p>
           <!--noindex-->
           
@@ -673,7 +673,7 @@
 <p>在讲解两个地址的不同之前，我们先回顾一下IP地址的基础知识。</p>
 <h1 id="2-IP地址分类"><a href="#2-IP地址分类" class="headerlink" title="2. IP地址分类"></a>2. IP地址分类</h1><h2 id="2-1-IP地址表示"><a href="#2-1-IP地址表示" class="headerlink" title="2.1 IP地址表示"></a>2.1 IP地址表示</h2><p>IP地址由两个部分组成，net-id和host-id，即网络号和主机号。net-id:表示ip地址所在的网络号。host-id：表示ip地址所在网络中的某个主机号码。</p>
 <p>即：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">IP-address ::=  &#123; &lt;Network-number&gt;, &lt;Host-number&gt; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IP-address ::=  &#123; &lt;Network-number&gt;, &lt;Host-number&gt; &#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -817,7 +817,7 @@
 <p>在一些项目中会分拆app 和 lib , 这时候引用support的时候,一旦更改版本会出现需要同步更改两个地方的问题.这种情况,可以通过配置gradle.properties实现替换.<br>在项目编译过程中,gradle.properties配置的值会被编译解析,其作为配置文件使用是很有必要的.</p>
 </blockquote>
 <h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h3><p>在Android Studio 创建一个项目的时候，Project下面会生成gradle.properties和local.properties文件，如下图:<br><img alt="" data-src="https://ws3.sinaimg.cn/large/006tNbRwgy1fxvpia7sqzj308w09b0t7.jpg"></p>
-<h3 id="2-properties的数据格式"><a href="#2-properties的数据格式" class="headerlink" title="2. properties的数据格式"></a>2. properties的数据格式</h3><p>properties里面的数据格式采用键值对的方式，大概有以下几种写法:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. key=value </span><br><span class="line">2. key:value </span><br><span class="line">3. key :value </span><br><span class="line">4. # 作为注释</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-properties的数据格式"><a href="#2-properties的数据格式" class="headerlink" title="2. properties的数据格式"></a>2. properties的数据格式</h3><p>properties里面的数据格式采用键值对的方式，大概有以下几种写法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. key=value </span><br><span class="line">2. key:value </span><br><span class="line">3. key :value </span><br><span class="line">4. # 作为注释</span><br></pre></td></tr></table></figure></p>
 <p>这里主要参考以下链接：<br><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html" target="_blank" rel="noopener">https://docs.oracle.com/javase/8/docs/api/java/util/Properties.html</a><br><strong>注意: </strong>在Android Studio 中最好使用第一种写法，要不会有警告<br>
           <!--noindex-->
           
@@ -958,7 +958,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">        google()</span><br><span class="line">        jcenter()</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">        google()</span><br><span class="line">        jcenter()</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>Go to <code>File-&gt;Settings-&gt;Build, Execution, Deployment-&gt;Gradle-&gt;Uncheck Offline work option.</code></p>
           <!--noindex-->
           
@@ -1114,7 +1114,7 @@
 <li>杜绝不规范的英文缩写：AbstractClass 缩写成AbsClass；condition缩写成condi;此类随意缩写严重降低了代码的可阅读性。</li>
 <li>如果使用到了设计模式，建议在类名中体现出具体的模式：</li>
 <li><p>关于Service或Dao层的命名</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class ComponentFactory</span><br><span class="line">public class BufferStrategy</span><br><span class="line">public class ScrollerProxy</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public class ComponentFactory</span><br><span class="line">public class BufferStrategy</span><br><span class="line">public class ScrollerProxy</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>实体类必须重载toString()方法，这样可以通过调用对象的toString()来排查问题。</p>
 </li>

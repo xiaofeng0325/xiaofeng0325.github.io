@@ -636,12 +636,12 @@
 </ul>
 <p>语法上以 ${ 开头，以 } 结束。对于Map，通过 . 操作符进行访问，对于 Array 或者 List 通过 [] 操作符进行访问。</p>
 <p>比如：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$&#123;benefitImgUrl&#125;</span><br><span class="line">$&#123;data[0].benefitImgUrl&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$&#123;benefitImgUrl&#125;</span><br><span class="line">$&#123;data[0].benefitImgUrl&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>条件表达式</li>
 </ul>
 <p>用来给那些需要根据数据中某个字段来设置值的属性，语法上以 @{ 开头，以 } 结束，中间部分为表达式的具体内容。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">条件表达式 ? 结果表达式[1] : 结果表达式[2]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">条件表达式 ? 结果表达式[1] : 结果表达式[2]</span><br></pre></td></tr></table></figure>
 <p>当条件表达式成立的时候，使用结果表达式[1]，否则使用结果表达式[2]。 其中： 条件表达式支持布尔类型、字符串类型、JSONObject、JSONArray。 以下场景均为 false：</p>
 <ul>
 <li>布尔类型值为 false</li>
@@ -652,7 +652,7 @@
 <li>字段不存在</li>
 </ul>
 <p>比如：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@&#123;$&#123;logoUrl&#125; ? visible : invisible &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@&#123;$&#123;logoUrl&#125; ? visible : invisible &#125;</span><br></pre></td></tr></table></figure>
 <p>考虑到篇幅限制，不能将上述架构和流程中的每一细节完全展开，详情可以参考苹果核这里的<a href="http://tangram.pingguohe.net/docs/virtualview/about-virtualview" target="_blank" rel="noopener">文档</a>。</p>
 <h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><h3 id="与-Tangram-及-TAC-结合"><a href="#与-Tangram-及-TAC-结合" class="headerlink" title="与 Tangram 及 TAC 结合"></a>与 Tangram 及 TAC 结合</h3><p>VirtualView 方案是 Tangram 的极大补充，可以解决80%场景下的动态化需求，而 Tangram 依赖的数据则通过 TAC 提供解决，三者结合可以形成一个闭环，让一个开发从端到端地解决整块业务的开发。</p>
 <h3 id="组件动态下发"><a href="#组件动态下发" class="headerlink" title="组件动态下发"></a>组件动态下发</h3><p>以双十一期间为例，90%的双十一业务组件都是动态下发的，且随时可根据业务节奏调整。</p>

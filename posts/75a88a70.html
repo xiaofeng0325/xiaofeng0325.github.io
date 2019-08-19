@@ -57,7 +57,7 @@
 </script>
 
   <meta name="description" content="了解完 armeabi、armeabi-v7a、arm64-v8a、mips、mips64、x86、x86_64等abi的原理后，很久以前一般都只是用armeabi在做兼容。  现在其实市面上主流的手机都支持armeabi-v7a和arm64-v8a。请看如下简介：各版本的分析如下所示：  mips / mips64: 极少用于手机可以忽略，有兴趣的可以百度一下。 x86 / x86_64: x">
-<meta name="keywords" content="Android,Android Tips,.so文件,armeabi-v7a,arm64-v8a,abi兼容">
+<meta name="keywords" content="Android,Android Tips,armeabi-v7a,arm64-v8a,abi兼容,.so文件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android的.so文件、abi兼容，通用armeabi-v7a和arm64-v8a架构的方法">
 <meta property="og:url" content="https://zhangmiao.cc/posts/75a88a70.html">
@@ -394,12 +394,12 @@
 <li>arm64-v8a: 64位支持<br>所谓的ARMv8架构，就是在MIPS64架构上增加了ARMv7架构中已经拥有的的TrustZone技术、虚拟化技术及NEON advanced SIMD技术等特性，研发成的。</li>
 </ul>
 <p>综上所述建议大家兼容armeabi-v7a和arm64-v8a这两个，其他架构少之又少，armeabi基本淘汰所以现在就不怎么考虑了。对于一般项目来说，足够了。</p>
-<p>在build.gradle的android里的defaultConfig内添加如下内容:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">defaultConfig &#123;  </span><br><span class="line">    ndk &#123;</span><br><span class="line">        abiFilters &quot;armeabi-v7a&quot;</span><br><span class="line">        abiFilters &quot;arm64-v8a&quot;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>在build.gradle的android里的defaultConfig内添加如下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">defaultConfig &#123;  </span><br><span class="line">    ndk &#123;</span><br><span class="line">        abiFilters &quot;armeabi-v7a&quot;</span><br><span class="line">        abiFilters &quot;arm64-v8a&quot;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <p>然后在项目中集成so文件的时候</p>
 <p>只把armeabi-v7a和arm64-v8a这两个的so文件夹copy到libs里面，具体细节第三方平台的教程里面都写得很详细</p>
-<p>如果报错:<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Error</span>:(<span class="number">15</span>, <span class="number">1</span>) A problem occurred evaluating project <span class="string">':app'</span>.</span><br><span class="line">&gt; <span class="built_in">Error</span>: NDK integration is deprecated <span class="keyword">in</span> the current plugin.  Consider trying the <span class="keyword">new</span> experimental plugin.  For details, see http:<span class="comment">//tools.android.com/tech-docs/new-build-system/gradle-experimental.  Set "android.useDeprecatedNdk=true" in gradle.properties to continue using the current NDK integration.</span></span><br></pre></td></tr></table></figure></p>
-<p>请在 <strong>gradle.properties</strong> 中 添加<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">android.useDeprecatedNdk=<span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<p>如果报错:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Error</span>:(<span class="number">15</span>, <span class="number">1</span>) A problem occurred evaluating project <span class="string">':app'</span>.</span><br><span class="line">&gt; <span class="built_in">Error</span>: NDK integration is deprecated <span class="keyword">in</span> the current plugin.  Consider trying the <span class="keyword">new</span> experimental plugin.  For details, see http:<span class="comment">//tools.android.com/tech-docs/new-build-system/gradle-experimental.  Set "android.useDeprecatedNdk=true" in gradle.properties to continue using the current NDK integration.</span></span><br></pre></td></tr></table></figure></p>
+<p>请在 <strong>gradle.properties</strong> 中 添加<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android.useDeprecatedNdk=<span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
 <p>对于新手Android开发者来说，像集成百度地图SDK、JPush等再出现找不到.so文件的问题直接只使用armeabi-v7a和arm64-v8a就足以。</p>
 
     </div>
@@ -438,13 +438,13 @@
             
               <a href="/tags/Android-Tips/" rel="tag"># Android Tips</a>
             
-              <a href="/tags/so文件/" rel="tag"># .so文件</a>
-            
               <a href="/tags/armeabi-v7a/" rel="tag"># armeabi-v7a</a>
             
               <a href="/tags/arm64-v8a/" rel="tag"># arm64-v8a</a>
             
               <a href="/tags/abi兼容/" rel="tag"># abi兼容</a>
+            
+              <a href="/tags/so文件/" rel="tag"># .so文件</a>
             
           </div>
         
