@@ -2,141 +2,219 @@
 
 
 
+  
 
 
-<html class="theme-next gemini use-motion" lang="zh-CN">
-<head>
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
-<meta name="generator" content="Hexo 3.9.0">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
-  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
-
-<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
 
 
-<script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '7.3.0',
-    exturl: false,
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":true,"dimmer":true},
-    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
-    save_scroll: true,
-    copycode: {"enable":true,"show_result":true,"style":null},
-    fancybox: true,
-    mediumzoom: true,
-    lazyload: true,
-    pangu: true,
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: 'search.xml',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    }
-  };
-</script>
 
-  <meta name="description" content="前言转自：https://blog.csdn.net/carson_ho/article/details/54136311  Android事件分发机制是Android开发者必须了解的基础 网上有大量关于Android事件分发机制的文章，但存在一些问题：内容不全、思路不清晰、无源码分析、简单问题复杂化等等 今天，我将全面总结Android的事件分发机制，我能保证这是市面上的最全面、最清晰、最易懂的">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Android,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="前言转自：https://blog.csdn.net/carson_ho/article/details/54136311  Android事件分发机制是Android开发者必须了解的基础 网上有大量关于Android事件分发机制的文章，但存在一些问题：内容不全、思路不清晰、无源码分析、简单问题复杂化等等 今天，我将全面总结Android的事件分发机制，我能保证这是市面上的最全面、最清晰、最易懂的">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android事件分发机制详解攻略，您值得拥有">
 <meta property="og:url" content="https://zhangmiao.cc/posts/92ff150b.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="前言转自：https://blog.csdn.net/carson_ho/article/details/54136311  Android事件分发机制是Android开发者必须了解的基础 网上有大量关于Android事件分发机制的文章，但存在一些问题：内容不全、思路不清晰、无源码分析、简单问题复杂化等等 今天，我将全面总结Android的事件分发机制，我能保证这是市面上的最全面、最清晰、最易懂的">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719160834.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719160952.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161010.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161030.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161057.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161116.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161137.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161158.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161237.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161321.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161346.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161405.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161424.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161513.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161623.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161640.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161659.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161827.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161848.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161911.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161932.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161953.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162011.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162028.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162047.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162106.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162130.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/944365-6822b1af27852dbd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162207.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162226.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162244.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162301.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162347.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162405.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162424.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162443.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162504.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162535.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162551.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162607.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162626.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162641.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162658.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162718.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162734.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162751.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162842.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162903.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162921.png">
 <meta property="og:updated_time" content="2019-07-22T03:47:02.729Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android事件分发机制详解攻略，您值得拥有">
 <meta name="twitter:description" content="前言转自：https://blog.csdn.net/carson_ho/article/details/54136311  Android事件分发机制是Android开发者必须了解的基础 网上有大量关于Android事件分发机制的文章，但存在一些问题：内容不全、思路不清晰、无源码分析、简单问题复杂化等等 今天，我将全面总结Android的事件分发机制，我能保证这是市面上的最全面、最清晰、最易懂的">
-  <link rel="alternate" href="/atom.xml" title="zm.blog" type="application/atom+xml">
-  <link rel="canonical" href="https://zhangmiao.cc/posts/92ff150b">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719160834.png">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
   };
 </script>
+
+
+
+  <link rel="canonical" href="https://zhangmiao.cc/posts/92ff150b.html">
+
+
+
+
 
   <title>Android事件分发机制详解攻略，您值得拥有 | zm.blog</title>
   
 
 
+
+
+
   <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?64a1d6b8fd3f610a210ef1ef8372bd3d";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?44434226ba535875b1e807122adc3a04";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 
 
 
-
-
-  <noscript>
-  <style>
-  .use-motion .motion-element,
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
-
-  .use-motion .logo,
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  <div class="container sidebar-position-left">
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
+  <div class="site-meta ">
+    
 
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
@@ -145,12 +223,13 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-        <h1 class="site-subtitle" itemprop="description">select * from learn</h1>
+      
+        <p class="site-subtitle">select * from learn</p>
       
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
+    <button>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -158,124 +237,121 @@
   </div>
 </div>
 
-
 <nav class="site-nav">
   
-  <ul id="menu" class="menu">
-      
-      
+
+  
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
-      
-    
-      
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
-
-  </li>
-      
-      
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
       
         
         <li class="menu-item menu-item-tags">
-      
-    
-      
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">102</span></a>
-
-  </li>
-      
-      
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
       
         
         <li class="menu-item menu-item-categories">
-      
-    
-      
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">51</span></a>
-
-  </li>
-      
-      
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
       
         
         <li class="menu-item menu-item-archives">
-      
-    
-      
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">246</span></a>
-
-  </li>
-      
-      
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
       
         
         <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
       
-    
+
       
-    
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
 
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
-
-  </li>
-      <li class="menu-item menu-item-search">
-        <a href="javascript:;" class="popup-trigger">
-        
-          <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
-      </li>
-    
-  </ul>
-
-</nav>
-  <div class="site-search">
-    
-  <div class="popup search-popup">
-  <div class="search-header">
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
     <span class="search-icon">
       <i class="fa fa-search"></i>
     </span>
-    <div class="search-input-wrapper">
-      <input autocomplete="off" autocorrect="off" autocapitalize="none"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="search-input">
-    </div>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
   </div>
-  <div id="search-result"></div>
+  <div id="local-search-result"></div>
 </div>
 
 
-  </div>
-</div>
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
     </header>
-
-    
-
-  <a href="https://github.com/zhangmiaocc" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
-
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-            
-
-          <div id="content" class="content page-post-detail">
+          <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
-    <div class="reading-progress-bar"></div>
+
+  
+
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -286,62 +362,69 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
-      <meta itemprop="description" content="Change for the Better">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="zm.blog">
     </span>
+
+    
       <header class="post-header">
 
         
-          <h2 class="post-title" itemprop="name headline">Android事件分发机制详解攻略，您值得拥有
-
-            
-          </h2>
+        
+          <h1 class="post-title" itemprop="name headline">Android事件分发机制详解攻略，您值得拥有</h1>
         
 
         <div class="post-meta">
-            <span class="post-meta-item">
+          <span class="post-time">
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">发表于</span>
-
               
-                
+                <span class="post-meta-item-text">发表于</span>
               
-
-              <time title="创建时间：2018-07-24 18:31:10" itemprop="dateCreated datePublished" datetime="2018-07-24T18:31:10+08:00">2018-07-24</time>
-            </span>
-          
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-24T18:31:10+08:00">
+                2018-07-24
+              </time>
             
 
             
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-07-22 11:47:02" itemprop="dateModified" datetime="2019-07-22T11:47:02+08:00">2019-07-22</time>
-              </span>
+
             
+          </span>
+
           
-            <span class="post-meta-item">
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
 
                 
                 
-                  ，
+                  ， 
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Android/源码解析/" itemprop="url" rel="index"><span itemprop="name">源码解析</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/源码解析/" itemprop="url" rel="index">
+                    <span itemprop="name">源码解析</span>
+                  </a>
+                </span>
 
                 
                 
@@ -350,38 +433,50 @@
           
 
           
-            <span id="/posts/92ff150b.html" class="post-meta-item leancloud_visitors" data-flag-title="Android事件分发机制详解攻略，您值得拥有" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/92ff150b.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/92ff150b.html" itemprop="commentCount"></span>
+                </a>
               </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
+            
           
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-        
-      
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/posts/92ff150b.html#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/92ff150b.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
+
+          
+          
+             <span id="/posts/92ff150b.html" class="leancloud_visitors" data-flag-title="Android事件分发机制详解攻略，您值得拥有">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
 
         </div>
       </header>
+    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
+
+      
+      
 
       
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>转自：<a href="https://blog.csdn.net/carson_ho/article/details/54136311" target="_blank" rel="noopener">https://blog.csdn.net/carson_ho/article/details/54136311</a></p>
@@ -399,7 +494,7 @@
 </blockquote>
 <a id="more"></a>
 
-<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719160834.png"></p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719160834.png" alt></p>
 <h1 id="1-基础认知"><a href="#1-基础认知" class="headerlink" title="1. 基础认知"></a>1. 基础认知</h1><h3 id="1-1-事件分发的对象是谁？"><a href="#1-1-事件分发的对象是谁？" class="headerlink" title="1.1 事件分发的对象是谁？"></a>1.1 事件分发的对象是谁？</h3><p><strong>答：点击事件（Touch事件）</strong></p>
 <ul>
 <li><p>定义<br>当用户触摸屏幕时（<code>View</code> 或 <code>ViewGroup</code>派生的控件），将产生点击事件（<code>Touch</code>事件）</p>
@@ -439,7 +534,7 @@
 </ul>
 <p>从手指接触屏幕 至 手指离开屏幕，这个过程产生的一系列事件</p>
 <blockquote>
-<p>注：一般情况下，事件列都是以<code>DOWN</code>事件开始、<code>UP</code>事件结束，中间有无数的MOVE事件，如下图：<br><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719160952.png"></p>
+<p>注：一般情况下，事件列都是以<code>DOWN</code>事件开始、<code>UP</code>事件结束，中间有无数的MOVE事件，如下图：<br><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719160952.png" alt></p>
 </blockquote>
 <p>即当一个点击事件（<code>MotionEvent</code> ）产生后，系统需把这个事件传递给一个具体的 <code>View</code> 去处理。</p>
 <h3 id="1-2-事件分发的本质"><a href="#1-2-事件分发的本质" class="headerlink" title="1.2 事件分发的本质"></a>1.2 事件分发的本质</h3><p><strong>答：将点击事件（MotionEvent）传递到某个具体的View &amp; 处理的整个过程</strong></p>
@@ -448,20 +543,20 @@
 </blockquote>
 <h3 id="1-3-事件在哪些对象之间进行传递？"><a href="#1-3-事件在哪些对象之间进行传递？" class="headerlink" title="1.3 事件在哪些对象之间进行传递？"></a>1.3 事件在哪些对象之间进行传递？</h3><p><strong>答：Activity、ViewGroup、View</strong></p>
 <ul>
-<li><code>Android</code>的<code>UI</code>界面由<code>Activity</code>、<code>ViewGroup</code>、<code>View</code> 及其派生类组成<br><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161010.png"></li>
+<li><code>Android</code>的<code>UI</code>界面由<code>Activity</code>、<code>ViewGroup</code>、<code>View</code> 及其派生类组成<br><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161010.png" alt></li>
 </ul>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161030.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161030.png" alt></p>
 <h3 id="1-4-事件分发的顺序"><a href="#1-4-事件分发的顺序" class="headerlink" title="1.4 事件分发的顺序"></a>1.4 事件分发的顺序</h3><p>即 事件传递的顺序：<code>Activity</code> -&gt; <code>ViewGroup</code> -&gt; <code>View</code></p>
 <blockquote>
 <p>即：1个点击事件发生后，事件先传到<code>Activity</code>、再传到<code>ViewGroup</code>、最终再传到 <code>View</code></p>
 </blockquote>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161057.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161057.png" alt></p>
 <h3 id="1-5-事件分发过程由哪些方法协作完成？"><a href="#1-5-事件分发过程由哪些方法协作完成？" class="headerlink" title="1.5 事件分发过程由哪些方法协作完成？"></a>1.5 事件分发过程由哪些方法协作完成？</h3><p><strong>答：dispatchTouchEvent() 、onInterceptTouchEvent()和onTouchEvent()</strong></p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161116.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161116.png" alt></p>
 <blockquote>
 <p>下文会对这3个方法进行详细介绍</p>
 </blockquote>
-<h3 id="1-6-总结"><a href="#1-6-总结" class="headerlink" title="1.6 总结"></a>1.6 总结</h3><p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161137.png"></p>
+<h3 id="1-6-总结"><a href="#1-6-总结" class="headerlink" title="1.6 总结"></a>1.6 总结</h3><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161137.png" alt></p>
 <ul>
 <li>至此，相信大家已经对 <code>Android</code>的事件分发有了感性的认知</li>
 <li>下面，我将详细介绍<code>Android</code>事件分发机制</li>
@@ -473,7 +568,7 @@
 <blockquote>
 <p>即：1个点击事件发生后，事件先传到<code>Activity</code>、再传到<code>ViewGroup</code>、最终再传到 <code>View</code></p>
 </blockquote>
-<p> <img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161158.png"></p>
+<p> <img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161158.png" alt></p>
 <ul>
 <li>从上可知，要想充分理解Android分发机制，本质上是要理解： <ol>
 <li><code>Activity</code>对点击事件的分发机制</li>
@@ -491,10 +586,10 @@
 
 <h3 id="2-1-2-总结"><a href="#2-1-2-总结" class="headerlink" title="2.1.2 总结"></a>2.1.2 总结</h3><ul>
 <li><p>当一个点击事件发生时，从<code>Activity</code>的事件分发开始（<code>Activity.dispatchTouchEvent()</code>）</p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161237.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161237.png" alt></p>
 </li>
 <li><p>方法总结</p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161321.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161321.png" alt></p>
 <p>那么，<code>ViewGroup</code>的<code>dispatchTouchEvent()</code>什么时候返回<code>true</code> / <code>false</code>？请继续往下看<strong>ViewGroup事件的分发机制</strong></p>
 </li>
 </ul>
@@ -511,15 +606,15 @@
 <li><p>结论：<code>Android</code>事件分发总是先传递到<code>ViewGroup</code>、再传递到<code>View</code></p>
 </li>
 <li><p>过程：当点击了某个控件时</p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161346.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161346.png" alt></p>
 </li>
 <li><p>核心方法总结</p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161405.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161405.png" alt></p>
 </li>
 </ul>
 <h3 id="2-2-3-Demo讲解"><a href="#2-2-3-Demo讲解" class="headerlink" title="2.2.3 Demo讲解"></a>2.2.3 Demo讲解</h3><ul>
 <li><p>布局如下 </p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161424.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161424.png" alt></p>
 </li>
 <li><p>测试代码</p>
 </li>
@@ -533,7 +628,7 @@
 <ul>
 <li>结果测试 </li>
 </ul>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161513.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161513.png" alt></p>
 <p>从上面的测试结果发现：</p>
 <ul>
 <li>点击<code>Button</code>时，执行<code>Button.onClick()</code>，但<code>ViewGroupLayout</code>注册的<code>onTouch（）</code>不会执行</li>
@@ -555,7 +650,7 @@
 
 <h3 id="2-3-2-总结"><a href="#2-3-2-总结" class="headerlink" title="2.3.2 总结"></a>2.3.2 总结</h3><ul>
 <li><p>每当控件被点击时：</p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161623.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161623.png" alt></p>
 <blockquote>
 <p>注：<code>onTouch（）</code>的执行 先于 <code>onClick（）</code></p>
 </blockquote>
@@ -563,86 +658,86 @@
 <li><p>核心方法总结</p>
 </li>
 </ul>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161640.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161640.png" alt></p>
 <h3 id="2-3-3-Demo讲解"><a href="#2-3-3-Demo讲解" class="headerlink" title="2.3.3 Demo讲解"></a>2.3.3 Demo讲解</h3><p>下面我将用<code>Demo</code>验证上述的结论</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 结论验证1：在回调onTouch()里返回false</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">   <span class="comment">// 1. 通过OnTouchListener()复写onTouch()，从而手动设置返回false</span></span><br><span class="line">   button.setOnTouchListener(<span class="keyword">new</span> View.OnTouchListener() &#123;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View v, MotionEvent event)</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"执行了onTouch(), 动作是:"</span> + event.getAction());</span><br><span class="line"></span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2. 通过 OnClickListener（）为控件设置点击事件，为mOnClickListener变量赋值（即不为空），从而往下回调onClick（）</span></span><br><span class="line">    button.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"执行了onClick()"</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 结论验证2：在回调onTouch()里返回true</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">   <span class="comment">// 1. 通过OnTouchListener()复写onTouch()，从而手动设置返回true</span></span><br><span class="line">   button.setOnTouchListener(<span class="keyword">new</span> View.OnTouchListener() &#123;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View v, MotionEvent event)</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"执行了onTouch(), 动作是:"</span> + event.getAction());</span><br><span class="line"></span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2. 通过 OnClickListener（）为控件设置点击事件，为mOnClickListener变量赋值（即不为空）</span></span><br><span class="line">    <span class="comment">// 但由于dispatchTouchEvent（）返回true，即事件不再向下传递，故不调用onClick()）</span></span><br><span class="line">    button.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"执行了onClick()"</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>测试结果 </li>
 </ul>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161659.png"></p>
-<h1 id="2-4-总结"><a href="#2-4-总结" class="headerlink" title="2.4 总结"></a>2.4 总结</h1><p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161827.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161659.png" alt></p>
+<h1 id="2-4-总结"><a href="#2-4-总结" class="headerlink" title="2.4 总结"></a>2.4 总结</h1><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161827.png" alt></p>
 <h3 id="若您已经看到此处，那么恭喜你，你已经能非常熟悉掌握Android的事件分发机制了"><a href="#若您已经看到此处，那么恭喜你，你已经能非常熟悉掌握Android的事件分发机制了" class="headerlink" title="若您已经看到此处，那么恭喜你，你已经能非常熟悉掌握Android的事件分发机制了"></a>若您已经看到此处，那么恭喜你，你已经能非常熟悉掌握Android的事件分发机制了</h3><blockquote>
 <p>即：<code>Activity</code>、<code>ViewGroup</code>、<code>View</code> 的事件分发机制</p>
 </blockquote>
 <hr>
 <h1 id="3-工作流程-总结"><a href="#3-工作流程-总结" class="headerlink" title="3. 工作流程 总结"></a>3. 工作流程 总结</h1><ul>
 <li><p>在本节中，我将结合源码，梳理出1个事件分发的工作流程总结，具体如下：</p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161848.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161848.png" alt></p>
 <blockquote>
 <p>左侧虚线：具备相关性 &amp; 逐层返回</p>
 </blockquote>
 </li>
 <li><p>以角色为核心的图解说明</p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161911.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161911.png" alt></p>
 </li>
 <li><p>以方法为核心的图解说明</p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161932.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161932.png" alt></p>
 </li>
 </ul>
 <h1 id="4-核心方法总结"><a href="#4-核心方法总结" class="headerlink" title="4. 核心方法总结"></a>4. 核心方法总结</h1><ul>
 <li><p>已知事件分发过程的核心方法为：<code>dispatchTouchEvent()</code>、<code>onInterceptTouchEvent()</code> 和 <code>onTouchEvent()</code> </p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161953.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719161953.png" alt></p>
 </li>
 <li><p>下面，我将结合总结的工作流程，再次详细讲解该3个方法</p>
 </li>
 </ul>
 <h3 id="4-1-dispatchTouchEvent"><a href="#4-1-dispatchTouchEvent" class="headerlink" title="4.1 dispatchTouchEvent()"></a>4.1 dispatchTouchEvent()</h3><ul>
 <li><p>简介</p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162011.png"></p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162028.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162011.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162028.png" alt></p>
 </li>
 <li><p>返回情况说明</p>
 </li>
 </ul>
 <p><strong>情况1：默认</strong> </p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162047.png"></p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162106.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162047.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162106.png" alt></p>
 <p><strong>情况2：返回true</strong> </p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162130.png"></p>
-<p><img alt="img" data-src="https://upload-images.jianshu.io/upload_images/944365-6822b1af27852dbd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162130.png" alt></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/944365-6822b1af27852dbd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
 <p><strong>情况3：返回false</strong> </p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162207.png"></p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162226.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162207.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162226.png" alt></p>
 <h3 id="4-2-onInterceptTouchEvent"><a href="#4-2-onInterceptTouchEvent" class="headerlink" title="4.2 onInterceptTouchEvent()"></a>4.2 onInterceptTouchEvent()</h3><ul>
 <li><p>简介</p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162244.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162244.png" alt></p>
 <p>注：<code>Activity</code>、<code>View</code>都无该方法</p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162301.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162301.png" alt></p>
 </li>
 <li><p>返回情况说明</p>
 </li>
 </ul>
 <p><strong>情况1：true</strong></p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162347.png"></p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162405.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162347.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162405.png" alt></p>
 <p><strong>情况2：false（默认）</strong></p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162424.png"></p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162443.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162424.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162443.png" alt></p>
 <h3 id="4-3-onTouchEvent"><a href="#4-3-onTouchEvent" class="headerlink" title="4.3 onTouchEvent()"></a>4.3 onTouchEvent()</h3><ul>
 <li><p>简介</p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162504.png"></p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162535.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162504.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162535.png" alt></p>
 </li>
 <li><p>返回情况说明</p>
 </li>
 </ul>
 <p><strong>情况1：返回true</strong></p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162551.png"></p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162607.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162551.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162607.png" alt></p>
 <p><strong>情况2：返回false（default）</strong> </p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162626.png"></p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162641.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162626.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162641.png" alt></p>
 <h3 id="4-4-三者关系"><a href="#4-4-三者关系" class="headerlink" title="4.4 三者关系"></a>4.4 三者关系</h3><p>下面，我用一段伪代码来阐述上述3个方法的关系 &amp; 事件传递规则</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 点击事件产生后</span></span><br><span class="line"><span class="comment">  */</span> </span><br><span class="line">  <span class="comment">// 步骤1：调用dispatchTouchEvent（）</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">dispatchTouchEvent</span><span class="params">(MotionEvent ev)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">boolean</span> consume = <span class="keyword">false</span>; <span class="comment">//代表 是否会消费事件</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 步骤2：判断是否拦截事件</span></span><br><span class="line">    <span class="keyword">if</span> (onInterceptTouchEvent(ev)) &#123;</span><br><span class="line">      <span class="comment">// a. 若拦截，则将该事件交给当前View进行处理</span></span><br><span class="line">      <span class="comment">// 即调用onTouchEvent (）方法去处理点击事件</span></span><br><span class="line">        consume = onTouchEvent (ev) ;</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// b. 若不拦截，则将该事件传递到下层</span></span><br><span class="line">      <span class="comment">// 即 下层元素的dispatchTouchEvent（）就会被调用，重复上述过程</span></span><br><span class="line">      <span class="comment">// 直到点击事件被最终处理为止</span></span><br><span class="line">      consume = child.dispatchTouchEvent (ev) ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 步骤3：最终返回通知 该事件是否被消费（接收 &amp; 处理）</span></span><br><span class="line">    <span class="keyword">return</span> consume;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
@@ -650,7 +745,7 @@
 <h1 id="5-常见的事件分发场景"><a href="#5-常见的事件分发场景" class="headerlink" title="5. 常见的事件分发场景"></a>5. 常见的事件分发场景</h1><p>下面，我将通过实例说明<strong>常见的事件传递情况 &amp; 流程</strong></p>
 <h3 id="5-1-背景描述"><a href="#5-1-背景描述" class="headerlink" title="5.1 背景描述"></a>5.1 背景描述</h3><ul>
 <li><p>讨论的布局如下：</p>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162658.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162658.png" alt></p>
 </li>
 <li><p>情景 </p>
 <ol>
@@ -682,7 +777,7 @@
 <p>1.从上往下调用dispatchTouchEvent()<br> Activity A -&gt;&gt; ViewGroup B -&gt;&gt; View C<br>2.从下往上调用onTouchEvent()<br> View C -&gt;&gt; ViewGroup B -&gt;&gt; Activity A</p>
 </li>
 </ul>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162718.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162718.png" alt></p>
 <p>注：虽然<code>ViewGroup B</code>的<code>onInterceptTouchEvent</code>（）对<code>DOWN</code>事件返回了<code>false</code>，但后续的事件<code>（MOVE、UP）</code>依然会传递给它的<code>onInterceptTouchEvent()</code>  这一点与<code>onTouchEvent（）</code>的行为是不一样的：不再传递 &amp; 接收该事件列的其他事件</p>
 <h3 id="场景2：处理事件"><a href="#场景2：处理事件" class="headerlink" title="场景2：处理事件"></a>场景2：处理事件</h3><p>设<code>View C</code>希望处理该点击事件，即：设置<code>View C</code>为可点击的<code>（Clickable）</code> 或 复写其<code>onTouchEvent（）</code>返回<code>true</code></p>
 <blockquote>
@@ -694,7 +789,7 @@
 <li>因为<code>View C</code>正在处理该事件，那么<code>DOWN</code>事件将不再往上传递给ViewGroup B 和 <code>Activity A</code>的<code>onTouchEvent()</code>；</li>
 <li>该事件列的其他事件<code>（Move、Up）</code>也将传递给<code>View C</code>的<code>onTouchEvent()</code></li>
 </ul>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162734.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162734.png" alt></p>
 <blockquote>
 <p>会逐层往<code>dispatchTouchEvent()</code> 返回，最终事件分发结束</p>
 </blockquote>
@@ -714,7 +809,7 @@
 </blockquote>
 </li>
 </ul>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162751.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162751.png" alt></p>
 <h3 id="场景4：拦截DOWN的后续事件"><a href="#场景4：拦截DOWN的后续事件" class="headerlink" title="场景4：拦截DOWN的后续事件"></a>场景4：拦截DOWN的后续事件</h3><p><strong>结论</strong></p>
 <ul>
 <li>若 <code>ViewGroup</code> 拦截了一个半路的事件（如<code>MOVE</code>），该事件将会被系统变成一个<code>CANCEL</code>事件 &amp; 传递给之前处理该事件的子<code>View</code>；</li>
@@ -737,7 +832,7 @@
 <li><p><code>View C</code>再也不会收到该事件列产生的后续事件</p>
 </li>
 </ul>
-<p><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162842.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162842.png" alt></p>
 <p>至此，关于<code>Android</code>常见的事件传递情况 &amp; 流程已经讲解完毕。</p>
 <hr>
 <h1 id="6-额外知识"><a href="#6-额外知识" class="headerlink" title="6. 额外知识"></a>6. 额外知识</h1><h3 id="6-1-Touch事件的后续事件（MOVE、UP）层级传递"><a href="#6-1-Touch事件的后续事件（MOVE、UP）层级传递" class="headerlink" title="6.1 Touch事件的后续事件（MOVE、UP）层级传递"></a>6.1 Touch事件的后续事件（MOVE、UP）层级传递</h3><p> 6.1 Touch事件的后续事件（MOVE、UP）层级传递</p>
@@ -767,7 +862,7 @@
 </li>
 </ul>
 <blockquote>
-<p>黑线：ACTION_DOWN事件传递方向<br>红线：ACTION_MOVE 、 ACTION_UP事件传递方向<br><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162903.png"></p>
+<p>黑线：ACTION_DOWN事件传递方向<br>红线：ACTION_MOVE 、 ACTION_UP事件传递方向<br><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162903.png" alt></p>
 </blockquote>
 <ul>
 <li></li>
@@ -775,7 +870,7 @@
 </li>
 </ul>
 <blockquote>
-<p>黑线：ACTION_DOWN事件传递方向<br>红线：ACTION_MOVE、ACTION_UP事件传递方向<br><img alt data-src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162921.png"></p>
+<p>黑线：ACTION_DOWN事件传递方向<br>红线：ACTION_MOVE、ACTION_UP事件传递方向<br><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190719162921.png" alt></p>
 </blockquote>
 <h3 id="6-2-onTouch-和onTouchEvent-的区别"><a href="#6-2-onTouch-和onTouchEvent-的区别" class="headerlink" title="6.2 onTouch()和onTouchEvent()的区别"></a>6.2 onTouch()和onTouchEvent()的区别</h3><ul>
 <li>该2个方法都是在<code>View.dispatchTouchEvent（）</code>中调用</li>
@@ -793,89 +888,139 @@
 <li>接下来我将继续介绍与<code>Android</code>事件分发最相关的知识：<strong>自定义View</strong>，有兴趣可以继续关注<a href="http://blog.csdn.net/carson_ho" target="_blank" rel="noopener">Carson_Ho的安卓开发笔记</a></li>
 </ul>
 
+      
     </div>
-
     
     
     
-      
 
-        
-      
-        
+    
 
-<div>
-<ul class="post-copyright">
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="ZhangMiao 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="ZhangMiao 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
   <li class="post-copyright-author">
-    <strong>本文作者： </strong>ZhangMiao</li>
+    <strong>本文作者：</strong>
+    ZhangMiao
+  </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     <a href="https://zhangmiao.cc/posts/92ff150b.html" title="Android事件分发机制详解攻略，您值得拥有">https://zhangmiao.cc/posts/92ff150b.html</a>
   </li>
   <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
 </ul>
-</div>
 
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
       
 
-      <footer class="post-footer">
-          
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-          
-          <div class="post-tags">
-            
-              <a href="/tags/Android/" rel="tag"># Android</a>
+              <a href="/posts/1bc98c52.html" rel="next" title="SwitchHosts!">
+                <i class="fa fa-chevron-left"></i> SwitchHosts!
+              </a>
             
           </div>
-        
 
-        
+          <span class="post-nav-divider"></span>
 
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-              
-                <a href="/posts/1bc98c52.html" rel="next" title="SwitchHosts!">
-                  <i class="fa fa-chevron-left"></i> SwitchHosts!
-                </a>
-              
-            </div>
-
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-              
-                <a href="/posts/737b202d.html" rel="prev" title="Android开发总结(思维导图)">
-                  Android开发总结(思维导图) <i class="fa fa-chevron-right"></i>
-                </a>
-              
-            </div>
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/737b202d.html" rel="prev" title="Android开发总结(思维导图)">
+                Android开发总结(思维导图) <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
-        
-      </footer>
-    
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
   </article>
 
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
           </div>
           
-    
-    
-  <div class="comments" id="comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-    </div>
-  </div>
+
+
+          
+
   
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
   
 
+
+
         </div>
+        
           
   
   <div class="sidebar-toggle">
@@ -887,7 +1032,12 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
+
+      
+
+      
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
@@ -898,550 +1048,246 @@
         </ul>
       
 
-      <div class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image"
-      src="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4"
-      alt="ZhangMiao">
-  <p class="site-author-name" itemprop="name">ZhangMiao</p>
-  <div class="site-description motion-element" itemprop="description">Change for the Better</div>
-</div>
-  <nav class="site-state motion-element">
-      <div class="site-state-item site-state-posts">
-        
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">246</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-    
-      
-      
-      <div class="site-state-item site-state-categories">
-        
-          
-            <a href="/categories/">
-          
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        <span class="site-state-item-count">51</span>
-        <span class="site-state-item-name">分类</span>
-        </a>
-      </div>
-    
-      
-      
-      <div class="site-state-item site-state-tags">
-        
-          
-            <a href="/tags/">
-          
-        
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        <span class="site-state-item-count">102</span>
-        <span class="site-state-item-name">标签</span>
-        </a>
-      </div>
-    
-  </nav>
-  <div class="feed-link motion-element">
-    <a href="/atom.xml" rel="alternate">
-      <i class="fa fa-rss"></i>RSS
-    </a>
-  </div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="mailto:zm@zhangmiao.cc" title="E-Mail &rarr; mailto:zm@zhangmiao.cc"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-      </span>
-    
-      <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="http://wpa.qq.com/msgrd?v=3&uin=153942241&site=qq&menu=yes" title="QQ &rarr; http://wpa.qq.com/msgrd?v=3&uin=153942241&site=qq&menu=yes" rel="noopener" target="_blank"><i class="fa fa-fw fa-qq"></i>QQ</a>
-      </span>
-    
-      <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://github.com/zhangmiaocc" title="Github &rarr; https://github.com/zhangmiaocc" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>Github</a>
-      </span>
-    
-      <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://stackoverflow.com" title="StackOverflow &rarr; https://stackoverflow.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
-      </span>
-    
-  </div>
-  <div class="cc-license motion-element" itemprop="license">
-    
-  
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
-  </div>
+            
+              <img class="site-author-image" itemprop="image" src="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4" alt="ZhangMiao">
+            
+              <p class="site-author-name" itemprop="name">ZhangMiao</p>
+              <p class="site-description motion-element" itemprop="description">Change for the Better</p>
+          </div>
 
+          <nav class="site-state motion-element">
 
-  <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-    <div class="links-of-blogroll-title">
-      <i class="fa  fa-fw fa-link"></i>
-      友情链接
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="https://zhangmiao.cc" title="https://zhangmiao.cc">Zhangmiao</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="https://xuebin.me" title="https://xuebin.me" rel="noopener" target="_blank">Leo</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="http://jspang.com/" title="http://jspang.com/" rel="noopener" target="_blank">Jspang</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="https://blankj.com/" title="https://blankj.com/" rel="noopener" target="_blank">Blankj</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="http://wuxiaolong.me/" title="http://wuxiaolong.me/" rel="noopener" target="_blank">WuXiaoLong</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="https://molunerfinn.com" title="https://molunerfinn.com" rel="noopener" target="_blank">Molunerfinn</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="http://zhanghongyang.com" title="http://zhanghongyang.com" rel="noopener" target="_blank">Hongyang</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="http://liuwangshu.cn/" title="http://liuwangshu.cn/" rel="noopener" target="_blank">Liuwangshu</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="https://liuxsen.github.io" title="https://liuxsen.github.io" rel="noopener" target="_blank">Liuxen</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="https://www.ofind.cn/" title="https://www.ofind.cn/" rel="noopener" target="_blank">Ofind</a>
-        </li>
-      
-        <li class="links-of-blogroll-item">
-          <a href="http://www.gcssloop.com/" title="http://www.gcssloop.com/" rel="noopener" target="_blank">Gcssloop</a>
-        </li>
-      
-    </ul>
-  </div>
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">246</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zm@zhangmiao.cc" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://wpa.qq.com/msgrd?v=3&uin=153942241&site=qq&menu=yes" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhangmiaocc" target="_blank" title="Github">
+                      
+                        <i class="fa fa-fw fa-github"></i>Github</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://zhangmiao.cc" title="Zhangmiao" target="_blank">Zhangmiao</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://xuebin.me" title="Leo" target="_blank">Leo</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://jspang.com/" title="Jspang" target="_blank">Jspang</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blankj.com/" title="Blankj" target="_blank">Blankj</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://wuxiaolong.me/" title="WuXiaoLong" target="_blank">WuXiaoLong</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://molunerfinn.com" title="Molunerfinn" target="_blank">Molunerfinn</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://zhanghongyang.com" title="Hongyang" target="_blank">Hongyang</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://liuwangshu.cn/" title="Liuwangshu" target="_blank">Liuwangshu</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://liuxsen.github.io" title="Liuxen" target="_blank">Liuxen</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.ofind.cn/" title="Ofind" target="_blank">Ofind</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.gcssloop.com/" title="Gcssloop" target="_blank">Gcssloop</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
 
         </div>
-      </div>
+      </section>
+
+      
       <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
 
             
-            
-            
+              
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">2.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-基础认知"><span class="nav-number">3.</span> <span class="nav-text">1. 基础认知</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-事件分发的对象是谁？"><span class="nav-number">3.0.1.</span> <span class="nav-text">1.1 事件分发的对象是谁？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-事件分发的本质"><span class="nav-number">3.0.2.</span> <span class="nav-text">1.2 事件分发的本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-事件在哪些对象之间进行传递？"><span class="nav-number">3.0.3.</span> <span class="nav-text">1.3 事件在哪些对象之间进行传递？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-事件分发的顺序"><span class="nav-number">3.0.4.</span> <span class="nav-text">1.4 事件分发的顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-事件分发过程由哪些方法协作完成？"><span class="nav-number">3.0.5.</span> <span class="nav-text">1.5 事件分发过程由哪些方法协作完成？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-总结"><span class="nav-number">3.0.6.</span> <span class="nav-text">1.6 总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-事件分发机制-源码分析"><span class="nav-number">4.</span> <span class="nav-text">2. 事件分发机制 源码分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-Activity的事件分发机制"><span class="nav-number">4.0.1.</span> <span class="nav-text">2.1 Activity的事件分发机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-源码分析"><span class="nav-number">4.0.2.</span> <span class="nav-text">2.1.1 源码分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-总结"><span class="nav-number">4.0.3.</span> <span class="nav-text">2.1.2 总结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-2-ViewGroup事件的分发机制"><span class="nav-number">5.</span> <span class="nav-text">2.2 ViewGroup事件的分发机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-源码分析"><span class="nav-number">5.0.1.</span> <span class="nav-text">2.2.1 源码分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-总结"><span class="nav-number">5.0.2.</span> <span class="nav-text">2.2.2 总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-3-Demo讲解"><span class="nav-number">5.0.3.</span> <span class="nav-text">2.2.3 Demo讲解</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-3-View事件的分发机制"><span class="nav-number">6.</span> <span class="nav-text">2.3 View事件的分发机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-源码分析"><span class="nav-number">6.0.1.</span> <span class="nav-text">2.3.1 源码分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-总结"><span class="nav-number">6.0.2.</span> <span class="nav-text">2.3.2 总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-3-Demo讲解"><span class="nav-number">6.0.3.</span> <span class="nav-text">2.3.3 Demo讲解</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-4-总结"><span class="nav-number">7.</span> <span class="nav-text">2.4 总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#若您已经看到此处，那么恭喜你，你已经能非常熟悉掌握Android的事件分发机制了"><span class="nav-number">7.0.1.</span> <span class="nav-text">若您已经看到此处，那么恭喜你，你已经能非常熟悉掌握Android的事件分发机制了</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-工作流程-总结"><span class="nav-number">8.</span> <span class="nav-text">3. 工作流程 总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-核心方法总结"><span class="nav-number">9.</span> <span class="nav-text">4. 核心方法总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-dispatchTouchEvent"><span class="nav-number">9.0.1.</span> <span class="nav-text">4.1 dispatchTouchEvent()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-onInterceptTouchEvent"><span class="nav-number">9.0.2.</span> <span class="nav-text">4.2 onInterceptTouchEvent()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-onTouchEvent"><span class="nav-number">9.0.3.</span> <span class="nav-text">4.3 onTouchEvent()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-三者关系"><span class="nav-number">9.0.4.</span> <span class="nav-text">4.4 三者关系</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-常见的事件分发场景"><span class="nav-number">10.</span> <span class="nav-text">5. 常见的事件分发场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-背景描述"><span class="nav-number">10.0.1.</span> <span class="nav-text">5.1 背景描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-一般的事件传递情况"><span class="nav-number">10.0.2.</span> <span class="nav-text">5.2 一般的事件传递情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景1：默认"><span class="nav-number">10.0.3.</span> <span class="nav-text">场景1：默认</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景2：处理事件"><span class="nav-number">10.0.4.</span> <span class="nav-text">场景2：处理事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景3：拦截DOWN事件"><span class="nav-number">10.0.5.</span> <span class="nav-text">场景3：拦截DOWN事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景4：拦截DOWN的后续事件"><span class="nav-number">10.0.6.</span> <span class="nav-text">场景4：拦截DOWN的后续事件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-额外知识"><span class="nav-number">11.</span> <span class="nav-text">6. 额外知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-Touch事件的后续事件（MOVE、UP）层级传递"><span class="nav-number">11.0.1.</span> <span class="nav-text">6.1 Touch事件的后续事件（MOVE、UP）层级传递</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-onTouch-和onTouchEvent-的区别"><span class="nav-number">11.0.2.</span> <span class="nav-text">6.2 onTouch()和onTouchEvent()的区别</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-总结"><span class="nav-number">12.</span> <span class="nav-text">7. 总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">2.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-基础认知"><span class="nav-number">3.</span> <span class="nav-text">1. 基础认知</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-事件分发的对象是谁？"><span class="nav-number">3.0.1.</span> <span class="nav-text">1.1 事件分发的对象是谁？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-事件分发的本质"><span class="nav-number">3.0.2.</span> <span class="nav-text">1.2 事件分发的本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-事件在哪些对象之间进行传递？"><span class="nav-number">3.0.3.</span> <span class="nav-text">1.3 事件在哪些对象之间进行传递？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-事件分发的顺序"><span class="nav-number">3.0.4.</span> <span class="nav-text">1.4 事件分发的顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-事件分发过程由哪些方法协作完成？"><span class="nav-number">3.0.5.</span> <span class="nav-text">1.5 事件分发过程由哪些方法协作完成？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-总结"><span class="nav-number">3.0.6.</span> <span class="nav-text">1.6 总结</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#2-事件分发机制-源码分析"><span class="nav-number">4.</span> <span class="nav-text">2. 事件分发机制 源码分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-Activity的事件分发机制"><span class="nav-number">4.0.1.</span> <span class="nav-text">2.1 Activity的事件分发机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-源码分析"><span class="nav-number">4.0.2.</span> <span class="nav-text">2.1.1 源码分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-总结"><span class="nav-number">4.0.3.</span> <span class="nav-text">2.1.2 总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-2-ViewGroup事件的分发机制"><span class="nav-number">5.</span> <span class="nav-text">2.2 ViewGroup事件的分发机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-源码分析"><span class="nav-number">5.0.1.</span> <span class="nav-text">2.2.1 源码分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-总结"><span class="nav-number">5.0.2.</span> <span class="nav-text">2.2.2 总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-3-Demo讲解"><span class="nav-number">5.0.3.</span> <span class="nav-text">2.2.3 Demo讲解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-3-View事件的分发机制"><span class="nav-number">6.</span> <span class="nav-text">2.3 View事件的分发机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-源码分析"><span class="nav-number">6.0.1.</span> <span class="nav-text">2.3.1 源码分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-总结"><span class="nav-number">6.0.2.</span> <span class="nav-text">2.3.2 总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-3-Demo讲解"><span class="nav-number">6.0.3.</span> <span class="nav-text">2.3.3 Demo讲解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-4-总结"><span class="nav-number">7.</span> <span class="nav-text">2.4 总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#若您已经看到此处，那么恭喜你，你已经能非常熟悉掌握Android的事件分发机制了"><span class="nav-number">7.0.1.</span> <span class="nav-text">若您已经看到此处，那么恭喜你，你已经能非常熟悉掌握Android的事件分发机制了</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-工作流程-总结"><span class="nav-number">8.</span> <span class="nav-text">3. 工作流程 总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-核心方法总结"><span class="nav-number">9.</span> <span class="nav-text">4. 核心方法总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-dispatchTouchEvent"><span class="nav-number">9.0.1.</span> <span class="nav-text">4.1 dispatchTouchEvent()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-onInterceptTouchEvent"><span class="nav-number">9.0.2.</span> <span class="nav-text">4.2 onInterceptTouchEvent()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-onTouchEvent"><span class="nav-number">9.0.3.</span> <span class="nav-text">4.3 onTouchEvent()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-三者关系"><span class="nav-number">9.0.4.</span> <span class="nav-text">4.4 三者关系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-常见的事件分发场景"><span class="nav-number">10.</span> <span class="nav-text">5. 常见的事件分发场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-背景描述"><span class="nav-number">10.0.1.</span> <span class="nav-text">5.1 背景描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-一般的事件传递情况"><span class="nav-number">10.0.2.</span> <span class="nav-text">5.2 一般的事件传递情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景1：默认"><span class="nav-number">10.0.3.</span> <span class="nav-text">场景1：默认</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景2：处理事件"><span class="nav-number">10.0.4.</span> <span class="nav-text">场景2：处理事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景3：拦截DOWN事件"><span class="nav-number">10.0.5.</span> <span class="nav-text">场景3：拦截DOWN事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景4：拦截DOWN的后续事件"><span class="nav-number">10.0.6.</span> <span class="nav-text">场景4：拦截DOWN的后续事件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-额外知识"><span class="nav-number">11.</span> <span class="nav-text">6. 额外知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-Touch事件的后续事件（MOVE、UP）层级传递"><span class="nav-number">11.0.1.</span> <span class="nav-text">6.1 Touch事件的后续事件（MOVE、UP）层级传递</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-onTouch-和onTouchEvent-的区别"><span class="nav-number">11.0.2.</span> <span class="nav-text">6.2 onTouch()和onTouchEvent()的区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-总结"><span class="nav-number">12.</span> <span class="nav-text">7. 总结</span></a></li></div>
             
 
           </div>
-        </div>
+        </section>
       <!--/noindex-->
       
-        <div class="back-to-top motion-element">
-          <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
-        </div>
+
       
 
     </div>
   </aside>
-  <div id="sidebar-dimmer"></div>
 
 
+        
       </div>
     </main>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">ZhangMiao</span>
+
+  
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.3.0</div>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
 
         
 <div class="busuanzi-count">
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-user"></i>
-    </span>
-    <span class="site-uv" title="总访客量">
+
+  
+    <span class="site-uv">
+      本站访客数
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
     </span>
   
-    <span class="post-meta-divider">|</span>
+
   
-    <span class="post-meta-item-icon">
-      <i class="fa fa-eye"></i>
-    </span>
-    <span class="site-pv" title="总访问量">
+    <span class="site-pv">
+      本站总访问量
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
     </span>
   
 </div>
 
 
+
+
+
+
+
+
   <div style="display: none;">
-    <script src="//s95.cnzz.com/z_stat.php?id=1277928793&web_id=1277928793"></script>
+    <script type="text/javascript">
+      var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+      document.write(unescape("%3Cspan id='cnzz_stat_icon_1277928793'%3E%3C/span%3E%3Cscript 
+      src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1277928793%26show%3Dpic' 
+      type='text/javascript'%3E%3C/script%3E"));
+    </script>
   </div>
-
-
-
 
 
 
@@ -1450,136 +1296,472 @@
     </footer>
 
     
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
 
   </div>
 
   
-  <script src="/lib/jquery/index.js?v=3.4.1"></script>
-  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script src="/lib/mediumzoom/medium-zoom.min.js"></script>
-  <script src="/lib/lazyload/lozad.min.js?v=1.10.0"></script>
-  <script src="/lib/pangu/dist/pangu.min.js?v=4.0.7"></script>
-  <script src="/lib/reading_progress/reading_progress.js"></script>
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
-<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
-
-<script src="/js/schemes/pisces.js?v=7.3.0"></script>
-
-
-
-<script src="/js/next-boot.js?v=7.3.0"></script>
-
-
-
-
-  
-  <script>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
-
-
-
-
-  
-  <script>
-  function leancloudSelector(url) {
-    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
   }
-  if (CONFIG.page.isPost) {
-    function addCount(Counter) {
-      var visitors = document.querySelector('.leancloud_visitors');
-      var url = visitors.getAttribute('id').trim();
-      var title = visitors.getAttribute('data-flag-title').trim();
+</script>
 
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
-        .then(response => response.json())
-        .then(({ results }) => {
-          if (results.length > 0) {
-            var counter = results[0];
-            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
-              .then(response => response.json())
-              .then(() => {
-                leancloudSelector(url).innerText = counter.time + 1;
-              })
-            
-              .catch(error => {
-                console.log('Failed to save visitor count', error);
-              })
-          } else {
-              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
-            
-          }
-        })
-        .catch(error => {
-          console.log('LeanCloud Counter Error', error);
-        });
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://zhangmiao.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://zhangmiao.cc/posts/92ff150b.html';
+          this.page.identifier = 'posts/92ff150b.html';
+          this.page.title = 'Android事件分发机制详解攻略，您值得拥有';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://zhangmiao.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
     }
-  } else {
-    function showTime(Counter) {
-      var visitors = document.querySelectorAll('.leancloud_visitors');
-      var entries = [...visitors].map(element => {
-        return element.getAttribute('id').trim();
-      });
+    var path = "/" + search_path;
+    // monitor main search box;
 
-      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
-        .then(response => response.json())
-        .then(({ results }) => {
-          if (results.length === 0) {
-            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
-              element.innerText = 0;
-            });
-            return;
-          }
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            leancloudSelector(url).innerText = time;
-          }
-          for (var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = leancloudSelector(url);
-            if (element.innerText == '') {
-              element.innerText = 0;
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
             }
           }
-        })
-        .catch(error => {
-          console.log('LeanCloud Counter Error', error);
-        });
-    }
-  }
 
-  fetch('https://app-router.leancloud.cn/2/route?appId=8iIYW0IGofqyvJiiuU5R9buW-gzGzoHsz')
-    .then(response => response.json())
-    .then(({ api_server }) => {
-      var Counter = (method, url, data) => {
-        return fetch(`https://${api_server}/1.1${url}`, {
-          method: method,
-          headers: {
-            'X-LC-Id': '8iIYW0IGofqyvJiiuU5R9buW-gzGzoHsz',
-            'X-LC-Key': 'ssmxRx0kELJir6mA02ziW3Ql',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
       };
-      if (CONFIG.page.isPost) {
-        const localhost = /http:\/\/(localhost|127.0.0.1|0.0.0.0)/;
-        if (localhost.test(document.URL)) return;
-        addCount(Counter);
-      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
-        showTime(Counter);
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
       }
     });
   </script>
@@ -1588,100 +1770,131 @@
 
 
 
+  
 
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("8iIYW0IGofqyvJiiuU5R9buW-gzGzoHsz", "ssmxRx0kELJir6mA02ziW3Ql");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
 
-
-
-
-  <script src="/js/local-search.js?v=7.3.0"></script>
-
-
-
-
-
-
-
-
-<script>
-if (document.querySelectorAll('div.pdf').length) {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
-    document.querySelectorAll('div.pdf').forEach(element => {
-      PDFObject.embed(element.getAttribute('target'), element, {
-        pdfOpenParams: {
-          navpanes: 0,
-          toolbar: 0,
-          statusbar: 0,
-          pagemode: 'thumbs',
-          view: 'FitH'
-        },
-        PDFJS_URL: '/lib/pdf/web/viewer.html',
-        height: element.getAttribute('height') || '500px'
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
       });
-    });
-  }, window.PDFObject);
-}
-</script>
 
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
 
-<script>
-if (document.querySelectorAll('pre.mermaid').length) {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
-    mermaid.initialize({
-      theme: 'forest',
-      logLevel: 3,
-      flowchart: { curve: 'linear' },
-      gantt: { axisFormat: '%m/%d/%Y' },
-      sequence: { actorMargin: 50 }
-    });
-  }, window.mermaid);
-}
-</script>
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
 
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
 
-
-
-  
-
-  
-
-  
-
-
-  
-  <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
-
-
-<script>
-  function loadCount() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://zhangmiao.disqus.com/count.js';
-    s.id = 'dsq-count-scr';
-    (d.head || d.body).appendChild(s);
-  }
-  // defer loading until the whole page loading is completed
-  window.addEventListener('load', loadCount, false);
-</script>
-<script>
-  function disqus_config() {
-    this.page.url = "https://zhangmiao.cc/posts/92ff150b.html";
-    this.page.identifier = "posts/92ff150b.html";
-    this.page.title = 'Android事件分发机制详解攻略，您值得拥有';};
-  function loadComments() {
-    if (window.DISQUS) {
-      DISQUS.reset({
-        reload: true,
-        config: disqus_config
-      });
-    } else {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://zhangmiao.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', '' + +new Date());
-      (d.head || d.body).appendChild(s);
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
     }
-  }
-    window.addEventListener('load', loadComments, false);
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
   
-</script>
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/lib/zclip/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/custom.js"></script>
 
 </body>
 </html>
