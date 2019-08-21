@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Android,动态权限,适配,">
 
 
 
@@ -81,16 +81,20 @@
 
 
 
-<meta name="description" content="Change for the Better">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zm.blog">
-<meta property="og:url" content="https://zhangmiao.cc/tags/JavaScript/page/3/index.html">
+<meta name="description" content="安装时解析错误我们的App通常会有检查更新的功能。用户在收到提示更新并且下载完后，会自动打开安装页面让用户来去安装。这时就会出现安装错误的问题，这类的问题的可能性比较多。比如较低版本的App想要覆盖已有的较高版本App会提示安装未完成，或是签名不一致导致的。不过7.0上常见的有以下两种情况。 应用间共享文件在targetSdkVersion大于等于的24的App中，但是我们没有去适配7.0。那么在">
+<meta name="keywords" content="Android,动态权限,适配">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android适配-7.0的踩坑之路">
+<meta property="og:url" content="https://zhangmiao.cc/posts/a6a9da5d.html">
 <meta property="og:site_name" content="zm.blog">
-<meta property="og:description" content="Change for the Better">
+<meta property="og:description" content="安装时解析错误我们的App通常会有检查更新的功能。用户在收到提示更新并且下载完后，会自动打开安装页面让用户来去安装。这时就会出现安装错误的问题，这类的问题的可能性比较多。比如较低版本的App想要覆盖已有的较高版本App会提示安装未完成，或是签名不一致导致的。不过7.0上常见的有以下两种情况。 应用间共享文件在targetSdkVersion大于等于的24的App中，但是我们没有去适配7.0。那么在">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/WechatIMG163.png">
+<meta property="og:updated_time" content="2019-08-21T03:57:00.155Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zm.blog">
-<meta name="twitter:description" content="Change for the Better">
+<meta name="twitter:title" content="Android适配-7.0的踩坑之路">
+<meta name="twitter:description" content="安装时解析错误我们的App通常会有检查更新的功能。用户在收到提示更新并且下载完后，会自动打开安装页面让用户来去安装。这时就会出现安装错误的问题，这类的问题的可能性比较多。比如较低版本的App想要覆盖已有的较高版本App会提示安装未完成，或是签名不一致导致的。不过7.0上常见的有以下两种情况。 应用间共享文件在targetSdkVersion大于等于的24的App中，但是我们没有去适配7.0。那么在">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/WechatIMG163.png">
 
 
 
@@ -120,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://zhangmiao.cc/tags/JavaScript/page/3/">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/a6a9da5d.html">
 
 
 
 
 
-  <title>标签: JavaScript | zm.blog</title>
+  <title>Android适配-7.0的踩坑之路 | zm.blog</title>
   
 
 
@@ -156,7 +160,7 @@ var _hmt = _hmt || [];
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -292,108 +296,306 @@ var _hmt = _hmt || [];
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>JavaScript<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/a6a9da5d.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhangMiao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zm.blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/posts/5bf0344a.html" itemprop="url">
-              
-                <span itemprop="name">js中字符串全部替换</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Android适配-7.0的踩坑之路</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-22T12:31:59+08:00" content="2019-02-22">
-          02-22
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-21T00:00:00+08:00">
+                2019-08-21
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/适配/" itemprop="url" rel="index">
+                    <span itemprop="name">适配</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/a6a9da5d.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/a6a9da5d.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/a6a9da5d.html" class="leancloud_visitors" data-flag-title="Android适配-7.0的踩坑之路">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/posts/1dfc2d5c.html" itemprop="url">
-              
-                <span itemprop="name">js获取指定字符前/后的字符串简单实例</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-22T12:28:47+08:00" content="2019-02-22">
-          02-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
+        <h2 id="安装时解析错误"><a href="#安装时解析错误" class="headerlink" title="安装时解析错误"></a>安装时解析错误</h2><p>我们的App通常会有检查更新的功能。用户在收到提示更新并且下载完后，会自动打开安装页面让用户来去安装。这时就会出现安装错误的问题，这类的问题的可能性比较多。比如较低版本的App想要覆盖已有的较高版本App会提示安装未完成，或是签名不一致导致的。不过7.0上常见的有以下两种情况。</p>
+<h3 id="应用间共享文件"><a href="#应用间共享文件" class="headerlink" title="应用间共享文件"></a>应用间共享文件</h3><p>在targetSdkVersion大于等于的24的App中，但是我们没有去适配7.0。那么在调用安装页面，或修改用户头像操作时，就会失败。那么就需要你去适配7.0或是将targetSdkVersion改为24以下（不推荐）。适配的方法这里就不细讲，大家可以看鸿洋大神的 <a href="https://blog.csdn.net/lmj623565791/article/details/72859156" target="_blank" rel="noopener">Android 7.0 行为变更 通过FileProvider在应用间共享文件</a> 这篇文章。</p>
+<h3 id="APK-signature-scheme-v2"><a href="#APK-signature-scheme-v2" class="headerlink" title="APK signature scheme v2"></a>APK signature scheme v2</h3><blockquote>
+<p>Android 7.0 引入一项新的应用签名方案 APK Signature Scheme v2，它能提供更快的应用安装时间和更多针对未授权 APK 文件更改的保护。在默认情况下，Android Studio 2.2 和 Android Plugin for Gradle 2.2 会使用 APK Signature Scheme v2 和传统签名方案来签署您的应用。详细看<a href="https://developer.android.google.cn/about/versions/nougat/android-7.0.html#apk_signature_v2" target="_blank" rel="noopener">安卓官方说明</a>。</p>
+</blockquote>
+<p>简单地说就是任何方式的篡改APK 文件，在利用了V2签名的apk上会失效。</p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/WechatIMG163.png" alt></p>
+<p>可以看到默认是V1 和V2选中的。</p>
+<p>1）只勾选v1签名就是传统方案签署，但是在7.0上不会使用V2安全的验证方式。<br>2）只勾选V2签名7.0以下会显示未安装，7.0上则会使用了V2安全的验证方式。<br>3）同时勾选V1和V2则所有版本都没问题。</p>
+<h2 id="PopupWindow位置不正确"><a href="#PopupWindow位置不正确" class="headerlink" title="PopupWindow位置不正确"></a>PopupWindow位置不正确</h2><p>7.0系统的手机上，PopupWindow弹出位置不正确。有两种可能：</p>
+<p><strong>第一种：</strong></p>
+<p>我们使用了<code>update</code>方法，同时设置了<code>Gravity</code>（<code>Gravity.NO_GRAVITY</code>没事）。因为在<code>update</code>方法中有调用<code>computeGravity</code>方法去获取<code>Gravity</code>。（7.0以下没有获取<code>Gravity</code>进行更新判断）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 省略部分代码</span></span><br><span class="line">       <span class="keyword">final</span> <span class="keyword">int</span> newGravity = computeGravity();</span><br><span class="line">       <span class="keyword">if</span> (newGravity != p.gravity) &#123;</span><br><span class="line">           p.gravity = newGravity;</span><br><span class="line">           update = <span class="keyword">true</span>;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">if</span> (update) &#123;</span><br><span class="line">           setLayoutDirectionFromAnchor();</span><br><span class="line">           mWindowManager.updateViewLayout(mDecorView, p);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<p>Android 7.1<code>computeGravity</code>方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">computeGravity</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> gravity = mGravity == Gravity.NO_GRAVITY ?  Gravity.START | Gravity.TOP : mGravity;</span><br><span class="line">    <span class="keyword">if</span> (mIsDropdown &amp;&amp; (mClipToScreen || mClippingEnabled)) &#123;</span><br><span class="line">        gravity |= Gravity.DISPLAY_CLIP_VERTICAL;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> gravity;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/posts/d3a7443d.html" itemprop="url">
-              
-                <span itemprop="name">JavaScript学习</span>
-              
-            </a>
-        
-      </h2>
+<p>很显然在7.0上我们设置的<code>Gravity</code>被覆盖了。解决就很简单了，不使用<code>update</code>方法。如果你真的要使用可以参考<a href="http://www.jianshu.com/p/0df10893bf5b" target="_blank" rel="noopener">这篇文章</a>的方法。</p>
+<p><strong>第二种：</strong></p>
+<p><code>PopupWindow</code>高度为<code>MATCH_PARENT</code>，在显示的时候调用<code>showAsLocation</code>方法时，<code>PopupWindow</code>并没有在指定控件的下方显示。如果使用<code>showAsDropDown</code>，会全屏显示。</p>
+<p>解决方法：</p>
+<p>1.最简单的解决方法就是指定 <code>PopupWindow</code> 的高度为 <code>WRAP_CONTENT</code>, 调用 <code>showAsDropDown</code>方法。</p>
+<p>2.或者弹出时做一下判断处理（代码来自<a href="https://github.com/tianma8023/PopupWindowCompat" target="_blank" rel="noopener">PopupWindowCompat</a>）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= <span class="number">24</span>) &#123; <span class="comment">// Android 7.x中,PopupWindow高度为match_parent时,会出现兼容性问题,需要处理兼容性</span></span><br><span class="line">    <span class="keyword">int</span>[] location = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>]; <span class="comment">// 记录anchor在屏幕中的位置</span></span><br><span class="line">    anchor.getLocationOnScreen(location);</span><br><span class="line">    <span class="keyword">int</span> offsetY = location[<span class="number">1</span>] + anchor.getHeight();</span><br><span class="line">    <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= <span class="number">25</span>) &#123; <span class="comment">// Android 7.1 ,8.0中，PopupWindow高度为 match_parent 时，会占据整个屏幕</span></span><br><span class="line">        <span class="comment">// 故而需要在 Android 7.1上再做特殊处理</span></span><br><span class="line">        <span class="keyword">int</span> screenHeight = ScreenUtils.getScreenHeight(context); <span class="comment">// 获取屏幕高度</span></span><br><span class="line">        popupWindow.setHeight(screenHeight - offsetY); <span class="comment">// 重新设置 PopupWindow 的高度</span></span><br><span class="line">    &#125;</span><br><span class="line">    popupWindow.showAtLocation(anchor, Gravity.NO_GRAVITY, <span class="number">0</span>, offsetY);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    popupWindow.showAsDropDown(anchor);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-28T15:57:10+08:00" content="2018-12-28">
-          12-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+<h2 id="后台优化"><a href="#后台优化" class="headerlink" title="后台优化"></a>后台优化</h2><p>小伙伴们都知道在Android中有一些隐式广播，使用这些隐式广播可以做一些特定的功能，如，当手机网络变成WiFi时自动下载更新包等。 但，这些隐式广播会在后台频繁启动已注册侦听这些广播的应用，从而带来很大的电量消耗，为缓解这一问题来提升设备性能和用户体验，在Android 7.0中删除了三项隐式广播，以帮助优化内存使用和电量消耗。</p>
+<p>Android 7.0 应用了以下优化措施：</p>
+<ul>
+<li>在 Android 7.0上 应用不会收到 CONNECTIVITY_ACTION 广播，即使你在manifest清单文件中设置了请求接受这些事件的通知。 但，在前台运行的应用如果使用BroadcastReceiver 请求接收通知，则仍可以在主线程中侦听 CONNECTIVITY_CHANGE。</li>
+<li>在 Android 7.0上应用无法发送或接收 ACTION_NEW_PICTURE 或ACTION_NEW_VIDEO 类型的广播。</li>
+</ul>
+<blockquote>
+<p>应对策略：Android 框架提供多个解决方案来缓解对这些隐式广播的需求。 例如，<a href="https://developer.android.google.cn/reference/android/app/job/JobScheduler.html" target="_blank" rel="noopener">JobScheduler API</a><br>提供了一个稳健可靠的机制来安排满足指定条件（例如连入无线流量网络）时所执行的网络操作。 您甚至可以使用 <a href="https://developer.android.google.cn/reference/android/app/job/JobScheduler.html" target="_blank" rel="noopener">JobScheduler API</a> 来适应内容提供程序变化。</p>
+</blockquote>
+<p>另外，大家如果想了解更多关于后台的优化可查阅<a href="https://developer.android.google.cn/preview/features/background-optimization.html" target="_blank" rel="noopener">后台优化</a></p>
+<p>移动设备会经历频繁的连接变更，例如在 Wi-Fi 和移动数据之间切换时。 目前，可以通过在应用清单中注册一个接收器来侦听隐式 CONNECTIVITY_ACTION 广播，<br>让应用能够监控这些变更。 由于很多应用会注册接收此广播，因此单次网络切换即会导致所有应用被唤醒并同时处理此广播。<br>以上内容来自<a href="https://github.com/crazycodeboy/crazycodeboy.github.io/blob/master/_posts/2016-9-28-Android7.0适配心得.md#后台优化" target="_blank" rel="noopener">这里</a></p>
+<h2 id="多语言特性"><a href="#多语言特性" class="headerlink" title="多语言特性"></a>多语言特性</h2><p>首先是官方的API指南：<a href="https://weilu.blog.csdn.net/article/details/n/guide/topics/resources/multilingual-support.html" target="_blank" rel="noopener">语言和语言区域</a></p>
+<ul>
+<li><p>变化对比：<a href="http://blog.csdn.net/cekiasoo/article/details/53012646" target="_blank" rel="noopener"> Android 7.0多语言支持开发浅析</a></p>
+</li>
+<li><p>实现功能： <a href="http://blog.csdn.net/cekiasoo/article/details/54933135" target="_blank" rel="noopener">Android 实现应用内置语言切换</a></p>
+</li>
+</ul>
+<h2 id="通知栏适配"><a href="#通知栏适配" class="headerlink" title="通知栏适配"></a>通知栏适配</h2><p>这里有一篇非常详细的通知栏介绍与适配，分享给大家：<a href="http://iluhcm.com/2017/03/12/experience-of-adapting-to-android-notifications/" target="_blank" rel="noopener">Android通知栏介绍与适配总结</a></p>
+<h2 id="WebView问题"><a href="#WebView问题" class="headerlink" title="WebView问题"></a>WebView问题</h2><ul>
+<li><a href="http://blog.csdn.net/u012347067/article/details/70829013" target="_blank" rel="noopener">Android 7.0 WebView 部分机型打不开</a></li>
+<li><a href="http://www.jianshu.com/p/07b781795b78" target="_blank" rel="noopener">Android 7.0 WebView 二级跳转后界面空白</a></li>
+</ul>
+<h2 id="Toast导致的BadTokenException"><a href="#Toast导致的BadTokenException" class="headerlink" title="Toast导致的BadTokenException"></a>Toast导致的BadTokenException</h2><ul>
+<li><a href="https://blog.csdn.net/Dovar_66/article/details/84799894" target="_blank" rel="noopener">同学，你的系统Toast可能需要修复一下</a></li>
+</ul>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="ZhangMiao 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="ZhangMiao 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    ZhangMiao
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://zhangmiao.cc/posts/a6a9da5d.html" title="Android适配-7.0的踩坑之路">https://zhangmiao.cc/posts/a6a9da5d.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/动态权限/" rel="tag"># 动态权限</a>
+          
+            <a href="/tags/适配/" rel="tag"># 适配</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/108df6b8.html" rel="next" title="开箱即用的自定义Banner">
+                <i class="fa fa-chevron-left"></i> 开箱即用的自定义Banner
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/eea8a783.html" rel="prev" title="Android适配-6.0的动态权限管理">
+                Android适配-6.0的动态权限管理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/tags/JavaScript/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/tags/JavaScript/">1</a><a class="page-number" href="/tags/JavaScript/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -401,6 +603,20 @@ var _hmt = _hmt || [];
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -421,8 +637,17 @@ var _hmt = _hmt || [];
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -573,6 +798,22 @@ var _hmt = _hmt || [];
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装时解析错误"><span class="nav-number">1.</span> <span class="nav-text">安装时解析错误</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#应用间共享文件"><span class="nav-number">1.1.</span> <span class="nav-text">应用间共享文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#APK-signature-scheme-v2"><span class="nav-number">1.2.</span> <span class="nav-text">APK signature scheme v2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PopupWindow位置不正确"><span class="nav-number">2.</span> <span class="nav-text">PopupWindow位置不正确</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后台优化"><span class="nav-number">3.</span> <span class="nav-text">后台优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多语言特性"><span class="nav-number">4.</span> <span class="nav-text">多语言特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通知栏适配"><span class="nav-number">5.</span> <span class="nav-text">通知栏适配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebView问题"><span class="nav-number">6.</span> <span class="nav-text">WebView问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Toast导致的BadTokenException"><span class="nav-number">7.</span> <span class="nav-text">Toast导致的BadTokenException</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -744,6 +985,10 @@ var _hmt = _hmt || [];
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -761,6 +1006,18 @@ var _hmt = _hmt || [];
       <script id="dsq-count-scr" src="https://zhangmiao.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://zhangmiao.cc/posts/a6a9da5d.html';
+          this.page.identifier = 'posts/a6a9da5d.html';
+          this.page.title = 'Android适配-7.0的踩坑之路';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://zhangmiao.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
