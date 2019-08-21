@@ -90,7 +90,7 @@
 <meta property="og:description" content="安装时解析错误我们的App通常会有检查更新的功能。用户在收到提示更新并且下载完后，会自动打开安装页面让用户来去安装。这时就会出现安装错误的问题，这类的问题的可能性比较多。比如较低版本的App想要覆盖已有的较高版本App会提示安装未完成，或是签名不一致导致的。不过7.0上常见的有以下两种情况。 应用间共享文件在targetSdkVersion大于等于的24的App中，但是我们没有去适配7.0。那么在">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/WechatIMG163.png">
-<meta property="og:updated_time" content="2019-08-21T04:00:36.102Z">
+<meta property="og:updated_time" content="2019-08-21T04:03:21.932Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android适配-7.0的踩坑之路">
 <meta name="twitter:description" content="安装时解析错误我们的App通常会有检查更新的功能。用户在收到提示更新并且下载完后，会自动打开安装页面让用户来去安装。这时就会出现安装错误的问题，这类的问题的可能性比较多。比如较低版本的App想要覆盖已有的较高版本App会提示安装未完成，或是签名不一致导致的。不过7.0上常见的有以下两种情况。 应用间共享文件在targetSdkVersion大于等于的24的App中，但是我们没有去适配7.0。那么在">
@@ -437,6 +437,8 @@ var _hmt = _hmt || [];
 <p>Android 7.0 引入一项新的应用签名方案 APK Signature Scheme v2，它能提供更快的应用安装时间和更多针对未授权 APK 文件更改的保护。在默认情况下，Android Studio 2.2 和 Android Plugin for Gradle 2.2 会使用 APK Signature Scheme v2 和传统签名方案来签署您的应用。详细看<a href="https://developer.android.google.cn/about/versions/nougat/android-7.0.html#apk_signature_v2" target="_blank" rel="noopener">安卓官方说明</a>。</p>
 </blockquote>
 <p>简单地说就是任何方式的篡改APK 文件，在利用了V2签名的apk上会失效。</p>
+<a id="more"></a>
+
 <p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/WechatIMG163.png" alt></p>
 <p>可以看到默认是V1 和V2选中的。</p>
 <p>1）只勾选v1签名就是传统方案签署，但是在7.0上不会使用V2安全的验证方式。<br>2）只勾选V2签名7.0以下会显示未安装，7.0上则会使用了V2安全的验证方式。<br>3）同时勾选V1和V2则所有版本都没问题。</p>

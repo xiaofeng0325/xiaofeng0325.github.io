@@ -431,10 +431,12 @@ var _hmt = _hmt || [];
 
       
         
-          
-          安装时解析错误我们的App通常会有检查更新的功能。用户在收到提示更新并且下载完后，会自动打开安装页面让用户来去安装。这时就会出现安装错误的问题，这类的问题的可能性比较多。比如较低版本的App想要覆盖已有的较高版本App会提示安装未完成，或是签名不一致导致的。不过7.0上常见的有以下两种情况。
-应用间共享文件在targetSdkVersion大于等于的24的App中，但是我们没有去适配7.0。那么在调用安装页面，或修改用户头像操作时，就会失败。那么就需要你去适配7.0或是将targetSdkVersion改为24以下（不推荐）。适配的方法这里就不细讲，大家可以看鸿洋大神的 Android 7.0
-          ...
+          <h2 id="安装时解析错误"><a href="#安装时解析错误" class="headerlink" title="安装时解析错误"></a>安装时解析错误</h2><p>我们的App通常会有检查更新的功能。用户在收到提示更新并且下载完后，会自动打开安装页面让用户来去安装。这时就会出现安装错误的问题，这类的问题的可能性比较多。比如较低版本的App想要覆盖已有的较高版本App会提示安装未完成，或是签名不一致导致的。不过7.0上常见的有以下两种情况。</p>
+<h3 id="应用间共享文件"><a href="#应用间共享文件" class="headerlink" title="应用间共享文件"></a>应用间共享文件</h3><p>在targetSdkVersion大于等于的24的App中，但是我们没有去适配7.0。那么在调用安装页面，或修改用户头像操作时，就会失败。那么就需要你去适配7.0或是将targetSdkVersion改为24以下（不推荐）。适配的方法这里就不细讲，大家可以看鸿洋大神的 <a href="https://blog.csdn.net/lmj623565791/article/details/72859156" target="_blank" rel="noopener">Android 7.0 行为变更 通过FileProvider在应用间共享文件</a> 这篇文章。</p>
+<h3 id="APK-signature-scheme-v2"><a href="#APK-signature-scheme-v2" class="headerlink" title="APK signature scheme v2"></a>APK signature scheme v2</h3><blockquote>
+<p>Android 7.0 引入一项新的应用签名方案 APK Signature Scheme v2，它能提供更快的应用安装时间和更多针对未授权 APK 文件更改的保护。在默认情况下，Android Studio 2.2 和 Android Plugin for Gradle 2.2 会使用 APK Signature Scheme v2 和传统签名方案来签署您的应用。详细看<a href="https://developer.android.google.cn/about/versions/nougat/android-7.0.html#apk_signature_v2" target="_blank" rel="noopener">安卓官方说明</a>。</p>
+</blockquote>
+<p>简单地说就是任何方式的篡改APK 文件，在利用了V2签名的apk上会失效。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/posts/a6a9da5d.html#more" rel="contents">
@@ -616,8 +618,8 @@ var _hmt = _hmt || [];
 <table>
 <thead>
 <tr>
-<th align="center">LTR</th>
-<th align="center">RTL</th>
+<th align="center"></th>
+<th align="center"></th>
 </tr>
 </thead>
 <tbody><tr>
