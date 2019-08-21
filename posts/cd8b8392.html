@@ -84,7 +84,7 @@
 <meta name="description" content="准备工作将我们项目中的targetSdkVersion改为 26（8.0） 或者 27（8.1），记住不要超过27，毕竟我还没有告诉你Android P怎么适配（滑稽）。 运行时权限首先引用官方的原文。  在 Android 8.0 之前，如果应用在运行时请求权限并且被授予该权限，系统会错误地将属于同一权限组并且在清单中注册的其他权限也一起授予应用。对于针对 Android 8.0 的应用，此行为">
 <meta name="keywords" content="Android,适配">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android适配-8.0">
+<meta property="og:title" content="Android适配-8.0详解">
 <meta property="og:url" content="https://zhangmiao.cc/posts/cd8b8392.html">
 <meta property="og:site_name" content="zm.blog">
 <meta property="og:description" content="准备工作将我们项目中的targetSdkVersion改为 26（8.0） 或者 27（8.1），记住不要超过27，毕竟我还没有告诉你Android P怎么适配（滑稽）。 运行时权限首先引用官方的原文。  在 Android 8.0 之前，如果应用在运行时请求权限并且被授予该权限，系统会错误地将属于同一权限组并且在清单中注册的其他权限也一起授予应用。对于针对 Android 8.0 的应用，此行为">
@@ -99,9 +99,9 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190821140658.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190821140501.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190821140530.png">
-<meta property="og:updated_time" content="2019-08-21T06:13:22.951Z">
+<meta property="og:updated_time" content="2019-08-21T06:17:00.195Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android适配-8.0">
+<meta name="twitter:title" content="Android适配-8.0详解">
 <meta name="twitter:description" content="准备工作将我们项目中的targetSdkVersion改为 26（8.0） 或者 27（8.1），记住不要超过27，毕竟我还没有告诉你Android P怎么适配（滑稽）。 运行时权限首先引用官方的原文。  在 Android 8.0 之前，如果应用在运行时请求权限并且被授予该权限，系统会错误地将属于同一权限组并且在清单中注册的其他权限也一起授予应用。对于针对 Android 8.0 的应用，此行为">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190821135542.png">
 
@@ -139,7 +139,7 @@
 
 
 
-  <title>Android适配-8.0 | zm.blog</title>
+  <title>Android适配-8.0详解 | zm.blog</title>
   
 
 
@@ -336,7 +336,7 @@ var _hmt = _hmt || [];
 
         
         
-          <h1 class="post-title" itemprop="name headline">Android适配-8.0</h1>
+          <h1 class="post-title" itemprop="name headline">Android适配-8.0详解</h1>
         
 
         <div class="post-meta">
@@ -409,7 +409,7 @@ var _hmt = _hmt || [];
 
           
           
-             <span id="/posts/cd8b8392.html" class="leancloud_visitors" data-flag-title="Android适配-8.0">
+             <span id="/posts/cd8b8392.html" class="leancloud_visitors" data-flag-title="Android适配-8.0详解">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -445,10 +445,10 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>在 Android 8.0 之前，如果应用在运行时请求权限并且被授予该权限，系统会错误地将属于同一权限组并且在清单中注册的其他权限也一起授予应用。<br>对于针对 Android 8.0 的应用，此行为已被纠正。系统只会授予应用明确请求的权限。然而，一旦用户为应用授予某个权限，则所有后续对该权限组中权限的请求都将被自动批准。<br>例如，假设某个应用在其清单中列出<code>READ_EXTERNAL_STORAGE</code> 和<code>WRITE_EXTERNAL_STORAGE</code>。应用请求 <code>READ_EXTERNAL_STORAGE</code>，并且用户授予了该权限。如果该应用针对的是 API 级别 24 或更低级别，系统还会同时授予<code>WRITE_EXTERNAL_STORAGE</code>，因为该权限也属于同一 STORAGE 权限组并且也在清单中注册过。如果该应用针对的是 Android 8.0，则系统此时仅会授予 <code>READ_EXTERNAL_STORAGE</code>；不过，如果该应用后来又请求 <code>WRITE_EXTERNAL_STORAGE</code>，则系统会立即授予该权限，而不会提示用户。</p>
 </blockquote>
-<p>所谓权限组如下：</p>
-<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190821135542.png" alt></p>
 <a id="more"></a>
 
+<p>所谓权限组如下：</p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190821135542.png" alt></p>
 <p>所以总结下来，如果你之前是用什么权限就去申请什么权限，那么恭喜你，这个变化不会影响到你。如果你只申请了权限组中的某些权限，却用了同组的其他权限，那么你就需要去适配一下了。</p>
 <p>那么怎么适配呢，如果你去检查之前每个申请权限的地方，未免太过麻烦。那么你可以根据你项目中的<code>Manifest</code>文件中需要的权限与权限组去对比，整理出你需要申请的各个权限组。比如你需要<code>android.permission.CALL_PHONE</code>(打电话)与<code>android.permission.READ_PHONE_STATE</code>(读取手机状态) 这两个权限。那么你就整理出了类似下面的类。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PermissionGroup</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	 <span class="comment">//Phone权限</span></span><br><span class="line">	 <span class="keyword">public</span> <span class="keyword">static</span> String[] PHONE = <span class="keyword">new</span> String[] &#123;</span><br><span class="line">          Manifest.permission.READ_PHONE_STATE, </span><br><span class="line">          Manifest.permission.CALL_PHONE</span><br><span class="line">     &#125;;</span><br><span class="line"></span><br><span class="line">	 ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -617,7 +617,7 @@ var _hmt = _hmt || [];
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://zhangmiao.cc/posts/cd8b8392.html" title="Android适配-8.0">https://zhangmiao.cc/posts/cd8b8392.html</a>
+    <a href="https://zhangmiao.cc/posts/cd8b8392.html" title="Android适配-8.0详解">https://zhangmiao.cc/posts/cd8b8392.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -1091,7 +1091,7 @@ var _hmt = _hmt || [];
         var disqus_config = function () {
           this.page.url = 'https://zhangmiao.cc/posts/cd8b8392.html';
           this.page.identifier = 'posts/cd8b8392.html';
-          this.page.title = 'Android适配-8.0';
+          this.page.title = 'Android适配-8.0详解';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://zhangmiao.disqus.com/embed.js';
