@@ -5,10 +5,10 @@
     <url>%2Fposts%2F94899ee0.html</url>
     <content type="text"><![CDATA[在 MacOS iPhone iPad 上面设置可能有差别，但是关键参数如下。 以Mac OS为例，打开设置，前往互联网账户，添加其他账户，邮件账户，按自己的阿里邮箱，或者你们公司给你的以你们公司名后缀结束的邮箱（其实还是阿里邮箱），填写邮箱密码。 接着选择账户类型：pop 收件服务器：pop3.aliyun.com 发件服务器：smtp.aliyun.com]]></content>
       <categories>
-        <category>awsome</category>
+        <category>Mac</category>
       </categories>
       <tags>
-        <tag>awsome</tag>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -2938,8 +2938,8 @@
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>AndroidStudio</tag>
         <tag>Android Tips</tag>
+        <tag>AndroidStudio</tag>
       </tags>
   </entry>
   <entry>
