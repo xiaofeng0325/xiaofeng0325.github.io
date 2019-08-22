@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhangmiao.cc/"/>
-  <updated>2019-08-22T02:27:45.674Z</updated>
+  <updated>2019-08-22T07:16:55.428Z</updated>
   <id>https://zhangmiao.cc/</id>
   
   <author>
@@ -17,11 +17,47 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>正确的提问方式</title>
+    <link href="https://zhangmiao.cc/posts/6cc70a12.html"/>
+    <id>https://zhangmiao.cc/posts/6cc70a12.html</id>
+    <published>2019-08-22T07:10:34.000Z</published>
+    <updated>2019-08-22T07:16:55.428Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="提问之前"><a href="#提问之前" class="headerlink" title="提问之前"></a>提问之前</h2><ol><li>你是否在谷歌/百度/论坛上搜索过？</li><li>你是否查过手册/文档？</li><li>你是否阅读过源码？</li></ol><h2 id="正确提问"><a href="#正确提问" class="headerlink" title="正确提问"></a>正确提问</h2><ol><li>你想做什么？遇到了什么问题？你做过什么？尝试过什么解决方案？结果是什么？</li><li>附上log，代码等</li></ol><p><strong>Ps：提供越多有效信息，越能得到帮助</strong></p><h2 id="错误提问"><a href="#错误提问" class="headerlink" title="错误提问"></a>错误提问</h2><ol><li>有大佬在吗？有人在吗？有人会吗？有人懂吗？</li><li>这个怎么解决？为什么会出现这个？这是怎麽回事？有没有人帮我解决这个问题？</li></ol><p><strong>Ps：大家都忙，请尊重彼此的时间</strong></p><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;提问之前&quot;&gt;&lt;a href=&quot;#提问之前&quot; class=&quot;headerlink&quot; title=&quot;提问之前&quot;&gt;&lt;/a&gt;提问之前&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;你是否在谷歌/百度/论坛上搜索过？&lt;/li&gt;
+&lt;li&gt;你是否查过手册/文档？&lt;/li&gt;
+&lt;li&gt;你是否阅读过源码？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;正确提问&quot;&gt;&lt;a href=&quot;#正确提问&quot; class=&quot;headerlink&quot; title=&quot;正确提问&quot;&gt;&lt;/a&gt;正确提问&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;你想做什么？遇到了什么问题？你做过什么？尝试过什么解决方案？结果是什么？&lt;/li&gt;
+&lt;li&gt;附上log，代码等&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Ps：提供越多有效信息，越能得到帮助&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;错误提问&quot;&gt;&lt;a href=&quot;#错误提问&quot; class=&quot;headerlink&quot; title=&quot;错误提问&quot;&gt;&lt;/a&gt;错误提问&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;有大佬在吗？有人在吗？有人会吗？有人懂吗？&lt;/li&gt;
+&lt;li&gt;这个怎么解决？为什么会出现这个？这是怎麽回事？有没有人帮我解决这个问题？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Ps：大家都忙，请尊重彼此的时间&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="随笔记" scheme="https://zhangmiao.cc/categories/%E9%9A%8F%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="随笔记" scheme="https://zhangmiao.cc/tags/%E9%9A%8F%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>为Hexo添加CNZZ统计</title>
     <link href="https://zhangmiao.cc/posts/fb66bb1.html"/>
     <id>https://zhangmiao.cc/posts/fb66bb1.html</id>
     <published>2019-08-22T02:17:39.000Z</published>
-    <updated>2019-08-22T02:27:45.674Z</updated>
+    <updated>2019-08-22T02:28:03.245Z</updated>
     
     <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>刚开始弄NexT主题的时候，一直都是用不蒜子的统计，但是不蒜子统计的内容太过简单了，不能够看到其他的一些数据，最近把友盟的统计给加上了。</p><p><strong>友盟+ 传送门</strong>：<a href="https://passport.umeng.com/login?appId=cnzz" target="_blank" rel="noopener">https://passport.umeng.com/login?appId=cnzz</a></p><h3 id="配置站点信息"><a href="#配置站点信息" class="headerlink" title="配置站点信息"></a>配置站点信息</h3><p>登录之后，选择右上角的添加站点，配置好你的站点信息</p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190822102053.png" alt></p><a id="more"></a><h3 id="获取代码"><a href="#获取代码" class="headerlink" title="获取代码"></a>获取代码</h3><p>获取友盟提供给你的代码，友盟提供了很多的样式，随便复制一份就行。</p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190822102153.png" alt></p><p>在<code>\themes\next\layout\_third-party\analytics\cnzz-analytics.swig</code>中将原来的代码全部删除，复制下面的代码：<br>ps：如果没有该文件，请自行创建然后复制修改下面的代码</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.cnzz_siteid %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 填写你的友盟代码 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> cnzz_protocol = ((<span class="string">"https:"</span> == <span class="built_in">document</span>.location.protocol) ? <span class="string">" https://"</span> : <span class="string">" http://"</span>);</span></span><br><span class="line"><span class="javascript"><span class="built_in">document</span>.write(<span class="built_in">unescape</span>(<span class="string">"%3Cspan id='cnzz_stat_icon_12'%3E%3C/span%3E%3Cscript </span></span></span><br><span class="line"><span class="javascript">src=<span class="string">'" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D12%2show%3Dpic'</span> </span></span><br><span class="line"><span class="javascript">type=<span class="string">'text/javascript'</span>%<span class="number">3</span>E%<span class="number">3</span>C/script%<span class="number">3</span>E<span class="string">"));</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 你的友盟代码 end --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure><h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>添加了代码之后，还需要修改next的配置文件才能够生效。注意是主题配置文件<br>打开<code>\themes\next</code>目录下的<code>_config.yml</code>，按<code>ctrl + F</code>搜索<code>CNZZ</code>,找到之后将注释的内容打开，并设置成true，注意空格</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># CNZZ count</span><br><span class="line">cnzz_siteid: true</span><br></pre></td></tr></table></figure><p>这样就可以成功的使用CNZZ进行统计了。建议使用<code>hexo s</code>在本地测试，看是否有问题再部署上去。</p>]]></content>
     
@@ -642,47 +678,6 @@
       <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
     
       <category term="面试" scheme="https://zhangmiao.cc/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Flutter “保姆”级项目 Demo合集</title>
-    <link href="https://zhangmiao.cc/posts/60004316.html"/>
-    <id>https://zhangmiao.cc/posts/60004316.html</id>
-    <published>2019-05-12T05:40:05.000Z</published>
-    <updated>2019-07-22T06:03:30.700Z</updated>
-    
-    <content type="html"><![CDATA[<p>为啥叫“保姆”级项目，因为是真的贴心…</p><h3 id="flutter-go"><a href="#flutter-go" class="headerlink" title="flutter go"></a>flutter go</h3><table><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135152.png" alt></td><td><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135724.png" alt></td><td><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135809.png" alt></td></tr></tbody></table><p><em><a href="https://github.com/alibaba/flutter-go" target="_blank" rel="noopener">https://github.com/alibaba/flutter-go</a></em></p><a id="more"></a><h3 id="GSY的-flutter-合集"><a href="#GSY的-flutter-合集" class="headerlink" title="GSY的 flutter 合集"></a>GSY的 flutter 合集</h3><p>GSYFlutterDemo 作为简单示例和解决方案 Demo ，它可以给你学习和工作中提供一些便捷的帮助，比如 如何自定义布局，如何滚动控件到指定 child position ，如何调整 Text 控件的 Line Space ，如何监听键盘的弹出和收起 等等，所以例子方案都独立实现，方便阅读 CV 。</p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135241.png" alt></p><p>已有例子</p><ul><li>Controller 例子</li><li>圆角 例子</li><li>滑动监听 例子</li><li>滑动到指定位置 例子</li><li>滑动到指定位置2 例子</li><li>Transform 例子</li><li>文本行间距 例子</li><li>多种下拉刷新 例子</li><li>绝对定位 例子</li><li>气泡提示框 例子</li><li>标签Wrap 例子</li><li>共享元素动画 例子</li><li>修改状态栏颜色 例子</li><li>系统键盘相关 例子</li><li>动画相关 例子</li><li>悬浮触摸控件 例子</li><li>全局字体大小 例子</li><li>富文本 例子</li><li>ViewPager 例子</li><li>滑动停靠 例子</li><li>验证码输入框 例子</li><li>自定义布局 例子</li><li>自定义布局云词图 例子</li></ul><p><em><a href="https://github.com/CarGuo/GSYFlutterDemo" target="_blank" rel="noopener">https://github.com/CarGuo/GSYFlutterDemo</a></em></p><p>除此之外，GSY 也对外输出了，实战系列博客：</p><p><em><a href="https://juejin.im/user/582aca2ba22b9d006b59ae68/posts" target="_blank" rel="noopener">https://juejin.im/user/582aca2ba22b9d006b59ae68/posts</a></em></p><p>实战项目：</p><p><em><a href="https://github.com/CarGuo/GSYGithubAppFlutter" target="_blank" rel="noopener">https://github.com/CarGuo/GSYGithubAppFlutter</a></em></p><h3 id="Flutter-NoteBook"><a href="#Flutter-NoteBook" class="headerlink" title="Flutter NoteBook"></a>Flutter NoteBook</h3><p>flutetr_note_book有许多flutter相关功能demo的集合，它能够帮助您快速学习一些零碎的知识，本项目将会不定期更新。<br><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135024.png" alt></p><p><em><a href="https://github.com/OpenFlutter/Flutter-Notebook" target="_blank" rel="noopener">https://github.com/OpenFlutter/Flutter-Notebook</a></em></p><p>看介绍上写，原本作者计划是日更的，但是日更的压力太大了。</p><p>我曾经尝试过做这样的事情，后来还是觉得不需要给自己太大压力才好，比如：wanandroid 上面的每日一问，现在变成了每周 3 问。</p><p>想要坚持做一件事情，而且是没有明显收益的事情，还是保持一个合理的周期，不要影响到自己才行。</p><p>就像谈恋爱，天天觉得有压力，烦那就不长久了~</p><p>好在作者并没有断更，希望作者能坚持更久，感谢。</p><h3 id="flutter-app"><a href="#flutter-app" class="headerlink" title="flutter_app"></a>flutter_app</h3><p>本项目包括各种基本控件使用（Text、TextField、Icon、Image、Listview、Gridview、Picker、Stepper、Dialog、Slider、Row、Appbar、Sizebox、BottomSheet、Chip、Dismissible、FlutterLogo、Check、Switch、TabBar、BottomNavigationBar、Sliver等）、豆瓣电影、每日一文、和天气、百姓生活、随机诗词、联系人、句子迷、好奇心日报等板块</p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722134953.png" alt></p><p>这个项目比较大的特色，就是汇集了非常多的实战 app，那么你看到哪个页面效果就能去看看它的实现。</p><p>当然了，现在做具体 app 类似开源项目，最麻烦的就是开放 api 了，很多抓取的一方面不确定是否违规，另一方面极度不稳定，我以前经常推荐完整项目，但是经常过了一段时间就不能访问了。</p><p>所以，你们真要练手，不妨使用 wanandroid.com 的开放 API，网站多数接口和开放 API 是使用的相同的接口，除非这个网站挂了，否则 API 一直很稳定，数据也同步更新，也算我对外的一些付出啦。</p><p><em><a href="https://github.com/shichunlei/flutter_app" target="_blank" rel="noopener">https://github.com/shichunlei/flutter_app</a></em></p><h3 id="awesome-flutter"><a href="#awesome-flutter" class="headerlink" title="awesome-flutter"></a>awesome-flutter</h3><p>类似于收集不错的 Flutter 库，工具，文章，实例等。</p><p>因为是国外开发者做的，所以关注的更多是国外的内容，所以和以上项目做互补还是非常不错的。</p><p>这个资源合集，分类非常细致，有入门，进阶；视频教程等等。</p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722134928.png" alt></p><p><em><a href="https://github.com/Solido/awesome-flutter" target="_blank" rel="noopener">https://github.com/Solido/awesome-flutter</a></em></p><p>另外有一个小技巧，就是你想看什么方向技术的时候，果断用 awesome + 关键词 搜索。</p><h3 id="awesome-kotlin"><a href="#awesome-kotlin" class="headerlink" title="awesome kotlin"></a>awesome kotlin</h3><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722134848.png" alt></p><h3 id="awesome-android"><a href="#awesome-android" class="headerlink" title="awesome android"></a>awesome android</h3><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722134825.png" alt></p><p>学到了吧。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;为啥叫“保姆”级项目，因为是真的贴心…&lt;/p&gt;
-&lt;h3 id=&quot;flutter-go&quot;&gt;&lt;a href=&quot;#flutter-go&quot; class=&quot;headerlink&quot; title=&quot;flutter go&quot;&gt;&lt;/a&gt;flutter go&lt;/h3&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135152.png&quot; alt&gt;&lt;/td&gt;
-&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135724.png&quot; alt&gt;&lt;/td&gt;
-&lt;td&gt;&lt;img src=&quot;https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190722135809.png&quot; alt&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://github.com/alibaba/flutter-go&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/alibaba/flutter-go&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
-    
-      <category term="Flutter" scheme="https://zhangmiao.cc/categories/Android/Flutter/"/>
-    
-    
-      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
-    
-      <category term="Flutter" scheme="https://zhangmiao.cc/tags/Flutter/"/>
     
   </entry>
   
