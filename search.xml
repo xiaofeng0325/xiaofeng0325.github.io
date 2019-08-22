@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[为Hexo添加CNZZ统计]]></title>
+    <url>%2Fposts%2Ffb66bb1.html</url>
+    <content type="text"><![CDATA[前言刚开始弄NexT主题的时候，一直都是用不蒜子的统计，但是不蒜子统计的内容太过简单了，不能够看到其他的一些数据，最近把友盟的统计给加上了。 友盟+ 传送门：https://passport.umeng.com/login?appId=cnzz 配置站点信息登录之后，选择右上角的添加站点，配置好你的站点信息 获取代码获取友盟提供给你的代码，友盟提供了很多的样式，随便复制一份就行。 在\themes\next\layout\_third-party\analytics\cnzz-analytics.swig中将原来的代码全部删除，复制下面的代码：ps：如果没有该文件，请自行创建然后复制修改下面的代码 123456789101112&#123;% if theme.cnzz_siteid %&#125;&lt;div&gt;&lt;!-- 填写你的友盟代码 --&gt;&lt;script type="text/javascript"&gt; var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_12'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D12%2show%3Dpic' type='text/javascript'%3E%3C/script%3E"));&lt;/script&gt;&lt;!-- 你的友盟代码 end --&gt;&lt;/div&gt;&#123;% endif %&#125; 修改配置文件添加了代码之后，还需要修改next的配置文件才能够生效。注意是主题配置文件打开\themes\next目录下的_config.yml，按ctrl + F搜索CNZZ,找到之后将注释的内容打开，并设置成true，注意空格 12# CNZZ countcnzz_siteid: true 这样就可以成功的使用CNZZ进行统计了。建议使用hexo s在本地测试，看是否有问题再部署上去。]]></content>
+      <categories>
+        <category>建站</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>建站</tag>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Mac Os，iphone，ipad绑定阿里云邮箱]]></title>
     <url>%2Fposts%2F94899ee0.html</url>
     <content type="text"><![CDATA[在 MacOS iPhone iPad 上面设置可能有差别，但是关键参数如下。 以Mac OS为例，打开设置，前往互联网账户，添加其他账户，邮件账户，按自己的阿里邮箱，或者你们公司给你的以你们公司名后缀结束的邮箱（其实还是阿里邮箱），填写邮箱密码。 接着选择账户类型：pop 收件服务器：pop3.aliyun.com 发件服务器：smtp.aliyun.com]]></content>
@@ -2596,8 +2609,8 @@
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>XBus</tag>
         <tag>EventBus</tag>
+        <tag>XBus</tag>
       </tags>
   </entry>
   <entry>
