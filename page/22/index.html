@@ -1899,8 +1899,6 @@ var _hmt = _hmt || [];
 <h4 id="Step-1-设置接收cookie"><a href="#Step-1-设置接收cookie" class="headerlink" title="Step 1 设置接收cookie"></a>Step 1 设置接收cookie</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CookieManager.setAcceptFileSchemeCookies(<span class="keyword">true</span>);</span><br><span class="line">CookieManager.getInstance().setAcceptCookie(<span class="keyword">true</span>);</span><br><span class="line">CookieManager.setAcceptFileSchemeCookies(<span class="keyword">true</span>);</span><br></pre></td></tr></table></figure>
 
 <h4 id="Step-2-设置cookie的值，通过setcookie方法"><a href="#Step-2-设置cookie的值，通过setcookie方法" class="headerlink" title="Step 2 设置cookie的值，通过setcookie方法"></a>Step 2 设置cookie的值，通过setcookie方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; cookies = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">cookies.add(<span class="string">"app_key="</span> + App.getAppKey());</span><br><span class="line">cookies.add(<span class="string">"os="</span> + <span class="string">"Android"</span> + Build.VERSION.SDK_INT);</span><br></pre></td></tr></table></figure>
-
-<h4 id><a href="#" class="headerlink" title></a>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/posts/3defa4a1.html#more" rel="contents">
@@ -1910,7 +1908,7 @@ var _hmt = _hmt || [];
           <!--/noindex-->
         
       
-    </h4></div>
+    </div>
     
     
     
