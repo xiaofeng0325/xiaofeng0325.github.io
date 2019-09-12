@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhangmiao.cc/"/>
-  <updated>2019-09-11T11:08:55.285Z</updated>
+  <updated>2019-09-12T03:16:28.285Z</updated>
   <id>https://zhangmiao.cc/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>推荐一波最近学习Gradle的项目</title>
+    <link href="https://zhangmiao.cc/posts/8f5f13d7.html"/>
+    <id>https://zhangmiao.cc/posts/8f5f13d7.html</id>
+    <published>2019-09-12T03:05:56.000Z</published>
+    <updated>2019-09-12T03:16:28.285Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>马云卸任挥泪洒现场，核心观点总结他所想</title>
@@ -636,33 +650,6 @@
       <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
     
       <category term="框架" scheme="https://zhangmiao.cc/tags/%E6%A1%86%E6%9E%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>BannerViewPage</title>
-    <link href="https://zhangmiao.cc/posts/6831bdd1.html"/>
-    <id>https://zhangmiao.cc/posts/6831bdd1.html</id>
-    <published>2019-08-13T10:13:23.000Z</published>
-    <updated>2019-08-13T10:17:35.408Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="BannerViewPage"><a href="#BannerViewPage" class="headerlink" title="BannerViewPage"></a><a href="https://github.com/zhangmiaocc/BannerViewPage" target="_blank" rel="noopener">BannerViewPage</a></h1><p>Banner当前屏幕显示下一页内容的一部分，用ViewPager偏移来实现。</p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/aaa.gif" alt></p><a id="more"></a>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;BannerViewPage&quot;&gt;&lt;a href=&quot;#BannerViewPage&quot; class=&quot;headerlink&quot; title=&quot;BannerViewPage&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://github.com/zhangmiaocc/BannerViewPage&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;BannerViewPage&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Banner当前屏幕显示下一页内容的一部分，用ViewPager偏移来实现。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/aaa.gif&quot; alt&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
-    
-      <category term="View" scheme="https://zhangmiao.cc/categories/Android/View/"/>
-    
-    
-      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
-    
-      <category term="View" scheme="https://zhangmiao.cc/tags/View/"/>
     
   </entry>
   
