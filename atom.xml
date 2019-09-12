@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhangmiao.cc/"/>
-  <updated>2019-09-12T03:16:28.285Z</updated>
+  <updated>2019-09-12T03:21:05.696Z</updated>
   <id>https://zhangmiao.cc/</id>
   
   <author>
@@ -21,9 +21,21 @@
     <link href="https://zhangmiao.cc/posts/8f5f13d7.html"/>
     <id>https://zhangmiao.cc/posts/8f5f13d7.html</id>
     <published>2019-09-12T03:05:56.000Z</published>
-    <updated>2019-09-12T03:16:28.285Z</updated>
+    <updated>2019-09-12T03:21:05.696Z</updated>
+    
+    <content type="html"><![CDATA[<p>最新搞了好久的 Gradle，说起 Gradle 这个东西也很奇怪，明明在 gradle 文件内是支持各种我们熟悉的代码的，比如 Java，Groovy，但是就是在里面写几个功能极其费劲，总体而言，还是对其原理缺乏认识导致的。</p><p>再者，我们在研究很多技术时，基本都离不开 Gradle 相关的知识，比如编译相关，热修复，插件化，很多性能优化相关，反正你想干涉整个打包流程，或者在编译期间搞点小动作，或多或少是要了解相关知识的。</p><p>好了，下面就推荐一些学习资源，基本上足够大家系统性学习了，当然前提是你愿意看哈…</p><h2 id="官方用户手册"><a href="#官方用户手册" class="headerlink" title="官方用户手册"></a>官方用户手册</h2><p>如果英文足够好的话，当然首选官网了：</p><p><em><a href="https://docs.gradle.org/current/userguide/getting_started.html" target="_blank" rel="noopener">https://docs.gradle.org/current/userguide/getting_started.html</a></em></p><p>而且官网也提供了 user guide pdf 的下载：</p><p><em><a href="https://docs.gradle.org/current/userguide/userguide.pdf" target="_blank" rel="noopener">https://docs.gradle.org/current/userguide/userguide.pdf</a></em></p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190912110958.png" alt></p><p>想离线看很方便。</p><a id="more"></a><h2 id="Gradle-User-Guide-中文版"><a href="#Gradle-User-Guide-中文版" class="headerlink" title="Gradle User Guide 中文版"></a>Gradle User Guide 中文版</h2><p><a href="https://github.com/DONGChuan/GradleUserGuide" target="_blank" rel="noopener">https://github.com/DONGChuan/GradleUserGuide</a></p><p>没错，总有可爱的人，会愿意翻译 user guide然后分享出来，当然了，因为是翻译，所以内容并不是最新的，不过倒是不影响前期的学习，可以边敲边学，遇到有问题的，搜一下解决就行了。</p><p>阅读地址：</p><p><a href="https://dongchuan.gitbooks.io/gradle-user-guide-/" target="_blank" rel="noopener">https://dongchuan.gitbooks.io/gradle-user-guide-/</a></p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190912111249.png" alt></p><h2 id="一个不错的入门系列"><a href="#一个不错的入门系列" class="headerlink" title="一个不错的入门系列"></a>一个不错的入门系列</h2><p>如果你就是想单纯的先入个门，那么可以花点时间看这个系列：</p><p><em><a href="https://www.cnblogs.com/davenkin/p/gradle-learning-1.html" target="_blank" rel="noopener">https://www.cnblogs.com/davenkin/p/gradle-learning-1.html</a></em></p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190912111341.png" alt></p><p>对应源码:</p><p><em><a href="https://github.com/davenkin/gradle-learning" target="_blank" rel="noopener">https://github.com/davenkin/gradle-learning</a></em></p><p>很早的文章了，不过依然适合入门。</p><h2 id="一个非常棒的深入系列"><a href="#一个非常棒的深入系列" class="headerlink" title="一个非常棒的深入系列"></a>一个非常棒的深入系列</h2><p>github 地址：</p><p><em><a href="https://github.com/5A59/android-training" target="_blank" rel="noopener">https://github.com/5A59/android-training</a></em></p><p>当然也可以在掘金上看整个系列：</p><p>【Android 修炼手册】Gradle 篇 – Gradle 的基本使用</p><p><em><a href="https://juejin.im/post/5cd441f851882554b86d088b" target="_blank" rel="noopener">https://juejin.im/post/5cd441f851882554b86d088b</a></em></p><ol><li>掌握 gradle 的基本使用</li><li>了解 gradle 及 android gradle plugin</li><li>了解 gradle 构建阶段及生命周期回调</li><li>掌握 Task，Transform 等概念</li><li>学会自定义 task，自定义 gradle 插件</li></ol><p>【Android 修炼手册】Gradle 篇 – Android Gradle Plugin 主要流程分析</p><p><em><a href="https://juejin.im/post/5cd640526fb9a03232199a05" target="_blank" rel="noopener">https://juejin.im/post/5cd640526fb9a03232199a05</a></em></p><ol><li>了解 android gradle plugin 的构建流程</li><li>了解 android gradle plugin 的主要 task 的实现</li><li>学会 hook android 构建流程，添加自己想要的功能</li></ol><p>【Android 修炼手册】Gradle 篇 – Android Gradle Plugin 主要 Task 分析</p><p><em><a href="https://juejin.im/post/5ce913735188254e8309290b" target="_blank" rel="noopener">https://juejin.im/post/5ce913735188254e8309290b</a></em></p><ol><li>了解 android gradle plugin 中各个 task 作用</li><li>了解 android gradle plugin 中主要 task 的实现</li></ol><p>【Android 修炼手册】Gradle 篇 – Gradle 源码分析</p><p><em><a href="https://juejin.im/post/5cf3e4dfe51d454d56535790" target="_blank" rel="noopener">https://juejin.im/post/5cf3e4dfe51d454d56535790</a></em></p><ol><li>了解 gradle 的实现原理</li></ol><p>这算的上是写的非常深入而且实用的一个系列了，从</p><p><strong>基本使用-&gt;</strong></p><p><strong>常见 API（Task,Transform，插件-&gt;</strong> </p><p><strong>打包过程task 分析-&gt;</strong> </p><p><strong>核心 task 源码分析-&gt;</strong></p><p> <strong>gradle 源码分析</strong></p><p>超赞…</p><p>最后，关于一些针对性的知识，比如你已经很明确了要自定义一个 Transform 子类的，搜索就ok 了，<a href="https://www.wanandroid.com" target="_blank" rel="noopener">wanandroid</a> 上也收录了一大批好文。</p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190912111507.png" alt></p><p>以上已经足够大家系统性学习整个 Gradle 的知识了，回见！</p><p>转自鸿洋大神：<a href="https://mp.weixin.qq.com/s/TVuF8_304DZQ1wbe1vm1ag" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/TVuF8_304DZQ1wbe1vm1ag</a></p>]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;最新搞了好久的 Gradle，说起 Gradle 这个东西也很奇怪，明明在 gradle 文件内是支持各种我们熟悉的代码的，比如 Java，Groovy，但是就是在里面写几个功能极其费劲，总体而言，还是对其原理缺乏认识导致的。&lt;/p&gt;
+&lt;p&gt;再者，我们在研究很多技术时，基本都离不开 Gradle 相关的知识，比如编译相关，热修复，插件化，很多性能优化相关，反正你想干涉整个打包流程，或者在编译期间搞点小动作，或多或少是要了解相关知识的。&lt;/p&gt;
+&lt;p&gt;好了，下面就推荐一些学习资源，基本上足够大家系统性学习了，当然前提是你愿意看哈…&lt;/p&gt;
+&lt;h2 id=&quot;官方用户手册&quot;&gt;&lt;a href=&quot;#官方用户手册&quot; class=&quot;headerlink&quot; title=&quot;官方用户手册&quot;&gt;&lt;/a&gt;官方用户手册&lt;/h2&gt;&lt;p&gt;如果英文足够好的话，当然首选官网了：&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://docs.gradle.org/current/userguide/getting_started.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://docs.gradle.org/current/userguide/getting_started.html&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;而且官网也提供了 user guide pdf 的下载：&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&quot;https://docs.gradle.org/current/userguide/userguide.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://docs.gradle.org/current/userguide/userguide.pdf&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190912110958.png&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;想离线看很方便。&lt;/p&gt;
     
     </summary>
     
