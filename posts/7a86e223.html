@@ -81,21 +81,21 @@
 
 
 
-<meta name="description" content="介绍原型模式是一个创建型的模式。原型二字表明了该模式应该有一个模板实例，用户从这个模板对象中复制出一个内部属性一致并且内存地址不同的对象，这个过程也就是我们俗称的 “克隆” 。被复制的实例就是我们所称的 “原型” ，这个原型是可定制的。原型模式多用于创建复杂的或者构造耗时的实例，因为这种情况下，复制一个已经存在的实例可使程序运行更高效。 定义用原型实例指定创建对象的种类，并通过复制这些原型创建新的">
+<meta name="description" content="通过理论,代码示例,Android源码来学习原型模式  介绍原型模式是一个创建型的模式。原型二字表明了该模式应该有一个模板实例，用户从这个模板对象中复制出一个内部属性一致并且内存地址不同的对象，这个过程也就是我们俗称的 “克隆” 。被复制的实例就是我们所称的 “原型” ，这个原型是可定制的。原型模式多用于创建复杂的或者构造耗时的实例，因为这种情况下，复制一个已经存在的实例可使程序运行更高效。 定">
 <meta name="keywords" content="Android,Java,设计模式,原型模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式之原型模式">
 <meta property="og:url" content="https://zhangmiao.cc/posts/7a86e223.html">
 <meta property="og:site_name" content="zm.blog">
-<meta property="og:description" content="介绍原型模式是一个创建型的模式。原型二字表明了该模式应该有一个模板实例，用户从这个模板对象中复制出一个内部属性一致并且内存地址不同的对象，这个过程也就是我们俗称的 “克隆” 。被复制的实例就是我们所称的 “原型” ，这个原型是可定制的。原型模式多用于创建复杂的或者构造耗时的实例，因为这种情况下，复制一个已经存在的实例可使程序运行更高效。 定义用原型实例指定创建对象的种类，并通过复制这些原型创建新的">
+<meta property="og:description" content="通过理论,代码示例,Android源码来学习原型模式  介绍原型模式是一个创建型的模式。原型二字表明了该模式应该有一个模板实例，用户从这个模板对象中复制出一个内部属性一致并且内存地址不同的对象，这个过程也就是我们俗称的 “克隆” 。被复制的实例就是我们所称的 “原型” ，这个原型是可定制的。原型模式多用于创建复杂的或者构造耗时的实例，因为这种情况下，复制一个已经存在的实例可使程序运行更高效。 定">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190912161545.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190912161811.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190912161940.png">
-<meta property="og:updated_time" content="2019-09-12T08:19:51.386Z">
+<meta property="og:updated_time" content="2019-09-12T08:22:27.672Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式之原型模式">
-<meta name="twitter:description" content="介绍原型模式是一个创建型的模式。原型二字表明了该模式应该有一个模板实例，用户从这个模板对象中复制出一个内部属性一致并且内存地址不同的对象，这个过程也就是我们俗称的 “克隆” 。被复制的实例就是我们所称的 “原型” ，这个原型是可定制的。原型模式多用于创建复杂的或者构造耗时的实例，因为这种情况下，复制一个已经存在的实例可使程序运行更高效。 定义用原型实例指定创建对象的种类，并通过复制这些原型创建新的">
+<meta name="twitter:description" content="通过理论,代码示例,Android源码来学习原型模式  介绍原型模式是一个创建型的模式。原型二字表明了该模式应该有一个模板实例，用户从这个模板对象中复制出一个内部属性一致并且内存地址不同的对象，这个过程也就是我们俗称的 “克隆” 。被复制的实例就是我们所称的 “原型” ，这个原型是可定制的。原型模式多用于创建复杂的或者构造耗时的实例，因为这种情况下，复制一个已经存在的实例可使程序运行更高效。 定">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190912161545.png">
 
 
@@ -433,7 +433,10 @@ var _hmt = _hmt || [];
       
 
       
-        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>原型模式是一个创建型的模式。原型二字表明了该模式应该有一个模板实例，用户从这个模板对象中复制出一个内部属性一致并且内存地址不同的对象，这个过程也就是我们俗称的 “克隆” 。被复制的实例就是我们所称的 “原型” ，这个原型是可定制的。原型模式多用于创建复杂的或者构造耗时的实例，因为这种情况下，复制一个已经存在的实例可使程序运行更高效。</p>
+        <blockquote>
+<p>通过理论,代码示例,Android源码来学习原型模式</p>
+</blockquote>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>原型模式是一个创建型的模式。原型二字表明了该模式应该有一个模板实例，用户从这个模板对象中复制出一个内部属性一致并且内存地址不同的对象，这个过程也就是我们俗称的 “克隆” 。被复制的实例就是我们所称的 “原型” ，这个原型是可定制的。原型模式多用于创建复杂的或者构造耗时的实例，因为这种情况下，复制一个已经存在的实例可使程序运行更高效。</p>
 <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>用原型实例指定创建对象的种类，并通过复制这些原型创建新的对象。</p>
 <h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><ol>
 <li>类初始化需要消耗非常多的资源，这个资源包括数据、硬件资源等，通过原型复制避免这些消耗。</li>
@@ -587,8 +590,8 @@ var _hmt = _hmt || [];
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/8bd761ec.html" rel="next" title="设计模式之建造者模式(通过理论,代码示例,Android源码来学习单列)">
-                <i class="fa fa-chevron-left"></i> 设计模式之建造者模式(通过理论,代码示例,Android源码来学习单列)
+              <a href="/posts/8bd761ec.html" rel="next" title="设计模式之建造者模式">
+                <i class="fa fa-chevron-left"></i> 设计模式之建造者模式
               </a>
             
           </div>
