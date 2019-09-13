@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Android,Java,设计模式,迭代器模式,">
 
 
 
@@ -81,17 +81,20 @@
 
 
 
-<meta name="description" content="Change for the Better">
+<meta name="description" content="通过理论,代码示例,Android源码来学习迭代器模式  介绍迭代器模式 (Iterator Pattern) 又称为游标 (Cursor) 模式 ，是行为型设计模式之一。迭代器模式算是一个比较古老的设计模式，其源于对容器的访问，比如 Java 的 List 、Map 、数组等，我们知道对容器对象的访问必然会设计遍历算法，我们可以将遍历的方法封装在容器中，或者不提供遍历方法。如果我们将遍历的方法">
+<meta name="keywords" content="Android,Java,设计模式,迭代器模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式之迭代器模式">
+<meta property="og:title" content="设计模式十一之迭代器模式">
 <meta property="og:url" content="https://zhangmiao.cc/posts/1cfae984.html">
 <meta property="og:site_name" content="zm.blog">
-<meta property="og:description" content="Change for the Better">
+<meta property="og:description" content="通过理论,代码示例,Android源码来学习迭代器模式  介绍迭代器模式 (Iterator Pattern) 又称为游标 (Cursor) 模式 ，是行为型设计模式之一。迭代器模式算是一个比较古老的设计模式，其源于对容器的访问，比如 Java 的 List 、Map 、数组等，我们知道对容器对象的访问必然会设计遍历算法，我们可以将遍历的方法封装在容器中，或者不提供遍历方法。如果我们将遍历的方法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-13T07:24:31.350Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190913152616.png">
+<meta property="og:updated_time" content="2019-09-13T07:27:38.278Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计模式之迭代器模式">
-<meta name="twitter:description" content="Change for the Better">
+<meta name="twitter:title" content="设计模式十一之迭代器模式">
+<meta name="twitter:description" content="通过理论,代码示例,Android源码来学习迭代器模式  介绍迭代器模式 (Iterator Pattern) 又称为游标 (Cursor) 模式 ，是行为型设计模式之一。迭代器模式算是一个比较古老的设计模式，其源于对容器的访问，比如 Java 的 List 、Map 、数组等，我们知道对容器对象的访问必然会设计遍历算法，我们可以将遍历的方法封装在容器中，或者不提供遍历方法。如果我们将遍历的方法">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190913152616.png">
 
 
 
@@ -127,7 +130,7 @@
 
 
 
-  <title>设计模式之迭代器模式 | zm.blog</title>
+  <title>设计模式十一之迭代器模式 | zm.blog</title>
   
 
 
@@ -324,7 +327,7 @@ var _hmt = _hmt || [];
 
         
         
-          <h1 class="post-title" itemprop="name headline">设计模式之迭代器模式</h1>
+          <h1 class="post-title" itemprop="name headline">设计模式十一之迭代器模式</h1>
         
 
         <div class="post-meta">
@@ -347,6 +350,39 @@ var _hmt = _hmt || [];
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -364,7 +400,7 @@ var _hmt = _hmt || [];
 
           
           
-             <span id="/posts/1cfae984.html" class="leancloud_visitors" data-flag-title="设计模式之迭代器模式">
+             <span id="/posts/1cfae984.html" class="leancloud_visitors" data-flag-title="设计模式十一之迭代器模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -395,7 +431,42 @@ var _hmt = _hmt || [];
       
 
       
-        
+        <blockquote>
+<p>通过理论,代码示例,Android源码来学习迭代器模式</p>
+</blockquote>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>迭代器模式 (Iterator Pattern) 又称为游标 (Cursor) 模式 ，是行为型设计模式之一。迭代器模式算是一个比较古老的设计模式，其源于对容器的访问，比如 Java 的 List 、Map 、数组等，我们知道对容器对象的访问必然会设计遍历算法，我们可以将遍历的方法封装在容器中，或者不提供遍历方法。如果我们将遍历的方法封装到容器中，那么对于容器类来说就承担了过多的功能，容器类不仅仅要维护自身内部的数据元素而且还要对外提供遍历的接口方法，因为遍历状态的存储问题还不能对同一个容器同时进行多个遍历操作，如果我们不提供遍历方法而让使用者自己去实现，又会让容器内部细节暴露无遗，正因于此，迭代模式应运而生，在客户访问类与容器体之间插入了一个第三者 - 迭代器，很好地解决了上面所述的弊端。</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>提供一种方法顺序访问一个容器对象中的各个元素，而又不需要暴露该对象的内部表示。</p>
+<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><p>遍历一个容器对象时。</p>
+<a id="more"></a>
+<h2 id="UML-类图"><a href="#UML-类图" class="headerlink" title="UML 类图"></a>UML 类图</h2><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190913152616.png" alt></p>
+<ul>
+<li>Iterator: 迭代器接口。迭代器接口负责定义、访问和遍历元素的接口。</li>
+<li>Concrete Iterator: 具体迭代器类。具体迭代器类的目的主要是实现迭代器接口，并记录遍历的当前位置。</li>
+<li>Aggregate: 容器接口。容器接口负责提供创建具体迭代器角色的接口。</li>
+<li>Concrete Aggregate: 具体容器类。具体迭代器角色与该容器相关联。</li>
+<li>Client: 客户类。</li>
+</ul>
+<h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><h3 id="简单示例"><a href="#简单示例" class="headerlink" title="简单示例"></a>简单示例</h3><p><em>迭代器接口</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Iterator</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *  是否还有下一个元素</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> true 表示有，false 表示没有</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 返回当前位置的元素并将位置移动到下一位</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function">T <span class="title">next</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>具体迭代器类</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteIterator</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span> <span class="title">Iterator</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 模拟用一个 List</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;T&gt; mList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> cursor = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ConcreteIterator</span><span class="params">(List&lt;T&gt; list)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.mList = list;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> cursor != mList.size();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">next</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//定义一个临时变量</span></span><br><span class="line">        T obj = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.hasNext()) &#123;</span><br><span class="line">            obj = <span class="keyword">this</span>.mList.get(cursor++);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> obj;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>容器接口</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Aggregate</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 添加一个对象</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> t</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(T t)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 删除的对象</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> t</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(T t)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取容器的迭代器</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function">Iterator&lt;T&gt; <span class="title">iterator</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>具体容器类</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteAggregate</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span> <span class="title">Aggregate</span>&lt;<span class="title">T</span>&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 模拟具体容器</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;T&gt; mLists = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(T t)</span> </span>&#123;</span><br><span class="line">        mLists.add(t);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">remove</span><span class="params">(T t)</span> </span>&#123;</span><br><span class="line">        mLists.remove(t);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Iterator&lt;T&gt; <span class="title">iterator</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ConcreteIterator&lt;T&gt;(mLists);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>客户类</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testIterators</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">//创建容器</span></span><br><span class="line">    Aggregate&lt;String&gt; aggregate = <span class="keyword">new</span> ConcreteAggregate&lt;&gt;();</span><br><span class="line">    aggregate.add(<span class="string">"1"</span>);</span><br><span class="line">    aggregate.add(<span class="string">"2"</span>);</span><br><span class="line">    aggregate.add(<span class="string">"3"</span>);</span><br><span class="line">    aggregate.add(<span class="string">"4"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//拿到容器迭代器，使用迭代器遍历</span></span><br><span class="line">    Iterator&lt;String&gt; iterator = aggregate.iterator();</span><br><span class="line">    <span class="keyword">while</span> (iterator.hasNext()) &#123;</span><br><span class="line">        System.out.println(<span class="string">"Aggregate: "</span> + iterator.next());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><em>Output:</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Aggregate: <span class="number">1</span></span><br><span class="line">Aggregate: <span class="number">2</span></span><br><span class="line">Aggregate: <span class="number">3</span></span><br><span class="line">Aggregate: <span class="number">4</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对于迭代器模式来说，其自身优点很明显也很单一，支持以不同的方式去遍历一个容器对象，也可以有多个遍历，弱化了容器类与遍历算法之间的关系，其缺点就是对类文件的增加。</p>
+<p>大家也可能会想到其他语言，如 C++、Python 、PHP 等，他们内部也有众多容器体的定义，当然，也有相应的迭代器。迭代器模式发展至今，几乎每一种高级语言都有相应的内置实现，对于开发者而言，已经极少会去自己实现迭代器了，因此，对于迭代器模式在于了解而非应用。</p>
+
       
     </div>
     
@@ -444,7 +515,7 @@ var _hmt = _hmt || [];
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://zhangmiao.cc/posts/1cfae984.html" title="设计模式之迭代器模式">https://zhangmiao.cc/posts/1cfae984.html</a>
+    <a href="https://zhangmiao.cc/posts/1cfae984.html" title="设计模式十一之迭代器模式">https://zhangmiao.cc/posts/1cfae984.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -456,6 +527,18 @@ var _hmt = _hmt || [];
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+          
+            <a href="/tags/迭代器模式/" rel="tag"># 迭代器模式</a>
+          
+        </div>
       
 
       
@@ -536,8 +619,17 @@ var _hmt = _hmt || [];
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -576,7 +668,7 @@ var _hmt = _hmt || [];
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">120</span>
+                  <span class="site-state-item-count">121</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -684,6 +776,22 @@ var _hmt = _hmt || [];
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用场景"><span class="nav-number">3.</span> <span class="nav-text">使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UML-类图"><span class="nav-number">4.</span> <span class="nav-text">UML 类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码示例"><span class="nav-number">5.</span> <span class="nav-text">代码示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单示例"><span class="nav-number">5.1.</span> <span class="nav-text">简单示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -879,7 +987,7 @@ var _hmt = _hmt || [];
         var disqus_config = function () {
           this.page.url = 'https://zhangmiao.cc/posts/1cfae984.html';
           this.page.identifier = 'posts/1cfae984.html';
-          this.page.title = '设计模式之迭代器模式';
+          this.page.title = '设计模式十一之迭代器模式';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://zhangmiao.disqus.com/embed.js';

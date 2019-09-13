@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[设计模式之迭代器模式]]></title>
+    <title><![CDATA[设计模式十一之迭代器模式]]></title>
     <url>%2Fposts%2F1cfae984.html</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[通过理论,代码示例,Android源码来学习迭代器模式 介绍迭代器模式 (Iterator Pattern) 又称为游标 (Cursor) 模式 ，是行为型设计模式之一。迭代器模式算是一个比较古老的设计模式，其源于对容器的访问，比如 Java 的 List 、Map 、数组等，我们知道对容器对象的访问必然会设计遍历算法，我们可以将遍历的方法封装在容器中，或者不提供遍历方法。如果我们将遍历的方法封装到容器中，那么对于容器类来说就承担了过多的功能，容器类不仅仅要维护自身内部的数据元素而且还要对外提供遍历的接口方法，因为遍历状态的存储问题还不能对同一个容器同时进行多个遍历操作，如果我们不提供遍历方法而让使用者自己去实现，又会让容器内部细节暴露无遗，正因于此，迭代模式应运而生，在客户访问类与容器体之间插入了一个第三者 - 迭代器，很好地解决了上面所述的弊端。 定义提供一种方法顺序访问一个容器对象中的各个元素，而又不需要暴露该对象的内部表示。 使用场景遍历一个容器对象时。 UML 类图 Iterator: 迭代器接口。迭代器接口负责定义、访问和遍历元素的接口。 Concrete Iterator: 具体迭代器类。具体迭代器类的目的主要是实现迭代器接口，并记录遍历的当前位置。 Aggregate: 容器接口。容器接口负责提供创建具体迭代器角色的接口。 Concrete Aggregate: 具体容器类。具体迭代器角色与该容器相关联。 Client: 客户类。 代码示例简单示例迭代器接口 1234567891011121314public interface Iterator&lt;T&gt; &#123; /** * 是否还有下一个元素 * @return true 表示有，false 表示没有 */ boolean hasNext(); /** * 返回当前位置的元素并将位置移动到下一位 * @return */ T next();&#125; 具体迭代器类 123456789101112131415161718192021222324252627282930public class ConcreteIterator&lt;T&gt; implements Iterator&lt;T&gt; &#123; /** * 模拟用一个 List */ private List&lt;T&gt; mList = new ArrayList&lt;&gt;(); private int cursor = 0; public ConcreteIterator(List&lt;T&gt; list) &#123; this.mList = list; &#125; @Override public boolean hasNext() &#123; return cursor != mList.size(); &#125; @Override public T next() &#123; //定义一个临时变量 T obj = null; if (this.hasNext()) &#123; obj = this.mList.get(cursor++); &#125; return obj; &#125;&#125; 容器接口 123456789101112131415161718192021public interface Aggregate&lt;T&gt; &#123; /** * 添加一个对象 * @param t */ void add(T t); /** * 删除的对象 * @param t */ void remove(T t); /** * 获取容器的迭代器 * @return */ Iterator&lt;T&gt; iterator();&#125; 具体容器类 1234567891011121314151617181920212223public class ConcreteAggregate&lt;T&gt; implements Aggregate&lt;T&gt;&#123; /** * 模拟具体容器 */ private List&lt;T&gt; mLists = new ArrayList&lt;&gt;(); @Override public void add(T t) &#123; mLists.add(t); &#125; @Override public void remove(T t) &#123; mLists.remove(t); &#125; @Override public Iterator&lt;T&gt; iterator() &#123; return new ConcreteIterator&lt;T&gt;(mLists); &#125;&#125; 客户类 12345678910111213141516@Testpublic void testIterators() &#123; //创建容器 Aggregate&lt;String&gt; aggregate = new ConcreteAggregate&lt;&gt;(); aggregate.add("1"); aggregate.add("2"); aggregate.add("3"); aggregate.add("4"); //拿到容器迭代器，使用迭代器遍历 Iterator&lt;String&gt; iterator = aggregate.iterator(); while (iterator.hasNext()) &#123; System.out.println("Aggregate: " + iterator.next()); &#125;&#125; Output: 1234Aggregate: 1Aggregate: 2Aggregate: 3Aggregate: 4 总结对于迭代器模式来说，其自身优点很明显也很单一，支持以不同的方式去遍历一个容器对象，也可以有多个遍历，弱化了容器类与遍历算法之间的关系，其缺点就是对类文件的增加。 大家也可能会想到其他语言，如 C++、Python 、PHP 等，他们内部也有众多容器体的定义，当然，也有相应的迭代器。迭代器模式发展至今，几乎每一种高级语言都有相应的内置实现，对于开发者而言，已经极少会去自己实现迭代器了，因此，对于迭代器模式在于了解而非应用。]]></content>
+      <categories>
+        <category>Java</category>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Java</tag>
+        <tag>设计模式</tag>
+        <tag>迭代器模式</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[设计模式十之备忘录模式]]></title>
