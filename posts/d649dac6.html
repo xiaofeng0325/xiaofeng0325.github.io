@@ -81,11 +81,13 @@
 
 
 
+<meta name="description" content="ImmersionStatusBar">
 <meta name="keywords" content="Android,沉浸式状态栏">
 <meta property="og:type" content="article">
 <meta property="og:title" content="从0到1优雅实现沉浸式状态栏">
 <meta property="og:url" content="https://zhangmiao.cc/posts/d649dac6.html">
 <meta property="og:site_name" content="zm.blog">
+<meta property="og:description" content="ImmersionStatusBar">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190917164145.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190917164612.png">
@@ -97,9 +99,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190917165046.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190917165128.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190917165208.png">
-<meta property="og:updated_time" content="2019-09-17T08:57:16.618Z">
+<meta property="og:updated_time" content="2019-09-17T09:45:41.108Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从0到1优雅实现沉浸式状态栏">
+<meta name="twitter:description" content="ImmersionStatusBar">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190917164145.png">
 
 
@@ -438,7 +441,7 @@ var _hmt = _hmt || [];
 
       
         <p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190917164145.png" alt></p>
-<a id="more"></a>
+<h2 id="ImmersionStatusBar"><a href="#ImmersionStatusBar" class="headerlink" title="ImmersionStatusBar"></a><a href="https://github.com/zhangmiaocc/ImmersionStatusBar" target="_blank" rel="noopener">ImmersionStatusBar</a></h2><a id="more"></a>
 
 <h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><p>现在市面上绝大多数APP都实现了沉浸式状态栏的效果，该效果可以极大地提升用户的使用体验。但是，APP默认的情况下只是设定一个固定的状态栏颜色，那么就需要我们通过代码去动态修改状态栏颜色的。那么，如何去实现呢？</p>
 <p>首先来说，从Android 4.4开始才能实现沉浸式状态栏的，所以如果您的APP也支持Android 4.4以下版本，那还需要对Android 4.4以下版本做“不支持沉浸式状态栏”处理。</p>
@@ -872,7 +875,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-概述"><span class="nav-number">1.</span> <span class="nav-text">1. 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-实现方案"><span class="nav-number">2.</span> <span class="nav-text">2. 实现方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-前期工作"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 前期工作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-修改应用主题"><span class="nav-number">2.1.1.</span> <span class="nav-text">2.1.1 修改应用主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-2-获取状态栏高度"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.1.2 获取状态栏高度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Android-5-0"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 Android 5.0+</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-设置状态栏颜色"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.2.1 设置状态栏颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-设置状态栏文字颜色"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2.2 设置状态栏文字颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-3-设置状态栏透明"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.2.3 设置状态栏透明</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-Android-4-4"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 Android 4.4+</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1-设置状态栏颜色"><span class="nav-number">2.3.1.</span> <span class="nav-text">2.3.1 设置状态栏颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-2-设置状态栏透明"><span class="nav-number">2.3.2.</span> <span class="nav-text">2.3.2 设置状态栏透明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-特殊场景"><span class="nav-number">3.</span> <span class="nav-text">3. 特殊场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-启动页"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 启动页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-弹窗"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 弹窗</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-参考"><span class="nav-number">4.</span> <span class="nav-text">4.参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ImmersionStatusBar"><span class="nav-number">1.</span> <span class="nav-text">ImmersionStatusBar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-概述"><span class="nav-number">2.</span> <span class="nav-text">1. 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-实现方案"><span class="nav-number">3.</span> <span class="nav-text">2. 实现方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-前期工作"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 前期工作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1-修改应用主题"><span class="nav-number">3.1.1.</span> <span class="nav-text">2.1.1 修改应用主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-2-获取状态栏高度"><span class="nav-number">3.1.2.</span> <span class="nav-text">2.1.2 获取状态栏高度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Android-5-0"><span class="nav-number">3.2.</span> <span class="nav-text">2.2 Android 5.0+</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-设置状态栏颜色"><span class="nav-number">3.2.1.</span> <span class="nav-text">2.2.1 设置状态栏颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-设置状态栏文字颜色"><span class="nav-number">3.2.2.</span> <span class="nav-text">2.2.2 设置状态栏文字颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-3-设置状态栏透明"><span class="nav-number">3.2.3.</span> <span class="nav-text">2.2.3 设置状态栏透明</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-Android-4-4"><span class="nav-number">3.3.</span> <span class="nav-text">2.3 Android 4.4+</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1-设置状态栏颜色"><span class="nav-number">3.3.1.</span> <span class="nav-text">2.3.1 设置状态栏颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-2-设置状态栏透明"><span class="nav-number">3.3.2.</span> <span class="nav-text">2.3.2 设置状态栏透明</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-特殊场景"><span class="nav-number">4.</span> <span class="nav-text">3. 特殊场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-启动页"><span class="nav-number">4.1.</span> <span class="nav-text">3.1 启动页</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-弹窗"><span class="nav-number">4.2.</span> <span class="nav-text">3.2 弹窗</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-参考"><span class="nav-number">5.</span> <span class="nav-text">4.参考</span></a></li></ol></div>
             
 
           </div>
