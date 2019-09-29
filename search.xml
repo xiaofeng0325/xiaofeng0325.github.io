@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[跨平台Flutterr，RN，Weex和原生Android的比较]]></title>
-    <url>%2Fposts%2F59072e32.html</url>
-    <content type="text"><![CDATA[]]></content>
-      <categories>
-        <category>Android</category>
-        <category>Android Tips</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-        <tag>Android Tips</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Android判断当前应用是否开启消息通知]]></title>
     <url>%2Fposts%2F7299f542.html</url>
     <content type="text"><![CDATA[当APP有推送功能时，需要判断当前app在手机中是否开启了允许消息推送，否则即使添加了推送代码仍然收不到通知 12345678910private boolean isNotificationEnabled(Context context) &#123; boolean isOpened = false; try &#123; isOpened = NotificationManagerCompat.from(context).areNotificationsEnabled(); &#125; catch (Exception e) &#123; e.printStackTrace(); isOpened = false; &#125; return isOpened; &#125; Api24以上，NotificationManagerCompat中提供了areNotificationsEnabled()方法。该方法中已经对API19以下，API19-24，API24以上，这三种情况做了判断。直接使用其返回值即可。 该方法如果返回true表示打开了消息通知，如果返回false则没有打开。没有打开则跳转设置界面。代码如下： 12345678910111213141516171819private void gotoSet() &#123; Intent intent = new Intent(); if (Build.VERSION.SDK_INT &gt;= 26) &#123; // android 8.0引导 intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS"); intent.putExtra("android.provider.extra.APP_PACKAGE", getPackageName()); &#125; else if (Build.VERSION.SDK_INT &gt;= 21) &#123; // android 5.0-7.0 intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS"); intent.putExtra("app_package", getPackageName()); intent.putExtra("app_uid", getApplicationInfo().uid); &#125; else &#123; // 其他 intent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS"); intent.setData(Uri.fromParts("package", getPackageName(), null)); &#125; intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); startActivity(intent); &#125; 我们可以在Activity的onCreate中进行判断： 123456//判断该app是否打开了通知，如果没有的话就打开手机设置页面if (!isNotificationEnabled()) &#123; gotoSet();&#125; else &#123; //当前app允许消息通知&#125;]]></content>
@@ -536,8 +523,8 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>博客</tag>
         <tag>建站</tag>
+        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
@@ -2458,8 +2445,8 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>博客</tag>
         <tag>建站</tag>
+        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
@@ -2899,6 +2886,19 @@
       <tags>
         <tag>Android</tag>
         <tag>Gradle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[跨平台Flutterr，RN，Weex和原生Android的比较]]></title>
+    <url>%2Fposts%2F59072e32.html</url>
+    <content type="text"><![CDATA[]]></content>
+      <categories>
+        <category>Android</category>
+        <category>Android Tips</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Android Tips</tag>
       </tags>
   </entry>
   <entry>
@@ -3788,8 +3788,8 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>博客</tag>
         <tag>建站</tag>
+        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
