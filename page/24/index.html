@@ -1391,187 +1391,6 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/7299f542.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ZhangMiao">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zm.blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/7299f542.html" itemprop="url">Android判断当前应用是否开启消息通知</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-05T11:32:03+08:00">
-                2018-09-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/代码片段/" itemprop="url" rel="index">
-                    <span itemprop="name">代码片段</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/7299f542.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/7299f542.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/posts/7299f542.html" class="leancloud_visitors" data-flag-title="Android判断当前应用是否开启消息通知">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><strong>当APP有推送功能时，需要判断当前app在手机中是否开启了允许消息推送，否则即使添加了推送代码仍然收不到通知</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 判断通知权限是否打开</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isNotificationEnable</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    String CHECK_OP_NO_THROW = <span class="string">"checkOpNoThrow"</span>;</span><br><span class="line">    String OP_POST_NOTIFICATION = <span class="string">"OP_POST_NOTIFICATION"</span>;</span><br><span class="line"></span><br><span class="line">    AppOpsManager mAppOps = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);</span><br><span class="line">    ApplicationInfo appInfo = context.getApplicationInfo();</span><br><span class="line">    String pkg = context.getApplicationContext().getPackageName();</span><br><span class="line">    <span class="keyword">int</span> uid = appInfo.uid;</span><br><span class="line"></span><br><span class="line">    Class appOpsClass = <span class="keyword">null</span>;</span><br><span class="line"> <span class="comment">/* Context.APP_OPS_MANAGER */</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        appOpsClass = Class.forName(AppOpsManager.class.getName());</span><br><span class="line">        Method checkOpNoThrowMethod = appOpsClass.getMethod(CHECK_OP_NO_THROW, Integer.TYPE, Integer.TYPE, String.class);</span><br><span class="line">        Field opPostNotificationValue = appOpsClass.getDeclaredField(OP_POST_NOTIFICATION);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> value = (Integer) opPostNotificationValue.get(Integer.class);</span><br><span class="line">        <span class="keyword">return</span> ((Integer) checkOpNoThrowMethod.invoke(mAppOps, value, uid, pkg) == AppOpsManager.MODE_ALLOWED);</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 设置消息通知</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> context</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">gotoSetNotification</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">    Intent intent = <span class="keyword">new</span> Intent();</span><br><span class="line">    <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= <span class="number">26</span>) &#123;</span><br><span class="line">        <span class="comment">// android 8.0引导</span></span><br><span class="line">        intent.setAction(<span class="string">"android.settings.APP_NOTIFICATION_SETTINGS"</span>);</span><br><span class="line">        intent.putExtra(<span class="string">"android.provider.extra.APP_PACKAGE"</span>, context.getPackageName());</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= <span class="number">21</span>) &#123;</span><br><span class="line">        <span class="comment">// android 5.0-7.0</span></span><br><span class="line">        intent.setAction(<span class="string">"android.settings.APP_NOTIFICATION_SETTINGS"</span>);</span><br><span class="line">        intent.putExtra(<span class="string">"app_package"</span>, context.getPackageName());</span><br><span class="line">        intent.putExtra(<span class="string">"app_uid"</span>, context.getApplicationInfo().uid);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 其他</span></span><br><span class="line">        intent.setAction(<span class="string">"android.settings.APPLICATION_DETAILS_SETTINGS"</span>);</span><br><span class="line">        intent.setData(Uri.fromParts(<span class="string">"package"</span>, context.getPackageName(), <span class="keyword">null</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);</span><br><span class="line">    context.startActivity(intent);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/7299f542.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </strong></p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/30a2bcae.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2112,6 +1931,191 @@ var _hmt = _hmt || [];
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/793c26e.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhangMiao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zm.blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/793c26e.html" itemprop="url">面向忙碌开发者的Android</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-21T14:32:57+08:00">
+                2018-08-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/开源库/" itemprop="url" rel="index">
+                    <span itemprop="name">开源库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/793c26e.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/793c26e.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/793c26e.html" class="leancloud_visitors" data-flag-title="面向忙碌开发者的Android">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><a href="https://link.jianshu.com?t=http://weekly.manong.io/bounce?url=https%3A%2F%2Ftutsplus.com%2Fcourse%2Fandroid-for-the-busy-developer%2F&aid=67&nid=5" target="_blank" rel="noopener">面向忙碌开发者的 Android 视频教程（Tuts+）</a></p>
+<p><a href="https://link.jianshu.com?t=http://weekly.manong.io/bounce?url=https%3A%2F%2Fgithub.com%2Ffig4ever%2Ffeeds%2Fblob%2Fmaster%2FThe%2520BIG%2520List%2520of%2520Android%2520Dev%2520Resources%2520%2520%2540sharif%27s%2520blog%2FThe%2520BIG%2520List%2520of%2520Android%2520Dev%2520Resources%2520%2520%2540sharif%27s%2520blog.md&aid=85&nid=6" target="_blank" rel="noopener">Android 开发资源列表（Sharif Ahmed）</a></p>
+<p><a href="https://link.jianshu.com?t=http://weekly.manong.io/bounce?url=http%3A%2F%2Fbigosaur.com%2Fblog%2F23days&aid=106&nid=7" target="_blank" rel="noopener">我如何在23天内开发了一款 Android 游戏？（Bigosaur）</a></p>
+<p><a href="https://link.jianshu.com?t=http://weekly.manong.io/bounce?url=http%3A%2F%2Fguides.thecodepath.com%2Fandroid&aid=134&nid=8" target="_blank" rel="noopener">Android 学习教程</a></p>
+<p><a href="https://link.jianshu.com?t=http://weekly.manong.io/bounce?url=https%3A%2F%2Fgithub.com%2FBearded-Hen%2FAndroid-Bootstrap&aid=170&nid=9" target="_blank" rel="noopener">Android Bootstrap</a></p>
+<p><a href="https://link.jianshu.com?t=http://weekly.manong.io/bounce?url=http%3A%2F%2Fvdisk.weibo.com%2Fs%2FG-kaugh6K5Wk&aid=181&nid=10" target="_blank" rel="noopener">[PDF] Android 性能小贴士（Romain Guy &amp; Chet Haase）</a></p>
+<p><a href="https://link.jianshu.com?t=http://weekly.manong.io/bounce?url=https%3A%2F%2Fspeakerdeck.com%2Fjakewharton%2Fandroid-apps-with-dagger&aid=206&nid=11" target="_blank" rel="noopener">[PDF] Android 应用中使用 Dagger（Jake Wharton）</a></p>
+<p><a href="https://link.jianshu.com?t=http://weekly.manong.io/bounce?url=http%3A%2F%2Fblog.venmo.com%2Fhf2t3h4x98p5e13z82pl8j66ngcmry%2Fperformance-tuning-on-android&aid=234&nid=12" target="_blank" rel="noopener">Android 应用性能优化</a></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/posts/793c26e.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -2164,7 +2168,7 @@ var _hmt = _hmt || [];
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">294</span>
+                  <span class="site-state-item-count">293</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
