@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Android知识点总结]]></title>
+    <url>%2Fposts%2F28ca84cb.html</url>
+    <content type="text"><![CDATA[Android进阶部分 Android 基础部分 Flutter部分 Java 部分 设计模式 数据结构/算法部分 给出一张完整的总结图 思维导图高清版地址：processon]]></content>
+      <categories>
+        <category>Android</category>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[android采用ChromeIntent方式实现从浏览器启动应用]]></title>
     <url>%2Fposts%2F8e25ebb8.html</url>
     <content type="text"><![CDATA[在很多应用中需要我们从浏览器中直接启动应用，而网上大多数采用的是scheme的方式，即在启动activity的mainfest文件中配置如下字段： 12345678&lt;activity android:name="com.example.MainActivity"&gt; &lt;intent-filter&gt; &lt;action android:name="android.intent.action.VIEW" /&gt; &lt;category android:name="android.intent.category.DEFAULT" /&gt; &lt;category android:name="android.intent.category.BROWSABLE" /&gt; &lt;data android:scheme="example" android:host="test" /&gt; &lt;/intent-filter&gt;&lt;/activity&gt; 然后在网页的连接设置为example://test/… 来启动应用，但是如果手机中没有应用，该url会跳转到一个错误的界面。 google官方在chrome中推出了一种Android Intents的方式来实现应用启动，通过在iframe中设置src为的方式，具体示例如下。 12345678intent:HOST/URI-path // Optional host#Intent;package=[string];action=[string];category=[string];component=[string]; scheme=[string];end; 我们定义一个a标签为 1&lt;pre name="code" class="html"&gt;&lt;pre name="code" class="html"&gt;&lt;a href="intent://zhangmiao/#Intent;scheme=myapp;package=com.what.ever.myapp;end"&gt;Do Whatever&lt;/a&gt; 然后在mainfest文件中定义要启动的activity 1234567891011&lt;activity android:name=".TestUrlScheme" &gt; &lt;intent-filter&gt; &lt;!-- 显示数据 --&gt; &lt;action android:name="android.intent.action.VIEW" /&gt; &lt;category android:name="android.intent.category.DEFAULT" /&gt; &lt;!-- 定义成浏览器类型，有URL需要处理时会过滤 --&gt; &lt;category android:name="android.intent.category.BROWSABLE" /&gt; &lt;!-- 打开以whatever协议的URL,这个自己随便定义。 --&gt; &lt;data android:scheme="myapp" android:host="zhangmiao" android:path="/" /&gt; &lt;/intent-filter&gt;&lt;/activity&gt; 然后在浏览器中点击a标签，就可以启动应用程序的对应activity了，如果手机中没有相应的应用，那么是否会跳转到错误页面呢，将a标签设置为 1&lt;a href="intent://whatever/#Intent;scheme=myapp;package=com.what.ever.myapp;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end"&gt;Do Whatever&lt;/a&gt; 这样如果没有对应应用，该链接就会跳转到S.browser_fallback_url指定的url上。 其中参数的类型如下 123456789String =&gt; 'S'Boolean =&gt;'B'Byte =&gt; 'b'Character =&gt; 'c'Double =&gt; 'd'Float =&gt; 'f'Integer =&gt; 'i'Long =&gt; 'l'Short =&gt; 's' 1intent://RequestType/?name=zhangmiao&amp;age=18#Intent;scheme=appname;package=com.example.appname;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end 然后在启动activity的onCreate函数中利用bundle接收参数就行了 12345678910111213Bundle parametros = getIntent().getExtras();if (extras != null)&#123; String name = extras.getString("name"); Integer age = extras.getInt("age"); if (name!=null &amp;&amp; age!=null) &#123; //do whatever you have to //... &#125;&#125;else&#123; //no extras, get over it!!&#125;]]></content>
