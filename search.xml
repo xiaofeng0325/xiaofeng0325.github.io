@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[程序猿]]></title>
+    <url>%2Fposts%2F8266392b.html</url>
+    <content type="text"><![CDATA[“先生不知何许人也，亦不详其姓字。时年二十有二，英俊朗逸，秀发蓬勃。始入IT大厂，朝九晚五，日食三餐。好读书，曰《X语言入门》、《X语言应用实践》、《X语言高阶编程》。 次年，二十有三，英俊尚可，然寡言少语，身影飄忽，秀发日疏。一人一烟一Computer，长坐不起，日复一日。所观者，《编程语言的科学与艺术》、《编程之美》、《编程之道》、《编程之禅》。 而今年约三十，不复俊逸。其目，炯炯然有所虑，其背，日益佝偻，其发，隐约可见地中海。常持杯，与沸水枸杞为伴，嗜书，然所读者与众不同，唤作《颈椎病康复指南》。 观其状，时人不解。或曰，必为程序猿也！”]]></content>
+      <categories>
+        <category>随笔记</category>
+      </categories>
+      <tags>
+        <tag>随笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Android知识点总结]]></title>
     <url>%2Fposts%2F28ca84cb.html</url>
     <content type="text"><![CDATA[Android进阶部分 Android 基础部分 Flutter部分 Java 部分 设计模式 数据结构/算法部分 给出一张完整的总结图 思维导图高清版地址：processon]]></content>
