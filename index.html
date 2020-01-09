@@ -307,6 +307,184 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/916b091e.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhangMiao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zm.blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/916b091e.html" itemprop="url">Android跳转到应用商店详情页面</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-09T15:08:58+08:00">
+                2020-01-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/Android-Tips/" itemprop="url" rel="index">
+                    <span itemprop="name">Android Tips</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/916b091e.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/916b091e.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/916b091e.html" class="leancloud_visitors" data-flag-title="Android跳转到应用商店详情页面">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AppMarketUtils</span> </span>&#123;</span><br><span class="line">   <span class="comment">//小米应用商店</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String PACKAGE_MI_MARKET = <span class="string">"com.xiaomi.market"</span>;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String MI_MARKET_PAGE = <span class="string">"com.xiaomi.market.ui.AppDetailActivity"</span>;</span><br><span class="line">   <span class="comment">//魅族应用商店</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String PACKAGE_MEIZU_MARKET = <span class="string">"com.meizu.mstore"</span>;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String MEIZU_MARKET_PAGE = <span class="string">"com.meizu.flyme.appcenter.activitys.AppMainActivity"</span>;</span><br><span class="line">   <span class="comment">//VIVO应用商店</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String PACKAGE_VIVO_MARKET = <span class="string">"com.bbk.appstore"</span>;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String VIVO_MARKET_PAGE = <span class="string">"com.bbk.appstore.ui.AppStoreTabActivity"</span>;</span><br><span class="line">   <span class="comment">//OPPO应用商店</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String PACKAGE_OPPO_MARKET = <span class="string">"com.oppo.market"</span>;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String OPPO_MARKET_PAGE = <span class="string">"a.a.a.aoz"</span>;</span><br><span class="line">   <span class="comment">//华为应用商店</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String PACKAGE_HUAWEI_MARKET = <span class="string">"com.huawei.appmarket"</span>;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String HUAWEI_MARKET_PAGE = <span class="string">"com.huawei.appmarket.service.externalapi.view.ThirdApiActivity"</span>;</span><br><span class="line">   <span class="comment">//ZTE应用商店</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String PACKAGE_ZTE_MARKET = <span class="string">"zte.com.market"</span>;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String ZTE_MARKET_PAGE = <span class="string">"zte.com.market.view.zte.drain.ZtDrainTrafficActivity"</span>;</span><br><span class="line">   <span class="comment">//360手机助手</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String PACKAGE_360_MARKET = <span class="string">"com.qihoo.appstore"</span>;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String PACKAGE_360_PAGE = <span class="string">"com.qihoo.appstore.distribute.SearchDistributionActivity"</span>;</span><br><span class="line">   <span class="comment">//酷市场 -- 酷安网</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String PACKAGE_COOL_MARKET = <span class="string">"com.coolapk.market"</span>;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String COOL_MARKET_PAGE = <span class="string">"com.coolapk.market.activity.AppViewActivity"</span>;</span><br><span class="line">   <span class="comment">//应用宝</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String PACKAGE_TENCENT_MARKET = <span class="string">"com.tencent.android.qqdownloader"</span>;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String TENCENT_MARKET_PAGE = <span class="string">"com.tencent.pangu.link.LinkProxyActivity"</span>;</span><br><span class="line">   <span class="comment">//PP助手</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String PACKAGE_ALI_MARKET = <span class="string">"com.pp.assistant"</span>;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String ALI_MARKET_PAGE = <span class="string">"com.pp.assistant.activity.MainActivity"</span>;</span><br><span class="line">   <span class="comment">//豌豆荚</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String PACKAGE_WANDOUJIA_MARKET = <span class="string">"com.wandoujia.phoenix2"</span>;</span><br><span class="line">   <span class="comment">// 低版本可能是 com.wandoujia.jupiter.activity.DetailActivity</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String WANDOUJIA_MARKET_PAGE = <span class="string">"com.pp.assistant.activity.PPMainActivity"</span>;</span><br><span class="line">   <span class="comment">//UCWEB</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String PACKAGE_UCWEB_MARKET = <span class="string">"com.UCMobile"</span>;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String UCWEB_MARKET_PAGE = <span class="string">"com.pp.assistant.activity.PPMainActivity"</span>;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 弹起评价弹窗</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">showDialog</span><span class="params">(<span class="keyword">final</span> Context context)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">new</span> IntentUtils.Builder(context)</span><br><span class="line">               .to(MarketAlertActivity.class)</span><br><span class="line">               .anim(R.anim.stay, R.anim.stay)</span><br><span class="line">               .build().start();</span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="comment">// 进入应用市场详情页</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">gotoMarket</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">       Intent intent = <span class="keyword">new</span> Intent(Intent.ACTION_VIEW);</span><br><span class="line">       intent.setData(Uri.parse(<span class="string">"market://details?id="</span> + AppUtils.getPackageName(context)));</span><br><span class="line">       String[] keys = getKeys(context);</span><br><span class="line">       <span class="keyword">if</span> (keys != <span class="keyword">null</span>) &#123;</span><br><span class="line">           intent.setClassName(keys[<span class="number">0</span>], keys[<span class="number">1</span>]);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//修复某些老手机会因为找不到任何市场而报错</span></span><br><span class="line">      <span class="keyword">if</span> (AppUtils.isIntentAvailable(context, intent)) &#123;</span><br><span class="line">           context.startActivity(intent);</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           ToastUitls.show(context, context.getString(R.string.no_market));</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">static</span> String[] getKeys(Context context) &#123;</span><br><span class="line">       String[] keys = <span class="keyword">new</span> String[<span class="number">2</span>];</span><br><span class="line">       <span class="keyword">if</span> (AppUtils.isPackageExist(context, PACKAGE_MI_MARKET)) &#123;</span><br><span class="line">           keys[<span class="number">0</span>] = PACKAGE_MI_MARKET;</span><br><span class="line">           keys[<span class="number">1</span>] = MI_MARKET_PAGE;</span><br><span class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (AppUtils.isPackageExist(context, PACKAGE_VIVO_MARKET)) &#123;</span><br><span class="line">           keys[<span class="number">0</span>] = PACKAGE_VIVO_MARKET;</span><br><span class="line">           keys[<span class="number">1</span>] = VIVO_MARKET_PAGE;</span><br><span class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (AppUtils.isPackageExist(context, PACKAGE_OPPO_MARKET)) &#123;</span><br><span class="line">           keys[<span class="number">0</span>] = PACKAGE_OPPO_MARKET;</span><br><span class="line">           keys[<span class="number">1</span>] = OPPO_MARKET_PAGE;</span><br><span class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (AppUtils.isPackageExist(context, PACKAGE_HUAWEI_MARKET)) &#123;</span><br><span class="line">           keys[<span class="number">0</span>] = PACKAGE_HUAWEI_MARKET;</span><br><span class="line">           keys[<span class="number">1</span>] = HUAWEI_MARKET_PAGE;</span><br><span class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (AppUtils.isPackageExist(context, PACKAGE_ZTE_MARKET)) &#123;</span><br><span class="line">           keys[<span class="number">0</span>] = PACKAGE_ZTE_MARKET;</span><br><span class="line">           keys[<span class="number">1</span>] = ZTE_MARKET_PAGE;</span><br><span class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (AppUtils.isPackageExist(context, PACKAGE_COOL_MARKET)) &#123;</span><br><span class="line">           keys[<span class="number">0</span>] = PACKAGE_COOL_MARKET;</span><br><span class="line">           keys[<span class="number">1</span>] = COOL_MARKET_PAGE;</span><br><span class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (AppUtils.isPackageExist(context, PACKAGE_360_MARKET)) &#123;</span><br><span class="line">           keys[<span class="number">0</span>] = PACKAGE_360_MARKET;</span><br><span class="line">           keys[<span class="number">1</span>] = PACKAGE_360_PAGE;</span><br><span class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (AppUtils.isPackageExist(context, PACKAGE_MEIZU_MARKET)) &#123;</span><br><span class="line">           keys[<span class="number">0</span>] = PACKAGE_MEIZU_MARKET;</span><br><span class="line">           keys[<span class="number">1</span>] = MEIZU_MARKET_PAGE;</span><br><span class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (AppUtils.isPackageExist(context, PACKAGE_TENCENT_MARKET)) &#123;</span><br><span class="line">           keys[<span class="number">0</span>] = PACKAGE_TENCENT_MARKET;</span><br><span class="line">           keys[<span class="number">1</span>] = TENCENT_MARKET_PAGE;</span><br><span class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (AppUtils.isPackageExist(context, PACKAGE_ALI_MARKET)) &#123;</span><br><span class="line">           keys[<span class="number">0</span>] = PACKAGE_ALI_MARKET;</span><br><span class="line">           keys[<span class="number">1</span>] = ALI_MARKET_PAGE;</span><br><span class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (AppUtils.isPackageExist(context, PACKAGE_WANDOUJIA_MARKET)) &#123;</span><br><span class="line">           keys[<span class="number">0</span>] = PACKAGE_WANDOUJIA_MARKET;</span><br><span class="line">           keys[<span class="number">1</span>] = WANDOUJIA_MARKET_PAGE;</span><br><span class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (AppUtils.isPackageExist(context, PACKAGE_UCWEB_MARKET)) &#123;</span><br><span class="line">           keys[<span class="number">0</span>] = PACKAGE_UCWEB_MARKET;</span><br><span class="line">           keys[<span class="number">1</span>] = UCWEB_MARKET_PAGE;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">if</span> (TextUtils.isEmpty(keys[<span class="number">0</span>])) &#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           <span class="keyword">return</span> keys;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/posts/916b091e.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/14fca390.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1927,173 +2105,6 @@ var _hmt = _hmt || [];
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/f66419fe.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ZhangMiao">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zm.blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/f66419fe.html" itemprop="url">高效能人士的七个习惯</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-18T13:19:27+08:00">
-                2019-10-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/f66419fe.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/f66419fe.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/posts/f66419fe.html" class="leancloud_visitors" data-flag-title="高效能人士的七个习惯">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/WechatIMG2009.jpeg" alt></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/f66419fe.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2146,7 +2157,7 @@ var _hmt = _hmt || [];
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">306</span>
+                  <span class="site-state-item-count">307</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2290,7 +2301,7 @@ var _hmt = _hmt || [];
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
