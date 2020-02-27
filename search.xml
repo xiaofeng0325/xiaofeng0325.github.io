@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[AndroidDebug调试]]></title>
+    <url>%2Fposts%2Fa9889f48.html</url>
+    <content type="text"><![CDATA[一、打上断点，启动debug模式首先在我们需要打断点的代码行数上稍微偏右，点击鼠标左键，如图： 点击小爬虫按钮，启动debug模式。 运行成功后如下。可以看到红色框内，从下往上的顺序运行方法，一直阻塞在我们打断点的方法里；绿色款内，则是展示目前阻塞方法内变量和参数的数值。 二、接下来，我们一起分解debug的每个按钮操作2.1、Step Over（F8） 这个按钮的意思：程序向下一步执行，但是要注意，这个按钮不会主动进入方法体内，而是会直接运行完整个方法后直接运行下一步。例如：我当前运行的debug，如果一直点击这个按钮的话，他会在onCreate()方法内，执行完add(),再执行完sub(),然后直接结束，并不会进add和sub方法内去打印。 2.2、Step Into（F7） 这个按钮的意思：程序向下一步执行，和Step Over的区别是如果该行有方法调用且为自定义方法，则运行进入自定义方法（不会进入官方类库的方法）。 例如：我当前运行的debug，如果你想进入到add()方法里，那么点击Step Into。假如我的add()方法里，还调用了其他的自定义方法，如果此时你都想进入各个方法查看则继续用Step Into，假如你只想停留在add()方法里，其他方法只需要得到个返回值的话，这个时候应该用Step Over; 2.3、Force Step Into 从字面意思上你也能看得出来：可以进入包括官方类库在内的任何方法。一般我认为这个比较适合研究源码。 2.4、Step out 假如此时调试在add()方法里，如果我们觉得add()方法没有问题，想跳出这个方法继续debug其他断点时，那么点击Step out，跳出该方法。 2.5、Run to Cursor 从字面意思上看，他是移动到下个断点的意思。经过测试如下: 1、假如在我们当前运行的debug，如果还在onCreate()方法内，当前断点在add()方法时，点击Run to Cursor，断点确实会移动到下个断点停留在sub()方法。 2、如果此时我们已经进入到add()方法体内，点击Run to Cursor,我们会看到，他只是运行完一次for循环后，继续堵塞。如下图： 所以我总结为，Run to Cursor是在当前方法体内，运行到下一个断点。（如果有误，请大佬及时纠正）； 那么此时，如果我们已经在add()方法内，就是想直接运行到下个断点sub()上，怎么操作呢？点击Resume Program 这个按钮不会管你在不在方法内，直接回到下一步断点上。 三、Debug进阶用法。3.1、Watches如果我们在debug的时候，可能会出现很多变量，而我们就想观察那么几个变量。我们可以把他加到watches里。比如我add()方法里的变量i， 方法1：在我们观察的Variables里，找到那个变量右键，选择Add to Watches 方法2：在我们的Watches界面，点击+号，在输入框内，输入i，进行搜索，也能添加到Watches，方便我们debug调试 3.2、Set Value比如在我们的add()方法里，有一个for循环，正常调试是每次都会从i=0的时候进行调试，如果我们想直接从i=5的时候进行调试，那么我们可以在Variables界面，找到那个变量值，右键选择Set Value后，输入我们5，就能跳过前几次循环。 3.3、查看所有断点开发中你打了很多断点忘记取消的情况下，你可以点击View Breakpoints查看所有断点 打开如下界面： 3.4、停止debug调试 3.5、已经运行的程序，避免重新运行程序的情况下，怎么添加debug调试。这里多说几句，因为是在已经运行的程序上，添加debug调试，那么比如进入一个页面，onCreate()方法里的代码，都已经全部执行完了，比如我们点击一个按钮，需要运行的方法，在这个方法里我们才能添加debug调试。比如首先是一个正常运行的程序，我们给点击事件里加断点。 然后，点击Attach Debugger to Android Process 弹出如下页面，点击OK就行了，点击按钮就能进行debug调试了]]></content>
+      <categories>
+        <category>Android</category>
+        <category>Android Tips</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Android Tips</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Android跳转到应用商店详情页面]]></title>
     <url>%2Fposts%2F916b091e.html</url>
     <content type="text"><![CDATA[Android应用开发过程中，可能会有需求，比如：推广时跳转到应用市场下载应用，跳转到应用市场给自己的应用打分，跳转到应用市场更新自己的应用。那如何跳转到应用市场呢？ 可能跳转的方法大家都是知道的，方法如下： 123456789public static void goToMarket(Context context, String packageName) &#123; Uri uri = Uri.parse("market://details?id=" + packageName); Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri); try &#123; context.startActivity(goToMarket); &#125; catch (ActivityNotFoundException e) &#123; e.printStackTrace(); &#125;&#125; 此方法支持应用宝、360手机助手、豌豆荚、小米商店等主流的应用市场，当手机上面装有多个应用市场时，则会弹出菜单让用户选择调转到哪个市场。那么，问题来了，如果这么简单就结束了，怎么还会有这篇文章呢？ 在红米Note2上测试时发现，调用此方法默认是直接调转到小米市场，那如果在小米手机上，想要跳转到应用宝或者其他的应用市场怎么办呢，方法自然是有的，如下： 12345678910public static void goToMarket(Context context, String packageName) &#123; Uri uri = Uri.parse("market://details?id=" + packageName); Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri); try &#123; goToMarket.setClassName("com.tencent.android.qqdownloader", "com.tencent.pangu.link.LinkProxyActivity"); context.startActivity(goToMarket); &#125; catch (ActivityNotFoundException e) &#123; e.printStackTrace(); &#125;&#125; 看起来好像和第一个方法没什么区别，是的，只需要给多调用goToMarket.setClassName()方法，设置指定的应用去处理这个Intent事件，这样就可以在小米手机上跳转到应用宝的应用详情页面，而且，上一个方法如果在手机上装有多个应用市场时，会弹出菜单让用户选择，如果已经确定好要跳转到哪个应用市场时，也可使用此方法，直接跳转，省去中间用户选择的环节。 但是上面方法的思路似乎并不能对所有的应用市场有效，哪天产品经理提出要跳转到三星的应用市场，毕竟三星手机在国内的占有率还是排前几位的，再使用上面的方法，发现懵逼了，三星市场竟然不支持这种方式，难怪三星手机在国内市场节节败退。不过再笔者的努力下终于找到了如下方法： 1234567891011public static void goToSamsungappsMarket(Context context, String packageName) &#123; Uri uri = Uri.parse("http://www.samsungapps.com/appquery/appDetail.as?appId=" + packageName); Intent goToMarket = new Intent(); goToMarket.setClassName("com.sec.android.app.samsungapps", "com.sec.android.app.samsungapps.Main"); goToMarket.setData(uri); try &#123; context.startActivity(goToMarket); &#125; catch (ActivityNotFoundException e) &#123; e.printStackTrace(); &#125;&#125; 不过，后来发现在乐视手机上面，乐视的应用市场也是不支持goToMarket()方法的，所以又专门调研了跳转乐视应用市场的方法，方法如下： 1234567void goToLeTVStoreDetail(Context context, String packageName) &#123; Intent intent = new Intent(); intent.setClassName("com.letv.app.appstore", "com.letv.app.appstore.appmodule.details.DetailsActivity"); intent.setAction("com.letv.app.appstore.appdetailactivity"); intent.putExtra("packageName", packageName); context.startActivity(intent); &#125; 以上方法，希望能帮助到有需要的人。 1234567891011121314151617181920212223242526272829303132333435363738394041424344/** * 跳转到谷歌应用市场 * * @param context * @param packageName */public static void goToGoogleMarket(Context context, String packageName) &#123; try &#123; Intent intent = new Intent(Intent.ACTION_VIEW); intent.setData(Uri.parse("market://details?id=" + packageName)); intent.setPackage("com.android.vending");//这里对应的是谷歌商店，跳转别的商店改成对应的即可 if (intent.resolveActivity(context.getPackageManager()) != null) &#123; context.startActivity(intent); &#125; else &#123;//没有应用市场，通过浏览器跳转到Google Play Intent intent2 = new Intent(Intent.ACTION_VIEW); intent2.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + packageName)); if (intent2.resolveActivity(context.getPackageManager()) != null) &#123; context.startActivity(intent2); &#125; else &#123; //没有Google Play 也没有浏览器 &#125; &#125; &#125; catch (Exception e) &#123; e.printStackTrace(); &#125;&#125;/** * 跳转到三星应用市场 * * @param context * @param packageName */public static void goToSamsungappsMarket(Context context, String packageName) &#123; try &#123; Uri uri = Uri.parse("http://www.samsungapps.com/appquery/appDetail.as?appId=" + packageName); Intent goToMarket = new Intent(); goToMarket.setClassName("com.sec.android.app.samsungapps", "com.sec.android.app.samsungapps.Main"); goToMarket.setData(uri); context.startActivity(goToMarket); &#125; catch (Exception e) &#123; e.printStackTrace(); &#125;&#125;]]></content>
@@ -2197,10 +2210,10 @@
       <tags>
         <tag>Android</tag>
         <tag>Android Tips</tag>
-        <tag>.so文件</tag>
         <tag>armeabi-v7a</tag>
         <tag>arm64-v8a</tag>
         <tag>abi兼容</tag>
+        <tag>.so文件</tag>
       </tags>
   </entry>
   <entry>
@@ -2214,9 +2227,9 @@
       <tags>
         <tag>Android</tag>
         <tag>Android Tips</tag>
+        <tag>.so文件</tag>
         <tag>ABI</tag>
         <tag>CPU</tag>
-        <tag>.so文件</tag>
       </tags>
   </entry>
   <entry>
@@ -2649,8 +2662,8 @@
         <category>Mac</category>
       </categories>
       <tags>
-        <tag>Mac</tag>
         <tag>博客</tag>
+        <tag>Mac</tag>
         <tag>终端</tag>
       </tags>
   </entry>
@@ -3329,8 +3342,8 @@
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>EventBus</tag>
         <tag>XBus</tag>
+        <tag>EventBus</tag>
       </tags>
   </entry>
   <entry>
