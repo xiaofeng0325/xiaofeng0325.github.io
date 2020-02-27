@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhangmiao.cc/"/>
-  <updated>2020-02-27T06:08:37.350Z</updated>
+  <updated>2020-02-27T06:15:27.278Z</updated>
   <id>https://zhangmiao.cc/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SourceTree</title>
+    <link href="https://zhangmiao.cc/posts/44ceee89.html"/>
+    <id>https://zhangmiao.cc/posts/44ceee89.html</id>
+    <published>2020-02-27T06:08:16.000Z</published>
+    <updated>2020-02-27T06:15:27.278Z</updated>
+    
+    <content type="html"><![CDATA[<p>在网络里面移除就行了· 再推就会要你重新输入了。<br>有点不人性化， mark 一下。</p><p>![image-20200227141022726](/Users/zhangmiao/Library/Application Support/typora-user-images/image-20200227141022726.png)</p><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在网络里面移除就行了· 再推就会要你重新输入了。&lt;br&gt;有点不人性化， mark 一下。&lt;/p&gt;
+&lt;p&gt;![image-20200227141022726](/Users/zhangmiao/Library/Application Support/typora-user-images/image-20200227141022726.png)&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
+    
+      <category term="Android Tips" scheme="https://zhangmiao.cc/categories/Android/Android-Tips/"/>
+    
+    
+      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
+    
+      <category term="Android Tips" scheme="https://zhangmiao.cc/tags/Android-Tips/"/>
+    
+  </entry>
   
   <entry>
     <title>一文读懂 Android Debug 调试</title>
@@ -676,35 +703,6 @@
       <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
     
       <category term="沉浸式状态栏" scheme="https://zhangmiao.cc/tags/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%8A%B6%E6%80%81%E6%A0%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android对于有时间戳和token验证的网络请求的处理</title>
-    <link href="https://zhangmiao.cc/posts/86cc3f20.html"/>
-    <id>https://zhangmiao.cc/posts/86cc3f20.html</id>
-    <published>2019-09-16T09:40:49.000Z</published>
-    <updated>2019-09-16T09:43:56.058Z</updated>
-    
-    <content type="html"><![CDATA[<p>有些项目为了提高安全性，设计接口时增加了时间戳和token效验，如下所示：</p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190916174259.png" alt></p><a id="more"></a><h2 id="时间戳"><a href="#时间戳" class="headerlink" title="时间戳"></a>时间戳</h2><p>上表中的参数时间戳必须与服务器当前时间对应，前后不能超过10秒，超过则请求失败：</p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190916174321.png" alt></p><p>你肯定想问，如果手机系统时间不正确，比服务器快了或慢了10秒以上，那不每次都会请求失败吗？别着急，这样的接口设计，肯定会有一个获取服务器时间戳的接口：</p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190916174309.png" alt></p><p>思路是这样的，每次APP启动的时候获取一次服务器时间戳，然后与手机本地时间相减，计算出差额，并保存；当其他的网络请求需要传入时间戳参数时，用保存的时间差额加上手机当前时间，就可以得到正确的时间戳了：</p><p>时间差 = 获取的服务器时间戳 - 手机当前时间</p><p>时间戳 = 手机当前时间 + 时间差</p><p>当然，现在的手机大部分都是联网获取时间，很少会出现比标准时间差10秒以上的情况，服务器的时间也是标准时间，因此，只传入手机的当前时间也能符合90%的情况。</p><p>那剩下的情况是什么呢？</p><p>​    1、网速慢的时候，请求时间和读取时间会比较长，很可能会超过10秒；</p><p>​    2、出国用户或国外用户，不在一个时区；</p><p>​    3、用户主动或被动调整了手机系统时间。</p><p>这些情况下，如果只传入手机的当前时间，是无法请求到正确的数据的，所以还是要计算时间差。</p><p>至于每次APP启动的时候获取一次服务器时间戳，这个时机对不对呢？</p><p>用户在使用App的过程中，很少会出现系统时间的调整，如果恰巧赶上，可以在接收到时间戳超期的错误码后，提示用户退出APP重新启动一次。当然也可以注册时间调整的广播接收者，接收到时间调整后，重新计算一次时间差。</p><p>至于网速慢的情况还是不能解决，加上提示用户重启APP和注册广播接收者这些不太优雅的操作，我们要寻找其他的思路。</p><p>怎么能彻底并且优雅的解决时间戳超期的问题呢？</p><p>其实我们不必每次APP启动都请求一次服务器时间戳，只有收到时间戳超期的错误之后，才有必要获取，此时计算出时间差，并保存，以后所有的请求都可以用这个时间差了，直到下一次再收到时间戳超期的错误，再获取一次即可。至于这个错误的请求，可以在计算出时间差之后，再重新请求一次。</p><p>跟着上述的思路，我们自然而然想到在请求回调基类里筛选这个时间戳超期错误，筛选出这个错误后，同步请求一次服务器时间戳，再进行一次之前的请求。想想就很困难，因为要保证在子线程里完成，还要记住之前的请求是什么，这条路走不通。</p><p>不卖关子了，okhttp的拦截器可以解决以上问题：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">Interceptor interceptor = <span class="keyword">new</span> Interceptor() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Response <span class="title">intercept</span><span class="params">(Chain chain)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        Request request = chain.request();</span><br><span class="line">        Response response= chain.proceed(request);</span><br><span class="line">    </span><br><span class="line">        ResponseBody body = response.body();</span><br><span class="line">    </span><br><span class="line">        BufferedSource source = body.source();</span><br><span class="line">        source.request(Long.MAX_VALUE);</span><br><span class="line">        Buffer buffer = source.buffer();</span><br><span class="line">    </span><br><span class="line">        Charset charset = Charset.forName(<span class="string">"UTF-8"</span>);</span><br><span class="line">        String json = buffer.clone().readString(charset);</span><br><span class="line">    </span><br><span class="line">        BaseBean baseBean = gson.fromJson(json, BaseBean.class);</span><br><span class="line">        String code = baseBean.getCode();</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">if</span> (code.equals(<span class="string">"0210"</span>)) &#123;<span class="comment">// 时间戳超期</span></span><br><span class="line">            <span class="comment">// 同步请求时间戳</span></span><br><span class="line">            Request timeRequest = <span class="keyword">new</span> Request.Builder()</span><br><span class="line">                    .url(<span class="string">"http://uc.hivoice.cn:80/timestamp.jsp"</span>)</span><br><span class="line">                    .build();</span><br><span class="line">            Response timeResponse = chain.proceed(timeRequest);</span><br><span class="line">            <span class="keyword">int</span> timeCode = timeResponse.code();</span><br><span class="line">            <span class="keyword">if</span> (timeCode == <span class="number">200</span>) &#123;</span><br><span class="line">                <span class="comment">// 计算时间差</span></span><br><span class="line">                String timestamp = timeResponse.body().string().trim();</span><br><span class="line">                <span class="keyword">long</span> dTime = System.currentTimeMillis() / <span class="number">1000</span> - Long.parseLong(timestamp);</span><br><span class="line">                SpUtil.setDTime(dTime);</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 构建新的请求</span></span><br><span class="line">                FormBody.Builder builder = <span class="keyword">new</span> FormBody.Builder();</span><br><span class="line">                FormBody formBody = (FormBody) request.body();</span><br><span class="line"></span><br><span class="line">                List&lt;String&gt; param = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; formBody.size(); i++) &#123;</span><br><span class="line">                    String name = formBody.encodedName(i);</span><br><span class="line">                    <span class="keyword">if</span> (name.equals(<span class="string">"timestamp"</span>)) &#123;</span><br><span class="line">                        builder.add(<span class="string">"timestamp"</span>, timestamp);</span><br><span class="line">                        param.add(timestamp);</span><br><span class="line">                    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!name.equals(<span class="string">"signature"</span>)) &#123;</span><br><span class="line">                        String value = formBody.encodedValue(i);</span><br><span class="line">                        param.add(value);</span><br><span class="line">                        builder.add(name, value);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                String signature = SignUtil.getSignature(param);</span><br><span class="line">                builder.add(<span class="string">"signature"</span>, signature);</span><br><span class="line"></span><br><span class="line">                Request newRequest = request.newBuilder().method(<span class="string">"POST"</span>, builder.build()).build();</span><br><span class="line">                response = chain.proceed(newRequest);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> response;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">OkHttpClient httpClient = <span class="keyword">new</span> OkHttpClient.Builder()</span><br><span class="line">        .addInterceptor(interceptor)</span><br><span class="line">        .build();</span><br></pre></td></tr></table></figure><p>上述是针对post请求，考虑到这类请求多少post请求就没有区分，实际项目中如果有get请求也会发生时间戳超时问题，必须要做区分。</p><h2 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h2><p>token也是这样，往往是APP启动的时候获取一次，保存下来，后面的请求传入这个参数即可。</p><p>但是有些情况下，会错过这个获取时机：</p><p>​    1、APP启动时手机没有联网，启动以后才联网；</p><p>​    2、用户启动APP以后一直没有退出，直到token过期。</p><p>对于第一种情况，有人说可以注册广播接收者，监测手机的网络状态，如果启动的时候没有网络则用户联网以后再获取token，这个思路是对的，但是有一种情况是监测不到网络变化的，即用户用安全管家之类的软件禁了APP的网络的情况。</p><p>当然，可以提示用户退出APP，重新进入。但是前面说过，这样做不太优雅，而且主流APP也没有发现过这种情况。</p><p>综上所述，token验证失败的处理也应该用okhttp的拦截器处理，思路和步骤与时间戳一致，不再重复。</p><h2 id="关于性能"><a href="#关于性能" class="headerlink" title="关于性能"></a>关于性能</h2><p>有人可能会担心性能问题，肯定会有影响，但是影响极其有限，因为官方出品的日志拦截器也是这么做的，看不出有什么影响。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;有些项目为了提高安全性，设计接口时增加了时间戳和token效验，如下所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190916174259.png&quot; alt&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
-    
-      <category term="Android Tips" scheme="https://zhangmiao.cc/categories/Android/Android-Tips/"/>
-    
-    
-      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
-    
-      <category term="时间戳超期" scheme="https://zhangmiao.cc/tags/%E6%97%B6%E9%97%B4%E6%88%B3%E8%B6%85%E6%9C%9F/"/>
-    
-      <category term="token效验失败" scheme="https://zhangmiao.cc/tags/token%E6%95%88%E9%AA%8C%E5%A4%B1%E8%B4%A5/"/>
     
   </entry>
   
