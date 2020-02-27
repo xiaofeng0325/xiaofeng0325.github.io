@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhangmiao.cc/"/>
-  <updated>2020-02-27T06:15:27.278Z</updated>
+  <updated>2020-02-27T06:16:40.856Z</updated>
   <id>https://zhangmiao.cc/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>SourceTree</title>
+    <title>SourceTree_push_remote:Invalid_username_or_password.</title>
     <link href="https://zhangmiao.cc/posts/44ceee89.html"/>
     <id>https://zhangmiao.cc/posts/44ceee89.html</id>
     <published>2020-02-27T06:08:16.000Z</published>
-    <updated>2020-02-27T06:15:27.278Z</updated>
+    <updated>2020-02-27T06:16:40.856Z</updated>
     
     <content type="html"><![CDATA[<p>在网络里面移除就行了· 再推就会要你重新输入了。<br>有点不人性化， mark 一下。</p><p>![image-20200227141022726](/Users/zhangmiao/Library/Application Support/typora-user-images/image-20200227141022726.png)</p><a id="more"></a>]]></content>
     
