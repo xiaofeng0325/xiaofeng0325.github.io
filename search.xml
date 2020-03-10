@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Flutter_BottomNavigationBar切换页面防止页面重绘]]></title>
+    <url>%2Fposts%2F88ab6b09.html</url>
+    <content type="text"><![CDATA[开始尝试用flutter开发，flutter版本1.0，写类似微信底部tab切换界面时发现界面老被重置，网上找了一圈说保持状态需要子页面mixin AutomaticKeepAliveClientMixin，然后重写 12@override bool get wantKeepAlive =&gt; true; 但发现需要配合其他组件，不是随便mixin就有用的，尝试几种写法总结BottomNavigationBar+List+AutomaticKeepAliveClientMixin是没有用的 首先尝试BottomNavigationBar+List实现的页面切换保持状态，一般刚开始学都会这么写： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950void main() =&gt; runApp(MyApp());class MyApp extends StatelessWidget &#123; @override Widget build(BuildContext context) =&gt; MaterialApp( title: "demo", home: MainPage(), );&#125;class MainPage extends StatefulWidget &#123; @override State&lt;StatefulWidget&gt; createState() =&gt; MainPageState();&#125;class MainPageState extends State&lt;MainPage&gt; &#123; int _currentIndex; List&lt;Widget&gt; _pages; @override void initState() &#123; super.initState(); _currentIndex = 0; _pages = List()..add(FirstPage("第一页"))..add(SecondPage("第二页"))..add(ThirdPage("第三页")); &#125; @override Widget build(BuildContext context) =&gt; Scaffold( body: _pages[_currentIndex], bottomNavigationBar: BottomNavigationBar( items: getItems(), currentIndex: _currentIndex, onTap: onTap, ), ); List&lt;BottomNavigationBarItem&gt; getItems() &#123; return [ BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")), BottomNavigationBarItem(icon: Icon(Icons.adb), title: Text("Adb")), BottomNavigationBarItem(icon: Icon(Icons.person), title: Text("Person")) ]; &#125; void onTap(int index) &#123; setState(() &#123; _currentIndex = index; &#125;); &#125;&#125; 子页面代码,三个界面一样： 1234567891011121314151617181920212223242526272829303132333435class FirstPage extends StatefulWidget &#123; String _title; FirstPage(this._title); @override State&lt;StatefulWidget&gt; createState() =&gt; FirstPageState();&#125;class FirstPageState extends State&lt;FirstPage&gt; with AutomaticKeepAliveClientMixin&#123; int _count = 0; @override bool get wantKeepAlive =&gt; true; @override Widget build(BuildContext context) &#123; return Scaffold( appBar: AppBar( title: Text(widget._title), ), body: Center( child: Text(widget._title + ":点一下加1：$_count"), ), floatingActionButton: FloatingActionButton( heroTag: widget._title, child: Icon(Icons.add), onPressed: add), ); &#125; void add() &#123; setState(() &#123; _count++; &#125;); &#125;&#125; 结果无法实现保持页面 2.第二种BottomNavigationBar+PageView，与android的ViewPager类似,界面小改动一下，添加一个按钮，点击跳转到一个新的界面 代码如下： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869void main() =&gt; runApp(MyApp());class MyApp extends StatelessWidget &#123; @override Widget build(BuildContext context) =&gt; MaterialApp( title: "demo", home: MainPage(), );&#125;class MainPage extends StatefulWidget &#123; @override State&lt;StatefulWidget&gt; createState() =&gt; MainPageState();&#125;class MainPageState extends State&lt;MainPage&gt; &#123; int _currentIndex; List&lt;Widget&gt; _pages; PageController _controller; @override void initState() &#123; super.initState(); _currentIndex = 0; _pages = List() ..add(FirstPage("第一页")) ..add(SecondPage("第二页")) ..add(ThirdPage("第三页")); _controller = PageController(initialPage: 0); &#125; @override void dispose() &#123; super.dispose(); _controller.dispose(); &#125; @override Widget build(BuildContext context) =&gt; Scaffold( body: PageView.builder( physics: NeverScrollableScrollPhysics(),//viewPage禁止左右滑动 onPageChanged: _pageChange, controller: _controller, itemCount: _pages.length, itemBuilder: (context, index) =&gt; _pages[index]), bottomNavigationBar: BottomNavigationBar( items: getItems(), currentIndex: _currentIndex, onTap: onTap, ), ); List&lt;BottomNavigationBarItem&gt; getItems() &#123; return [ BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")), BottomNavigationBarItem(icon: Icon(Icons.adb), title: Text("Adb")), BottomNavigationBarItem(icon: Icon(Icons.person), title: Text("Person")) ]; &#125; void onTap(int index) &#123; _controller.jumpToPage(index); &#125; void _pageChange(int index) &#123; if (index != _currentIndex) &#123; setState(() &#123; _currentIndex = index; &#125;); &#125; &#125;&#125; 子界面： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546class FirstPage extends StatefulWidget &#123; String _title; FirstPage(this._title); @override State&lt;StatefulWidget&gt; createState() =&gt; FirstPageState();&#125;class FirstPageState extends State&lt;FirstPage&gt; with AutomaticKeepAliveClientMixin &#123; int _count = 0; @override bool get wantKeepAlive =&gt; true; @override Widget build(BuildContext context) &#123; return Scaffold( appBar: AppBar( title: Text(widget._title), ), body: Center( child: Column( mainAxisAlignment: MainAxisAlignment.center, children: &lt;Widget&gt;[ Text(widget._title + ":点一下加1：$_count"), MaterialButton( child: Text("跳转"), color: Colors.pink, onPressed: () =&gt; Navigator.push(context, MaterialPageRoute(builder: (context) =&gt; NewPage()))) ], ), ), floatingActionButton: FloatingActionButton( heroTag: widget._title, child: Icon(Icons.add), onPressed: add), ); &#125; void add() &#123; setState(() &#123; _count++; &#125;); &#125;&#125; 需要跳转的一个界面： 1234567891011class NewPage extends StatelessWidget &#123; @override Widget build(BuildContext context) =&gt; Scaffold( appBar: AppBar( title: Text("新的界面"), ), body: Center( child: Text("我是一个新的界面"), ), );&#125; 猛一看效果出来了，左右切换界面没有问题，结果跳转新界面时又出现新问题，当第一页跳转新的界面再返回，再切第二、三页发现重置了，再切回第一页发现页被重置了。 发生这种情况需要在重写Widget build(BuildContext context)时调用下父类build(context)方法，局部代码： 12345678910111213141516171819202122232425@override Widget build(BuildContext context) &#123; //在这边加上super.build(context); super.build(context); return Scaffold( appBar: AppBar( title: Text(widget._title), ), body: Center( child: Column( mainAxisAlignment: MainAxisAlignment.center, children: &lt;Widget&gt;[ Text(widget._title + ":点一下加1：$_count"), MaterialButton( child: Text("跳转"), color: Colors.pink, onPressed: () =&gt; Navigator.push(context, MaterialPageRoute(builder: (context) =&gt; NewPage()))) ], ), ), floatingActionButton: FloatingActionButton( heroTag: widget._title, child: Icon(Icons.add), onPressed: add), ); &#125; 这种布局样式网上还有一种用的比较多的是BottomNavigationBar+IndexedStack( )，这边就不贴出来了 经过长期测试BottomNavigationBar+TabBarView方案行不通，后期会遇到其他问题，目前最好用还是viewpage和IndexedStack。 最后像这种多页面使用FloatingActionButton，用它跳转新界面是一定要设置heroTag，要不然跳转会黑屏报错]]></content>
+      <categories>
+        <category>Android</category>
+        <category>Flutter Tips</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Flutter Tips</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Flutter_tabBarView切换页面防止页面重绘]]></title>
     <url>%2Fposts%2Fdffd90b2.html</url>
     <content type="text"><![CDATA[1：被重绘的tab页要 混入AutomaticKeepAliveClientMixin12// with 混入class DevicePageLayout extends WidgetState&lt;DevicePage&gt; with AutomaticKeepAliveClientMixin ###2：实现wantKeepAlive方法 ，返回值改成true 123@override// TODO: implement wantKeepAlivebool get wantKeepAlive =&gt; true; ###3：build中加入 super.build(context); 1234@overrideWidget build(BuildContext context) &#123; super.build(context); // TODO: implement build]]></content>
@@ -3394,8 +3407,8 @@
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>EventBus</tag>
         <tag>XBus</tag>
+        <tag>EventBus</tag>
       </tags>
   </entry>
   <entry>
@@ -3736,8 +3749,8 @@
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>Android Tips</tag>
         <tag>AndroidStudio</tag>
+        <tag>Android Tips</tag>
       </tags>
   </entry>
   <entry>
