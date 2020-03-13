@@ -90,7 +90,7 @@
 <meta property="og:description" content="flutter_ScreenUtil flutter 屏幕适配方案，让你的UI在不同尺寸的屏幕上都能显示合理的布局! github: https://github.com/OpenFlutter/flutter_screenutil 使用方法:安装依赖：安装之前请查看最新版本 12345dependencies:  flutter:    sdk: flutter  # 添加依赖  flutter">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://img.shields.io/pub/v/flutter_screenutil.svg">
-<meta property="og:updated_time" content="2020-03-12T09:34:54.485Z">
+<meta property="og:updated_time" content="2020-03-13T08:27:19.249Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flutter屏幕适配方案">
 <meta name="twitter:description" content="flutter_ScreenUtil flutter 屏幕适配方案，让你的UI在不同尺寸的屏幕上都能显示合理的布局! github: https://github.com/OpenFlutter/flutter_screenutil 使用方法:安装依赖：安装之前请查看最新版本 12345dependencies:  flutter:    sdk: flutter  # 添加依赖  flutter">
@@ -467,6 +467,8 @@ var _hmt = _hmt || [];
 <td align="left">设置字体大小是否根据系统的“字体大小”辅助选项来进行缩放</td>
 </tr>
 </tbody></table>
+<a id="more"></a>
+
 <h3 id="初始化并设置适配尺寸及字体大小是否根据系统的“字体大小”辅助选项来进行缩放"><a href="#初始化并设置适配尺寸及字体大小是否根据系统的“字体大小”辅助选项来进行缩放" class="headerlink" title="初始化并设置适配尺寸及字体大小是否根据系统的“字体大小”辅助选项来进行缩放"></a>初始化并设置适配尺寸及字体大小是否根据系统的“字体大小”辅助选项来进行缩放</h3><p>在使用之前请设置好设计稿的宽度和高度，传入设计稿的宽度和高度(单位px)<br>一定在MaterialApp的home中的页面设置(即入口文件，只需设置一次),以保证在每次使用之前设置好了适配尺寸:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//填入设计稿中设备的屏幕尺寸</span><br><span class="line"></span><br><span class="line">//默认 width : 1080px , height:1920px , allowFontScaling:false</span><br><span class="line">ScreenUtil.init(context);</span><br><span class="line"></span><br><span class="line">//假如设计稿是按iPhone6的尺寸设计的(iPhone6 750*1334) </span><br><span class="line">ScreenUtil.init(context, width: 750, height: 1334);</span><br><span class="line"></span><br><span class="line">//设置字体大小根据系统的“字体大小”辅助选项来进行缩放,默认为false</span><br><span class="line">ScreenUtil.init(context, width: 750, height: 1334, allowFontScaling: true);</span><br></pre></td></tr></table></figure>
 
