@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="父子组件通信123456789101112131415161718192021222324252627282930class ParentState extends State&amp;lt;Parent&amp;gt; &amp;#123;  String data = &quot;父组件传递给子组件的值&quot;;  void onChanged(val)&amp;#123;    setState(() &amp;#123;      data =">
+<meta name="description" content="父-&amp;gt;子 定义父组件变量 data，在子组件Child的构造方法中把data值传进去，子组件接收data。 父-&amp;gt;子 子组件接收callBack并调用callBack将data值传过去。 父组件定义onChanged，绑定到callBack中，接收子组件传过来的data值。 123456789101112131415161718192021222324252627282930class">
 <meta name="keywords" content="Android,Flutter Tips">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Flutter父子组件通信">
 <meta property="og:url" content="https://zhangmiao.cc/posts/a44860d6.html">
 <meta property="og:site_name" content="zm.blog">
-<meta property="og:description" content="父子组件通信123456789101112131415161718192021222324252627282930class ParentState extends State&amp;lt;Parent&amp;gt; &amp;#123;  String data = &quot;父组件传递给子组件的值&quot;;  void onChanged(val)&amp;#123;    setState(() &amp;#123;      data =">
+<meta property="og:description" content="父-&amp;gt;子 定义父组件变量 data，在子组件Child的构造方法中把data值传进去，子组件接收data。 父-&amp;gt;子 子组件接收callBack并调用callBack将data值传过去。 父组件定义onChanged，绑定到callBack中，接收子组件传过来的data值。 123456789101112131415161718192021222324252627282930class">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-18T12:20:31.391Z">
+<meta property="og:updated_time" content="2020-03-18T12:23:14.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flutter父子组件通信">
-<meta name="twitter:description" content="父子组件通信123456789101112131415161718192021222324252627282930class ParentState extends State&amp;lt;Parent&amp;gt; &amp;#123;  String data = &quot;父组件传递给子组件的值&quot;;  void onChanged(val)&amp;#123;    setState(() &amp;#123;      data =">
+<meta name="twitter:description" content="父-&amp;gt;子 定义父组件变量 data，在子组件Child的构造方法中把data值传进去，子组件接收data。 父-&amp;gt;子 子组件接收callBack并调用callBack将data值传过去。 父组件定义onChanged，绑定到callBack中，接收子组件传过来的data值。 123456789101112131415161718192021222324252627282930class">
 
 
 
@@ -429,12 +429,12 @@ var _hmt = _hmt || [];
       
 
       
-        <h2 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ParentState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">Parent</span>&gt; </span>&#123;</span><br><span class="line">  String data = <span class="string">"父组件传递给子组件的值"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">onChanged</span><span class="params">(val)</span></span>&#123;</span><br><span class="line">    setState(() &#123;</span><br><span class="line">      data = val;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="function">Widget <span class="title">build</span><span class="params">(BuildContext context)</span> </span>&#123;</span><br><span class="line">    ......</span><br><span class="line">    <span class="comment">//省略非关键代码</span></span><br><span class="line">    <span class="keyword">new</span> Child(data: data,callBack: (value)=&gt;onChanged(value)),</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">child</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  childTwo(&#123;Key key, <span class="keyword">this</span>.data, <span class="keyword">this</span>.callBack&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line">  <span class="keyword">final</span> callBack;</span><br><span class="line">  String data;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">initState</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    data = widget.data;</span><br><span class="line">    <span class="keyword">super</span>.initState();</span><br><span class="line">  &#125;</span><br><span class="line">  ......</span><br><span class="line">  <span class="comment">//省略非关键代码</span></span><br><span class="line">  widget.callBack(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>父-&gt;子</strong></p>
+        <p><strong>父-&gt;子</strong></p>
 <p>定义父组件变量 data，在子组件Child的构造方法中把data值传进去，子组件接收data。</p>
 <p><strong>父-&gt;子</strong></p>
 <p>子组件接收callBack并调用callBack将data值传过去。<br> 父组件定义onChanged，绑定到callBack中，接收子组件传过来的data值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ParentState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">Parent</span>&gt; </span>&#123;</span><br><span class="line">  String data = <span class="string">"父组件传递给子组件的值"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">onChanged</span><span class="params">(val)</span></span>&#123;</span><br><span class="line">    setState(() &#123;</span><br><span class="line">      data = val;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="function">Widget <span class="title">build</span><span class="params">(BuildContext context)</span> </span>&#123;</span><br><span class="line">    ......</span><br><span class="line">    <span class="comment">//省略非关键代码</span></span><br><span class="line">    <span class="keyword">new</span> Child(data: data,callBack: (value)=&gt;onChanged(value)),</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">child</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  childTwo(&#123;Key key, <span class="keyword">this</span>.data, <span class="keyword">this</span>.callBack&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line">  <span class="keyword">final</span> callBack;</span><br><span class="line">  String data;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">initState</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    data = widget.data;</span><br><span class="line">    <span class="keyword">super</span>.initState();</span><br><span class="line">  &#125;</span><br><span class="line">  ......</span><br><span class="line">  <span class="comment">//省略非关键代码</span></span><br><span class="line">  widget.callBack(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
       
     </div>
@@ -584,17 +584,8 @@ var _hmt = _hmt || [];
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -741,22 +732,6 @@ var _hmt = _hmt || [];
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#父子组件通信"><span class="nav-number">1.</span> <span class="nav-text">父子组件通信</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

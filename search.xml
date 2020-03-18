@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Flutter父子组件通信]]></title>
     <url>%2Fposts%2Fa44860d6.html</url>
-    <content type="text"><![CDATA[父子组件通信123456789101112131415161718192021222324252627282930class ParentState extends State&lt;Parent&gt; &#123; String data = "父组件传递给子组件的值"; void onChanged(val)&#123; setState(() &#123; data = val; &#125;); &#125; @override Widget build(BuildContext context) &#123; ...... //省略非关键代码 new Child(data: data,callBack: (value)=&gt;onChanged(value)), &#125;&#125;class child extends StatefulWidget &#123; childTwo(&#123;Key key, this.data, this.callBack&#125;) : super(key: key); final callBack; String data; @override void initState() &#123; data = widget.data; super.initState(); &#125; ...... //省略非关键代码 widget.callBack(data);&#125; 父-&gt;子 定义父组件变量 data，在子组件Child的构造方法中把data值传进去，子组件接收data。 父-&gt;子 子组件接收callBack并调用callBack将data值传过去。 父组件定义onChanged，绑定到callBack中，接收子组件传过来的data值。]]></content>
+    <content type="text"><![CDATA[父-&gt;子 定义父组件变量 data，在子组件Child的构造方法中把data值传进去，子组件接收data。 父-&gt;子 子组件接收callBack并调用callBack将data值传过去。 父组件定义onChanged，绑定到callBack中，接收子组件传过来的data值。 123456789101112131415161718192021222324252627282930class ParentState extends State&lt;Parent&gt; &#123; String data = "父组件传递给子组件的值"; void onChanged(val)&#123; setState(() &#123; data = val; &#125;); &#125; @override Widget build(BuildContext context) &#123; ...... //省略非关键代码 new Child(data: data,callBack: (value)=&gt;onChanged(value)), &#125;&#125;class child extends StatefulWidget &#123; childTwo(&#123;Key key, this.data, this.callBack&#125;) : super(key: key); final callBack; String data; @override void initState() &#123; data = widget.data; super.initState(); &#125; ...... //省略非关键代码 widget.callBack(data);&#125;]]></content>
       <categories>
         <category>Android</category>
         <category>Flutter Tips</category>
@@ -2353,10 +2353,10 @@
       <tags>
         <tag>Android</tag>
         <tag>Android Tips</tag>
+        <tag>.so文件</tag>
         <tag>armeabi-v7a</tag>
         <tag>arm64-v8a</tag>
         <tag>abi兼容</tag>
-        <tag>.so文件</tag>
       </tags>
   </entry>
   <entry>
@@ -2370,9 +2370,9 @@
       <tags>
         <tag>Android</tag>
         <tag>Android Tips</tag>
-        <tag>.so文件</tag>
         <tag>ABI</tag>
         <tag>CPU</tag>
+        <tag>.so文件</tag>
       </tags>
   </entry>
   <entry>
@@ -2805,8 +2805,8 @@
         <category>Mac</category>
       </categories>
       <tags>
-        <tag>博客</tag>
         <tag>Mac</tag>
+        <tag>博客</tag>
         <tag>终端</tag>
       </tags>
   </entry>
