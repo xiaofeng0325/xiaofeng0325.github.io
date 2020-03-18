@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Android,Android Tips,">
+  <meta name="keywords" content="Android,Flutter Tips,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="很经常当我们动态创建某些View时，需要通过获取他们的width和height来确定别的view的布局，但是在onCreate()获取view的width和height会得到0.view.getWidth()和view.getHeight()为0的根本原因是控件还没有完成绘制，你必须等待系统将绘制完View时，才能获得。这种情况当你需要使用动态布局（使用wrap_content或match_pa">
-<meta name="keywords" content="Android,Android Tips">
+<meta name="description" content="父子组件通信123456789101112131415161718192021222324252627282930class ParentState extends State&amp;lt;Parent&amp;gt; &amp;#123;  String data = &quot;父组件传递给子组件的值&quot;;  void onChanged(val)&amp;#123;    setState(() &amp;#123;      data =">
+<meta name="keywords" content="Android,Flutter Tips">
 <meta property="og:type" content="article">
-<meta property="og:title" content="View获取width和height的四种方法">
-<meta property="og:url" content="https://zhangmiao.cc/posts/dd1673d3.html">
+<meta property="og:title" content="Flutter父子组件通信">
+<meta property="og:url" content="https://zhangmiao.cc/posts/a44860d6.html">
 <meta property="og:site_name" content="zm.blog">
-<meta property="og:description" content="很经常当我们动态创建某些View时，需要通过获取他们的width和height来确定别的view的布局，但是在onCreate()获取view的width和height会得到0.view.getWidth()和view.getHeight()为0的根本原因是控件还没有完成绘制，你必须等待系统将绘制完View时，才能获得。这种情况当你需要使用动态布局（使用wrap_content或match_pa">
+<meta property="og:description" content="父子组件通信123456789101112131415161718192021222324252627282930class ParentState extends State&amp;lt;Parent&amp;gt; &amp;#123;  String data = &quot;父组件传递给子组件的值&quot;;  void onChanged(val)&amp;#123;    setState(() &amp;#123;      data =">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-16T07:44:23.980Z">
+<meta property="og:updated_time" content="2020-03-18T12:20:31.391Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="View获取width和height的四种方法">
-<meta name="twitter:description" content="很经常当我们动态创建某些View时，需要通过获取他们的width和height来确定别的view的布局，但是在onCreate()获取view的width和height会得到0.view.getWidth()和view.getHeight()为0的根本原因是控件还没有完成绘制，你必须等待系统将绘制完View时，才能获得。这种情况当你需要使用动态布局（使用wrap_content或match_pa">
+<meta name="twitter:title" content="Flutter父子组件通信">
+<meta name="twitter:description" content="父子组件通信123456789101112131415161718192021222324252627282930class ParentState extends State&amp;lt;Parent&amp;gt; &amp;#123;  String data = &quot;父组件传递给子组件的值&quot;;  void onChanged(val)&amp;#123;    setState(() &amp;#123;      data =">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://zhangmiao.cc/posts/dd1673d3.html">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/a44860d6.html">
 
 
 
 
 
-  <title>View获取width和height的四种方法 | zm.blog</title>
+  <title>Flutter父子组件通信 | zm.blog</title>
   
 
 
@@ -308,7 +308,7 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/dd1673d3.html">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/a44860d6.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -325,7 +325,7 @@ var _hmt = _hmt || [];
 
         
         
-          <h1 class="post-title" itemprop="name headline">View获取width和height的四种方法</h1>
+          <h1 class="post-title" itemprop="name headline">Flutter父子组件通信</h1>
         
 
         <div class="post-meta">
@@ -337,8 +337,8 @@ var _hmt = _hmt || [];
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-21T16:55:12+08:00">
-                2018-12-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-18T20:19:53+08:00">
+                2020-03-18
               </time>
             
 
@@ -371,8 +371,8 @@ var _hmt = _hmt || [];
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/Android-Tips/" itemprop="url" rel="index">
-                    <span itemprop="name">Android Tips</span>
+                  <a href="/categories/Android/Flutter-Tips/" itemprop="url" rel="index">
+                    <span itemprop="name">Flutter Tips</span>
                   </a>
                 </span>
 
@@ -389,8 +389,8 @@ var _hmt = _hmt || [];
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/dd1673d3.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/dd1673d3.html" itemprop="commentCount"></span>
+                <a href="/posts/a44860d6.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/a44860d6.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -398,7 +398,7 @@ var _hmt = _hmt || [];
 
           
           
-             <span id="/posts/dd1673d3.html" class="leancloud_visitors" data-flag-title="View获取width和height的四种方法">
+             <span id="/posts/a44860d6.html" class="leancloud_visitors" data-flag-title="Flutter父子组件通信">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -429,42 +429,13 @@ var _hmt = _hmt || [];
       
 
       
-        <blockquote>
-<p>很经常当我们动态创建某些View时，需要通过获取他们的width和height来确定别的view的布局，但是在onCreate()获取view的width和height会得到0.view.getWidth()和view.getHeight()为0的根本原因是控件还没有完成绘制，你必须等待系统将绘制完View时，才能获得。这种情况当你需要使用动态布局（使用wrap_content或match_parent）就会出现。一般来讲在Activity.onCreate(…)、onResume()方法中都没有办法获取到View的实际宽高。所以，我们必须用一种变通的方法，等到View绘制完成后去获取width和Height。下面有一些可行的解决方案。</p>
-</blockquote>
-<h2 id="1、监听Draw-Layout事件：ViewTreeObserver"><a href="#1、监听Draw-Layout事件：ViewTreeObserver" class="headerlink" title="1、监听Draw/Layout事件：ViewTreeObserver"></a>1、监听Draw/Layout事件：ViewTreeObserver</h2><p>ViewTreeObserver监听很多不同的界面绘制事件。一般来说<a href="http://developer.android.com/reference/android/view/ViewTreeObserver.OnGlobalLayoutListener.html" target="_blank" rel="noopener">OnGlobalLayoutListener</a>就是可以让我们获得到view的width和height的地方.下面onGlobalLayout内的代码会在View完成Layout过程后调用。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">view.getViewTreeObserver().addOnGlobalLayoutListener(<span class="keyword">new</span> ViewTreeObserver.OnGlobalLayoutListener() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onGlobalLayout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            mScrollView.post(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                    view.getHeight(); <span class="comment">//height is ready</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+        <h2 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ParentState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">Parent</span>&gt; </span>&#123;</span><br><span class="line">  String data = <span class="string">"父组件传递给子组件的值"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">onChanged</span><span class="params">(val)</span></span>&#123;</span><br><span class="line">    setState(() &#123;</span><br><span class="line">      data = val;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="function">Widget <span class="title">build</span><span class="params">(BuildContext context)</span> </span>&#123;</span><br><span class="line">    ......</span><br><span class="line">    <span class="comment">//省略非关键代码</span></span><br><span class="line">    <span class="keyword">new</span> Child(data: data,callBack: (value)=&gt;onChanged(value)),</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">child</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  childTwo(&#123;Key key, <span class="keyword">this</span>.data, <span class="keyword">this</span>.callBack&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line">  <span class="keyword">final</span> callBack;</span><br><span class="line">  String data;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">initState</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    data = widget.data;</span><br><span class="line">    <span class="keyword">super</span>.initState();</span><br><span class="line">  &#125;</span><br><span class="line">  ......</span><br><span class="line">  <span class="comment">//省略非关键代码</span></span><br><span class="line">  widget.callBack(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>但是要注意这个方法在每次有些view的Layout发生变化的时候被调用（比如某个View被设置为Invisible）,所以在得到你想要的宽高后，记得移除onGlobleLayoutListener：</p>
+<p><strong>父-&gt;子</strong></p>
+<p>定义父组件变量 data，在子组件Child的构造方法中把data值传进去，子组件接收data。</p>
+<p><strong>父-&gt;子</strong></p>
+<p>子组件接收callBack并调用callBack将data值传过去。<br> 父组件定义onChanged，绑定到callBack中，接收子组件传过来的data值。</p>
 <a id="more"></a>
-
-<blockquote>
-<p>在 SDK Lvl &lt; 16时使用<br>public void removeGlobalOnLayoutListener (ViewTreeObserver.OnGlobalLayoutListener victim)</p>
-<p>在 SDK Lvl &gt;= 16时使用<br>public void removeOnGlobalLayoutListener (ViewTreeObserver.OnGlobalLayoutListener victim)</p>
-</blockquote>
-<!--more-->
-
-<h2 id="2、将一个runnable添加到Layout队列中：View-post"><a href="#2、将一个runnable添加到Layout队列中：View-post" class="headerlink" title="2、将一个runnable添加到Layout队列中：View.post()"></a>2、将一个runnable添加到Layout队列中：View.post()</h2><p>这个解决方案是我最喜欢的，但是几乎没人知道有这个方法。简单地说，只要用View.post()一个runnable就可以了。runnable对象中的方法会在View的measure、layout等事件后触发，具体的参考<a href="http://stackoverflow.com/users/298575/romain-guy" target="_blank" rel="noopener">Romain Guy</a>：</p>
-<p>UI事件队列会按顺序处理事件。在setContentView()被调用后，事件队列中会包含一个要求重新layout的message，所以任何你post到队列中的东西都会在Layout发生变化后执行。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> View view=<span class="comment">//smth;</span></span><br><span class="line">...</span><br><span class="line">view.post(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                view.getHeight(); <span class="comment">//height is ready</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
-
-<p>这个方法比ViewTreeObserver好：<br>1、你的代码只会执行一次，而且你不用在在每次执行后将Observer禁用，省心多了。<br>2、语法很简单参考：<br><a href="http://stackoverflow.com/a/3602144/774398" target="_blank" rel="noopener">http://stackoverflow.com/a/3602144/774398</a><br><a href="http://stackoverflow.com/a/3948036/774398" target="_blank" rel="noopener">http://stackoverflow.com/a/3948036/774398</a></p>
-<h2 id="3、重写View的onLayout方法"><a href="#3、重写View的onLayout方法" class="headerlink" title="3、重写View的onLayout方法"></a>3、重写View的onLayout方法</h2><p>这个方法只在某些场景中实用，比如当你所要执行的东西应该作为他的内在逻辑被内聚、模块化在view中，否者这个解决方案就显得十分冗长和笨重。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">view = <span class="keyword">new</span> View(<span class="keyword">this</span>) &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onLayout</span><span class="params">(<span class="keyword">boolean</span> changed, <span class="keyword">int</span> l, <span class="keyword">int</span> t, <span class="keyword">int</span> r, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onLayout(changed, l, t, r, b);</span><br><span class="line">        view.getHeight(); <span class="comment">//height is ready</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>需要注意的是onLayout方法会调用很多次，所以要考虑好在这个方法中要做什么，或者在第一次执行后禁用掉你的代码。</p>
-<h2 id="4、获取固定宽高"><a href="#4、获取固定宽高" class="headerlink" title="4、获取固定宽高"></a>4、获取固定宽高</h2><p>如果你要获取的view的width和height是固定的，那么你可以直接使用：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">View.getMeasureWidth()</span><br><span class="line">View.getMeasureHeight()</span><br></pre></td></tr></table></figure>
-
-<p>但是要注意，这两个方法所获取的width和height可能跟实际draw后的不一样。<a href="http://developer.android.com/guide/topics/ui/declaring-layout.html#SizePaddingMargins" target="_blank" rel="noopener">官方文档解释了不同的原因</a>：</p>
-<p>View的大小由width和height决定。一个View实际上同时有两种width和height值。</p>
-<blockquote>
-<p>第一种是measure width和measure height。他们定义了view想要在父View中占用多少width和height（详情见Layout）。measured height和width可以通过getMeasuredWidth() 和 getMeasuredHeight()获得。</p>
-<p>第二种是width和height，有时候也叫做drawing width和drawing height。这些值定义了view在屏幕上绘制和Layout完成后的实际大小。这些值有可能跟measure width和height不同。width和height可以通过getWidth()和getHeight获得。</p>
-</blockquote>
-<p><strong>参考链接</strong></p>
-<p><a href="https://stackoverflow.com/questions/3591784/getwidth-and-getheight-of-view-returns-0/24035591#24035591" target="_blank" rel="noopener">https://stackoverflow.com/questions/3591784/getwidth-and-getheight-of-view-returns-0/24035591#24035591</a></p>
-
       
     </div>
     
@@ -513,7 +484,7 @@ var _hmt = _hmt || [];
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://zhangmiao.cc/posts/dd1673d3.html" title="View获取width和height的四种方法">https://zhangmiao.cc/posts/dd1673d3.html</a>
+    <a href="https://zhangmiao.cc/posts/a44860d6.html" title="Flutter父子组件通信">https://zhangmiao.cc/posts/a44860d6.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -530,7 +501,7 @@ var _hmt = _hmt || [];
           
             <a href="/tags/Android/" rel="tag"># Android</a>
           
-            <a href="/tags/Android-Tips/" rel="tag"># Android Tips</a>
+            <a href="/tags/Flutter-Tips/" rel="tag"># Flutter Tips</a>
           
         </div>
       
@@ -543,8 +514,8 @@ var _hmt = _hmt || [];
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/9e398b2.html" rel="next" title="SpannableString之富文本显示效果">
-                <i class="fa fa-chevron-left"></i> SpannableString之富文本显示效果
+              <a href="/posts/2f3abe95.html" rel="next" title="Flutter自定义轮播图Banner">
+                <i class="fa fa-chevron-left"></i> Flutter自定义轮播图Banner
               </a>
             
           </div>
@@ -552,10 +523,6 @@ var _hmt = _hmt || [];
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/ced0f833.html" rel="prev" title="Android基础控件ViewFlipper的使用，垂直滚动广告条">
-                Android基础控件ViewFlipper的使用，垂直滚动广告条 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -784,7 +751,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、监听Draw-Layout事件：ViewTreeObserver"><span class="nav-number">1.</span> <span class="nav-text">1、监听Draw/Layout事件：ViewTreeObserver</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、将一个runnable添加到Layout队列中：View-post"><span class="nav-number">2.</span> <span class="nav-text">2、将一个runnable添加到Layout队列中：View.post()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、重写View的onLayout方法"><span class="nav-number">3.</span> <span class="nav-text">3、重写View的onLayout方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、获取固定宽高"><span class="nav-number">4.</span> <span class="nav-text">4、获取固定宽高</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#父子组件通信"><span class="nav-number">1.</span> <span class="nav-text">父子组件通信</span></a></li></ol></div>
             
 
           </div>
@@ -983,9 +950,9 @@ var _hmt = _hmt || [];
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://zhangmiao.cc/posts/dd1673d3.html';
-          this.page.identifier = 'posts/dd1673d3.html';
-          this.page.title = 'View获取width和height的四种方法';
+          this.page.url = 'https://zhangmiao.cc/posts/a44860d6.html';
+          this.page.identifier = 'posts/a44860d6.html';
+          this.page.title = 'Flutter父子组件通信';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://zhangmiao.disqus.com/embed.js';
