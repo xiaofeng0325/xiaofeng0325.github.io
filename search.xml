@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[flutter国际化本地化]]></title>
+    <url>%2Fposts%2Fd1969579.html</url>
+    <content type="text"><![CDATA[源码地址 安装，配置和使用安装将此添加到包的pubspec.yaml文件中： 12dependencies: flutter_translate: &lt;latest version&gt; 从命令行（或从您的编辑器）安装软件包： 1flutter pub get 组态导入flutter_translate： 1导入 &apos;package：flutter_translate / flutter_translate.dart&apos; ; 将json本地化文件放置在项目中您选择的文件夹中。 默认情况下，flutter_translate将assets/i18n在项目根目录下的目录中搜索本地化文件。 在中声明您的资产本地化目录 pubspec.yaml 123flutter: assets: - assets/i18n 在主函数中，创建本地化委托并启动应用，然后将其与LocalizedApp包装在一起 12345678void main() async&#123; var delegate = await LocalizationDelegate.create( fallbackLocale: &apos;en_US&apos;, supportedLocales: [&apos;en_US&apos;, &apos;es&apos;, &apos;fa&apos;]); runApp(LocalizedApp(delegate, MyApp()));&#125; 如果本地化文件的资产目录与默认目录（assets/i18n）不同，则需要指定它： 1234var delegate = await LocalizationDelegate.create( ... basePath: &apos;assets/i18n/&apos; ... 示例MyApp： 123456789101112131415161718192021222324 class MyApp extends StatelessWidget &#123; @override Widget build(BuildContext context) &#123; var localizationDelegate = LocalizedApp.of(context).delegate; return LocalizationProvider( state: LocalizationProvider.of(context).state, child: MaterialApp( title: 'Flutter Translate Demo', localizationsDelegates: [ GlobalMaterialLocalizations.delegate, GlobalWidgetsLocalizations.delegate, localizationDelegate ], supportedLocales: localizationDelegate.supportedLocales, locale: localizationDelegate.currentLocale, theme: ThemeData(primarySwatch: Colors.blue), home: MyHomePage(), ), ); &#125;&#125; 用法翻译一个字符串： 1translate(&apos;your.localization.key&apos;); 1translate(&apos;your.localization.key&apos;, args: &#123;&apos;argName1&apos;: argValue1, &apos;argName2&apos;: argValue2&#125;); 进行多元翻译： 1translatePlural(&apos;plural.demo&apos;, yourNumericValue); JSON： 1234567"plural": &#123; "demo": &#123; "0": "Please start pushing the 'plus' button.", "1": "You have pushed the button one time.", "else": "You have pushed the button &#123;&#123;value&#125;&#125; times." &#125;&#125; 更改语言： 12345678@overrideWidget build(BuildContext context) &#123;... ... changeLocale(context, 'en_US'); ......&#125; 自动保存和还原所选的语言环境Flutter Translate可以自动保存选定的语言环境，并在应用程序重新启动后将其还原。 这可以通过在委托创建期间传递ITranslatePreferences的实现来完成： 1234var delegate = await LocalizationDelegate.create( ... preferences: TranslatePreferences() ... 使用shared_preferences包的示例实现： 12345678910111213141516171819202122232425262728import &apos;dart:ui&apos;;import &apos;package:flutter_translate/flutter_translate.dart&apos;;import &apos;package:shared_preferences/shared_preferences.dart&apos;;class TranslatePreferences implements ITranslatePreferences&#123; static const String _selectedLocaleKey = &apos;selected_locale&apos;; @override Future&lt;Locale&gt; getPreferredLocale() async &#123; final preferences = await SharedPreferences.getInstance(); if(!preferences.containsKey(_selectedLocaleKey)) return null; var locale = preferences.getString(_selectedLocaleKey); return localeFromString(locale); &#125; @override Future savePreferredLocale(Locale locale) async &#123; final preferences = await SharedPreferences.getInstance(); await preferences.setString(_selectedLocaleKey, localeToString(locale)); &#125;&#125; 并且不要忘记在pubspec.yaml中引用shared_preferences包 12dependencies: shared_preferences: &lt;latest version&gt; #####]]></content>
+      <categories>
+        <category>Android</category>
+        <category>Flutter Tips</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Flutter Tips</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Flutter父子组件通信]]></title>
     <url>%2Fposts%2Fa44860d6.html</url>
     <content type="text"><![CDATA[父-&gt;子 定义父组件变量 data，在子组件Child的构造方法中把data值传进去，子组件接收data。 父-&gt;子 子组件接收callBack并调用callBack将data值传过去。 父组件定义onChanged，绑定到callBack中，接收子组件传过来的data值。 123456789101112131415161718192021222324252627282930class ParentState extends State&lt;Parent&gt; &#123; String data = "父组件传递给子组件的值"; void onChanged(val)&#123; setState(() &#123; data = val; &#125;); &#125; @override Widget build(BuildContext context) &#123; ...... //省略非关键代码 new Child(data: data,callBack: (value)=&gt;onChanged(value)), &#125;&#125;class child extends StatefulWidget &#123; childTwo(&#123;Key key, this.data, this.callBack&#125;) : super(key: key); final callBack; String data; @override void initState() &#123; data = widget.data; super.initState(); &#125; ...... //省略非关键代码 widget.callBack(data);&#125;]]></content>
@@ -2366,10 +2379,10 @@
       <tags>
         <tag>Android</tag>
         <tag>Android Tips</tag>
-        <tag>.so文件</tag>
         <tag>armeabi-v7a</tag>
         <tag>arm64-v8a</tag>
         <tag>abi兼容</tag>
+        <tag>.so文件</tag>
       </tags>
   </entry>
   <entry>
@@ -2383,9 +2396,9 @@
       <tags>
         <tag>Android</tag>
         <tag>Android Tips</tag>
+        <tag>.so文件</tag>
         <tag>ABI</tag>
         <tag>CPU</tag>
-        <tag>.so文件</tag>
       </tags>
   </entry>
   <entry>
