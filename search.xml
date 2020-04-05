@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[flutter抓包]]></title>
+    <url>%2Fposts%2F832de89a.html</url>
+    <content type="text"><![CDATA[flutter抓包查看dio文档发现需要设置代理 12345678(dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate = (HttpClient client) &#123; client.findProxy = (uri) &#123; //proxy all request to localhost:8888 return "PROXY 192.168.8.84:8888"; &#125;; // 你也可以自己创建一个新的HttpClient实例返回。 // return new HttpClient(SecurityContext); &#125;;]]></content>
+      <categories>
+        <category>Android</category>
+        <category>Flutter Tips</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Flutter Tips</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Flutter常见第三方插件]]></title>
     <url>%2Fposts%2F9c7b53c1.html</url>
     <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124# 网络请求框架dio: ^3.0.7# spshared_preferences: ^0.5.6# 微信sdkfluwx: ^1.2.1+1# swiper 轮播插件flutter_swiper: ^1.1.6# 个推 sdkgetuiflut: ^0.1.6# Flutter 调试工具flutter_flipperkit: ^0.0.21# flipper sqflite调试flipperkit_sqflite_driver: 0.0.2# json生成json_annotation: ^2.2.0# 下载器flutter_downloader: 1.1.7# 获取系统路径path_provider: ^1.3.0# 系统权限管理permission_handler: ^4.3.0# 通知权限管理notification_permissions: ^0.4.4# webviewflutter_webview_plugin: ^0.3.4# 唤起其他appurl_launcher: ^5.0.2# growingio 统计flutter_growingio_track:path: plugins/flutter_growingio_track-2.6.4# 设备信息device_info: ^0.4.0# 生成uuiduuid: 2.0.2# 事件传递event_bus: ^1.1.0# loading 样式组件flutter_spinkit: ^4.0.0# qq sdkflutter_qq: ^0.0.5# 代码包信息package_info: ^0.4.0+6# 状态管理provider: ^3.0.0+1# 选择器flutter_picker: ^1.0.13# 图片裁剪image_cropper: ^1.0.2# 图片选择image_picker: ^0.6.1+2# 路由框架fluro: ^1.5.1# pdf浏览器flutter_full_pdf_viewer: ^1.0.4# 避免输入框被键盘遮挡keyboard_avoider: ^0.1.2# 屏幕适配 https://github.com/OpenFlutter/flutter_screenutilflutter_screenutil: ^1.1.0# Toast插件 https://github.com/OpenFlutter/flutter_oktoastoktoast: ^2.2.0# 日期选择器flutter_cupertino_date_picker: ^1.0.12# 小红点插件 badge https://pub.dev/packages/flutter_badgeflutter_badge: ^0.0.1# 自定义上拉加载和下拉刷新效果 flutter_easyrefresh 前提：必须是一个ListViewflutter_easyrefresh: ^1.2.7# 音频播放插件: https://pub.flutter-io.cn/packages/audioplayersaudioplayers: ^0.13.2# 录音: https://pub.flutter-io.cn/packages/audio_recorderaudio_recorder:path: plugins/audio_recorder-1.0.1# 瀑布流插件 https://github.com/letsar/flutter_staggered_grid_viewflutter_staggered_grid_view: ^0.3.0# 图片浏览器: https://pub.flutter-io.cn/packages/photo_viewphoto_view: ^0.9.0# 数据加解密encrypt: 3.3.1# 网络状态插件connectivity: ^0.4.8+2connectivity: ^0.4.8+2# 腾讯imdim:path: plugins/dim# sqlsqflite: ^1.1.7+1# 富文本输入extended_text_field: 0.4.9# 富文本展示extended_text: ^0.6.6# 振动vibration: 1.2.2# 弹出气泡w_popup_menu: ^0.2.5# 高德-仅地图amap_map_fluttify:path: plugins/amap_map_fluttify-develop3# amap_map_fluttify: 0.18.2+c038d50# 高德-仅定位amap_location_fluttify: 0.8.11+481e45c# 图片缓存cached_network_image: 2.0.0-rc.1# iOS 内购flutter_inapp_purchase: ^2.1.0# 获取设备id: https://pub.flutter-io.cn/packages/unique_idsunique_ids: 1.0.10# 获取设备user_agentflutter_user_agent:path: plugins/flutter_user_agent-1.2.1# 颜色插件color: 2.1.1# 消息上下轮播(跑马灯)marquee: 1.3.1# 为SVG路径和代码生成创建一个纯Dart解析库path_parsing: 0.1.4# 异常捕获及日志打印# https://pub.flutter-io.cn/packages/sentrysentry: 3.0.1# 基于dio的网络请求日志dio_log: ^1.3.3# 支付代码测试iap_pay:git: url: https://gitee.com/Steven_Hu/iap_pay.git ref: master]]></content>
@@ -2392,10 +2405,10 @@
       <tags>
         <tag>Android</tag>
         <tag>Android Tips</tag>
+        <tag>.so文件</tag>
         <tag>armeabi-v7a</tag>
         <tag>arm64-v8a</tag>
         <tag>abi兼容</tag>
-        <tag>.so文件</tag>
       </tags>
   </entry>
   <entry>
@@ -2409,9 +2422,9 @@
       <tags>
         <tag>Android</tag>
         <tag>Android Tips</tag>
-        <tag>.so文件</tag>
         <tag>ABI</tag>
         <tag>CPU</tag>
+        <tag>.so文件</tag>
       </tags>
   </entry>
   <entry>
@@ -2844,8 +2857,8 @@
         <category>Mac</category>
       </categories>
       <tags>
-        <tag>博客</tag>
         <tag>Mac</tag>
+        <tag>博客</tag>
         <tag>终端</tag>
       </tags>
   </entry>
