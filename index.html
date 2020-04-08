@@ -431,12 +431,14 @@ var _hmt = _hmt || [];
 
       
         
-          
-          简介既然 Dart 是一门语言，那么就和我们所知道语言一样，有基本的数据类型以及常见的流程处理语法，那么我们就来了解下。
-Dart 的所有东西都是对象，包括数字，函数等。它们都继承自 Object ，默认是都是 null（包括数字），所以数字，字符串都可以调用各种方法。
-常亮与变量变量使用 var 声明变量，可赋予不同类型的值；未初始化时，默认值为 null ；使用 final 声明一个只能赋值一次的变量
-12345678910111213141516171819void main()&#123;     // 声明一个变量 a  var a;  print(a);   // 打印 a 的值，
-          ...
+          <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>既然 Dart 是一门语言，那么就和我们所知道语言一样，有基本的数据类型以及常见的流程处理语法，那么我们就来了解下。</p>
+<p>Dart 的所有东西都是对象，包括数字，函数等。它们都继承自 Object ，默认是都是 null（包括数字），所以数字，字符串都可以调用各种方法。</p>
+<h2 id="常亮与变量"><a href="#常亮与变量" class="headerlink" title="常亮与变量"></a>常亮与变量</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>使用 var 声明变量，可赋予不同类型的值；未初始化时，默认值为 null ；使用 final 声明一个只能赋值一次的变量</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> main()&#123;</span><br><span class="line">   </span><br><span class="line">  <span class="comment">// 声明一个变量 a</span></span><br><span class="line">  <span class="keyword">var</span> a;</span><br><span class="line">  <span class="built_in">print</span>(a);   <span class="comment">// 打印 a 的值，显示为 null</span></span><br><span class="line"> </span><br><span class="line">  a = <span class="number">10</span>;</span><br><span class="line">  <span class="built_in">print</span>(a);   <span class="comment">//  打印出来的结果为 10</span></span><br><span class="line"> </span><br><span class="line">  a = <span class="string">"测试字符串"</span>;</span><br><span class="line">  <span class="built_in">print</span>(a);   <span class="comment">// 打印出来的结果为 测试字符串</span></span><br><span class="line"> </span><br><span class="line">  a = <span class="number">30</span>;</span><br><span class="line">  <span class="built_in">print</span>(a);   <span class="comment">//  打印出来的结果为 30</span></span><br><span class="line"> </span><br><span class="line">  <span class="keyword">final</span> b = <span class="number">10</span>;</span><br><span class="line">  b = <span class="number">20</span>; <span class="comment">// 这个会报错，有提示： [dart] 'b', a final variable, can only be set once.</span></span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>　　</p>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>在 dart 中使用 const 声明常量；使用 const 声明的必须是编译期常量。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> main()&#123;</span><br><span class="line">  <span class="keyword">const</span> a  = <span class="number">10</span>;</span><br><span class="line">  a = <span class="number">20</span>;   <span class="comment">// 这里也会报错：[dart] Constant variables can't be assigned a value.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/posts/87ca1d5.html#more" rel="contents">
