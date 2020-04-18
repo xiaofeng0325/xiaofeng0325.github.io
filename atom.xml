@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhangmiao.cc/"/>
-  <updated>2020-04-08T03:32:08.818Z</updated>
+  <updated>2020-04-18T10:09:17.913Z</updated>
   <id>https://zhangmiao.cc/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>flutter ListView取消头部空白</title>
+    <link href="https://zhangmiao.cc/posts/c3648888.html"/>
+    <id>https://zhangmiao.cc/posts/c3648888.html</id>
+    <published>2020-04-18T10:08:25.000Z</published>
+    <updated>2020-04-18T10:09:17.913Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>ListView头部有一段空白区域，是因为当ListView没有和AppBar一起使用时，头部会有一个padding，为了去掉padding，可以使用MediaQuery.removePadding:</strong></p><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Widget _rubbishList()&#123;</span><br><span class="line">    <span class="keyword">return</span> MediaQuery.removePadding(</span><br><span class="line">        removeTop: <span class="keyword">true</span>,</span><br><span class="line">        context:  context,</span><br><span class="line">        child: Container(</span><br><span class="line">            margin: EdgeInsets.only(left: <span class="number">20</span>,right: <span class="number">20</span>),</span><br><span class="line">            height: ScreenUtil().setHeight(<span class="number">700</span>),</span><br><span class="line">            child: ListView.builder(</span><br><span class="line">                itemCount: rubbishList.length,</span><br><span class="line">                itemBuilder: (context,index)&#123;</span><br><span class="line">                  <span class="keyword">return</span> _cardItem(index);</span><br><span class="line">                &#125;</span><br><span class="line">            )</span><br><span class="line">        )</span><br><span class="line">    );</span><br><span class="line"> </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;ListView头部有一段空白区域，是因为当ListView没有和AppBar一起使用时，头部会有一个padding，为了去掉padding，可以使用MediaQuery.removePadding:&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight dart&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Widget _rubbishList()&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; MediaQuery.removePadding(&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        removeTop: &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        context:  context,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        child: Container(&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            margin: EdgeInsets.only(left: &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;,right: &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            height: ScreenUtil().setHeight(&lt;span class=&quot;number&quot;&gt;700&lt;/span&gt;),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            child: ListView.builder(&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                itemCount: rubbishList.length,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                itemBuilder: (context,index)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; _cardItem(index);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            )&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        )&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    );&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
+    
+      <category term="Flutter Tips" scheme="https://zhangmiao.cc/categories/Android/Flutter-Tips/"/>
+    
+    
+      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
+    
+      <category term="Flutter Tips" scheme="https://zhangmiao.cc/tags/Flutter-Tips/"/>
+    
+  </entry>
   
   <entry>
     <title>Flutter常见数据类型及数据类型转换</title>
@@ -647,32 +674,6 @@
 &lt;h3 id=&quot;3、注意：&quot;&gt;&lt;a href=&quot;#3、注意：&quot; class=&quot;headerlink&quot; title=&quot;3、注意：&quot;&gt;&lt;/a&gt;3、注意：&lt;/h3&gt;&lt;p&gt;1、RSA的安全性依赖于大数分解，小于1024位的k1被认为是不安全的；&lt;br&gt; 2、RSA的计算速度慢。&lt;/p&gt;
 &lt;h3 id=&quot;4、使用&quot;&gt;&lt;a href=&quot;#4、使用&quot; class=&quot;headerlink&quot; title=&quot;4、使用&quot;&gt;&lt;/a&gt;4、使用&lt;/h3&gt;&lt;p&gt;1、生成密钥对&lt;/p&gt;
 &lt;figure class=&quot;highlight dart&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/**&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt; * 随机生成RSA密钥对&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt; *&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt; * @param keyLength 密钥长度，范围：512～2048&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt; *                  一般1024&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt; * @return&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt; */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;public &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; KeyPair generateRSAKeyPair(&lt;span class=&quot;built_in&quot;&gt;int&lt;/span&gt; keyLength) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        KeyPairGenerator kpg = KeyPairGenerator.getInstance(RSA);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        kpg.initialize(keyLength);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; kpg.genKeyPair();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125; &lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (NoSuchAlgorithmException e) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        e.printStackTrace();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
-    
-      <category term="Android Tips" scheme="https://zhangmiao.cc/categories/Android/Android-Tips/"/>
-    
-    
-      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
-    
-      <category term="Android Tips" scheme="https://zhangmiao.cc/tags/Android-Tips/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>热修复原理</title>
-    <link href="https://zhangmiao.cc/posts/181c4c4a.html"/>
-    <id>https://zhangmiao.cc/posts/181c4c4a.html</id>
-    <published>2019-11-27T02:58:10.000Z</published>
-    <updated>2019-11-27T02:59:31.046Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20191127105848.png" alt></p><a id="more"></a>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20191127105848.png&quot; alt&gt;&lt;/p&gt;
     
     </summary>
     
