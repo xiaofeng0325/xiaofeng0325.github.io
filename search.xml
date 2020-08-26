@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Flutter插件开发指南]]></title>
+    <url>%2Fposts%2Ff946bb65.html</url>
+    <content type="text"><![CDATA[Flutter插件开发Flutter插件开发创建插件目录1234flutter create -i objc -a java --template=plugin demo-i, 表示指定iOS的语言, objc, swift-a, 表示指定安卓的语言, java, kotlin 通过上面命令，创建一个名为demo的plugin模板, 并生成以下目录结构 目录结构12345- android // 插件相关 Android 代码- ios // 插件相关 iOS 代码- lib // 插件相关 Dart 代码- example // 示例项目, 用于调试当前开发的插件- pubspec.yaml // 插件配置文件 example目录example目录, 是一个示例项目, 用于调试当前开发的插件 在example/lib/main.dart中, 默认生成一些示例代码. 代码如下: 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950import 'package:flutter/material.dart';import 'dart:async';import 'package:flutter/services.dart';import 'package:demo/demo.dart';void main() =&gt; runApp(MyApp());class MyApp extends StatefulWidget &#123; @override _MyAppState createState() =&gt; _MyAppState();&#125;class _MyAppState extends State&lt;MyApp&gt; &#123; String _platformVersion = 'Unknown'; @override void initState() &#123; super.initState(); initPlatformState(); &#125; Future&lt;void&gt; initPlatformState() async &#123; String platformVersion; try &#123; platformVersion = await Demo.platformVersion; &#125; on PlatformException &#123; platformVersion = 'Failed to get platform version.'; &#125; if (!mounted) return; setState(() &#123; _platformVersion = platformVersion; &#125;); &#125; @override Widget build(BuildContext context) &#123; return MaterialApp( home: Scaffold( appBar: AppBar( title: const Text('Plugin example app'), ), body: Center( child: Text('Running on: $_platformVersion\n'), ), ), ); &#125;&#125; 示例中的代码, Demo.platformVersion, 实际上是调用了lib目录中, Demo类的get方法platformVersion, 也就是我们写的插件代码 lib目录lib目录, 主要用来存放, 开发的插件所需要的dart代码 在lib/demo.dart, 中可以找到默认生成的示例代码, 代码如下: 123456789101112import 'dart:async';import 'package:flutter/services.dart';class Demo &#123; static const MethodChannel _channel = const MethodChannel('demo') static Future&lt;String&gt; get platformVersion async &#123; final String version = await _channel.invokeMethod('getPlatformVersion'); return version; &#125;&#125; 以上代码, 创建了一个名字为demo的MethodChannel对象, 并提供一个get platformVersion方法, 在该方法中调用invokeMethod方法, 去调用原生代码中, 名字为getPlatformVersion的方法. MethodChannelflutter与原生的交互, 可以通过MethodChannel来实现, MethodChannel是双向的, 通过它可以在flutter中调用原生代码, 也可以在原生代码调用flutter代码 ios目录ios目录, 主要用来存放, 开发的插件所需要的iOS代码 在ios目录中, ios/Classes/DemoPlugin.m, 中可以找到getPlatformVersion对应的原生代码, 代码如下: 1234567891011121314151617181920#import &quot;DemoPlugin.h&quot;@implementation DemoPlugin+ (void)registerWithRegistrar:(NSObject&lt;FlutterPluginRegistrar&gt;*)registrar &#123; FlutterMethodChannel* channel = [FlutterMethodChannel methodChannelWithName:@&quot;demo&quot; binaryMessenger:[registrar messenger]]; DemoPlugin* instance = [[DemoPlugin alloc] init]; [registrar addMethodCallDelegate:instance channel:channel];&#125;- (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result &#123; if ([@&quot;getPlatformVersion&quot; isEqualToString:call.method]) &#123; result([@&quot;iOS &quot; stringByAppendingString:[[UIDevice currentDevice] systemVersion]]); &#125; else &#123; result(FlutterMethodNotImplemented); &#125;&#125;@end android目录android目录, 主要用来存放, 开发的插件所需要的android代码 在android目录中, android/src/main/java/com/example/demo/DemoPlugin.java, 中可以找到getPlatformVersion对应的原生代码, 代码如下: 12345678910111213141516171819202122232425package com.example.demo;import io.flutter.plugin.common.MethodCall;import io.flutter.plugin.common.MethodChannel;import io.flutter.plugin.common.MethodChannel.MethodCallHandler;import io.flutter.plugin.common.MethodChannel.Result;import io.flutter.plugin.common.PluginRegistry.Registrar;/** DemoPlugin */public class DemoPlugin implements MethodCallHandler &#123; /** Plugin registration. */ public static void registerWith(Registrar registrar) &#123; final MethodChannel channel = new MethodChannel(registrar.messenger(), "demo"); channel.setMethodCallHandler(new DemoPlugin()); &#125; @Override public void onMethodCall(MethodCall call, Result result) &#123; if (call.method.equals("getPlatformVersion")) &#123; result.success("Android " + android.os.Build.VERSION.RELEASE); &#125; else &#123; result.notImplemented(); &#125; &#125;&#125; 原生代码原生代码中, 也都创建一个名为demo的MethodChannel对象. (与lib目中的dart代码中的MethodChannel名字一致). 通过注册, 监听该channel的回调. 在回调中通过判断call.method的值, 来区分flutter中调用的哪个方法. 如示例中判断是否等于getPlatformVersion, 并在当中执行对应的原生代码, 获取设备相关的系统版本. 其他另外, 在flutter中, 如果想使用原生的视图, 需要使用flutter的UiKitView和AndroidView.]]></content>
+      <categories>
+        <category>Android</category>
+        <category>Flutter Tips</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Flutter Tips</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Flutter - 监视页面的切换(RouteObserver & RouteAware)]]></title>
     <url>%2Fposts%2F97bcffb.html</url>
     <content type="text"><![CDATA[经常性的，我们需要监视页面的切换，用以在合适的时候对控件进行动画暂停或者资源释放。 举个栗子：相机拍照是我们需要经常用到的功能，但是当我们在切换到相机配置页面时，需要暂停当前相机预览，这种情况下我们就需要监视页面的路由变化情况，又或者用户回到应用桌面，此时也需要对相机进行暂停，返回又恢复相机。 在这里主要关系到下面两个方面的： AppStateLifeRecycle - 今天我们不说这个； RouteAware 先看看RouteAware是如何定义的？ 12345678910111213141516171819/// An interface for objects that are aware of their current [Route].////// This is used with [RouteObserver] to make a widget aware of changes to the/// [Navigator]&apos;s session history.abstract class RouteAware &#123; /// Called when the top route has been popped off, and the current route /// shows up. void didPopNext() &#123; &#125; /// Called when the current route has been pushed. void didPush() &#123; &#125; /// Called when the current route has been popped off. void didPop() &#123; &#125; /// Called when a new route has been pushed, and the current route is no /// longer visible. void didPushNext() &#123; &#125;&#125; 上面提交到4个方法，分别都有什么用呢？假如有3个页面，分别是A、B、C，跳转逻辑由A-&gt;B-&gt;C，而RouteAware使用with混淆在B中。 didPopNext：在C页面关闭后，B页面调起该方法； didPush: 当由A打开B页面时，B页面调起该方法； didPop: 当B页面关闭时，B页面调起该方法； didPushNext: 当从B页面打开C页面时，该方法被调起。 如何使用？ 使用with关键字在State类中使用，使用前在MaterialApp中定义一个RouteObserver对象。如下： 12345678910final RouteObserver&lt;PageRoute&gt; routeObserver = RouteObserver(); class MyApp extends StatelessWidget &#123; ... \\此处省略一些代码 Widget _buildMaterialApp() =&gt; MaterialApp( initialRoute: &apos;/&apos;, navigatorObservers: [routeObserver], //添加路由观察者 onGenerateRoute: _onGenerateRoute);&#125; 在B页面中混淆RouteAware, 并注册RouteObserver如下： 123456789101112131415161718192021222324252627282930313233343536373839404142class B extends StatefulWidget &#123; B(&#123;Key key&#125;) : super(key: key);&#125; class BState extends State&lt;B&gt; with RouteAware &#123; @override void didChangeDependencies() &#123; routeObserver.subscribe(this, ModalRoute.of(context)); //订阅 super.didChangeDependencies(); &#125; @override void didPush() &#123; debugPrint(&quot;------&gt; didPush&quot;); super.didPush(); &#125; @override void didPop() &#123; debugPrint(&quot;------&gt; didPop&quot;); super.didPop(); &#125; @override void didPopNext() &#123; debugPrint(&quot;------&gt; didPopNext&quot;); super.didPopNext(); &#125; @override void didPushNext() &#123; debugPrint(&quot;------&gt; didPushNext&quot;); super.didPushNext(); &#125; @override void dispose() &#123; routeObserver.unsubscribe(this); //取消订阅 super.dispose(); &#125;&#125; 总结 : 路由观察者添加订阅与取消订阅必须成对出现； 一些对象在使用后一定要记得及时释放资源。]]></content>
@@ -2481,10 +2494,10 @@
       <tags>
         <tag>Android</tag>
         <tag>Android Tips</tag>
-        <tag>.so文件</tag>
         <tag>armeabi-v7a</tag>
         <tag>arm64-v8a</tag>
         <tag>abi兼容</tag>
+        <tag>.so文件</tag>
       </tags>
   </entry>
   <entry>
@@ -2498,9 +2511,9 @@
       <tags>
         <tag>Android</tag>
         <tag>Android Tips</tag>
+        <tag>.so文件</tag>
         <tag>ABI</tag>
         <tag>CPU</tag>
-        <tag>.so文件</tag>
       </tags>
   </entry>
   <entry>
@@ -3613,8 +3626,8 @@
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>EventBus</tag>
         <tag>XBus</tag>
+        <tag>EventBus</tag>
       </tags>
   </entry>
   <entry>
