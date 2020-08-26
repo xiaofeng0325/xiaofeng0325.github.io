@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Flutter插件开发Flutter插件开发创建插件目录1234flutter create -i objc -a java --template=plugin demo-i, 表示指定iOS的语言, objc, swift-a, 表示指定安卓的语言, java, kotlin  通过上面命令，创建一个名为demo的plugin模板, 并生成以下目录结构 目录结构12345- android //">
+<meta name="description" content="Flutter插件开发创建插件目录1234flutter create -i objc -a java --template=plugin demo-i, 表示指定iOS的语言, objc, swift-a, 表示指定安卓的语言, java, kotlin  通过上面命令，创建一个名为demo的plugin模板, 并生成以下目录结构 目录结构12345- android // 插件相关 Andro">
 <meta name="keywords" content="Android,Flutter Tips">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Flutter插件开发指南">
 <meta property="og:url" content="https://zhangmiao.cc/posts/f946bb65.html">
 <meta property="og:site_name" content="zm.blog">
-<meta property="og:description" content="Flutter插件开发Flutter插件开发创建插件目录1234flutter create -i objc -a java --template=plugin demo-i, 表示指定iOS的语言, objc, swift-a, 表示指定安卓的语言, java, kotlin  通过上面命令，创建一个名为demo的plugin模板, 并生成以下目录结构 目录结构12345- android //">
+<meta property="og:description" content="Flutter插件开发创建插件目录1234flutter create -i objc -a java --template=plugin demo-i, 表示指定iOS的语言, objc, swift-a, 表示指定安卓的语言, java, kotlin  通过上面命令，创建一个名为demo的plugin模板, 并生成以下目录结构 目录结构12345- android // 插件相关 Andro">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-08-26T07:12:41.197Z">
+<meta property="og:updated_time" content="2020-08-26T07:42:13.766Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flutter插件开发指南">
-<meta name="twitter:description" content="Flutter插件开发Flutter插件开发创建插件目录1234flutter create -i objc -a java --template=plugin demo-i, 表示指定iOS的语言, objc, swift-a, 表示指定安卓的语言, java, kotlin  通过上面命令，创建一个名为demo的plugin模板, 并生成以下目录结构 目录结构12345- android //">
+<meta name="twitter:description" content="Flutter插件开发创建插件目录1234flutter create -i objc -a java --template=plugin demo-i, 表示指定iOS的语言, objc, swift-a, 表示指定安卓的语言, java, kotlin  通过上面命令，创建一个名为demo的plugin模板, 并生成以下目录结构 目录结构12345- android // 插件相关 Andro">
 
 
 
@@ -429,7 +429,7 @@ var _hmt = _hmt || [];
       
 
       
-        <h1 id="Flutter插件开发"><a href="#Flutter插件开发" class="headerlink" title="Flutter插件开发"></a>Flutter插件开发</h1><h2 id="Flutter插件开发-1"><a href="#Flutter插件开发-1" class="headerlink" title="Flutter插件开发"></a>Flutter插件开发</h2><h3 id="创建插件目录"><a href="#创建插件目录" class="headerlink" title="创建插件目录"></a>创建插件目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">flutter create -i objc -a java --template=plugin demo</span><br><span class="line"></span><br><span class="line">-i, 表示指定iOS的语言, objc, swift</span><br><span class="line">-a, 表示指定安卓的语言, java, kotlin</span><br></pre></td></tr></table></figure>
+        <h2 id="Flutter插件开发"><a href="#Flutter插件开发" class="headerlink" title="Flutter插件开发"></a>Flutter插件开发</h2><h3 id="创建插件目录"><a href="#创建插件目录" class="headerlink" title="创建插件目录"></a>创建插件目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">flutter create -i objc -a java --template=plugin demo</span><br><span class="line"></span><br><span class="line">-i, 表示指定iOS的语言, objc, swift</span><br><span class="line">-a, 表示指定安卓的语言, java, kotlin</span><br></pre></td></tr></table></figure>
 
 <p>通过上面命令，创建一个名为<code>demo</code>的plugin模板, 并生成以下目录结构</p>
 <h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- android // 插件相关 Android 代码</span><br><span class="line">- ios // 插件相关 iOS 代码</span><br><span class="line">- lib // 插件相关 Dart 代码</span><br><span class="line">- example // 示例项目, 用于调试当前开发的插件</span><br><span class="line">- pubspec.yaml // 插件配置文件</span><br></pre></td></tr></table></figure>
@@ -775,7 +775,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Flutter插件开发"><span class="nav-number">1.</span> <span class="nav-text">Flutter插件开发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Flutter插件开发-1"><span class="nav-number">1.1.</span> <span class="nav-text">Flutter插件开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建插件目录"><span class="nav-number">1.1.1.</span> <span class="nav-text">创建插件目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目录结构"><span class="nav-number">1.1.2.</span> <span class="nav-text">目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#example目录"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">example目录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lib目录"><span class="nav-number">1.1.3.</span> <span class="nav-text">lib目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MethodChannel"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">MethodChannel</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ios目录"><span class="nav-number">1.1.4.</span> <span class="nav-text">ios目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#android目录"><span class="nav-number">1.1.5.</span> <span class="nav-text">android目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原生代码"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">原生代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.1.6.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Flutter插件开发"><span class="nav-number">1.</span> <span class="nav-text">Flutter插件开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建插件目录"><span class="nav-number">1.1.</span> <span class="nav-text">创建插件目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目录结构"><span class="nav-number">1.2.</span> <span class="nav-text">目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#example目录"><span class="nav-number">1.2.1.</span> <span class="nav-text">example目录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lib目录"><span class="nav-number">1.3.</span> <span class="nav-text">lib目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MethodChannel"><span class="nav-number">1.3.1.</span> <span class="nav-text">MethodChannel</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ios目录"><span class="nav-number">1.4.</span> <span class="nav-text">ios目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#android目录"><span class="nav-number">1.5.</span> <span class="nav-text">android目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原生代码"><span class="nav-number">1.5.1.</span> <span class="nav-text">原生代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">1.6.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
             
 
           </div>

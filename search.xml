@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Flutter插件开发指南]]></title>
     <url>%2Fposts%2Ff946bb65.html</url>
-    <content type="text"><![CDATA[Flutter插件开发Flutter插件开发创建插件目录1234flutter create -i objc -a java --template=plugin demo-i, 表示指定iOS的语言, objc, swift-a, 表示指定安卓的语言, java, kotlin 通过上面命令，创建一个名为demo的plugin模板, 并生成以下目录结构 目录结构12345- android // 插件相关 Android 代码- ios // 插件相关 iOS 代码- lib // 插件相关 Dart 代码- example // 示例项目, 用于调试当前开发的插件- pubspec.yaml // 插件配置文件 example目录example目录, 是一个示例项目, 用于调试当前开发的插件 在example/lib/main.dart中, 默认生成一些示例代码. 代码如下: 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950import 'package:flutter/material.dart';import 'dart:async';import 'package:flutter/services.dart';import 'package:demo/demo.dart';void main() =&gt; runApp(MyApp());class MyApp extends StatefulWidget &#123; @override _MyAppState createState() =&gt; _MyAppState();&#125;class _MyAppState extends State&lt;MyApp&gt; &#123; String _platformVersion = 'Unknown'; @override void initState() &#123; super.initState(); initPlatformState(); &#125; Future&lt;void&gt; initPlatformState() async &#123; String platformVersion; try &#123; platformVersion = await Demo.platformVersion; &#125; on PlatformException &#123; platformVersion = 'Failed to get platform version.'; &#125; if (!mounted) return; setState(() &#123; _platformVersion = platformVersion; &#125;); &#125; @override Widget build(BuildContext context) &#123; return MaterialApp( home: Scaffold( appBar: AppBar( title: const Text('Plugin example app'), ), body: Center( child: Text('Running on: $_platformVersion\n'), ), ), ); &#125;&#125; 示例中的代码, Demo.platformVersion, 实际上是调用了lib目录中, Demo类的get方法platformVersion, 也就是我们写的插件代码 lib目录lib目录, 主要用来存放, 开发的插件所需要的dart代码 在lib/demo.dart, 中可以找到默认生成的示例代码, 代码如下: 123456789101112import 'dart:async';import 'package:flutter/services.dart';class Demo &#123; static const MethodChannel _channel = const MethodChannel('demo') static Future&lt;String&gt; get platformVersion async &#123; final String version = await _channel.invokeMethod('getPlatformVersion'); return version; &#125;&#125; 以上代码, 创建了一个名字为demo的MethodChannel对象, 并提供一个get platformVersion方法, 在该方法中调用invokeMethod方法, 去调用原生代码中, 名字为getPlatformVersion的方法. MethodChannelflutter与原生的交互, 可以通过MethodChannel来实现, MethodChannel是双向的, 通过它可以在flutter中调用原生代码, 也可以在原生代码调用flutter代码 ios目录ios目录, 主要用来存放, 开发的插件所需要的iOS代码 在ios目录中, ios/Classes/DemoPlugin.m, 中可以找到getPlatformVersion对应的原生代码, 代码如下: 1234567891011121314151617181920#import &quot;DemoPlugin.h&quot;@implementation DemoPlugin+ (void)registerWithRegistrar:(NSObject&lt;FlutterPluginRegistrar&gt;*)registrar &#123; FlutterMethodChannel* channel = [FlutterMethodChannel methodChannelWithName:@&quot;demo&quot; binaryMessenger:[registrar messenger]]; DemoPlugin* instance = [[DemoPlugin alloc] init]; [registrar addMethodCallDelegate:instance channel:channel];&#125;- (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result &#123; if ([@&quot;getPlatformVersion&quot; isEqualToString:call.method]) &#123; result([@&quot;iOS &quot; stringByAppendingString:[[UIDevice currentDevice] systemVersion]]); &#125; else &#123; result(FlutterMethodNotImplemented); &#125;&#125;@end android目录android目录, 主要用来存放, 开发的插件所需要的android代码 在android目录中, android/src/main/java/com/example/demo/DemoPlugin.java, 中可以找到getPlatformVersion对应的原生代码, 代码如下: 12345678910111213141516171819202122232425package com.example.demo;import io.flutter.plugin.common.MethodCall;import io.flutter.plugin.common.MethodChannel;import io.flutter.plugin.common.MethodChannel.MethodCallHandler;import io.flutter.plugin.common.MethodChannel.Result;import io.flutter.plugin.common.PluginRegistry.Registrar;/** DemoPlugin */public class DemoPlugin implements MethodCallHandler &#123; /** Plugin registration. */ public static void registerWith(Registrar registrar) &#123; final MethodChannel channel = new MethodChannel(registrar.messenger(), "demo"); channel.setMethodCallHandler(new DemoPlugin()); &#125; @Override public void onMethodCall(MethodCall call, Result result) &#123; if (call.method.equals("getPlatformVersion")) &#123; result.success("Android " + android.os.Build.VERSION.RELEASE); &#125; else &#123; result.notImplemented(); &#125; &#125;&#125; 原生代码原生代码中, 也都创建一个名为demo的MethodChannel对象. (与lib目中的dart代码中的MethodChannel名字一致). 通过注册, 监听该channel的回调. 在回调中通过判断call.method的值, 来区分flutter中调用的哪个方法. 如示例中判断是否等于getPlatformVersion, 并在当中执行对应的原生代码, 获取设备相关的系统版本. 其他另外, 在flutter中, 如果想使用原生的视图, 需要使用flutter的UiKitView和AndroidView.]]></content>
+    <content type="text"><![CDATA[Flutter插件开发创建插件目录1234flutter create -i objc -a java --template=plugin demo-i, 表示指定iOS的语言, objc, swift-a, 表示指定安卓的语言, java, kotlin 通过上面命令，创建一个名为demo的plugin模板, 并生成以下目录结构 目录结构12345- android // 插件相关 Android 代码- ios // 插件相关 iOS 代码- lib // 插件相关 Dart 代码- example // 示例项目, 用于调试当前开发的插件- pubspec.yaml // 插件配置文件 example目录example目录, 是一个示例项目, 用于调试当前开发的插件 在example/lib/main.dart中, 默认生成一些示例代码. 代码如下: 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950import 'package:flutter/material.dart';import 'dart:async';import 'package:flutter/services.dart';import 'package:demo/demo.dart';void main() =&gt; runApp(MyApp());class MyApp extends StatefulWidget &#123; @override _MyAppState createState() =&gt; _MyAppState();&#125;class _MyAppState extends State&lt;MyApp&gt; &#123; String _platformVersion = 'Unknown'; @override void initState() &#123; super.initState(); initPlatformState(); &#125; Future&lt;void&gt; initPlatformState() async &#123; String platformVersion; try &#123; platformVersion = await Demo.platformVersion; &#125; on PlatformException &#123; platformVersion = 'Failed to get platform version.'; &#125; if (!mounted) return; setState(() &#123; _platformVersion = platformVersion; &#125;); &#125; @override Widget build(BuildContext context) &#123; return MaterialApp( home: Scaffold( appBar: AppBar( title: const Text('Plugin example app'), ), body: Center( child: Text('Running on: $_platformVersion\n'), ), ), ); &#125;&#125; 示例中的代码, Demo.platformVersion, 实际上是调用了lib目录中, Demo类的get方法platformVersion, 也就是我们写的插件代码 lib目录lib目录, 主要用来存放, 开发的插件所需要的dart代码 在lib/demo.dart, 中可以找到默认生成的示例代码, 代码如下: 123456789101112import 'dart:async';import 'package:flutter/services.dart';class Demo &#123; static const MethodChannel _channel = const MethodChannel('demo') static Future&lt;String&gt; get platformVersion async &#123; final String version = await _channel.invokeMethod('getPlatformVersion'); return version; &#125;&#125; 以上代码, 创建了一个名字为demo的MethodChannel对象, 并提供一个get platformVersion方法, 在该方法中调用invokeMethod方法, 去调用原生代码中, 名字为getPlatformVersion的方法. MethodChannelflutter与原生的交互, 可以通过MethodChannel来实现, MethodChannel是双向的, 通过它可以在flutter中调用原生代码, 也可以在原生代码调用flutter代码 ios目录ios目录, 主要用来存放, 开发的插件所需要的iOS代码 在ios目录中, ios/Classes/DemoPlugin.m, 中可以找到getPlatformVersion对应的原生代码, 代码如下: 1234567891011121314151617181920#import &quot;DemoPlugin.h&quot;@implementation DemoPlugin+ (void)registerWithRegistrar:(NSObject&lt;FlutterPluginRegistrar&gt;*)registrar &#123; FlutterMethodChannel* channel = [FlutterMethodChannel methodChannelWithName:@&quot;demo&quot; binaryMessenger:[registrar messenger]]; DemoPlugin* instance = [[DemoPlugin alloc] init]; [registrar addMethodCallDelegate:instance channel:channel];&#125;- (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result &#123; if ([@&quot;getPlatformVersion&quot; isEqualToString:call.method]) &#123; result([@&quot;iOS &quot; stringByAppendingString:[[UIDevice currentDevice] systemVersion]]); &#125; else &#123; result(FlutterMethodNotImplemented); &#125;&#125;@end android目录android目录, 主要用来存放, 开发的插件所需要的android代码 在android目录中, android/src/main/java/com/example/demo/DemoPlugin.java, 中可以找到getPlatformVersion对应的原生代码, 代码如下: 12345678910111213141516171819202122232425package com.example.demo;import io.flutter.plugin.common.MethodCall;import io.flutter.plugin.common.MethodChannel;import io.flutter.plugin.common.MethodChannel.MethodCallHandler;import io.flutter.plugin.common.MethodChannel.Result;import io.flutter.plugin.common.PluginRegistry.Registrar;/** DemoPlugin */public class DemoPlugin implements MethodCallHandler &#123; /** Plugin registration. */ public static void registerWith(Registrar registrar) &#123; final MethodChannel channel = new MethodChannel(registrar.messenger(), "demo"); channel.setMethodCallHandler(new DemoPlugin()); &#125; @Override public void onMethodCall(MethodCall call, Result result) &#123; if (call.method.equals("getPlatformVersion")) &#123; result.success("Android " + android.os.Build.VERSION.RELEASE); &#125; else &#123; result.notImplemented(); &#125; &#125;&#125; 原生代码原生代码中, 也都创建一个名为demo的MethodChannel对象. (与lib目中的dart代码中的MethodChannel名字一致). 通过注册, 监听该channel的回调. 在回调中通过判断call.method的值, 来区分flutter中调用的哪个方法. 如示例中判断是否等于getPlatformVersion, 并在当中执行对应的原生代码, 获取设备相关的系统版本. 其他另外, 在flutter中, 如果想使用原生的视图, 需要使用flutter的UiKitView和AndroidView.]]></content>
       <categories>
         <category>Android</category>
         <category>Flutter Tips</category>
@@ -2494,10 +2494,10 @@
       <tags>
         <tag>Android</tag>
         <tag>Android Tips</tag>
+        <tag>.so文件</tag>
         <tag>armeabi-v7a</tag>
         <tag>arm64-v8a</tag>
         <tag>abi兼容</tag>
-        <tag>.so文件</tag>
       </tags>
   </entry>
   <entry>
@@ -2511,9 +2511,9 @@
       <tags>
         <tag>Android</tag>
         <tag>Android Tips</tag>
-        <tag>.so文件</tag>
         <tag>ABI</tag>
         <tag>CPU</tag>
+        <tag>.so文件</tag>
       </tags>
   </entry>
   <entry>
@@ -3626,8 +3626,8 @@
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>XBus</tag>
         <tag>EventBus</tag>
+        <tag>XBus</tag>
       </tags>
   </entry>
   <entry>
@@ -4202,8 +4202,8 @@
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>Java</tag>
         <tag>代码片段</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
