@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhangmiao.cc/"/>
-  <updated>2020-08-26T07:42:13.766Z</updated>
+  <updated>2020-08-29T03:15:06.640Z</updated>
   <id>https://zhangmiao.cc/</id>
   
   <author>
@@ -15,6 +15,74 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Kotlin使用命令行编译</title>
+    <link href="https://zhangmiao.cc/posts/c0feb7da.html"/>
+    <id>https://zhangmiao.cc/posts/c0feb7da.html</id>
+    <published>2020-08-29T03:13:08.000Z</published>
+    <updated>2020-08-29T03:15:06.640Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Kotlin-使用命令行编译"><a href="#Kotlin-使用命令行编译" class="headerlink" title="Kotlin 使用命令行编译"></a>Kotlin 使用命令行编译</h1><p>Kotlin 命令行编译工具下载地址：<a href="https://github.com/JetBrains/kotlin/releases/tag/v1.1.2-2，目前最新为" target="_blank" rel="noopener">https://github.com/JetBrains/kotlin/releases/tag/v1.1.2-2，目前最新为</a> 1.1.2-2。</p><p>你可以选择一个最新的稳定版下载。</p><p>下载完成后，解压到指定目录，然后将 <strong>bin</strong> 目录添加到系统环境变量。bin 目录包含编译和运行 Kotlin 所需的脚本。</p><hr><h2 id="SDKMAN"><a href="#SDKMAN" class="headerlink" title="SDKMAN!"></a>SDKMAN!</h2><p>在 OS X、Linux、Cygwin、FreeBSD 和 Solaris 系统上也可以使用更简单的安装方法，命令如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ curl -s https://get.sdkman.io | bash</span><br><span class="line"></span><br><span class="line">$ sdk install kotlin</span><br></pre></td></tr></table></figure><h3 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a>Homebrew</h3><p>在 OS X 下，你可以使用 Homebrew 安装：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ brew update</span><br><span class="line">$ brew install kotlin</span><br></pre></td></tr></table></figure><h3 id="MacPorts"><a href="#MacPorts" class="headerlink" title="MacPorts"></a>MacPorts</h3><p>如果你是 MacPorts 用户，可以使用以下命令安装：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo port install kotlin</span><br></pre></td></tr></table></figure><hr><a id="more"></a><h2 id="创建和运行第一个程序"><a href="#创建和运行第一个程序" class="headerlink" title="创建和运行第一个程序"></a>创建和运行第一个程序</h2><p>创建一个名为 hello.kt 文件，代码如下：</p><h2 id="hello-kt"><a href="#hello-kt" class="headerlink" title="hello.kt"></a>hello.kt</h2><p>fun main(args: Array<string>) {     println(“Hello, World!”) }</string></p><p>使用 Kotlin 编译器编译应用:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ kotlinc hello.kt -include-runtime -d hello.jar</span><br></pre></td></tr></table></figure><ul><li><strong>-d</strong>: 用来设置编译输出的名称，可以是 class 或 .jar 文件，也可以是目录。</li><li><strong>-include-runtime</strong> : 让 .jar 文件包含 Kotlin 运行库，从而可以直接运行。</li></ul><p>如果你想看所有的可用选项，运行:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ kotlinc -help</span><br></pre></td></tr></table></figure><p>运行应用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ java -jar hello.jar</span><br><span class="line">Hello, World!</span><br></pre></td></tr></table></figure><h3 id="编译成库"><a href="#编译成库" class="headerlink" title="编译成库"></a>编译成库</h3><p>若需要将生成的 jar 包供其他 Kotlin 程序使用，可无需包含 Kotlin 的运行库：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ kotlinc hello.kt -d hello.jar</span><br></pre></td></tr></table></figure><p>由于这样生成的 .jar 文件不包含 Kotlin 运行库，所以你应该确保当它被使用时，运行时在你的 classpath 上。</p><p>你也可以使用 kotlin 命令来运行 Kotlin 编译器生成的 .jar 文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ kotlin -classpath hello.jar HelloKt</span><br></pre></td></tr></table></figure><p>HelloKt 为编译器为 hello.kt 文件生成的默认类名。</p><hr><h2 id="运行-REPL（交互式解释器）"><a href="#运行-REPL（交互式解释器）" class="headerlink" title="运行 REPL（交互式解释器）"></a>运行 REPL（交互式解释器）</h2><p>我们可以运行如下命令得到一个可交互的 shell，然后输入任何有效的 Kotlin 代码，并立即看到结果</p><p><img src="https://www.runoob.com/wp-content/uploads/2017/05/1495788947-5293-kotlin-shell.png" alt="img"></p><hr><h2 id="使用命令行执行脚本"><a href="#使用命令行执行脚本" class="headerlink" title="使用命令行执行脚本"></a>使用命令行执行脚本</h2><p>Kotlin 也可以作为一个脚本语言使用，文件后缀名为 .kts 。</p><p>例如我们创建一个名为 list_folders.kts，代码如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import java.io.File</span><br><span class="line"></span><br><span class="line">val folders = File(args[0]).listFiles &#123; file -&gt; file.isDirectory() &#125;</span><br><span class="line">folders?.forEach &#123; folder -&gt; println(folder) &#125;</span><br></pre></td></tr></table></figure><p>执行时通过 -script 选项设置相应的脚本文件。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ kotlinc -script list_folders.kts &lt;path_to_folder&gt;</span><br></pre></td></tr></table></figure><p>$ kotlinc -script list_folders.kts</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Kotlin-使用命令行编译&quot;&gt;&lt;a href=&quot;#Kotlin-使用命令行编译&quot; class=&quot;headerlink&quot; title=&quot;Kotlin 使用命令行编译&quot;&gt;&lt;/a&gt;Kotlin 使用命令行编译&lt;/h1&gt;&lt;p&gt;Kotlin 命令行编译工具下载地址：&lt;a href=&quot;https://github.com/JetBrains/kotlin/releases/tag/v1.1.2-2，目前最新为&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/JetBrains/kotlin/releases/tag/v1.1.2-2，目前最新为&lt;/a&gt; 1.1.2-2。&lt;/p&gt;
+&lt;p&gt;你可以选择一个最新的稳定版下载。&lt;/p&gt;
+&lt;p&gt;下载完成后，解压到指定目录，然后将 &lt;strong&gt;bin&lt;/strong&gt; 目录添加到系统环境变量。bin 目录包含编译和运行 Kotlin 所需的脚本。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;SDKMAN&quot;&gt;&lt;a href=&quot;#SDKMAN&quot; class=&quot;headerlink&quot; title=&quot;SDKMAN!&quot;&gt;&lt;/a&gt;SDKMAN!&lt;/h2&gt;&lt;p&gt;在 OS X、Linux、Cygwin、FreeBSD 和 Solaris 系统上也可以使用更简单的安装方法，命令如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ curl -s https://get.sdkman.io | bash&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ sdk install kotlin&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;Homebrew&quot;&gt;&lt;a href=&quot;#Homebrew&quot; class=&quot;headerlink&quot; title=&quot;Homebrew&quot;&gt;&lt;/a&gt;Homebrew&lt;/h3&gt;&lt;p&gt;在 OS X 下，你可以使用 Homebrew 安装：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ brew update&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ brew install kotlin&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;MacPorts&quot;&gt;&lt;a href=&quot;#MacPorts&quot; class=&quot;headerlink&quot; title=&quot;MacPorts&quot;&gt;&lt;/a&gt;MacPorts&lt;/h3&gt;&lt;p&gt;如果你是 MacPorts 用户，可以使用以下命令安装：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ sudo port install kotlin&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
+    
+      <category term="Kotlin" scheme="https://zhangmiao.cc/categories/Android/Kotlin/"/>
+    
+    
+      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
+    
+      <category term="Kotlin" scheme="https://zhangmiao.cc/tags/Kotlin/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kotlin教程</title>
+    <link href="https://zhangmiao.cc/posts/17a38a8.html"/>
+    <id>https://zhangmiao.cc/posts/17a38a8.html</id>
+    <published>2020-08-29T02:15:27.000Z</published>
+    <updated>2020-08-29T03:17:34.098Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Kotlin-教程"><a href="#Kotlin-教程" class="headerlink" title="Kotlin 教程"></a>Kotlin 教程</h1><p>Kotlin 是一种在 Java 虚拟机上运行的静态类型编程语言，被称之为 Android 世界的Swift，由 JetBrains 设计开发并开源。</p><p>Kotlin 可以编译成Java字节码，也可以编译成 JavaScript，方便在没有 JVM 的设备上运行。</p><p>在Google I/O 2017中，Google 宣布 Kotlin 成为 Android 官方开发语言。</p><hr><h2 id="我的第一个-Kotlin-程序"><a href="#我的第一个-Kotlin-程序" class="headerlink" title="我的第一个 Kotlin 程序"></a>我的第一个 Kotlin 程序</h2><p>Kotlin 程序文件以 <strong>.kt</strong> 结尾，如：hello.kt 、app.kt。</p><h2 id="最简版"><a href="#最简版" class="headerlink" title="最简版"></a>最简版</h2><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> hello                      <span class="comment">//  可选的包头</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;    <span class="comment">// 包级可见的函数，接受一个字符串数组作为参数</span></span><br><span class="line">   println(<span class="string">"Hello World!"</span>)         <span class="comment">// 分号可以省略</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Greeter</span></span>(<span class="keyword">val</span> name: String) &#123;</span><br><span class="line">   <span class="function"><span class="keyword">fun</span> <span class="title">greet</span><span class="params">()</span></span> &#123; </span><br><span class="line">      println(<span class="string">"Hello, <span class="variable">$name</span>"</span>)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">   Greeter(<span class="string">"World!"</span>).greet()          <span class="comment">// 创建一个对象不用 new 关键字</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr><h2 id="为什么选择-Kotlin？"><a href="#为什么选择-Kotlin？" class="headerlink" title="为什么选择 Kotlin？"></a>为什么选择 Kotlin？</h2><ul><li>简洁: 大大减少样板代码的数量。</li><li>安全: 避免空指针异常等整个类的错误。</li><li>互操作性: 充分利用 JVM、Android 和浏览器的现有库。</li><li>工具友好: 可用任何 Java IDE 或者使用命令行构建。</li></ul><hr><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul><li><a href="http://www.kotlinlang.org/" target="_blank" rel="noopener">官方网站</a></li><li><a href="http://try.kotlinlang.org/" target="_blank" rel="noopener">官方示例</a></li><li><a href="https://www.kotlincn.net/" target="_blank" rel="noopener">官方网站 - 中文翻译</a></li><li><a href="https://play.kotlinlang.org/" target="_blank" rel="noopener">Kotlin 官方在线工具</a></li><li><a href="https://c.runoob.com/compile/2960" target="_blank" rel="noopener">Kotlin 在线工具</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Kotlin-教程&quot;&gt;&lt;a href=&quot;#Kotlin-教程&quot; class=&quot;headerlink&quot; title=&quot;Kotlin 教程&quot;&gt;&lt;/a&gt;Kotlin 教程&lt;/h1&gt;&lt;p&gt;Kotlin 是一种在 Java 虚拟机上运行的静态类型编程语言，被称之为 Andr
+      
+    
+    </summary>
+    
+      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
+    
+      <category term="Kotlin" scheme="https://zhangmiao.cc/categories/Android/Kotlin/"/>
+    
+    
+      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
+    
+      <category term="Kotlin" scheme="https://zhangmiao.cc/tags/Kotlin/"/>
+    
+  </entry>
   
   <entry>
     <title>Flutter插件开发指南</title>
@@ -647,67 +715,6 @@
       <category term="Android Tips" scheme="https://zhangmiao.cc/tags/Android-Tips/"/>
     
       <category term="Android Studio" scheme="https://zhangmiao.cc/tags/Android-Studio/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Flutter不能热加载，热重载按钮为灰色</title>
-    <link href="https://zhangmiao.cc/posts/628bd6da.html"/>
-    <id>https://zhangmiao.cc/posts/628bd6da.html</id>
-    <published>2020-03-03T06:50:54.000Z</published>
-    <updated>2020-03-03T07:08:57.468Z</updated>
-    
-    <content type="html"><![CDATA[<p>前言，Flutter的热重载(hot reload)功能可以帮助您在无需重新启动应用的情况下快速、轻松地进行测试、构建用户界面、添加功能以及修复错误。</p><p>通过将更新后的源代码文件注入正在运行的Dart虚拟机（VM）中来实现热重载。</p><p>在虚拟机使用新的的字段和函数更新类后，Flutter框架会自动重新构建widget树，以便您快速查看更改的效果。</p><p>要热重载一个Flutter应用程序:</p><ol><li>从受支持的IntelliJ IDE 、Android Studio 或终端窗口运行应用程序。物理机或虚拟器都可以运行。</li><li>修改项目中的一个Dart文件。大多数类型的代码更改可以重新加载; 有关需要完全重新启动的更改列表，请参阅<a href="https://flutterchina.club/hot-reload/#limitations" target="_blank" rel="noopener">限制</a>。</li><li>如果您使用的是IntelliJ IDE 、Android Studio ，请选择<strong>Save All</strong> (<code>cmd-s</code>/<code>ctrl-s</code>)），或者单击工具栏上的Hot Reload按钮。</li></ol><a id="more"></a><h1 id="一、现象："><a href="#一、现象：" class="headerlink" title="一、现象："></a>一、现象：</h1><p>Flutter 不能热加载 热重载按钮灰色，无法点击。</p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20200303145348.png" alt></p><h1 id="二、分析原因："><a href="#二、分析原因：" class="headerlink" title="二、分析原因："></a>二、分析原因：</h1><p><code>终端</code>flutter doctor 显示 NO_PROXY is not set</p><p>没有设置无代理的端口</p><p><strong>➜</strong>  <span style="color:red"><strong>~</strong> flutter doctor       </span>                            </p><p>Doctor summary (to see all details, run flutter doctor -v):</p><p><span style="color:green">[✓] Flutter(Channel stable, v1.7.8, on Mac OS X 10.14.3 18D109, locale zh-Hans-CN)</span></p><p><span style="color:green">[✓] Android toolchain - develop for Android devices (Android SDK version 29.0.1)</span></p><p><span style="color:green">[✓] Xcode - develop for iOS and macOS (Xcode 10.2.1)</span></p><p><span style="color:green">[✓] iOS tools - develop for iOS devices</span></p><p><span style="color:green">[✓] Android Studio (version 3.5)</span></p><p><span style="color:green">[✓] VS Code (version 1.41.1)</span></p><p><span style="color:orange">[!] Proxy Configuration</span></p><p>   <span style="color:orange"> <strong>!</strong> <strong>NO_PROXY is not set</strong></span></p><p><span style="color:green">[✓] Connected device (1 available) </span></p><p><span style="color:orange">! Doctor found issues in 1 category.</span></p><blockquote><p>重点在于：<strong>NO_PROXY is not set</strong></p></blockquote><h1 id="三、解决方案："><a href="#三、解决方案：" class="headerlink" title="三、解决方案："></a>三、解决方案：</h1><p>设置 <strong>NO_PROXY即可</strong></p><p>1.启动终端</p><p>2.进入当前用户的home目录</p><p>cd ~ 或者  cd /users/YourMacUserName</p><p>3.输入touch .bash_profile</p><p>查看和编辑.bash_profile文件</p><p>1.终端输入open -e .bash_profile</p><p>2.编辑文件，新增 </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> no_proxy=<span class="string">"localhost,127.0.0.1"</span></span><br></pre></td></tr></table></figure><p>3.关闭保存</p><p>最后更新配置的环境变量</p><p>输入: </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> .bash_profile</span><br></pre></td></tr></table></figure><p>不懂这块的话，看这里<a href="https://www.cnblogs.com/jukaiit/p/10785318.html" target="_blank" rel="noopener">设置Mac 终端走代理</a></p><p>操作如下：</p><p><strong>➜</strong>  <span style="color:red"><strong>~</strong> cd ~ </span></p><p><strong>➜</strong>  <span style="color:red"><strong>~</strong> touch .bash_profile</span></p><p><strong>➜</strong>  <span style="color:red"><strong>~</strong> open -e .bash_profile</span></p><p><strong>➜</strong>  <span style="color:red"><strong>~</strong> source .bash_profile</span></p><p><strong>➜</strong>  <span style="color:red"><strong>~</strong> flutter doctor </span>                      </p><p>Doctor summary (to see all details, run flutter doctor -v):</p><p><span style="color:green">[✓] Flutter (Channel stable, v1.7.8, on Mac OS X 10.14.3 18D109, locale zh-Hans-CN)</span></p><p><span style="color:green">[✓] Android toolchain - develop for Android devices (Android SDK version 29.0.1)</span></p><p><span style="color:green">[✓] Xcode - develop for iOS and macOS (Xcode 10.2.1)</span></p><p><span style="color:green">[✓] iOS tools - develop for iOS devices</span></p><p><span style="color:green">[✓] Android Studio (version 3.5)</span></p><p><span style="color:green">[✓] VS Code (version 1.41.1)</span></p><p><span style="color:green">[✓] Proxy Configuration</span></p><p><span style="color:green">[✓] Connected device (1 available)</span></p><p><span style="color:green">• No issues found!</span></p><p><strong>➜</strong>  <strong>~</strong> </p><h1 id="四、验证"><a href="#四、验证" class="headerlink" title="四、验证"></a>四、验证</h1><p>运行时，热重载按钮变为橙色，可以点击。</p><p>快捷键保存编辑时，自动重载。</p><p> <img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20200303145307.png" alt></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前言，Flutter的热重载(hot reload)功能可以帮助您在无需重新启动应用的情况下快速、轻松地进行测试、构建用户界面、添加功能以及修复错误。&lt;/p&gt;
-&lt;p&gt;通过将更新后的源代码文件注入正在运行的Dart虚拟机（VM）中来实现热重载。&lt;/p&gt;
-&lt;p&gt;在虚拟机使用新的的字段和函数更新类后，Flutter框架会自动重新构建widget树，以便您快速查看更改的效果。&lt;/p&gt;
-&lt;p&gt;要热重载一个Flutter应用程序:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;从受支持的IntelliJ IDE 、Android Studio 或终端窗口运行应用程序。物理机或虚拟器都可以运行。&lt;/li&gt;
-&lt;li&gt;修改项目中的一个Dart文件。大多数类型的代码更改可以重新加载; 有关需要完全重新启动的更改列表，请参阅&lt;a href=&quot;https://flutterchina.club/hot-reload/#limitations&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;限制&lt;/a&gt;。&lt;/li&gt;
-&lt;li&gt;如果您使用的是IntelliJ IDE 、Android Studio ，请选择&lt;strong&gt;Save All&lt;/strong&gt; (&lt;code&gt;cmd-s&lt;/code&gt;/&lt;code&gt;ctrl-s&lt;/code&gt;)），或者单击工具栏上的Hot Reload按钮。&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
-    
-      <category term="Flutter" scheme="https://zhangmiao.cc/categories/Android/Flutter/"/>
-    
-    
-      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
-    
-      <category term="Flutter" scheme="https://zhangmiao.cc/tags/Flutter/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SourceTree_push_remote:Invalid_username_or_password.</title>
-    <link href="https://zhangmiao.cc/posts/44ceee89.html"/>
-    <id>https://zhangmiao.cc/posts/44ceee89.html</id>
-    <published>2020-02-27T06:08:16.000Z</published>
-    <updated>2020-02-27T06:27:08.514Z</updated>
-    
-    <content type="html"><![CDATA[<p>在网络里面移除就行了· 再推就会要你重新输入了。<br>有点不人性化， mark 一下。</p><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/WechatIMG196212.png" alt></p><a id="more"></a>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在网络里面移除就行了· 再推就会要你重新输入了。&lt;br&gt;有点不人性化， mark 一下。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/WechatIMG196212.png&quot; alt&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Android" scheme="https://zhangmiao.cc/categories/Android/"/>
-    
-      <category term="Android Tips" scheme="https://zhangmiao.cc/categories/Android/Android-Tips/"/>
-    
-    
-      <category term="Android" scheme="https://zhangmiao.cc/tags/Android/"/>
-    
-      <category term="Android Tips" scheme="https://zhangmiao.cc/tags/Android-Tips/"/>
     
   </entry>
   

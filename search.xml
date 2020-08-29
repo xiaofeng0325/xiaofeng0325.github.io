@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Kotlin使用命令行编译]]></title>
+    <url>%2Fposts%2Fc0feb7da.html</url>
+    <content type="text"><![CDATA[Kotlin 使用命令行编译Kotlin 命令行编译工具下载地址：https://github.com/JetBrains/kotlin/releases/tag/v1.1.2-2，目前最新为 1.1.2-2。 你可以选择一个最新的稳定版下载。 下载完成后，解压到指定目录，然后将 bin 目录添加到系统环境变量。bin 目录包含编译和运行 Kotlin 所需的脚本。 SDKMAN!在 OS X、Linux、Cygwin、FreeBSD 和 Solaris 系统上也可以使用更简单的安装方法，命令如下： 123$ curl -s https://get.sdkman.io | bash$ sdk install kotlin Homebrew在 OS X 下，你可以使用 Homebrew 安装： 12$ brew update$ brew install kotlin MacPorts如果你是 MacPorts 用户，可以使用以下命令安装： 1$ sudo port install kotlin 创建和运行第一个程序创建一个名为 hello.kt 文件，代码如下： hello.ktfun main(args: Array) { println(“Hello, World!”) } 使用 Kotlin 编译器编译应用: 1$ kotlinc hello.kt -include-runtime -d hello.jar -d: 用来设置编译输出的名称，可以是 class 或 .jar 文件，也可以是目录。 -include-runtime : 让 .jar 文件包含 Kotlin 运行库，从而可以直接运行。 如果你想看所有的可用选项，运行: 1$ kotlinc -help 运行应用 12$ java -jar hello.jarHello, World! 编译成库若需要将生成的 jar 包供其他 Kotlin 程序使用，可无需包含 Kotlin 的运行库： 1$ kotlinc hello.kt -d hello.jar 由于这样生成的 .jar 文件不包含 Kotlin 运行库，所以你应该确保当它被使用时，运行时在你的 classpath 上。 你也可以使用 kotlin 命令来运行 Kotlin 编译器生成的 .jar 文件 1$ kotlin -classpath hello.jar HelloKt HelloKt 为编译器为 hello.kt 文件生成的默认类名。 运行 REPL（交互式解释器）我们可以运行如下命令得到一个可交互的 shell，然后输入任何有效的 Kotlin 代码，并立即看到结果 使用命令行执行脚本Kotlin 也可以作为一个脚本语言使用，文件后缀名为 .kts 。 例如我们创建一个名为 list_folders.kts，代码如下： 1234import java.io.Fileval folders = File(args[0]).listFiles &#123; file -&gt; file.isDirectory() &#125;folders?.forEach &#123; folder -&gt; println(folder) &#125; 执行时通过 -script 选项设置相应的脚本文件。 1$ kotlinc -script list_folders.kts &lt;path_to_folder&gt; $ kotlinc -script list_folders.kts]]></content>
+      <categories>
+        <category>Android</category>
+        <category>Kotlin</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Kotlin</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Kotlin教程]]></title>
+    <url>%2Fposts%2F17a38a8.html</url>
+    <content type="text"><![CDATA[Kotlin 教程Kotlin 是一种在 Java 虚拟机上运行的静态类型编程语言，被称之为 Android 世界的Swift，由 JetBrains 设计开发并开源。 Kotlin 可以编译成Java字节码，也可以编译成 JavaScript，方便在没有 JVM 的设备上运行。 在Google I/O 2017中，Google 宣布 Kotlin 成为 Android 官方开发语言。 我的第一个 Kotlin 程序Kotlin 程序文件以 .kt 结尾，如：hello.kt 、app.kt。 最简版12345package hello // 可选的包头 fun main(args: Array&lt;String&gt;) &#123; // 包级可见的函数，接受一个字符串数组作为参数 println("Hello World!") // 分号可以省略&#125; 面向对象123456789class Greeter(val name: String) &#123; fun greet() &#123; println("Hello, $name") &#125;&#125; fun main(args: Array&lt;String&gt;) &#123; Greeter("World!").greet() // 创建一个对象不用 new 关键字&#125; 为什么选择 Kotlin？ 简洁: 大大减少样板代码的数量。 安全: 避免空指针异常等整个类的错误。 互操作性: 充分利用 JVM、Android 和浏览器的现有库。 工具友好: 可用任何 Java IDE 或者使用命令行构建。 参考链接 官方网站 官方示例 官方网站 - 中文翻译 Kotlin 官方在线工具 Kotlin 在线工具]]></content>
+      <categories>
+        <category>Android</category>
+        <category>Kotlin</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Kotlin</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Flutter插件开发指南]]></title>
     <url>%2Fposts%2Ff946bb65.html</url>
     <content type="text"><![CDATA[Flutter插件开发创建插件目录1234flutter create -i objc -a java --template=plugin demo-i, 表示指定iOS的语言, objc, swift-a, 表示指定安卓的语言, java, kotlin 通过上面命令，创建一个名为demo的plugin模板, 并生成以下目录结构 目录结构12345- android // 插件相关 Android 代码- ios // 插件相关 iOS 代码- lib // 插件相关 Dart 代码- example // 示例项目, 用于调试当前开发的插件- pubspec.yaml // 插件配置文件 example目录example目录, 是一个示例项目, 用于调试当前开发的插件 在example/lib/main.dart中, 默认生成一些示例代码. 代码如下: 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950import 'package:flutter/material.dart';import 'dart:async';import 'package:flutter/services.dart';import 'package:demo/demo.dart';void main() =&gt; runApp(MyApp());class MyApp extends StatefulWidget &#123; @override _MyAppState createState() =&gt; _MyAppState();&#125;class _MyAppState extends State&lt;MyApp&gt; &#123; String _platformVersion = 'Unknown'; @override void initState() &#123; super.initState(); initPlatformState(); &#125; Future&lt;void&gt; initPlatformState() async &#123; String platformVersion; try &#123; platformVersion = await Demo.platformVersion; &#125; on PlatformException &#123; platformVersion = 'Failed to get platform version.'; &#125; if (!mounted) return; setState(() &#123; _platformVersion = platformVersion; &#125;); &#125; @override Widget build(BuildContext context) &#123; return MaterialApp( home: Scaffold( appBar: AppBar( title: const Text('Plugin example app'), ), body: Center( child: Text('Running on: $_platformVersion\n'), ), ), ); &#125;&#125; 示例中的代码, Demo.platformVersion, 实际上是调用了lib目录中, Demo类的get方法platformVersion, 也就是我们写的插件代码 lib目录lib目录, 主要用来存放, 开发的插件所需要的dart代码 在lib/demo.dart, 中可以找到默认生成的示例代码, 代码如下: 123456789101112import 'dart:async';import 'package:flutter/services.dart';class Demo &#123; static const MethodChannel _channel = const MethodChannel('demo') static Future&lt;String&gt; get platformVersion async &#123; final String version = await _channel.invokeMethod('getPlatformVersion'); return version; &#125;&#125; 以上代码, 创建了一个名字为demo的MethodChannel对象, 并提供一个get platformVersion方法, 在该方法中调用invokeMethod方法, 去调用原生代码中, 名字为getPlatformVersion的方法. MethodChannelflutter与原生的交互, 可以通过MethodChannel来实现, MethodChannel是双向的, 通过它可以在flutter中调用原生代码, 也可以在原生代码调用flutter代码 ios目录ios目录, 主要用来存放, 开发的插件所需要的iOS代码 在ios目录中, ios/Classes/DemoPlugin.m, 中可以找到getPlatformVersion对应的原生代码, 代码如下: 1234567891011121314151617181920#import &quot;DemoPlugin.h&quot;@implementation DemoPlugin+ (void)registerWithRegistrar:(NSObject&lt;FlutterPluginRegistrar&gt;*)registrar &#123; FlutterMethodChannel* channel = [FlutterMethodChannel methodChannelWithName:@&quot;demo&quot; binaryMessenger:[registrar messenger]]; DemoPlugin* instance = [[DemoPlugin alloc] init]; [registrar addMethodCallDelegate:instance channel:channel];&#125;- (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result &#123; if ([@&quot;getPlatformVersion&quot; isEqualToString:call.method]) &#123; result([@&quot;iOS &quot; stringByAppendingString:[[UIDevice currentDevice] systemVersion]]); &#125; else &#123; result(FlutterMethodNotImplemented); &#125;&#125;@end android目录android目录, 主要用来存放, 开发的插件所需要的android代码 在android目录中, android/src/main/java/com/example/demo/DemoPlugin.java, 中可以找到getPlatformVersion对应的原生代码, 代码如下: 12345678910111213141516171819202122232425package com.example.demo;import io.flutter.plugin.common.MethodCall;import io.flutter.plugin.common.MethodChannel;import io.flutter.plugin.common.MethodChannel.MethodCallHandler;import io.flutter.plugin.common.MethodChannel.Result;import io.flutter.plugin.common.PluginRegistry.Registrar;/** DemoPlugin */public class DemoPlugin implements MethodCallHandler &#123; /** Plugin registration. */ public static void registerWith(Registrar registrar) &#123; final MethodChannel channel = new MethodChannel(registrar.messenger(), "demo"); channel.setMethodCallHandler(new DemoPlugin()); &#125; @Override public void onMethodCall(MethodCall call, Result result) &#123; if (call.method.equals("getPlatformVersion")) &#123; result.success("Android " + android.os.Build.VERSION.RELEASE); &#125; else &#123; result.notImplemented(); &#125; &#125;&#125; 原生代码原生代码中, 也都创建一个名为demo的MethodChannel对象. (与lib目中的dart代码中的MethodChannel名字一致). 通过注册, 监听该channel的回调. 在回调中通过判断call.method的值, 来区分flutter中调用的哪个方法. 如示例中判断是否等于getPlatformVersion, 并在当中执行对应的原生代码, 获取设备相关的系统版本. 其他另外, 在flutter中, 如果想使用原生的视图, 需要使用flutter的UiKitView和AndroidView.]]></content>
@@ -4202,8 +4228,8 @@
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>代码片段</tag>
         <tag>Java</tag>
+        <tag>代码片段</tag>
       </tags>
   </entry>
   <entry>
