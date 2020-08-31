@@ -90,7 +90,7 @@
 <meta property="og:description" content="Kotlin 使用命令行编译Kotlin 命令行编译工具下载地址：https://github.com/JetBrains/kotlin/releases/tag/v1.1.2-2，目前最新为 1.1.2-2。 你可以选择一个最新的稳定版下载。 下载完成后，解压到指定目录，然后将 bin 目录添加到系统环境变量。bin 目录包含编译和运行 Kotlin 所需的脚本。  SDKMAN!在 OS X、">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2017/05/1495788947-5293-kotlin-shell.png">
-<meta property="og:updated_time" content="2020-08-29T03:17:46.078Z">
+<meta property="og:updated_time" content="2020-08-31T06:14:16.649Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kotlin使用命令行编译">
 <meta name="twitter:description" content="Kotlin 使用命令行编译Kotlin 命令行编译工具下载地址：https://github.com/JetBrains/kotlin/releases/tag/v1.1.2-2，目前最新为 1.1.2-2。 你可以选择一个最新的稳定版下载。 下载完成后，解压到指定目录，然后将 bin 目录添加到系统环境变量。bin 目录包含编译和运行 Kotlin 所需的脚本。  SDKMAN!在 OS X、">
@@ -479,9 +479,8 @@ var _hmt = _hmt || [];
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import java.io.File</span><br><span class="line"></span><br><span class="line">val folders = File(args[0]).listFiles &#123; file -&gt; file.isDirectory() &#125;</span><br><span class="line">folders?.forEach &#123; folder -&gt; println(folder) &#125;</span><br></pre></td></tr></table></figure>
 
 <p>执行时通过 -script 选项设置相应的脚本文件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ kotlinc -script list_folders.kts &lt;path_to_folder&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ kotlinc -script list_folders.kts &lt;path_to_folder&gt;</span><br><span class="line">$ kotlinc -script list_folders.kts</span><br></pre></td></tr></table></figure>
 
-<p>$ kotlinc -script list_folders.kts</p>
 
       
     </div>
@@ -571,6 +570,10 @@ var _hmt = _hmt || [];
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/posts/a90cf00c.html" rel="prev" title="Kotlin基础语法">
+                Kotlin基础语法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -658,7 +661,7 @@ var _hmt = _hmt || [];
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">332</span>
+                  <span class="site-state-item-count">333</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
