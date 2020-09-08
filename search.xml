@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Kotlin基本数据类型]]></title>
+    <url>%2Fposts%2F83cba390.html</url>
+    <content type="text"><![CDATA[Kotlin 的基本数值类型包括 Byte、Short、Int、Long、Float、Double 等。不同于 Java 的是，字符不属于数值类型，是一个独立的数据类型。 类型 位宽度 Double 64 Float 32 Long 64 Int 32 Short 16 Byte 8 字面常量下面是所有类型的字面常量： 十进制：123 长整型以大写的 L 结尾：123L 16 进制以 0x 开头：0x0F 2 进制以 0b 开头：0b00001011 注意：8进制不支持 Kotlin 同时也支持传统符号表示的浮点数值： Doubles 默认写法: 123.5, 123.5e10 Floats 使用 f 或者 F 后缀：123.5f 你可以使用下划线使数字常量更易读： 12345val oneMillion = 1_000_000val creditCardNumber = 1234_5678_9012_3456Lval socialSecurityNumber = 999_99_9999Lval hexBytes = 0xFF_EC_DE_5Eval bytes = 0b11010010_01101001_10010100_10010010 比较两个数字Kotlin 中没有基础数据类型，只有封装的数字类型，你每定义的一个变量，其实 Kotlin 帮你封装了一个对象，这样可以保证不会出现空指针。数字类型也一样，所以在比较两个数字的时候，就有比较数据大小和比较两个对象是否相同的区别了。 在 Kotlin 中，三个等号 === 表示比较对象地址，两个 == 表示比较两个值大小。 123456789101112fun main(args: Array&lt;String&gt;) &#123; val a: Int = 10000 println(a === a) // true，值相等，对象地址相等 //经过了装箱，创建了两个不同的对象 val boxedA: Int? = a val anotherBoxedA: Int? = a //虽然经过了装箱，但是值是相等的，都是10000 println(boxedA === anotherBoxedA) // false，值相等，对象地址不一样 println(boxedA == anotherBoxedA) // true，值相等&#125; 类型转换由于不同的表示方式，较小类型并不是较大类型的子类型，较小的类型不能隐式转换为较大的类型。 这意味着在不进行显式转换的情况下我们不能把 Byte 型值赋给一个 Int 变量。 12val b: Byte = 1 // OK, 字面值是静态检测的val i: Int = b // 错误 我们可以代用其toInt()方法。 12val b: Byte = 1 // OK, 字面值是静态检测的val i: Int = b.toInt() // OK 每种数据类型都有下面的这些方法，可以转化为其它的类型： 1234567toByte(): BytetoShort(): ShorttoInt(): InttoLong(): LongtoFloat(): FloattoDouble(): DoubletoChar(): Char 有些情况下也是可以使用自动类型转化的，前提是可以根据上下文环境推断出正确的数据类型而且数学操作符会做相应的重载。例如下面是正确的： 1val l = 1L + 3 // Long + Int =&gt; Long 位操作符对于Int和Long类型，还有一系列的位操作符可以使用，分别是： 1234567shl(bits) – 左移位 (Java’s &lt;&lt;)shr(bits) – 右移位 (Java’s &gt;&gt;)ushr(bits) – 无符号右移位 (Java’s &gt;&gt;&gt;)and(bits) – 与or(bits) – 或xor(bits) – 异或inv() – 反向 字符和 Java 不一样，Kotlin 中的 Char 不能直接和数字操作，Char 必需是单引号 ‘ 包含起来的。比如普通字符 ‘0’，’a’。 12345fun check(c: Char) &#123; if (c == 1) &#123; // 错误：类型不兼容 // …… &#125;&#125; 字符字面值用单引号括起来: ‘1’。 特殊字符可以用反斜杠转义。 支持这几个转义序列：\t、 \b、\n、\r、&#39;、&quot;、\ 和 $。 编码其他字符要用 Unicode 转义序列语法：’\uFF00’。 我们可以显式把字符转换为 Int 数字： 12345fun decimalDigitValue(c: Char): Int &#123; if (c !in '0'..'9') throw IllegalArgumentException("Out of range") return c.toInt() - '0'.toInt() // 显式转换为数字&#125; 当需要可空引用时，像数字、字符会被装箱。装箱操作不会保留同一性。 布尔布尔用 Boolean 类型表示，它有两个值：true 和 false。 若需要可空引用布尔会被装箱。 内置的布尔运算有： 123|| – 短路逻辑或&amp;&amp; – 短路逻辑与! - 逻辑非 数组数组用类 Array 实现，并且还有一个 size 属性及 get 和 set 方法，由于使用 [] 重载了 get 和 set 方法，所以我们可以通过下标很方便的获取或者设置数组对应位置的值。 数组的创建两种方式：一种是使用函数arrayOf()；另外一种是使用工厂函数。如下所示，我们分别是两种方式创建了两个数组： 12345678910fun main(args: Array&lt;String&gt;) &#123; //[1,2,3] val a = arrayOf(1, 2, 3) //[0,2,4] val b = Array(3, &#123; i -&gt; (i * 2) &#125;) //读取数组内容 println(a[0]) // 输出结果：1 println(b[1]) // 输出结果：2&#125; 如上所述，[] 运算符代表调用成员函数 get() 和 set()。 注意: 与 Java 不同的是，Kotlin 中数组是不协变的（invariant）。 除了类Array，还有ByteArray, ShortArray, IntArray，用来表示各个类型的数组，省去了装箱操作，因此效率更高，其用法同Array一样： 12val x: IntArray = intArrayOf(1, 2, 3)x[0] = x[1] + x[2] 字符串和 Java 一样，String 是不可变的。方括号 [] 语法可以很方便的获取字符串中的某个字符，也可以通过 for 循环来遍历： 123for (c in str) &#123; println(c)&#125; Kotlin 支持三个引号 “”” 扩起来的字符串，支持多行字符串，比如： 1234567fun main(args: Array&lt;String&gt;) &#123; val text = """ 多行字符串 多行字符串 """ println(text) // 输出有一些前置空格&#125; String 可以通过 trimMargin() 方法来删除多余的空白。 123456789fun main(args: Array&lt;String&gt;) &#123; val text = """ |多行字符串 |菜鸟教程 |多行字符串 |Runoob """.trimMargin() println(text) // 前置空格删除了&#125; 默认 | 用作边界前缀，但你可以选择其他字符并作为参数传入，比如 trimMargin(“&gt;”)。 字符串模板字符串可以包含模板表达式 ，即一些小段代码，会求值并把结果合并到字符串中。 模板表达式以美元符（$）开头，由一个简单的名字构成: 12345fun main(args: Array&lt;String&gt;) &#123; val i = 10 val s = "i = $i" // 求值结果为 "i = 10" println(s)&#125; 或者用花括号扩起来的任意表达式: 12345fun main(args: Array&lt;String&gt;) &#123; val s = "runoob" val str = "$s.length is $&#123;s.length&#125;" // 求值结果为 "runoob.length is 6" println(str)&#125; 原生字符串和转义字符串内部都支持模板。 如果你需要在原生字符串中表示字面值 $ 字符（它不支持反斜杠转义），你可以用下列语法： 123456fun main(args: Array&lt;String&gt;) &#123; val price = """ $&#123;'$'&#125;9.99 """ println(price) // 求值结果为 $9.99&#125;]]></content>
+      <categories>
+        <category>Android</category>
+        <category>Kotlin</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Kotlin</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Kotlin基础语法]]></title>
     <url>%2Fposts%2Fa90cf00c.html</url>
     <content type="text"><![CDATA[Kotlin 文件以 .kt 为后缀。 包声明代码文件的开头一般为包的声明： 123456package com.runoob.mainimport java.util.*fun test() &#123;&#125;class Runoob &#123;&#125; kotlin源文件不需要相匹配的目录和包，源文件可以放在任何文件目录。 以上例中 test() 的全名是 com.runoob.main.test、Runoob 的全名是 com.runoob.main.Runoob。 如果没有指定包，默认为 default 包。 默认导入有多个包会默认导入到每个 Kotlin 文件中： kotlin.* kotlin.annotation.* kotlin.collections.* kotlin.comparisons.* kotlin.io.* kotlin.ranges.* kotlin.sequences.* kotlin.text.* 函数定义函数定义使用关键字 fun，参数格式为：参数 : 类型 123fun sum(a: Int, b: Int): Int &#123; // Int 参数，返回值 Int return a + b&#125; 表达式作为函数体，返回类型自动推断： 123fun sum(a: Int, b: Int) = a + bpublic fun sum(a: Int, b: Int): Int = a + b // public 方法则必须明确写出返回类型 无返回值的函数(类似Java中的void)： 123456789fun printSum(a: Int, b: Int): Unit &#123; print(a + b)&#125;// 如果是返回 Unit类型，则可以省略(对于public方法也是这样)：public fun printSum(a: Int, b: Int) &#123; print(a + b)&#125; 可变长参数函数函数的变长参数可以用 vararg 关键字进行标识： 12345678910fun vars(vararg v:Int)&#123; for(vt in v)&#123; print(vt) &#125;&#125;// 测试fun main(args: Array&lt;String&gt;) &#123; vars(1,2,3,4,5) // 输出12345&#125; lambda(匿名函数)lambda表达式使用实例： 12345// 测试fun main(args: Array&lt;String&gt;) &#123; val sumLambda: (Int, Int) -&gt; Int = &#123;x,y -&gt; x+y&#125; println(sumLambda(1,2)) // 输出 3&#125; 定义常量与变量可变变量定义：var 关键字 1var &lt;标识符&gt; : &lt;类型&gt; = &lt;初始化值&gt; 不可变变量定义：val 关键字，只能赋值一次的变量(类似Java中final修饰的变量) 1val &lt;标识符&gt; : &lt;类型&gt; = &lt;初始化值&gt; 常量与变量都可以没有初始化值,但是在引用前必须初始化 编译器支持自动类型判断,即声明时可以不指定类型,由编译器判断。 12345678val a: Int = 1val b = 1 // 系统自动推断变量类型为Intval c: Int // 如果不在声明时初始化则必须提供变量类型c = 1 // 明确赋值var x = 5 // 系统自动推断变量类型为Intx += 1 // 变量可修改 注释Kotlin 支持单行和多行注释，实例如下： 1234// 这是一个单行注释/* 这是一个多行的 块注释。 */ 与 Java 不同, Kotlin 中的块注释允许嵌套。 字符串模板$ 表示一个变量名或者变量值 $varName 表示变量值 ${varName.fun()} 表示变量的方法返回值: 1234567var a = 1// 模板中的简单名称：val s1 = "a is $a" a = 2// 模板中的任意表达式：val s2 = "$&#123;s1.replace("is", "was")&#125;, but now is $a" NULL检查机制Kotlin的空安全设计对于声明可为空的参数，在使用时要进行空判断处理，有两种处理方式，字段后加!!像Java一样抛出空异常，另一种字段后加?可不做处理返回值为 null或配合?:做空判断处理 12345678//类型后面加?表示可为空var age: String? = "23" //抛出空指针异常val ages = age!!.toInt()//不做处理返回 nullval ages1 = age?.toInt()//age为空返回-1val ages2 = age?.toInt() ?: -1 当一个引用可能为 null 值时, 对应的类型声明必须明确地标记为可为 null。 当 str 中的字符串内容不是一个整数时, 返回 null: 123fun parseInt(str: String): Int? &#123; // ...&#125; 以下实例演示如何使用一个返回值可为 null 的函数: 12345678910111213fun main(args: Array&lt;String&gt;) &#123; if (args.size &lt; 2) &#123; print("Two integers expected") return &#125; val x = parseInt(args[0]) val y = parseInt(args[1]) // 直接使用 `x * y` 会导致错误, 因为它们可能为 null. if (x != null &amp;&amp; y != null) &#123; // 在进行过 null 值检查之后, x 和 y 的类型会被自动转换为非 null 变量 print(x * y) &#125;&#125; 类型检测及自动类型转换我们可以使用 is 运算符检测一个表达式是否某类型的一个实例(类似于Java中的instanceof关键字)。 1234567891011121314fun getStringLength(obj: Any): Int? &#123; if (obj is String) &#123; // 做过类型判断以后，obj会被系统自动转换为String类型 return obj.length &#125; //在这里还有一种方法，与Java中instanceof不同，使用!is // if (obj !is String)&#123; // // XXX // &#125; // 这里的obj仍然是Any类型的引用 return null&#125; 或者 123456fun getStringLength(obj: Any): Int? &#123; if (obj !is String) return null // 在这个分支中, `obj` 的类型会被自动转换为 `String` return obj.length&#125; 甚至还可以 123456fun getStringLength(obj: Any): Int? &#123; // 在 `&amp;&amp;` 运算符的右侧, `obj` 的类型会被自动转换为 `String` if (obj is String &amp;&amp; obj.length &gt; 0) return obj.length return null&#125; 区间区间表达式由具有操作符形式 .. 的 rangeTo 函数辅以 in 和 !in 形成。 区间是为任何可比较类型定义的，但对于整型原生类型，它有一个优化的实现。以下是使用区间的一些示例: 123456789101112131415161718for (i in 1..4) print(i) // 输出“1234”for (i in 4..1) print(i) // 什么都不输出if (i in 1..10) &#123; // 等同于 1 &lt;= i &amp;&amp; i &lt;= 10 println(i)&#125;// 使用 step 指定步长for (i in 1..4 step 2) print(i) // 输出“13”for (i in 4 downTo 1 step 2) print(i) // 输出“42”// 使用 until 函数排除结束元素for (i in 1 until 10) &#123; // i in [1, 10) 排除了 10 println(i)&#125; 实例测试1234567891011121314151617fun main(args: Array&lt;String&gt;) &#123; print("循环输出：") for (i in 1..4) print(i) // 输出“1234” println("\n----------------") print("设置步长：") for (i in 1..4 step 2) print(i) // 输出“13” println("\n----------------") print("使用 downTo：") for (i in 4 downTo 1 step 2) print(i) // 输出“42” println("\n----------------") print("使用 until：") // 使用 until 函数排除结束元素 for (i in 1 until 4) &#123; // i in [1, 4) 排除了 4 print(i) &#125; println("\n----------------")&#125; 输出结果： 12345678循环输出：1234----------------设置步长：13----------------使用 downTo：42----------------使用 until：123----------------]]></content>
@@ -487,8 +500,8 @@
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>View</tag>
         <tag>RecyclerView</tag>
+        <tag>View</tag>
       </tags>
   </entry>
   <entry>
@@ -2985,8 +2998,8 @@
         <category>Mac</category>
       </categories>
       <tags>
-        <tag>Mac</tag>
         <tag>博客</tag>
+        <tag>Mac</tag>
         <tag>终端</tag>
       </tags>
   </entry>
@@ -4007,8 +4020,8 @@
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>AndroidStudio</tag>
         <tag>Android Tips</tag>
+        <tag>AndroidStudio</tag>
       </tags>
   </entry>
   <entry>
