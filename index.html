@@ -431,53 +431,57 @@ var _hmt = _hmt || [];
 
       
         
-          
-          Kotlin 的基本数值类型包括 Byte、Short、Int、Long、Float、Double 等。不同于 Java 的是，字符不属于数值类型，是一个独立的数据类型。
+          <p>Kotlin 的基本数值类型包括 Byte、Short、Int、Long、Float、Double 等。不同于 Java 的是，字符不属于数值类型，是一个独立的数据类型。</p>
+<table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="left">位宽度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Double</td>
+<td align="left">64</td>
+</tr>
+<tr>
+<td align="left">Float</td>
+<td align="left">32</td>
+</tr>
+<tr>
+<td align="left">Long</td>
+<td align="left">64</td>
+</tr>
+<tr>
+<td align="left">Int</td>
+<td align="left">32</td>
+</tr>
+<tr>
+<td align="left">Short</td>
+<td align="left">16</td>
+</tr>
+<tr>
+<td align="left">Byte</td>
+<td align="left">8</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="字面常量"><a href="#字面常量" class="headerlink" title="字面常量"></a>字面常量</h2><p>下面是所有类型的字面常量：</p>
+<ul>
+<li>十进制：123</li>
+<li>长整型以大写的 L 结尾：123L</li>
+<li>16 进制以 0x 开头：0x0F</li>
+<li>2 进制以 0b 开头：0b00001011</li>
+<li>注意：8进制不支持</li>
+</ul>
+<p>Kotlin 同时也支持传统符号表示的浮点数值：</p>
+<ul>
+<li>Doubles 默认写法: <code>123.5</code>, <code>123.5e10</code></li>
+<li>Floats 使用 f 或者 F 后缀：<code>123.5f</code></li>
+</ul>
+<p>你可以使用下划线使数字常量更易读：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> oneMillion = <span class="number">1</span>_000_000</span><br><span class="line"><span class="keyword">val</span> creditCardNumber = <span class="number">1234</span>_5678_9012_3456L</span><br><span class="line"><span class="keyword">val</span> socialSecurityNumber = <span class="number">999</span>_99_9999L</span><br><span class="line"><span class="keyword">val</span> hexBytes = <span class="number">0xFF</span>_EC_DE_5E</span><br><span class="line"><span class="keyword">val</span> bytes = <span class="number">0</span>b11010010_01101001_10010100_10010010</span><br></pre></td></tr></table></figure>
 
-
-
-类型
-位宽度
-
-
-
-Double
-64
-
-
-Float
-32
-
-
-Long
-64
-
-
-Int
-32
-
-
-Short
-16
-
-
-Byte
-8
-
-
-
-字面常量下面是所有类型的字面常量：
-
-十进制：123
-长整型以大写的 L 结尾：123L
-16 进制以 0x 开头：0x0F
-2 进制以 0b 开头：0b00001011
-注意：8进制不支持
-
-Kotlin 同时也支持传统符号表示的浮点数值：
-
-Doubles 默认写法: 1
-          ...
+<hr>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/posts/83cba390.html#more" rel="contents">
