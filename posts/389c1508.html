@@ -91,7 +91,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20200911105633.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20200911105706.png">
-<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/v1LbPPWiaSt5LyCzHkhgibXhq6PCdFbg68ouJE4Ipp04HYVGacHzBAo9Rl0N77ib83I1mhlqicqbsNDumzDaWibmaKQ/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20200912103257.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20200911105730.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20200911105742.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20200911105759.png">
@@ -99,11 +99,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20200911110129.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20200911110147.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20200911110158.png">
-<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/v1LbPPWiaSt5LyCzHkhgibXhq6PCdFbg688whba795fOS1KL389JzIdVxPAmmDmKoOhw4AhcP2Rx4qcl3frBWic0w/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20200911110241.png">
-<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/v1LbPPWiaSt5LyCzHkhgibXhq6PCdFbg68wibGNyysJicGjU6EuuDAqxCpsKQIgtuqb7uajJ2ibD7iaZNhq6ibNAoZqOA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20200912103410.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20200911110253.png">
-<meta property="og:updated_time" content="2020-09-11T03:03:00.849Z">
+<meta property="og:updated_time" content="2020-09-12T02:34:21.619Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android_Material组件使用详解">
 <meta name="twitter:description" content="Android官方为开发者提供了许多丰富的UI控件，Material 组件就是包含了这些控件的一套工具，多数时候使用它可以满足我们日常开发UI的需求，提高效率。目前Android Material 组件已经更新了1.2.0稳定版，赶紧来了解一波。 导入依赖，就可以开始了。 1implementation &apos;com.google.android.material:material:1.2.0&apos;  M">
@@ -459,7 +458,7 @@ var _hmt = _hmt || [];
 <p>按压水波纹，支持设置波纹颜色。</p>
 <p>MaterialButton继承AppCompatButton，在原来Button的基础上做了一些扩展，如圆角、描边、前置和后置icon（icon支持设置Size、Tint、Padding、Gravity等），还支持按压水波纹并且设置color，基本能满足日常的需求。</p>
 <p>公开属性如下：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/v1LbPPWiaSt5LyCzHkhgibXhq6PCdFbg68ouJE4Ipp04HYVGacHzBAo9Rl0N77ib83I1mhlqicqbsNDumzDaWibmaKQ/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20200912103257.png" alt></p>
 <h2 id="关于background"><a href="#关于background" class="headerlink" title="关于background"></a><strong>关于background</strong></h2><p>在1.2版本以前，MaterialButton只能通过app:backgroundTint属性设置背景色，该属性接收color state list。不能通过android:background设置自定义drawable。</p>
 <p>1.2版本后，官方已修复此问题。如果未设置自定义背景，则 MaterialShapeDrawable 仍将用作默认背景。</p>
 <p>也就是说，如果按钮背景是纯色，可以通过app:backgroundTint指定；如果按钮背景是渐变色，则需要自己定义drawable，然后通过android:background设置。</p>
@@ -514,12 +513,11 @@ var _hmt = _hmt || [];
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;com.google.android.material.imageview.ShapeableImageView</span><br><span class="line">        ...</span><br><span class="line">        app:strokeWidth=&quot;4dp&quot;</span><br><span class="line">        android:padding=&quot;4dp&quot;</span><br></pre></td></tr></table></figure>
 
 <h2 id="Slider-加强版的SeekBar"><a href="#Slider-加强版的SeekBar" class="headerlink" title="Slider(加强版的SeekBar)"></a>Slider(加强版的SeekBar)</h2><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20200911110158.png" alt></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/v1LbPPWiaSt5LyCzHkhgibXhq6PCdFbg688whba795fOS1KL389JzIdVxPAmmDmKoOhw4AhcP2Rx4qcl3frBWic0w/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
 <p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20200911110241.png" alt></p>
 <p>Slider的父类BaseSlider，直接继承View，重新实现逻辑。此外BaseSlider还有个子类RangeSlider，用它来实现图1效果2</p>
 <p>Slider可以实现滑块头部数字变化效果，还可以实现类似刻度尺效果，比原生的SeekBar加强了不少。</p>
 <p>常用属性如下：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/v1LbPPWiaSt5LyCzHkhgibXhq6PCdFbg68wibGNyysJicGjU6EuuDAqxCpsKQIgtuqb7uajJ2ibD7iaZNhq6ibNAoZqOA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20200912103410.png" alt></p>
 <p>其他属性还有haloColor、haloRadius、thumbColor等，用来配置一些外观</p>
 <h2 id="BottomNavigationView"><a href="#BottomNavigationView" class="headerlink" title="BottomNavigationView"></a>BottomNavigationView</h2><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20200911110253.png" alt></p>
 <p>BottomNavigationView相比之前要完善了很多，可以设置icon大小，添加红点和未读消息数，以及超过3个item，切换效果也不会出现问题，通过LabelVisibilityMode.LABEL_VISIBILITY_LABELED指定。</p>
