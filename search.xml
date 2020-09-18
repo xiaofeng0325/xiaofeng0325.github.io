@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Kotlin扩展]]></title>
+    <url>%2Fposts%2F36cafa9f.html</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Kotlin扩展]]></title>
+    <url>%2Fposts%2F36cafa9f.html</url>
+    <content type="text"><![CDATA[Kotlin 扩展Kotlin 可以对一个类的属性和方法进行扩展，且不需要继承或使用 Decorator 模式。 扩展是一种静态行为，对被扩展的类代码本身不会造成任何影响。 扩展函数扩展函数可以在已有类中添加新的方法，不会对原类做修改，扩展函数定义形式： 123fun receiverType.functionName(params)&#123; body&#125; receiverType：表示函数的接收者，也就是函数扩展的对象 functionName：扩展函数的名称 params：扩展函数的参数，可以为NULL 以下实例扩展 User 类 ： 1234567891011class User(var name:String)/**扩展函数**/fun User.Print()&#123; print("用户名 $name")&#125;fun main(arg:Array&lt;String&gt;)&#123; var user = User("Runoob") user.Print()&#125; 实例执行输出结果为： 1用户名 Runoob 下面代码为 MutableList 添加一个swap 函数： 123456789101112131415// 扩展函数 swap,调换不同位置的值fun MutableList&lt;Int&gt;.swap(index1: Int, index2: Int) &#123; val tmp = this[index1] // this 对应该列表 this[index1] = this[index2] this[index2] = tmp&#125;fun main(args: Array&lt;String&gt;) &#123; val l = mutableListOf(1, 2, 3) // 位置 0 和 2 的值做了互换 l.swap(0, 2) // 'swap()' 函数内的 'this' 将指向 'l' 的值 println(l.toString())&#125; 实例执行输出结果为： 1[3, 2, 1] this关键字指代接收者对象(receiver object)(也就是调用扩展函数时, 在点号之前指定的对象实例)。 扩展函数是静态解析的扩展函数是静态解析的，并不是接收者类型的虚拟成员，在调用扩展函数时，具体被调用的的是哪一个函数，由调用函数的的对象表达式来决定的，而不是动态的类型决定的: 123456789101112131415open class Cclass D: C()fun C.foo() = "c" // 扩展函数 foofun D.foo() = "d" // 扩展函数 foofun printFoo(c: C) &#123; println(c.foo()) // 类型是 C 类&#125;fun main(arg:Array&lt;String&gt;)&#123; printFoo(D())&#125; 实例执行输出结果为： 1c 若扩展函数和成员函数一致，则使用该函数时，会优先使用成员函数。 12345678910class C &#123; fun foo() &#123; println("成员函数") &#125;&#125;fun C.foo() &#123; println("扩展函数") &#125;fun main(arg:Array&lt;String&gt;)&#123; var c = C() c.foo()&#125; 实例执行输出结果为： 1成员函数 扩展一个空对象在扩展函数内， 可以通过 this 来判断接收者是否为 NULL,这样，即使接收者为 NULL,也可以调用扩展函数。例如: 12345678910fun Any?.toString(): String &#123; if (this == null) return "null" // 空检测之后，“this”会自动转换为非空类型，所以下面的 toString() // 解析为 Any 类的成员函数 return toString()&#125;fun main(arg:Array&lt;String&gt;)&#123; var t = null println(t.toString())&#125; 实例执行输出结果为： 1null 扩展属性 除了函数，Kotlin 也支持属性对属性进行扩展: 12val &lt;T&gt; List&lt;T&gt;.lastIndex: Int get() = size - 1 扩展属性允许定义在类或者kotlin文件中，不允许定义在函数中。初始化属性因为属性没有后端字段（backing field），所以不允许被初始化，只能由显式提供的 getter/setter 定义。 1val Foo.bar = 1 // 错误：扩展属性不能有初始化器 扩展属性只能被声明为 val。 伴生对象的扩展如果一个类定义有一个伴生对象 ，你也可以为伴生对象定义扩展函数和属性。 伴生对象通过”类名.”形式调用伴生对象，伴生对象声明的扩展函数，通过用类名限定符来调用： 123456789101112131415class MyClass &#123; companion object &#123; &#125; // 将被称为 "Companion"&#125;fun MyClass.Companion.foo() &#123; println("伴随对象的扩展函数")&#125;val MyClass.Companion.no: Int get() = 10fun main(args: Array&lt;String&gt;) &#123; println("no:$&#123;MyClass.no&#125;") MyClass.foo()&#125; 实例执行输出结果为： 12no:10伴随对象的扩展函数 扩展的作用域通常扩展函数或属性定义在顶级包下: 123package foo.barfun Baz.goo() &#123; …… &#125; 要使用所定义包之外的一个扩展, 通过import导入扩展的函数名进行使用: 123456789package com.example.usageimport foo.bar.goo // 导入所有名为 goo 的扩展 // 或者import foo.bar.* // 从 foo.bar 导入一切fun usage(baz: Baz) &#123; baz.goo()&#125; 扩展声明为成员在一个类内部你可以为另一个类声明扩展。 在这个扩展中，有个多个隐含的接受者，其中扩展方法定义所在类的实例称为分发接受者，而扩展方法的目标类型的实例称为扩展接受者。 1234567891011121314151617181920212223class D &#123; fun bar() &#123; println("D bar") &#125;&#125;class C &#123; fun baz() &#123; println("C baz") &#125; fun D.foo() &#123; bar() // 调用 D.bar baz() // 调用 C.baz &#125; fun caller(d: D) &#123; d.foo() // 调用扩展函数 &#125;&#125;fun main(args: Array&lt;String&gt;) &#123; val c: C = C() val d: D = D() c.caller(d)&#125; 实例执行输出结果为： 12D barC baz 在 C 类内，创建了 D 类的扩展。此时，C 被成为分发接受者，而 D 为扩展接受者。从上例中，可以清楚的看到，在扩展函数中，可以调用派发接收者的成员函数。 假如在调用某一个函数，而该函数在分发接受者和扩展接受者均存在，则以扩展接收者优先，要引用分发接收者的成员你可以使用限定的 this 语法。 1234567891011121314151617181920212223class D &#123; fun bar() &#123; println("D bar") &#125;&#125;class C &#123; fun bar() &#123; println("C bar") &#125; // 与 D 类 的 bar 同名 fun D.foo() &#123; bar() // 调用 D.bar()，扩展接收者优先 this@C.bar() // 调用 C.bar() &#125; fun caller(d: D) &#123; d.foo() // 调用扩展函数 &#125;&#125;fun main(args: Array&lt;String&gt;) &#123; val c: C = C() val d: D = D() c.caller(d)&#125; 实例执行输出结果为： 12D barC bar 以成员的形式定义的扩展函数, 可以声明为 open , 而且可以在子类中覆盖. 也就是说, 在这类扩展函数的派 发过程中, 针对分发接受者是虚拟的(virtual), 但针对扩展接受者仍然是静态的。 12345678910111213141516171819202122232425262728293031323334353637open class D &#123;&#125;class D1 : D() &#123;&#125;open class C &#123; open fun D.foo() &#123; println("D.foo in C") &#125; open fun D1.foo() &#123; println("D1.foo in C") &#125; fun caller(d: D) &#123; d.foo() // 调用扩展函数 &#125;&#125;class C1 : C() &#123; override fun D.foo() &#123; println("D.foo in C1") &#125; override fun D1.foo() &#123; println("D1.foo in C1") &#125;&#125;fun main(args: Array&lt;String&gt;) &#123; C().caller(D()) // 输出 "D.foo in C" C1().caller(D()) // 输出 "D.foo in C1" —— 分发接收者虚拟解析 C().caller(D1()) // 输出 "D.foo in C" —— 扩展接收者静态解析&#125; 实例执行输出结果为： 123D.foo in CD.foo in C1D.foo in C]]></content>
+      <categories>
+        <category>Android</category>
+        <category>Kotlin</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Kotlin</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Kotlin接口]]></title>
     <url>%2Fposts%2F404317d3.html</url>
     <content type="text"><![CDATA[Kotlin 接口Kotlin 接口与 Java 8 类似，使用 interface 关键字定义接口，允许方法有默认实现： 1234567interface MyInterface &#123; fun bar() // 未实现 fun foo() &#123; //已实现 // 可选的方法体 println("foo") &#125;&#125; 实现接口一个类或者对象可以实现一个或多个接口。 12345class Child : MyInterface &#123; override fun bar() &#123; // 方法体 &#125;&#125; 实例12345678910111213141516171819interface MyInterface &#123; fun bar() fun foo() &#123; // 可选的方法体 println("foo") &#125;&#125;class Child : MyInterface &#123; override fun bar() &#123; // 方法体 println("bar") &#125;&#125;fun main(args: Array&lt;String&gt;) &#123; val c = Child() c.foo(); c.bar(); &#125; 输出结果为： 12foobar 接口中的属性接口中的属性只能是抽象的，不允许初始化值，接口不会保存属性值，实现接口时，必须重写属性： 1234567interface MyInterface&#123; var name:String //name 属性, 抽象的&#125; class MyImpl:MyInterface&#123; override var name: String = "runoob" //重写属性&#125; 实例12345678910111213141516171819202122interface MyInterface &#123; var name:String //name 属性, 抽象的 fun bar() fun foo() &#123; // 可选的方法体 println("foo") &#125;&#125;class Child : MyInterface &#123; override var name: String = "runoob" //重写属性 override fun bar() &#123; // 方法体 println("bar") &#125;&#125;fun main(args: Array&lt;String&gt;) &#123; val c = Child() c.foo(); c.bar(); println(c.name) &#125; 输出结果为： 123foobarrunoob 函数重写实现多个接口时，可能会遇到同一方法继承多个实现的问题。例如: 实例123456789101112131415161718192021222324252627282930interface A &#123; fun foo() &#123; print("A") &#125; // 已实现 fun bar() // 未实现，没有方法体，是抽象的&#125; interface B &#123; fun foo() &#123; print("B") &#125; // 已实现 fun bar() &#123; print("bar") &#125; // 已实现&#125; class C : A &#123; override fun bar() &#123; print("bar") &#125; // 重写&#125; class D : A, B &#123; override fun foo() &#123; super&lt;A&gt;.foo() super&lt;B&gt;.foo() &#125; override fun bar() &#123; super&lt;B&gt;.bar() &#125;&#125; fun main(args: Array&lt;String&gt;) &#123; val d = D() d.foo(); d.bar();&#125; 输出结果为： 1ABbar 实例中接口 A 和 B 都定义了方法 foo() 和 bar()， 两者都实现了 foo(), B 实现了 bar()。因为 C 是一个实现了 A 的具体类，所以必须要重写 bar() 并实现这个抽象方法。 然而，如果我们从 A 和 B 派生 D，我们需要实现多个接口继承的所有方法，并指明 D 应该如何实现它们。这一规则 既适用于继承单个实现（bar()）的方法也适用于继承多个实现（foo()）的方法。]]></content>
@@ -2624,10 +2642,10 @@
       <tags>
         <tag>Android</tag>
         <tag>Android Tips</tag>
+        <tag>.so文件</tag>
         <tag>armeabi-v7a</tag>
         <tag>arm64-v8a</tag>
         <tag>abi兼容</tag>
-        <tag>.so文件</tag>
       </tags>
   </entry>
   <entry>
@@ -2641,9 +2659,9 @@
       <tags>
         <tag>Android</tag>
         <tag>Android Tips</tag>
-        <tag>.so文件</tag>
         <tag>ABI</tag>
         <tag>CPU</tag>
+        <tag>.so文件</tag>
       </tags>
   </entry>
   <entry>
@@ -3756,8 +3774,8 @@
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>XBus</tag>
         <tag>EventBus</tag>
+        <tag>XBus</tag>
       </tags>
   </entry>
   <entry>
