@@ -307,6 +307,200 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/6f6a6f9c.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhangMiao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zm.blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/6f6a6f9c.html" itemprop="url">Kotlin泛型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-19T10:21:33+08:00">
+                2020-09-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/Kotlin/" itemprop="url" rel="index">
+                    <span itemprop="name">Kotlin</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/6f6a6f9c.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/6f6a6f9c.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/6f6a6f9c.html" class="leancloud_visitors" data-flag-title="Kotlin泛型">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="Kotlin-泛型"><a href="#Kotlin-泛型" class="headerlink" title="Kotlin 泛型"></a>Kotlin 泛型</h1><p>泛型，即 “参数化类型”，将类型参数化，可以用在类，接口，方法上。</p>
+<p>与 Java 一样，Kotlin 也提供泛型，为类型安全提供保证，消除类型强转的烦恼。</p>
+<p>声明一个泛型类:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Box</span>&lt;<span class="type">T</span>&gt;</span>(t: T) &#123;</span><br><span class="line">    <span class="keyword">var</span> value = t</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>创建类的实例时我们需要指定类型参数:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> box: Box&lt;<span class="built_in">Int</span>&gt; = Box&lt;<span class="built_in">Int</span>&gt;(<span class="number">1</span>)</span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line"><span class="keyword">val</span> box = Box(<span class="number">1</span>) <span class="comment">// 编译器会进行类型推断，1 类型 Int，所以编译器知道我们说的是 Box&lt;Int&gt;。</span></span><br></pre></td></tr></table></figure>
+
+<p>以下实例向泛型类 Box 传入整型数据和字符串：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Box</span>&lt;<span class="type">T</span>&gt;</span>(t : T) &#123;</span><br><span class="line">    <span class="keyword">var</span> value = t</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> boxInt = Box&lt;<span class="built_in">Int</span>&gt;(<span class="number">10</span>)</span><br><span class="line">    <span class="keyword">var</span> boxString = Box&lt;String&gt;(<span class="string">"Runoob"</span>)</span><br><span class="line"></span><br><span class="line">    println(boxInt.value)</span><br><span class="line">    println(boxString.value)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果为：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span></span><br><span class="line">Runoob</span><br></pre></td></tr></table></figure>
+
+<p>定义泛型类型变量，可以完整地写明类型参数，如果编译器可以自动推定类型参数，也可以省略类型参数。</p>
+<p>Kotlin 泛型函数的声明与 Java 相同，类型参数要放在函数名的前面：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="type">&lt;T&gt;</span> <span class="title">boxIn</span><span class="params">(value: <span class="type">T</span>)</span></span> = Box(value)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以下都是合法语句</span></span><br><span class="line"><span class="keyword">val</span> box4 = boxIn&lt;<span class="built_in">Int</span>&gt;(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">val</span> box5 = boxIn(<span class="number">1</span>)     <span class="comment">// 编译器会进行类型推断</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/posts/6f6a6f9c.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/2fd9bfca.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2071,202 +2265,6 @@ var _hmt = _hmt || [];
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/a90cf00c.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ZhangMiao">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/4081078?s=460&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zm.blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/a90cf00c.html" itemprop="url">Kotlin基础语法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-31T14:10:48+08:00">
-                2020-08-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/Kotlin/" itemprop="url" rel="index">
-                    <span itemprop="name">Kotlin</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/a90cf00c.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/a90cf00c.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/posts/a90cf00c.html" class="leancloud_visitors" data-flag-title="Kotlin基础语法">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Kotlin 文件以 .kt 为后缀。</p>
-<h2 id="包声明"><a href="#包声明" class="headerlink" title="包声明"></a>包声明</h2><p>代码文件的开头一般为包的声明：</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.runoob.main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.*</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">test</span><span class="params">()</span></span> &#123;&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Runoob</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>kotlin源文件不需要相匹配的目录和包，源文件可以放在任何文件目录。</p>
-<p>以上例中 test() 的全名是 com.runoob.main.test、Runoob 的全名是 com.runoob.main.Runoob。</p>
-<p>如果没有指定包，默认为 <strong>default</strong> 包。</p>
-<h3 id="默认导入"><a href="#默认导入" class="headerlink" title="默认导入"></a>默认导入</h3><p>有多个包会默认导入到每个 Kotlin 文件中：</p>
-<ul>
-<li>kotlin.*</li>
-<li>kotlin.annotation.*</li>
-<li>kotlin.collections.*</li>
-<li>kotlin.comparisons.*</li>
-<li>kotlin.io.*</li>
-<li>kotlin.ranges.*</li>
-<li>kotlin.sequences.*</li>
-<li>kotlin.text.*</li>
-</ul>
-<hr>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/a90cf00c.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2319,7 +2317,7 @@ var _hmt = _hmt || [];
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">342</span>
+                  <span class="site-state-item-count">343</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

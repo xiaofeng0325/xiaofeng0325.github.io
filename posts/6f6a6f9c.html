@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Android,Java,设计模式,享元模式,">
+  <meta name="keywords" content="Android,Kotlin,">
 
 
 
@@ -81,20 +81,18 @@
 
 
 
-<meta name="description" content="通过理论,代码示例,Android源码来学习享元模式  介绍享元模式是对象池的一种实现，享元模式用来尽可能减少内存使用量，它适合用于可能存在大量重复对象的场景，来缓存可共享的对象，达到对象共享、避免创建过多对象的效果，这样一来就可以提升性能、避免内存移除等。 定义使用共享对象可以有效地支持大量的细粒度的对象。 使用场景 系统中存在大量的相似对象。 细粒度的对象都具备较接近的外部状态，而且内部状态">
-<meta name="keywords" content="Android,Java,设计模式,享元模式">
+<meta name="description" content="Kotlin 泛型泛型，即 “参数化类型”，将类型参数化，可以用在类，接口，方法上。 与 Java 一样，Kotlin 也提供泛型，为类型安全提供保证，消除类型强转的烦恼。 声明一个泛型类: 123class Box&amp;lt;T&amp;gt;(t: T) &amp;#123;    var value = t&amp;#125;  创建类的实例时我们需要指定类型参数: 123val box: Box&amp;lt;Int&amp;gt;">
+<meta name="keywords" content="Android,Kotlin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式十九之享元模式">
-<meta property="og:url" content="https://zhangmiao.cc/posts/7a00ed5e.html">
+<meta property="og:title" content="Kotlin泛型">
+<meta property="og:url" content="https://zhangmiao.cc/posts/6f6a6f9c.html">
 <meta property="og:site_name" content="zm.blog">
-<meta property="og:description" content="通过理论,代码示例,Android源码来学习享元模式  介绍享元模式是对象池的一种实现，享元模式用来尽可能减少内存使用量，它适合用于可能存在大量重复对象的场景，来缓存可共享的对象，达到对象共享、避免创建过多对象的效果，这样一来就可以提升性能、避免内存移除等。 定义使用共享对象可以有效地支持大量的细粒度的对象。 使用场景 系统中存在大量的相似对象。 细粒度的对象都具备较接近的外部状态，而且内部状态">
+<meta property="og:description" content="Kotlin 泛型泛型，即 “参数化类型”，将类型参数化，可以用在类，接口，方法上。 与 Java 一样，Kotlin 也提供泛型，为类型安全提供保证，消除类型强转的烦恼。 声明一个泛型类: 123class Box&amp;lt;T&amp;gt;(t: T) &amp;#123;    var value = t&amp;#125;  创建类的实例时我们需要指定类型参数: 123val box: Box&amp;lt;Int&amp;gt;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190916144721.png">
-<meta property="og:updated_time" content="2019-09-16T06:53:59.369Z">
+<meta property="og:updated_time" content="2020-09-19T02:23:52.963Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计模式十九之享元模式">
-<meta name="twitter:description" content="通过理论,代码示例,Android源码来学习享元模式  介绍享元模式是对象池的一种实现，享元模式用来尽可能减少内存使用量，它适合用于可能存在大量重复对象的场景，来缓存可共享的对象，达到对象共享、避免创建过多对象的效果，这样一来就可以提升性能、避免内存移除等。 定义使用共享对象可以有效地支持大量的细粒度的对象。 使用场景 系统中存在大量的相似对象。 细粒度的对象都具备较接近的外部状态，而且内部状态">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190916144721.png">
+<meta name="twitter:title" content="Kotlin泛型">
+<meta name="twitter:description" content="Kotlin 泛型泛型，即 “参数化类型”，将类型参数化，可以用在类，接口，方法上。 与 Java 一样，Kotlin 也提供泛型，为类型安全提供保证，消除类型强转的烦恼。 声明一个泛型类: 123class Box&amp;lt;T&amp;gt;(t: T) &amp;#123;    var value = t&amp;#125;  创建类的实例时我们需要指定类型参数: 123val box: Box&amp;lt;Int&amp;gt;">
 
 
 
@@ -124,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://zhangmiao.cc/posts/7a00ed5e.html">
+  <link rel="canonical" href="https://zhangmiao.cc/posts/6f6a6f9c.html">
 
 
 
 
 
-  <title>设计模式十九之享元模式 | zm.blog</title>
+  <title>Kotlin泛型 | zm.blog</title>
   
 
 
@@ -310,7 +308,7 @@ var _hmt = _hmt || [];
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/7a00ed5e.html">
+    <link itemprop="mainEntityOfPage" href="https://zhangmiao.cc/posts/6f6a6f9c.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhangMiao">
@@ -327,7 +325,7 @@ var _hmt = _hmt || [];
 
         
         
-          <h1 class="post-title" itemprop="name headline">设计模式十九之享元模式</h1>
+          <h1 class="post-title" itemprop="name headline">Kotlin泛型</h1>
         
 
         <div class="post-meta">
@@ -339,8 +337,8 @@ var _hmt = _hmt || [];
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-16T14:38:06+08:00">
-                2019-09-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-19T10:21:33+08:00">
+                2020-09-19
               </time>
             
 
@@ -362,8 +360,8 @@ var _hmt = _hmt || [];
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -373,8 +371,8 @@ var _hmt = _hmt || [];
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/设计模式/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
+                  <a href="/categories/Android/Kotlin/" itemprop="url" rel="index">
+                    <span itemprop="name">Kotlin</span>
                   </a>
                 </span>
 
@@ -391,8 +389,8 @@ var _hmt = _hmt || [];
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/7a00ed5e.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/7a00ed5e.html" itemprop="commentCount"></span>
+                <a href="/posts/6f6a6f9c.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/6f6a6f9c.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -400,7 +398,7 @@ var _hmt = _hmt || [];
 
           
           
-             <span id="/posts/7a00ed5e.html" class="leancloud_visitors" data-flag-title="设计模式十九之享元模式">
+             <span id="/posts/6f6a6f9c.html" class="leancloud_visitors" data-flag-title="Kotlin泛型">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -431,47 +429,73 @@ var _hmt = _hmt || [];
       
 
       
-        <blockquote>
-<p>通过理论,代码示例,Android源码来学习享元模式</p>
-</blockquote>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>享元模式是对象池的一种实现，享元模式用来尽可能减少内存使用量，它适合用于可能存在大量重复对象的场景，来缓存可共享的对象，达到对象共享、避免创建过多对象的效果，这样一来就可以提升性能、避免内存移除等。</p>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>使用共享对象可以有效地支持大量的细粒度的对象。</p>
-<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><ul>
-<li>系统中存在大量的相似对象。</li>
-<li>细粒度的对象都具备较接近的外部状态，而且内部状态与环境无关，也就是说对象没有特定身份。</li>
-<li>需要缓冲池的场景。</li>
-</ul>
+        <h1 id="Kotlin-泛型"><a href="#Kotlin-泛型" class="headerlink" title="Kotlin 泛型"></a>Kotlin 泛型</h1><p>泛型，即 “参数化类型”，将类型参数化，可以用在类，接口，方法上。</p>
+<p>与 Java 一样，Kotlin 也提供泛型，为类型安全提供保证，消除类型强转的烦恼。</p>
+<p>声明一个泛型类:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Box</span>&lt;<span class="type">T</span>&gt;</span>(t: T) &#123;</span><br><span class="line">    <span class="keyword">var</span> value = t</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>创建类的实例时我们需要指定类型参数:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> box: Box&lt;<span class="built_in">Int</span>&gt; = Box&lt;<span class="built_in">Int</span>&gt;(<span class="number">1</span>)</span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line"><span class="keyword">val</span> box = Box(<span class="number">1</span>) <span class="comment">// 编译器会进行类型推断，1 类型 Int，所以编译器知道我们说的是 Box&lt;Int&gt;。</span></span><br></pre></td></tr></table></figure>
+
+<p>以下实例向泛型类 Box 传入整型数据和字符串：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Box</span>&lt;<span class="type">T</span>&gt;</span>(t : T) &#123;</span><br><span class="line">    <span class="keyword">var</span> value = t</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> boxInt = Box&lt;<span class="built_in">Int</span>&gt;(<span class="number">10</span>)</span><br><span class="line">    <span class="keyword">var</span> boxString = Box&lt;String&gt;(<span class="string">"Runoob"</span>)</span><br><span class="line"></span><br><span class="line">    println(boxInt.value)</span><br><span class="line">    println(boxString.value)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果为：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span></span><br><span class="line">Runoob</span><br></pre></td></tr></table></figure>
+
+<p>定义泛型类型变量，可以完整地写明类型参数，如果编译器可以自动推定类型参数，也可以省略类型参数。</p>
+<p>Kotlin 泛型函数的声明与 Java 相同，类型参数要放在函数名的前面：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="type">&lt;T&gt;</span> <span class="title">boxIn</span><span class="params">(value: <span class="type">T</span>)</span></span> = Box(value)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以下都是合法语句</span></span><br><span class="line"><span class="keyword">val</span> box4 = boxIn&lt;<span class="built_in">Int</span>&gt;(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">val</span> box5 = boxIn(<span class="number">1</span>)     <span class="comment">// 编译器会进行类型推断</span></span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
-<h2 id="UML-类图"><a href="#UML-类图" class="headerlink" title="UML 类图"></a>UML 类图</h2><p><img src="https://raw.githubusercontent.com/zhangmiaocc/blogImageResource/master/img/20190916144721.png" alt></p>
+
+<p>在调用泛型函数时，如果可以推断出类型参数，可以省略泛型参数。</p>
+<p>以下实例创建了泛型函数 doPrintln，函数根据传入的不同类型做相应处理：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">    <span class="keyword">val</span> age = <span class="number">23</span></span><br><span class="line">    <span class="keyword">val</span> name = <span class="string">"runoob"</span></span><br><span class="line">    <span class="keyword">val</span> bool = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">    doPrintln(age)    <span class="comment">// 整型</span></span><br><span class="line">    doPrintln(name)   <span class="comment">// 字符串</span></span><br><span class="line">    doPrintln(bool)   <span class="comment">// 布尔型</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="type">&lt;T&gt;</span> <span class="title">doPrintln</span><span class="params">(content: <span class="type">T</span>)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">when</span> (content) &#123;</span><br><span class="line">        <span class="keyword">is</span> <span class="built_in">Int</span> -&gt; println(<span class="string">"整型数字为 <span class="variable">$content</span>"</span>)</span><br><span class="line">        <span class="keyword">is</span> String -&gt; println(<span class="string">"字符串转换为大写：<span class="subst">$&#123;content.toUpperCase()&#125;</span>"</span>)</span><br><span class="line">        <span class="keyword">else</span> -&gt; println(<span class="string">"T 不是整型，也不是字符串"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果为：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">整型数字为 <span class="number">23</span></span><br><span class="line">字符串转换为大写：RUNOOB</span><br><span class="line">T 不是整型，也不是字符串</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="泛型约束"><a href="#泛型约束" class="headerlink" title="泛型约束"></a>泛型约束</h2><p>我们可以使用泛型约束来设定一个给定参数允许使用的类型。</p>
+<p>Kotlin 中使用 : 对泛型的类型上限进行约束。</p>
+<p>最常见的约束是上界(upper bound)：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="type">&lt;T : Comparable&lt;T&gt;</span>&gt; <span class="title">sort</span><span class="params">(list: <span class="type">List</span>&lt;<span class="type">T</span>&gt;)</span></span> &#123;</span><br><span class="line">    <span class="comment">// ……</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Comparable 的子类型可以替代 T。 例如:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sort(listOf(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)) <span class="comment">// OK。Int 是 Comparable&lt;Int&gt; 的子类型</span></span><br><span class="line">sort(listOf(HashMap&lt;<span class="built_in">Int</span>, String&gt;())) <span class="comment">// 错误：HashMap&lt;Int, String&gt; 不是 Comparable&lt;HashMap&lt;Int, String&gt;&gt; 的子类型</span></span><br></pre></td></tr></table></figure>
+
+<p>默认的上界是 Any?。</p>
+<p>对于多个上界约束条件，可以用 where 子句：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="type">&lt;T&gt;</span> <span class="title">copyWhenGreater</span><span class="params">(list: <span class="type">List</span>&lt;<span class="type">T</span>&gt;, threshold: <span class="type">T</span>)</span></span>: List&lt;String&gt;</span><br><span class="line">    where T : CharSequence,</span><br><span class="line">          T : Comparable&lt;T&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> list.filter &#123; it &gt; threshold &#125;.map &#123; it.toString() &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="型变"><a href="#型变" class="headerlink" title="型变"></a>型变</h2><p>Kotlin 中没有通配符类型，它有两个其他的东西：声明处型变（declaration-site variance）与类型投影（type projections）。</p>
+<h3 id="声明处型变"><a href="#声明处型变" class="headerlink" title="声明处型变"></a>声明处型变</h3><p>声明处的类型变异使用协变注解修饰符：in、out，消费者 in, 生产者 out。</p>
+<p>使用 out 使得一个类型参数协变，协变类型参数只能用作输出，可以作为返回值类型但是无法作为入参的类型：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个支持协变的类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Runoob</span>&lt;<span class="type">out A</span>&gt;</span>(<span class="keyword">val</span> a: A) &#123;</span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">foo</span><span class="params">()</span></span>: A &#123;</span><br><span class="line">        <span class="keyword">return</span> a</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> strCo: Runoob&lt;String&gt; = Runoob(<span class="string">"a"</span>)</span><br><span class="line">    <span class="keyword">var</span> anyCo: Runoob&lt;Any&gt; = Runoob&lt;Any&gt;(<span class="string">"b"</span>)</span><br><span class="line">    anyCo = strCo</span><br><span class="line">    println(anyCo.foo())   <span class="comment">// 输出 a</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>in 使得一个类型参数逆变，逆变类型参数只能用作输入，可以作为入参的类型但是无法作为返回值的类型：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个支持逆变的类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Runoob</span>&lt;<span class="type">in A</span>&gt;</span>(a: A) &#123;</span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">foo</span><span class="params">(a: <span class="type">A</span>)</span></span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> strDCo = Runoob(<span class="string">"a"</span>)</span><br><span class="line">    <span class="keyword">var</span> anyDCo = Runoob&lt;Any&gt;(<span class="string">"b"</span>)</span><br><span class="line">    strDCo = anyDCo</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="星号投射"><a href="#星号投射" class="headerlink" title="星号投射"></a>星号投射</h2><p>有些时候, 你可能想表示你并不知道类型参数的任何信息, 但是仍然希望能够安全地使用它. 这里所谓”安全地使用”是指, 对泛型类型定义一个类型投射, 要求这个泛型类型的所有的实体实例, 都是这个投射的子类型。</p>
+<p>对于这个问题, Kotlin 提供了一种语法, 称为 星号投射(star-projection):</p>
 <ul>
-<li>Flyweiget : 享元对象抽象基类或者接口</li>
-<li>ConcreteFlyweiget: 具体的享元对象。</li>
-<li>FlyweigetFactory: 享元工厂，负责管理享元对象池和创建享元对象。</li>
+<li>假如类型定义为 Foo<out t> , 其中 T 是一个协变的类型参数, 上界(upper bound)为 TUpper ,Foo&lt;<em>&gt; 等价于 Foo<out tupper> . 它表示, 当 T 未知时, 你可以安全地从 Foo&lt;</out></em>&gt; 中 读取TUpper 类型的值.</out></li>
+<li>假如类型定义为 Foo<in t> , 其中 T 是一个反向协变的类型参数, Foo&lt;<em>&gt; 等价于 Foo<innothing> . 它表示, 当 T 未知时, 你不能安全地向 Foo&lt;</innothing></em>&gt; 写入 任何东西.</in></li>
+<li>假如类型定义为 Foo<t> , 其中 T 是一个协变的类型参数, 上界(upper bound)为 TUpper , 对于读取值的场合, Foo&lt;*&gt; 等价于 Foo<out tupper> , 对于写入值的场合, 等价于 Foo<in nothing> .</in></out></t></li>
 </ul>
-<h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><p><strong>需求背景:</strong> 过年回家买车票，如果在并发 1W 人次同时 http 请求数据，如果后台每次都重新创建一个查询的车票结果，那么必然会造成大量重复对象的创建、销毁、使得 GC 任务繁重、内存高居不下。</p>
-<p><strong>展示车票信息接口</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Ticket</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showTicketInfo</span><span class="params">(String info)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>展示车票具体实现:</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TrainTicket</span> <span class="keyword">implements</span> <span class="title">Ticket</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> String from;</span><br><span class="line">    <span class="keyword">public</span> String to;</span><br><span class="line">    <span class="keyword">public</span> String bunk;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> price;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TrainTicket</span><span class="params">(String from, String to)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.from = from;</span><br><span class="line">        <span class="keyword">this</span>.to = to;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showTicketInfo</span><span class="params">(String info)</span> </span>&#123;</span><br><span class="line">        bunk = info;</span><br><span class="line">        price = <span class="keyword">new</span> Random().nextInt(<span class="number">300</span>);</span><br><span class="line">        System.out.println(<span class="string">"购买从"</span> + from + <span class="string">" -&gt; "</span> + to + <span class="string">"的 "</span> + bunk + <span class="string">" 火车票 ，价格："</span> + price);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>车票信息管理:</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TicketFactory</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> Map&lt;String, Ticket&gt; sTicketMap = <span class="keyword">new</span> ConcurrentHashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Ticket <span class="title">getTicket</span><span class="params">(String from, String to)</span> </span>&#123;</span><br><span class="line">        String key = from + <span class="string">"-"</span> + to;</span><br><span class="line">        <span class="keyword">if</span> (sTicketMap.containsKey(key)) &#123;</span><br><span class="line">            <span class="comment">//使用已经存在的对象</span></span><br><span class="line">            System.out.println(<span class="string">"使用存在的对象 = ["</span> + from + <span class="string">"], to = ["</span> + to + <span class="string">"]"</span>);</span><br><span class="line">            <span class="keyword">return</span> sTicketMap.get(key);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"创建对象 = ["</span> + from + <span class="string">"], to = ["</span> + to + <span class="string">"]"</span>);</span><br><span class="line">            TrainTicket trainTicket = <span class="keyword">new</span> TrainTicket(from, to);</span><br><span class="line">            sTicketMap.put(key, trainTicket);</span><br><span class="line">            <span class="keyword">return</span> trainTicket;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>test:</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testFlaweiget</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Ticket ticket1 = TicketFactory.getTicket(<span class="string">"北京"</span>, <span class="string">"上海"</span>);</span><br><span class="line">    ticket1.showTicketInfo(<span class="string">"上铺"</span>);</span><br><span class="line">    Ticket ticket7 = TicketFactory.getTicket(<span class="string">"北京"</span>, <span class="string">"上海"</span>);</span><br><span class="line">    ticket7.showTicketInfo(<span class="string">"下铺"</span>);</span><br><span class="line">    Ticket ticket2 = TicketFactory.getTicket(<span class="string">"北京"</span>, <span class="string">"上海"</span>);</span><br><span class="line">    ticket2.showTicketInfo(<span class="string">"上铺"</span>);</span><br><span class="line">    Ticket ticket3 = TicketFactory.getTicket(<span class="string">"北京"</span>, <span class="string">"上海"</span>);</span><br><span class="line">    ticket3.showTicketInfo(<span class="string">"上铺"</span>);</span><br><span class="line">    Ticket ticket4 = TicketFactory.getTicket(<span class="string">"北京"</span>, <span class="string">"成都"</span>);</span><br><span class="line">    ticket4.showTicketInfo(<span class="string">"下铺"</span>);</span><br><span class="line">    Ticket ticket5 = TicketFactory.getTicket(<span class="string">"北京"</span>, <span class="string">"上海"</span>);</span><br><span class="line">    ticket5.showTicketInfo(<span class="string">"上铺"</span>);</span><br><span class="line">    Ticket ticket6 = TicketFactory.getTicket(<span class="string">"北京"</span>, <span class="string">"上海"</span>);</span><br><span class="line">    ticket6.showTicketInfo(<span class="string">"上铺"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>output:</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">创建对象 = [北京], to = [上海]</span><br><span class="line">购买从北京 -&gt; 上海的 上铺 火车票 ，价格：<span class="number">36</span></span><br><span class="line">使用存在的对象 = [北京], to = [上海]</span><br><span class="line">购买从北京 -&gt; 上海的 下铺 火车票 ，价格：<span class="number">261</span></span><br><span class="line">使用存在的对象 = [北京], to = [上海]</span><br><span class="line">购买从北京 -&gt; 上海的 上铺 火车票 ，价格：<span class="number">100</span></span><br><span class="line">使用存在的对象 = [北京], to = [上海]</span><br><span class="line">购买从北京 -&gt; 上海的 上铺 火车票 ，价格：<span class="number">247</span></span><br><span class="line">创建对象 = [北京], to = [成都]</span><br><span class="line">购买从北京 -&gt; 成都的 下铺 火车票 ，价格：<span class="number">224</span></span><br><span class="line">使用存在的对象 = [北京], to = [上海]</span><br><span class="line">购买从北京 -&gt; 上海的 上铺 火车票 ，价格：<span class="number">262</span></span><br><span class="line">使用存在的对象 = [北京], to = [上海]</span><br><span class="line">购买从北京 -&gt; 上海的 上铺 火车票 ，价格：<span class="number">114</span></span><br></pre></td></tr></table></figure>
-
-<p>从上面的查询结果得知，如果已经查询了就使用缓存，没有就创建对象。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>享元模式是实现比较简单，但是它的作用在某些场景确实极其重要的。它可以大大减少应用程序创建的对象，降低程序内存的占用，增强程序的性能，但它同时也提高了系统的复杂性，需要分离出外部状态和内部状态，而且外部状态具有固化特性，不应该随内部状态改变而改变，否则导致系统的逻辑混乱。</p>
-<p>享元模式的有点在于大幅度地降低内存中对象的数量。但是，它做到这一点所付出的代价也是很高的。</p>
-<ul>
-<li>享元模式使得系统更加复杂。为了使对象可以共享，需要将一些状态外部化，这使得程序的逻辑复杂化。</li>
-<li>享元模式将享元对象的状态外部化，而读取外部状态使得运行时间稍微变长。</li>
-</ul>
-
+<p>如果一个泛型类型中存在多个类型参数, 那么每个类型参数都可以单独的投射. 比如, 如果类型定义为interface Function&lt;in T, out U&gt; , 那么可以出现以下几种星号投射:</p>
+<ol>
+<li>Function&lt;*, String&gt; , 代表 Function&lt;in Nothing, String&gt; ;</li>
+<li>Function&lt;Int, *&gt; , 代表 Function&lt;Int, out Any?&gt; ;</li>
+<li>Function&lt;<em>,</em> &gt; , 代表 Function&lt;in Nothing, out Any?&gt; .</li>
+</ol>
+<p>注意: 星号投射与 Java 的原生类型(raw type)非常类似, 但可以安全使用</p>
+<h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><p>关于星号投射，其实就是*代指了所有类型，相当于Any?</p>
+<p>给文中补个例子方便理解：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>&lt;<span class="type">T</span>&gt;</span>(<span class="keyword">val</span> t: T, <span class="keyword">val</span> t2 : T, <span class="keyword">val</span> t3 : T)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Apple</span></span>(<span class="keyword">var</span> name : String)</span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">    <span class="comment">//使用类    </span></span><br><span class="line">    <span class="keyword">val</span> a1: A&lt;*&gt; = A(<span class="number">12</span>, <span class="string">"String"</span>, Apple(<span class="string">"苹果"</span>))</span><br><span class="line">    <span class="keyword">val</span> a2: A&lt;Any?&gt; = A(<span class="number">12</span>, <span class="string">"String"</span>, Apple(<span class="string">"苹果"</span>))   <span class="comment">//和a1是一样的</span></span><br><span class="line">    <span class="keyword">val</span> apple = a1.t3    <span class="comment">//参数类型为Any</span></span><br><span class="line">    println(apple)</span><br><span class="line">    <span class="keyword">val</span> apple2 = apple <span class="keyword">as</span> Apple   <span class="comment">//强转成Apple类</span></span><br><span class="line">    println(apple2.name)</span><br><span class="line">    <span class="comment">//使用数组</span></span><br><span class="line">    <span class="keyword">val</span> l:ArrayList&lt;*&gt; = arrayListOf(<span class="string">"String"</span>,<span class="number">1</span>,<span class="number">1.2</span>f,Apple(<span class="string">"苹果"</span>))</span><br><span class="line">    <span class="keyword">for</span> (item <span class="keyword">in</span> l)&#123;</span><br><span class="line">        println(item)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -520,7 +544,7 @@ var _hmt = _hmt || [];
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://zhangmiao.cc/posts/7a00ed5e.html" title="设计模式十九之享元模式">https://zhangmiao.cc/posts/7a00ed5e.html</a>
+    <a href="https://zhangmiao.cc/posts/6f6a6f9c.html" title="Kotlin泛型">https://zhangmiao.cc/posts/6f6a6f9c.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -537,11 +561,7 @@ var _hmt = _hmt || [];
           
             <a href="/tags/Android/" rel="tag"># Android</a>
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
-          
-            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
-          
-            <a href="/tags/享元模式/" rel="tag"># 享元模式</a>
+            <a href="/tags/Kotlin/" rel="tag"># Kotlin</a>
           
         </div>
       
@@ -554,8 +574,8 @@ var _hmt = _hmt || [];
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/9cdd1e4f.html" rel="next" title="设计模式十八之装饰模式">
-                <i class="fa fa-chevron-left"></i> 设计模式十八之装饰模式
+              <a href="/posts/2fd9bfca.html" rel="next" title="Kotlin数据类与密封类">
+                <i class="fa fa-chevron-left"></i> Kotlin数据类与密封类
               </a>
             
           </div>
@@ -563,10 +583,6 @@ var _hmt = _hmt || [];
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/3b61575f.html" rel="prev" title="设计模式二十之外观模式">
-                设计模式二十之外观模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -795,7 +811,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用场景"><span class="nav-number">3.</span> <span class="nav-text">使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UML-类图"><span class="nav-number">4.</span> <span class="nav-text">UML 类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码示例"><span class="nav-number">5.</span> <span class="nav-text">代码示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">5.1.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Kotlin-泛型"><span class="nav-number">1.</span> <span class="nav-text">Kotlin 泛型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#泛型约束"><span class="nav-number">1.1.</span> <span class="nav-text">泛型约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#型变"><span class="nav-number">1.2.</span> <span class="nav-text">型变</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#声明处型变"><span class="nav-number">1.2.1.</span> <span class="nav-text">声明处型变</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#星号投射"><span class="nav-number">1.3.</span> <span class="nav-text">星号投射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#笔记"><span class="nav-number">1.4.</span> <span class="nav-text">笔记</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -994,9 +1010,9 @@ var _hmt = _hmt || [];
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://zhangmiao.cc/posts/7a00ed5e.html';
-          this.page.identifier = 'posts/7a00ed5e.html';
-          this.page.title = '设计模式十九之享元模式';
+          this.page.url = 'https://zhangmiao.cc/posts/6f6a6f9c.html';
+          this.page.identifier = 'posts/6f6a6f9c.html';
+          this.page.title = 'Kotlin泛型';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://zhangmiao.disqus.com/embed.js';
