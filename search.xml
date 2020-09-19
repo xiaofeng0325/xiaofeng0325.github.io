@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Kotlin数据类与密封类]]></title>
+    <url>%2Fposts%2F2fd9bfca.html</url>
+    <content type="text"><![CDATA[数据类Kotlin 可以创建一个只包含数据的类，关键字为 data： 1data class User(val name: String, val age: Int) 编译器会自动的从主构造函数中根据所有声明的属性提取以下函数： equals() / hashCode() toString() 格式如 &quot;User(name=John, age=42)&quot; componentN() functions 对应于属性，按声明顺序排列 copy() 函数 如果这些函数在类中已经被明确定义了，或者从超类中继承而来，就不再会生成。 为了保证生成代码的一致性以及有意义，数据类需要满足以下条件： 主构造函数至少包含一个参数。 所有的主构造函数的参数必须标识为val 或者 var ; 数据类不可以声明为 abstract, open, sealed 或者 inner; 数据类不能继承其他类 (但是可以实现接口)。 复制复制使用 copy() 函数，我们可以使用该函数复制对象并修改部分属性, 对于上文的 User 类，其实现会类似下面这样： 1fun copy(name: String = this.name, age: Int = this.age) = User(name, age) 实例使用 copy 类复制 User 数据类，并修改 age 属性: 12345678910data class User(val name: String, val age: Int)fun main(args: Array&lt;String&gt;) &#123; val jack = User(name = "Jack", age = 1) val olderJack = jack.copy(age = 2) println(jack) println(olderJack)&#125; 输出结果为： 12User(name=Jack, age=1)User(name=Jack, age=2) 数据类以及解构声明组件函数允许数据类在解构声明中使用： 123val jane = User("Jane", 35)val (name, age) = janeprintln("$name, $age years of age") // prints "Jane, 35 years of age" 标准数据类标准库提供了 Pair 和 Triple 。在大多数情形中，命名数据类是更好的设计选择，因为这样代码可读性更强而且提供了有意义的名字和属性。 密封类密封类用来表示受限的类继承结构：当一个值为有限几种的类型, 而不能有任何其他类型时。在某种意义上，他们是枚举类的扩展：枚举类型的值集合 也是受限的，但每个枚举常量只存在一个实例，而密封类 的一个子类可以有可包含状态的多个实例。 声明一个密封类，使用 sealed 修饰类，密封类可以有子类，但是所有的子类都必须要内嵌在密封类中。 sealed 不能修饰 interface ,abstract class(会报 warning,但是不会出现编译错误) 12345678910sealed class Exprdata class Const(val number: Double) : Expr()data class Sum(val e1: Expr, val e2: Expr) : Expr()object NotANumber : Expr()fun eval(expr: Expr): Double = when (expr) &#123; is Const -&gt; expr.number is Sum -&gt; eval(expr.e1) + eval(expr.e2) NotANumber -&gt; Double.NaN&#125; 使用密封类的关键好处在于使用 when 表达式 的时候，如果能够 验证语句覆盖了所有情况，就不需要为该语句再添加一个 else 子句了。 123456fun eval(expr: Expr): Double = when(expr) &#123; is Expr.Const -&gt; expr.number is Expr.Sum -&gt; eval(expr.e1) + eval(expr.e2) Expr.NotANumber -&gt; Double.NaN // 不再需要 `else` 子句，因为我们已经覆盖了所有的情况&#125; 笔记我的理解密封类就是一种专门用来配合 when 语句使用的类，举个例子，假如在 Android 中我们有一个 view，我们现在想通过 when 语句设置针对 view 进行两种操作：显示和隐藏，那么就可以这样做： 12345678sealed class UiOp &#123; object Show: UiOp() object Hide: UiOp()&#125; fun execute(view: View, op: UiOp) = when (op) &#123; UiOp.Show -&gt; view.visibility = View.VISIBLE UiOp.Hide -&gt; view.visibility = View.GONE&#125; 以上功能其实完全可以用枚举实现，但是如果我们现在想加两个操作：水平平移和纵向平移，并且还要携带一些数据，比如平移了多少距离，平移过程的动画类型等数据，用枚举显然就不太好办了，这时密封类的优势就可以发挥了，例如： 123456789101112131415sealed class UiOp &#123; object Show: UiOp() object Hide: UiOp() class TranslateX(val px: Float): UiOp() class TranslateY(val px: Float): UiOp()&#125; fun execute(view: View, op: UiOp) = when (op) &#123; UiOp.Show -&gt; view.visibility = View.VISIBLE UiOp.Hide -&gt; view.visibility = View.GONE is UiOp.TranslateX -&gt; view.translationX = op.px // 这个 when 语句分支不仅告诉 view 要水平移动，还告诉 view 需要移动多少距离，这是枚举等 Java 传统思想不容易实现的 is UiOp.TranslateY -&gt; view.translationY = op.px&#125; 以上代码中，TranslateX 是一个类，它可以携带多于一个的信息，比如除了告诉 view 需要水平平移之外，还可以告诉 view 平移多少像素，甚至还可以告诉 view 平移的动画类型等信息，我想这大概就是密封类出现的意义吧。 除此之外，如果 when 语句的分支不需要携带除“显示或隐藏view之外的其它信息”时（即只需要表明 when 语句分支，不需要携带额外数据时），用 object 关键字创建单例就可以了，并且此时 when 子句不需要使用 is 关键字。只有需要携带额外信息时才定义密封类的子类，而且使用了密封类就不需要使用 else 子句，每当我们多增加一个密封类的子类或单例，编译器就会在 when 语句中给出提示，可以在编译阶段就及时发现错误，这也是以往 switch-case 语句和枚举不具备的功能。 最后，我们甚至可以把这一组操作封装成一个函数，以便日后调用，如下： 1234567891011121314151617// 先封装一个UI操作列表class Ui(val uiOps: List = emptyList()) &#123; operator fun plus(uiOp: UiOp) = Ui(uiOps + uiOp)&#125;// 定义一组操作val ui = Ui() + UiOp.Show + UiOp.TranslateX(20f) + UiOp.TranslateY(40f) + UiOp.Hide// 定义调用的函数fun run(view: View, ui: Ui) &#123; ui.uiOps.forEach &#123; execute(view, it) &#125;&#125;run(view, ui) // 最终调用]]></content>
+      <categories>
+        <category>Android</category>
+        <category>Kotlin</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Kotlin</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Kotlin扩展]]></title>
     <url>%2Fposts%2F36cafa9f.html</url>
     <content type="text"><![CDATA[Kotlin 扩展Kotlin 可以对一个类的属性和方法进行扩展，且不需要继承或使用 Decorator 模式。 扩展是一种静态行为，对被扩展的类代码本身不会造成任何影响。 扩展函数扩展函数可以在已有类中添加新的方法，不会对原类做修改，扩展函数定义形式： 123fun receiverType.functionName(params)&#123; body&#125; receiverType：表示函数的接收者，也就是函数扩展的对象 functionName：扩展函数的名称 params：扩展函数的参数，可以为NULL 以下实例扩展 User 类 ： 1234567891011class User(var name:String)/**扩展函数**/fun User.Print()&#123; print("用户名 $name")&#125;fun main(arg:Array&lt;String&gt;)&#123; var user = User("Runoob") user.Print()&#125; 实例执行输出结果为： 1用户名 Runoob 下面代码为 MutableList 添加一个swap 函数： 123456789101112131415// 扩展函数 swap,调换不同位置的值fun MutableList&lt;Int&gt;.swap(index1: Int, index2: Int) &#123; val tmp = this[index1] // this 对应该列表 this[index1] = this[index2] this[index2] = tmp&#125;fun main(args: Array&lt;String&gt;) &#123; val l = mutableListOf(1, 2, 3) // 位置 0 和 2 的值做了互换 l.swap(0, 2) // 'swap()' 函数内的 'this' 将指向 'l' 的值 println(l.toString())&#125; 实例执行输出结果为： 1[3, 2, 1] this关键字指代接收者对象(receiver object)(也就是调用扩展函数时, 在点号之前指定的对象实例)。 扩展函数是静态解析的扩展函数是静态解析的，并不是接收者类型的虚拟成员，在调用扩展函数时，具体被调用的的是哪一个函数，由调用函数的的对象表达式来决定的，而不是动态的类型决定的: 123456789101112131415open class Cclass D: C()fun C.foo() = "c" // 扩展函数 foofun D.foo() = "d" // 扩展函数 foofun printFoo(c: C) &#123; println(c.foo()) // 类型是 C 类&#125;fun main(arg:Array&lt;String&gt;)&#123; printFoo(D())&#125; 实例执行输出结果为： 1c 若扩展函数和成员函数一致，则使用该函数时，会优先使用成员函数。 12345678910class C &#123; fun foo() &#123; println("成员函数") &#125;&#125;fun C.foo() &#123; println("扩展函数") &#125;fun main(arg:Array&lt;String&gt;)&#123; var c = C() c.foo()&#125; 实例执行输出结果为： 1成员函数 扩展一个空对象在扩展函数内， 可以通过 this 来判断接收者是否为 NULL,这样，即使接收者为 NULL,也可以调用扩展函数。例如: 12345678910fun Any?.toString(): String &#123; if (this == null) return "null" // 空检测之后，“this”会自动转换为非空类型，所以下面的 toString() // 解析为 Any 类的成员函数 return toString()&#125;fun main(arg:Array&lt;String&gt;)&#123; var t = null println(t.toString())&#125; 实例执行输出结果为： 1null 扩展属性 除了函数，Kotlin 也支持属性对属性进行扩展: 12val &lt;T&gt; List&lt;T&gt;.lastIndex: Int get() = size - 1 扩展属性允许定义在类或者kotlin文件中，不允许定义在函数中。初始化属性因为属性没有后端字段（backing field），所以不允许被初始化，只能由显式提供的 getter/setter 定义。 1val Foo.bar = 1 // 错误：扩展属性不能有初始化器 扩展属性只能被声明为 val。 伴生对象的扩展如果一个类定义有一个伴生对象 ，你也可以为伴生对象定义扩展函数和属性。 伴生对象通过”类名.”形式调用伴生对象，伴生对象声明的扩展函数，通过用类名限定符来调用： 123456789101112131415class MyClass &#123; companion object &#123; &#125; // 将被称为 "Companion"&#125;fun MyClass.Companion.foo() &#123; println("伴随对象的扩展函数")&#125;val MyClass.Companion.no: Int get() = 10fun main(args: Array&lt;String&gt;) &#123; println("no:$&#123;MyClass.no&#125;") MyClass.foo()&#125; 实例执行输出结果为： 12no:10伴随对象的扩展函数 扩展的作用域通常扩展函数或属性定义在顶级包下: 123package foo.barfun Baz.goo() &#123; …… &#125; 要使用所定义包之外的一个扩展, 通过import导入扩展的函数名进行使用: 123456789package com.example.usageimport foo.bar.goo // 导入所有名为 goo 的扩展 // 或者import foo.bar.* // 从 foo.bar 导入一切fun usage(baz: Baz) &#123; baz.goo()&#125; 扩展声明为成员在一个类内部你可以为另一个类声明扩展。 在这个扩展中，有个多个隐含的接受者，其中扩展方法定义所在类的实例称为分发接受者，而扩展方法的目标类型的实例称为扩展接受者。 1234567891011121314151617181920212223class D &#123; fun bar() &#123; println("D bar") &#125;&#125;class C &#123; fun baz() &#123; println("C baz") &#125; fun D.foo() &#123; bar() // 调用 D.bar baz() // 调用 C.baz &#125; fun caller(d: D) &#123; d.foo() // 调用扩展函数 &#125;&#125;fun main(args: Array&lt;String&gt;) &#123; val c: C = C() val d: D = D() c.caller(d)&#125; 实例执行输出结果为： 12D barC baz 在 C 类内，创建了 D 类的扩展。此时，C 被成为分发接受者，而 D 为扩展接受者。从上例中，可以清楚的看到，在扩展函数中，可以调用派发接收者的成员函数。 假如在调用某一个函数，而该函数在分发接受者和扩展接受者均存在，则以扩展接收者优先，要引用分发接收者的成员你可以使用限定的 this 语法。 1234567891011121314151617181920212223class D &#123; fun bar() &#123; println("D bar") &#125;&#125;class C &#123; fun bar() &#123; println("C bar") &#125; // 与 D 类 的 bar 同名 fun D.foo() &#123; bar() // 调用 D.bar()，扩展接收者优先 this@C.bar() // 调用 C.bar() &#125; fun caller(d: D) &#123; d.foo() // 调用扩展函数 &#125;&#125;fun main(args: Array&lt;String&gt;) &#123; val c: C = C() val d: D = D() c.caller(d)&#125; 实例执行输出结果为： 12D barC bar 以成员的形式定义的扩展函数, 可以声明为 open , 而且可以在子类中覆盖. 也就是说, 在这类扩展函数的派 发过程中, 针对分发接受者是虚拟的(virtual), 但针对扩展接受者仍然是静态的。 12345678910111213141516171819202122232425262728293031323334353637open class D &#123;&#125;class D1 : D() &#123;&#125;open class C &#123; open fun D.foo() &#123; println("D.foo in C") &#125; open fun D1.foo() &#123; println("D1.foo in C") &#125; fun caller(d: D) &#123; d.foo() // 调用扩展函数 &#125;&#125;class C1 : C() &#123; override fun D.foo() &#123; println("D.foo in C1") &#125; override fun D1.foo() &#123; println("D1.foo in C1") &#125;&#125;fun main(args: Array&lt;String&gt;) &#123; C().caller(D()) // 输出 "D.foo in C" C1().caller(D()) // 输出 "D.foo in C1" —— 分发接收者虚拟解析 C().caller(D1()) // 输出 "D.foo in C" —— 扩展接收者静态解析&#125; 实例执行输出结果为： 123D.foo in CD.foo in C1D.foo in C]]></content>
@@ -1118,8 +1131,8 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>建站</tag>
         <tag>博客</tag>
+        <tag>建站</tag>
       </tags>
   </entry>
   <entry>
@@ -2637,10 +2650,10 @@
       <tags>
         <tag>Android</tag>
         <tag>Android Tips</tag>
-        <tag>.so文件</tag>
         <tag>armeabi-v7a</tag>
         <tag>arm64-v8a</tag>
         <tag>abi兼容</tag>
+        <tag>.so文件</tag>
       </tags>
   </entry>
   <entry>
@@ -2654,9 +2667,9 @@
       <tags>
         <tag>Android</tag>
         <tag>Android Tips</tag>
+        <tag>.so文件</tag>
         <tag>ABI</tag>
         <tag>CPU</tag>
-        <tag>.so文件</tag>
       </tags>
   </entry>
   <entry>
@@ -3064,8 +3077,8 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>建站</tag>
         <tag>博客</tag>
+        <tag>建站</tag>
       </tags>
   </entry>
   <entry>
@@ -3769,8 +3782,8 @@
       </categories>
       <tags>
         <tag>Android</tag>
-        <tag>EventBus</tag>
         <tag>XBus</tag>
+        <tag>EventBus</tag>
       </tags>
   </entry>
   <entry>
@@ -4408,8 +4421,8 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>建站</tag>
         <tag>博客</tag>
+        <tag>建站</tag>
       </tags>
   </entry>
   <entry>
